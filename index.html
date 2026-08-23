@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -21,7 +22,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
 /* Texto introductorio */
 .welcome-text {text-align:center; max-width:720px; margin:0 auto 48px; font-size:18px; line-height:1.8; color:var(--text);}
 
-/* REPARACIÓN: Cuadrícula real para organizar tus categorías en 2 columnas */
+/* Cuadrícula real para organizar tus categorías en 2 columnas */
 .categories-grid {display:flex; flex-wrap:wrap; gap:28px; margin-bottom:42px; width:100%;}
 .category-box {flex:1; min-width:calc(50% - 14px); border:1px solid #e6e2da; border-radius:12px; padding:28px; background:var(--quote); box-shadow:0 2px 8px rgba(0,0,0,0.02);}
 .category-title {color:var(--accent); font-family:'Cinzel', Georgia, serif; font-size:18px; font-weight:700; letter-spacing:1px; margin:0 0 16px; text-transform:uppercase; border-bottom:1px solid #ddd; padding-bottom:8px; display:flex; align-items:center; gap:8px;}
@@ -55,8 +56,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
     <div class="brand-divider"></div>
 
     <!-- Bienvenida formal -->
-        <!-- Texto introductorio editado y estilizado en formato de cascada central -->
-        <!-- Texto en cascada definitivo: Enfoque acogedor, claro y seguro -->
     <div class="welcome-text" style="text-align: center; max-width: 720px; margin: 0 auto 52px; font-size: 19px; line-height: 1.8; color: #252525;">
         <p>Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
         prácticas, profundas y accesibles para nutrir tu caminar<br>
@@ -65,9 +64,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
         tu fe de manera clara y segura.</p>
     </div>
 
-
-
-    <!-- Cuadrícula Reparada y Centrada -->
+    <!-- Cuadrícula de categorías -->
     <div class="categories-grid">
 
         <!-- Caja 1: Tratados Evangelísticos -->
@@ -75,7 +72,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
             <h2 class="category-title">📖 Tratados</h2>
             <ul class="article-list">
                 <li class="article-item">
-                    href="1_evang_tracts/reconciliacion/index.html"
+                    <a class="article-link" href="1_evang_tracts/reconciliacion/index.html">Reconciliación con Dios</a>
                     <span class="article-desc">El punto de partida fundamental para restaurar nuestra comunión con el Creador.</span>
                 </li>
             </ul>
@@ -86,7 +83,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
             <h2 class="category-title">🌱 Guías y Recursos</h2>
             <ul class="article-list">
                 <li class="article-item">
-                    href="https://forms.gle/dfmQRiDqYqT8Fwt26"
+                    <a class="article-link" href="https://forms.gle/dfmQRiDqYqT8Fwt26">Guía para Nuevos Creyentes</a>
                     <span class="article-desc">Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.</span>
                 </li>
             </ul>
@@ -97,3 +94,4 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:'Playfair Displ
 </main>
 </body>
 </html>
+```
