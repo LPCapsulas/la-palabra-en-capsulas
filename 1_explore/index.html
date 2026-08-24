@@ -1,1 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Explora — La Palabra en Cápsulas</title>
+
+<style>
+:root{
+    --text:#252525;
+    --muted:#666;
+    --accent:#17365D;
+    --paper:#fff;
+    --bg:#f2f0ec;
+    --quote:#f7f4ef;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Playfair Display', Georgia, "Times New Roman", serif;
+    font-size:17px;
+    line-height:1.75;
+}
+
+.page{
+    width:min(900px,calc(100% - 32px));
+    margin:32px auto;
+    background:var(--paper);
+    padding:56px 72px;
+    box-shadow:0 4px 24px rgba(0,0,0,.08);
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:28px;
+    color:var(--accent);
+    text-decoration:none;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:15px;
+}
+
+.back-link:hover{
+    text-decoration:underline;
+}
+
+h1{
+    text-align:center;
+    color:var(--accent);
+    font-family:'Cinzel', Georgia, serif;
+    font-size:30px;
+    letter-spacing:1px;
+    margin:0 0 12px;
+}
+
+.intro{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 44px;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.divider{
+    display:block;
+    width:180px;
+    height:2px;
+    background-color:var(--accent);
+    margin:0 auto 42px;
+    opacity:.3;
+}
+
+.section-title{
+    color:var(--accent);
+    font-family:'Cinzel', Georgia, serif;
+    font-size:21px;
+    margin:0 0 22px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:10px;
+}
+
+.resource-box{
+    border:1px solid #e6e2da;
+    border-radius:12px;
+    padding:26px 28px;
+    background:var(--quote);
+    box-shadow:0 2px 8px rgba(0,0,0,.02);
+    margin-bottom:28px;
+}
+
+.resource-link{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:700;
+    font-size:18px;
+}
+
+.resource-link:hover{
+    color:var(--accent);
+}
+
+.resource-desc{
+    display:block;
+    font-size:15px;
+    color:var(--muted);
+    font-style:italic;
+    margin-top:6px;
+    line-height:1.5;
+}
+
+.coming-soon{
+    color:var(--muted);
+    font-size:14px;
+    font-style:italic;
+    margin-top:18px;
+}
+
+@media(max-width:700px){
+
+    .page{
+        padding:34px 24px;
+        margin:0 auto;
+        width:100%;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .intro{
+        font-size:17px;
+    }
+
+    .resource-box{
+        padding:22px;
+    }
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="page">
+
+    <a class="back-link" href="../index.html">← Volver a la página principal</a>
+
+    <h1>🔎 Explora</h1>
+
+    <div class="divider"></div>
+
+    <div class="intro">
+        <p>
+            Bienvenido a <strong>Explora</strong>, un espacio abierto
+            para descubrir artículos, testimonios, reflexiones,
+            temas de interés y otros contenidos que iremos
+            incorporando para edificar, inspirar y alimentar
+            tu caminar con el Señor.
+        </p>
+    </div>
+
+    <!-- ARTÍCULOS -->
+    <section>
+
+        <h2 class="section-title">📖 Artículos</h2>
+
+        <div class="resource-box">
+
+            <a class="resource-link"
+               href="reconciliacion/index.html">
+                Reconciliación con Dios
+            </a>
+
+            <span class="resource-desc">
+                Un punto de partida fundamental para comprender
+                nuestra relación con Dios y el camino hacia
+                una verdadera reconciliación con Él.
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section>
+
+        <h2 class="section-title">💬 Testimonios</h2>
+
+        <div class="resource-box">
+
+            <span class="resource-link">
+                Próximamente
+            </span>
+
+            <span class="resource-desc">
+                Historias y experiencias que pueden inspirar
+                y fortalecer la fe.
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- REFLEXIONES -->
+    <section>
+
+        <h2 class="section-title">💡 Reflexiones</h2>
+
+        <div class="resource-box">
+
+            <span class="resource-link">
+                Próximamente
+            </span>
+
+            <span class="resource-desc">
+                Pensamientos y reflexiones sobre temas
+                espirituales y de la vida cotidiana.
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- TEMAS DE INTERÉS -->
+    <section>
+
+        <h2 class="section-title">✨ Temas de interés</h2>
+
+        <div class="resource-box">
+
+            <span class="resource-link">
+                Próximamente
+            </span>
+
+            <span class="resource-desc">
+                Diferentes temas para explorar, pensar
+                y conversar.
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- PROYECTOS -->
+    <section>
+
+        <h2 class="section-title">🚀 Proyectos</h2>
+
+        <div class="resource-box">
+
+            <span class="resource-link">
+                Próximamente
+            </span>
+
+            <span class="resource-desc">
+                Conoce proyectos y nuevas iniciativas
+                que iremos desarrollando.
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- OTROS CONTENIDOS -->
+    <section>
+
+        <h2 class="section-title">📚 Otros contenidos</h2>
+
+        <div class="resource-box">
+
+            <span class="resource-link">
+                Próximamente
+            </span>
+
+            <span class="resource-desc">
+                Otros materiales y contenidos que puedan
+                ser de interés para nuestros visitantes.
+            </span>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
