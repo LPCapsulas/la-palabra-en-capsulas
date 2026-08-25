@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Volveos a mí, dice el Señor</title>
+    <title>Volveos a mí, dice el Señor — La Palabra en Cápsulas</title>
 
     <style>
         * {
@@ -30,7 +31,7 @@
             width: 100%;
             max-width: 650px;
             min-height: 100vh;
-            padding: 18px 18px 14px;
+            padding: 18px 18px 20px;
         }
 
         /* =========================
@@ -105,37 +106,34 @@
         }
 
         /* =========================
-           GUIDE / CASCADING TEXT
+           CONTENT INVITATION
            ========================= */
 
-        .guide-section {
+        .content-invitation {
             text-align: center;
             max-width: 500px;
-            margin: 16px auto 8px;
+            margin: 20px auto 10px;
             font-size: 13px;
-            line-height: 1.45;
+            line-height: 1.5;
         }
 
-        .guide-section p {
-            margin: 0;
+        .content-invitation p {
+            margin-bottom: 7px;
         }
 
-        .guide-arrow {
-            text-align: center;
-            font-size: 24px;
-            line-height: 1;
-            margin: 4px 0 6px;
+        .content-invitation strong {
+            font-size: 14px;
         }
 
         /* =========================
-           GOOGLE FORM BUTTON
+           SIGN-UP BUTTON
            ========================= */
 
-        .download-btn {
+        .signup-btn {
             display: block;
             width: 100%;
             max-width: 300px;
-            margin: 0 auto;
+            margin: 8px auto 18px;
             padding: 10px 12px;
             text-align: center;
             text-decoration: none;
@@ -146,8 +144,29 @@
             border-radius: 4px;
         }
 
-        .download-btn:hover {
+        .signup-btn:hover {
             background: #9fb500;
+        }
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .navigation {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .navigation a {
+            color: #17365D;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
         }
 
         /* =========================
@@ -175,7 +194,7 @@
         @media (max-width: 768px) {
 
             .article-container {
-                padding: 16px 14px 12px;
+                padding: 16px 14px 18px;
             }
 
             .publication {
@@ -196,13 +215,13 @@
                 line-height: 1.45;
             }
 
-            .guide-section {
+            .content-invitation {
                 font-size: 13px;
                 line-height: 1.45;
                 max-width: 95%;
             }
 
-            .download-btn {
+            .signup-btn {
                 max-width: 280px;
             }
         }
@@ -265,24 +284,24 @@
                 margin-bottom: 6px;
             }
 
-            .guide-section {
+            .content-invitation {
                 max-width: 450px;
                 margin: 8px auto 5px;
                 font-size: 10.5px;
                 line-height: 1.25;
             }
 
-            .guide-arrow {
-                font-size: 18px;
-                margin: 2px 0 4px;
-            }
-
-            .download-btn {
+            .signup-btn {
                 max-width: 240px;
                 padding: 7px;
                 font-size: 10.5px;
                 color: white !important;
                 background: #b6cf18 !important;
+            }
+
+            .navigation {
+                margin-top: 8px;
+                font-size: 10px;
             }
 
             .footnotes {
@@ -352,38 +371,51 @@
     </main>
 
 
-    <!-- CENTERED CASCADING GUIDE -->
+    <!-- INVITATION TO RECEIVE MORE CONTENT -->
 
-    <div class="guide-section">
+    <div class="content-invitation">
 
         <p>
-            Hay una guía que he preparado en varios idiomas para nuevos creyentes,<br>
-            aquellos que quieren abrazar la fe cristiana o que desean conocer<br>
-            más del Mesías, sin importar su credo actual o condición.<br>
-            Es para todos y no importa el ayer. Solo estás a un clic<br>
-            de descargarla.
+            <strong>¿Quieres recibir más contenido?</strong>
+        </p>
+
+        <p>
+            Regístrate para recibir la
+            <em>Guía para Nuevos Creyentes</em>
+            y otros contenidos que iremos compartiendo
+            para ayudarte a crecer y conocer más.
         </p>
 
     </div>
 
 
-    <!-- POINTING FINGER -->
-
-    <div class="guide-arrow">
-        👇
-    </div>
-
-
-    <!-- GOOGLE FORM -->
+    <!-- SIGN-UP BUTTON -->
 
     <a
-        href="https://forms.gle/s2p4cqzKNAoJpJ2G6"
-        class="download-btn"
+        href="https://forms.gle/dfmQRiDqYqT8Fwt26"
+        class="signup-btn"
         target="_blank"
         rel="noopener noreferrer"
     >
-        Accede a la guía para nuevos creyentes
+        Recibir más contenido
     </a>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+
+        <a href="../index.html">
+            ← Volver a Explora
+        </a>
+
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        <a href="../../index.html">
+            ⌂ Volver a Inicio
+        </a>
+
+    </nav>
 
 
     <!-- FOOTNOTES -->
@@ -401,3 +433,4 @@
 
 </body>
 </html>
+```
