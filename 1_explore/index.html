@@ -1,10 +1,10 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Explora — La Palabra en Cápsulas</title>
+<title>La Palabra en Cápsulas — Portada Oficial</title>
 
 <style>
 :root{
@@ -41,90 +41,113 @@ body{
     box-shadow:0 4px 24px rgba(0,0,0,.08);
 }
 
-.back-link{
-    display:inline-block;
-    margin-bottom:28px;
-    color:var(--accent);
-    text-decoration:none;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:15px;
-}
-
-.back-link:hover{
-    text-decoration:underline;
-}
-
-h1{
+/* Contenedor de la Imagen Superior Horizontal */
+.banner-container{
     text-align:center;
-    color:var(--accent);
-    font-family:'Cinzel', Georgia, serif;
-    font-size:30px;
-    letter-spacing:1px;
-    margin:0 0 12px;
+    margin:0 auto 28px;
+    width:100%;
+    max-width:650px;
 }
 
-.intro{
-    text-align:center;
-    max-width:700px;
-    margin:0 auto 44px;
-    font-size:18px;
-    line-height:1.8;
+.capsules-img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0 auto;
 }
 
-.divider{
+/* Línea divisoria elegante */
+.brand-divider{
     display:block;
     width:180px;
     height:2px;
     background-color:var(--accent);
-    margin:0 auto 42px;
-    opacity:.3;
+    margin:28px auto 42px;
+    opacity:0.3;
 }
 
-.section-title{
-    color:var(--accent);
-    font-family:'Cinzel', Georgia, serif;
-    font-size:21px;
-    margin:0 0 22px;
-    border-bottom:1px solid #ddd;
-    padding-bottom:10px;
+/* Texto introductorio */
+.welcome-text{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 48px;
+    font-size:18px;
+    line-height:1.8;
+    color:var(--text);
 }
 
-.resource-box{
+/* Cuadrícula de categorías */
+.categories-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    margin-bottom:42px;
+    width:100%;
+}
+
+.category-box{
+    flex:1;
+    min-width:calc(50% - 14px);
     border:1px solid #e6e2da;
     border-radius:12px;
-    padding:26px 28px;
+    padding:28px;
     background:var(--quote);
-    box-shadow:0 2px 8px rgba(0,0,0,.02);
-    margin-bottom:28px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.02);
 }
 
-.resource-link{
+.category-title{
+    color:var(--accent);
+    font-family:'Cinzel', Georgia, serif;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin:0 0 16px;
+    text-transform:uppercase;
+    border-bottom:1px solid #ddd;
+    padding-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* Limpieza de listas */
+.article-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.article-item{
+    margin:16px 0;
+    line-height:1.4;
+}
+
+.article-link{
     color:var(--text);
     text-decoration:none;
     font-weight:700;
-    font-size:18px;
+    font-size:16px;
+    display:inline-block;
+    border-bottom:1px solid transparent;
+    transition:all 0.2s;
 }
 
-.resource-link:hover{
+.article-link:hover{
     color:var(--accent);
+    border-bottom-color:var(--accent);
 }
 
-.resource-desc{
+.article-desc{
     display:block;
-    font-size:15px;
-    color:var(--muted);
-    font-style:italic;
-    margin-top:6px;
-    line-height:1.5;
-}
-
-.coming-soon{
-    color:var(--muted);
     font-size:14px;
+    color:var(--muted);
     font-style:italic;
-    margin-top:18px;
+    margin-top:4px;
+    font-weight:normal;
+    line-height:1.4;
 }
 
+/* Adaptación para teléfonos móviles */
 @media(max-width:700px){
 
     .page{
@@ -133,16 +156,8 @@ h1{
         width:100%;
     }
 
-    h1{
-        font-size:26px;
-    }
-
-    .intro{
-        font-size:17px;
-    }
-
-    .resource-box{
-        padding:22px;
+    .category-box{
+        min-width:100%;
     }
 }
 </style>
@@ -157,145 +172,88 @@ h1{
 
 <main class="page">
 
-    <a class="back-link" href="../index.html">← Volver a la página principal</a>
-
-    <h1>🔎 Explora</h1>
-
-    <div class="divider"></div>
-
-    <div class="intro">
-        <p>
-            Bienvenido a <strong>Explora</strong>, un espacio abierto
-            para descubrir artículos, testimonios, reflexiones,
-            temas de interés y otros contenidos que iremos
-            incorporando para edificar, inspirar y alimentar
-            tu caminar con el Señor.
-        </p>
+    <!-- Bloque de Cabecera Horizontal -->
+    <div class="banner-container">
+        <img class="capsules-img"
+             src="capsules.png"
+             alt="La Palabra en Cápsulas — Portada">
     </div>
 
-    <!-- ARTÍCULOS -->
-    <section>
+    <!-- Línea de contraste de marca -->
+    <div class="brand-divider"></div>
 
-        <h2 class="section-title">📖 Artículos</h2>
+    <!-- Bienvenida formal -->
+    <div class="welcome-text"
+         style="text-align:center; max-width:720px; margin:0 auto 52px; font-size:19px; line-height:1.8; color:#252525;">
 
-        <div class="resource-box">
+        <p>
+            Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
+            prácticas, profundas y accesibles para nutrir tu caminar<br>
+            diario con el <strong>Señor</strong>. Aquí encontrarás tratados,<br>
+            enseñanzas y guías diseñadas para edificar<br>
+            tu fe de manera clara y segura.
+        </p>
 
-            <a class="resource-link"
-               href="reconciliacion/index.html">
-                Reconciliación con Dios
-            </a>
+    </div>
 
-            <span class="resource-desc">
-                Un punto de partida fundamental para comprender
-                nuestra relación con Dios y el camino hacia
-                una verdadera reconciliación con Él.
-            </span>
+    <!-- Cuadrícula de categorías -->
+    <div class="categories-grid">
 
-        </div>
+        <!-- Caja 1: Explora -->
+        <div class="category-box">
 
-    </section>
+            <h2 class="category-title">🔎 Explora</h2>
 
-    <!-- TESTIMONIOS -->
-    <section>
+            <ul class="article-list">
 
-        <h2 class="section-title">💬 Testimonios</h2>
+                <li class="article-item">
 
-        <div class="resource-box">
+                    <a class="article-link"
+                       href="1_explore/index.html">
+                        Explora
+                    </a>
 
-            <span class="resource-link">
-                Próximamente
-            </span>
+                    <span class="article-desc">
+                        Descubre artículos, testimonios, reflexiones,
+                        temas de interés y otros contenidos.
+                    </span>
 
-            <span class="resource-desc">
-                Historias y experiencias que pueden inspirar
-                y fortalecer la fe.
-            </span>
+                </li>
 
-        </div>
-
-    </section>
-
-    <!-- REFLEXIONES -->
-    <section>
-
-        <h2 class="section-title">💡 Reflexiones</h2>
-
-        <div class="resource-box">
-
-            <span class="resource-link">
-                Próximamente
-            </span>
-
-            <span class="resource-desc">
-                Pensamientos y reflexiones sobre temas
-                espirituales y de la vida cotidiana.
-            </span>
+            </ul>
 
         </div>
 
-    </section>
 
-    <!-- TEMAS DE INTERÉS -->
-    <section>
+        <!-- Caja 2: Guías y Recursos -->
+        <div class="category-box">
 
-        <h2 class="section-title">✨ Temas de interés</h2>
+            <h2 class="category-title">🌱 Guías y Recursos</h2>
 
-        <div class="resource-box">
+            <ul class="article-list">
 
-            <span class="resource-link">
-                Próximamente
-            </span>
+                <li class="article-item">
 
-            <span class="resource-desc">
-                Diferentes temas para explorar, pensar
-                y conversar.
-            </span>
+                    <a class="article-link"
+                       href="https://forms.gle/dfmQRiDqYqT8Fwt26">
+                        Guía para Nuevos Creyentes
+                    </a>
 
-        </div>
+                    <span class="article-desc">
+                        Primeros pasos esenciales y bases firmes
+                        para comenzar la vida cristiana.
+                    </span>
 
-    </section>
+                </li>
 
-    <!-- PROYECTOS -->
-    <section>
-
-        <h2 class="section-title">🚀 Proyectos</h2>
-
-        <div class="resource-box">
-
-            <span class="resource-link">
-                Próximamente
-            </span>
-
-            <span class="resource-desc">
-                Conoce proyectos y nuevas iniciativas
-                que iremos desarrollando.
-            </span>
+            </ul>
 
         </div>
 
-    </section>
-
-    <!-- OTROS CONTENIDOS -->
-    <section>
-
-        <h2 class="section-title">📚 Otros contenidos</h2>
-
-        <div class="resource-box">
-
-            <span class="resource-link">
-                Próximamente
-            </span>
-
-            <span class="resource-desc">
-                Otros materiales y contenidos que puedan
-                ser de interés para nuestros visitantes.
-            </span>
-
-        </div>
-
-    </section>
+    </div>
 
 </main>
 
 </body>
 </html>
+```
