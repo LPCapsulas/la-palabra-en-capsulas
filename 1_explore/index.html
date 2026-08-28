@@ -1,1 +1,351 @@
-<!doctype html> <html lang="es"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Explora — La Palabra en Cápsulas</title> <style> :root{ --text:#252525; --muted:#666; --accent:#17365D; --paper:#fff; --bg:#f2f0ec; --quote:#f7f4ef; } *{ box-sizing:border-box; } html{ scroll-behavior:smooth; } body{ margin:0; background:var(--bg); color:var(--text); font-family:'Playfair Display', Georgia, "Times New Roman", serif; font-size:17px; line-height:1.75; } .page{ width:min(900px,calc(100% - 32px)); margin:32px auto; background:var(--paper); padding:56px 72px; box-shadow:0 4px 24px rgba(0,0,0,.08); } .back-link{ display:inline-block; margin-bottom:28px; color:var(--accent); text-decoration:none; font-family:Georgia, "Times New Roman", serif; font-size:15px; } .back-link:hover{ text-decoration:underline; } h1{ text-align:center; color:var(--accent); font-family:'Cinzel', Georgia, serif; font-size:30px; letter-spacing:1px; margin:0 0 12px; } .intro{ text-align:center; max-width:700px; margin:0 auto 44px; font-size:18px; line-height:1.8; } .divider{ display:block; width:180px; height:2px; background-color:var(--accent); margin:0 auto 42px; opacity:.3; } .section-title{ color:var(--accent); font-family:'Cinzel', Georgia, serif; font-size:21px; margin:0 0 22px; border-bottom:1px solid #ddd; padding-bottom:10px; } .resource-box{ border:1px solid #e6e2da; border-radius:12px; padding:26px 28px; background:var(--quote); box-shadow:0 2px 8px rgba(0,0,0,.02); margin-bottom:28px; } .resource-link{ color:var(--text); text-decoration:none; font-weight:700; font-size:18px; } .resource-link:hover{ color:var(--accent); } .resource-desc{ display:block; font-size:15px; color:var(--muted); font-style:italic; margin-top:6px; line-height:1.5; } .coming-soon{ color:var(--muted); font-size:14px; font-style:italic; margin-top:18px; } @media(max-width:700px){ .page{ padding:34px 24px; margin:0 auto; width:100%; } h1{ font-size:26px; } .intro{ font-size:17px; } .resource-box{ padding:22px; } } </style> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> </head> <body> <main class="page"> <a class="back-link" href="../index.html">← Volver a la página principal</a> <h1>🔎 Explora</h1> <div class="divider"></div> <div class="intro"> <p> Bienvenido a <strong>Explora</strong>, un espacio abierto para descubrir artículos, testimonios, reflexiones, temas de interés y otros contenidos que iremos incorporando para edificar, inspirar y alimentar tu caminar con el Señor. </p> </div> <!-- ARTÍCULOS --> <section> <h2 class="section-title">📖 Artículos</h2> <div class="resource-box"> <a class="resource-link" href="reconciliacion/index.html"> Reconciliación con Dios </a> <span class="resource-desc"> Un punto de partida fundamental para comprender nuestra relación con Dios y el camino hacia una verdadera reconciliación con Él. </span> </div> </section> <!-- TESTIMONIOS --> <section> <h2 class="section-title">💬 Testimonios</h2> <div class="resource-box"> <span class="resource-link"> Próximamente </span> <span class="resource-desc"> Historias y experiencias que pueden inspirar y fortalecer la fe. </span> </div> </section> <!-- REFLEXIONES --> <section> <h2 class="section-title">💡 Reflexiones</h2> <div class="resource-box"> <span class="resource-link"> Próximamente </span> <span class="resource-desc"> Pensamientos y reflexiones sobre temas espirituales y de la vida cotidiana. </span> </div> </section> <!-- TEMAS DE INTERÉS --> <section> <h2 class="section-title">✨ Temas de interés</h2> <div class="resource-box"> <span class="resource-link"> Próximamente </span> <span class="resource-desc"> Diferentes temas para explorar, pensar y conversar. </span> </div> </section> <!-- PROYECTOS --> <section> <h2 class="section-title">🚀 Proyectos</h2> <div class="resource-box"> <span class="resource-link"> Próximamente </span> <span class="resource-desc"> Conoce proyectos y nuevas iniciativas que iremos desarrollando. </span> </div> </section> <!-- OTROS CONTENIDOS --> <section> <h2 class="section-title">📚 Otros contenidos</h2> <div class="resource-box"> <span class="resource-link"> Próximamente </span> <span class="resource-desc"> Otros materiales y contenidos que puedan ser de interés para nuestros visitantes. </span> </div> </section> </main> </body> </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Volveos a mí, dice el Señor</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #fcfcfc;
+            color: #333;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .article-container {
+            width: 100%;
+            max-width: 650px;
+            min-height: 100vh;
+            padding: 18px 18px 14px;
+        }
+
+        /* =========================
+           LPC HEADER
+           ========================= */
+
+        .publication {
+            text-align: center;
+            color: #7b1fa2;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           ARTICLE TITLE
+           ========================= */
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        h1 sup {
+            font-size: 10px;
+            vertical-align: super;
+            color: #555;
+        }
+
+        /* =========================
+           IMAGE
+           ========================= */
+
+        .image-wrapper {
+            text-align: center;
+            margin: 4px 0 12px;
+        }
+
+        .image-wrapper img {
+            display: inline-block;
+            width: auto;
+            max-width: 32%;
+            max-height: 125px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 3px;
+        }
+
+        /* =========================
+           ARTICLE TEXT
+           ========================= */
+
+        .article-text {
+            font-size: 14px;
+            line-height: 1.42;
+            text-align: justify;
+        }
+
+        .article-text p {
+            margin-bottom: 10px;
+        }
+
+        .article-text sup {
+            font-size: 9px;
+            vertical-align: super;
+            line-height: 0;
+        }
+
+        /* =========================
+           SIGN UP BUTTON
+           ========================= */
+
+        .signup-section {
+            text-align: center;
+            margin: 32px auto 24px;
+        }
+
+        .signup-link {
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .signup-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border: 0;
+        }
+
+        /* =========================
+           FOOTNOTES
+           ========================= */
+
+        .footnotes {
+            margin-top: 15px;
+            padding-top: 6px;
+            border-top: 1px solid #888;
+            max-width: 220px;
+            font-size: 9px;
+            line-height: 1.4;
+        }
+
+        .footnotes p {
+            margin: 0;
+            text-align: left;
+        }
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            .article-container {
+                padding: 16px 14px 12px;
+            }
+
+            .publication {
+                font-size: 15px;
+            }
+
+            h1 {
+                font-size: 21px;
+            }
+
+            .image-wrapper img {
+                max-width: 34%;
+                max-height: 115px;
+            }
+
+            .article-text {
+                font-size: 14px;
+                line-height: 1.45;
+            }
+
+            .signup-section {
+                margin: 28px auto 20px;
+            }
+
+            .signup-link {
+                max-width: 100%;
+            }
+        }
+
+        /* =========================
+           PRINT — ONE LETTER PAGE
+           ========================= */
+
+        @media print {
+
+            @page {
+                size: Letter;
+                margin: 0.35in;
+            }
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                background: white;
+            }
+
+            body {
+                display: block;
+            }
+
+            .article-container {
+                width: 100%;
+                max-width: none;
+                height: 100vh;
+                min-height: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .publication {
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+
+            h1 {
+                font-size: 19px;
+                margin-bottom: 5px;
+            }
+
+            .image-wrapper {
+                margin: 2px 0 7px;
+            }
+
+            .image-wrapper img {
+                max-width: 23%;
+                max-height: 85px;
+            }
+
+            .article-text {
+                font-size: 11.5px;
+                line-height: 1.27;
+            }
+
+            .article-text p {
+                margin-bottom: 6px;
+            }
+
+            .signup-section {
+                margin: 12px auto 8px;
+            }
+
+            .signup-link {
+                max-width: 430px;
+            }
+
+            .footnotes {
+                margin-top: 8px;
+                max-width: 180px;
+                font-size: 7.5px;
+                line-height: 1.25;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="article-container">
+
+    <!-- LPC PUBLICATION NAME -->
+
+    <div class="publication">
+        La Palabra en Cápsulas
+    </div>
+
+
+    <!-- ARTICLE TITLE -->
+
+    <h1>
+        “Volveos a mí”, dice el Señor <sup>[1]</sup>
+    </h1>
+
+
+    <!-- IMAGE -->
+
+    <div class="image-wrapper">
+
+        <img
+            src="reconciliacion_image.png"
+            alt="Silueta de una persona orando al atardecer"
+        >
+
+    </div>
+
+
+    <!-- ARTICLE -->
+
+    <main class="article-text">
+
+        <p>
+            Creo que la reconciliación con el Creador es el acto más valiente
+            que el ser humano puede llegar a hacer en toda su vida terrenal.
+            Este debe entender que Dios (Padre, Hijo y Espíritu Santo) lo ama
+            pero apartado del Señor y Salvador, nada significativo podrá hacer.
+            Además, por haber tomado del árbol de la ciencia del bien y
+            del mal, allá en el jardín del Edén<sup>[2]</sup>; peca de continuo
+            y su destino es la muerte segunda.
+        </p>
+
+        <p>
+            Pero al venir a Jesucristo (Dios encarnado)<sup>[3]</sup> y pedirle
+            que entre en su espíritu, todo cambia: no solo recibe la gracia de
+            la vida eterna, sino que accede a todos los beneficios del reino,
+            de los cuales no gozarán Satanás y sus demonios, a quienes les
+            espera el lago de fuego, con todos sus seguidores: los violentos y
+            todos los que hacen injusticia. Y tú, ¿quieres la paz y estar de
+            parte del lado ganador?<sup>[4]</sup>
+        </p>
+
+    </main>
+
+
+    <!-- SIGN UP BUTTON -->
+
+    <div class="signup-section">
+
+        <a
+            href="https://forms.gle/dfmQRiDqYqT8Fwt26"
+            class="signup-link"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img
+                src="sign_up.png"
+                alt="SIGN UP — Recibe acceso a más contenido"
+            >
+        </a>
+
+    </div>
+
+
+    <!-- FOOTNOTES -->
+
+    <footer class="footnotes">
+
+        <p>[1] Zacarías 1:3</p>
+        <p>[2] Génesis 2:16-17</p>
+        <p>[3] 1 Timoteo 3:16</p>
+        <p>[4] 2 Corintios 2:14</p>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
