@@ -17,7 +17,9 @@
 }
 
 *{
-    box-sizing:border-box
+    box-sizing:border-box;
+    margin:0;
+    padding:0
 }
 
 html{
@@ -40,14 +42,14 @@ body{
     width:min(900px,calc(100% - 32px));
     margin:32px auto;
     background:var(--paper);
-    padding:56px 72px;
+    padding:48px 72px 56px;
     box-shadow:0 4px 24px rgba(0,0,0,.08)
 }
 
-/* Contenedor de la Imagen Superior Horizontal */
+/* Imagen Superior Horizontal */
 .banner-container{
     text-align:center;
-    margin:0 auto 28px;
+    margin:0 auto 24px;
     width:100%;
     max-width:650px
 }
@@ -56,7 +58,9 @@ body{
     display:block;
     width:100%;
     height:auto;
-    margin:0 auto
+    margin:0 auto;
+    border:0;
+    outline:none
 }
 
 /* Línea divisoria elegante */
@@ -65,7 +69,7 @@ body{
     width:180px;
     height:2px;
     background-color:var(--accent);
-    margin:20px auto 22px;
+    margin:16px auto 16px;
     opacity:.3
 }
 
@@ -75,17 +79,18 @@ body{
     max-width:720px;
     margin:0 auto 52px;
     font-size:21px;
-    line-height:1.75;
+    line-height:1.65;
     font-weight:600;
     color:var(--text)
 }
 
 .welcome-text p{
     margin:0;
+    padding:0;
     text-align:center
 }
 
-/* Cuadrícula real para organizar tus categorías en 2 columnas */
+/* Cuadrícula de categorías */
 .categories-grid{
     display:flex;
     flex-wrap:wrap;
@@ -119,7 +124,7 @@ body{
     gap:8px
 }
 
-/* Limpieza de listas */
+/* Listas */
 .article-list{
     list-style:none;
     padding:0;
@@ -164,7 +169,7 @@ body{
     }
 
     .page{
-        padding:34px 24px;
+        padding:30px 24px 40px;
         margin:0 auto;
         width:100%
     }
@@ -175,6 +180,7 @@ body{
 
     .welcome-text{
         font-size:20px;
+        line-height:1.65;
         font-weight:600;
     }
 }
@@ -192,14 +198,14 @@ body{
 <main class="page">
 
 ```
-<!-- Bloque de Cabecera Horizontal -->
+<!-- Imagen de portada -->
 <div class="banner-container">
     <img class="capsules-img"
          src="capsules.png"
          alt="La Palabra en Cápsulas — Portada">
 </div>
 
-<!-- Línea de contraste de marca -->
+<!-- Línea de contraste -->
 <div class="brand-divider"></div>
 
 <!-- Texto de bienvenida -->
@@ -213,10 +219,10 @@ body{
     </p>
 </div>
 
-<!-- Cuadrícula de categorías -->
+<!-- Categorías -->
 <div class="categories-grid">
 
-    <!-- Caja 1: Explora -->
+    <!-- Explora -->
     <div class="category-box">
 
         <h2 class="category-title">
@@ -242,7 +248,7 @@ body{
 
     </div>
 
-    <!-- Caja 2: Guías de Crecimiento -->
+    <!-- Guías y Recursos -->
     <div class="category-box">
 
         <h2 class="category-title">
