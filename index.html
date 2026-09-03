@@ -179,9 +179,32 @@ body{
     }
 
     .welcome-text{
-        font-size:20px;
-        line-height:1.65;
+        /*
+         * Más pequeño en teléfono vertical para
+         * mantener proporción con el título de la imagen.
+         * Se adapta según el ancho de pantalla.
+         */
+        font-size:clamp(17px, 4.3vw, 20px);
+        line-height:1.58;
         font-weight:600;
+    }
+}
+
+/* Teléfonos pequeños en posición vertical */
+@media(max-width:420px){
+
+    .welcome-text{
+        font-size:17px;
+        line-height:1.55;
+    }
+}
+
+/* Teléfono horizontal */
+@media(max-width:700px) and (orientation:landscape){
+
+    .welcome-text{
+        font-size:19px;
+        line-height:1.6;
     }
 }
 </style>
@@ -197,8 +220,8 @@ body{
 
 <main class="page">
 
-
 <!-- Imagen de portada -->
+
 <div class="banner-container">
     <img class="capsules-img"
          src="capsules.png"
@@ -206,9 +229,11 @@ body{
 </div>
 
 <!-- Línea de contraste -->
+
 <div class="brand-divider"></div>
 
 <!-- Texto de bienvenida -->
+
 <div class="welcome-text">
     <p>
         Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
@@ -220,62 +245,64 @@ body{
 </div>
 
 <!-- Categorías -->
+
 <div class="categories-grid">
 
-    <!-- Explora -->
-    <div class="category-box">
+```
+<!-- Explora -->
+<div class="category-box">
 
-        <h2 class="category-title">
-            🔎 Explora
-        </h2>
+    <h2 class="category-title">
+        🔎 Explora
+    </h2>
 
-        <ul class="article-list">
+    <ul class="article-list">
 
-            <li class="article-item">
+        <li class="article-item">
 
-                <a class="article-link"
-                   href="1_explore/reconciliacion/index.html">
-                   Reconciliación con Dios
-                </a>
+            <a class="article-link"
+               href="1_explore/reconciliacion/index.html">
+               Reconciliación con Dios
+            </a>
 
-                <span class="article-desc">
-                    El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-                </span>
+            <span class="article-desc">
+                El punto de partida fundamental para restaurar nuestra comunión con el Creador.
+            </span>
 
-            </li>
+        </li>
 
-        </ul>
-
-    </div>
-
-    <!-- Guías y Recursos -->
-    <div class="category-box">
-
-        <h2 class="category-title">
-            🌱 Guías y Recursos
-        </h2>
-
-        <ul class="article-list">
-
-            <li class="article-item">
-
-                <a class="article-link"
-                   href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-                   Guía para Nuevos Creyentes
-                </a>
-
-                <span class="article-desc">
-                    Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-                </span>
-
-            </li>
-
-        </ul>
-
-    </div>
+    </ul>
 
 </div>
 
+<!-- Guías y Recursos -->
+<div class="category-box">
+
+    <h2 class="category-title">
+        🌱 Guías y Recursos
+    </h2>
+
+    <ul class="article-list">
+
+        <li class="article-item">
+
+            <a class="article-link"
+               href="https://forms.gle/dfmQRiDqYqT8Fwt26">
+               Guía para Nuevos Creyentes
+            </a>
+
+            <span class="article-desc">
+                Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
+            </span>
+
+        </li>
+
+    </ul>
+
+</div>
+```
+
+</div>
 
 </main>
 
