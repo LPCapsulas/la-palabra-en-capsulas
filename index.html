@@ -90,6 +90,11 @@ body{
     text-align:center
 }
 
+/* Cascada móvil: oculta normalmente */
+.welcome-mobile{
+    display:none
+}
+
 /* Cuadrícula de categorías */
 .categories-grid{
     display:flex;
@@ -161,8 +166,79 @@ body{
     line-height:1.4
 }
 
-/* Adaptación para teléfonos móviles */
-@media(max-width:700px){
+/* =====================================================
+   TELÉFONO VERTICAL
+   Cascada centrada en ambos lados
+   ===================================================== */
+@media(max-width:700px) and (orientation:portrait){
+
+    body{
+        zoom:100%;
+    }
+
+    .page{
+        padding:30px 24px 40px;
+        margin:0 auto;
+        width:100%
+    }
+
+    .category-box{
+        min-width:100%
+    }
+
+    /* Ocultamos el texto normal */
+    .welcome-desktop{
+        display:none
+    }
+
+    /* Mostramos la cascada */
+    .welcome-mobile{
+        display:block;
+        width:100%;
+        margin:0 auto 52px;
+        text-align:center;
+        font-size:17px;
+        line-height:1.55;
+        font-weight:600;
+    }
+
+    .welcome-mobile .cascade-line{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    /* Primera línea: más ancha */
+    .welcome-mobile .line-1{
+        width:100%;
+    }
+
+    /* Segunda línea */
+    .welcome-mobile .line-2{
+        width:94%;
+    }
+
+    /* Tercera línea */
+    .welcome-mobile .line-3{
+        width:86%;
+    }
+
+    /* Cuarta línea */
+    .welcome-mobile .line-4{
+        width:78%;
+    }
+
+    /* Quinta línea: más estrecha */
+    .welcome-mobile .line-5{
+        width:68%;
+    }
+}
+
+/* =====================================================
+   TELÉFONO HORIZONTAL
+   Conservamos el aspecto normal que ya funciona bien
+   ===================================================== */
+@media(max-width:700px) and (orientation:landscape){
 
     body{
         zoom:100%;
@@ -179,32 +255,17 @@ body{
     }
 
     .welcome-text{
-        /*
-         * Más pequeño en teléfono vertical para
-         * mantener proporción con el título de la imagen.
-         * Se adapta según el ancho de pantalla.
-         */
-        font-size:clamp(17px, 4.3vw, 20px);
-        line-height:1.58;
-        font-weight:600;
-    }
-}
-
-/* Teléfonos pequeños en posición vertical */
-@media(max-width:420px){
-
-    .welcome-text{
-        font-size:17px;
-        line-height:1.55;
-    }
-}
-
-/* Teléfono horizontal */
-@media(max-width:700px) and (orientation:landscape){
-
-    .welcome-text{
         font-size:19px;
         line-height:1.6;
+        font-weight:600;
+    }
+
+    .welcome-desktop{
+        display:block;
+    }
+
+    .welcome-mobile{
+        display:none;
     }
 }
 </style>
@@ -232,75 +293,113 @@ body{
 
 <div class="brand-divider"></div>
 
-<!-- Texto de bienvenida -->
+<!-- =====================================================
+     TEXTO NORMAL
+     Se utiliza en PC y teléfono horizontal
+     ===================================================== -->
 
-<div class="welcome-text">
+<div class="welcome-text welcome-desktop">
     <p>
         Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
         prácticas, profundas y accesibles para un caminar sano <br>
-        con el <strong>Señor</strong>.  Aquí hay anuncios, enseñanzas,<br>
+        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
         oraciones y guías diseñadas para edificar <br>
         tu fe de manera clara y segura.
     </p>
+</div>
+
+<!-- =====================================================
+     CASCADA PARA TELÉFONO VERTICAL
+     Cinco líneas centradas
+     ===================================================== -->
+
+<div class="welcome-mobile">
+
+```
+<span class="cascade-line line-1">
+    Bienvenido a este espacio. Un lugar dedicado a compartir ideas
+</span>
+
+<span class="cascade-line line-2">
+    prácticas, profundas y accesibles para un caminar sano
+</span>
+
+<span class="cascade-line line-3">
+    con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,
+</span>
+
+<span class="cascade-line line-4">
+    oraciones y guías diseñadas para edificar
+</span>
+
+<span class="cascade-line line-5">
+    tu fe de manera clara y segura.
+</span>
+```
+
 </div>
 
 <!-- Categorías -->
 
 <div class="categories-grid">
 
-
 <!-- Explora -->
+
 <div class="category-box">
 
-    <h2 class="category-title">
-        🔎 Explora
-    </h2>
+```
+<h2 class="category-title">
+    🔎 Explora
+</h2>
 
-    <ul class="article-list">
+<ul class="article-list">
 
-        <li class="article-item">
+    <li class="article-item">
 
-            <a class="article-link"
-               href="1_explore/reconciliacion/index.html">
-               Reconciliación con Dios
-            </a>
+        <a class="article-link"
+           href="1_explore/reconciliacion/index.html">
+           Reconciliación con Dios
+        </a>
 
-            <span class="article-desc">
-                El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-            </span>
+        <span class="article-desc">
+            El punto de partida fundamental para restaurar nuestra comunión con el Creador.
+        </span>
 
-        </li>
+    </li>
 
-    </ul>
+</ul>
+```
 
 </div>
 
 <!-- Guías y Recursos -->
+
 <div class="category-box">
 
-    <h2 class="category-title">
-        🌱 Guías y Recursos
-    </h2>
+```
+<h2 class="category-title">
+    🌱 Guías y Recursos
+</h2>
 
-    <ul class="article-list">
+<ul class="article-list">
 
-        <li class="article-item">
+    <li class="article-item">
 
-            <a class="article-link"
-               href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-               Guía para Nuevos Creyentes
-            </a>
+        <a class="article-link"
+           href="https://forms.gle/dfmQRiDqYqT8Fwt26">
+           Guía para Nuevos Creyentes
+        </a>
 
-            <span class="article-desc">
-                Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-            </span>
+        <span class="article-desc">
+            Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
+        </span>
 
-        </li>
+    </li>
 
-    </ul>
+</ul>
+
 
 </div>
-
 
 </div>
 
