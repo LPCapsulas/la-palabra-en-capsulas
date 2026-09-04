@@ -168,7 +168,7 @@ body{
 
 /* =====================================================
    TELÉFONO VERTICAL
-   Cascada centrada en ambos lados
+   Cascada centrada y uniforme
    ===================================================== */
 @media(max-width:700px) and (orientation:portrait){
 
@@ -193,7 +193,9 @@ body{
 
     /* Mostramos la cascada */
     .welcome-mobile{
-        display:block;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         width:100%;
         margin:0 auto 52px;
         text-align:center;
@@ -202,33 +204,35 @@ body{
         font-weight:600;
     }
 
+    /*
+       Cada línea ocupa un ancho diferente.
+       El texto queda centrado dentro de ese ancho.
+       No se permite que el navegador cambie
+       artificialmente la posición de las líneas.
+    */
     .welcome-mobile .cascade-line{
         display:block;
-        margin-left:auto;
-        margin-right:auto;
+        text-align:center;
+        margin:0 auto;
+        width:100%;
     }
 
-    /* Primera línea: más ancha */
     .welcome-mobile .line-1{
         width:100%;
     }
 
-    /* Segunda línea */
     .welcome-mobile .line-2{
         width:94%;
     }
 
-    /* Tercera línea */
     .welcome-mobile .line-3{
         width:86%;
     }
 
-    /* Cuarta línea */
     .welcome-mobile .line-4{
         width:78%;
     }
 
-    /* Quinta línea: más estrecha */
     .welcome-mobile .line-5{
         width:68%;
     }
@@ -315,7 +319,7 @@ body{
 
 <div class="welcome-mobile">
 
-
+```
 <span class="cascade-line line-1">
     Bienvenido a este espacio. Un lugar dedicado a compartir ideas
 </span>
@@ -347,28 +351,28 @@ body{
 
 <div class="category-box">
 
-```
 <h2 class="category-title">
     🔎 Explora
 </h2>
 
 <ul class="article-list">
 
-    <li class="article-item">
+```
+<li class="article-item">
 
-        <a class="article-link"
-           href="1_explore/reconciliacion/index.html">
-           Reconciliación con Dios
-        </a>
+    <a class="article-link"
+       href="1_explore/reconciliacion/index.html">
+       Reconciliación con Dios
+    </a>
 
-        <span class="article-desc">
-            El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-        </span>
+    <span class="article-desc">
+        El punto de partida fundamental para restaurar nuestra comunión con el Creador.
+    </span>
 
-    </li>
+</li>
+```
 
 </ul>
-```
 
 </div>
 
@@ -376,28 +380,28 @@ body{
 
 <div class="category-box">
 
-```
 <h2 class="category-title">
     🌱 Guías y Recursos
 </h2>
 
 <ul class="article-list">
 
-    <li class="article-item">
+```
+<li class="article-item">
 
-        <a class="article-link"
-           href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-           Guía para Nuevos Creyentes
-        </a>
+    <a class="article-link"
+       href="https://forms.gle/dfmQRiDqYqT8Fwt26">
+       Guía para Nuevos Creyentes
+    </a>
 
-        <span class="article-desc">
-            Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-        </span>
+    <span class="article-desc">
+        Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
+    </span>
 
-    </li>
+</li>
+```
 
 </ul>
-
 
 </div>
 
