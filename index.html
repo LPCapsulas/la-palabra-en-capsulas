@@ -166,10 +166,12 @@ body{
     line-height:1.4
 }
 
+
 /* =====================================================
    TELÉFONO VERTICAL
-   Cascada centrada y uniforme
+   CASCADA — CINCO LÍNEAS REALES
    ===================================================== */
+
 @media(max-width:700px) and (orientation:portrait){
 
     body{
@@ -179,69 +181,77 @@ body{
     .page{
         padding:30px 24px 40px;
         margin:0 auto;
-        width:100%
+        width:100%;
     }
 
     .category-box{
-        min-width:100%
+        min-width:100%;
     }
 
     /* Ocultamos el texto normal */
     .welcome-desktop{
-        display:none
+        display:none;
     }
 
-    /* Mostramos la cascada */
+    /*
+       Cascada móvil.
+       Cada span permanece en UNA SOLA LÍNEA.
+    */
     .welcome-mobile{
         display:flex;
         flex-direction:column;
         align-items:center;
+        justify-content:center;
         width:100%;
         margin:0 auto 52px;
-        text-align:center;
         font-size:17px;
         line-height:1.55;
         font-weight:600;
+        text-align:center;
+        overflow:visible;
+    }
+
+    .welcome-mobile .cascade-line{
+        display:block;
+        white-space:nowrap;
+        width:max-content;
+        max-width:none;
+        margin:0 auto;
+        text-align:center;
     }
 
     /*
-       Cada línea ocupa un ancho diferente.
-       El texto queda centrado dentro de ese ancho.
-       No se permite que el navegador cambie
-       artificialmente la posición de las líneas.
+       La escala controla el ancho visual,
+       NO el wrapping del texto.
     */
-    .welcome-mobile .cascade-line{
-        display:block;
-        text-align:center;
-        margin:0 auto;
-        width:100%;
-    }
 
     .welcome-mobile .line-1{
-        width:100%;
+        transform:scaleX(.72);
     }
 
     .welcome-mobile .line-2{
-        width:94%;
+        transform:scaleX(.78);
     }
 
     .welcome-mobile .line-3{
-        width:86%;
+        transform:scaleX(.84);
     }
 
     .welcome-mobile .line-4{
-        width:78%;
+        transform:scaleX(.90);
     }
 
     .welcome-mobile .line-5{
-        width:68%;
+        transform:scaleX(.96);
     }
 }
+
 
 /* =====================================================
    TELÉFONO HORIZONTAL
    Conservamos el aspecto normal que ya funciona bien
    ===================================================== */
+
 @media(max-width:700px) and (orientation:landscape){
 
     body{
@@ -297,6 +307,7 @@ body{
 
 <div class="brand-divider"></div>
 
+
 <!-- =====================================================
      TEXTO NORMAL
      Se utiliza en PC y teléfono horizontal
@@ -312,6 +323,7 @@ body{
     </p>
 </div>
 
+
 <!-- =====================================================
      CASCADA PARA TELÉFONO VERTICAL
      Cinco líneas centradas
@@ -319,33 +331,33 @@ body{
 
 <div class="welcome-mobile">
 
+    <span class="cascade-line line-1">
+        Bienvenido a este espacio. Un lugar dedicado a compartir ideas
+    </span>
 
-<span class="cascade-line line-1">
-    Bienvenido a este espacio. Un lugar dedicado a compartir ideas
-</span>
+    <span class="cascade-line line-2">
+        prácticas, profundas y accesibles para un caminar sano
+    </span>
 
-<span class="cascade-line line-2">
-    prácticas, profundas y accesibles para un caminar sano
-</span>
+    <span class="cascade-line line-3">
+        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,
+    </span>
 
-<span class="cascade-line line-3">
-    con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,
-</span>
+    <span class="cascade-line line-4">
+        oraciones y guías diseñadas para edificar
+    </span>
 
-<span class="cascade-line line-4">
-    oraciones y guías diseñadas para edificar
-</span>
-
-<span class="cascade-line line-5">
-    tu fe de manera clara y segura.
-</span>
-
+    <span class="cascade-line line-5">
+        tu fe de manera clara y segura.
+    </span>
 
 </div>
+
 
 <!-- Categorías -->
 
 <div class="categories-grid">
+
 
 <!-- Explora -->
 
@@ -357,24 +369,23 @@ body{
 
 <ul class="article-list">
 
+    <li class="article-item">
 
-<li class="article-item">
+        <a class="article-link"
+           href="1_explore/reconciliacion/index.html">
+           Reconciliación con Dios
+        </a>
 
-    <a class="article-link"
-       href="1_explore/reconciliacion/index.html">
-       Reconciliación con Dios
-    </a>
+        <span class="article-desc">
+            El punto de partida fundamental para restaurar nuestra comunión con el Creador.
+        </span>
 
-    <span class="article-desc">
-        El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-    </span>
-
-</li>
-
+    </li>
 
 </ul>
 
 </div>
+
 
 <!-- Guías y Recursos -->
 
@@ -386,20 +397,18 @@ body{
 
 <ul class="article-list">
 
+    <li class="article-item">
 
-<li class="article-item">
+        <a class="article-link"
+           href="https://forms.gle/dfmQRiDqYqT8Fwt26">
+           Guía para Nuevos Creyentes
+        </a>
 
-    <a class="article-link"
-       href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-       Guía para Nuevos Creyentes
-    </a>
+        <span class="article-desc">
+            Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
+        </span>
 
-    <span class="article-desc">
-        Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-    </span>
-
-</li>
-
+    </li>
 
 </ul>
 
