@@ -1,175 +1,6 @@
-<!doctype html>
-
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Palabra en Cápsulas — Portada Oficial</title>
-
-<style>
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#fff;
-    --bg:#f2f0ec;
-    --quote:#f7f4ef
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0
-}
-
-html{
-    scroll-behavior:smooth
-}
-
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Playfair Display', Georgia, "Times New Roman", serif;
-    font-size:17px;
-    line-height:1.75;
-
-    /* Zoom general de la página */
-    zoom:90%;
-}
-
-.page{
-    width:min(900px,calc(100% - 32px));
-    margin:32px auto;
-    background:var(--paper);
-    padding:48px 72px 56px;
-    box-shadow:0 4px 24px rgba(0,0,0,.08)
-}
-
-/* Imagen Superior Horizontal */
-.banner-container{
-    text-align:center;
-    margin:0 auto 24px;
-    width:100%;
-    max-width:650px
-}
-
-.capsules-img{
-    display:block;
-    width:100%;
-    height:auto;
-    margin:0 auto;
-    border:0;
-    outline:none
-}
-
-/* Línea divisoria elegante */
-.brand-divider{
-    display:block;
-    width:180px;
-    height:2px;
-    background-color:var(--accent);
-    margin:16px auto 16px;
-    opacity:.3
-}
-
-/* Texto introductorio */
-.welcome-text{
-    text-align:center;
-    max-width:720px;
-    margin:0 auto 52px;
-    font-size:21px;
-    line-height:1.65;
-    font-weight:600;
-    color:var(--text)
-}
-
-.welcome-text p{
-    margin:0;
-    padding:0;
-    text-align:center
-}
-
-/* Cascada móvil: oculta normalmente */
-.welcome-mobile{
-    display:none
-}
-
-/* Cuadrícula de categorías */
-.categories-grid{
-    display:flex;
-    flex-wrap:wrap;
-    gap:28px;
-    margin-bottom:42px;
-    width:100%
-}
-
-.category-box{
-    flex:1;
-    min-width:calc(50% - 14px);
-    border:1px solid #e6e2da;
-    border-radius:12px;
-    padding:28px;
-    background:var(--quote);
-    box-shadow:0 2px 8px rgba(0,0,0,0.02)
-}
-
-.category-title{
-    color:var(--accent);
-    font-family:'Cinzel',Georgia,serif;
-    font-size:18px;
-    font-weight:700;
-    letter-spacing:1px;
-    margin:0 0 16px;
-    text-transform:uppercase;
-    border-bottom:1px solid #ddd;
-    padding-bottom:8px;
-    display:flex;
-    align-items:center;
-    gap:8px
-}
-
-/* Listas */
-.article-list{
-    list-style:none;
-    padding:0;
-    margin:0
-}
-
-.article-item{
-    margin:16px 0;
-    line-height:1.4
-}
-
-.article-link{
-    color:var(--text);
-    text-decoration:none;
-    font-weight:700;
-    font-size:16px;
-    display:inline-block;
-    border-bottom:1px solid transparent;
-    transition:all 0.2s
-}
-
-.article-link:hover{
-    color:var(--accent);
-    border-bottom-color:var(--accent)
-}
-
-.article-desc{
-    display:block;
-    font-size:14px;
-    color:var(--muted);
-    font-style:italic;
-    margin-top:4px;
-    font-weight:normal;
-    line-height:1.4
-}
-
-
 /* =====================================================
    TELÉFONO VERTICAL
-   CASCADA — CINCO LÍNEAS REALES
+   TEXTO JUSTIFICADO — SIN CASCADA
    ===================================================== */
 
 @media(max-width:700px) and (orientation:portrait){
@@ -188,235 +19,36 @@ body{
         min-width:100%;
     }
 
-    /* Ocultamos el texto normal */
-    .welcome-desktop{
+    /* Ocultamos la versión de cascada */
+    .welcome-mobile{
         display:none;
     }
 
-    /*
-       Cascada móvil.
-       Cada span permanece en UNA SOLA LÍNEA.
-    */
-    .welcome-mobile{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
+    /* Mostramos el texto normal */
+    .welcome-desktop{
+        display:block;
         width:100%;
+        max-width:none;
         margin:0 auto 52px;
         font-size:17px;
         line-height:1.55;
         font-weight:600;
-        text-align:center;
-        overflow:visible;
+        text-align:justify;
     }
 
-    .welcome-mobile .cascade-line{
-        display:block;
-        white-space:nowrap;
-        width:max-content;
-        max-width:none;
-        margin:0 auto;
-        text-align:center;
+    .welcome-desktop p{
+        text-align:justify;
+        margin:0;
+        padding:0;
     }
 
     /*
-       La escala controla el ancho visual,
-       NO el wrapping del texto.
+       Quitamos los saltos <br> que fueron puestos
+       específicamente para PC.
+       El teléfono podrá distribuir el texto
+       naturalmente y justificar cada línea.
     */
-
-    .welcome-mobile .line-1{
-        transform:scaleX(.72);
-    }
-
-    .welcome-mobile .line-2{
-        transform:scaleX(.78);
-    }
-
-    .welcome-mobile .line-3{
-        transform:scaleX(.84);
-    }
-
-    .welcome-mobile .line-4{
-        transform:scaleX(.90);
-    }
-
-    .welcome-mobile .line-5{
-        transform:scaleX(.96);
-    }
-}
-
-
-/* =====================================================
-   TELÉFONO HORIZONTAL
-   Conservamos el aspecto normal que ya funciona bien
-   ===================================================== */
-
-@media(max-width:700px) and (orientation:landscape){
-
-    body{
-        zoom:100%;
-    }
-
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%
-    }
-
-    .category-box{
-        min-width:100%
-    }
-
-    .welcome-text{
-        font-size:19px;
-        line-height:1.6;
-        font-weight:600;
-    }
-
-    .welcome-desktop{
-        display:block;
-    }
-
-    .welcome-mobile{
+    .welcome-desktop br{
         display:none;
     }
 }
-</style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<main class="page">
-
-<!-- Imagen de portada -->
-
-<div class="banner-container">
-    <img class="capsules-img"
-         src="capsules.png"
-         alt="La Palabra en Cápsulas — Portada">
-</div>
-
-<!-- Línea de contraste -->
-
-<div class="brand-divider"></div>
-
-
-<!-- =====================================================
-     TEXTO NORMAL
-     Se utiliza en PC y teléfono horizontal
-     ===================================================== -->
-
-<div class="welcome-text welcome-desktop">
-    <p>
-        Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
-        prácticas, profundas y accesibles para un caminar sano <br>
-        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
-        oraciones y guías diseñadas para edificar <br>
-        tu fe de manera clara y segura.
-    </p>
-</div>
-
-
-<!-- =====================================================
-     CASCADA PARA TELÉFONO VERTICAL
-     Cinco líneas centradas
-     ===================================================== -->
-
-<div class="welcome-mobile">
-
-    <span class="cascade-line line-1">
-        Bienvenido a este espacio. Un lugar dedicado a compartir ideas
-    </span>
-
-    <span class="cascade-line line-2">
-        prácticas, profundas y accesibles para un caminar sano
-    </span>
-
-    <span class="cascade-line line-3">
-        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,
-    </span>
-
-    <span class="cascade-line line-4">
-        oraciones y guías diseñadas para edificar
-    </span>
-
-    <span class="cascade-line line-5">
-        tu fe de manera clara y segura.
-    </span>
-
-</div>
-
-
-<!-- Categorías -->
-
-<div class="categories-grid">
-
-
-<!-- Explora -->
-
-<div class="category-box">
-
-<h2 class="category-title">
-    🔎 Explora
-</h2>
-
-<ul class="article-list">
-
-    <li class="article-item">
-
-        <a class="article-link"
-           href="1_explore/reconciliacion/index.html">
-           Reconciliación con Dios
-        </a>
-
-        <span class="article-desc">
-            El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-        </span>
-
-    </li>
-
-</ul>
-
-</div>
-
-
-<!-- Guías y Recursos -->
-
-<div class="category-box">
-
-<h2 class="category-title">
-    🌱 Guías y Recursos
-</h2>
-
-<ul class="article-list">
-
-    <li class="article-item">
-
-        <a class="article-link"
-           href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-           Guía para Nuevos Creyentes
-        </a>
-
-        <span class="article-desc">
-            Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-        </span>
-
-    </li>
-
-</ul>
-
-</div>
-
-</div>
-
-</main>
-
-</body>
-</html>
