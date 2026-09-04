@@ -77,7 +77,7 @@ body{
 .welcome-text{
     text-align:center;
     max-width:720px;
-    margin:0 auto 52px;
+    margin:0 auto 34px;
     font-size:21px;
     line-height:1.65;
     font-weight:600;
@@ -90,80 +90,67 @@ body{
     text-align:center
 }
 
-/* Cascada móvil: oculta normalmente */
-.welcome-mobile{
-    display:none
-}
 
-/* Cuadrícula de categorías */
-.categories-grid{
+/* =====================================================
+   BOTÓN PRINCIPAL — EXPLORA
+   ===================================================== */
+
+.explore-button-container{
     display:flex;
-    flex-wrap:wrap;
-    gap:28px;
-    margin-bottom:42px;
-    width:100%
-}
-
-.category-box{
-    flex:1;
-    min-width:calc(50% - 14px);
-    border:1px solid #e6e2da;
-    border-radius:12px;
-    padding:28px;
-    background:var(--quote);
-    box-shadow:0 2px 8px rgba(0,0,0,0.02)
-}
-
-.category-title{
-    color:var(--accent);
-    font-family:'Cinzel',Georgia,serif;
-    font-size:18px;
-    font-weight:700;
-    letter-spacing:1px;
-    margin:0 0 16px;
-    text-transform:uppercase;
-    border-bottom:1px solid #ddd;
-    padding-bottom:8px;
-    display:flex;
+    justify-content:center;
     align-items:center;
-    gap:8px
+    width:100%;
+    margin:0 auto 48px;
 }
 
-/* Listas */
-.article-list{
-    list-style:none;
-    padding:0;
-    margin:0
-}
+.explore-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 
-.article-item{
-    margin:16px 0;
-    line-height:1.4
-}
+    min-width:190px;
+    padding:13px 30px;
 
-.article-link{
-    color:var(--text);
-    text-decoration:none;
+    background:var(--accent);
+    color:#fff;
+
+    font-family:'Cinzel',Georgia,serif;
+    font-size:17px;
     font-weight:700;
-    font-size:16px;
-    display:inline-block;
-    border-bottom:1px solid transparent;
-    transition:all 0.2s
+    letter-spacing:2px;
+
+    text-decoration:none;
+
+    border:1px solid var(--accent);
+    border-radius:8px;
+
+    box-shadow:
+        0 4px 10px rgba(23,54,93,.20),
+        inset 0 1px 0 rgba(255,255,255,.12);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background-color .2s ease;
 }
 
-.article-link:hover{
-    color:var(--accent);
-    border-bottom-color:var(--accent)
+.explore-icon{
+    font-size:18px;
+    line-height:1;
 }
 
-.article-desc{
-    display:block;
-    font-size:14px;
-    color:var(--muted);
-    font-style:italic;
-    margin-top:4px;
-    font-weight:normal;
-    line-height:1.4
+.explore-button:hover{
+    background:#214b7d;
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(23,54,93,.28),
+        inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+.explore-button:active{
+    transform:translateY(0);
 }
 
 
@@ -184,21 +171,12 @@ body{
         width:100%;
     }
 
-    .category-box{
-        min-width:100%;
-    }
-
-    /* Ocultamos la versión de cascada */
-    .welcome-mobile{
-        display:none;
-    }
-
-    /* Mostramos el texto normal */
+    /* Texto introductorio */
     .welcome-desktop{
         display:block;
         width:100%;
         max-width:none;
-        margin:0 auto 52px;
+        margin:0 auto 28px;
         font-size:16px;
         line-height:1.55;
         font-weight:600;
@@ -219,12 +197,23 @@ body{
     .welcome-desktop br{
         display:none;
     }
+
+    /* Botón Explora */
+    .explore-button-container{
+        margin:0 auto 40px;
+    }
+
+    .explore-button{
+        min-width:175px;
+        padding:12px 26px;
+        font-size:16px;
+        letter-spacing:1.8px;
+    }
 }
 
 
 /* =====================================================
    TELÉFONO HORIZONTAL
-   Conservamos el aspecto normal que ya funciona bien
    ===================================================== */
 
 @media(max-width:700px) and (orientation:landscape){
@@ -239,22 +228,26 @@ body{
         width:100%
     }
 
-    .category-box{
-        min-width:100%
-    }
-
     .welcome-text{
         font-size:19px;
         line-height:1.6;
         font-weight:600;
+        margin-bottom:30px;
     }
 
     .welcome-desktop{
         display:block;
     }
 
-    .welcome-mobile{
-        display:none;
+    /* Botón Explora */
+    .explore-button-container{
+        margin-bottom:40px;
+    }
+
+    .explore-button{
+        min-width:185px;
+        padding:12px 28px;
+        font-size:16px;
     }
 }
 </style>
@@ -270,125 +263,58 @@ body{
 
 <main class="page">
 
-<!-- Imagen de portada -->
+<!-- =====================================================
+     IMAGEN DE PORTADA
+     ===================================================== -->
 
 <div class="banner-container">
-    <img class="capsules-img"
-         src="capsules.png"
-         alt="La Palabra en Cápsulas — Portada">
+
+```
+<img class="capsules-img"
+     src="capsules.png"
+     alt="La Palabra en Cápsulas — Portada">
+```
+
 </div>
 
 <!-- Línea de contraste -->
 
 <div class="brand-divider"></div>
 
-
 <!-- =====================================================
-     TEXTO NORMAL
-     Se utiliza en PC y teléfono horizontal
+     TEXTO INTRODUCTORIO
      ===================================================== -->
 
 <div class="welcome-text welcome-desktop">
-    <p>
-        Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
-        prácticas, profundas y accesibles para un caminar sano <br>
-        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
-        oraciones y guías diseñadas para edificar <br>
-        tu fe de manera clara y segura.
-    </p>
-</div>
 
+```
+<p>
+    Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
+    prácticas, profundas y accesibles para un caminar sano <br>
+    con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
+    oraciones y guías diseñadas para edificar <br>
+    tu fe de manera clara y segura.
+</p>
+```
+
+</div>
 
 <!-- =====================================================
-     CASCADA PARA TELÉFONO VERTICAL
-     Se mantiene en el HTML, pero queda oculta
-     mientras usamos texto justificado.
+     BOTÓN PRINCIPAL — EXPLORA
      ===================================================== -->
 
-<div class="welcome-mobile">
+<div class="explore-button-container">
 
-    <span class="cascade-line line-1">
-        Bienvenido a este espacio. Un lugar dedicado a compartir ideas
-    </span>
+```
+<a class="explore-button"
+   href="1_explore/index.html"
+   aria-label="Explorar La Palabra en Cápsulas">
 
-    <span class="cascade-line line-2">
-        prácticas, profundas y accesibles para un caminar sano
-    </span>
+    <span class="explore-icon">🔎</span>
+    <span>EXPLORA</span>
 
-    <span class="cascade-line line-3">
-        con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,
-    </span>
-
-    <span class="cascade-line line-4">
-        oraciones y guías diseñadas para edificar
-    </span>
-
-    <span class="cascade-line line-5">
-        tu fe de manera clara y segura.
-    </span>
-
-</div>
-
-
-<!-- Categorías -->
-
-<div class="categories-grid">
-
-
-<!-- Explora -->
-
-<div class="category-box">
-
-<h2 class="category-title">
-    🔎 Explora
-</h2>
-
-<ul class="article-list">
-
-    <li class="article-item">
-
-        <a class="article-link"
-           href="1_explore/reconciliacion/index.html">
-           Reconciliación con Dios
-        </a>
-
-        <span class="article-desc">
-            El punto de partida fundamental para restaurar nuestra comunión con el Creador.
-        </span>
-
-    </li>
-
-</ul>
-
-</div>
-
-
-<!-- Guías y Recursos -->
-
-<div class="category-box">
-
-<h2 class="category-title">
-    🌱 Guías y Recursos
-</h2>
-
-<ul class="article-list">
-
-    <li class="article-item">
-
-        <a class="article-link"
-           href="https://forms.gle/dfmQRiDqYqT8Fwt26">
-           Guía para Nuevos Creyentes
-        </a>
-
-        <span class="article-desc">
-            Primeros pasos esenciales y bases firmes para comenzar la vida cristiana.
-        </span>
-
-    </li>
-
-</ul>
-
-</div>
+</a>
+```
 
 </div>
 
