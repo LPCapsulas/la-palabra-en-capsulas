@@ -113,6 +113,52 @@ body{
 }
 
 /* =====================================================
+   BOTÓN PRINCIPAL — EXPLORA
+   ===================================================== */
+
+.explore-button-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin:0 auto 48px;
+}
+
+.explore-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:230px;
+  padding:16px 44px;
+  background:#ffffff;
+  color:var(--accent);
+  font-family:'Cinzel',Georgia,serif;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  text-decoration:none;
+  border:2px solid var(--accent);
+  border-radius:6px;
+  box-shadow:0 4px 14px rgba(23,54,93,.08);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+.explore-button:hover{
+  background:var(--accent);
+  color:#ffffff;
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(23,54,93,.18);
+}
+
+.explore-button:active{
+  transform:translateY(0);
+}
+
+/* =====================================================
    TELÉFONO VERTICAL
    ===================================================== */
 
@@ -136,6 +182,16 @@ body{
     font-size:18px;
     line-height:1.65;
     margin:0 auto 32px;
+  }
+
+  .explore-button-container{
+    margin-bottom:40px;
+  }
+
+  .explore-button{
+    min-width:200px;
+    padding:14px 36px;
+    font-size:17px;
   }
 }
 
@@ -165,6 +221,16 @@ body{
     font-weight:600;
     margin-bottom:30px;
   }
+
+  .explore-button-container{
+    margin-bottom:40px;
+  }
+
+  .explore-button{
+    min-width:210px;
+    padding:14px 38px;
+    font-size:17px;
+  }
 }
 
 </style>
@@ -181,6 +247,7 @@ body{
 
   <!-- =====================================================
        IMAGEN DE PORTADA
+       La nueva imagen NO contiene la palabra EXPLORA
        ===================================================== -->
 
   <div class="banner-container">
@@ -213,6 +280,19 @@ body{
       caminar seguro <br>
       con <strong>Dios</strong> <br>
     </p>
+  </div>
+
+  <!-- =====================================================
+       BOTÓN EXPLORA — SE MANTIENE
+       ===================================================== -->
+
+  <div class="explore-button-container">
+    <a
+      class="explore-button"
+      href="Explora/index.html"
+      aria-label="Explorar La Palabra en Cápsulas">
+      <span>EXPLORA</span>
+    </a>
   </div>
 
 </main>
