@@ -45,7 +45,7 @@
     /* ===================================================== IMAGEN DE PORTADA ===================================================== */
     .banner-container {
       text-align: center;
-      margin: 0 auto 40px;
+      margin: 0 auto 24px;
       width: 100%;
       max-width: 800px;
     }
@@ -57,6 +57,29 @@
       margin: 0 auto;
       border: 0;
       outline: none;
+    }
+    
+    /* ===================================================== TEXTO DINÁMICO EN CASCADA ===================================================== */
+    .welcome-text {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      /* Ajuste perfecto para computadoras y tablets grandes */
+      font-size: 24px; 
+      line-height: 1.8;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .welcome-text p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .welcome-text strong {
+      color: var(--text);
+      font-weight: 700;
     }
     
     /* ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== */
@@ -98,20 +121,24 @@
       transform: translateY(0);
     }
     
-    /* ===================================================== TELÉFONO VERTICAL (OPTIMIZADO) ===================================================== */
+    /* ===================================================== TELÉFONO VERTICAL (MÓVIL) ===================================================== */
     @media(max-width:700px) and (orientation:portrait) {
       body {
         zoom: 100%;
       }
       .page {
-        /* Reducimos el padding lateral al mínimo (8px) para que la imagen crezca al máximo en celulares */
-        padding: 24px 8px 32px; 
+        padding: 32px 24px 40px;
         margin: 0 auto;
         width: 100%;
       }
       .banner-container {
-        margin-bottom: 32px;
-        max-width: 100%; /* Permite expandirse por completo */
+        margin-bottom: 24px;
+      }
+      /* Escalado adaptativo para que las letras no se compriman en celulares */
+      .welcome-text {
+        font-size: 21px; 
+        line-height: 1.65;
+        margin-bottom: 40px;
       }
       .explore-button-container {
         margin-bottom: 24px;
@@ -129,11 +156,16 @@
         zoom: 100%;
       }
       .page {
-        padding: 24px 16px 32px;
+        padding: 30px 24px 40px;
         margin: 0 auto;
         width: 100%;
       }
       .banner-container {
+        margin-bottom: 24px;
+      }
+      .welcome-text {
+        font-size: 22px;
+        line-height: 1.6;
         margin-bottom: 32px;
       }
       .explore-button-container {
@@ -154,9 +186,21 @@
 
   <main class="page">
     
-    <!-- ===================================================== IMAGEN DE PORTADA ===================================================== -->
+    <!-- ===================================================== IMAGEN DE PORTADA RECORTADA ===================================================== -->
     <div class="banner-container">
       <img class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
+    </div>
+
+    <!-- ===================================================== TEXTO EN CASCADA INDEPENDIENTE ===================================================== -->
+    <div class="welcome-text">
+      <p>
+        Bienvenido a este espacio. Un lugar<br>
+        dedicado a compartir ideas<br>
+        prácticas, profundas y<br>
+        accesibles para un<br>
+        caminar seguro<br>
+        con <strong>Dios</strong>
+      </p>
     </div>
 
     <!-- ===================================================== BOTÓN INTERACTIVO EXPLORA ===================================================== -->
