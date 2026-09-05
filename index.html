@@ -32,16 +32,40 @@ body{
   box-shadow:0 4px 24px rgba(0,0,0,.08)
 }
 /* ===================================================== IMAGEN DE PORTADA ===================================================== */
-.banner-container{ text-align:center; margin:0 auto 24px; width:100%; max-width:650px }
+.banner-container{ text-align:center; margin:0 auto 16px; width:100%; max-width:650px }
 .capsules-img{ display:block; width:100%; height:auto; margin:0 auto; border:0; outline:none }
+
+/* ===================================================== TEXTO DE PORTADA EN CÓDIGO (AJUSTADO) ===================================================== */
+.main-title {
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 50px; /* Aumentado solo un poco más para mayor presencia */
+  font-weight: 700;
+  color: var(--accent);
+  margin: 14px auto 4px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.main-subtitle {
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 22px; /* Reducido de tamaño para una jerarquía perfecta */
+  font-weight: 400;
+  color: var(--text);
+  margin: 0 auto 24px;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
 /* ===================================================== LÍNEA DIVISORIA ELEGANTE ===================================================== */
 .brand-divider{ display:block; width:180px; height:2px; background-color:var(--accent); margin:16px auto 16px; opacity:.3 }
-/* ===================================================== TEXTO INTRODUCTORIO ===================================================== */
+
+/* ===================================================== TEXTO INTRODUCTORIO (AGRANDADO) ===================================================== */
 .welcome-text{ 
   text-align:center; 
-  max-width:720px; 
-  margin:0 auto 34px; 
-  font-size:21px; 
+  max-width:760px; 
+  margin:0 auto 38px; 
+  font-size:25px; 
   line-height:1.8; 
   font-weight:600; 
   color:var(--text);
@@ -84,8 +108,10 @@ body{
 @media(max-width:700px) and (orientation:portrait){
   body{ zoom:100%; }
   .page{ padding:30px 20px 40px; margin:0 auto; width:100%; }
+  .main-title { font-size: 36px; } 
+  .main-subtitle { font-size: 18px; }
   .welcome-text{
-    font-size:16px; 
+    font-size:19px; 
     line-height:1.65;
     margin:0 auto 32px;
   }
@@ -100,14 +126,16 @@ body{
 @media(max-width:700px) and (orientation:landscape){
   body{ zoom:100%; }
   .page{ padding:30px 24px 40px; margin:0 auto; width:100% }
-  .welcome-text{ font-size:19px; line-height:1.6; font-weight:600; margin-bottom:30px; }
+  .main-title { font-size: 40px; }
+  .main-subtitle { font-size: 20px; }
+  .welcome-text{ font-size:22px; line-height:1.6; font-weight:600; margin-bottom:30px; }
   .explore-button-container{ margin-bottom:40px; }
   .explore-button{ min-width:210px; padding:14px 38px; font-size:17px; }
 }
 </style>
 <link rel="preconnect" href="https://googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 <main class="page">
@@ -115,6 +143,11 @@ body{
   <div class="banner-container">
     <img class="capsules-img" src="Explora/capsules.png" alt="La Palabra en Cápsulas — Portada">
   </div>
+  
+  <!-- TÍTULOS EN VIVO CON LA NUEVA JERARQUÍA -->
+  <h1 class="main-title">La Palabra en Cápsulas</h1>
+  <p class="main-subtitle">Fe, Poder y Vida</p>
+
   <!-- ===================================================== LÍNEA DE CONTRASTE ===================================================== -->
   <div class="brand-divider"></div>
   <!-- ===================================================== TEXTO INTRODUCTORIO ===================================================== -->
@@ -124,9 +157,9 @@ body{
       dedicado a compartir ideas <br>
       prácticas, profundas y <br>
       accesibles para un <br>
-      caminar seguro <br> 
-      con <strong>Dios</strong> <br> 
-      </p>
+      caminar seguro <br>
+      con <strong>Dios</strong> <br>
+    </p>
   </div>
   <!-- ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== -->
   <div class="explore-button-container">
