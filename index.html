@@ -1,9 +1,11 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Palabra en Cápsulas — Portada Oficial</title>
+
 <style>
 :root{
   --text:#252525;
@@ -13,8 +15,17 @@
   --bg:#f2f0ec;
   --quote:#f7f4ef
 }
-*{ box-sizing:border-box; margin:0; padding:0 }
-html{ scroll-behavior:smooth }
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
 body{
   margin:0;
   background:var(--bg);
@@ -24,6 +35,7 @@ body{
   line-height:1.75;
   zoom:90%;
 }
+
 .page{
   width:min(900px,calc(100% - 32px));
   margin:32px auto;
@@ -31,113 +43,167 @@ body{
   padding:48px 72px 56px;
   box-shadow:0 4px 24px rgba(0,0,0,.08)
 }
-/* ===================================================== IMAGEN DE PORTADA ===================================================== */
-.banner-container{ text-align:center; margin:0 auto 16px; width:100%; max-width:650px }
-.capsules-img{ display:block; width:100%; height:auto; margin:0 auto; border:0; outline:none }
 
-/* ===================================================== SUBTÍTULO EN CÓDIGO ===================================================== */
-.main-subtitle {
-  text-align: center;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 22px; 
-  font-weight: 400;
-  color: var(--text);
-  margin: 16px auto 24px;
-  letter-spacing: 0.5px;
-  line-height: 1.3;
+/* =====================================================
+   IMAGEN DE PORTADA
+   ===================================================== */
+
+.banner-container{
+  text-align:center;
+  margin:0 auto 16px;
+  width:100%;
+  max-width:650px
 }
 
-/* ===================================================== LÍNEA DIVISORIA ELEGANTE ===================================================== */
-.brand-divider{ display:block; width:180px; height:2px; background-color:var(--accent); margin:16px auto 16px; opacity:.3 }
+.capsules-img{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0 auto;
+  border:0;
+  outline:none
+}
 
-/* ===================================================== TEXTO INTRODUCTORIO (PERFECTO A 23PX) ===================================================== */
-.welcome-text{ 
-  text-align:center; 
-  max-width:760px; 
-  margin:0 auto 38px; 
-  font-size:23px; /* Reducido a 23px para dar espacio y balancear el botón */
-  line-height:1.8; 
-  font-weight:600; 
+/* =====================================================
+   SUBTÍTULO
+   ===================================================== */
+
+.main-subtitle{
+  text-align:center;
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:22px;
+  font-weight:400;
+  color:var(--text);
+  margin:16px auto 24px;
+  letter-spacing:0.5px;
+  line-height:1.3;
+}
+
+/* =====================================================
+   LÍNEA DIVISORIA ELEGANTE
+   ===================================================== */
+
+.brand-divider{
+  display:block;
+  width:180px;
+  height:2px;
+  background-color:var(--accent);
+  margin:16px auto 16px;
+  opacity:.3
+}
+
+/* =====================================================
+   TEXTO INTRODUCTORIO
+   ===================================================== */
+
+.welcome-text{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 38px;
+  font-size:23px;
+  line-height:1.8;
+  font-weight:600;
   color:var(--text);
 }
-.welcome-text p{ 
-  margin:0; 
-  padding:0; 
-  text-align:center; 
+
+.welcome-text p{
+  margin:0;
+  padding:0;
+  text-align:center;
 }
-/* ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== */
-.explore-button-container{ display:flex; justify-content:center; align-items:center; width:100%; margin:0 auto 48px; }
-.explore-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:230px; 
-  padding:16px 44px; 
-  background:#ffffff;
-  color:var(--accent); 
-  font-family:'Cinzel',Georgia,serif;
-  font-size:19px; 
-  font-weight:700;
-  letter-spacing:2.5px; 
-  text-decoration:none;
-  border:2px solid var(--accent); 
-  border-radius:6px;
-  box-shadow:0 4px 14px rgba(23,54,93,.08);
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
-}
-.explore-button:hover{
-  background:var(--accent);
-  color:#ffffff;
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(23,54,93,.18);
-}
-.explore-button:active{
-  transform:translateY(0);
-}
-/* ===================================================== TELÉFONO VERTICAL MANTENIENDO CASCADA ===================================================== */
+
+/* =====================================================
+   TELÉFONO VERTICAL
+   ===================================================== */
+
 @media(max-width:700px) and (orientation:portrait){
-  body{ zoom:100%; }
-  .page{ padding:30px 20px 40px; margin:0 auto; width:100%; }
-  .main-subtitle { font-size: 18px; }
+
+  body{
+    zoom:100%;
+  }
+
+  .page{
+    padding:30px 20px 40px;
+    margin:0 auto;
+    width:100%;
+  }
+
+  .main-subtitle{
+    font-size:18px;
+  }
+
   .welcome-text{
-    font-size:18px; /* Ajuste proporcional cómodo para pantallas móviles */
+    font-size:18px;
     line-height:1.65;
     margin:0 auto 32px;
   }
-  .explore-button-container{ margin-bottom:40px; }
-  .explore-button{ 
-    min-width:200px; 
-    padding:14px 36px; 
-    font-size:17px; 
+}
+
+/* =====================================================
+   TELÉFONO HORIZONTAL
+   ===================================================== */
+
+@media(max-width:700px) and (orientation:landscape){
+
+  body{
+    zoom:100%;
+  }
+
+  .page{
+    padding:30px 24px 40px;
+    margin:0 auto;
+    width:100%
+  }
+
+  .main-subtitle{
+    font-size:20px;
+  }
+
+  .welcome-text{
+    font-size:21px;
+    line-height:1.6;
+    font-weight:600;
+    margin-bottom:30px;
   }
 }
-/* ===================================================== TELÉFONO HORIZONTAL ===================================================== */
-@media(max-width:700px) and (orientation:landscape){
-  body{ zoom:100%; }
-  .page{ padding:30px 24px 40px; margin:0 auto; width:100% }
-  .main-subtitle { font-size: 20px; }
-  .welcome-text{ font-size:21px; line-height:1.6; font-weight:600; margin-bottom:30px; }
-  .explore-button-container{ margin-bottom:40px; }
-  .explore-button{ min-width:210px; padding:14px 38px; font-size:17px; }
-}
+
 </style>
+
 <link rel="preconnect" href="https://googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
 <link href="https://googleapis.com" rel="stylesheet">
+
 </head>
+
 <body>
+
 <main class="page">
-  <!-- ===================================================== IMAGEN DE PORTADA ===================================================== -->
+
+  <!-- =====================================================
+       IMAGEN DE PORTADA
+       ===================================================== -->
+
   <div class="banner-container">
-    <img class="capsules-img" src="Explora/capsules.png" alt="La Palabra en Cápsulas — Portada">
+    <img
+      class="capsules-img"
+      src="portada.png"
+      alt="La Palabra en Cápsulas — Portada">
   </div>
-  
-  <!-- SUBTÍTULO EN CÓDIGO SEPARADO -->
+
+  <!-- SUBTÍTULO -->
+
   <p class="main-subtitle">Fe, Poder y Vida</p>
 
-  <!-- ===================================================== LÍNEA DE CONTRASTE ===================================================== -->
+  <!-- =====================================================
+       LÍNEA DIVISORIA
+       ===================================================== -->
+
   <div class="brand-divider"></div>
-  <!-- ===================================================== TEXTO INTRODUCTORIO ===================================================== -->
+
+  <!-- =====================================================
+       TEXTO INTRODUCTORIO
+       ===================================================== -->
+
   <div class="welcome-text">
     <p>
       Bienvenido a este espacio. Un lugar<br>
@@ -148,12 +214,9 @@ body{
       con <strong>Dios</strong> <br>
     </p>
   </div>
-  <!-- ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== -->
-  <div class="explore-button-container">
-    <a class="explore-button" href="Explora/index.html" aria-label="Explorar La Palabra en Cápsulas">
-      <span>EXPLORA</span>
-    </a>
-  </div>
+
 </main>
+
 </body>
 </html>
+```
