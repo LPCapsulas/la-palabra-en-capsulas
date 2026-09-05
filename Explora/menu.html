@@ -1,465 +1,210 @@
-```html
 <!doctype html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Explora — La Palabra en Cápsulas</title>
-
-<style>
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#fff;
-    --bg:#f2f0ec;
-    --quote:#f7f4ef;
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Playfair Display', Georgia, "Times New Roman", serif;
-    font-size:17px;
-    line-height:1.75;
-    zoom:90%;
-}
-
-.page{
-    width:min(900px,calc(100% - 32px));
-    margin:32px auto;
-    background:var(--paper);
-    padding:48px 72px 56px;
-    box-shadow:0 4px 24px rgba(0,0,0,.08);
-}
-
-
-/* =====================================================
-   ENCABEZADO
-   ===================================================== */
-
-.header{
-    text-align:center;
-    margin-bottom:38px;
-}
-
-.header h1{
-    font-family:'Cinzel',Georgia,serif;
-    font-size:34px;
-    line-height:1.25;
-    letter-spacing:2px;
-    color:var(--accent);
-    margin-bottom:18px;
-}
-
-
-/* =====================================================
-   IMAGEN CAPSULES
-   ===================================================== */
-
-.explore-logo{
-    display:block;
-    width:150px;
-    max-width:55%;
-    height:auto;
-    margin:0 auto 20px;
-}
-
-.header p{
-    max-width:680px;
-    margin:0 auto;
-    font-size:19px;
-    line-height:1.6;
-    font-weight:600;
-}
-
-
-/* =====================================================
-   LÍNEA DIVISORIA
-   ===================================================== */
-
-.brand-divider{
-    display:block;
-    width:180px;
-    height:2px;
-    background-color:var(--accent);
-    margin:20px auto 38px;
-    opacity:.3;
-}
-
-
-/* =====================================================
-   SECCIONES
-   ===================================================== */
-
-.explore-section{
-    margin:0 auto 30px;
-    text-align:center;
-}
-
-.explore-section h2{
-    font-family:'Cinzel',Georgia,serif;
-    font-size:24px;
-    line-height:1.35;
-    color:var(--accent);
-    margin-bottom:10px;
-}
-
-.explore-section p{
-    max-width:650px;
-    margin:0 auto 20px;
-    font-size:17px;
-    line-height:1.65;
-}
-
-
-/* =====================================================
-   BOTONES
-   ===================================================== */
-
-.explore-link{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-
-    min-width:220px;
-    padding:12px 26px;
-
-    background:linear-gradient(
-        135deg,
-        #285B91 0%,
-        #4A82B8 55%,
-        #6B9FCC 100%
-    );
-
-    color:#fff;
-
-    font-family:'Cinzel',Georgia,serif;
-    font-size:16px;
-    font-weight:700;
-    letter-spacing:1.5px;
-
-    text-decoration:none;
-
-    border:1px solid #285B91;
-    border-radius:8px;
-
-    box-shadow:
-        0 4px 10px rgba(23,54,93,.22),
-        inset 0 1px 0 rgba(255,255,255,.18);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-}
-
-.explore-link:hover{
-    background:linear-gradient(
-        135deg,
-        #4A82B8 0%,
-        #6B9FCC 55%,
-        #82B0D8 100%
-    );
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 6px 14px rgba(23,54,93,.30),
-        inset 0 1px 0 rgba(255,255,255,.20);
-}
-
-.explore-link:active{
-    transform:translateY(0);
-}
-
-
-/* =====================================================
-   BLOQUES
-   ===================================================== */
-
-.explore-card{
-    background:var(--quote);
-    border-radius:10px;
-    padding:26px 24px 28px;
-    margin:0 auto 28px;
-    max-width:720px;
-    box-shadow:0 2px 10px rgba(0,0,0,.05);
-}
-
-.explore-card h2{
-    margin-bottom:10px;
-}
-
-.explore-card p{
-    margin-bottom:20px;
-}
-
-
-/* =====================================================
-   VOLVER A INICIO
-   ===================================================== */
-
-.back-home{
-    text-align:center;
-    margin-top:44px;
-}
-
-.back-home a{
-    color:var(--accent);
-    font-family:'Cinzel',Georgia,serif;
-    font-size:15px;
-    font-weight:700;
-    letter-spacing:1px;
-    text-decoration:none;
-}
-
-.back-home a:hover{
-    text-decoration:underline;
-}
-
-
-/* =====================================================
-   TELÉFONO VERTICAL
-   ===================================================== */
-
-@media(max-width:700px) and (orientation:portrait){
-
-    body{
-        zoom:100%;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú Oficial — La Palabra en Cápsulas</title>
+  <style>
+    :root {
+      --text: #252525;
+      --muted: #666;
+      --accent: #17365D;
+      /* Tono azul claro moderno para el fondo de los botones */
+      --light-blue: #4A82B8; 
+      --light-blue-hover: #356799;
+      --paper: #fff;
+      --bg: #f2f0ec;
+      --quote: #f7f4ef;
     }
-
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%;
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-
-    .header{
-        margin-bottom:30px;
+    
+    html {
+      scroll-behavior: smooth;
     }
-
-    .header h1{
-        font-size:27px;
-        letter-spacing:1.5px;
+    
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.75;
+      zoom: 90%;
     }
-
-    .explore-logo{
-        width:120px;
-        max-width:45%;
-        margin-bottom:18px;
+    
+    .page {
+      width: min(750px, calc(100% - 32px)); /* Ancho controlado ideal para paneles tipo lista */
+      margin: 48px auto;
+      background: var(--paper);
+      padding: 56px 64px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      border-radius: 12px;
     }
-
-    .header p{
-        font-size:16px;
-        line-height:1.55;
-        text-align:justify;
+    
+    /* ===================================================== NUEVO ENCABEZADO OPTIMIZADO ===================================================== */
+    .menu-header {
+      text-align: center;
+      margin-bottom: 44px;
     }
-
-    .brand-divider{
-        margin:16px auto 30px;
+    
+    .menu-header h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 30px;
+      line-height: 1.3;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 600;
     }
-
-    .explore-section h2{
-        font-size:21px;
+    
+    /* ===================================================== CONTENEDOR TIPO GITHUB SETTINGS ===================================================== */
+    .menu-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px; /* Separación vertical constante entre bloques */
+      max-width: 550px;
+      margin: 0 auto 40px;
     }
-
-    .explore-section p{
-        font-size:16px;
-        line-height:1.55;
-        text-align:justify;
+    
+    /* ===================================================== DISEÑO DE BOTONES (AZUL CLARO / TEXTO BLANCO) ===================================================== */
+    .menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 18px 24px;
+      background-color: var(--light-blue);
+      color: #ffffff;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 1px solid rgba(23, 54, 93, 0.15);
+      border-radius: 8px; /* Bordes sutilmente redondeados */
+      box-shadow: 0 2px 8px rgba(74, 130, 184, 0.15);
+      transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
-
-    .explore-link{
-        min-width:190px;
-        padding:12px 22px;
-        font-size:15px;
+    
+    .menu-button:hover {
+      background-color: var(--light-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(23, 54, 93, 0.25);
     }
-
-    .explore-card{
-        padding:22px 18px 24px;
+    
+    .menu-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(23, 54, 93, 0.15);
     }
-}
-
-
-/* =====================================================
-   TELÉFONO HORIZONTAL
-   ===================================================== */
-
-@media(max-width:700px) and (orientation:landscape){
-
-    body{
-        zoom:100%;
+    
+    /* ===================================================== VOLVER A INICIO ===================================================== */
+    .back-home {
+      text-align: center;
+      border-top: 1px solid #eaeaea;
+      padding-top: 28px;
     }
-
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%;
+    
+    .back-home a {
+      color: var(--muted);
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      transition: color .2s ease;
     }
-
-    .header h1{
-        font-size:29px;
+    
+    .back-home a:hover {
+      color: var(--accent);
+      text-decoration: none;
     }
-
-    .explore-logo{
-        width:130px;
+    
+    /* ===================================================== ADAPTACIÓN PARA MÓVILES ===================================================== */
+    @media(max-width:700px) {
+      body {
+        zoom: 100%;
+      }
+      .page {
+        padding: 40px 20px;
+        margin: 16px auto;
+        width: calc(100% - 24px);
+      }
+      .menu-header {
+        margin-bottom: 32px;
+      }
+      .menu-header h1 {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+      }
+      .menu-list-container {
+        gap: 12px;
+      }
+      .menu-button {
+        padding: 16px 20px;
+        font-size: 15px;
+        letter-spacing: 1.5px;
+      }
     }
-
-    .header p{
-        font-size:17px;
-    }
-
-    .explore-section h2{
-        font-size:22px;
-    }
-}
-</style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-rel="stylesheet">
-
+  </style>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
 
-<main class="page">
+  <main class="page">
+    
+    <!-- ===================================================== ENCABEZADO ELEGANTE ===================================================== -->
+    <header class="menu-header">
+      <h1>Edifica tu Caminar</h1>
+    </header>
 
+    <!-- ===================================================== LISTA DE SECCIONES (ORDEN DEFINIDO) ===================================================== -->
+    <!-- Estructura vertical limpia con botones unificados -->
+    <div class="menu-list-container">
+      
+      <!-- 1. Testimonios -->
+      <a class="menu-button" href="testimonios/index.html">
+        Testimonios
+      </a>
+      
+      <!-- 2. Enseñanzas -->
+      <a class="menu-button" href="ensenanzas/index.html">
+        Enseñanzas
+      </a>
+      
+      <!-- 3. Oración -->
+      <a class="menu-button" href="oracion/index.html">
+        Oración
+      </a>
+      
+      <!-- 4. Guías -->
+      <a class="menu-button" href="guias/gnc/index.html">
+        Guías
+      </a>
+      
+      <!-- 5. Proyectos -->
+      <a class="menu-button" href="proyectos/index.html">
+        Proyectos
+      </a>
+      
+      <!-- 6. Donar -->
+      <a class="menu-button" href="donar/index.html">
+        Donar
+      </a>
+      
+    </div>
 
-<!-- =====================================================
-     ENCABEZADO DE EXPLORA
-     ===================================================== -->
+    <!-- ===================================================== VOLVER A LA PORTADA PRINCIPAL ===================================================== -->
+    <div class="back-home">
+      <a href="../index.html">← Volver a Inicio</a>
+    </div>
 
-<header class="header">
-
-<h1>Explora</h1>
-
-<img
-    class="explore-logo"
-    src="capsules.png"
-    alt="La Palabra en Cápsulas"
->
-
-<p>
-    Encuentra aquí enseñanzas, recursos y contenidos
-    preparados para ayudarte a crecer y fortalecer tu caminar
-    con el <strong>Señor</strong>.
-</p>
-
-</header>
-
-
-<!-- Línea divisoria -->
-
-<div class="brand-divider"></div>
-
-
-<!-- =====================================================
-     RECONCILIACIÓN CON DIOS
-     ===================================================== -->
-
-<section class="explore-card explore-section">
-
-<h2>🔎 Reconciliación con Dios</h2>
-
-<p>
-    Una enseñanza para reflexionar sobre nuestra relación
-    con Dios y el camino de reconciliación que Él ofrece.
-</p>
-
-<a
-class="explore-link"
-href="reconciliacion/index.html">
-
-Explorar enseñanza
-
-</a>
-
-</section>
-
-
-<!-- =====================================================
-     GUÍAS Y RECURSOS
-     ===================================================== -->
-
-<section class="explore-card explore-section">
-
-<h2>🌱 Guías y Recursos</h2>
-
-<p>
-    Materiales prácticos diseñados para acompañarte
-    en diferentes etapas de tu caminar de fe.
-</p>
-
-<a
-class="explore-link"
-href="guias/gnc/index.html">
-
-Guía para Nuevos Creyentes
-
-</a>
-
-</section>
-
-
-<!-- =====================================================
-     ENSEÑANZAS
-     ===================================================== -->
-
-<section class="explore-card explore-section">
-
-<h2>📖 Enseñanzas</h2>
-
-<p>
-    Reflexiones y enseñanzas para profundizar en la
-    Palabra y aplicarla de manera clara y práctica.
-</p>
-
-<a
-class="explore-link"
-href="ensenanzas/index.html">
-
-Ver enseñanzas
-
-</a>
-
-</section>
-
-
-<!-- =====================================================
-     VOLVER A LA PORTADA
-     ===================================================== -->
-
-<div class="back-home">
-
-<a href="../index.html">
-    ← Volver a Inicio
-</a>
-
-</div>
-
-
-</main>
+  </main>
 
 </body>
 </html>
-```
