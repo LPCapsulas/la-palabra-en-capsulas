@@ -37,62 +37,82 @@ body{
 /* ===================================================== LÍNEA DIVISORIA ELEGANTE ===================================================== */
 .brand-divider{ display:block; width:180px; height:2px; background-color:var(--accent); margin:16px auto 16px; opacity:.3 }
 /* ===================================================== TEXTO INTRODUCTORIO ===================================================== */
-.welcome-text{ text-align:center; max-width:720px; margin:0 auto 34px; font-size:21px; line-height:1.65; font-weight:600; color:var(--text) }
-.welcome-text p{ margin:0; padding:0; text-align:center }
+.welcome-text{ 
+  text-align:center; 
+  max-width:720px; 
+  margin:0 auto 34px; 
+  font-size:21px; 
+  line-height:1.75; 
+  font-weight:600; 
+  color:var(--text) 
+}
+.welcome-text p{ 
+  margin:0; 
+  padding:0; 
+  text-align:center; 
+  white-space: normal; /* Preserves the line breaks gracefully */
+}
 /* ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== */
 .explore-button-container{ display:flex; justify-content:center; align-items:center; width:100%; margin:0 auto 48px; }
 .explore-button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:190px;
-  padding:14px 32px;
-  /* Pure White Style Updates */
+  min-width:230px; /* Made bigger */
+  padding:16px 44px; /* Made bigger */
   background:#ffffff;
-  color:var(--accent); /* Dark Blue text color */
+  color:var(--accent); 
   font-family:'Cinzel',Georgia,serif;
-  font-size:16px;
+  font-size:19px; /* Made bigger */
   font-weight:700;
-  letter-spacing:2px;
+  letter-spacing:2.5px; /* Slightly wider spacing for prominence */
   text-decoration:none;
-  border:2px solid var(--accent); /* Elegant dark blue border outline */
+  border:2px solid var(--accent); 
   border-radius:6px;
-  box-shadow:0 4px 12px rgba(23,54,93,.06);
+  box-shadow:0 4px 14px rgba(23,54,93,.08);
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
 }
 .explore-button:hover{
-  /* Smooth transition to navy on hover */
   background:var(--accent);
   color:#ffffff;
   transform:translateY(-2px);
-  box-shadow:0 6px 16px rgba(23,54,93,.15);
+  box-shadow:0 6px 18px rgba(23,54,93,.18);
 }
 .explore-button:active{
   transform:translateY(0);
 }
-/* ===================================================== TELÉFONO VERTICAL TEXTO JUSTIFICADO ===================================================== */
+/* ===================================================== TELÉFONO VERTICAL MANTENIENDO CASCADA ===================================================== */
 @media(max-width:700px) and (orientation:portrait){
   body{ zoom:100%; }
-  .page{ padding:30px 24px 40px; margin:0 auto; width:100%; }
-  .welcome-desktop{ display:block; width:100%; max-width:none; margin:0 auto 28px; font-size:16px; line-height:1.55; font-weight:600; text-align:justify; }
-  .welcome-desktop p{ margin:0; padding:0; text-align:justify; }
-  .welcome-desktop br{ display:none; }
+  .page{ padding:30px 20px 40px; margin:0 auto; width:100%; }
+  .welcome-text{
+    font-size:16px; 
+    line-height:1.6;
+    margin:0 auto 32px;
+  }
+  /* Keeps the exact cascade/line-breaks on vertical phone screens */
+  .welcome-text p br {
+    display: inline; 
+  }
   .explore-button-container{ margin:0 auto 40px; }
-  .explore-button{ min-width:175px; padding:12px 26px; font-size:15px; letter-spacing:1.8px; }
+  .explore-button{ 
+    min-width:200px; 
+    padding:14px 36px; 
+    font-size:17px; 
+  }
 }
 /* ===================================================== TELÉFONO HORIZONTAL ===================================================== */
 @media(max-width:700px) and (orientation:landscape){
   body{ zoom:100%; }
   .page{ padding:30px 24px 40px; margin:0 auto; width:100% }
   .welcome-text{ font-size:19px; line-height:1.6; font-weight:600; margin-bottom:30px; }
-  .welcome-desktop{ display:block; }
   .explore-button-container{ margin-bottom:40px; }
-  .explore-button{ min-width:185px; padding:12px 28px; font-size:15px; }
+  .explore-button{ min-width:210px; padding:14px 38px; font-size:17px; }
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 <main class="page">
@@ -103,7 +123,7 @@ body{
   <!-- ===================================================== LÍNEA DE CONTRASTE ===================================================== -->
   <div class="brand-divider"></div>
   <!-- ===================================================== TEXTO INTRODUCTORIO ===================================================== -->
-  <div class="welcome-text welcome-desktop">
+  <div class="welcome-text">
     <p>
       Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
       prácticas, profundas y accesibles para un caminar sano <br>
