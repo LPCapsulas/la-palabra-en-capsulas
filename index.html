@@ -1,344 +1,123 @@
 <!doctype html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Palabra en Cápsulas — Portada Oficial</title>
-
 <style>
 :root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#fff;
-    --bg:#f2f0ec;
-    --quote:#f7f4ef
+  --text:#252525;
+  --muted:#666;
+  --accent:#17365D;
+  --paper:#fff;
+  --bg:#f2f0ec;
+  --quote:#f7f4ef
 }
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0
-}
-
-html{
-    scroll-behavior:smooth
-}
-
+*{ box-sizing:border-box; margin:0; padding:0 }
+html{ scroll-behavior:smooth }
 body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Playfair Display', Georgia, "Times New Roman", serif;
-    font-size:17px;
-    line-height:1.75;
-    zoom:90%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Playfair Display', Georgia, "Times New Roman", serif;
+  font-size:17px;
+  line-height:1.75;
+  zoom:90%;
 }
-
 .page{
-    width:min(900px,calc(100% - 32px));
-    margin:32px auto;
-    background:var(--paper);
-    padding:48px 72px 56px;
-    box-shadow:0 4px 24px rgba(0,0,0,.08)
+  width:min(900px,calc(100% - 32px));
+  margin:32px auto;
+  background:var(--paper);
+  padding:48px 72px 56px;
+  box-shadow:0 4px 24px rgba(0,0,0,.08)
 }
-
-
-/* =====================================================
-   IMAGEN DE PORTADA
-   ===================================================== */
-
-.banner-container{
-    text-align:center;
-    margin:0 auto 24px;
-    width:100%;
-    max-width:650px
-}
-
-.capsules-img{
-    display:block;
-    width:100%;
-    height:auto;
-    margin:0 auto;
-    border:0;
-    outline:none
-}
-
-
-/* =====================================================
-   LÍNEA DIVISORIA ELEGANTE
-   ===================================================== */
-
-.brand-divider{
-    display:block;
-    width:180px;
-    height:2px;
-    background-color:var(--accent);
-    margin:16px auto 16px;
-    opacity:.3
-}
-
-
-/* =====================================================
-   TEXTO INTRODUCTORIO
-   ===================================================== */
-
-.welcome-text{
-    text-align:center;
-    max-width:720px;
-    margin:0 auto 34px;
-    font-size:21px;
-    line-height:1.65;
-    font-weight:600;
-    color:var(--text)
-}
-
-.welcome-text p{
-    margin:0;
-    padding:0;
-    text-align:center
-}
-
-
-/* =====================================================
-   BOTÓN PRINCIPAL — EXPLORA
-   ===================================================== */
-
-.explore-button-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    margin:0 auto 48px;
-}
-
+/* ===================================================== IMAGEN DE PORTADA ===================================================== */
+.banner-container{ text-align:center; margin:0 auto 24px; width:100%; max-width:650px }
+.capsules-img{ display:block; width:100%; height:auto; margin:0 auto; border:0; outline:none }
+/* ===================================================== LÍNEA DIVISORIA ELEGANTE ===================================================== */
+.brand-divider{ display:block; width:180px; height:2px; background-color:var(--accent); margin:16px auto 16px; opacity:.3 }
+/* ===================================================== TEXTO INTRODUCTORIO ===================================================== */
+.welcome-text{ text-align:center; max-width:720px; margin:0 auto 34px; font-size:21px; line-height:1.65; font-weight:600; color:var(--text) }
+.welcome-text p{ margin:0; padding:0; text-align:center }
+/* ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== */
+.explore-button-container{ display:flex; justify-content:center; align-items:center; width:100%; margin:0 auto 48px; }
 .explore-button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-
-    min-width:190px;
-    padding:13px 30px;
-
-    background:linear-gradient(
-        135deg,
-        #285B91 0%,
-        #4A82B8 55%,
-        #6B9FCC 100%
-    );
-
-    color:#fff;
-
-    font-family:'Cinzel',Georgia,serif;
-    font-size:17px;
-    font-weight:700;
-    letter-spacing:2px;
-
-    text-decoration:none;
-
-    border:1px solid #285B91;
-    border-radius:8px;
-
-    box-shadow:
-        0 4px 10px rgba(23,54,93,.22),
-        inset 0 1px 0 rgba(255,255,255,.18);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:190px;
+  padding:14px 32px;
+  /* Pure White Style Updates */
+  background:#ffffff;
+  color:var(--accent); /* Dark Blue text color */
+  font-family:'Cinzel',Georgia,serif;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-decoration:none;
+  border:2px solid var(--accent); /* Elegant dark blue border outline */
+  border-radius:6px;
+  box-shadow:0 4px 12px rgba(23,54,93,.06);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
 }
-
-.explore-icon{
-    font-size:18px;
-    line-height:1;
-}
-
 .explore-button:hover{
-    background:linear-gradient(
-        135deg,
-        #4A82B8 0%,
-        #6B9FCC 55%,
-        #82B0D8 100%
-    );
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 6px 14px rgba(23,54,93,.30),
-        inset 0 1px 0 rgba(255,255,255,.20);
+  /* Smooth transition to navy on hover */
+  background:var(--accent);
+  color:#ffffff;
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(23,54,93,.15);
 }
-
 .explore-button:active{
-    transform:translateY(0);
+  transform:translateY(0);
 }
-
-
-/* =====================================================
-   TELÉFONO VERTICAL
-   TEXTO JUSTIFICADO
-   ===================================================== */
-
+/* ===================================================== TELÉFONO VERTICAL TEXTO JUSTIFICADO ===================================================== */
 @media(max-width:700px) and (orientation:portrait){
-
-    body{
-        zoom:100%;
-    }
-
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%;
-    }
-
-    .welcome-desktop{
-        display:block;
-        width:100%;
-        max-width:none;
-        margin:0 auto 28px;
-        font-size:16px;
-        line-height:1.55;
-        font-weight:600;
-        text-align:justify;
-    }
-
-    .welcome-desktop p{
-        margin:0;
-        padding:0;
-        text-align:justify;
-    }
-
-    .welcome-desktop br{
-        display:none;
-    }
-
-    .explore-button-container{
-        margin:0 auto 40px;
-    }
-
-    .explore-button{
-        min-width:175px;
-        padding:12px 26px;
-        font-size:16px;
-        letter-spacing:1.8px;
-    }
+  body{ zoom:100%; }
+  .page{ padding:30px 24px 40px; margin:0 auto; width:100%; }
+  .welcome-desktop{ display:block; width:100%; max-width:none; margin:0 auto 28px; font-size:16px; line-height:1.55; font-weight:600; text-align:justify; }
+  .welcome-desktop p{ margin:0; padding:0; text-align:justify; }
+  .welcome-desktop br{ display:none; }
+  .explore-button-container{ margin:0 auto 40px; }
+  .explore-button{ min-width:175px; padding:12px 26px; font-size:15px; letter-spacing:1.8px; }
 }
-
-
-/* =====================================================
-   TELÉFONO HORIZONTAL
-   ===================================================== */
-
+/* ===================================================== TELÉFONO HORIZONTAL ===================================================== */
 @media(max-width:700px) and (orientation:landscape){
-
-    body{
-        zoom:100%;
-    }
-
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%
-    }
-
-    .welcome-text{
-        font-size:19px;
-        line-height:1.6;
-        font-weight:600;
-        margin-bottom:30px;
-    }
-
-    .welcome-desktop{
-        display:block;
-    }
-
-    .explore-button-container{
-        margin-bottom:40px;
-    }
-
-    .explore-button{
-        min-width:185px;
-        padding:12px 28px;
-        font-size:16px;
-    }
+  body{ zoom:100%; }
+  .page{ padding:30px 24px 40px; margin:0 auto; width:100% }
+  .welcome-text{ font-size:19px; line-height:1.6; font-weight:600; margin-bottom:30px; }
+  .welcome-desktop{ display:block; }
+  .explore-button-container{ margin-bottom:40px; }
+  .explore-button{ min-width:185px; padding:12px 28px; font-size:15px; }
 }
 </style>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
 <main class="page">
-
-
-<!-- =====================================================
-     IMAGEN DE PORTADA
-     ===================================================== -->
-
-<div class="banner-container">
-
-<img
-    class="capsules-img"
-    src="Explora/capsules.png"
-    alt="La Palabra en Cápsulas — Portada">
-
-</div>
-
-
-<!-- =====================================================
-     LÍNEA DE CONTRASTE
-     ===================================================== -->
-
-<div class="brand-divider"></div>
-
-
-<!-- =====================================================
-     TEXTO INTRODUCTORIO
-     ===================================================== -->
-
-<div class="welcome-text welcome-desktop">
-
-<p>
-    Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
-    prácticas, profundas y accesibles para un caminar sano <br>
-    con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
-    oraciones y guías diseñadas para edificar <br>
-    tu fe de manera clara y segura.
-</p>
-
-</div>
-
-
-<!-- =====================================================
-     BOTÓN PRINCIPAL — EXPLORA
-     ===================================================== -->
-
-<div class="explore-button-container">
-
-<a
-    class="explore-button"
-    href="Explora/index.html"
-    aria-label="Explorar La Palabra en Cápsulas">
-
-<span class="explore-icon">🔎</span>
-<span>EXPLORA</span>
-
-</a>
-
-</div>
-
-
+  <!-- ===================================================== IMAGEN DE PORTADA ===================================================== -->
+  <div class="banner-container">
+    <img class="capsules-img" src="Explora/capsules.png" alt="La Palabra en Cápsulas — Portada">
+  </div>
+  <!-- ===================================================== LÍNEA DE CONTRASTE ===================================================== -->
+  <div class="brand-divider"></div>
+  <!-- ===================================================== TEXTO INTRODUCTORIO ===================================================== -->
+  <div class="welcome-text welcome-desktop">
+    <p>
+      Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
+      prácticas, profundas y accesibles para un caminar sano <br>
+      con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
+      oraciones y guías diseñadas para edificar <br>
+      tu fe de manera clara y segura.
+    </p>
+  </div>
+  <!-- ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== -->
+  <div class="explore-button-container">
+    <a class="explore-button" href="Explora/index.html" aria-label="Explorar La Palabra en Cápsulas">
+      <span>EXPLORA</span>
+    </a>
+  </div>
 </main>
-
 </body>
 </html>
-```
