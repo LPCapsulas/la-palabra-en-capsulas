@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 
 <html lang="es">
@@ -33,8 +34,6 @@ body{
     font-family:'Playfair Display', Georgia, "Times New Roman", serif;
     font-size:17px;
     line-height:1.75;
-
-    /* Zoom general de la página */
     zoom:90%;
 }
 
@@ -46,7 +45,11 @@ body{
     box-shadow:0 4px 24px rgba(0,0,0,.08)
 }
 
-/* Imagen Superior Horizontal */
+
+/* =====================================================
+   IMAGEN DE PORTADA
+   ===================================================== */
+
 .banner-container{
     text-align:center;
     margin:0 auto 24px;
@@ -63,7 +66,11 @@ body{
     outline:none
 }
 
-/* Línea divisoria elegante */
+
+/* =====================================================
+   LÍNEA DIVISORIA ELEGANTE
+   ===================================================== */
+
 .brand-divider{
     display:block;
     width:180px;
@@ -73,7 +80,11 @@ body{
     opacity:.3
 }
 
-/* Texto introductorio */
+
+/* =====================================================
+   TEXTO INTRODUCTORIO
+   ===================================================== */
+
 .welcome-text{
     text-align:center;
     max-width:720px;
@@ -112,7 +123,6 @@ body{
     min-width:190px;
     padding:13px 30px;
 
-    /* Azul más claro seleccionado */
     background:linear-gradient(
         135deg,
         #285B91 0%,
@@ -184,7 +194,6 @@ body{
         width:100%;
     }
 
-    /* Texto introductorio */
     .welcome-desktop{
         display:block;
         width:100%;
@@ -202,16 +211,10 @@ body{
         text-align:justify;
     }
 
-    /*
-       Los <br> originales eran para controlar
-       las líneas en PC. En el teléfono vertical
-       los eliminamos para permitir justificación.
-    */
     .welcome-desktop br{
         display:none;
     }
 
-    /* Botón Explora */
     .explore-button-container{
         margin:0 auto 40px;
     }
@@ -252,7 +255,6 @@ body{
         display:block;
     }
 
-    /* Botón Explora */
     .explore-button-container{
         margin-bottom:40px;
     }
@@ -268,7 +270,9 @@ body{
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+rel="stylesheet">
 
 </head>
 
@@ -276,21 +280,27 @@ body{
 
 <main class="page">
 
+
 <!-- =====================================================
      IMAGEN DE PORTADA
      ===================================================== -->
 
 <div class="banner-container">
 
-<img class="capsules-img"
-src="capsules.png"
-alt="La Palabra en Cápsulas — Portada">
+<img
+    class="capsules-img"
+    src="Explora/capsules.png"
+    alt="La Palabra en Cápsulas — Portada">
 
 </div>
 
-<!-- Línea de contraste -->
+
+<!-- =====================================================
+     LÍNEA DE CONTRASTE
+     ===================================================== -->
 
 <div class="brand-divider"></div>
+
 
 <!-- =====================================================
      TEXTO INTRODUCTORIO
@@ -308,23 +318,28 @@ alt="La Palabra en Cápsulas — Portada">
 
 </div>
 
+
 <!-- =====================================================
      BOTÓN PRINCIPAL — EXPLORA
      ===================================================== -->
 
 <div class="explore-button-container">
 
-<a class="explore-button"
-href="Explora/index.html"
-aria-label="Explorar La Palabra en Cápsulas">
+<a
+    class="explore-button"
+    href="Explora/index.html"
+    aria-label="Explorar La Palabra en Cápsulas">
 
-<span class="explore-icon">🔎</span> <span>EXPLORA</span>
+<span class="explore-icon">🔎</span>
+<span>EXPLORA</span>
 
 </a>
 
 </div>
 
+
 </main>
 
 </body>
 </html>
+```
