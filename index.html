@@ -42,12 +42,12 @@
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
     
-    /* ===================================================== IMAGEN DE PORTADA (AMPLIADA) ===================================================== */
+    /* ===================================================== IMAGEN DE PORTADA ===================================================== */
     .banner-container {
       text-align: center;
-      margin: 0 auto 40px; /* Más espacio abajo para separar del botón */
+      margin: 0 auto 40px;
       width: 100%;
-      max-width: 800px; /* Aumentado de 650px a 800px para darle mayor jerarquía visual */
+      max-width: 800px;
     }
     
     .capsules-img {
@@ -98,18 +98,20 @@
       transform: translateY(0);
     }
     
-    /* ===================================================== TELÉFONO VERTICAL ===================================================== */
+    /* ===================================================== TELÉFONO VERTICAL (OPTIMIZADO) ===================================================== */
     @media(max-width:700px) and (orientation:portrait) {
       body {
         zoom: 100%;
       }
       .page {
-        padding: 30px 20px 40px;
+        /* Reducimos el padding lateral al mínimo (8px) para que la imagen crezca al máximo en celulares */
+        padding: 24px 8px 32px; 
         margin: 0 auto;
         width: 100%;
       }
       .banner-container {
         margin-bottom: 32px;
+        max-width: 100%; /* Permite expandirse por completo */
       }
       .explore-button-container {
         margin-bottom: 24px;
@@ -127,7 +129,7 @@
         zoom: 100%;
       }
       .page {
-        padding: 30px 24px 40px;
+        padding: 24px 16px 32px;
         margin: 0 auto;
         width: 100%;
       }
@@ -153,13 +155,11 @@
   <main class="page">
     
     <!-- ===================================================== IMAGEN DE PORTADA ===================================================== -->
-    <!-- Al remover los textos sobrantes del código, la imagen ahora aprovecha todo el espacio -->
     <div class="banner-container">
       <img class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
     </div>
 
     <!-- ===================================================== BOTÓN INTERACTIVO EXPLORA ===================================================== -->
-    <!-- Ubicado elegantemente justo debajo de la portada limpia -->
     <div class="explore-button-container">
       <a class="explore-button" href="Explora/index.html" aria-label="Explorar La Palabra en Cápsulas">
         <span>EXPLORA</span>
