@@ -69,18 +69,24 @@
     }
 
     /* =====================================================
-       MENÚ VERTICAL
+       PANEL BLANCO DEL MENÚ
        ===================================================== */
 
     .menu-list-container {
       width: fit-content;
-      min-width: 270px;
+      min-width: 320px;
       margin: 0 auto 44px;
+
+      background: #ffffff;
 
       /* Línea vertical a la derecha */
       border-right: 1px solid var(--accent);
 
-      padding: 2px 42px 4px 0;
+      padding: 18px 42px 18px 34px;
+
+      /* Sombra muy suave para separar el panel */
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+      border-radius: 4px;
     }
 
     .menu-button {
@@ -176,7 +182,7 @@
 
       .menu-list-container {
         min-width: 235px;
-        padding-right: 30px;
+        padding: 16px 30px 16px 24px;
         margin-bottom: 38px;
       }
 
