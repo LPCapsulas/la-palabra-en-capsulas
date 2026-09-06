@@ -8,8 +8,8 @@
 
   <style>
     :root {
-      --text: #17365D;
-      --muted: #17365D;
+      --text: #252525;
+      --muted: #666;
       --accent: #17365D;
       --menu: #17365D;
       --menu-hover: #356799;
@@ -69,22 +69,18 @@
     }
 
     /* =====================================================
-       PANEL BLANCO DEL MENÚ — SIN SOMBRA
+       MENÚ VERTICAL
        ===================================================== */
 
     .menu-list-container {
       width: fit-content;
-      min-width: 320px;
+      min-width: 270px;
       margin: 0 auto 44px;
-
-      background: #ffffff;
 
       /* Línea vertical a la derecha */
       border-right: 1px solid var(--accent);
 
-      padding: 18px 42px 18px 34px;
-
-      border-radius: 0;
+      padding: 2px 42px 4px 0;
     }
 
     .menu-button {
@@ -139,9 +135,9 @@
     }
 
     .back-home a {
-      color: var(--accent);
+      color: var(--muted);
       font-family: 'Cinzel', Georgia, serif;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-decoration: none;
@@ -150,7 +146,7 @@
     }
 
     .back-home a:hover {
-      color: var(--menu-hover);
+      color: var(--accent);
     }
 
     /* =====================================================
@@ -180,7 +176,7 @@
 
       .menu-list-container {
         min-width: 235px;
-        padding: 16px 30px 16px 24px;
+        padding-right: 30px;
         margin-bottom: 38px;
       }
 
@@ -194,7 +190,7 @@
       }
 
       .back-home a {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   </style>
