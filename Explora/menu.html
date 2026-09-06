@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 
 <html lang="es">
@@ -14,7 +15,6 @@
       --muted: #666;
       --accent: #17365D;
 
-      /* Azul del fondo */
       --menu-bg: #0F4C81;
 
       --menu: #ffffff;
@@ -135,7 +135,6 @@
 
       margin: 0 auto 44px;
 
-      /* Línea vertical a la derecha */
       border-right: 1px solid rgba(255,255,255,.65);
 
       padding: 2px 42px 4px 0;
@@ -228,7 +227,6 @@
 
       font-size: 15px;
 
-      /* NEGRITA */
       font-weight: 700;
 
       letter-spacing: 1.5px;
@@ -245,10 +243,6 @@
     }
 
 
-    /* =====================================================
-       AL PRESIONAR "VOLVER A INICIO"
-       ===================================================== */
-
     .back-home a:active {
 
       color: #ffffff;
@@ -256,16 +250,16 @@
 
 
     /* =====================================================
-       LOGO MÁS ARRIBA EN PC
+       PC
+       
+       TODO EL BLOQUE SUBE DOS ESCALAS.
+       No se mueve solamente el logo.
        ===================================================== */
 
     @media(min-width:701px) {
 
-      .lpc-logo {
-
+      .page {
         transform: translateY(-20px);
-
-        margin-bottom: 2px;
       }
 
     }
@@ -289,6 +283,9 @@
         margin: 16px auto;
 
         width: calc(100% - 24px);
+
+        /* Posición normal en móvil vertical */
+        transform: none;
       }
 
 
@@ -302,9 +299,6 @@
         height: 54px;
 
         margin-bottom: 24px;
-
-        /* Se mantiene exactamente en su posición móvil */
-        transform: none;
       }
 
 
@@ -337,11 +331,6 @@
 
       /* -----------------------------------------------------
          MENÚ EN MÓVIL
-         
-         IMPORTANTE:
-         - Alineado a la izquierda
-         - Sin línea vertical
-         - Los enlaces siguen siendo CLICKABLE
          ----------------------------------------------------- */
 
       .menu-list-container {
@@ -354,7 +343,6 @@
 
         padding: 2px 0 4px 0;
 
-        /* Se elimina la línea vertical */
         border-right: none;
       }
 
@@ -395,7 +383,6 @@
 
         font-size: 14px;
 
-        /* Se mantiene la negrita también en móvil */
         font-weight: 700;
       }
 
@@ -403,6 +390,22 @@
       .back-home a:active {
 
         color: #ffffff;
+      }
+
+    }
+
+
+    /* =====================================================
+       CELULAR HORIZONTAL
+       
+       También sube TODO el bloque dos escalas.
+       El celular vertical NO se modifica.
+       ===================================================== */
+
+    @media(max-width:700px) and (orientation:landscape) {
+
+      .page {
+        transform: translateY(-20px);
       }
 
     }
@@ -471,7 +474,6 @@
     </div>
 
 
-
     <!-- =====================================================
          ENCABEZADO
          ===================================================== -->
@@ -483,7 +485,6 @@
       </h1>
 
     </header>
-
 
 
     <!-- =====================================================
@@ -498,59 +499,46 @@
       <a
         class="menu-button"
         href="testimonios/index.html">
-
         Testimonios
-
       </a>
 
 
       <a
         class="menu-button"
         href="ensenanzas/index.html">
-
         Enseñanzas
-
       </a>
 
 
       <a
         class="menu-button"
         href="oracion/index.html">
-
         Oración
-
       </a>
 
 
       <a
         class="menu-button"
         href="guias/gnc/index.html">
-
         Guías
-
       </a>
 
 
       <a
         class="menu-button"
         href="proyectos/index.html">
-
         Proyectos
-
       </a>
 
 
       <a
         class="menu-button"
         href="donar/index.html">
-
         Donar
-
       </a>
 
 
     </nav>
-
 
 
     <!-- =====================================================
@@ -560,9 +548,7 @@
     <div class="back-home">
 
       <a href="../index.html">
-
         ← Volver a Inicio
-
       </a>
 
     </div>
