@@ -12,10 +12,10 @@
       --text: #252525;
       --muted: #666;
       --accent: #17365D;
-      --menu: #17365D;
-      --menu-hover: #356799;
-      --paper: #fff;
-      --bg: #f2f0ec;
+      --menu: #ffffff;
+      --menu-hover: #ffffff;
+      --paper: #dce7f2;
+      --bg: #dce7f2;
     }
 
     * {
@@ -87,9 +87,7 @@
     .menu-button {
       display: block;
 
-      /* Fondo azul + letras blancas */
-      background: var(--accent);
-      color: #ffffff;
+      color: var(--menu);
 
       font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
       font-size: 24px;
@@ -100,13 +98,12 @@
 
       text-decoration: none;
 
-      padding: 7px 18px;
-
-      margin-bottom: 8px;
+      padding: 7px 0;
 
       transition:
-        background-color .2s ease,
-        transform .2s ease;
+        color .2s ease,
+        transform .2s ease,
+        text-shadow .2s ease;
     }
 
     /* =====================================================
@@ -114,14 +111,13 @@
        ===================================================== */
 
     .menu-button:hover {
-      background: var(--menu-hover);
-      color: #ffffff;
+      color: var(--menu-hover);
       transform: translateX(-4px);
+      text-shadow: 0 0 8px rgba(255,255,255,.45);
     }
 
     .menu-button:focus-visible {
-      background: var(--menu-hover);
-      color: #ffffff;
+      color: var(--menu-hover);
       outline: none;
       text-decoration: underline;
       text-underline-offset: 5px;
@@ -137,7 +133,7 @@
 
     .back-home {
       text-align: center;
-      border-top: 1px solid #eaeaea;
+      border-top: 1px solid rgba(23,54,93,.25);
       padding-top: 28px;
     }
 
@@ -189,8 +185,7 @@
 
       .menu-button {
         font-size: 22px;
-        padding: 6px 16px;
-        margin-bottom: 7px;
+        padding: 6px 0;
       }
 
       .back-home {
