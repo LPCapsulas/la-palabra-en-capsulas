@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 
 <html lang="es">
@@ -228,7 +229,8 @@
 
       font-size: 15px;
 
-      font-weight: 600;
+      /* NEGRITA */
+      font-weight: 700;
 
       letter-spacing: 1.5px;
 
@@ -241,6 +243,32 @@
     .back-home a:hover {
 
       color: #ffffff;
+    }
+
+
+    /* =====================================================
+       AL PRESIONAR "VOLVER A INICIO"
+       ===================================================== */
+
+    .back-home a:active {
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       LOGO MÁS ARRIBA EN PC
+       ===================================================== */
+
+    @media(min-width:701px) {
+
+      .lpc-logo {
+
+        transform: translateY(-20px);
+
+        margin-bottom: 2px;
+      }
+
     }
 
 
@@ -275,6 +303,9 @@
         height: 54px;
 
         margin-bottom: 24px;
+
+        /* Se mantiene exactamente en su posición móvil */
+        transform: none;
       }
 
 
@@ -364,6 +395,15 @@
       .back-home a {
 
         font-size: 14px;
+
+        /* Se mantiene la negrita también en móvil */
+        font-weight: 700;
+      }
+
+
+      .back-home a:active {
+
+        color: #ffffff;
       }
 
     }
