@@ -5,7 +5,273 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Menú Oficial — La Palabra en Cápsulas</title>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Menú Oficial — La Palabra en Cápsulas</title>
+
+  <style>
+    :root {
+      --text: #17365D;
+      --muted: #17365D;
+      --accent: #17365D;
+      --menu: #17365D;
+      --menu-hover: #356799;
+      --paper: #fff;
+      --bg: #f2f0ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.75;
+      zoom: 90%;
+    }
+
+    /* =====================================================
+       PÁGINA PRINCIPAL
+       ===================================================== */
+
+    .page {
+      width: min(750px, calc(100% - 32px));
+      margin: 48px auto;
+      background: var(--paper);
+      padding: 56px 64px 60px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      border-radius: 12px;
+    }
+
+    /* =====================================================
+       ENCABEZADO
+       ===================================================== */
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .menu-header h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 30px;
+      line-height: 1.3;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* =====================================================
+       PANEL BLANCO DEL MENÚ — SIN SOMBRA
+       ===================================================== */
+
+    .menu-list-container {
+      width: fit-content;
+      min-width: 320px;
+      margin: 0 auto 44px;
+
+      background: #ffffff;
+
+      /* Línea vertical a la derecha */
+      border-right: 1px solid var(--accent);
+
+      padding: 18px 42px 18px 34px;
+
+      border-radius: 0;
+    }
+
+    .menu-button {
+      display: block;
+
+      color: var(--menu);
+
+      font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 500;
+
+      text-align: right;
+
+      text-decoration: none;
+
+      padding: 7px 0;
+
+      transition:
+        color .2s ease,
+        transform .2s ease;
+    }
+
+    /* =====================================================
+       EFECTO AL PASAR EL MOUSE
+       ===================================================== */
+
+    .menu-button:hover {
+      color: var(--menu-hover);
+      transform: translateX(-4px);
+    }
+
+    .menu-button:focus-visible {
+      color: var(--menu-hover);
+      outline: none;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .menu-button:active {
+      transform: translateX(-2px);
+    }
+
+    /* =====================================================
+       VOLVER A INICIO
+       ===================================================== */
+
+    .back-home {
+      text-align: center;
+      border-top: 1px solid #eaeaea;
+      padding-top: 28px;
+    }
+
+    .back-home a {
+      color: var(--accent);
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+
+      transition: color .2s ease;
+    }
+
+    .back-home a:hover {
+      color: var(--menu-hover);
+    }
+
+    /* =====================================================
+       ADAPTACIÓN PARA MÓVILES
+       ===================================================== */
+
+    @media(max-width:700px) {
+
+      body {
+        zoom: 100%;
+      }
+
+      .page {
+        padding: 42px 24px 48px;
+        margin: 16px auto;
+        width: calc(100% - 24px);
+      }
+
+      .menu-header {
+        margin-bottom: 34px;
+      }
+
+      .menu-header h1 {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+      }
+
+      .menu-list-container {
+        min-width: 235px;
+        padding: 16px 30px 16px 24px;
+        margin-bottom: 38px;
+      }
+
+      .menu-button {
+        font-size: 22px;
+        padding: 6px 0;
+      }
+
+      .back-home {
+        padding-top: 24px;
+      }
+
+      .back-home a {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- =====================================================
+         ENCABEZADO
+         ===================================================== -->
+
+    <header class="menu-header">
+      <h1>Mira, Crece y Comparte</h1>
+    </header>
+
+
+    <!-- =====================================================
+         MENÚ PRINCIPAL
+         ===================================================== -->
+
+    <nav class="menu-list-container" aria-label="Menú principal">
+
+      <a class="menu-button" href="testimonios/index.html">
+        Testimonios
+      </a>
+
+      <a class="menu-button" href="ensenanzas/index.html">
+        Enseñanzas
+      </a>
+
+      <a class="menu-button" href="oracion/index.html">
+        Oración
+      </a>
+
+      <a class="menu-button" href="guias/gnc/index.html">
+        Guías
+      </a>
+
+      <a class="menu-button" href="proyectos/index.html">
+        Proyectos
+      </a>
+
+      <a class="menu-button" href="donar/index.html">
+        Donar
+      </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         VOLVER A LA PORTADA
+         ===================================================== -->
+
+    <div class="back-home">
+      <a href="../index.html">← Volver a Inicio</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
   <style>
     :root {
       --text: #17365D;
