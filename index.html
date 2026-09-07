@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Palabra en Cápsulas — Portada Oficial</title>
+
   <style>
     :root {
       --text: #252525;
       --muted: #666;
       --accent: #17365D;
-      --brand-blue: #112952; /* El tono azul marino de las letras de la portada */
+      --brand-blue: #112952;
       --paper: #fff;
       --bg: #f2f0ec;
       --quote: #f7f4ef;
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       margin: 0;
       background: var(--bg);
@@ -34,23 +35,31 @@
       line-height: 1.75;
       zoom: 90%;
     }
-    
+
+    /* =====================================================
+       PÁGINA PRINCIPAL — PC
+       Más arriba y ligeramente más compacta
+       ===================================================== */
+
     .page {
       width: min(900px, calc(100% - 32px));
-      margin: 32px auto;
+      margin: 10px auto;
       background: var(--paper);
-      padding: 48px 72px 56px;
+      padding: 30px 72px 50px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
-    
-    /* ===================================================== IMAGEN DE PORTADA ===================================================== */
+
+    /* =====================================================
+       IMAGEN DE PORTADA
+       ===================================================== */
+
     .banner-container {
       text-align: center;
       margin: 0 auto 24px;
       width: 100%;
       max-width: 800px;
     }
-    
+
     .capsules-img {
       display: block;
       width: 100%;
@@ -59,18 +68,21 @@
       border: 0;
       outline: none;
     }
-    
-    /* ===================================================== TEXTO EN CASCADA AZUL ===================================================== */
+
+    /* =====================================================
+       TEXTO EN CASCADA AZUL
+       ===================================================== */
+
     .welcome-text {
       text-align: center;
       max-width: 760px;
       margin: 0 auto 48px;
-      font-size: 24px; 
+      font-size: 24px;
       line-height: 1.8;
       font-weight: 500;
       color: var(--brand-blue);
     }
-    
+
     .welcome-text p {
       margin: 0;
       padding: 0;
@@ -80,8 +92,11 @@
     .welcome-text span.highlight {
       color: var(--brand-blue);
     }
-    
-    /* ===================================================== BOTÓN PRINCIPAL — EXPLORA ===================================================== */
+
+    /* =====================================================
+       BOTÓN PRINCIPAL — EXPLORA
+       ===================================================== */
+
     .explore-button-container {
       display: flex;
       justify-content: center;
@@ -89,7 +104,7 @@
       width: 100%;
       margin: 0 auto 24px;
     }
-    
+
     .explore-button {
       display: inline-flex;
       align-items: center;
@@ -106,90 +121,129 @@
       border: 2px solid var(--accent);
       border-radius: 6px;
       box-shadow: 0 4px 14px rgba(23,54,93,.08);
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        color .25s ease;
     }
-    
+
     .explore-button:hover {
       background: var(--accent);
       color: #ffffff;
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(23,54,93,.18);
     }
-    
+
     .explore-button:active {
       transform: translateY(0);
     }
-    
-    /* ===================================================== TELÉFONO VERTICAL ===================================================== */
+
+    /* =====================================================
+       TELÉFONO VERTICAL
+       NO SE MODIFICA
+       ===================================================== */
+
     @media(max-width:700px) and (orientation:portrait) {
+
       body {
         zoom: 100%;
       }
+
       .page {
         padding: 32px 24px 40px;
         margin: 0 auto;
         width: 100%;
       }
+
       .banner-container {
         margin-bottom: 24px;
       }
+
       .welcome-text {
-        font-size: 21px; 
+        font-size: 21px;
         line-height: 1.65;
         margin-bottom: 40px;
       }
+
       .explore-button-container {
         margin-bottom: 24px;
       }
+
       .explore-button {
         min-width: 200px;
         padding: 14px 36px;
         font-size: 17px;
       }
     }
-    
-    /* ===================================================== TELÉFONO HORIZONTAL ===================================================== */
+
+    /* =====================================================
+       TELÉFONO HORIZONTAL
+       NO SE MODIFICA
+       ===================================================== */
+
     @media(max-width:700px) and (orientation:landscape) {
+
       body {
         zoom: 100%;
       }
+
       .page {
         padding: 30px 24px 40px;
         margin: 0 auto;
         width: 100%;
       }
+
       .banner-container {
         margin-bottom: 24px;
       }
+
       .welcome-text {
         font-size: 22px;
         line-height: 1.6;
         margin-bottom: 32px;
       }
+
       .explore-button-container {
         margin-bottom: 24px;
       }
+
       .explore-button {
         min-width: 210px;
         padding: 14px 38px;
         font-size: 17px;
       }
     }
+
   </style>
+
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link
+    href="https://googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
   <main class="page">
-    
-    <!-- ===================================================== IMAGEN DE PORTADA ===================================================== -->
+
+    <!-- =====================================================
+         IMAGEN DE PORTADA
+         ===================================================== -->
+
     <div class="banner-container">
-      <img class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
+      <img
+        class="capsules-img"
+        src="Explora/portada.png"
+        alt="La Palabra en Cápsulas — Portada">
     </div>
 
-    <!-- ===================================================== TEXTO EN CASCADA AZUL ===================================================== -->
+    <!-- =====================================================
+         TEXTO EN CASCADA AZUL
+         ===================================================== -->
+
     <div class="welcome-text">
       <p>
         Bienvenido a este espacio. Un lugar<br>
@@ -201,9 +255,15 @@
       </p>
     </div>
 
-    <!-- ===================================================== BOTÓN INTERACTIVO ACTUALIZADO ===================================================== -->
+    <!-- =====================================================
+         BOTÓN INTERACTIVO — EXPLORA
+         ===================================================== -->
+
     <div class="explore-button-container">
-      <a class="explore-button" href="Explora/menu.html" aria-label="Explorar La Palabra en Cápsulas">
+      <a
+        class="explore-button"
+        href="Explora/menu.html"
+        aria-label="Explorar La Palabra en Cápsulas">
         <span>EXPLORA</span>
       </a>
     </div>
