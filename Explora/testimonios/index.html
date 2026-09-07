@@ -73,6 +73,7 @@
 
     .intro p {
       margin-bottom: 22px;
+      text-align: justify;
     }
 
     .invitation {
@@ -215,12 +216,11 @@
   <h1>Testimonios</h1>
 </header>
 
-
 <section class="intro">
 
   <p>
     Esta es la sección de Testimonios de
-    <strong>La Palabra en Cápsulas</strong>.
+    <strong>LPC</strong>.
     Aquí compartimos experiencias reales de lo que Dios ha hecho
     en nuestras vidas, con el deseo de edificar, animar y fortalecer
     la fe de otros.
@@ -233,15 +233,13 @@
 
 </section>
 
-
 <div class="read-link">
 
-  <a href="testimonio_personal.html">
+  <a href="./testimonio_personal.html">
     Lee mi testimonio →
   </a>
 
 </div>
-
 
 <section class="invitation">
 
@@ -257,7 +255,6 @@
 
 </section>
 
-
 <section class="share">
 
   <h2>Comparte lo que Dios ha hecho</h2>
@@ -269,7 +266,6 @@
   </p>
 
 </section>
-
 
 <div class="back-home">
 
@@ -284,3 +280,5 @@
 
 </body>
 </html>
+
+**Una observación importante sobre el punto 4:** si después de este cambio el navegador sigue mostrando una ruta como `.../testimonios/testimonios/testimonio_personal.html`, entonces el problema **no está en este `href`**. En ese caso necesitaríamos revisar exactamente dónde está ubicado `testimonio_personal.html` dentro de GitHub, porque la estructura de carpetas sería la que está provocando la repetición.
