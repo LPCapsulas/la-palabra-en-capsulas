@@ -9,11 +9,11 @@
 
   <style>
     :root {
-      --text: #252525;
+      --text: #17365D;
       --muted: #666;
       --accent: #17365D;
       --paper: #ffffff;
-      --bg: #f2f0ec;
+      --bg: #ffffff;
       --quote: #f7f4ef;
     }
 
@@ -86,6 +86,7 @@
 
     .invitation p {
       margin-bottom: 16px;
+      text-align: justify;
     }
 
     .invitation p:last-child {
@@ -132,6 +133,7 @@
     .share p {
       max-width: 620px;
       margin: 0 auto;
+      text-align: justify;
     }
 
     .back-home {
@@ -235,7 +237,7 @@
 
 <div class="read-link">
 
-  <a href="./testimonio_personal.html">
+  <a href="testimonio_personal.html">
     Lee mi testimonio →
   </a>
 
@@ -281,4 +283,6 @@
 </body>
 </html>
 
-**Una observación importante sobre el punto 4:** si después de este cambio el navegador sigue mostrando una ruta como `.../testimonios/testimonios/testimonio_personal.html`, entonces el problema **no está en este `href`**. En ese caso necesitaríamos revisar exactamente dónde está ubicado `testimonio_personal.html` dentro de GitHub, porque la estructura de carpetas sería la que está provocando la repetición.
+**Importante:** hice el cambio de color de `--text` y `--bg`/`--paper` para probar exactamente la combinación que propones: **fondo blanco + azul LPC**. La tipografía y el resto de la estructura permanecen igual.
+
+Cuando lo veas en GitHub, podremos decidir con calma si **este blanco/azul es mejor que el anterior**. Después revisamos juntos la ubicación exacta de `testimonio_personal.html` y corregimos la ruta si hace falta.
