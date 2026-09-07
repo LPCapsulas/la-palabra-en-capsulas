@@ -93,7 +93,6 @@
 
       color: var(--menu);
 
-      /* CAMBIO: tipografía más abierta y limpia */
       font-family: Arial, Helvetica, sans-serif;
 
       font-size: 24px;
@@ -226,53 +225,43 @@
 
   <main class="page">
 
-<!-- =====================================================
-     ENCABEZADO
-     ===================================================== -->
+    <header class="menu-header">
+      <h1><strong>Mira, Crece y Comparte</strong></h1>
+    </header>
 
-<header class="menu-header">
-  <h1><strong>Mira, Crece y Comparte</strong></h1>
-</header>
+    <nav class="menu-list-container" aria-label="Menú principal">
 
-<!-- =====================================================
-     MENÚ PRINCIPAL
-     ===================================================== -->
+      <!-- CORREGIDO: ../ porque menu.html está dentro de Explora -->
 
-<nav class="menu-list-container" aria-label="Menú principal">
+      <a class="menu-button" href="../testimonios/index.html">
+        Testimonios
+      </a>
 
-  <a class="menu-button" href="testimonios/index.html">
-    Testimonios
-  </a>
+      <a class="menu-button" href="../ensenanzas/index.html">
+        Enseñanzas
+      </a>
 
-  <a class="menu-button" href="ensenanzas/index.html">
-    Enseñanzas
-  </a>
+      <a class="menu-button" href="../oracion/index.html">
+        Oración
+      </a>
 
-  <a class="menu-button" href="oracion/index.html">
-    Oración
-  </a>
+      <a class="menu-button" href="../guias/gnc/index.html">
+        Guías
+      </a>
 
-  <a class="menu-button" href="guias/gnc/index.html">
-    Guías
-  </a>
+      <a class="menu-button" href="../proyectos/index.html">
+        Proyectos
+      </a>
 
-  <a class="menu-button" href="proyectos/index.html">
-    Proyectos
-  </a>
+      <a class="menu-button" href="../donar/index.html">
+        Donar
+      </a>
 
-  <a class="menu-button" href="donar/index.html">
-    Donar
-  </a>
+    </nav>
 
-</nav>
-
-<!-- =====================================================
-     VOLVER A LA PORTADA
-     ===================================================== -->
-
-<div class="back-home">
-  <a href="../index.html">← Volver a Inicio</a>
-</div>
+    <div class="back-home">
+      <a href="../index.html">← Volver a Inicio</a>
+    </div>
 
   </main>
 
