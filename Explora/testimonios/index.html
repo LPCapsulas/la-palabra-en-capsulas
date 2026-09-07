@@ -1,1 +1,380 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mi Testimonio — La Palabra en Cápsulas</title>
+
+  <style>
+    :root {
+      --text: #252525;
+      --muted: #666;
+      --accent: #17365D;
+      --paper: #ffffff;
+      --bg: #f2f0ec;
+      --quote: #f7f4ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.8;
+      zoom: 90%;
+    }
+
+    .page {
+      width: min(850px, calc(100% - 32px));
+      margin: 36px auto;
+      background: var(--paper);
+      padding: 56px 72px 60px;
+      border-radius: 12px;
+    }
+
+    /* =====================================================
+       ENCABEZADO
+       ===================================================== */
+
+    header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 34px;
+      line-height: 1.3;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* =====================================================
+       CONTENIDO
+       ===================================================== */
+
+    article {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    article p {
+      margin-bottom: 22px;
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 58px;
+      line-height: .85;
+      padding-right: 8px;
+      padding-top: 6px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--accent);
+      margin: 38px 0 16px;
+      font-weight: 600;
+    }
+
+    .highlight {
+      background: var(--quote);
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      margin: 30px 0;
+      font-style: italic;
+    }
+
+    .final-message {
+      margin-top: 38px;
+      padding: 28px 26px;
+      background: var(--quote);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .final-message p {
+      margin-bottom: 0;
+    }
+
+    /* =====================================================
+       VOLVER A TESTIMONIOS
+       ===================================================== */
+
+    .back-links {
+      margin-top: 46px;
+      padding-top: 26px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .back-links a {
+      display: inline-block;
+      margin: 6px 12px;
+      color: var(--accent);
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .back-links a:hover {
+      color: #000000;
+      transform: translateY(-1px);
+    }
+
+    /* =====================================================
+       MÓVILES
+       ===================================================== */
+
+    @media(max-width:700px) {
+
+      body {
+        zoom: 100%;
+      }
+
+      .page {
+        width: calc(100% - 24px);
+        margin: 14px auto;
+        padding: 38px 24px 44px;
+      }
+
+      header {
+        margin-bottom: 34px;
+      }
+
+      .section-label {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+      }
+
+      h1 {
+        font-size: 27px;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      article {
+        width: 100%;
+      }
+
+      article p {
+        margin-bottom: 20px;
+      }
+
+      .dropcap::first-letter {
+        font-size: 48px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 32px;
+      }
+
+      .highlight {
+        padding: 18px 18px;
+        margin: 26px 0;
+      }
+
+      .final-message {
+        padding: 23px 18px;
+      }
+
+      .back-links {
+        margin-top: 38px;
+        padding-top: 22px;
+      }
+
+      .back-links a {
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="page">
+
+```
+<header>
+  <div class="section-label">Testimonios</div>
+
+  <h1>Mi Testimonio</h1>
+
+  <div class="subtitle">
+    Una búsqueda de la verdad que me llevó a Jesucristo
+  </div>
+</header>
+
+
+<article>
+
+  <p class="dropcap">
+    Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights,
+    cerca de las 8 de la noche, mientras miraba hacia el frente, tuve de repente
+    un pensamiento terrible. Me di cuenta de que, si esa noche por alguna razón
+    moría, podía irme al infierno y no al cielo.
+  </p>
+
+  <p>
+    Había estado buscando la Verdad en la filosofía durante los últimos tres años.
+    Sin embargo, me ayudó mucho haber estado leyendo la Biblia con juicio, la cual
+    me había sido donada por quien, a la postre, se convirtió en mi ayo hacia la fe:
+    un hombre de Dios, sencillo, pero al mismo tiempo extraordinario y fuera de lo
+    común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios.
+  </p>
+
+  <p>
+    Entre octubre y noviembre de 1984 lo conocí y me compartió de inmediato el
+    evangelio. Ya entre enero y febrero de 1985 yo declaraba ante la gente que era
+    hijo de Dios. Sí, había recibido a Jesucristo como mi Señor y Salvador.
+  </p>
+
+  <div class="highlight">
+    Gozaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos había
+    legado hace más de veinte siglos.
+  </div>
+
+
+  <h2>Comenzando a caminar en la fe</h2>
+
+  <p>
+    Desde entonces devoraba las Sagradas Escrituras y empecé a dar a conocer el
+    evangelio a mis familiares y a toda persona que me encontraba en el camino.
+  </p>
+
+  <p>
+    Dos años más tarde fui bautizado en las aguas en la iglesia Community Gospel
+    Church, en Nueva York, que pastoreaba el difunto Robert Johansson.
+  </p>
+
+
+  <h2>Una nueva experiencia con Dios</h2>
+
+  <p>
+    Posteriormente, el 13 de abril de 1990, en un servicio donde predicaba el
+    evangelista R. W. Schambach en Family Worship Center, ministerio de Jimmy
+    Swaggart, recibí, mediante la imposición de manos, el bautismo en el Espíritu
+    Santo y tuve por primera vez en mi vida la evidencia de hablar en otras lenguas.
+  </p>
+
+  <p>
+    Este bautismo, diferente al del agua, avivó en mí muchas capacidades, siendo
+    la principal la de testificar con poder y orar por otros para salvación y
+    sanidad. De esos casos también hablaremos más adelante.
+  </p>
+
+
+  <h2>Evangelizar y enseñar</h2>
+
+  <p>
+    Siempre me gustó la evangelización, es decir, compartir las buenas noticias
+    del evangelio. Tiempo después fui igualmente promovido por el Señor a la
+    enseñanza de la Palabra.
+  </p>
+
+  <p>
+    Entre otras experiencias que compartiré en los Recursos y Guías de esta página,
+    tuve una muy particular.
+  </p>
+
+  <p>
+    En la iglesia Cristo es la Respuesta, de Woodside, durante un servicio de
+    impartición ministerial a los líderes de la iglesia, una mujer, profetisa,
+    me dio una profecía y me dijo, de parte del Señor, que yo tendría sueños e
+    interpretación de sueños. Y, a través de los años, a fe que los he tenido.
+  </p>
+
+  <p>
+    Hoy día comparto mi vida con mi esposa Francy y mi hijo Matt.
+  </p>
+
+
+  <div class="final-message">
+
+    <p>
+      Hay muchos milagros y dádivas que podemos recibir del Señor. Sin embargo,
+      ser salvo es, en sí, el mayor de los milagros.
+    </p>
+
+    <p>
+      Toda persona sobre la faz de la tierra debe decidir ya dónde va a pasar
+      la eternidad.
+    </p>
+
+    <p>
+      Y por ello la exhorto a que lo haga en la presencia del único Santo Padre,
+      creador del cielo y de la tierra.
+    </p>
+
+  </div>
+
+
+  <div class="back-links">
+
+    <a href="index.html">
+      ← Volver a Testimonios
+    </a>
+
+    <a href="../index.html">
+      Volver a Explora
+    </a>
+
+  </div>
+
+</article>
+```
+
+  </main>
+
+</body>
+</html>
 
