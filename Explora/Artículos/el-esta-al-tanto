@@ -1,1 +1,715 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Él está al tanto — La Palabra en Cápsulas</title>
+
+<style>
+:root{
+    --text:#252525;
+    --muted:#666;
+    --accent:#17365D;
+    --paper:#ffffff;
+    --bg:#f2f0ec;
+    --line:#d9d9d9;
+    --purple:#7A3E9D;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.7;
+    font-size:17px;
+}
+
+.page{
+    width:min(900px,92%);
+    margin:42px auto;
+    background:var(--paper);
+    padding:55px 70px 50px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+header{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.site-name{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:18px;
+    color:var(--accent);
+    letter-spacing:.08em;
+    margin-bottom:18px;
+}
+
+h1{
+    margin:0;
+    color:var(--accent);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:38px;
+    line-height:1.2;
+    font-weight:600;
+}
+
+.author{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:15px;
+    font-style:italic;
+}
+
+.article p{
+    margin:0 0 23px;
+    text-align:justify;
+}
+
+/* Bloque en cascada */
+.cascade{
+    margin:18px 0 22px;
+    padding-left:24px;
+    border-left:3px solid var(--accent);
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.45;
+}
+
+.cascade div{
+    margin:0 0 2px;
+}
+
+.cascade div:last-child{
+    margin-bottom:0;
+}
+
+/* Citas bíblicas */
+.scripture{
+    margin:27px 0;
+    padding:13px 20px;
+    border-left:4px solid var(--accent);
+    color:#333;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    font-style:italic;
+    background:#fafafa;
+}
+
+.scripture cite{
+    display:block;
+    margin-top:7px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:14px;
+    color:var(--muted);
+    font-style:normal;
+}
+
+/* Imagen Salmo 91 */
+.verse-image{
+    text-align:center;
+    margin:28px 0 32px;
+}
+
+.verse-image img{
+    width:50%;
+    max-width:900px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+/* Subtítulo */
+.correction-title{
+    margin:30px 0 20px;
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--accent);
+    font-size:25px;
+    line-height:1.3;
+    font-weight:700;
+}
+
+/* Listas */
+.topic-list{
+    margin:10px 0 22px;
+    padding-left:28px;
+}
+
+.topic-list li{
+    margin-bottom:6px;
+    padding-left:4px;
+    text-align:justify;
+    line-height:1.48;
+}
+
+.topic-list li:last-child{
+    margin-bottom:0;
+}
+
+.topic-list strong{
+    color:var(--accent);
+}
+
+/* Lista profética especialmente compacta */
+.topic-list.prophetic{
+    margin-top:4px;
+    margin-bottom:10px;
+}
+
+.topic-list.prophetic li{
+    margin-bottom:1px;
+    line-height:1.4;
+}
+
+.references{
+    margin-top:48px;
+    padding-top:25px;
+    border-top:1px solid var(--line);
+}
+
+.references h2{
+    margin:0 0 18px;
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--accent);
+    font-size:22px;
+}
+
+.references p{
+    margin:5px 0;
+    font-size:14px;
+    line-height:1.6;
+    text-align:left;
+    color:#555;
+}
+
+/* CTA final */
+.cta{
+    margin-top:50px;
+    padding:30px 25px 32px;
+    text-align:center;
+    background:#f7f7f7;
+    border-top:1px solid var(--line);
+}
+
+/* Texto púrpura */
+.cta-title{
+    margin:0 0 7px;
+    font-family:Georgia,"Times New Roman",serif;
+    color:var(--purple);
+    font-size:23px;
+    font-weight:600;
+    line-height:1.25;
+}
+
+/* Botón final con imagen */
+.cta-button-image{
+    display:inline-block;
+    text-decoration:none;
+}
+
+.cta-button-image img{
+    width:380px;
+    max-width:90%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+.footer-nav{
+    margin-top:35px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    text-align:center;
+}
+
+.footer-nav a{
+    color:var(--accent);
+    text-decoration:none;
+    font-size:14px;
+    margin:0 10px;
+}
+
+.footer-nav a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width:700px){
+
+    body{
+        font-size:16.5px;
+        line-height:1.65;
+    }
+
+    .page{
+        width:94%;
+        margin:20px auto;
+        padding:34px 25px 35px;
+    }
+
+    h1{
+        font-size:29px;
+    }
+
+    .site-name{
+        font-size:16px;
+    }
+
+    .article p{
+        margin-bottom:20px;
+        text-align:justify;
+    }
+
+    .cascade{
+        padding-left:18px;
+        font-size:16.5px;
+        line-height:1.43;
+        margin:16px 0 20px;
+    }
+
+    .cascade div{
+        margin-bottom:2px;
+    }
+
+    .scripture{
+        padding:12px 17px;
+        font-size:16.5px;
+        line-height:1.5;
+        margin:23px 0;
+    }
+
+    /* Imagen Salmo 91 en celular */
+    .verse-image{
+        margin:22px 0 27px;
+    }
+
+    .verse-image img{
+        width:50%;
+        max-width:none;
+        height:auto;
+    }
+
+    .correction-title{
+        margin:25px 0 18px;
+        font-size:22px;
+    }
+
+    .topic-list{
+        margin:8px 0 19px;
+        padding-left:23px;
+    }
+
+    .topic-list li{
+        margin-bottom:5px;
+        padding-left:2px;
+        line-height:1.45;
+    }
+
+    .topic-list.prophetic{
+        margin-top:2px;
+        margin-bottom:8px;
+    }
+
+    .topic-list.prophetic li{
+        margin-bottom:1px;
+    }
+
+    .cta{
+        padding:26px 18px 28px;
+        margin-top:38px;
+    }
+
+    .cta-title{
+        font-size:21px;
+        margin-bottom:6px;
+    }
+
+    /* Botón final */
+    .cta-button-image img{
+        width:340px;
+        max-width:90%;
+    }
+
+    .footer-nav a{
+        display:block;
+        margin:9px 0;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<div class="site-name">LA PALABRA EN CÁPSULAS</div>
+
+<h1>Él está al tanto</h1>
+
+<div class="author">Por J.V.</div>
+
+</header>
+
+<article class="article">
+
+<p>
+Amigos, nadie está exento de sufrir algo tan terrible como un terremoto.
+Pero de algo sí estoy seguro: Dios es misericordioso,¹ y por ello podemos
+solicitar su protección.² Desde hace un tiempo, además de mis oraciones regulares,
+he incluido en ellas un <strong>refuerzo</strong>: pedir al Altísimo que
+nos proteja de toda cosa negativa.
+</p>
+
+<div class="cascade">
+
+<div>• Calamidad, accidente, secuestro, tsunami, huracán o terremoto.</div>
+<div>• Accidentes, atracos y extorsiones.</div>
+<div>• Enfermedades crueles y dolorosas.</div>
+<div>• Y, como dice la oración modelo, que nos libre de todo mal.</div>
+
+</div>
+
+<p>
+Debemos elevar nuestra oración al único Santo Padre del cielo que hay,
+en el nombre de Jesús, y agradecer al final, creyendo que Él ya lo ha hecho.
+</p>
+
+<p>
+La iglesia cristiana en el mundo no encomienda su propio país a ídolos,
+estatuas o a todo aquello que desagrade a Dios. Quien lo hace es porque
+no ha nacido de nuevo, y debemos compartirle el consejo de Dios para que
+pase por su proceso de conversión.
+</p>
+
+<p>
+Jeremías 7 y 44 son dos capítulos de la Biblia muy contundentes, donde
+el Señor advierte sobre los peligros de adorar a la <em>reina del cielo</em>.
+En la antigüedad, a esa deidad le llamaban Artemis, según la mitología
+griega; luego Diana en Asia Menor —hoy Turquía—.
+</p>
+
+<p>
+Posteriormente, los papas en Roma, pensando en qué nombre ponerle a una
+divinidad femenina para asemejarse a las antiguas deidades paganas,
+escogieron el nombre de alguien que hubiera existido y dijeron: “María”.
+</p>
+
+<p>
+Ella nunca quiso ser venerada. La religión fue la que lo hizo.
+</p>
+
+<p>
+Y aquí quiero ser claro. María, la madre de Jesús, fue una mujer piadosa,
+pero igual requirió de un Salvador: ¡su propio hijo!
+Ella dijo:
+</p>
+
+<blockquote class="scripture">
+“Engrandece mi alma al Señor; y mi espíritu se regocija en Dios mi Salvador”.³
+</blockquote>
+
+<p>
+Jesús es el Cristo,⁴ y Cristo es Dios sobre todas las cosas.⁵
+</p>
+
+<p>
+En las bodas de Caná, María dijo con respecto a su hijo:
+</p>
+
+<blockquote class="scripture">
+“Haced todo lo que él os dijere”.⁶
+</blockquote>
+
+<p>
+Hay millones en el mundo que no conocen esta simple verdad, y hay aún
+sacerdotes católicos que sirven a un dios muerto, colgado en una cruz.
+Tambien hay ministerios que por quedar bien con otros, no dicen la
+verdad: que el seguir la religión tradicional de estatuas e
+imagenes no agrada a Dios y por ello hay serias consecuencias.
+</p>
+
+<p>
+En realidad, no desconozco que haya curas que intenten ofrecer paliativos
+a muchos que sufren, pero su doctrina errónea no les deja ver más allá de 
+lo que ven sus ojos y siguen percibiendo a Jesús en una cruz.
+</p>
+
+<p>
+Si usted quiere conocer la verdad, deberá leer la Biblia y así verá a Jesús,
+su vida y lo que hizo por nosotros para salvarnos: morir crucificado.
+</p>
+
+<p>
+Debemos no solo orar por nuestros gobernantes y anunciarles el evangelio,
+no solo porque es nuestro deber, sino porque, si no lo hacemos, no tendremos
+país.
+</p>
+
+<p>
+“El que ignorantemente peca, ignorantemente se condena”. Si alguien no anda
+conforme a la voluntad de Dios, es porque lo está haciendo "fuera del libro"
+y si tiene buenas intenciones de hacer el bien, se le debe hablar con respeto
+para que corrija su caminar.
+</p>
+
+<blockquote class="scripture">
+La buena noticia es que Jesús no está en un madero, pues después de morir
+por nuestros pecados, resucitó al tercer día de entre los muertos, ascendió
+al cielo y está sentado a la diestra del Padre.
+</blockquote>
+
+<p>
+Dios es celoso y no admite ser compartido.⁷ Si por un lado va a hablar de
+Jesucristo y por otro va a incensar a María o a espíritus de fallecidos,⁸
+siendo esto un craso error, la cosa no le va a funcionar.
+</p>
+
+<p>
+Si quiere ir a la fija, considere al Padre, al Hijo y al Espíritu Santo.
+Todo con la Deidad, sin ella, nada.
+</p>
+
+<p>
+Saulo de Tarso no conocía esta verdad y persiguió cristianos, consintiendo
+aún en la muerte del mártir Esteban. Sin embargo, Saulo fue <em>ayudado</em>,
+evangelizado y convertido a Cristo, y hasta su nombre cambió a Pablo,
+quien, a la postre, llegó a ser el más grande apóstol en la historia de la
+humanidad.
+</p>
+
+<p>
+Es por ello que debemos, con espíritu de mansedumbre, testificar de Jesús
+a quienes son <em>dignos</em> de oír,⁹ con una demostración clara del poder de Dios,
+incluyendo señales y milagros.
+</p>
+
+<h2 class="correction-title">Una durísima corrección</h2>
+
+<p>
+Primero Venezuela y luego Colombia la han sufrido, entendiendo con
+ello un “balanceo” vital para poder continuar. Y habrá muchos más países
+que pasarán por eventos similares, como ha pasado igualmente en Asia.
+</p>
+
+<p>
+Y ese término, aunque se podría ver solo como un mero castigo, se manifiesta
+en muchas áreas de la vida:
+</p>
+
+<ul class="topic-list">
+
+<li>
+    <strong>En los autos.</strong>
+    Si usted no balancea y corrige el balanceo de sus ruedas,
+    se puede accidentar.
+</li>
+
+<li>
+    <strong>En el deporte.</strong>
+    A veces se pierde una y otra vez porque no ha habido corrección
+    en la toma de decisiones.
+</li>
+
+<li>
+    <strong>En las finanzas.</strong>
+    Los mercados suben y luego experimentan “corrección” por diversos
+    motivos: sobrevaloración de las acciones, crisis internacionales,
+    guerras, etc.
+</li>
+
+<li>
+    <strong>En la naturaleza.</strong>
+    Por permisibilidad de Dios, esta se subleva contra la injusticia
+    de los habitantes de la tierra y su pecado. El finado evangelista
+    inglés Charles Spurgeon, en sus sermones, decía que “los desastres
+    o aun los aparentes desórdenes naturales están controlados por la
+    mano divina”. Aun el caos hace parte del orden.
+</li>
+
+</ul>
+
+<p>
+Así como las plagas, guerras y rumores de guerras, los terremotos son
+señal profética,¹⁰ básicamente sobre dos puntos:
+</p>
+
+<ul class="topic-list prophetic">
+<li>la venida del Señor y</li>
+<li>el fin de los tiempos.</li>
+</ul>
+
+<p>
+Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha
+no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o
+una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.
+</p>
+
+<p>
+Y, por supuesto, debe ser el Señor nuestro punto de referencia.
+Estas señales son más que un llamado de atención.
+</p>
+
+<!-- IMAGEN SALMO 91 -->
+<div class="verse-image">
+    <img
+        src="salmo-91.png"
+        alt="Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7"
+    >
+</div>
+
+<p>
+Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él
+quiere que nosotros busquemos. Él dice:
+</p>
+
+<blockquote class="scripture">
+“Más buscad primeramente el reino de Dios y su justicia —su equilibrio,
+su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.¹¹
+</blockquote>
+
+<p>
+Cuando no hay búsqueda de su rostro,¹² pasamos por situaciones incómodas.
+</p>
+
+<p>
+Es bueno que entendamos y aceptemos que las cosas ocurren con la
+permisibilidad de Dios, pero Él no se deleita en el infortunio del hombre,
+sino en su paz.¹³
+</p>
+
+<p>
+Por todo lo anterior, debemos guardar una actitud de respeto y temor
+reverente¹⁴ hacia el Señor.
+</p>
+
+<p>
+El patriarca Job tuvo una vida de muchas dificultades e infortunios.
+Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes,
+y hasta su casa se prendió fuego. Además, fue atacado por Satanás
+con enfermedades.
+</p>
+
+<p>
+Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel
+descomunal ataque del maligno, jamás culpó al Señor por sus males.
+</p>
+
+<blockquote class="scripture">
+«En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».¹⁵
+</blockquote>
+
+<p>
+Cuando sucede algo desagradable y aun terrible, no culpes a Dios.
+Él solo se deleita en tu paz.
+</p>
+
+<p>
+Sí, es cierto que Él se burla de sus enemigos,¹⁶ pero tú no lo eres.
+Si lo recibiste, eres su hijo.¹⁷
+</p>
+
+<p>
+Y si no lo has hecho, aquí está la oportunidad.
+</p>
+
+<p>
+Allí no terminó la historia de Job. Después que él hubo orado por sus
+amigos que lo consolaban con palabras, Dios le dio una gran bendición
+al patriarca: el doble de lo que antes había tenido.
+</p>
+
+<p>
+Los que quedaron vivos del terremoto deben orar y auxiliar a los
+sobrevivientes y a quienes hoy día están dolidos, pues perdieron a los
+seres queridos y posesiones.
+</p>
+
+<p>
+Después de la tempestad viene la calma y hay que reconstruir.
+</p>
+
+<blockquote class="scripture">
+“No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer
+tú por tu país”.¹⁸
+<cite>Frase célebre de John F. Kennedy</cite>
+</blockquote>
+
+<p>
+Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos
+enseñe justicia.¹⁹
+</p>
+
+<p>
+Hay personas que Dios se lleva por misericordia, y hay personas que Dios
+deja vivas, también por misericordia.
+</p>
+
+</article>
+
+<section class="cta">
+
+<h2 class="cta-title">Para más contenido</h2>
+
+<a
+    class="cta-button-image"
+    href="https://forms.gle/dfmQRiDqYqT8Fwt26"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    <img
+        src="unete_boton.png"
+        alt="Únete a La Palabra en Cápsulas">
+</a>
+
+</section>
+
+<section class="references">
+
+<h2>Referencias</h2>
+
+<p>¹ Efesios 2:4-5</p>
+<p>² Salmos 18:2</p>
+<p>³ Lucas 1:46-47</p>
+<p>⁴ Mateo 16:16</p>
+<p>⁵ Romanos 9:5</p>
+<p>⁶ Juan 2:5</p>
+<p>⁷ Éxodo 20:5</p>
+<p>⁸ Deuteronomio 18:10-12</p>
+<p>⁹ Deseosos de oír</p>
+<p>¹⁰ Mateo 24:4-8</p>
+<p>¹¹ Mateo 6:33</p>
+<p>¹² Salmos 27:8</p>
+<p>¹³ Salmos 35:27-28</p>
+<p>¹⁴ Hebreos 12:28</p>
+<p>¹⁵ Job 1:22</p>
+<p>¹⁶ Salmos 2:4</p>
+<p>¹⁷ 1 Juan 3:2; Romanos 8:16</p>
+<p>¹⁸ Frase célebre de John F. Kennedy</p>
+<p>¹⁹ Oseas 10:12</p>
+
+</section>
+
+<nav class="footer-nav">
+
+<a href="#">← Volver</a>
+
+</nav>
+
+</main>
+
+</body>
+</html>
