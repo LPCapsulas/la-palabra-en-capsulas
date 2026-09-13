@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -564,6 +565,7 @@ Estas señales son más que un llamado de atención.
 </p>
 
 <!-- IMAGEN SALMO 91 -->
+
 <div class="verse-image">
     <img
         src="salmo-91.png"
@@ -665,14 +667,17 @@ deja vivas, también por misericordia.
 <h2 class="cta-title">Para más contenido</h2>
 
 <a
-    class="cta-button-image"
-    href="https://forms.gle/dfmQRiDqYqT8Fwt26"
-    target="_blank"
-    rel="noopener noreferrer">
+ class="cta-button-image"
+ href="https://forms.gle/dfmQRiDqYqT8Fwt26"
+ target="_blank"
+ rel="noopener noreferrer">
 
-    <img
-        src="unete_boton.png"
-        alt="Únete a La Palabra en Cápsulas">
+```
+<img
+    src="unete_boton.png"
+    alt="Únete a La Palabra en Cápsulas">
+```
+
 </a>
 
 </section>
@@ -705,7 +710,7 @@ deja vivas, también por misericordia.
 
 <nav class="footer-nav">
 
-<a href="#">← Volver</a>
+<a href="index.html">← Volver a Artículos</a>
 
 </nav>
 
