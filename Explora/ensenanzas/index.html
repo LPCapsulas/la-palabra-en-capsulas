@@ -4,271 +4,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Palabra en Cápsulas — Portada Oficial</title>
+
+<title>Enseñanzas — La Palabra en Cápsulas</title>
 
 <style>
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#fff;
-    --bg:#f2f0ec;
-    --quote:#f7f4ef
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0
-}
-
-html{
-    scroll-behavior:smooth
-}
-
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Playfair Display', Georgia, "Times New Roman", serif;
-    font-size:17px;
-    line-height:1.75;
-
-    /* Zoom general de la página */
-    zoom:90%;
-}
-
-.page{
-    width:min(900px,calc(100% - 32px));
-    margin:32px auto;
-    background:var(--paper);
-    padding:48px 72px 56px;
-    box-shadow:0 4px 24px rgba(0,0,0,.08)
-}
-
-/* Imagen Superior Horizontal */
-.banner-container{
-    text-align:center;
-    margin:0 auto 24px;
-    width:100%;
-    max-width:650px
-}
-
-.capsules-img{
-    display:block;
-    width:100%;
-    height:auto;
-    margin:0 auto;
-    border:0;
-    outline:none
-}
-
-/* Línea divisoria elegante */
-.brand-divider{
-    display:block;
-    width:180px;
-    height:2px;
-    background-color:var(--accent);
-    margin:16px auto 16px;
-    opacity:.3
-}
-
-/* Texto introductorio */
-.welcome-text{
-    text-align:center;
-    max-width:720px;
-    margin:0 auto 34px;
-    font-size:21px;
-    line-height:1.65;
-    font-weight:600;
-    color:var(--text)
-}
-
-.welcome-text p{
-    margin:0;
-    padding:0;
-    text-align:center
-}
-
-
-/* =====================================================
-   BOTÓN PRINCIPAL — EXPLORA
-   ===================================================== */
-
-.explore-button-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    margin:0 auto 48px;
-}
-
-.explore-button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-
-    min-width:190px;
-    padding:13px 30px;
-
-    /* Azul más claro seleccionado */
-    background:linear-gradient(
-        135deg,
-        #285B91 0%,
-        #4A82B8 55%,
-        #6B9FCC 100%
-    );
-
-    color:#fff;
-
-    font-family:'Cinzel',Georgia,serif;
-    font-size:17px;
-    font-weight:700;
-    letter-spacing:2px;
-
-    text-decoration:none;
-
-    border:1px solid #285B91;
-    border-radius:8px;
-
-    box-shadow:
-        0 4px 10px rgba(23,54,93,.22),
-        inset 0 1px 0 rgba(255,255,255,.18);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-}
-
-.explore-icon{
-    font-size:18px;
-    line-height:1;
-}
-
-.explore-button:hover{
-    background:linear-gradient(
-        135deg,
-        #4A82B8 0%,
-        #6B9FCC 55%,
-        #82B0D8 100%
-    );
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 6px 14px rgba(23,54,93,.30),
-        inset 0 1px 0 rgba(255,255,255,.20);
-}
-
-.explore-button:active{
-    transform:translateY(0);
-}
-
-
-/* =====================================================
-   TELÉFONO VERTICAL
-   TEXTO JUSTIFICADO
-   ===================================================== */
-
-@media(max-width:700px) and (orientation:portrait){
-
-    body{
-        zoom:100%;
+    :root {
+        --text: #252525;
+        --accent: #17365D;
+        --muted: #666;
+        --bg: #f2f0ec;
+        --paper: #ffffff;
     }
 
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%;
+    * {
+        box-sizing: border-box;
     }
 
-    /* Texto introductorio */
-    .welcome-desktop{
-        display:block;
-        width:100%;
-        max-width:none;
-        margin:0 auto 28px;
-        font-size:16px;
-        line-height:1.55;
-        font-weight:600;
-        text-align:justify;
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 19px;
+        line-height: 1.8;
     }
 
-    .welcome-desktop p{
-        margin:0;
-        padding:0;
-        text-align:justify;
+    .page {
+        width: min(900px, calc(100% - 32px));
+        margin: 36px auto;
+        background: var(--paper);
+        padding: 52px 72px 60px;
+        border-radius: 10px;
     }
 
-    /*
-       Los <br> originales eran para controlar
-       las líneas en PC. En el teléfono vertical
-       los eliminamos para permitir justificación.
-    */
-    .welcome-desktop br{
-        display:none;
+    header {
+        text-align: center;
+        margin-bottom: 44px;
     }
 
-    /* Botón Explora */
-    .explore-button-container{
-        margin:0 auto 40px;
+    .section-label {
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
     }
 
-    .explore-button{
-        min-width:175px;
-        padding:12px 26px;
-        font-size:16px;
-        letter-spacing:1.8px;
-    }
-}
-
-
-/* =====================================================
-   TELÉFONO HORIZONTAL
-   ===================================================== */
-
-@media(max-width:700px) and (orientation:landscape){
-
-    body{
-        zoom:100%;
+    h1 {
+        margin: 0;
+        color: var(--accent);
+        font-size: 36px;
+        line-height: 1.3;
+        font-weight: 600;
     }
 
-    .page{
-        padding:30px 24px 40px;
-        margin:0 auto;
-        width:100%
+    .intro {
+        max-width: 700px;
+        margin: 0 auto 42px;
+        text-align: justify;
     }
 
-    .welcome-text{
-        font-size:19px;
-        line-height:1.6;
-        font-weight:600;
-        margin-bottom:30px;
+    .intro p {
+        margin: 0;
     }
 
-    .welcome-desktop{
-        display:block;
+    .teachings {
+        max-width: 700px;
+        margin: 0 auto;
     }
 
-    /* Botón Explora */
-    .explore-button-container{
-        margin-bottom:40px;
+    .teaching {
+        border-top: 1px solid #ddd;
+        padding: 26px 0 30px;
     }
 
-    .explore-button{
-        min-width:185px;
-        padding:12px 28px;
-        font-size:16px;
+    .teaching:first-child {
+        border-top: none;
+        padding-top: 0;
     }
-}
+
+    .teaching h2 {
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: 25px;
+        line-height: 1.4;
+        font-weight: 600;
+    }
+
+    .teaching p {
+        margin: 0 0 18px;
+        text-align: justify;
+    }
+
+    .teaching-link {
+        display: inline-block;
+        color: var(--accent);
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 2px;
+        transition: color .2s ease, border-color .2s ease;
+    }
+
+    .teaching-link:hover {
+        color: #000000;
+        border-color: #000000;
+    }
+
+    .back-home {
+        text-align: center;
+        margin-top: 46px;
+        padding-top: 26px;
+        border-top: 1px solid #ddd;
+    }
+
+    .back-home a {
+        color: var(--accent);
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .back-home a:hover {
+        color: #000000;
+    }
+
+    @media (max-width: 700px) {
+
+        body {
+            font-size: 18px;
+        }
+
+        .page {
+            width: calc(100% - 24px);
+            margin: 14px auto;
+            padding: 38px 24px 44px;
+        }
+
+        header {
+            margin-bottom: 34px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .intro {
+            margin-bottom: 36px;
+        }
+
+        .teaching h2 {
+            font-size: 23px;
+        }
+
+        .teaching-link {
+            font-size: 16px;
+        }
+    }
 </style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 </head>
 
@@ -276,56 +171,53 @@ body{
 
 <main class="page">
 
-<!-- =====================================================
-     IMAGEN DE PORTADA
-     ===================================================== -->
+    <header>
+        <div class="section-label">La Palabra en Cápsulas</div>
+        <h1>Enseñanzas</h1>
+    </header>
 
-<div class="banner-container">
 
-<img class="capsules-img"
-src="capsules.png"
-alt="La Palabra en Cápsulas — Portada">
+    <section class="intro">
 
-</div>
+        <p>
+            Reflexiones y enseñanzas nacidas de experiencias, conversaciones
+            y verdades de la Palabra de Dios, con el propósito de llevarlas
+            más allá de simplemente escucharlas: vivirlas y aplicarlas.
+        </p>
 
-<!-- Línea de contraste -->
+    </section>
 
-<div class="brand-divider"></div>
 
-<!-- =====================================================
-     TEXTO INTRODUCTORIO
-     ===================================================== -->
+    <section class="teachings">
 
-<div class="welcome-text welcome-desktop">
+        <article class="teaching">
 
-<p>
-    Bienvenido a este espacio. Un lugar dedicado a compartir ideas<br>
-    prácticas, profundas y accesibles para un caminar sano <br>
-    con el <strong>Señor</strong>. Aquí hay anuncios, enseñanzas,<br>
-    oraciones y guías diseñadas para edificar <br>
-    tu fe de manera clara y segura.
-</p>
+            <h2>Un té en Gullivers</h2>
 
-</div>
+            <p>
+                Una mañana, tomando té y conversando sobre la Palabra de Dios,
+                una sencilla situación con un maletín me enseñó una importante
+                lección acerca de pensar en los demás.
+            </p>
 
-<!-- =====================================================
-     BOTÓN PRINCIPAL — EXPLORA
-     ===================================================== -->
+            <a class="teaching-link" href="./gullivers.html">
+                Leer enseñanza →
+            </a>
 
-<div class="explore-button-container">
+        </article>
 
-<a class="explore-button"
-href="1_explore/index.html"
-aria-label="Explorar La Palabra en Cápsulas">
+    </section>
 
-<span class="explore-icon">🔎</span> <span>EXPLORA</span>
 
-</a>
+    <div class="back-home">
 
-</div>
+        <a href="../menu.html">
+            ← Volver al Menú
+        </a>
+
+    </div>
 
 </main>
 
 </body>
 </html>
-
