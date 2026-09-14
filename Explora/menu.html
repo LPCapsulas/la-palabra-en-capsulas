@@ -36,6 +36,15 @@
         position: relative;
     }
 
+    /* Elimina cualquier marca o contenido generado alrededor del logo */
+    .logo::before,
+    .logo::after,
+    header::before,
+    header::after {
+        content: none !important;
+        display: none !important;
+    }
+
     .logo {
         font-family: Georgia, "Times New Roman", serif;
         font-size: 22px;
