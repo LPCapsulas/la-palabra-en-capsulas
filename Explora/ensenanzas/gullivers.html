@@ -1,42 +1,372 @@
-# Un té en Gullivers
+<!doctype html>
 
-Lo que quiero transmitir me lo enseñó la misma persona que me compartió el evangelio.
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-Una vez nos encontrábamos en “Gullivers”, un sitio en la calle 82 St., una mañana de 1986-87, donde vendían un delicioso sándwich de pescado, café, té y otras delicias.
+<title>Un té en Gullivers — La Palabra en Cápsulas</title>
 
-Íbamos a menudo a tomar té y hablar de la Palabra de Dios. Recuerden que les dije en el testimonio que, con mi nuevo nacimiento, vino un nuevo brío sobre mí. En realidad, estaba tan fogoso que queríamos hablar del Señor todo el tiempo.
+<style>
+    :root {
+        --text: #252525;
+        --muted: #666;
+        --accent: #17365D;
+        --paper: #ffffff;
+        --bg: #f2f0ec;
+        --quote: #f7f4ef;
+        --line: #d9d9d9;
+    }
 
-Pues así como hablas a tu mejor amigo de aquella chica que acabas de conocer y de la cual crees estar enamorado, pues así pasa en las cosas espirituales. Tú has encontrado a tu Salvador, Señor y Cuidador, y por ello hablas con Él y de Él.
+    * {
+        box-sizing: border-box;
+    }
 
-Esa mañana el local, que era amplio, estaba prácticamente solo y, por lo tanto, había muchas mesas disponibles. Yo, como siempre, andaba con mi maletín, el cual puse en la silla contigua. Pensé: “Hay mucho espacio, pongámoslo ahí”.
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
 
-El hombre de Dios me dijo:
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-size: 19px;
+        line-height: 1.8;
+        zoom: 90%;
+    }
 
-—Ponlo en tu asiento.
+    .page {
+        width: min(900px, calc(100% - 32px));
+        margin: 36px auto;
+        background: var(--paper);
+        padding: 56px 72px 60px;
+        border-radius: 10px;
+    }
 
-—¿Qué cosa? —le pregunté.
+    header {
+        text-align: center;
+        margin-bottom: 42px;
+    }
 
-—Pues tu maletín.
+    .section-label {
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+    }
 
-Y en tono suave agregó:
+    h1 {
+        margin: 0;
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 36px;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        color: var(--accent);
+        font-weight: 600;
+    }
 
-—Estás siendo egoísta con los demás.
+    .article {
+        max-width: 720px;
+        margin: 0 auto;
+    }
 
-—Amigo, no hay nadie prácticamente en el lugar —le repliqué, casi irritado.
+    .article p {
+        margin: 0 0 22px;
+        text-align: justify;
+    }
 
-A lo cual él me respondió:
+    .article strong {
+        color: var(--accent);
+        font-weight: 700;
+    }
 
-> “¿Ves? Estás asumiendo que nadie va a venir. Y no te das cuenta de que, si alguien lo hace, puede, por no causarte molestias, declinar pedirte el asiento y prácticamente lo habrás perjudicado. ¡No estás pensando en los demás!”
+    .dialogue {
+        background: var(--quote);
+        border-left: 4px solid var(--accent);
+        padding: 22px 26px;
+        margin: 30px 0 32px;
+    }
 
-Ese mismo día me di cuenta de que la cosa no iba a ser tan fácil y que, en adelante, me iban a dar “garrote” en sentido espiritual.
+    .dialogue p {
+        margin: 0;
+        text-align: justify;
+    }
 
-¡Les aseguro que no fue la única vez que me “cascaron”!
+    .reflection {
+        margin-top: 34px;
+    }
 
-En una cápsula, eso es el cristianismo: **pensar y actuar a favor de los demás**.
+    .reflection-title {
+        font-family: "Cinzel", Georgia, serif;
+        color: var(--accent);
+        font-size: 25px;
+        line-height: 1.4;
+        margin: 0 0 18px;
+        font-weight: 600;
+    }
 
-El recibir un mensaje en tu lugar de reunión y alojarlo en tu cerebro es una cosa. Recibir “verdades” en tu corazón, vivirlas y aplicarlas por el resto de tu vida es otra.
+    .image-space {
+        width: 100%;
+        margin: 38px auto;
+        text-align: center;
+    }
 
-A veces decimos: “No ahorraremos esfuerzo” o “hasta la última gota de sudor” por esto o aquello. Pero **JESÚS dio hasta su última gota de sangre**, pensando en nosotros, en salvarnos de las tinieblas.
+    .image-space img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 
-Él siempre nos tuvo en cuenta, y aún lo hace.
+    .article-nav {
+        margin-top: 48px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+    }
 
+    .article-nav a {
+        color: var(--accent);
+        font-family: "Cinzel", Georgia, serif;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: .5px;
+        text-decoration: none;
+        margin: 0 12px;
+    }
+
+    .article-nav a:hover {
+        color: #000000;
+    }
+
+    @media (max-width: 700px) {
+
+        body {
+            zoom: 100%;
+            font-size: 18px;
+        }
+
+        .page {
+            width: calc(100% - 24px);
+            margin: 14px auto;
+            padding: 40px 24px 46px;
+        }
+
+        header {
+            margin-bottom: 34px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .article {
+            max-width: none;
+        }
+
+        .dialogue {
+            padding: 20px 18px;
+            margin: 28px 0 30px;
+        }
+
+        .reflection-title {
+            font-size: 23px;
+        }
+
+        .article-nav {
+            margin-top: 40px;
+        }
+
+        .article-nav a {
+            display: block;
+            margin: 12px 0;
+        }
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="page">
+
+    <header>
+
+        <div class="section-label">
+            La Palabra en Cápsulas
+        </div>
+
+        <h1>Un té en Gullivers</h1>
+
+    </header>
+
+
+    <article class="article">
+
+        <p>
+            Lo que quiero transmitir me lo enseñó la misma persona que me
+            compartió el evangelio.
+        </p>
+
+
+        <p>
+            Una vez nos encontrábamos en “Gullivers”, un sitio en la calle
+            82 St., una mañana de 1986-87, donde vendían un delicioso
+            sándwich de pescado, café, té y otras delicias.
+        </p>
+
+
+        <p>
+            Íbamos a menudo a tomar té y hablar de la Palabra de Dios.
+            Recuerden que les dije en el testimonio que, con mi nuevo
+            nacimiento, vino un nuevo brío sobre mí. En realidad, estaba
+            tan fogoso que queríamos hablar del Señor todo el tiempo.
+        </p>
+
+
+        <p>
+            Pues así como hablas a tu mejor amigo de aquella chica que
+            acabas de conocer y de la cual crees estar enamorado, pues así
+            pasa en las cosas espirituales. Tú has encontrado a tu
+            Salvador, Señor y Cuidador, y por ello hablas con Él y de Él.
+        </p>
+
+
+        <p>
+            Esa mañana el local, que era amplio, estaba prácticamente solo
+            y, por lo tanto, había muchas mesas disponibles. Yo, como
+            siempre, andaba con mi maletín, el cual puse en la silla
+            contigua. Pensé:
+            <strong>“Hay mucho espacio, pongámoslo ahí”.</strong>
+        </p>
+
+
+        <p>
+            El hombre de Dios me dijo:
+        </p>
+
+
+        <div class="dialogue">
+
+            <p>
+                —Ponlo en tu asiento.
+            </p>
+
+            <p>
+                —¿Qué cosa? —le pregunté.
+            </p>
+
+            <p>
+                —Pues tu maletín.
+            </p>
+
+            <p>
+                Y en tono suave agregó:
+            </p>
+
+            <p>
+                —Estás siendo egoísta con los demás.
+            </p>
+
+            <p>
+                —Amigo, no hay nadie prácticamente en el lugar
+                —le repliqué, casi irritado.
+            </p>
+
+            <p>
+                A lo cual él me respondió:
+            </p>
+
+            <p>
+                “¿Ves? Estás asumiendo que nadie va a venir. Y no te das
+                cuenta de que, si alguien lo hace, puede, por no causarte
+                molestias, declinar pedirte el asiento y prácticamente lo
+                habrás perjudicado. ¡No estás pensando en los demás!”
+            </p>
+
+        </div>
+
+
+        <p>
+            Ese mismo día me di cuenta de que la cosa no iba a ser tan
+            fácil y que, en adelante, me iban a dar “garrote” en sentido
+            espiritual.
+        </p>
+
+
+        <p>
+            ¡Les aseguro que no fue la única vez que me “cascaron”!
+        </p>
+
+
+        <div class="reflection">
+
+            <h2 class="reflection-title">
+                Pensar y actuar a favor de los demás
+            </h2>
+
+
+            <p>
+                En una cápsula, eso es el cristianismo:
+                <strong>pensar y actuar a favor de los demás.</strong>
+            </p>
+
+
+            <p>
+                El recibir un mensaje en tu lugar de reunión y alojarlo en
+                tu cerebro es una cosa. Recibir “verdades” en tu corazón,
+                vivirlas y aplicarlas por el resto de tu vida es otra.
+            </p>
+
+
+            <p>
+                A veces decimos: “No ahorraremos esfuerzo” o “hasta la
+                última gota de sudor” por esto o aquello. Pero
+                <strong>JESÚS dio hasta su última gota de sangre</strong>,
+                pensando en nosotros, en salvarnos de las tinieblas.
+            </p>
+
+
+            <p>
+                Él siempre nos tuvo en cuenta, y aún lo hace.
+            </p>
+
+        </div>
+
+
+        <!--
+        IMAGEN CENTRAL — SE INSERTARÁ AQUÍ
+        -->
+
+
+        <div class="article-nav">
+
+            <a href="./index.html">
+                ← Volver a Enseñanzas
+            </a>
+
+            <a href="../menu.html">
+                Volver al Menú
+            </a>
+
+        </div>
+
+    </article>
+
+</main>
+
+</body>
+</html>
