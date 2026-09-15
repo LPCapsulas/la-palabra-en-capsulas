@@ -3,57 +3,261 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explora — La Palabra en Cápsulas</title>
+
+<title>Mira, Crece y Comparte — La Palabra en Cápsulas</title>
+
 <style>
-:root{--blue:#0F4C81;--gold:#e7c96f;--white:#fff;--soft:#D6D2C4}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;min-height:100%}
-body{background:var(--blue);color:var(--white);font-family:Georgia,"Times New Roman",serif}
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:42px 28px 30px}
-.logo{position:absolute;top:24px;left:28px;color:#fff;font-size:18px;font-weight:bold;font-style:italic;letter-spacing:1px;opacity:.95}
-header{text-align:center;margin-top:16px;margin-bottom:28px}
-h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:42px;font-weight:normal;letter-spacing:.4px}
-.intro{text-align:center;max-width:760px;margin:0 auto 32px}
-.intro p{margin:0;font-size:20px;color:var(--soft);line-height:1.6}
-.menu{width:min(850px,100%);display:grid;grid-template-columns:1fr 1fr;column-gap:72px;position:relative;margin-top:4px}
-.menu::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,.25);transform:translateX(-50%)}
-.column{display:flex;flex-direction:column;align-items:center;gap:18px}
-.item{width:100%;text-align:center}
-.item a{display:inline-block;color:#fff;text-decoration:none;font-size:23px;line-height:1.25;padding:5px 10px;border-bottom:1px solid transparent;transition:.2s ease}
-.item a:hover{color:var(--gold);border-bottom-color:var(--gold)}
-.back{margin-top:42px;text-align:center}
-.back a{color:var(--gold);font-size:18px;text-decoration:none;border-bottom:1px solid rgba(231,201,111,.7)}
-.back a:hover{color:#fff;border-color:#fff}
+:root{
+  --blue:#0F4C81;
+  --gold:#e7c96f;
+  --white:#fff;
+  --soft:#D6D2C4
+}
+
+*{
+  box-sizing:border-box
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%
+}
+
+body{
+  background:var(--blue);
+  color:var(--white);
+  font-family:Georgia,"Times New Roman",serif
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:42px 28px 30px
+}
+
+.logo{
+  position:absolute;
+  top:24px;
+  left:28px;
+  color:#fff;
+  font-size:18px;
+  font-weight:bold;
+  font-style:italic;
+  letter-spacing:1px;
+  opacity:.95
+}
+
+header{
+  text-align:center;
+  margin-top:16px;
+  margin-bottom:32px
+}
+
+h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:46px;
+  font-weight:bold;
+  letter-spacing:.5px;
+  color:var(--gold)
+}
+
+.intro{
+  display:none
+}
+
+.menu{
+  width:min(850px,100%);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:72px;
+  position:relative;
+  margin-top:4px
+}
+
+.menu::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:1px;
+  background:rgba(255,255,255,.25);
+  transform:translateX(-50%)
+}
+
+.column{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px
+}
+
+.item{
+  width:100%;
+  text-align:center
+}
+
+.item a{
+  display:inline-block;
+  color:#fff;
+  text-decoration:none;
+  font-size:23px;
+  line-height:1.25;
+  padding:5px 10px;
+  border-bottom:1px solid transparent;
+  transition:.2s ease
+}
+
+.item a:hover{
+  color:var(--gold);
+  border-bottom-color:var(--gold)
+}
+
+.back{
+  margin-top:42px;
+  text-align:center
+}
+
+.back a{
+  color:var(--gold);
+  font-size:18px;
+  text-decoration:none;
+  border-bottom:1px solid rgba(231,201,111,.7)
+}
+
+.back a:hover{
+  color:#fff;
+  border-color:#fff
+}
+
 @media(max-width:600px){
-.page{align-items:flex-start;padding:34px 24px 28px}.logo{top:18px;left:20px}
-header{width:100%;margin-top:38px;margin-bottom:22px;text-align:center}h1{font-size:34px}
-.intro{width:100%;margin-bottom:26px;text-align:left}.intro p{font-size:18px;line-height:1.5}
-.menu{display:block;width:100%;margin-top:0}.menu::after{display:none}
-.column{align-items:flex-start;gap:9px}.column+.column{margin-top:9px}.item{text-align:left}
-.item a{font-size:21px;padding:3px 0}.back{width:100%;margin-top:32px;text-align:center}
+
+  .page{
+    align-items:flex-start;
+    padding:34px 24px 28px
+  }
+
+  .logo{
+    top:18px;
+    left:20px
+  }
+
+  header{
+    width:100%;
+    margin-top:38px;
+    margin-bottom:28px;
+    text-align:center
+  }
+
+  h1{
+    font-size:36px;
+    line-height:1.2
+  }
+
+  .intro{
+    display:none
+  }
+
+  .menu{
+    display:block;
+    width:100%;
+    margin-top:0
+  }
+
+  .menu::after{
+    display:none
+  }
+
+  .column{
+    align-items:flex-start;
+    gap:9px
+  }
+
+  .column+.column{
+    margin-top:9px
+  }
+
+  .item{
+    text-align:left
+  }
+
+  .item a{
+    font-size:21px;
+    padding:3px 0
+  }
+
+  .back{
+    width:100%;
+    margin-top:32px;
+    text-align:center
+  }
 }
 </style>
 </head>
+
 <body>
+
 <div class="page">
-<div class="logo">LPC</div>
-<header><h1>Explora</h1></header>
-<div class="intro"><p>Mira, Crece y Comparte</p></div>
-<nav class="menu" aria-label="Menú principal de Explora">
-<div class="column">
-<div class="item"><a href="./LPC/index.html">Acerca de LPC</a></div>
-<div class="item"><a href="./descargas/index.html">Descargas</a></div>
-<div class="item"><a href="./testimonios/index.html">Testimonios</a></div>
-<div class="item"><a href="./articulos/index.html">Artículos</a></div>
+
+  <div class="logo">LPC</div>
+
+  <header>
+    <h1>Mira, Crece y Comparte</h1>
+  </header>
+
+  <nav class="menu" aria-label="Menú principal">
+
+    <div class="column">
+
+      <div class="item">
+        <a href="./LPC/index.html">Acerca de LPC</a>
+      </div>
+
+      <div class="item">
+        <a href="./descargas/index.html">Descargas</a>
+      </div>
+
+      <div class="item">
+        <a href="./testimonios/index.html">Testimonios</a>
+      </div>
+
+      <div class="item">
+        <a href="./articulos/index.html">Artículos</a>
+      </div>
+
+    </div>
+
+    <div class="column">
+
+      <div class="item">
+        <a href="./ensenanzas/index.html">Enseñanzas</a>
+      </div>
+
+      <div class="item">
+        <a href="./oracion/index.html">Oración</a>
+      </div>
+
+      <div class="item">
+        <a href="./proyectos/index.html">Proyectos</a>
+      </div>
+
+      <div class="item">
+        <a href="./donar/index.html">Donar</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <div class="back">
+    <a href="../index.html">Volver a Inicio</a>
+  </div>
+
 </div>
-<div class="column">
-<div class="item"><a href="./ensenanzas/index.html">Enseñanzas</a></div>
-<div class="item"><a href="./oracion/index.html">Oración</a></div>
-<div class="item"><a href="./proyectos/index.html">Proyectos</a></div>
-<div class="item"><a href="./donar/index.html">Donar</a></div>
-</div>
-</nav>
-<div class="back"><a href="../index.html">Volver a Inicio</a></div>
-</div>
+
 </body>
 </html>
