@@ -4,52 +4,531 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guía para Nuevos Creyentes — La Palabra en Cápsulas</title>
+
 <style>
-:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#f8f4ec;--bg:#f2f0ec;--quote:#f7f4ef;--line:#d9d5ce;--gold:#b89b63}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.78} .page{width:min(900px,calc(100% - 32px));margin:30px auto 42px;background:var(--paper);padding:48px 72px 58px;border:1px solid rgba(23,54,93,.08);border-radius:10px;box-shadow:0 5px 24px rgba(0,0,0,.05)} header{text-align:center;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:30px}.eyebrow{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.title{font-family:"Playfair Display",Georgia,serif;color:var(--accent);font-size:38px;line-height:1.15;margin:0}.author{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-size:17px;color:#666;margin-top:7px;margin-bottom:0}.article{max-width:760px;margin:auto}.toc{background:#f3f0eb;border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:0 0 38px}.toc-title{font-size:22px;color:var(--accent);font-weight:bold;margin:0 0 12px}.toc a{color:var(--accent);text-decoration:none}.toc a:hover{text-decoration:underline}.toc p{margin:7px 0;font-size:18px}.chapter{margin-top:46px}.chapter h2{font-family:"Playfair Display",Georgia,serif;color:var(--accent);font-size:29px;line-height:1.25;margin:0 0 20px;padding-bottom:9px;border-bottom:1px solid var(--line)}p{margin:0 0 18px;text-align:justify}strong{color:#222}.guide-direction{margin:0 0 38px;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 7px 24px rgba(0,0,0,.10);background:transparent}.guide-direction img{display:block;width:auto;height:430px;max-width:100%;margin:0 auto}.scripture{margin:22px 8px;padding:13px 18px;background:var(--quote);border-left:4px solid var(--accent);color:#555;font-style:italic}.chapter-art{margin:26px 0 30px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}.chapter-art svg{display:block;width:100%;height:auto}.bible-link{display:inline-block;margin:10px 0 18px;padding:11px 18px;background:var(--accent);color:#fff!important;text-decoration:none;border-radius:6px;font-family:Georgia,serif;font-size:17px}.bible-link:hover{opacity:.9}.prayer{margin:22px 8px;padding:18px 20px;background:var(--quote);border-left:4px solid var(--gold);font-style:italic;text-align:justify}.donation{margin-top:30px;padding:24px;background:#f3f0eb;border:1px solid var(--line);border-radius:8px;text-align:center}.donation h3{font-family:"Playfair Display",Georgia,serif;color:var(--accent);font-size:25px;margin:0 0 10px}.donation p{text-align:center;margin-bottom:12px}.donation a{color:var(--accent);font-weight:bold}.back{text-align:center;margin-top:42px}.back a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(23,54,93,.35);margin:0 10px}.back a:hover{border-color:var(--accent)}
-@media(max-width:600px){body{font-size:17px;line-height:1.65}.page{width:calc(100% - 20px);margin:14px auto 25px;padding:30px 20px 38px;border-radius:8px}.title{font-size:31px}.article{max-width:none}.toc{padding:17px 16px}.toc p{font-size:16px}.chapter{margin-top:38px}.chapter h2{font-size:25px}.chapter-art{margin:20px 0 24px}.guide-direction{margin-bottom:30px}.guide-direction img{width:auto;height:360px;max-width:100%;margin:0 auto}.scripture,.prayer{margin-left:0;margin-right:0}p{text-align:left}.bible-link{font-size:16px;padding:10px 14px}.back a{display:block;margin:10px 0}}
+
+:root{
+    --text:#252525;
+    --muted:#666;
+    --accent:#17365D;
+    --paper:#f8f4ec;
+    --bg:#f2f0ec;
+    --quote:#f7f4ef;
+    --line:#d9d5ce;
+    --gold:#b89b63
+}
+
+*{
+    box-sizing:border-box
+}
+
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.78
+}
+
+.page{
+    width:min(900px,calc(100% - 32px));
+    margin:30px auto 42px;
+    background:var(--paper);
+    padding:48px 72px 58px;
+    border:1px solid rgba(23,54,93,.08);
+    border-radius:10px;
+    box-shadow:0 5px 24px rgba(0,0,0,.05)
+}
+
+header{
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+    margin-bottom:30px
+}
+
+.eyebrow{
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px
+}
+
+.title{
+    font-family:"Playfair Display",Georgia,serif;
+    color:var(--accent);
+    font-size:38px;
+    line-height:1.15;
+    margin:0
+}
+
+.author{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-size:17px;
+    color:#666;
+    margin-top:7px;
+    margin-bottom:0
+}
+
+.article{
+    max-width:760px;
+    margin:auto
+}
+
+.toc{
+    background:#f3f0eb;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 24px;
+    margin:0 0 38px
+}
+
+.toc-title{
+    font-size:22px;
+    color:var(--accent);
+    font-weight:bold;
+    margin:0 0 12px
+}
+
+.toc a{
+    color:var(--accent);
+    text-decoration:none
+}
+
+.toc a:hover{
+    text-decoration:underline
+}
+
+.toc p{
+    margin:7px 0;
+    font-size:18px
+}
+
+.chapter{
+    margin-top:46px
+}
+
+.chapter h2{
+    font-family:"Playfair Display",Georgia,serif;
+    color:var(--accent);
+    font-size:29px;
+    line-height:1.25;
+    margin:0 0 20px;
+    padding-bottom:9px;
+    border-bottom:1px solid var(--line)
+}
+
+p{
+    margin:0 0 18px;
+    text-align:justify
+}
+
+strong{
+    color:#222
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.guide-direction{
+    margin:0 0 38px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 7px 24px rgba(0,0,0,.10);
+    background:transparent;
+    height:430px
+}
+
+.guide-direction img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center
+}
+
+
+/* RESTO DE LA GUÍA */
+
+.scripture{
+    margin:22px 8px;
+    padding:13px 18px;
+    background:var(--quote);
+    border-left:4px solid var(--accent);
+    color:#555;
+    font-style:italic
+}
+
+.chapter-art{
+    margin:26px 0 30px;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--line)
+}
+
+.chapter-art svg{
+    display:block;
+    width:100%;
+    height:auto
+}
+
+.bible-link{
+    display:inline-block;
+    margin:10px 0 18px;
+    padding:11px 18px;
+    background:var(--accent);
+    color:#fff!important;
+    text-decoration:none;
+    border-radius:6px;
+    font-family:Georgia,serif;
+    font-size:17px
+}
+
+.bible-link:hover{
+    opacity:.9
+}
+
+.prayer{
+    margin:22px 8px;
+    padding:18px 20px;
+    background:var(--quote);
+    border-left:4px solid var(--gold);
+    font-style:italic;
+    text-align:justify
+}
+
+.donation{
+    margin-top:30px;
+    padding:24px;
+    background:#f3f0eb;
+    border:1px solid var(--line);
+    border-radius:8px;
+    text-align:center
+}
+
+.donation h3{
+    font-family:"Playfair Display",Georgia,serif;
+    color:var(--accent);
+    font-size:25px;
+    margin:0 0 10px
+}
+
+.donation p{
+    text-align:center;
+    margin-bottom:12px
+}
+
+.donation a{
+    color:var(--accent);
+    font-weight:bold
+}
+
+.back{
+    text-align:center;
+    margin-top:42px
+}
+
+.back a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(23,54,93,.35);
+    margin:0 10px
+}
+
+.back a:hover{
+    border-color:var(--accent)
+}
+
+
+/* CELULARES */
+
+@media(max-width:600px){
+
+    body{
+        font-size:17px;
+        line-height:1.65
+    }
+
+    .page{
+        width:calc(100% - 20px);
+        margin:14px auto 25px;
+        padding:30px 20px 38px;
+        border-radius:8px
+    }
+
+    .title{
+        font-size:31px
+    }
+
+    .article{
+        max-width:none
+    }
+
+    .toc{
+        padding:17px 16px
+    }
+
+    .toc p{
+        font-size:16px
+    }
+
+    .chapter{
+        margin-top:38px
+    }
+
+    .chapter h2{
+        font-size:25px
+    }
+
+    .chapter-art{
+        margin:20px 0 24px
+    }
+
+
+    /* IMAGEN PRINCIPAL EN CELULAR */
+
+    .guide-direction{
+        height:360px;
+        margin-bottom:30px
+    }
+
+    .guide-direction img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center center
+    }
+
+
+    .scripture,
+    .prayer{
+        margin-left:0;
+        margin-right:0
+    }
+
+    p{
+        text-align:left
+    }
+
+    .bible-link{
+        font-size:16px;
+        padding:10px 14px
+    }
+
+    .back a{
+        display:block;
+        margin:10px 0
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
+
 <div class="page">
+
 <header>
-<div class="eyebrow">La Palabra en Cápsulas</div>
-<h1 class="title">Guía para Nuevos Creyentes</h1>
-<div class="author">Por J.V.</div>
-</header>
-<main class="article">
-<div class="guide-direction" aria-label="Te haré entender y te enseñaré el camino">
-<img src="guia-inicio.png" alt="Una mano señala un camino iluminado mientras una persona camina hacia la luz." />
+
+<div class="eyebrow">
+La Palabra en Cápsulas
 </div>
-<nav class="toc" aria-label="Contenido"><div class="toc-title">Contenido</div>
-<p><a href="#capitulo-1">Capítulo 1</a> — Debes nacer de nuevo</p>
-<p><a href="#capitulo-2">Capítulo 2</a> — Lo que significa arrepentirse</p>
-<p><a href="#capitulo-3">Capítulo 3</a> — Empieza a leer la Biblia</p>
-<p><a href="#capitulo-4">Capítulo 4</a> — Sométete, <em>según</em> corresponda</p>
-<p><a href="#capitulo-5">Capítulo 5</a> — Siembra e invierte en almas</p></nav>
-<section class="chapter" id="capitulo-1"><h2>Capítulo 1 — Debes nacer de nuevo</h2><div class="chapter-art"><svg viewBox="0 0 900 260" role="img" aria-label="Ilustración original: una nueva vida que comienza" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="260" rx="22" fill="#eef2f5"/><circle cx="150" cy="130" r="76" fill="#d9e4ee"/><path d="M150 190V105" stroke="#17365D" stroke-width="8" stroke-linecap="round"/><path d="M150 132C115 126 94 104 91 79c35 0 58 15 59 53Z" fill="#7f9b78"/><path d="M151 113c10-33 34-49 61-49-2 31-23 54-61 59Z" fill="#9ab28e"/><path d="M150 190c-36 0-67-11-88-31" fill="none" stroke="#b89b63" stroke-width="5" stroke-linecap="round"/><text x="290" y="115" font-family="Georgia,serif" font-size="34" fill="#17365D">Una nueva vida</text><text x="290" y="158" font-family="Georgia,serif" font-size="21" fill="#666">Fe, arrepentimiento y gracia</text></svg></div><p>Cuando alguien renace espiritualmente <sup>Juan 3.3</sup>, significa
+
+<h1 class="title">
+Guía para Nuevos Creyentes
+</h1>
+
+<div class="author">
+Por J.V.
+</div>
+
+</header>
+
+
+<main class="article">
+
+
+<div class="guide-direction" aria-label="Te haré entender y te enseñaré el camino">
+
+<img
+src="guia-inicio.png"
+alt="Una mano señala un camino iluminado mientras una persona camina hacia la luz."
+>
+
+</div>
+
+
+<nav class="toc" aria-label="Contenido">
+
+<div class="toc-title">
+Contenido
+</div>
+
+<p>
+<a href="#capitulo-1">Capítulo 1</a> — Debes nacer de nuevo
+</p>
+
+<p>
+<a href="#capitulo-2">Capítulo 2</a> — Lo que significa arrepentirse
+</p>
+
+<p>
+<a href="#capitulo-3">Capítulo 3</a> — Empieza a leer la Biblia
+</p>
+
+<p>
+<a href="#capitulo-4">Capítulo 4</a> — Sométete, <em>según</em> corresponda
+</p>
+
+<p>
+<a href="#capitulo-5">Capítulo 5</a> — Siembra e invierte en almas
+</p>
+
+</nav>
+
+
+<section class="chapter" id="capitulo-1">
+
+<h2>
+Capítulo 1 — Debes nacer de nuevo
+</h2>
+
+<div class="chapter-art">
+
+<svg viewBox="0 0 900 260"
+role="img"
+aria-label="Ilustración original: una nueva vida que comienza"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="900" height="260" rx="22" fill="#eef2f5"/>
+
+<circle cx="150" cy="130" r="76" fill="#d9e4ee"/>
+
+<path d="M150 190V105"
+stroke="#17365D"
+stroke-width="8"
+stroke-linecap="round"/>
+
+<path d="M150 132C115 126 94 104 91 79c35 0 58 15 59 53Z"
+fill="#7f9b78"/>
+
+<path d="M151 113c10-33 34-49 61-49-2 31-23 54-61 59Z"
+fill="#9ab28e"/>
+
+<path d="M150 190c-36 0-67-11-88-31"
+fill="none"
+stroke="#b89b63"
+stroke-width="5"
+stroke-linecap="round"/>
+
+<text x="290" y="115"
+font-family="Georgia,serif"
+font-size="34"
+fill="#17365D">
+Una nueva vida
+</text>
+
+<text x="290" y="158"
+font-family="Georgia,serif"
+font-size="21"
+fill="#666">
+Fe, arrepentimiento y gracia
+</text>
+
+</svg>
+
+</div>
+
+
+<p>
+Cuando alguien renace espiritualmente <sup>Juan 3.3</sup>, significa
 que Dios le dio la oportunidad de purificarse de sus pecados mediante el
 arrepentimiento y la <em>fe</em> en <strong>Jesucristo</strong>
 <sup>Efesios 2:8-9</sup> para comenzar una vida nueva,
 independientemente de su pasado. No le recuerdes a nadie su mal pasado,
 solo debe importarte su presente. Dios nos salvó hace más de 20 siglos
-con la muerte de Jesús y su Palabra dice: “<strong>perdonaré la maldad de ellos, y no me acordaré más de su pecado</strong>” <sup>Jeremías
-31.34</sup> . Si él ya pagó tu culpa, no te condenes más a ti mismo.
+con la muerte de Jesús y su Palabra dice: “<strong>perdonaré la maldad de ellos, y no me acordaré más de su pecado</strong>”
+<sup>Jeremías 31.34</sup>. Si él ya pagó tu culpa, no te condenes más a ti mismo.
 Dios es misericordioso; y Él lo ha hecho fácil para todos y gratuito, y
 quien reciba su gracia, tendrá delicias a su diestra para siempre
 <sup>Salmos 16.11</sup>. Así es, <strong>Jesús</strong> pagó por
-nuestras faltas y pecad<strong>o</strong> al morir en la cruz, y quiere
-guiarnos a la vida eterna (el Padre) <sup>Apocalipsis 21.8</sup> .
+nuestras faltas y pecado al morir en la cruz, y quiere
+guiarnos a la vida eterna (el Padre) <sup>Apocalipsis 21.8</sup>.
 Entonces, ¿por qué deberíamos arriesgarnos a perdernos con un castigo
-eterno en el lago de fuego? El Dios Eterno ofrece protección <sup>Isaías
-41.10-13</sup>, así como consejo <sup>Isaías 9.6</sup>, poder
-<sup>Hechos 1.8</sup>, sanidad <sup>Mateo 4.23</sup>, reconciliación y
-provisión <sup>Filipenses 4.19</sup> a todo aquel que en Él cree.
-¿Vendrás a Él? ¡Su diestra está extendida ahora!  </p></section>
-<section class="chapter" id="capitulo-2"><h2>Capítulo 2 — Lo que significa arrepentirse</h2><div class="chapter-art"><svg viewBox="0 0 900 260" role="img" aria-label="Ilustración original: arrepentimiento y un nuevo camino" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="260" rx="22" fill="#f3f0eb"/><path d="M90 200C230 160 290 185 390 130S560 60 810 92" fill="none" stroke="#b89b63" stroke-width="10" stroke-linecap="round"/><path d="M90 200l24-9-10 23Z" fill="#b89b63"/><circle cx="405" cy="127" r="18" fill="#17365D"/><path d="M405 150v45M405 163l-24 19M405 163l25 18" stroke="#17365D" stroke-width="7" stroke-linecap="round"/><text x="500" y="126" font-family="Georgia,serif" font-size="34" fill="#17365D">Un nuevo camino</text><text x="500" y="168" font-family="Georgia,serif" font-size="21" fill="#666">Arrepentimiento que transforma</text></svg></div><p>Cuando le dices a tu Creador: "<em>Me equivoqué</em>", eso no es
-suficiente. El Señor exige un acto genuino de arrepentimiento <sup>Mateo
-3.8</sup>. Así que decides no solo olvidar tu antigua vida, sino buscar
-su rostro, justicia y propósito. También invitas a
+eterno en el lago de fuego? El Dios Eterno ofrece protección
+<sup>Isaías 41.10-13</sup>, así como consejo <sup>Isaías 9.6</sup>,
+poder <sup>Hechos 1.8</sup>, sanidad <sup>Mateo 4.23</sup>,
+reconciliación y provisión <sup>Filipenses 4.19</sup> a todo aquel que
+en Él cree. ¿Vendrás a Él? ¡Su diestra está extendida ahora!
+</p>
+
+</section>
+
+
+<section class="chapter" id="capitulo-2">
+
+<h2>
+Capítulo 2 — Lo que significa arrepentirse
+</h2>
+
+<div class="chapter-art">
+
+<svg viewBox="0 0 900 260"
+role="img"
+aria-label="Ilustración original: arrepentimiento y un nuevo camino"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="900" height="260" rx="22" fill="#f3f0eb"/>
+
+<path d="M90 200C230 160 290 185 390 130S560 60 810 92"
+fill="none"
+stroke="#b89b63"
+stroke-width="10"
+stroke-linecap="round"/>
+
+<path d="M90 200l24-9-10 23Z"
+fill="#b89b63"/>
+
+<circle cx="405" cy="127" r="18" fill="#17365D"/>
+
+<path d="M405 150v45M405 163l-24 19M405 163l25 18"
+stroke="#17365D"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<text x="500" y="126"
+font-family="Georgia,serif"
+font-size="34"
+fill="#17365D">
+Un nuevo camino
+</text>
+
+<text x="500" y="168"
+font-family="Georgia,serif"
+font-size="21"
+fill="#666">
+Arrepentimiento que transforma
+</text>
+
+</svg>
+
+</div>
+
+
+<p>
+Cuando le dices a tu Creador: "<em>Me equivoqué</em>", eso no es
+suficiente. El Señor exige un acto genuino de arrepentimiento
+<sup>Mateo 3.8</sup>. Así que decides no solo olvidar tu antigua vida,
+sino buscar su rostro, justicia y propósito. También invitas a
 <strong>Jesucristo</strong> a entrar en tu espíritu. Si lo crees con
 todo tu corazón y lo confiesas con tu boca, serás salvo <sup>Romanos
 10:11</sup>; y como acto de reverencia, te <em>bautizas</em> en agua en
@@ -61,8 +540,62 @@ recibieron el don del Todopoderoso. El apóstol Pedro lo resume así:
 "Arrepentíos y <em>bautícese</em> cada uno de vosotros en el nombre de
 Jesucristo para perdón de los pecados, y recibiréis el <em>don</em> del
 Espíritu Santo” <sup>Hechos 2.38</sup>, con la evidencia física de
-hablar en otras lenguas.</p></section>
-<section class="chapter" id="capitulo-3"><h2>Capítulo 3 — Empieza a leer la Biblia</h2><div class="chapter-art"><svg viewBox="0 0 900 260" role="img" aria-label="Ilustración original: Biblia abierta y lectura diaria" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="260" rx="22" fill="#eef2f5"/><path d="M95 190V80c75-18 128 5 170 35v104c-42-30-95-53-170-29ZM265 115c42-30 95-53 170-35v110c-75-24-128-1-170 29Z" fill="#fff" stroke="#17365D" stroke-width="5"/><path d="M125 105c40-7 75 0 108 17M125 132c40-7 75 0 108 17M297 122c34-17 69-24 108-17M297 149c34-17 69-24 108-17" fill="none" stroke="#b9b5ad" stroke-width="4"/><text x="510" y="115" font-family="Georgia,serif" font-size="34" fill="#17365D">Abre la Palabra</text><text x="510" y="157" font-family="Georgia,serif" font-size="21" fill="#666">Lee, escucha y medita cada día</text></svg></div><p><strong>“Escudriña a diario las Escrituras Santas”</strong></p><p>Ya has recibido a Jesús como tu <strong>S</strong>eñor y
+hablar en otras lenguas.
+</p>
+
+</section>
+
+
+<section class="chapter" id="capitulo-3">
+
+<h2>
+Capítulo 3 — Empieza a leer la Biblia
+</h2>
+
+<div class="chapter-art">
+
+<svg viewBox="0 0 900 260"
+role="img"
+aria-label="Ilustración original: Biblia abierta y lectura diaria"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="900" height="260" rx="22" fill="#eef2f5"/>
+
+<path d="M95 190V80c75-18 128 5 170 35v104c-42-30-95-53-170-29ZM265 115c42-30 95-53 170-35v110c-75-24-128-1-170 29Z"
+fill="#fff"
+stroke="#17365D"
+stroke-width="5"/>
+
+<path d="M125 105c40-7 75 0 108 17M125 132c40-7 75 0 108 17M297 122c34-17 69-24 108-17M297 149c34-17 69-24 108-17"
+fill="none"
+stroke="#b9b5ad"
+stroke-width="4"/>
+
+<text x="510" y="115"
+font-family="Georgia,serif"
+font-size="34"
+fill="#17365D">
+Abre la Palabra
+</text>
+
+<text x="510" y="157"
+font-family="Georgia,serif"
+font-size="21"
+fill="#666">
+Lee, escucha y medita cada día
+</text>
+
+</svg>
+
+</div>
+
+
+<p>
+<strong>“Escudriña a diario las Escrituras Santas”</strong>
+</p>
+
+<p>
+Ya has recibido a Jesús como tu <strong>S</strong>eñor y
 <strong>S</strong>alvador, y si no lo has hecho, te vas a bautizar de
 inmediato bajo las aguas en su Nombre. Así que, de ahora en adelante,
 haz todo lo que él te diga; y para ello, debes conocer su voluntad
@@ -70,17 +603,117 @@ haz todo lo que él te diga; y para ello, debes conocer su voluntad
 <sup>1 Juan 2:17</sup>. Al leer, escudriñar <sup>Juan 5:39</sup> y
 meditar <sup>Josué 1:8</sup>, nutres tu alma y tu espíritu para obedecer
 sus mandamientos. Comienza leyendo el <em><strong>evangelio de
-Juan</strong></em> y luego termina todo el Nuevo Testamento.</p><p>Da gracias a Dios <sup>1 Tes 5:18</sup> cada vez que leas su Palabra
+Juan</strong></em> y luego termina todo el Nuevo Testamento.
+</p>
+
+<p>
+Da gracias a Dios <sup>1 Tes 5:18</sup> cada vez que leas su Palabra
 y pídele entendimiento <sup>Santiago 1:5</sup>. Toda revelación viene de
 lo alto <sup>Proverbios 2:6</sup>, del Espíritu Santo. Y él imparte esa
-revelación directamente a tu espíritu. No razones las Escrituras <sup>2
-Pedro 1:20-21</sup>, simplemente absorbe la palabra con alegría y él te
-dará sabiduría y entendimiento para todos los asuntos de tu vida.</p><p>En el Antiguo Testamento (<em>Pacto</em>), es decir, antes de que
+revelación directamente a tu espíritu. No razones las Escrituras
+<sup>2 Pedro 1:20-21</sup>, simplemente absorbe la palabra con alegría
+y él te dará sabiduría y entendimiento para todos los asuntos de tu vida.
+</p>
+
+<p>
+En el Antiguo Testamento (<em>Pacto</em>), es decir, antes de que
 Jesús viniera a nosotros, el Espíritu del Señor sólo residía en tres
 tipos de personas: <em>reyes, profetas</em> y <em>sacerdotes</em>. Hoy,
 el Espíritu del Señor reside en todos los que han recibido la gracia de
-Dios. <sup>Romanos 8:9-11</sup></p><p>Presiona el siguiente botón para abrir el <strong>evangelio de Juan</strong> y leer u oír el texto bíblico en línea.</p><p style="text-align:center"><a class="bible-link" href="https://www.bible.com/es/bible/149/JHN.1.RVR1960" target="_blank" rel="noopener">📖 Leer u oír el Evangelio de Juan</a></p></section>
-<section class="chapter" id="capitulo-4"><h2>Capítulo 4 — Sométete, <em>según</em> corresponda</h2><div class="chapter-art"><svg viewBox="0 0 900 260" role="img" aria-label="Ilustración original: pastor guiando por un sendero" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="260" rx="22" fill="#f3f0eb"/><path d="M70 215C220 175 310 205 430 155S650 65 830 95" fill="none" stroke="#d0b27a" stroke-width="22" stroke-linecap="round"/><path d="M70 215C220 175 310 205 430 155S650 65 830 95" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="420" cy="145" r="15" fill="#17365D"/><path d="M420 163v43M420 176l-24 19M420 176l25 19M420 163c0-31 13-50 29-61" fill="none" stroke="#17365D" stroke-width="7" stroke-linecap="round"/><path d="M449 102c18-6 27 4 27 17" fill="none" stroke="#17365D" stroke-width="6" stroke-linecap="round"/><text x="555" y="125" font-family="Georgia,serif" font-size="34" fill="#17365D">Camina acompañado</text><text x="555" y="167" font-family="Georgia,serif" font-size="21" fill="#666">Busca consejo y comunión sana</text><text x="555" y="201" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#17365D">Lee Hebreos 13.17</text></svg></div><p>Tu <em>líder espiritual</em> puede ser, al principio, la persona que
+Dios. <sup>Romanos 8:9-11</sup>
+</p>
+
+<p>
+Presiona el siguiente botón para abrir el <strong>evangelio de Juan</strong>
+y leer u oír el texto bíblico en línea.
+</p>
+
+<p style="text-align:center">
+
+<a class="bible-link"
+href="https://www.bible.com/es/bible/149/JHN.1.RVR1960"
+target="_blank"
+rel="noopener">
+
+📖 Leer u oír el Evangelio de Juan
+
+</a>
+
+</p>
+
+</section>
+
+
+<section class="chapter" id="capitulo-4">
+
+<h2>
+Capítulo 4 — Sométete, <em>según</em> corresponda
+</h2>
+
+<div class="chapter-art">
+
+<svg viewBox="0 0 900 260"
+role="img"
+aria-label="Ilustración original: pastor guiando por un sendero"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="900" height="260" rx="22" fill="#f3f0eb"/>
+
+<path d="M70 215C220 175 310 205 430 155S650 65 830 95"
+fill="none"
+stroke="#d0b27a"
+stroke-width="22"
+stroke-linecap="round"/>
+
+<path d="M70 215C220 175 310 205 430 155S650 65 830 95"
+fill="none"
+stroke="#fff"
+stroke-width="5"
+stroke-linecap="round"/>
+
+<circle cx="420" cy="145" r="15" fill="#17365D"/>
+
+<path d="M420 163v43M420 176l-24 19M420 176l25 19M420 163c0-31 13-50 29-61"
+fill="none"
+stroke="#17365D"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path d="M449 102c18-6 27 4 27 17"
+fill="none"
+stroke="#17365D"
+stroke-width="6"
+stroke-linecap="round"/>
+
+<text x="555" y="125"
+font-family="Georgia,serif"
+font-size="34"
+fill="#17365D">
+Camina acompañado
+</text>
+
+<text x="555" y="167"
+font-family="Georgia,serif"
+font-size="21"
+fill="#666">
+Busca consejo y comunión sana
+</text>
+
+<text x="555" y="201"
+font-family="Georgia,serif"
+font-size="18"
+font-weight="bold"
+fill="#17365D">
+Lee Hebreos 13.17
+</text>
+
+</svg>
+
+</div>
+
+
+<p>
+Tu <em>líder espiritual</em> puede ser, al principio, la persona que
 te compartió el evangelio de Cristo para que fueras salvo <sup>Hechos
 11:14</sup>, o un pastor que el Señor te asignó <sup>Efesios 4:11</sup>
 después de que oraste o le pediste ayuda <sup>Juan 14:13-19</sup>. Un
@@ -97,9 +730,83 @@ Cuando aprendas a hacerlo, podrás confiar de nuevo en los que obedecen a
 la fe <sup>2 Corintios 7:16</sup>, lo cual también es un requisito en el
 reino de Dios. Así que, reúnanse, compartan, oren, adoren, disfruten y
 coman juntos con el pueblo de Dios <sup>Hechos 2:42-47</sup>. La iglesia
-no es un edificio, es el mismo <em>cuerpo</em> de Cristo. <sup>1
-Corintios 12.27</sup></p></section>
-<section class="chapter" id="capitulo-5"><h2>Capítulo 5 — Siembra e invierte en almas</h2><div class="chapter-art"><svg viewBox="0 0 900 260" role="img" aria-label="Ilustración original: una semilla sembrada que crece" xmlns="http://www.w3.org/2000/svg"><rect width="900" height="260" rx="22" fill="#eef2f5"/><path d="M75 205h350" stroke="#9a7b50" stroke-width="16" stroke-linecap="round"/><path d="M250 205c0-48 0-72 0-102" stroke="#5f805c" stroke-width="8"/><path d="M250 130c-35-6-57-27-59-54 34-1 55 16 59 54ZM253 115c8-33 31-51 59-52-1 32-22 54-59 60Z" fill="#7f9b78"/><circle cx="145" cy="184" r="7" fill="#b89b63"/><circle cx="185" cy="200" r="6" fill="#b89b63"/><circle cx="315" cy="192" r="7" fill="#b89b63"/><text x="500" y="115" font-family="Georgia,serif" font-size="34" fill="#17365D">Siembra con propósito</text><text x="500" y="157" font-family="Georgia,serif" font-size="21" fill="#666">Invierte en las almas y comparte la Palabra</text></svg></div><div class="scripture">“<strong>Es más bienaventurado (y trae mayor alegría)</strong> <strong>dar que recibir.</strong>”<br><sup>Hechos 20.35</sup><br><span style="font-style:normal">(Jesús)</span></div><p>Para cada necesidad que tengamos, debemos sembrar una
+no es un edificio, es el mismo <em>cuerpo</em> de Cristo.
+<sup>1 Corintios 12.27</sup>
+</p>
+
+</section>
+
+
+<section class="chapter" id="capitulo-5">
+
+<h2>
+Capítulo 5 — Siembra e invierte en almas
+</h2>
+
+<div class="chapter-art">
+
+<svg viewBox="0 0 900 260"
+role="img"
+aria-label="Ilustración original: una semilla sembrada que crece"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="900" height="260" rx="22" fill="#eef2f5"/>
+
+<path d="M75 205h350"
+stroke="#9a7b50"
+stroke-width="16"
+stroke-linecap="round"/>
+
+<path d="M250 205c0-48 0-72 0-102"
+stroke="#5f805c"
+stroke-width="8"/>
+
+<path d="M250 130c-35-6-57-27-59-54 34-1 55 16 59 54ZM253 115c8-33 31-51 59-52-1 32-22 54-59 60Z"
+fill="#7f9b78"/>
+
+<circle cx="145" cy="184" r="7" fill="#b89b63"/>
+<circle cx="185" cy="200" r="6" fill="#b89b63"/>
+<circle cx="315" cy="192" r="7" fill="#b89b63"/>
+
+<text x="500" y="115"
+font-family="Georgia,serif"
+font-size="34"
+fill="#17365D">
+Siembra con propósito
+</text>
+
+<text x="500" y="157"
+font-family="Georgia,serif"
+font-size="21"
+fill="#666">
+Invierte en las almas y comparte la Palabra
+</text>
+
+</svg>
+
+</div>
+
+
+<div class="scripture">
+
+“<strong>Es más bienaventurado (y trae mayor alegría)</strong>
+<strong>dar que recibir.</strong>”
+
+<br>
+
+<sup>Hechos 20.35</sup>
+
+<br>
+
+<span style="font-style:normal">
+(Jesús)
+</span>
+
+</div>
+
+
+<p>
+Para cada necesidad que tengamos, debemos sembrar una
 <em>semilla</em>. Puede ser una semilla de amor y para amor; o puede ser
 para solucionar un litigio (semilla de paz), amistad, reconciliación,
 poder, salvación, sanidad, liberación, abundancia, etc. La mejor semilla
@@ -113,14 +820,65 @@ el <em>principio</em> se mantiene. “El que es enseñado en la palabra,
 haga partícipe de toda cosa buena al que lo instruye” <sup>Gálatas
 6.6</sup>. Siembra en cualquier ministerio o persona que consideres
 legítimo. Y también, si quieres compartir conmigo el evangelio de Cristo
-con otros, pasando la voz, estás a solo un clic, al final de la
-página.</p><p>Pero primero que todo….</p><p><strong>Pongámonos de acuerdo en la ORACIÓN:</strong></p><div class="prayer">“Padre Celestial, te pido que cada persona que lea esta guía, sea bendecida, sanada y prosperada. Multiplica las semillas que
-siembra, y te pido que cada ser se deleite en el Señor, y por tanto le
-concedas el deseo de su corazón. En el poderoso nombre de Jesús, Amén”.</div>
-<div class="donation"><h3 id="donar">Todo este material es gratuito</h3><p>Las guías y todo el material de LPC son <strong>100% gratis</strong>. Si deseas apoyar el trabajo, acepto donaciones porque tengo proyectos que tienen costos y necesitan recursos.</p><p><a href="../menu.html#donar">← Volver al menú, directamente a Donar</a></p></div>
-</section>
-<div class="back"><a href="../menu.html">Volver al Menú</a></div>
-</main>
+con otros, pasando la voz, estás a solo un clic, al final de la página.
+</p>
+
+
+<p>
+Pero primero que todo….
+</p>
+
+
+<p>
+<strong>Pongámonos de acuerdo en la ORACIÓN:</strong>
+</p>
+
+
+<div class="prayer">
+
+“Padre Celestial, te pido que cada persona que lea esta guía, sea
+bendecida, sanada y prosperada. Multiplica las semillas que siembra, y
+te pido que cada ser se deleite en el Señor, y por tanto le concedas el
+deseo de su corazón. En el poderoso nombre de Jesús, Amén”.
+
 </div>
+
+
+<div class="donation">
+
+<h3 id="donar">
+Todo este material es gratuito
+</h3>
+
+<p>
+Las guías y todo el material de LPC son <strong>100% gratis</strong>.
+Si deseas apoyar el trabajo, acepto donaciones porque tengo proyectos
+que tienen costos y necesitan recursos.
+</p>
+
+<p>
+<a href="../menu.html#donar">
+← Volver al menú, directamente a Donar
+</a>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="back">
+
+<a href="../menu.html">
+Volver al Menú
+</a>
+
+</div>
+
+
+</main>
+
+</div>
+
 </body>
 </html>
