@@ -1,245 +1,59 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Explora — La Palabra en Cápsulas</title>
-
 <style>
-    * {
-        box-sizing: border-box;
-    }
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        min-height: 100%;
-    }
-
-    body {
-        background: #0F4C81;
-        color: #ffffff;
-        font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    .page {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    header {
-        padding: 28px 40px 10px;
-        position: relative;
-    }
-
-    .logo {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 22px;
-        font-weight: bold;
-        font-style: italic;
-        color: #ffffff;
-        letter-spacing: 1px;
-    }
-
-    .intro {
-        text-align: center;
-        margin-top: 45px;
-        margin-bottom: 35px;
-    }
-
-    .intro h1 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 34px;
-        letter-spacing: 2px;
-        color: #e7c96f;
-    }
-
-    .intro p {
-        margin: 12px 0 0;
-        font-size: 20px;
-        color: #D6D2C4;
-    }
-
-    .menu {
-        width: 760px;
-        max-width: 90%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 70px;
-        row-gap: 0;
-    }
-
-    .menu > div:first-child {
-        grid-column: 1;
-    }
-
-    .menu > div.right {
-        grid-column: 2;
-        border-left: 1px solid rgba(255,255,255,0.45);
-        padding-left: 55px;
-    }
-
-    .menu a {
-        display: block;
-        color: #ffffff;
-        text-decoration: none;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 22px;
-        padding: 15px 20px;
-        transition: color 0.2s ease;
-    }
-
-    .menu a:hover {
-        color: #e7c96f;
-    }
-
-    .back {
-        text-align: center;
-        margin-top: 45px;
-        padding-bottom: 30px;
-    }
-
-    .back a {
-        color: #e7c96f;
-        text-decoration: none;
-        font-size: 18px;
-        border-bottom: 1px solid rgba(231,201,111,0.7);
-        padding-bottom: 3px;
-    }
-
-    .back a:hover {
-        color: #ffffff;
-        border-color: #ffffff;
-    }
-
-    @media (max-width: 700px) {
-
-        header {
-            padding: 22px 24px 5px;
-        }
-
-        .logo {
-            font-size: 19px;
-        }
-
-        .intro {
-            text-align: left;
-            margin: 35px 24px 28px;
-        }
-
-        .intro h1 {
-            font-size: 29px;
-            letter-spacing: 1px;
-        }
-
-        .intro p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        .menu {
-            width: auto;
-            max-width: none;
-            margin: 0 24px;
-            display: block;
-        }
-
-        .menu > div:first-child,
-        .menu > div.right {
-            grid-column: auto;
-        }
-
-        .menu a {
-            font-size: 20px;
-            padding: 13px 0;
-        }
-
-        .menu .right {
-            border-left: none;
-            padding-left: 0;
-        }
-
-        .back {
-            margin-top: 35px;
-            padding-bottom: 25px;
-        }
-    }
+:root{--blue:#0F4C81;--gold:#e7c96f;--white:#fff;--soft:#D6D2C4}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%}
+body{background:var(--blue);color:var(--white);font-family:Georgia,"Times New Roman",serif}
+.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:42px 28px 30px}
+.logo{position:absolute;top:24px;left:28px;color:#fff;font-size:18px;font-weight:bold;font-style:italic;letter-spacing:1px;opacity:.95}
+header{text-align:center;margin-top:16px;margin-bottom:28px}
+h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:42px;font-weight:normal;letter-spacing:.4px}
+.intro{text-align:center;max-width:760px;margin:0 auto 32px}
+.intro p{margin:0;font-size:20px;color:var(--soft);line-height:1.6}
+.menu{width:min(850px,100%);display:grid;grid-template-columns:1fr 1fr;column-gap:72px;position:relative;margin-top:4px}
+.menu::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,.25);transform:translateX(-50%)}
+.column{display:flex;flex-direction:column;align-items:center;gap:18px}
+.item{width:100%;text-align:center}
+.item a{display:inline-block;color:#fff;text-decoration:none;font-size:23px;line-height:1.25;padding:5px 10px;border-bottom:1px solid transparent;transition:.2s ease}
+.item a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.back{margin-top:42px;text-align:center}
+.back a{color:var(--gold);font-size:18px;text-decoration:none;border-bottom:1px solid rgba(231,201,111,.7)}
+.back a:hover{color:#fff;border-color:#fff}
+@media(max-width:600px){
+.page{align-items:flex-start;padding:34px 24px 28px}.logo{top:18px;left:20px}
+header{width:100%;margin-top:38px;margin-bottom:22px;text-align:center}h1{font-size:34px}
+.intro{width:100%;margin-bottom:26px;text-align:left}.intro p{font-size:18px;line-height:1.5}
+.menu{display:block;width:100%;margin-top:0}.menu::after{display:none}
+.column{align-items:flex-start;gap:9px}.column+.column{margin-top:9px}.item{text-align:left}
+.item a{font-size:21px;padding:3px 0}.back{width:100%;margin-top:32px;text-align:center}
+}
 </style>
-
 </head>
-
 <body>
-
 <div class="page">
-
-<header>
-    <div class="logo">LPC</div>
-</header>
-
-<section class="intro">
-    <h1>MIRA, CRECE Y COMPARTE</h1>
-    <p>Explora el contenido de La Palabra en Cápsulas</p>
-</section>
-
-<nav class="menu">
-
-
-<div>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/LPC/index.html">
-        Acerca de LPC
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/articulos/index.html">
-        Artículos
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/ensenanzas/index.html">
-        Enseñanzas
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/oracion/index.html">
-        Oración
-    </a>
-
+<div class="logo">LPC</div>
+<header><h1>Explora</h1></header>
+<div class="intro"><p>Mira, Crece y Comparte</p></div>
+<nav class="menu" aria-label="Menú principal de Explora">
+<div class="column">
+<div class="item"><a href="./LPC/index.html">Acerca de LPC</a></div>
+<div class="item"><a href="./descargas/index.html">Descargas</a></div>
+<div class="item"><a href="./testimonios/index.html">Testimonios</a></div>
+<div class="item"><a href="./articulos/index.html">Artículos</a></div>
 </div>
-
-<div class="right">
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/guias/gnc/index.html">
-        Descargas
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/testimonios/index.html">
-        Testimonios
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/proyectos/index.html">
-        Proyectos
-    </a>
-
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/donar/index.html">
-        Donar
-    </a>
-
+<div class="column">
+<div class="item"><a href="./ensenanzas/index.html">Enseñanzas</a></div>
+<div class="item"><a href="./oracion/index.html">Oración</a></div>
+<div class="item"><a href="./proyectos/index.html">Proyectos</a></div>
+<div class="item"><a href="./donar/index.html">Donar</a></div>
 </div>
-
-
 </nav>
-
-<div class="back">
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/index.html">
-        ← Volver a Inicio
-    </a>
+<div class="back"><a href="../index.html">Volver a Inicio</a></div>
 </div>
-
-</div>
-
 </body>
 </html>
