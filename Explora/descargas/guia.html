@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -25,90 +24,79 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     margin:0;
     background:var(--bg);
     color:var(--text);
     font-family:Georgia, "Times New Roman", serif;
-    font-size:19px;
-    line-height:1.78;
+    line-height:1.72;
 }
 
 .page{
-    width:min(900px, calc(100% - 32px));
-    margin:30px auto 42px;
+    width:min(900px, 92%);
+    margin:38px auto;
     background:var(--paper);
-    padding:48px 72px 58px;
-    border:1px solid var(--line);
-    border-radius:10px;
-    box-shadow:0 8px 30px rgba(0,0,0,.07);
+    padding:48px 58px 60px;
+    border:1px solid #ddd8cf;
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
 }
 
-header{
+.header{
     text-align:center;
-    padding-bottom:26px;
-    border-bottom:1px solid var(--line);
-    margin-bottom:36px;
+    margin-bottom:34px;
 }
 
 .eyebrow{
-    font-size:13px;
+    color:var(--accent);
+    font-size:14px;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:var(--muted);
-    margin-bottom:8px;
+    margin-bottom:12px;
 }
 
-.title{
+h1{
     margin:0;
     color:var(--accent);
-    font-family:"Playfair Display", Georgia, serif;
     font-size:38px;
     line-height:1.2;
-    font-weight:700;
 }
 
 .author{
-    margin-top:10px;
+    margin-top:12px;
     color:var(--muted);
     font-size:16px;
 }
 
-/* IMAGEN DESPUÉS DE J.V. */
-
 .author-image{
     display:block;
-    width:320px;
-    max-width:100%;
-    height:auto;
-    margin:22px auto 24px;
+    width:280px;
+    height:230px;
+    object-fit:cover;
+    object-position:center center;
+    margin:26px auto 30px;
     border-radius:8px;
 }
 
-/* CONTENIDO */
-
-.article{
+.intro{
+    margin:0 auto 36px;
     max-width:760px;
-    margin:0 auto;
+    font-size:17px;
+    text-align:justify;
 }
 
 .toc{
-    background:#f3f0eb;
-    border:1px solid var(--line);
-    border-radius:10px;
+    margin:30px 0 42px;
     padding:24px 28px;
-    margin-bottom:38px;
+    background:var(--chapter-bg);
+    border:1px solid var(--line);
+    border-radius:8px;
 }
 
 .toc-title{
-    margin:0 0 14px;
+    font-size:20px;
+    font-weight:bold;
     color:var(--accent);
-    font-size:22px;
-    font-weight:700;
+    margin-bottom:14px;
 }
 
 .toc a{
@@ -122,35 +110,23 @@ header{
     text-decoration:underline;
 }
 
-
-/* CONTENEDOR GENERAL DE LOS CAPÍTULOS */
-
 .chapters{
-    background:var(--chapter-bg);
-    border:1px solid #ded9d0;
-    border-radius:12px;
-    padding:30px;
+    margin-top:10px;
 }
-
-
-/* CAPÍTULOS */
 
 .chapter{
-    margin-top:46px;
-}
-
-.chapter:first-child{
-    margin-top:0;
+    margin-bottom:46px;
+    padding:30px 32px;
+    background:var(--chapter-bg);
+    border:1px solid var(--line);
+    border-radius:9px;
 }
 
 .chapter h2{
-    margin:0 0 20px;
+    margin:0 0 22px;
     color:var(--accent);
-    font-family:"Playfair Display", Georgia, serif;
-    font-size:29px;
+    font-size:27px;
     line-height:1.3;
-    border-bottom:1px solid var(--line);
-    padding-bottom:10px;
 }
 
 .chapter p{
@@ -158,12 +134,9 @@ header{
     text-align:justify;
 }
 
-.chapter strong{
-    color:#222;
+.chapter p:last-child{
+    margin-bottom:0;
 }
-
-
-/* VERSÍCULOS */
 
 .scripture{
     margin:24px 0;
@@ -174,48 +147,30 @@ header{
     font-style:italic;
 }
 
-
-/* IMÁGENES DE LOS CAPÍTULOS */
-
-.chapter-art{
-    margin:0 0 28px;
-    border:1px solid var(--line);
-    border-radius:12px;
-    overflow:hidden;
-    background:#f8f6f1;
-}
-
-.chapter-art svg{
+.scripture strong{
     display:block;
-    width:100%;
-    height:auto;
+    color:var(--accent);
+    font-style:normal;
+    margin-bottom:6px;
 }
 
-
-/* ENLACE BÍBLICO */
-
-.bible-link{
-    display:inline-block;
-    margin:6px 0 24px;
-    padding:10px 17px;
-    background:var(--accent);
-    color:white;
-    text-decoration:none;
+.resource{
+    margin:22px 0;
+    padding:18px 22px;
+    background:var(--quote);
+    border:1px solid var(--line);
     border-radius:7px;
-    font-size:16px;
 }
 
-.bible-link:hover{
-    opacity:.9;
+.resource a{
+    color:var(--accent);
+    font-weight:bold;
 }
-
-
-/* ORACIÓN */
 
 .prayer{
     margin:28px 0;
     padding:22px 24px;
-    background:#f3f0eb;
+    background:#e8e3da;
     border:1px solid var(--line);
     border-radius:9px;
 }
@@ -224,82 +179,47 @@ header{
     color:var(--accent);
 }
 
-
-/* DONACIÓN */
-
-.donation{
-    margin-top:36px;
-    padding:24px;
-    background:#f3f0eb;
-    border:1px solid var(--line);
-    border-radius:10px;
-}
-
-.donation h3{
-    margin:0 0 12px;
-    color:var(--accent);
-    font-family:"Playfair Display", Georgia, serif;
-    font-size:24px;
-}
-
-.donation p{
-    margin-bottom:14px;
-}
-
-.donation a,
-.back{
-    color:var(--accent);
-    text-decoration:none;
-    font-weight:700;
-}
-
-.donation a:hover,
-.back:hover{
-    text-decoration:underline;
-}
-
 .back{
     display:block;
-    margin-top:36px;
-    text-align:center;
-    font-size:17px;
+    width:max-content;
+    margin:40px auto 0;
+    padding:11px 20px;
+    color:#fff;
+    background:var(--accent);
+    border-radius:6px;
+    text-decoration:none;
+    font-family:Arial, sans-serif;
+    font-size:14px;
 }
 
+.back:hover{
+    opacity:.9;
+}
 
-/* CELULAR */
-
-@media(max-width:700px){
+@media (max-width:700px){
 
     body{
-        font-size:17px;
-        line-height:1.72;
+        line-height:1.68;
     }
 
     .page{
-        width:calc(100% - 20px);
-        margin:18px auto 28px;
-        padding:30px 20px 38px;
-        border-radius:8px;
+        width:94%;
+        margin:18px auto;
+        padding:28px 20px 38px;
     }
 
-    header{
-        padding-bottom:22px;
-        margin-bottom:28px;
+    h1{
+        font-size:30px;
     }
 
     .eyebrow{
         font-size:12px;
-    }
-
-    .title{
-        font-size:31px;
+        letter-spacing:1.6px;
     }
 
     .author{
         font-size:15px;
     }
-
-    /* IMAGEN MÁS PEQUEÑA EN CELULAR */
 
     .author-image{
         width:230px;
@@ -309,343 +229,322 @@ header{
         margin:20px auto 22px;
     }
 
-    .article{
-        max-width:none;
+    .intro{
+        font-size:16px;
+        text-align:justify;
+        margin-bottom:28px;
     }
 
     .toc{
         padding:20px;
-        margin-bottom:28px;
-    }
-
-    .toc-title{
-        font-size:20px;
-    }
-
-    .toc a{
-        font-size:16px;
-        margin:7px 0;
-    }
-
-    .chapters{
-        padding:18px 14px 22px;
-        border-radius:10px;
+        margin:24px 0 32px;
     }
 
     .chapter{
-        margin-top:38px;
-    }
-
-    .chapter:first-child{
-        margin-top:0;
+        padding:23px 19px;
+        margin-bottom:32px;
     }
 
     .chapter h2{
-        font-size:25px;
+        font-size:23px;
         margin-bottom:18px;
     }
-
-    /* TEXTO JUSTIFICADO EN CELULAR */
 
     .chapter p{
         text-align:justify;
         margin-bottom:17px;
     }
 
-    /* VERSÍCULOS EN CELULAR */
-
     .scripture{
-        padding:16px 18px;
-        margin:22px 0;
+        margin:20px 0;
+        padding:16px 17px;
     }
 
-    .chapter-art{
-        margin-bottom:22px;
-    }
-
-    .bible-link{
-        font-size:15px;
-        padding:9px 13px;
+    .resource{
+        padding:16px 17px;
     }
 
     .prayer{
-        padding:19px;
-    }
-
-    .donation{
-        padding:20px;
-    }
-
-    .donation h3{
-        font-size:22px;
+        padding:19px 18px;
     }
 
     .back{
-        margin-top:30px;
+        margin-top:32px;
+        font-size:14px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="page">
 
-<header>
-    <div class="eyebrow">La Palabra en Cápsulas</div>
-    <h1 class="title">Guía para Nuevos Creyentes</h1>
-    <div class="author">Por J.V.</div>
+    <header class="header">
+
+        <div class="eyebrow">
+            La Palabra en Cápsulas
+        </div>
+
+        <h1>
+            Guía para Nuevos Creyentes
+        </h1>
+
+        <div class="author">
+            Por J.V.
+        </div>
+
+        <img
+            class="author-image"
+            src="salmo-32-8.png"
+            alt="Salmo 32:8"
+        >
+
+    </header>
 
 
-<img
-    class="author-image"
-    src="salmo-32-8.png"
-    alt="Te haré entender, y te enseñaré el camino en que debes andar; sobre ti fijaré mis ojos. Salmo 32:8"
->
-
-
-</header>
-
-<main class="article">
-
-<div class="chapters">
-
-<section class="chapter" id="capitulo-1">
-
-
-<h2>Capítulo 1 — Debes nacer de nuevo</h2>
-
-<p>
-    Cuando una persona recibe a Jesucristo como Señor y Salvador comienza una nueva vida.
-    Jesús llamó a esta experiencia <strong>nacer de nuevo</strong>.
-</p>
-
-<div class="scripture">
-    “El que no naciere de nuevo, no puede ver el reino de Dios.”
-    <br>
-    Juan 3:3
-</div>
-
-<p>
-    El nuevo nacimiento no significa simplemente comenzar a asistir a una iglesia,
-    adoptar una religión o intentar ser una mejor persona. Es una obra de Dios en el
-    interior de la persona.
-</p>
-
-<p>
-    La Biblia enseña que todos hemos pecado y necesitamos reconciliarnos con Dios.
-    Jesucristo murió en la cruz por nuestros pecados y resucitó para darnos vida.
-</p>
-
-<div class="scripture">
-    “De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron;
-    he aquí todas son hechas nuevas.”
-    <br>
-    2 Corintios 5:17
-</div>
-
-<p>
-    Si has recibido a Cristo sinceramente, comienza ahora a caminar con Él.
-    No dependas solamente de tus emociones. Aprende a conocerlo por medio de Su Palabra
-    y de una relación diaria con Dios.
-</p>
-
-
-</section>
-
-<section class="chapter" id="capitulo-2">
-
-
-<h2>Capítulo 2 — Lo que significa arrepentirse</h2>
-
-<p>
-    Arrepentirse significa cambiar de dirección. No es simplemente sentirse mal por
-    haber pecado. Es reconocer el pecado delante de Dios y decidir abandonar ese camino.
-</p>
-
-<div class="scripture">
-    “Arrepentíos, y creed en el evangelio.”
-    <br>
-    Marcos 1:15
-</div>
-
-<p>
-    El arrepentimiento verdadero produce cambios. No significa que nunca volverás a
-    equivocarte, pero sí que ya no deseas vivir deliberadamente en el pecado.
-</p>
-
-<p>
-    Cuando caigas, acude inmediatamente a Dios. Confiesa tu pecado, recibe Su perdón
-    y continúa caminando con Él.
-</p>
-
-<div class="scripture">
-    “Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados,
-    y limpiarnos de toda maldad.”
-    <br>
-    1 Juan 1:9
-</div>
-
-<p>
-    No permitas que la culpa te aleje de Dios. La gracia de Dios no es una licencia
-    para pecar; es la oportunidad de comenzar nuevamente y continuar creciendo.
-</p>
-
-
-</section>
-
-<section class="chapter" id="capitulo-3">
-
-
-<h2>Capítulo 3 — Empieza a leer la Biblia</h2>
-
-<p>
-    La Biblia es la Palabra de Dios y será una de las herramientas más importantes
-    para tu crecimiento espiritual.
-</p>
-
-<div class="scripture">
-    “Desead, como niños recién nacidos, la leche espiritual no adulterada,
-    para que por ella crezcáis para salvación.”
-    <br>
-    1 Pedro 2:2
-</div>
-
-<p>
-    No necesitas comenzar leyendo toda la Biblia de principio a fin.
-    Para un nuevo creyente puede ser muy útil comenzar por uno de los Evangelios,
-    especialmente el Evangelio de Juan.
-</p>
-
-<p>
-    Lee despacio. Pregunta qué está enseñando el texto acerca de Dios, de Jesucristo
-    y de cómo debemos vivir.
-</p>
-
-<a class="bible-link"
-   href="https://www.bible.com/es/bible/149/JHN.1.RVR1960"
-   target="_blank"
-   rel="noopener noreferrer">
-   📖 Leer u oír el Evangelio de Juan
-</a>
-
-<p>
-    También puedes comenzar a desarrollar el hábito de leer la Biblia todos los días,
-    aunque al principio sean solamente unos pocos versículos.
-</p>
-
-<p>
-    Lo importante no es solamente cuánto lees, sino permitir que la Palabra de Dios
-    transforme tu manera de pensar y de vivir.
-</p>
-
-
-</section>
-
-<section class="chapter" id="capitulo-4">
-
-
-<h2>Capítulo 4 — Sométete, según corresponda</h2>
-
-<p>
-    Una de las primeras cosas que debe aprender un nuevo creyente es que la vida
-    cristiana no consiste únicamente en creer. También implica obedecer a Dios.
-</p>
-
-<p>
-    La Biblia enseña que debemos someternos a Dios y también respetar las autoridades
-    que Él ha establecido.
-</p>
-
-<div class="scripture">
-    “Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.”
-    <br>
-    Santiago 4:7
-</div>
-
-<p>
-    Esto incluye aprender a vivir correctamente dentro de nuestra familia,
-    nuestro matrimonio, nuestro trabajo, nuestra comunidad y nuestra congregación.
-</p>
-
-<p>
-    Someterse no significa aceptar el pecado ni obedecer algo que claramente contradice
-    la Palabra de Dios. Significa vivir con humildad, orden y respeto dentro de los
-    principios que Dios ha establecido.
-</p>
-
-
-</section>
-
-<section class="chapter" id="capitulo-5">
-
-
-<h2>Capítulo 5 — Siembra e invierte en almas</h2>
-
-<p>
-    La vida cristiana también implica aprender a dar. Dios nos ha dado tiempo,
-    capacidades, oportunidades y recursos para que podamos servir a otros.
-</p>
-
-<div class="scripture">
-    “El que siembra escasamente, también segará escasamente; y el que siembra
-    generosamente, generosamente también segará.”
-    <br>
-    2 Corintios 9:6
-</div>
-
-<p>
-    Una de las maneras más importantes de sembrar es invertir en las personas.
-    Comparte el mensaje de Jesucristo, anima a otros, ayuda al que lo necesita
-    y utiliza aquello que Dios te ha confiado para hacer el bien.
-</p>
-
-<p>
-    No pienses solamente en lo que puedes recibir. Pregunta también:
-    <strong>¿Qué puedo aportar?</strong>
-</p>
-
-<p>
-    Cuando inviertes en las vidas de otras personas estás participando en algo
-    que tiene valor eterno.
-</p>
-
-<div class="prayer">
-
-    <strong>Oración y compromiso</strong>
-
-    <p>
-        Dios Padre, gracias por haberme dado una nueva vida.
-        Ayúdame a conocerte, obedecerte y crecer cada día.
-        Enséñame a amarte, a servir a otros y a compartir con ellos
-        lo que tú has hecho en mi vida. En el Nombre de Jesús,
-        Amén.
+    <p class="intro">
+        Comenzar una nueva vida con Dios es una experiencia maravillosa.
+        Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros
+        pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación
+        con Él.
     </p>
 
-</div>
+
+    <div class="chapters">
+
+        <section class="chapter" id="capitulo-1">
+
+            <h2>
+                Capítulo 1 — Debes nacer de nuevo
+            </h2>
+
+            <p>
+                Jesús enseñó que para entrar en el reino de Dios necesitamos
+                experimentar un nuevo nacimiento. No se trata simplemente de
+                mejorar nuestra conducta, sino de recibir una nueva vida que
+                proviene de Dios.
+            </p>
+
+            <div class="scripture">
+
+                <strong>Juan 3:3</strong>
+
+                «De cierto, de cierto te digo, que el que no naciere de nuevo,
+                no puede ver el reino de Dios.»
+
+            </div>
+
+            <p>
+                Cuando recibimos a Jesucristo como Señor y Salvador, comenzamos
+                una nueva vida. Dios nos transforma desde nuestro interior y nos
+                llama a caminar diariamente con Él.
+            </p>
+
+            <div class="scripture">
+
+                <strong>2 Corintios 5:17</strong>
+
+                «De modo que si alguno está en Cristo, nueva criatura es;
+                las cosas viejas pasaron; he aquí todas son hechas nuevas.»
+
+            </div>
+
+        </section>
 
 
+        <section class="chapter" id="capitulo-2">
+
+            <h2>
+                Capítulo 2 — Lo que significa arrepentirse
+            </h2>
+
+            <p>
+                Arrepentirse significa reconocer nuestro pecado, apartarnos de
+                él y volver nuestro corazón hacia Dios. El arrepentimiento no
+                es simplemente sentir tristeza por haber hecho algo malo; es
+                decidir cambiar de dirección y comenzar a caminar conforme a
+                la voluntad de Dios.
+            </p>
+
+            <div class="scripture">
+
+                <strong>Marcos 1:15</strong>
+
+                «Arrepentíos, y creed en el evangelio.»
+
+            </div>
+
+            <p>
+                Dios no desea que permanezcamos atrapados en nuestros errores.
+                Cuando confesamos nuestros pecados sinceramente, podemos confiar
+                en que Él nos perdona y nos limpia.
+            </p>
+
+            <div class="scripture">
+
+                <strong>1 Juan 1:9</strong>
+
+                «Si confesamos nuestros pecados, él es fiel y justo para
+                perdonar nuestros pecados, y limpiarnos de toda maldad.»
+
+            </div>
+
+        </section>
 
 
-    <a href="../menu.html#donar">
-        ← Volver al menú, directamente a Donar
+        <section class="chapter" id="capitulo-3">
+
+            <h2>
+                Capítulo 3 — Empieza a leer la Biblia
+            </h2>
+
+            <p>
+                La Biblia es la Palabra de Dios y es fundamental para nuestro
+                crecimiento espiritual. Así como un bebé necesita alimento para
+                crecer, el creyente necesita alimentarse espiritualmente por
+                medio de la Palabra de Dios.
+            </p>
+
+            <div class="scripture">
+
+                <strong>1 Pedro 2:2</strong>
+
+                «Desead, como niños recién nacidos, la leche espiritual no
+                adulterada, para que por ella crezcáis para salvación.»
+
+            </div>
+
+            <p>
+                Una buena manera de comenzar es leyendo el Evangelio de Juan.
+                Allí encontrarás muchos relatos sobre quién es Jesús, sus
+                enseñanzas, sus milagros y su amor por nosotros.
+            </p>
+
+            <div class="resource">
+
+                Puedes leer el Evangelio de Juan aquí:
+
+                <br><br>
+
+                <a
+                    href="https://www.bible.com/es/bible/149/JHN.1.RVR1960"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Leer Juan — RVR1960
+                </a>
+
+            </div>
+
+            <p>
+                Procura establecer un momento diario para leer la Biblia.
+                No se trata de leer grandes cantidades rápidamente, sino de
+                comprender lo que Dios te está enseñando y ponerlo en práctica.
+            </p>
+
+        </section>
+
+
+        <section class="chapter" id="capitulo-4">
+
+            <h2>
+                Capítulo 4 — Sométete, según corresponda
+            </h2>
+
+            <p>
+                La nueva vida en Cristo también implica aprender a vivir bajo
+                la autoridad de Dios. Someterse a Dios significa reconocer que
+                Él tiene el derecho de dirigir nuestra vida y que sus caminos
+                son mejores que los nuestros.
+            </p>
+
+            <div class="scripture">
+
+                <strong>Santiago 4:7</strong>
+
+                «Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.»
+
+            </div>
+
+            <p>
+                Esto incluye aprender a obedecer la Palabra de Dios, reconocer
+                aquellas áreas de nuestra vida que necesitan cambiar y permitir
+                que Dios nos enseñe y nos transforme.
+            </p>
+
+            <p>
+                También debemos aprender a someternos correctamente a las
+                autoridades y responsabilidades que Dios ha establecido en
+                nuestras vidas, siempre teniendo presente que nuestra primera
+                obediencia corresponde a Dios.
+            </p>
+
+        </section>
+
+
+        <section class="chapter" id="capitulo-5">
+
+            <h2>
+                Capítulo 5 — Siembra e invierte en almas
+            </h2>
+
+            <p>
+                Una vez que comenzamos nuestra relación con Dios, también
+                aprendemos a mirar hacia los demás. Dios desea utilizar nuestras
+                vidas para llevar esperanza, amor y el mensaje del evangelio
+                a otras personas.
+            </p>
+
+            <div class="scripture">
+
+                <strong>2 Corintios 9:6</strong>
+
+                «El que siembra escasamente, también segará escasamente; y el
+                que siembra generosamente, generosamente también segará.»
+
+            </div>
+
+            <p>
+                Invertir en almas significa utilizar nuestro tiempo, nuestros
+                recursos, nuestros dones y nuestras oportunidades para ayudar
+                a que otras personas conozcan a Dios.
+            </p>
+
+            <p>
+                No todos estamos llamados a hacer exactamente lo mismo, pero
+                todos podemos participar de alguna manera. Una conversación,
+                una oración, una palabra de ánimo o compartir nuestro propio
+                testimonio puede convertirse en una semilla que Dios utilice
+                para transformar una vida.
+            </p>
+
+            <div class="prayer">
+
+                <strong>
+                    Oración y compromiso
+                </strong>
+
+                <p>
+                    Dios Padre, gracias por haberme dado una nueva vida.
+                    Ayúdame a conocerte, obedecerte y crecer cada día.
+                    Enséñame a amarte, a servir a otros y a compartir con ellos
+                    lo que tú has hecho en mi vida.
+                    En el Nombre de Jesús, Amén.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <a class="back" href="../menu.html">
+        ← Volver al Menú
     </a>
-
-</div>
-
-
-</section>
-
-</div>
-
-<a class="back" href="../menu.html">
-    Volver al Menú
-</a>
-
-</main>
 
 </div>
 
