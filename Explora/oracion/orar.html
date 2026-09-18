@@ -28,14 +28,16 @@
             margin-bottom: 25px; 
             text-align: center; /* ESTA LÍNEA CENTRA EL AUTOR */
         }
-        .banner-img { 
-            width: 100%; 
-            max-height: 420px; 
+                .banner-img { 
+            display: block;
+            width: 60%;            /* Reduce el ancho al 60% (antes estaba en 100%) */
+            max-height: 300px;     /* Reduce la altura máxima */
             object-fit: cover; 
             border-radius: 8px; 
-            margin-bottom: 35px; 
+            margin: 0 auto 35px auto; /* Centra la imagen automáticamente en la pantalla */
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+
         p { 
             font-size: 1.15em; 
             text-align: justify; 
