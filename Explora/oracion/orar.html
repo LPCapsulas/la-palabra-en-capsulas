@@ -3,131 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>La Importancia de Orar</title>
+
+    <title>La Importancia de Orar — La Palabra en Cápsulas</title>
 
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #333333;
-            background: #f2f0ec;
+
+        :root{
+            --text:#252525;
+            --muted:#666;
+            --accent:#17365D;
+            --paper:#F8F4EC;
+            --bg:#f2f0ec;
+            --line:#d9d9d9;
         }
 
-        h1 {
-            font-size: 2.6em;
-            margin-bottom: 5px;
-            color: #111111;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-align: center;
+        *{
+            box-sizing:border-box;
         }
 
-        .author {
-            font-size: 1.1em;
-            color: #666666;
-            font-style: italic;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-align: center;
+        body{
+            margin:0;
+            padding:0;
+            background:var(--bg);
+            color:var(--text);
+            font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .banner-img {
-            display: block;
-            width: 60%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 0 auto 35px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        .page{
+            width:900px;
+            max-width:calc(100% - 40px);
+            margin:45px auto;
+            padding:55px 65px 45px;
+            background:var(--paper);
+            border-radius:5px;
+            box-shadow:0 4px 18px rgba(0,0,0,0.07);
         }
 
-        p {
-            font-size: 17px;
-            text-align: justify;
-            margin-bottom: 20px;
+        h1{
+            margin:0 0 8px;
+            color:var(--accent);
+            font-family:Georgia, "Times New Roman", serif;
+            font-size:36px;
+            line-height:1.2;
+            text-align:center;
+            font-weight:700;
         }
 
-        /* Números de los pies de página */
-        .footnote-ref {
-            font-size: 0.7em;
-            vertical-align: super;
-            line-height: 0;
-            color: #17365D;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
+        .author{
+            margin:0 0 35px;
+            color:var(--muted);
+            font-size:17px;
+            text-align:center;
+            font-style:italic;
         }
 
-        .footnote-ref:hover {
-            text-decoration: underline;
+        .banner-img{
+            display:block;
+            width:60%;
+            max-height:300px;
+            object-fit:cover;
+            margin:0 auto 35px;
+            border-radius:6px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Sección de pies de página */
-        .footnotes {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #cfcfcf;
-            font-size: 14px;
-            line-height: 1.6;
+        p{
+            margin:0 0 22px;
+            font-size:17px;
+            line-height:1.8;
+            text-align:justify;
         }
 
-        .footnotes p {
-            font-size: 14px;
-            text-align: left;
-            margin-bottom: 10px;
+        /* Números de las citas */
+
+        .footnote-ref{
+            font-size:0.68em;
+            vertical-align:super;
+            line-height:0;
+            color:var(--accent);
+            font-weight:600;
+            cursor:help;
+            text-decoration:none;
         }
 
-        .footnotes a {
-            color: #17365D;
-            text-decoration: none;
+        .footnote-ref:hover{
+            text-decoration:underline;
         }
 
-        .footnotes a:hover {
-            text-decoration: underline;
+        /* Navegación final */
+
+        .bottom-nav{
+            margin-top:42px;
+            padding-top:25px;
+            border-top:1px solid var(--line);
+            text-align:center;
         }
+
+        .bottom-nav a{
+            color:var(--accent);
+            text-decoration:none;
+            font-size:16px;
+            font-weight:700;
+        }
+
+        .bottom-nav a:hover{
+            text-decoration:underline;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width:700px){
+
+            .page{
+                width:auto;
+                max-width:none;
+                margin:0;
+                padding:35px 22px 35px;
+                border-radius:0;
+                box-shadow:none;
+            }
+
+            h1{
+                font-size:30px;
+                line-height:1.25;
+            }
+
+            .author{
+                font-size:16px;
+                margin-bottom:28px;
+            }
+
+            .banner-img{
+                width:100%;
+                max-height:none;
+                margin-bottom:30px;
+            }
+
+            p{
+                font-size:17px;
+                line-height:1.75;
+                text-align:justify;
+            }
+
+            .bottom-nav{
+                margin-top:35px;
+                padding-top:22px;
+            }
+
+            .bottom-nav a{
+                font-size:16px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <h1>La Importancia de Orar<sup><a class="footnote-ref" id="fnref1" href="#fn1" title="Lucas 18:1; 1 Tesalonicenses 5:16-18; Efesios 6:18">1</a></sup></h1>
+<div class="page">
+
+    <h1>
+        La Importancia de Orar<sup>
+            <span
+                class="footnote-ref"
+                title="Lucas 18:1; 1 Tesalonicenses 5:16-18; Efesios 6:18"
+            >1</span>
+        </sup>
+    </h1>
 
     <p class="author">Por J.V</p>
 
-    <!-- Imagen del artículo -->
-    <img src="banner-oracion.jpg"
-         alt="Persona en oración frente al atardecer"
-         class="banner-img">
+    <img
+        src="banner-oracion.jpg"
+        alt="Persona en oración frente al atardecer"
+        class="banner-img"
+    >
+
 
     <p>
-        Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él <em>anunciaba</em> el reino, <em>enseñaba</em> y <em>oraba</em> a diario, le hicieron una pregunta: “Maestro, enséñanos a orar”<sup><a class="footnote-ref" id="fnref2" href="#fn2" title="Lucas 11.1">2</a></sup>;
+        Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él <em>anunciaba</em> el reino, <em>enseñaba</em> y <em>oraba</em> a diario, le hicieron una pregunta: “Maestro, enséñanos a orar”<sup>
+            <span
+                class="footnote-ref"
+                title="Lucas 11.1"
+            >2</span>
+        </sup>;
         él de inmediato, les dio la
-        <strong title="Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén."
-        style="color: #0066cc; text-decoration: none; cursor: help;">oración</strong>
+        <strong
+            title="Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén."
+            style="color:#0066cc; cursor:help;"
+        >oración</strong>
         modelo (el “Padre Nuestro”), y no para que fuera repetida ciegamente, sino declarada con sentido, donde cada palabra y línea tiene un significado y propósito específicos; y donde orar y obedecer a Dios coinciden.
     </p>
 
+
     <p>
-        En realidad, orar es tan importante que, elevándola a las alturas (al trono celestial), es el paso inicial y decisivo no solo para nosotros ser perdonados por nuestros pecados cometidos y así ser salvos<sup><a class="footnote-ref" id="fnref3" href="#fn3" title="Hechos 22.16">3</a></sup>,
-        sino también para invitar la presencia de Dios a nuestro espíritu para siempre<sup><a class="footnote-ref" id="fnref4" href="#fn4" title="Juan 14.16-17">4</a></sup>.
+        En realidad, orar es tan importante que, elevándola a las alturas (al trono celestial), es el paso inicial y decisivo no solo para nosotros ser perdonados por nuestros pecados cometidos y así ser salvos<sup>
+            <span
+                class="footnote-ref"
+                title="Hechos 22.16"
+            >3</span>
+        </sup>,
+        sino también para invitar la presencia de Dios a nuestro espíritu para siempre<sup>
+            <span
+                class="footnote-ref"
+                title="Juan 14.16-17"
+            >4</span>
+        </sup>.
         Sin oración, no hay combustible para nuestra vida, y sin ella, estamos perdidos.
         Por ello es importante establecerla como disciplina; pues, así como el atleta debe entrenar de continuo para mantenerse en forma y apto para competir, el nuevo creyente debe cultivar este hábito pues no hay cosa que el diablo más tema: ver a un hombre y mujer de rodillas.
     </p>
 
+
     <p>
-        Cuando se ora, se debe creer lo que se ora<sup><a class="footnote-ref" id="fnref5" href="#fn5" title="Marcos 11.24">5</a></sup>.
-        No que no se tenga que tener perseverancia, pero tampoco rayar en el campo de la incredulidad y quedarse orando la misma oración como un ritual<sup><a class="footnote-ref" id="fnref6" href="#fn6" title="Mateo 6.7">6</a></sup>.
-        Es por ello que “orar sin cesar”<sup><a class="footnote-ref" id="fnref7" href="#fn7" title="1 Tesalonicenses 5.17">7</a></sup>
-        no significa orar 24 horas, sino tener una actitud de alerta para oír su voz<sup><a class="footnote-ref" id="fnref8" href="#fn8" title="Isaías 28.23">8</a></sup>
+        Cuando se ora, se debe creer lo que se ora<sup>
+            <span
+                class="footnote-ref"
+                title="Marcos 11.24"
+            >5</span>
+        </sup>.
+        No que no se tenga que tener perseverancia, pero tampoco rayar en el campo de la incredulidad y quedarse orando la misma oración como un ritual<sup>
+            <span
+                class="footnote-ref"
+                title="Mateo 6.7"
+            >6</span>
+        </sup>.
+        Es por ello que “orar sin cesar”<sup>
+            <span
+                class="footnote-ref"
+                title="1 Tesalonicenses 5.17"
+            >7</span>
+        </sup>
+        no significa orar 24 horas, sino tener una actitud de alerta para oír su voz<sup>
+            <span
+                class="footnote-ref"
+                title="Isaías 28.23"
+            >8</span>
+        </sup>
         y hacer lo que Él nos pide en su Palabra.
         <em>Orar, creer, agradecer, adorar y dar</em>: todas van cogidas de la mano, son inseparables.
         Por supuesto que hay quienes tienen un llamado a la intercesión y no te van a orar por solo 5 minutos.
         El llamado apóstol de la fe, el finado inglés Smith Wigglesworth al ser una vez preguntado cuánto oraba al día, respondió:
         “Cuando lo hago, no suelo pasar más de media hora orando en una sola ocasión, pero nunca paso más de media hora sin orar”!
     </p>
+
 
     <p>
         Cuando te sientes a comer, dale gracias y donde quiera que estés, agradécele al Señor por haberte dado la vida y por guardarte a ti y a los tuyos de todo mal y de todo peligro.
@@ -137,51 +256,11 @@
     </p>
 
 
-    <!-- PIES DE PÁGINA -->
-
-    <div class="footnotes">
-
-        <p id="fn1">
-            <a href="#fnref1">1.</a>
-            Lucas 18:1; 1 Tesalonicenses 5:16-18; Efesios 6:18
-        </p>
-
-        <p id="fn2">
-            <a href="#fnref2">2.</a>
-            Lucas 11.1
-        </p>
-
-        <p id="fn3">
-            <a href="#fnref3">3.</a>
-            Hechos 22.16
-        </p>
-
-        <p id="fn4">
-            <a href="#fnref4">4.</a>
-            Juan 14.16-17
-        </p>
-
-        <p id="fn5">
-            <a href="#fnref5">5.</a>
-            Marcos 11.24
-        </p>
-
-        <p id="fn6">
-            <a href="#fnref6">6.</a>
-            Mateo 6.7
-        </p>
-
-        <p id="fn7">
-            <a href="#fnref7">7.</a>
-            1 Tesalonicenses 5.17
-        </p>
-
-        <p id="fn8">
-            <a href="#fnref8">8.</a>
-            Isaías 28.23
-        </p>
-
+    <div class="bottom-nav">
+        <a href="../menu.html">← Volver al Menú</a>
     </div>
+
+</div>
 
 </body>
 </html>
