@@ -90,6 +90,58 @@
             text-decoration:underline;
         }
 
+        /* NUEVO: Contenedor interactivo para la oración */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            color: #0066cc;
+            cursor: help;
+        }
+
+        /* NUEVO: Cuadro flotante personalizado (Tooltip) */
+        .tooltip-text {
+            visibility: hidden;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 15px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%; /* Se posiciona arriba de la palabra */
+            left: 50%;
+            transform: translateX(-50%);
+            
+            /* Ajustes solicitados */
+            width: 320px;         /* Controla la horizontalidad haciéndolo más angosto */
+            font-size: 15px;      /* Letra un poco más grande que el tooltip nativo */
+            line-height: 1.5;     /* Mejor espaciado de lectura */
+            font-weight: normal;  
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            
+            /* Efecto de transición suave */
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* Flecha pequeña debajo del cuadro */
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1a1a1a transparent transparent transparent;
+        }
+
+        /* Muestra el cuadro al pasar el cursor sobre la palabra */
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
         /* Navegación final */
 
         .bottom-nav{
@@ -146,6 +198,12 @@
                 text-align:justify;
             }
 
+            /* Ajuste del cuadro para pantallas de celular */
+            .tooltip-text {
+                width: 260px;
+                font-size: 14px;
+            }
+
             .bottom-nav{
                 margin-top:35px;
                 padding-top:22px;
@@ -189,10 +247,15 @@
             >2</span>
         </sup>;
         él de inmediato, les dio la
-        <strong
-            title="Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén."
-            style="color:#0066cc; cursor:help;"
-        >oración</strong>
+        
+        <!-- MODIFICADO: Estructura HTML personalizada para el cuadro flotante -->
+        <span class="tooltip-container">
+            <strong>oración</strong>
+            <span class="tooltip-text">
+                Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén.
+            </span>
+        </span>
+
         modelo (el “Padre Nuestro”), y no para que fuera repetida ciegamente, sino declarada con sentido, donde cada palabra y línea tiene un significado y propósito específicos; y donde orar y obedecer a Dios coinciden.
     </p>
 
@@ -263,4 +326,3 @@
 </div>
 
 </body>
-</html>
