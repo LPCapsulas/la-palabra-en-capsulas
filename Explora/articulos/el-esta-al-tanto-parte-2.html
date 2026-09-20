@@ -1,227 +1,244 @@
-<header>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="site-name">LA PALABRA EN CÁPSULAS</div>
+<title>Él está al tanto de la situación — Parte 2 — La Palabra en Cápsulas</title>
 
-<h1>Él está al tanto de la situación (parte 2)</h1>
+<style>
+:root{
+    --text:#252525;
+    --muted:#666;
+    --accent:#17365D;
+    --paper:#ffffff;
+    --bg:#f2f0ec;
+    --line:#d9d9d9;
+}
 
-<div class="author">Por J.V.</div>
+*{
+    box-sizing:border-box;
+}
 
-</header>
+html{
+    scroll-behavior:smooth;
+}
 
-<article class="article">
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.7;
+    font-size:17px;
+}
 
-<p>
-Debemos no solo orar por nuestros gobernantes y anunciarles el evangelio,
-no solo porque es nuestro deber, sino porque, si no lo hacemos, no tendremos
-país.
-</p>
+.page{
+    width:min(900px,92%);
+    margin:42px auto;
+    background:var(--paper);
+    padding:55px 70px 50px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
 
-<p>
-“El que ignorantemente peca, ignorantemente se condena”. Si alguien no anda
-conforme a la Biblia y tiene buenas intenciones de hacer el bien, se le debe
-hablar con respeto para que corrija su caminar.
-</p>
+header{
+    text-align:center;
+    margin-bottom:42px;
+}
 
-<blockquote class="scripture">
-La buena noticia es que Jesús no está en un madero, pues después de morir
-por nuestros pecados, resucitó al tercer día de entre los muertos, ascendió
-al cielo y está sentado a la diestra del Padre.
-</blockquote>
+.site-name{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:18px;
+    color:var(--accent);
+    letter-spacing:.08em;
+    margin-bottom:18px;
+}
 
-<p>
-Dios es celoso y no admite ser compartido.<sup><span class="footnote-ref" title="Éxodo 20:5">⁷</span></sup> Si por un lado va a hablar de
-Jesucristo y por otro va a incensar a María o a espíritus de fallecidos,<sup><span class="footnote-ref" title="Deuteronomio 18:10-12">⁸</span></sup>
-la cosa no te va a funcionar al ser un craso error.
-</p>
+h1{
+    margin:0;
+    color:var(--accent);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:38px;
+    line-height:1.2;
+    font-weight:600;
+}
 
-<p>
-Si quiere ir a la fija, considere al Padre, al Hijo y al Espíritu Santo.
-Todo con la Deidad, sin ella, nada.
-</p>
+/* Identificación de la parte: más discreta que el título */
+.part-label{
+    font-size:0.62em;
+    font-weight:400;
+    white-space:nowrap;
+}
 
-<p>
-Saulo de Tarso no conocía esta verdad y persiguió cristianos, consintiendo
-aún en la muerte del mártir Esteban. Sin embargo, Saulo fue <em>ayudado</em>,
-evangelizado y convertido a Cristo, y hasta su nombre cambió a Pablo,
-quien, a la postre, llegó a ser el más grande apóstol en la historia de
-la humanidad.
-</p>
+.author{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:15px;
+    font-style:italic;
+}
 
-<p>
-Es por ello que debemos, con espíritu de mansedumbre, testificar de Jesús
-a quienes son dignos de oír,<sup><span class="footnote-ref" title="Deseosos de oír">⁹</span></sup> con una demostración clara del poder de Dios,
-incluyendo señales y milagros.
-</p>
+.article p{
+    margin:0 0 23px;
+    text-align:justify;
+}
 
-<p>
-Primero Venezuela y luego Colombia han sufrido corrección, entendiendo
-con ello un “balanceo” vital para poder continuar. Y habrá muchos más
-países que pasarán por eventos similares, como ha pasado igualmente en Asia.
-</p>
+/* Bloque en cascada */
+.cascade{
+    margin:18px 0 22px;
+    padding-left:24px;
+    border-left:3px solid var(--accent);
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.45;
+}
 
-<p>
-Y ese término, aunque se podría ver como un mero castigo, se manifiesta
-en muchas áreas de la vida:
-</p>
+.cascade div{
+    margin:0 0 2px;
+}
 
-<ul class="topic-list">
+.cascade div:last-child{
+    margin-bottom:0;
+}
 
-<li>
-    <strong>En los autos.</strong>
-    Si usted no balancea y corrige el balanceo de sus ruedas,
-    se puede accidentar.
-</li>
+/* Citas bíblicas */
+.scripture{
+    margin:23px 0;
+    padding:14px 20px;
+    border-left:3px solid var(--accent);
+    background:#f7f7f5;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:17px;
+    line-height:1.55;
+}
 
-<li>
-    <strong>En el deporte.</strong>
-    A veces se pierde una y otra vez porque no ha habido corrección
-    en la toma de decisiones.
-</li>
+.scripture cite{
+    display:block;
+    margin-top:8px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:14px;
+    color:var(--muted);
+    font-style:italic;
+}
 
-<li>
-    <strong>En las finanzas.</strong>
-    Los mercados suben y luego experimentan “corrección” por diversos
-    motivos: sobrevaloración de las acciones, crisis internacionales,
-    guerras, etc.
-</li>
+/* Imagen Salmo 91 */
+.verse-image{
+    text-align:center;
+    margin:18px 0 25px;
+}
 
-<li>
-    <strong>En la naturaleza.</strong>
-    Por permisibilidad de Dios, esta se subleva contra la injusticia
-    de los habitantes de la tierra y su pecado. El finado evangelista
-    inglés Charles Spurgeon, en sus sermones, decía que “los desastres
-    o aun los aparentes desórdenes naturales están controlados por la
-    mano divina”. Aun el caos hace parte del orden.
-</li>
+.verse-image img{
+    width:50%;
+    height:auto;
+    display:inline-block;
+}
 
-</ul>
+/* Listas */
+.topic-list{
+    margin:10px 0 22px;
+    padding-left:28px;
+}
 
-<p>
-Así como las plagas, guerras y rumores de guerras, los terremotos son
-señal profética,<sup><span class="footnote-ref" title="Mateo 24:4-8">¹⁰</span></sup> básicamente sobre dos puntos:
-</p>
+.topic-list li{
+    margin-bottom:6px;
+    padding-left:4px;
+    text-align:justify;
+    line-height:1.48;
+}
 
-<ul class="topic-list prophetic">
-<li>la venida del Señor y</li>
-<li>el fin de los tiempos.</li>
-</ul>
+.topic-list li:last-child{
+    margin-bottom:0;
+}
 
-<p>
-Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha
-no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o
-una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.
-</p>
+.topic-list strong{
+    color:var(--accent);
+}
 
-<p>
-Y, por supuesto, debe ser el Señor nuestro punto de referencia.
-Estas señales son más que un llamado de atención.
-</p>
+/* Lista profética especialmente compacta */
+.topic-list.prophetic{
+    margin-top:4px;
+    margin-bottom:10px;
+}
 
-<!-- IMAGEN SALMO 91 -->
-<div class="verse-image">
-    <img
-        src="salmo-91.png"
-        alt="Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7"
-    >
-</div>
+.topic-list.prophetic li{
+    margin-bottom:1px;
+    line-height:1.4;
+}
 
-<p>
-Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él
-quiere que nosotros busquemos. Él dice:
-</p>
+/* Notas al pasar el mouse */
+.footnote-ref{
+    font-size:0.90em;
+    vertical-align:super;
+    line-height:0;
+    color:var(--accent);
+    font-weight:700;
+    cursor:help;
+}
 
-<blockquote class="scripture">
-“Más buscad primeramente el reino de Dios y su justicia —su equilibrio,
-su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.<sup><span class="footnote-ref" title="Mateo 6:33">¹¹</span></sup>
-</blockquote>
+.footer-nav{
+    margin-top:35px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    text-align:center;
+}
 
-<p>
-Cuando no hay búsqueda de su rostro,<sup><span class="footnote-ref" title="Salmos 27:8">¹²</span></sup> pasamos por situaciones incómodas.
-</p>
+.footer-nav a{
+    color:var(--accent);
+    text-decoration:none;
+    font-size:14px;
+    margin:0 10px;
+}
 
-<p>
-Es bueno que entendamos y aceptemos que las cosas ocurren con la
-permisibilidad de Dios, pero Él no se deleita en el infortunio del hombre,
-sino en su paz.<sup><span class="footnote-ref" title="Salmos 35:27-28">¹³</span></sup>
-</p>
+.footer-nav a:hover{
+    text-decoration:underline;
+}
 
-<p>
-Por todo lo anterior, debemos guardar una actitud de respeto y temor
-reverente<sup><span class="footnote-ref" title="Hebreos 12:28">¹⁴</span></sup> hacia el Señor.
-</p>
+@media (max-width:700px){
 
-<p>
-El patriarca Job tuvo una vida de muchas dificultades e infortunios.
-Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes,
-y hasta su casa se prendió fuego. Además, fue atacado por Satanás
-con enfermedades.
-</p>
+    body{
+        font-size:16.5px;
+        line-height:1.65;
+    }
 
-<p>
-Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel
-descomunal ataque del maligno, jamás culpó al Señor por sus males.
-</p>
+    .page{
+        width:94%;
+        margin:20px auto;
+        padding:34px 25px 35px;
+    }
 
-<blockquote class="scripture">
-«En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup>
-</blockquote>
+    h1{
+        font-size:29px;
+    }
 
-<p>
-Cuando sucede algo desagradable y aun terrible, no culpes a Dios.
-Él solo se deleita en tu paz.
-</p>
+    .part-label{
+        font-size:0.65em;
+    }
 
-<p>
-Sí, es cierto que Él se burla de sus enemigos,<sup><span class="footnote-ref" title="Salmos 2:4">¹⁶</span></sup> pero tú no lo eres.
-Si lo recibiste, eres su hijo.<sup><span class="footnote-ref" title="1 Juan 3:2; Romanos 8:16">¹⁷</span></sup>
-</p>
+    .site-name{
+        font-size:16px;
+    }
 
-<p>
-Y si no lo has hecho, aquí está la oportunidad.
-</p>
+    .article p{
+        margin-bottom:20px;
+        text-align:justify;
+    }
 
-<p>
-Allí no terminó la historia de Job. Después que él hubo orado por sus
-amigos que lo consolaban con palabras, Dios le dio una gran bendición
-al patriarca: el doble de lo que antes había tenido.
-</p>
+    .cascade{
+        padding-left:18px;
+        font-size:16.5px;
+        line-height:1.43;
+        margin:16px 0 20px;
+    }
 
-<p>
-Los que quedaron vivos del terremoto deben orar y auxiliar a los
-sobrevivientes y a quienes hoy día están dolidos, pues perdieron a los
-seres queridos y posesiones.
-</p>
+    .cascade div{
+        margin-bottom:2px;
+    }
 
-<p>
-Después de la tempestad viene la calma y hay que reconstruir.
-</p>
+    .scripture{
+        padding:12px 17px;
+        font-size:16.5px;
+        line-height:1.5;
+        margin:23px 0;
+    }
 
-<blockquote class="scripture">
-“No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer
-tú por tu país”.<sup><span class="footnote-ref" title="Frase célebre de John F. Kennedy">¹⁸</span></sup>
-<cite>Frase célebre de John F. Kennedy</cite>
-</blockquote>
-
-<p>
-Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos
-enseñe justicia.<sup><span class="footnote-ref" title="Oseas 10:12">¹⁹</span></sup>
-</p>
-
-<p>
-Hay personas que Dios se lleva por misericordia, y hay personas que Dios
-deja vivas, también por misericordia.
-</p>
-
-</article>
-
-
-<nav class="footer-nav">
-
-<a href="#">← Volver</a>
-
-</nav>
-
-</main>
-
-</body>
-</html>
+    .verse-image{
+        margin:16px 0 22px;
