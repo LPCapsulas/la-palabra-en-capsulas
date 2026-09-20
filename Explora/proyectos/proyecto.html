@@ -80,6 +80,33 @@
         .bold-text {
             font-weight: bold;
         }
+
+        /* Estilos para el contenedor del botón de regreso */
+        .footer-nav {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #0F3661;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            font-family: sans-serif; /* Tipografía limpia para el botón */
+            font-weight: bold;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 6px rgba(15, 54, 97, 0.2);
+        }
+
+        .btn-back:hover {
+            background-color: #164980;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
@@ -102,6 +129,11 @@
             <p>Pero de algo debemos estar seguros: tendremos que demostrar el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.</p>
             <p>En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.</p>
         </section>
+
+        <!-- Botón de Volver al Menú -->
+        <div class="footer-nav">
+            <a href="index.html" class="btn-back">Volver al Menú</a>
+        </div>
     </div>
 
 </body>
