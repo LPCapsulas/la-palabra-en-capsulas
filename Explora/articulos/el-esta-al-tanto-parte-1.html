@@ -1,1 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Él está al tanto de la situación… — La Palabra en Cápsulas</title>
+
+<style>
+:root{
+    --text:#252525;
+    --muted:#666;
+    --accent:#17365D;
+    --paper:#ffffff;
+    --bg:#f2f0ec;
+    --line:#d9d9d9;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.7;
+    font-size:17px;
+}
+
+.page{
+    width:min(900px,92%);
+    margin:42px auto;
+    background:var(--paper);
+    padding:55px 70px 50px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+header{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.site-name{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:18px;
+    color:var(--accent);
+    letter-spacing:.08em;
+    margin-bottom:18px;
+}
+
+h1{
+    margin:0;
+    color:var(--accent);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:38px;
+    line-height:1.2;
+    font-weight:600;
+}
+
+.author{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:15px;
+    font-style:italic;
+}
+
+.article p{
+    margin:0 0 23px;
+    text-align:justify;
+}
+
+/* Bloque en cascada: mismo tamaño del texto normal y más compacto */
+.cascade{
+    margin:18px 0 22px;
+    padding-left:24px;
+    border-left:3px solid var(--accent);
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.45;
+}
+
+.cascade div{
+    margin:0 0 2px;
+}
+
+.cascade div:last-child{
+    margin-bottom:0;
+}
+
+
+/* Imagen Salmo 91 */
+.verse-image{
+    text-align:center;
+    margin:18px 0 25px;
+}
+
+.verse-image img{
+    width:50%;
+    height:auto;
+    display:inline-block;
+}
+
+/* Listas */
+.topic-list{
+    margin:10px 0 22px;
+    padding-left:28px;
+}
+
+.topic-list li{
+    margin-bottom:6px;
+    padding-left:4px;
+    text-align:justify;
+    line-height:1.48;
+}
+
+.topic-list li:last-child{
+    margin-bottom:0;
+}
+
+.topic-list strong{
+    color:var(--accent);
+}
+
+/* Lista profética especialmente compacta */
+.topic-list.prophetic{
+    margin-top:4px;
+    margin-bottom:10px;
+}
+
+.topic-list.prophetic li{
+    margin-bottom:1px;
+    line-height:1.4;
+}
+
+
+
+/* Notas al pasar el mouse — tamaño aumentado */
+.footnote-ref{
+    font-size:0.90em;
+    vertical-align:super;
+    line-height:0;
+    color:var(--accent);
+    font-weight:700;
+    cursor:help;
+}
+
+
+.footer-nav{
+    margin-top:35px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    text-align:center;
+}
+
+.footer-nav a{
+    color:var(--accent);
+    text-decoration:none;
+    font-size:14px;
+    margin:0 10px;
+}
+
+.footer-nav a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width:700px){
+
+    body{
+        font-size:16.5px;
+        line-height:1.65;
+    }
+
+    .page{
+        width:94%;
+        margin:20px auto;
+        padding:34px 25px 35px;
+    }
+
+    h1{
+        font-size:29px;
+    }
+
+    .site-name{
+        font-size:16px;
+    }
+
+    .article p{
+        margin-bottom:20px;
+        text-align:justify;
+    }
+
+    .cascade{
+        padding-left:18px;
+        font-size:16.5px;
+        line-height:1.43;
+        margin:16px 0 20px;
+    }
+
+    .cascade div{
+        margin-bottom:2px;
+    }
+
+    .scripture{
+        padding:12px 17px;
+        font-size:16.5px;
+        line-height:1.5;
+        margin:23px 0;
+    }
+
+    /* Imagen Salmo 91 en celular */
+    .verse-image{
+        margin:16px 0 22px;
+    }
+
+    .verse-image img{
+        width:50%;
+        max-width:none;
+    }
+
+    .topic-list{
+        margin:8px 0 19px;
+        padding-left:23px;
+    }
+
+    .topic-list li{
+        margin-bottom:5px;
+        padding-left:2px;
+        line-height:1.45;
+    }
+
+    .topic-list.prophetic{
+        margin-top:2px;
+        margin-bottom:8px;
+    }
+
+    .topic-list.prophetic li{
+        margin-bottom:1px;
+    }
+
+
+    .footer-nav a{
+        display:block;
+        margin:9px 0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<div class="site-name">LA PALABRA EN CÁPSULAS</div>
+
+<h1>Él está al tanto de la situación…</h1>
+
+<div class="author">Por J.V.</div>
+
+</header>
+
+<article class="article">
+
+<p>
+Amigos, nadie está exento de sufrir algo tan terrible como un terremoto.
+Pero de algo sí estoy seguro: Dios es misericordioso,<sup><span class="footnote-ref" title="Efesios 2:4-5">¹</span></sup> y por ello necesitamos
+su protección.<sup><span class="footnote-ref" title="Salmos 18:2">²</span></sup> Desde hace un tiempo, además de mis oraciones regulares,
+he incluido en ellas un <strong>refuerzo</strong>: pedir al Altísimo que
+nos proteja de toda cosa negativa.
+</p>
+
+<div class="cascade">
+
+<div>• Calamidad, accidente, secuestro, tsunami, huracán o terremoto.</div>
+<div>• Accidentes, atracos y extorsiones.</div>
+<div>• Enfermedades crueles y dolorosas.</div>
+<div>• Y, como dice la oración modelo, que nos libre de todo mal.</div>
+
+</div>
+
+<p>
+Debemos elevar nuestra oración al único Santo Padre del cielo que hay,
+en el nombre de Jesús, y agradecer al final, creyendo que Él ya lo ha hecho.
+</p>
+
+<p>
+La iglesia cristiana en el mundo no encomienda su propio país a ídolos,
+estatuas o a todo aquello que desagrade a Dios. Quien lo hace es porque
+no ha nacido de nuevo, y debemos compartirle el consejo de Dios para que
+pase por su proceso de conversión.
+</p>
+
+<p>
+Jeremías 7 y 44 son dos capítulos de la Biblia muy contundentes, donde
+el Señor advierte sobre los peligros de adorar a la <em>reina del cielo</em>.
+En la antigüedad, a esa deidad le llamaban Artemis, según la mitología
+griega; luego Diana en Asia Menor —hoy Turquía—.
+</p>
+
+<p>
+Posteriormente, los papas en Roma, pensando en qué nombre ponerle a una
+divinidad femenina para asemejarse a las antiguas deidades paganas,
+escogieron el nombre de alguien que hubiera existido y dijeron: “María”.
+</p>
+
+<p>
+Ella nunca quiso ser venerada. La religión fue la que lo hizo.
+</p>
+
+<p>
+Y aquí quiero ser claro. María, la madre de Jesús, fue una mujer piadosa,
+pero igual requirió de un Salvador: ¡su propio hijo!
+Ella dijo:
+</p>
+
+<blockquote class="scripture">
+“Engrandece mi alma al Señor; y mi espíritu se regocija en Dios mi Salvador”.<sup><span class="footnote-ref" title="Lucas 1:46-47">³</span></sup>
+</blockquote>
+
+<p>
+Jesús es el Cristo,<sup><span class="footnote-ref" title="Mateo 16:16">⁴</span></sup> y Cristo es Dios sobre todas las cosas.<sup><span class="footnote-ref" title="Romanos 9:5">⁵</span></sup>
+</p>
+
+<p>
+En las bodas de Caná, María dijo con respecto a su hijo:
+</p>
+
+<blockquote class="scripture">
+“Haced todo lo que él os dijere”.<sup><span class="footnote-ref" title="Juan 2:5">⁶</span></sup>
+</blockquote>
+
+<p>
+Hay millones en el mundo que no conocen esta simple verdad, y hay aún
+sacerdotes católicos que sirven a un dios muerto, colgado en una cruz.
+</p>
+
+<p>
+En realidad, no desconozco que haya curas de la religión tradicional que
+intenten ofrecer paliativos a muchos que sufren, pero su doctrina errónea
+no les deja ver más allá de lo que ven sus ojos y siguen percibiendo a
+Jesús en una cruz.
+</p>
+
+<p>
+Si usted quiere conocer la verdad, deberá leer la Biblia para conocer más
+a Jesús, su vida y lo que hizo por nosotros.
+</p>
