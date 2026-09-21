@@ -7,11 +7,13 @@
 <title>Él está al tanto de la situación… — Parte 2 — La Palabra en Cápsulas</title>
 
 <style>
+
 :root{
     --text:#252525;
     --muted:#666;
     --accent:#17365D;
-    --paper:#ffffff;
+    --paper:#F8F4EC;
+    --paper-hover:#eef4fa;
     --bg:#f2f0ec;
     --line:#d9d9d9;
 }
@@ -28,7 +30,7 @@ body{
     margin:0;
     background:var(--bg);
     color:var(--text);
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:Georgia,"Times New Roman",serif;
     line-height:1.7;
     font-size:17px;
 }
@@ -39,6 +41,13 @@ body{
     background:var(--paper);
     padding:55px 70px 50px;
     box-shadow:0 8px 30px rgba(0,0,0,.08);
+    transition:background-color .25s ease;
+}
+
+/* Efecto al pasar el mouse por la hoja */
+
+.page:hover{
+    background:var(--paper-hover);
 }
 
 header{
@@ -188,6 +197,14 @@ h1{
         padding:34px 25px 35px;
     }
 
+    /*
+       En celulares dejamos el fondo relajado
+       sin efecto hover.
+    */
+    .page:hover{
+        background:var(--paper);
+    }
+
     h1{
         font-size:29px;
     }
@@ -254,7 +271,9 @@ h1{
         display:block;
         margin:9px 0;
     }
+
 }
+
 </style>
 
 </head>
