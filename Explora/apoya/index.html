@@ -1,1 +1,202 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Apoya — La Palabra en Cápsulas</title>
+
+<style>
+:root{
+  --blue:#0F4C81;
+  --gold:#e7c96f;
+  --white:#fff;
+  --paper:#F8F4EC;
+  --text:#252525;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html,body{
+  min-height:100%
+}
+
+body{
+  background:var(--blue);
+  color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.75
+}
+
+.page{
+  width:min(900px,calc(100% - 32px));
+  min-height:100vh;
+  margin:0 auto;
+  background:var(--paper);
+  padding:42px 72px 50px;
+  box-shadow:0 4px 24px rgba(0,0,0,.12);
+  text-align:center
+}
+
+.logo{
+  text-align:left;
+  color:var(--blue);
+  font-size:18px;
+  font-weight:bold;
+  font-style:italic;
+  letter-spacing:1px;
+  margin-bottom:18px
+}
+
+h1{
+  color:var(--blue);
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:26px
+}
+
+.support-image{
+  display:block;
+  width:min(100%,620px);
+  height:auto;
+  margin:0 auto 28px
+}
+
+.message{
+  max-width:720px;
+  margin:0 auto 28px;
+  font-size:18px;
+  text-align:justify;
+}
+
+.message p{
+  margin-bottom:16px
+}
+
+.square-button{
+  display:inline-block;
+  background:var(--blue);
+  color:#fff;
+  text-decoration:none;
+  font-size:19px;
+  font-weight:bold;
+  padding:13px 32px;
+  border-radius:5px;
+  border:2px solid var(--blue);
+  transition:.2s ease
+}
+
+.square-button:hover{
+  background:#fff;
+  color:var(--blue)
+}
+
+.back{
+  margin-top:34px
+}
+
+.back a{
+  color:var(--blue);
+  font-size:17px;
+  text-decoration:none;
+  border-bottom:1px solid rgba(15,76,129,.55)
+}
+
+.back a:hover{
+  color:#000;
+  border-color:#000
+}
+
+@media(max-width:700px){
+
+  body{
+    background:var(--paper)
+  }
+
+  .page{
+    width:100%;
+    min-height:100vh;
+    padding:30px 24px 40px;
+    box-shadow:none
+  }
+
+  .logo{
+    margin-bottom:16px
+  }
+
+  h1{
+    font-size:34px;
+    margin-bottom:22px
+  }
+
+  .support-image{
+    width:82%;
+    margin-bottom:24px
+  }
+
+  .message{
+    font-size:17px;
+    text-align:justify
+  }
+
+  .square-button{
+    font-size:18px;
+    padding:12px 26px
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+  <div class="logo">LPC</div>
+
+  <h1>Apoya a La Palabra en Cápsulas</h1>
+
+<img
+ class="support-image"
+ src="apoya_lpc.png"
+ alt="Apoya a La Palabra en Cápsulas">
+
+  <div class="message">
+
+```
+<p>
+  Todo el contenido de La Palabra en Cápsulas es ofrecido gratuitamente
+  con el propósito de compartir recursos que puedan ser de ayuda para
+  quienes desean conocer, crecer y caminar con Dios.
+</p>
+
+<p>
+  Si este proyecto ha sido de beneficio para ti y deseas contribuir a que
+  podamos continuar desarrollándolo y llevando estos recursos a más
+  personas, puedes hacerlo mediante el siguiente enlace seguro de Square.
+</p>
+```
+
+  </div>
+
+<a
+ class="square-button"
+ href="https://square.link/u/Et13J8m1"
+ target="_blank"
+ rel="noopener noreferrer">
+Apoyar a LPC </a>
+
+  <div class="back">
+    <a href="../Explora/menu.html">Volver al Menú</a>
+  </div>
+
+</main>
+
+</body>
+</html>
 
