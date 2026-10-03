@@ -17,7 +17,10 @@
     --paper:#F8F4EC;
     --bg:#f2f0ec;
     --line:#d9d4cc;
-    --hover:#f1f2f2;
+    /* --- MODIFICADO: Ahora es un azul suave --- */
+    --hover:#e6f0fa; 
+    /* --- NUEVO: Borde azul suave para el hover --- */
+    --hover-line:#b3d1ff; 
 }
 
 *{
@@ -95,20 +98,19 @@ h1{
     margin-top:28px;
 }
 
-/* --- MODIFICADO: CUADROS BLANCOS --- */
+/* --- CUADROS BLANCOS --- */
 .project{
     padding:25px 24px 23px;
     background:#fff;
     border:1px solid var(--line);
     border-radius:5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
 }
 
-/* --- NUEVO: EFECTO HOVER PARA LOS CUADROS --- */
+/* --- CORREGIDO: EFECTO HOVER CON AZUL SUAVE --- */
 .project:hover {
-    background-color: var(--blue); /* Cambia al fondo azul de tu paleta */
-    border-color: var(--blue);
-    color: white; /* El texto general pasa a ser blanco */
+    background-color: var(--hover); /* Usa el azul suave */
+    border-color: var(--hover-line); /* Borde azul a juego */
 }
 
 .project h2{
@@ -116,12 +118,6 @@ h1{
     color:var(--accent);
     font-size:21px;
     line-height:1.3;
-    transition: color 0.3s ease; /* Transición para el título */
-}
-
-/* --- NUEVO: CAMBIA EL COLOR DEL TÍTULO A BLANCO AL PASAR EL MOUSE --- */
-.project:hover h2 {
-    color: white; 
 }
 
 .project p{
@@ -130,12 +126,6 @@ h1{
     font-size:16px;
     line-height:1.65;
     text-align:justify;
-    transition: color 0.3s ease; /* Transición para el párrafo */
-}
-
-/* --- NUEVO: CAMBIA EL COLOR DEL PÁRRAFO A BLANCO AL PASAR EL MOUSE --- */
-.project:hover p {
-    color: #f2f0ec; 
 }
 
 .cost{
