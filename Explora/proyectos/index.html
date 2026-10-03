@@ -17,9 +17,9 @@
     --paper:#F8F4EC;
     --bg:#f2f0ec;
     --line:#d9d4cc;
-    /* --- MODIFICADO: Ahora es un azul suave --- */
+    /* --- Azul suave fijo para el fondo --- */
     --hover:#e6f0fa; 
-    /* --- NUEVO: Borde azul suave para el hover --- */
+    /* --- Borde azul suave fijo --- */
     --hover-line:#b3d1ff; 
 }
 
@@ -98,20 +98,15 @@ h1{
     margin-top:28px;
 }
 
-/* --- CUADROS BLANCOS --- */
+/* --- CORREGIDO: CUADROS CON AZUL SUAVE PERMANENTE --- */
 .project{
     padding:25px 24px 23px;
-    background:#fff;
-    border:1px solid var(--line);
+    background: var(--hover); /* Ahora el fondo es azul suave desde el inicio */
+    border:1px solid var(--hover-line); /* Borde azul suave a juego */
     border-radius:5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
 }
 
-/* --- CORREGIDO: EFECTO HOVER CON AZUL SUAVE --- */
-.project:hover {
-    background-color: var(--hover); /* Usa el azul suave */
-    border-color: var(--hover-line); /* Borde azul a juego */
-}
+/* Se eliminó por completo la regla .project:hover */
 
 .project h2{
     margin:0 0 11px;
