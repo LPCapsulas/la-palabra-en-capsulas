@@ -1,13 +1,17 @@
 <!doctype html>
+
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Estudia las Escrituras — LPC">
 <title>Escudriñad las Escrituras — LPC</title>
+
 <style>
   *{box-sizing:border-box}
+
   html,body{margin:0;padding:0}
+
   body{
     background:#fff;
     color:#111;
@@ -15,17 +19,20 @@
     font-size:18px;
     line-height:1.34;
   }
+
   .page{
     width:min(900px,94%);
     margin:0 auto;
     padding:28px 20px 50px;
   }
+
   .hero{
     display:block;
     width:min(560px,100%);
     height:auto;
     margin:0 auto 8px;
   }
+
   .brand{
     margin:0 0 3px;
     text-align:center;
@@ -33,6 +40,7 @@
     font-size:28px;
     line-height:1.15;
   }
+
   .verse{
     display:table;
     margin:0 auto 30px;
@@ -44,12 +52,16 @@
     line-height:1.3;
     text-align:center;
   }
-  .verse a{color:inherit;text-decoration:none}
-  
+
+  .verse a{
+    color:inherit;
+    text-decoration:none;
+  }
+
   /* Palabra Jesús en rojo vino, centrada y limpia */
-  .jesus-highlight {
+  .jesus-highlight{
     display:block;
-    color:#800020; 
+    color:#800020;
     font-weight:bold;
     font-style:normal;
     margin-top:6px;
@@ -60,7 +72,11 @@
     margin:0 auto 22px;
     max-width:820px;
   }
-  .main-text em{font-style:italic}
+
+  .main-text em{
+    font-style:italic;
+  }
+
   .cascade{
     text-align:center;
     margin:20px auto 18px;
@@ -68,19 +84,24 @@
     font-size:19px;
     line-height:1.32;
   }
-  .cascade .line{display:block}
+
+  .cascade .line{
+    display:block;
+  }
+
   .cascade .l1{margin-left:0}
   .cascade .l2{margin-left:28px}
   .cascade .l3{margin-left:56px}
   .cascade .l4{margin-left:84px}
   .cascade .l5{margin-left:112px}
+
   .pointing{
     display:block;
     width:90px;
     height:auto;
     margin:8px auto 8px;
   }
-  
+
   /* Ajustado a 500px y adaptado para dispositivos móviles */
   .join{
     display:block;
@@ -89,6 +110,7 @@
     margin:0 auto 58px;
     border:0;
   }
+
   .notes{
     width:min(300px,100%);
     margin:0 0 0 0;
@@ -97,30 +119,93 @@
     font-size:16px;
     line-height:1.35;
   }
-  .notes div{margin:0}
-  
+
+  .notes div{
+    margin:0;
+  }
+
+  /* =====================================================
+     AJUSTE EXCLUSIVO PARA PC
+     Sube ligeramente el texto, la flecha y el botón
+     para que "Únete" sea visible al abrir la página.
+     NO afecta celulares.
+     ===================================================== */
+  @media (min-width:601px){
+
+    .main-text{
+      margin-top:-10px;
+      margin-bottom:14px;
+    }
+
+    .pointing{
+      margin-top:0;
+      margin-bottom:2px;
+    }
+
+    .join{
+      margin-top:0;
+    }
+  }
+
   /* Ajustes específicos para pantallas móviles (Smartphones) */
   @media (max-width:600px){
-    body{font-size:17px}
-    .page{padding:18px 12px 38px}
-    .brand{font-size:23px}
-    .verse{font-size:18px;margin-bottom:24px}
-    .main-text{line-height:1.38}
-    .cascade{font-size:17px;line-height:1.38}
-    .cascade .l1,.cascade .l2,.cascade .l3,.cascade .l4,.cascade .l5{margin-left:0}
-    .join{width:94%;margin-bottom:42px} /* Mantiene la proporción en pantallas pequeñas */
-    .notes{font-size:15px}
+
+    body{
+      font-size:17px;
+    }
+
+    .page{
+      padding:18px 12px 38px;
+    }
+
+    .brand{
+      font-size:23px;
+    }
+
+    .verse{
+      font-size:18px;
+      margin-bottom:24px;
+    }
+
+    .main-text{
+      line-height:1.38;
+    }
+
+    .cascade{
+      font-size:17px;
+      line-height:1.38;
+    }
+
+    .cascade .l1,
+    .cascade .l2,
+    .cascade .l3,
+    .cascade .l4,
+    .cascade .l5{
+      margin-left:0;
+    }
+
+    .join{
+      width:94%;
+      margin-bottom:42px;
+    }
+
+    .notes{
+      font-size:15px;
+    }
   }
 </style>
+
 </head>
+
 <body>
+
 <main class="page">
 
   <img class="hero" src="leyendo.jpg" alt="Pareja leyendo la Biblia">
 
   <div class="verse">
     <a href="https://forms.gle/KHasXkcao7NQxj9FA" target="_blank" rel="noopener">
-      “Estudia las Escrituras” 
+      “Estudia las Escrituras”
       <span class="jesus-highlight">(Jesús)</span>
     </a>
   </div>
@@ -131,7 +216,7 @@
     Cristo Jesús en acción. Todo el evangelio de Juan (21 capítulos) se toma
     2 horas de tu tiempo para escucharlo, y un solo capítulo: 5 minutos!
   </p>
-    
+
   <img class="pointing" src="senalando.jpg" alt="Señalando hacia abajo">
 
   <a href="https://forms.gle/KHasXkcao7NQxj9FA" target="_blank" rel="noopener" aria-label="Únete a La Palabra en Cápsulas">
@@ -139,5 +224,6 @@
   </a>
 
 </main>
+
 </body>
 </html>
