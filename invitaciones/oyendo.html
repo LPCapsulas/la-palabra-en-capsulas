@@ -50,16 +50,16 @@
     }
     
     /* =====================================================
-       EFECTO COMENTARIO SEPARADO Y CENTRADO PERMANENTE
+       EFECTO COMENTARIO PERFECTAMENTE CENTRADO ARRIBA
        ===================================================== */
-    .tooltip-link {
+    .tooltip-anchor {
       position: relative;
       display: inline-block;
       cursor: help;
     }
 
-    /* Caja del comentario (Centrada exactamente arriba de la frase) */
-    .tooltip-link::after {
+    /* Caja del comentario (Exactamente sobre "Estudia las Escrituras") */
+    .tooltip-anchor::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: 130%;
@@ -67,7 +67,7 @@
       transform: translateX(-50%);
       background-color: #333;
       color: #fff;
-      padding: 5px 12px;
+      padding: 6px 12px;
       border-radius: 4px;
       font-size: 14px;
       font-family: Arial, sans-serif;
@@ -76,12 +76,12 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s ease, bottom 0.2s ease;
-      z-index: 99;
+      transition: opacity 0.18s ease-in-out, bottom 0.18s ease-in-out;
+      z-index: 999;
     }
 
-    /* Flecha del comentario */
-    .tooltip-link::before {
+    /* Pequeña flecha debajo del comentario */
+    .tooltip-anchor::before {
       content: "";
       position: absolute;
       bottom: 110%;
@@ -92,18 +92,18 @@
       border-color: #333 transparent transparent transparent;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s ease, bottom 0.2s ease;
-      z-index: 99;
+      transition: opacity 0.18s ease-in-out, bottom 0.18s ease-in-out;
+      z-index: 999;
     }
 
-    /* Activación precisa en PC y Móvil */
-    .tooltip-link:hover::after,
-    .tooltip-link:focus::after {
+    /* Activación al pasar el mouse (PC) o al hacer foco/toque (Móvil) */
+    .tooltip-anchor:hover::after,
+    .tooltip-anchor:focus::after {
       opacity: 1;
       bottom: 140%;
     }
-    .tooltip-link:hover::before,
-    .tooltip-link:focus::before {
+    .tooltip-anchor:hover::before,
+    .tooltip-anchor:focus::before {
       opacity: 1;
       bottom: 120%;
     }
@@ -216,7 +216,7 @@
       }
       
       /* Ajuste del comentario para móviles */
-      .tooltip-link::after {
+      .tooltip-anchor::after {
         white-space: normal; 
         width: 120px;
         font-size: 13px;
@@ -230,13 +230,9 @@
     <img class="hero" src="leyendo.jpg" alt="Pareja leyendo la Biblia">
     
     <div class="verse">
-      <!-- Enlace 1: Solo para la frase y el comentario centrado -->
-      <a href="https://forms.gle" target="_blank" rel="noopener" class="tooltip-link" data-tooltip="Juan 5.39">
-        “Estudia las Escrituras”
-      </a>
-      
-      <!-- Enlace 2: Solo para la palabra Jesús abajo, libre de comentarios -->
       <a href="https://forms.gle" target="_blank" rel="noopener">
+        <!-- El ancla del comentario envuelve exclusivamente la frase superior -->
+        <span class="tooltip-anchor" data-tooltip="Juan 5.39" tabindex="0">“Estudia las Escrituras”</span>
         <span class="jesus-highlight">(Jesús)</span>
       </a>
     </div>
