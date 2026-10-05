@@ -44,33 +44,30 @@
       line-height:1.3;
       text-align:center;
     }
-    
-    /* =====================================================
-       NUEVO EFECTO COMENTARIO MEJORADO (PC Y MÓVIL)
-       ===================================================== */
-    .verse a {
+    .verse a{
       color:inherit;
       text-decoration:none;
-      position: relative;
-      display: inline-block;
-      cursor: help; /* Indica visualmente que hay un comentario */
     }
     
-    /* Contenedor interno para mantener el texto limpio */
-    .verse-txt {
-      border-bottom: 1px dotted #800020; /* Línea punteada debajo del texto */
+    /* =====================================================
+       EFECTO COMENTARIO SEPARADO Y CENTRADO PERMANENTE
+       ===================================================== */
+    .tooltip-link {
+      position: relative;
+      display: inline-block;
+      cursor: help;
     }
 
-    /* Caja del comentario (Oculta por defecto) */
-    .verse a::after {
+    /* Caja del comentario (Centrada exactamente arriba de la frase) */
+    .tooltip-link::after {
       content: attr(data-tooltip);
       position: absolute;
-      bottom: 135%;
+      bottom: 130%;
       left: 50%;
       transform: translateX(-50%);
       background-color: #333;
       color: #fff;
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 4px;
       font-size: 14px;
       font-family: Arial, sans-serif;
@@ -83,11 +80,11 @@
       z-index: 99;
     }
 
-    /* Pequeña flecha debajo del comentario */
-    .verse a::before {
+    /* Flecha del comentario */
+    .tooltip-link::before {
       content: "";
       position: absolute;
-      bottom: 115%;
+      bottom: 110%;
       left: 50%;
       transform: translateX(-50%);
       border-width: 6px;
@@ -99,16 +96,16 @@
       z-index: 99;
     }
 
-    /* Activación garantizada en PC (Hover) y Móvil (Toque/Focus) */
-    .verse a:hover::after,
-    .verse a:focus::after {
+    /* Activación precisa en PC y Móvil */
+    .tooltip-link:hover::after,
+    .tooltip-link:focus::after {
       opacity: 1;
-      bottom: 145%; /* Sube suavemente al activarse */
+      bottom: 140%;
     }
-    .verse a:hover::before,
-    .verse a:focus::before {
+    .tooltip-link:hover::before,
+    .tooltip-link:focus::before {
       opacity: 1;
-      bottom: 125%;
+      bottom: 120%;
     }
 
     /* Palabra Jesús en rojo vino, centrada y limpia */
@@ -218,12 +215,12 @@
         font-size:15px;
       }
       
-      /* Ajuste del comentario para pantallas pequeñas */
-      .verse a::after {
+      /* Ajuste del comentario para móviles */
+      .tooltip-link::after {
         white-space: normal; 
-        width: 130px; /* Limita el ancho en celulares */
+        width: 120px;
         font-size: 13px;
-        padding: 5px 10px;
+        padding: 4px 8px;
       }
     }
   </style>
@@ -233,9 +230,13 @@
     <img class="hero" src="leyendo.jpg" alt="Pareja leyendo la Biblia">
     
     <div class="verse">
-      <!-- El atributo data-tooltip ahora está directamente en el enlace principal -->
-      <a href="https://forms.gle" target="_blank" rel="noopener" data-tooltip="Juan 5.39">
-        <span class="verse-txt">“Estudia las Escrituras”</span>
+      <!-- Enlace 1: Solo para la frase y el comentario centrado -->
+      <a href="https://forms.gle" target="_blank" rel="noopener" class="tooltip-link" data-tooltip="Juan 5.39">
+        “Estudia las Escrituras”
+      </a>
+      
+      <!-- Enlace 2: Solo para la palabra Jesús abajo, libre de comentarios -->
+      <a href="https://forms.gle" target="_blank" rel="noopener">
         <span class="jesus-highlight">(Jesús)</span>
       </a>
     </div>
