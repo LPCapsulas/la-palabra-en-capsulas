@@ -1,202 +1,215 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Oración — La Palabra en Cápsulas</title>
+    <title>Oración — La Palabra en Cápsulas</title>
 
-<style>
-
-    :root{
-        --text:#252525;
-        --muted:#666;
-        --accent:#17365D;
-        --paper:#F8F4EC;
-        --bg:#f2f0ec;
-        --line:#d9d9d9;
-    }
-
-    *{
-        box-sizing:border-box;
-    }
-
-    body{
-        margin:0;
-        padding:0;
-        background:var(--bg);
-        color:var(--text);
-        font-family:Georgia, "Times New Roman", serif;
-        line-height:1.7;
-    }
-
-    .page{
-        width:900px;
-        max-width:calc(100% - 40px);
-        margin:45px auto;
-        padding:55px 65px 45px;
-        background:var(--paper);
-        border-radius:5px;
-        box-shadow:0 4px 18px rgba(0,0,0,0.07);
-    }
-
-    h1{
-        margin:0 0 10px;
-        color:var(--accent);
-        font-family:Georgia, "Times New Roman", serif;
-        font-size:36px;
-        line-height:1.2;
-        text-align:center;
-        font-weight:700;
-    }
-
-    .intro{
-        margin:0 0 42px;
-        color:var(--muted);
-        font-size:17px;
-        line-height:1.6;
-        text-align:center;
-    }
-
-    .article-card{
-        background:#ffffff;
-        border-left:5px solid var(--accent);
-        padding:22px 28px 24px;
-        margin-bottom:45px;
-    }
-
-    .article-card h2{
-        margin:0 0 8px;
-        color:var(--accent);
-        font-family:Georgia, "Times New Roman", serif;
-        font-size:27px;
-        line-height:1.3;
-    }
-
-    .article-card p{
-        margin:0 0 20px;
-        color:#252525;
-        font-family:Georgia, "Times New Roman", serif;
-        font-size:17px;
-        line-height:1.6;
-    }
-
-    .read-link{
-        color:var(--accent);
-        font-family:Georgia, "Times New Roman", serif;
-        font-size:16px;
-        font-weight:700;
-        text-decoration:none;
-    }
-
-    .read-link:hover{
-        text-decoration:underline;
-    }
-
-    .bottom-nav{
-        margin-top:0;
-        padding-top:25px;
-        border-top:1px solid var(--line);
-        text-align:center;
-    }
-
-    .bottom-nav a{
-        color:var(--accent);
-        font-family:Georgia, "Times New Roman", serif;
-        text-decoration:none;
-        font-size:16px;
-        font-weight:700;
-    }
-
-    .bottom-nav a:hover{
-        text-decoration:underline;
-    }
-
-
-    /* CELULAR */
-
-    @media (max-width:700px){
-
-        .page{
-            width:auto;
-            max-width:none;
-            margin:0;
-            padding:38px 22px 35px;
-            border-radius:0;
-            box-shadow:none;
+    <style>
+        :root {
+            --text: #252525;
+            --muted: #666;
+            --accent: #17365D;
+            --paper: #F8F4EC;
+            --bg: #f2f0ec;
+            --line: #d9d9d9;
+            --hover: #e8e3da;
         }
 
-        h1{
-            font-size:31px;
-            line-height:1.25;
+        * {
+            box-sizing: border-box;
         }
 
-        .intro{
-            font-size:17px;
-            margin-bottom:35px;
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.7;
         }
 
-        .article-card{
-            padding:20px 20px 22px;
-            border-left-width:4px;
-            margin-bottom:35px;
+        .page {
+            width: 900px;
+            max-width: calc(100% - 40px);
+            margin: 45px auto;
+            padding: 55px 65px 45px;
+            background: var(--paper);
+            border-radius: 5px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
         }
 
-        .article-card h2{
-            font-size:25px;
+        h1 {
+            margin: 0 0 10px;
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 36px;
+            line-height: 1.2;
+            text-align: center;
+            font-weight: 700;
         }
 
-        .article-card p{
-            font-size:17px;
-            line-height:1.65;
+        .intro {
+            margin: 0 0 42px;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.6;
+            text-align: center;
         }
 
-        .read-link{
-            font-size:16px;
+        .article-card {
+            background: #ffffff;
+            border-left: 5px solid var(--accent);
+            padding: 22px 28px 24px;
+            margin-bottom: 45px;
+            transition: background-color 0.25s ease;
         }
 
-        .bottom-nav{
-            padding-top:22px;
+        /* EFECTO AL PASAR EL MOUSE */
+
+        .article-card:hover {
+            background-color: var(--hover);
         }
 
-    }
+        .article-card h2 {
+            margin: 0 0 8px;
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            line-height: 1.3;
+        }
 
-</style>
+        .article-card p {
+            margin: 0 0 20px;
+            color: #252525;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            line-height: 1.6;
+        }
 
+        .read-link {
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .read-link:hover {
+            text-decoration: underline;
+        }
+
+        .bottom-nav {
+            margin-top: 0;
+            padding-top: 25px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
+
+        .bottom-nav a {
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .bottom-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .page {
+                width: auto;
+                max-width: none;
+                margin: 0;
+                padding: 38px 22px 35px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            h1 {
+                font-size: 31px;
+                line-height: 1.25;
+            }
+
+            .intro {
+                font-size: 17px;
+                margin-bottom: 35px;
+            }
+
+            .article-card {
+                padding: 20px 20px 22px;
+                border-left-width: 4px;
+                margin-bottom: 35px;
+            }
+
+            .article-card h2 {
+                font-size: 25px;
+            }
+
+            .article-card p {
+                font-size: 17px;
+                line-height: 1.65;
+            }
+
+            .read-link {
+                font-size: 16px;
+            }
+
+            .bottom-nav {
+                padding-top: 22px;
+            }
+        }
+
+        /* DISPOSITIVOS SIN MOUSE: SIN TRANSICIÓN INNECESARIA */
+
+        @media (hover: none) {
+            .article-card {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="page">
+    <div class="page">
 
-<h1>Oración</h1>
+        <h1>Oración</h1>
 
-<p class="intro">
-    Meditando y hablando con Dios.
-</p>
+        <p class="intro">
+            Meditando y hablando con Dios.
+        </p>
 
-<div class="article-card">
+        <div class="article-card">
 
-    <h2>La Importancia de Orar</h2>
+            <h2>La Importancia de Orar</h2>
 
-    <p>
-        Una reflexión sobre lo que implica la oración,
-        súplica, acciones de gracias, alabanza, el dar 
-        y el lugar que deben ocupar en la vida del creyente.
-    </p>
+            <p>
+                Una reflexión sobre lo que implica la oración,
+                súplica, acciones de gracias, alabanza, el dar
+                y el lugar que deben ocupar en la vida del creyente.
+            </p>
 
-    <a class="read-link" href="orar.html">
-        Leer artículo →
-    </a>
+            <a class="read-link" href="orar.html">
+                Leer artículo →
+            </a>
 
-</div>
+        </div>
 
-<div class="bottom-nav">
-    <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/menu.html">← Volver al Menú</a>
-</div>
+        <div class="bottom-nav">
+            <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/menu.html">
+                ← Volver al Menú
+            </a>
+        </div>
 
-</div>
+    </div>
 
 </body>
 </html>
