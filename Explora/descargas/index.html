@@ -20,12 +20,9 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       background: var(--bg);
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
@@ -33,27 +30,30 @@
       line-height: 1.78;
     }
 
-    /* Ajustado para distribuir el contenido verticalmente en PC */
+    /* === AJUSTES PARA COMPU / PC === */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh; /* Obliga a todo a centrarse en la pantalla del monitor */
+      padding: 20px 0;
+    }
+
     .page {
       width: min(900px, calc(100% - 32px));
-      margin: 30px auto 42px;
+      margin: 0 auto; /* Eliminamos márgenes externos altos */
       background: var(--paper);
-      padding: 48px 72px 40px; /* Reducido el padding inferior */
+      padding: 40px 72px; /* Padding más equilibrado */
       border: 1px solid rgba(23, 54, 93, .08);
       border-radius: 10px;
       box-shadow: 0 5px 24px rgba(0, 0, 0, .05);
-      
-      /* Flexbox para asegurar que todo quepa en una sola pantalla visual */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     header {
       text-align: center;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 24px;
-      margin-bottom: 25px; /* Reducido ligeramente */
+      padding-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .eyebrow {
@@ -75,7 +75,6 @@
     .article {
       max-width: 760px;
       margin: auto;
-      width: 100%;
     }
 
     p {
@@ -87,14 +86,14 @@
       text-align: center;
     }
 
-    /* Ocultar los saltos de línea manuales en PC */
+    /* En la computadora el texto de la intro va en una sola línea larga */
     .intro br {
       display: none;
     }
 
     .card {
       max-width: 700px;
-      margin: 25px auto 0; /* Reducido de 35px a 25px */
+      margin: 25px auto 0;
       padding: 26px;
       background: #f3f0eb;
       border: 1px solid var(--line);
@@ -121,7 +120,7 @@
 
     .back {
       text-align: center;
-      margin-top: 35px; /* Reducido de 42px a 35px */
+      margin-top: 30px;
     }
 
     .back a {
@@ -134,11 +133,14 @@
       border-color: var(--accent);
     }
 
-    /* DISEÑO PARA CELULARES */
+    /* === AJUSTES PARA CELULAR (MÓVIL) === */
     @media(max-width:600px) {
       body {
         font-size: 17px;
         line-height: 1.65;
+        display: block; /* Desactiva el centrado estricto de PC */
+        min-height: auto;
+        padding: 0;
       }
 
       .page {
@@ -146,7 +148,6 @@
         margin: 14px auto 25px;
         padding: 30px 20px 38px;
         border-radius: 8px;
-        display: block; /* Desactiva el comportamiento flex de PC */
       }
 
       .title {
@@ -165,9 +166,9 @@
         text-align: center;
       }
 
-      /* Mostrar los saltos de línea para que quede igual a tu imagen */
+      /* IMPORTANTE: Activa los saltos de línea idénticos a tu imagen */
       .intro br {
-        display: inline;
+        display: inline !important; 
       }
 
       .card {
@@ -198,7 +199,7 @@
     </header>
 
     <main class="article">
-      <!-- Los <br> ahora solo se activan en pantallas móviles -->
+      <!-- Los <br> están colocados estratégicamente para el celular -->
       <p class="intro">
         Recursos de LPC para quienes desean conocer<br>más de la fe cristiana y crecer<br>en su caminar con Dios
       </p>
