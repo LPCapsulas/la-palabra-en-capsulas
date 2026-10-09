@@ -35,15 +35,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh; /* Obliga a todo a centrarse en la pantalla del monitor */
+      min-height: 100vh; /* Centra verticalmente para ver el botón sin scroll */
       padding: 20px 0;
     }
 
     .page {
       width: min(900px, calc(100% - 32px));
-      margin: 0 auto; /* Eliminamos márgenes externos altos */
+      margin: 0 auto;
       background: var(--paper);
-      padding: 40px 72px; /* Padding más equilibrado */
+      padding: 40px 72px;
       border: 1px solid rgba(23, 54, 93, .08);
       border-radius: 10px;
       box-shadow: 0 5px 24px rgba(0, 0, 0, .05);
@@ -86,9 +86,12 @@
       text-align: center;
     }
 
-    /* En la computadora el texto de la intro va en una sola línea larga */
-    .intro br {
-      display: none;
+    /* Control de saltos de línea para PC */
+    .br-pc {
+      display: inline; /* Activo en PC */
+    }
+    .br-movil {
+      display: none;   /* Oculto en PC */
     }
 
     .card {
@@ -133,12 +136,12 @@
       border-color: var(--accent);
     }
 
-    /* === AJUSTES PARA CELULAR (MÓVIL) === */
+    /* === AJUSTES PARA CELULAR (MÓVIL) - INTACTO === */
     @media(max-width:600px) {
       body {
         font-size: 17px;
         line-height: 1.65;
-        display: block; /* Desactiva el centrado estricto de PC */
+        display: block;
         min-height: auto;
         padding: 0;
       }
@@ -166,9 +169,12 @@
         text-align: center;
       }
 
-      /* IMPORTANTE: Activa los saltos de línea idénticos a tu imagen */
-      .intro br {
-        display: inline !important; 
+      /* Control de saltos de línea para Móvil */
+      .br-pc {
+        display: none !important;    /* Oculta el corte de PC */
+      }
+      .br-movil {
+        display: inline !important;  /* Activa los cortes de tu primera foto */
       }
 
       .card {
@@ -199,10 +205,9 @@
     </header>
 
     <main class="article">
-      <!-- Los <br> están colocados estratégicamente para el celular -->
+      <!-- Saltos de línea condicionales controlados por CSS -->
       <p class="intro">
-        Recursos de LPC para quienes desean conocer más de la fe cristiana<br>
-        y crecer en su caminar con Dios
+        Recursos de LPC para quienes desean conocer más de la fe<br class="br-pc"> cristiana y crecer<br class="br-movil"> en su caminar con Dios
       </p>
 
       <div class="card">
