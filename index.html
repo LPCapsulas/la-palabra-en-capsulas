@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -33,18 +34,19 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 17px;
       line-height: 1.8;
-      zoom: 90%;
+      zoom: 100%;
     }
 
     /* =====================================================
        PÁGINA PRINCIPAL — PC
+       Ajustes verticales para que EXPLORA sea visible
        ===================================================== */
 
     .page {
       width: min(900px, calc(100% - 32px));
-      margin: 10px auto;
+      margin: 6px auto;
       background: var(--paper);
-      padding: 30px 72px 50px;
+      padding: 16px 72px 24px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
 
@@ -54,7 +56,7 @@
 
     .banner-container {
       text-align: center;
-      margin: 0 auto 24px;
+      margin: 0 auto 12px;
       width: 100%;
       max-width: 800px;
     }
@@ -70,16 +72,16 @@
 
     /* =====================================================
        TEXTO EN CASCADA AZUL — PC
-       Se conserva su tamaño especial
+       Se conserva el estilo de cascada
        ===================================================== */
 
     .welcome-text {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 30px;
+      margin: 0 auto 14px;
       font-size: 24px;
-      line-height: 1.45;
+      line-height: 1.35;
       font-weight: 500;
       color: var(--brand-blue);
     }
@@ -96,7 +98,6 @@
 
     /* =====================================================
        BOTÓN PRINCIPAL — EXPLORA
-       Se conserva su diseño y tamaño
        ===================================================== */
 
     .explore-button-container {
@@ -104,7 +105,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin: 0 auto 24px;
+      margin: 0 auto 8px;
     }
 
     .explore-button {
@@ -112,7 +113,7 @@
       align-items: center;
       justify-content: center;
       min-width: 230px;
-      padding: 16px 44px;
+      padding: 12px 44px;
       background: #ffffff;
       color: var(--accent);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -143,7 +144,7 @@
 
     /* =====================================================
        TELÉFONO VERTICAL
-       Se conservan los márgenes y tamaños originales
+       VALORES ORIGINALES CONSERVADOS
        ===================================================== */
 
     @media(max-width:700px) and (orientation:portrait) {
@@ -181,7 +182,7 @@
 
     /* =====================================================
        TELÉFONO HORIZONTAL
-       Se conservan los márgenes y tamaños originales
+       VALORES ORIGINALES CONSERVADOS
        ===================================================== */
 
     @media(max-width:700px) and (orientation:landscape) {
@@ -233,12 +234,11 @@
 
     <div class="welcome-text">
       <p>
-        Bienvenido a este espacio. Un lugar<br>
-        dedicado a compartir ideas<br>
-        prácticas, profundas y<br>
-        accesibles para un<br>
-        caminar seguro<br>
-        con <span class="highlight">Dios</span>
+        Bienvenido a este espacio.<br>
+        Un lugar dedicado a compartir<br>
+        ideas prácticas, profundas y<br>
+        accesibles para un caminar<br>
+        seguro con <span class="highlight">Dios</span>
       </p>
     </div>
 
@@ -255,4 +255,4 @@
 
 </body>
 </html>
-
+```
