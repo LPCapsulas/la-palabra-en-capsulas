@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -38,14 +39,13 @@
 
     /* =====================================================
        PÁGINA PRINCIPAL — PC
-       Ajustes para que EXPLORA quede completamente visible
        ===================================================== */
 
     .page {
       width: min(900px, calc(100% - 32px));
       margin: 2px auto;
       background: var(--paper);
-      padding: 6px 72px 10px;
+      padding: 10px 72px 22px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
 
@@ -55,7 +55,7 @@
 
     .banner-container {
       text-align: center;
-      margin: 0 auto 5px;
+      margin: 0 auto 10px;
       width: 100%;
       max-width: 800px;
     }
@@ -70,17 +70,17 @@
     }
 
     /* =====================================================
-       TEXTO EN CASCADA AZUL — PC
-       Tamaño ligeramente reducido
+       TEXTO EN CASCADA — PC
+       Cuatro líneas
        ===================================================== */
 
     .welcome-text {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 5px;
+      margin: 0 auto 22px;
       font-size: 22px;
-      line-height: 1.22;
+      line-height: 1.35;
       font-weight: 500;
       color: var(--brand-blue);
     }
@@ -112,7 +112,7 @@
       align-items: center;
       justify-content: center;
       min-width: 230px;
-      padding: 9px 44px;
+      padding: 10px 44px;
       background: #ffffff;
       color: var(--accent);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -143,7 +143,7 @@
 
     /* =====================================================
        TELÉFONO VERTICAL
-       Valores conservados del código anterior
+       Diseño y cascada originales conservados
        ===================================================== */
 
     @media(max-width:700px) and (orientation:portrait) {
@@ -181,7 +181,7 @@
 
     /* =====================================================
        TELÉFONO HORIZONTAL
-       Valores conservados del código anterior
+       Diseño y cascada originales conservados
        ===================================================== */
 
     @media(max-width:700px) and (orientation:landscape) {
@@ -232,12 +232,11 @@
     </div>
 
     <div class="welcome-text">
-      <p>
+      <p class="welcome-pc">
         Bienvenido a este espacio.<br>
-        Un lugar dedicado a compartir<br>
-        ideas prácticas, profundas y<br>
-        accesibles para un caminar<br>
-        seguro con <span class="highlight">Dios</span>
+        Un lugar dedicado a compartir ideas<br>
+        prácticas, profundas y accesibles<br>
+        para un caminar seguro con <span class="highlight">Dios</span>
       </p>
     </div>
 
@@ -254,4 +253,4 @@
 
 </body>
 </html>
-
+```
