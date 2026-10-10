@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Obra de Dios en la Tierra</title>
+
     <style>
         body {
             background-color: #FAF6F0;
@@ -37,7 +39,7 @@
         h1 {
             font-size: 36px;
             color: #0F3661;
-            margin: 0 0 5px 0; /* Margen reducido de 15px a 5px para acercar el subtítulo */
+            margin: 0 0 5px 0;
             font-weight: bold;
         }
 
@@ -56,13 +58,11 @@
             padding: 30px 40px;
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            /* Slower, smoother transition for a gentler feel */
-            transition: background-color 0.5s ease-in-out; 
+            transition: background-color 0.5s ease-in-out;
         }
 
-        /* NEW: Extra soft off-white hover color */
         .card:hover {
-            background-color: #FAFAFA; 
+            background-color: #FAFAFA;
         }
 
         h2 {
@@ -73,7 +73,7 @@
         }
 
         p {
-            font-size: 16px; /* Tamaño de texto aumentado de 15px a 16px */
+            font-size: 16px;
             color: #333333;
             margin-top: 0;
             margin-bottom: 20px;
@@ -88,7 +88,6 @@
             font-weight: bold;
         }
 
-        /* Estilos para el contenedor del botón de regreso */
         .footer-nav {
             text-align: center;
             margin-top: 40px;
@@ -102,7 +101,7 @@
             color: #FFFFFF;
             text-decoration: none;
             font-size: 15px;
-            font-family: sans-serif; /* Tipografía limpia para el botón */
+            font-family: sans-serif;
             font-weight: bold;
             border-radius: 4px;
             letter-spacing: 1px;
@@ -114,11 +113,50 @@
             background-color: #164980;
             transform: translateY(-1px);
         }
+
+        /* Ajustes exclusivos para celulares */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 14px;
+            }
+
+            .subtitle-top {
+                font-size: 15px;
+            }
+
+            /* Los títulos se mantienen sin cambios */
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .card {
+                padding: 24px 20px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .btn-back {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
+
         <header>
             <div class="subtitle-top">La Palabra en Cápsulas</div>
             <h1>La Obra de Dios en la Tierra</h1>
@@ -127,21 +165,26 @@
 
         <section class="card">
             <h2>¿Cuál es nuestra comisión?</h2>
+
             <p>La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.</p>
+
             <p>Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.</p>
         </section>
 
         <section class="card">
             <h2>Demostrar el evangelio</h2>
+
             <p>Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.</p>
+
             <p>En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.</p>
         </section>
 
-        <!-- Botón de Volver al Menú -->
         <div class="footer-nav">
-            <a href="https://github.io" class="btn-back">Volver al Menú</a>
+            <a href="https://lpcapsulas.com/Explora/menu.html" class="btn-back">Volver al Menú</a>
         </div>
+
     </div>
 
 </body>
 </html>
+```
