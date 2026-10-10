@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -39,14 +38,14 @@
 
     /* =====================================================
        PÁGINA PRINCIPAL — PC
-       Ajustes verticales para que EXPLORA sea visible
+       Espacios reducidos para mostrar EXPLORA
        ===================================================== */
 
     .page {
       width: min(900px, calc(100% - 32px));
-      margin: 6px auto;
+      margin: 4px auto;
       background: var(--paper);
-      padding: 16px 72px 24px;
+      padding: 10px 72px 16px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
 
@@ -56,7 +55,7 @@
 
     .banner-container {
       text-align: center;
-      margin: 0 auto 12px;
+      margin: 0 auto 8px;
       width: 100%;
       max-width: 800px;
     }
@@ -72,16 +71,15 @@
 
     /* =====================================================
        TEXTO EN CASCADA AZUL — PC
-       Se conserva el estilo de cascada
        ===================================================== */
 
     .welcome-text {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 14px;
+      margin: 0 auto 8px;
       font-size: 24px;
-      line-height: 1.35;
+      line-height: 1.3;
       font-weight: 500;
       color: var(--brand-blue);
     }
@@ -105,7 +103,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      margin: 0 auto 8px;
+      margin: 0 auto 4px;
     }
 
     .explore-button {
@@ -113,7 +111,7 @@
       align-items: center;
       justify-content: center;
       min-width: 230px;
-      padding: 12px 44px;
+      padding: 10px 44px;
       background: #ffffff;
       color: var(--accent);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -144,7 +142,7 @@
 
     /* =====================================================
        TELÉFONO VERTICAL
-       VALORES ORIGINALES CONSERVADOS
+       Tamaño de letra reducido un punto
        ===================================================== */
 
     @media(max-width:700px) and (orientation:portrait) {
@@ -164,7 +162,7 @@
       }
 
       .welcome-text {
-        font-size: 21px;
+        font-size: 20px;
         line-height: 1.65;
         margin-bottom: 40px;
       }
@@ -182,7 +180,7 @@
 
     /* =====================================================
        TELÉFONO HORIZONTAL
-       VALORES ORIGINALES CONSERVADOS
+       Tamaño de letra reducido un punto
        ===================================================== */
 
     @media(max-width:700px) and (orientation:landscape) {
@@ -202,7 +200,7 @@
       }
 
       .welcome-text {
-        font-size: 22px;
+        font-size: 21px;
         line-height: 1.6;
         margin-bottom: 32px;
       }
@@ -255,4 +253,3 @@
 
 </body>
 </html>
-```
