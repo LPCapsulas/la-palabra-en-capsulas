@@ -1,448 +1,458 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Él está al tanto de la situación… — Parte 2 — La Palabra en Cápsulas</title>
 
 <style>
-
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#F8F4EC;
-    --paper-hover:#eef4fa;
-    --bg:#f2f0ec;
-    --line:#d9d9d9;
+:root {
+    --text: #252525;
+    --muted: #666;
+    --accent: #17365D;
+    --paper: #F8F4EC;
+    --bg: #f2f0ec;
+    --line: #d9d9d9;
 }
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family: 'Inter', Arial, sans-serif;
-    line-height:1.7;
-    font-size:16px;
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.page{
-    width:min(900px,92%);
-    margin:42px auto;
-    background:var(--paper);
-    padding:55px 70px 50px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
-    transition:background-color .25s ease;
+/* PÁGINA */
+
+.page {
+    width: 900px;
+    max-width: calc(100% - 40px);
+    margin: 45px auto;
+    padding: 55px 65px 45px;
+    background: var(--paper);
+    border-radius: 5px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
 }
 
-/* Efecto al pasar el mouse por la hoja */
+/* ENCABEZADO */
 
-.page:hover{
-    background:var(--paper-hover);
+header {
+    text-align: center;
+    margin-bottom: 35px;
 }
 
-header{
-    text-align:center;
-    margin-bottom:42px;
+.site-name {
+    margin-bottom: 8px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
 }
 
-.site-name{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:18px;
-    color:var(--accent);
-    letter-spacing:.08em;
-    margin-bottom:4px;
+h1 {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-h1{
-    margin:0;
-    color:var(--accent);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:38px;
-    line-height:1.2;
-    font-weight:600;
+.part-label {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 16px;
+    font-style: italic;
 }
 
-.part-label{
-    margin-top:4px;
-    color:var(--muted);
-    font-size:15px;
-    font-style:italic;
+.author {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 17px;
+    font-style: italic;
 }
 
-.author{
-    margin-top:0;
-    color:var(--muted);
-    font-size:15px;
-    font-style:italic;
+/* ARTÍCULO */
+
+.article p {
+    margin: 0 0 22px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-.article p{
-    margin:0 0 23px;
-    text-align:justify;
+.article h2 {
+    margin: 0 0 24px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 700;
 }
 
-.article h2{
-    margin:0 0 24px;
-    color:var(--accent);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:28px;
-    line-height:1.3;
-    font-weight:600;
+/* CITAS BÍBLICAS */
+
+.scripture {
+    margin: 23px 0;
+    padding: 12px 20px;
+    border-left: 3px solid var(--accent);
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: justify;
 }
 
-.scripture{
-    margin:23px 0;
-    padding:12px 20px;
-    border-left:3px solid var(--accent);
-    font-size:17px;
-    line-height:1.5;
+.scripture cite {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
 }
 
-.scripture cite{
-    display:block;
-    margin-top:8px;
-    font-size:14px;
-    color:var(--muted);
-    font-style:italic;
+/* LISTAS */
+
+.topic-list {
+    margin: 10px 0 22px;
+    padding-left: 28px;
 }
 
-.topic-list{
-    margin:10px 0 22px;
-    padding-left:28px;
+.topic-list li {
+    margin-bottom: 6px;
+    padding-left: 4px;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 17px;
 }
 
-.topic-list li{
-    margin-bottom:6px;
-    padding-left:4px;
-    text-align:justify;
-    line-height:1.48;
+.topic-list li:last-child {
+    margin-bottom: 0;
 }
 
-.topic-list li:last-child{
-    margin-bottom:0;
+.topic-list strong {
+    color: var(--accent);
 }
 
-.topic-list strong{
-    color:var(--accent);
+.topic-list.prophetic {
+    margin-top: 4px;
+    margin-bottom: 10px;
 }
 
-.topic-list.prophetic{
-    margin-top:4px;
-    margin-bottom:10px;
+.topic-list.prophetic li {
+    margin-bottom: 1px;
+    line-height: 1.5;
 }
 
-.topic-list.prophetic li{
-    margin-bottom:1px;
-    line-height:1.4;
+/* IMAGEN DEL SALMO 91 */
+
+.verse-image {
+    text-align: center;
+    margin: 18px 0 25px;
 }
 
-.verse-image{
-    text-align:center;
-    margin:18px 0 25px;
+.verse-image img {
+    display: inline-block;
+    width: 50%;
+    height: auto;
 }
 
-.verse-image img{
-    width:50%;
-    height:auto;
-    display:inline-block;
+/* NOTAS */
+
+.footnote-ref {
+    font-size: 0.68em;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--accent);
+    font-weight: 700;
+    cursor: help;
+    text-decoration: none;
 }
 
-.footnote-ref{
-    font-size:0.90em;
-    vertical-align:super;
-    line-height:0;
-    color:var(--accent);
-    font-weight:700;
-    cursor:help;
+.footnote-ref:hover {
+    text-decoration: underline;
 }
 
-.footer-nav{
-    margin-top:35px;
-    padding-top:22px;
-    border-top:1px solid var(--line);
-    text-align:center;
+/* NAVEGACIÓN */
+
+.footer-nav {
+    margin-top: 35px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    text-align: center;
 }
 
-.footer-nav a{
-    color:var(--accent);
-    text-decoration:none;
-    font-size:14px;
-    margin:0 10px;
+.footer-nav a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.footer-nav a:hover{
-    text-decoration:underline;
+.footer-nav a:hover {
+    text-decoration: underline;
 }
 
-@media (max-width:700px){
+/* CELULAR */
 
-    body{
-        font-size:16.5px;
-        line-height:1.65;
+@media (max-width: 700px) {
+    .page {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 35px 22px 35px;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    .page{
-        width:94%;
-        margin:20px auto;
-        padding:34px 25px 35px;
+    header {
+        margin-bottom: 30px;
     }
 
-    /*
-       En celulares dejamos el fondo relajado
-       sin efecto hover.
-    */
-    .page:hover{
-        background:var(--paper);
+    .site-name {
+        font-size: 12px;
+        letter-spacing: 1.5px;
     }
 
-    h1{
-        font-size:29px;
+    h1 {
+        font-size: 30px;
+        line-height: 1.25;
     }
 
-    .site-name{
-        font-size:16px;
-        margin-bottom:4px;
+    .author {
+        font-size: 16px;
     }
 
-    .part-label{
-        font-size:14px;
-        margin-top:4px;
+    .part-label {
+        font-size: 15px;
     }
 
-    .author{
-        font-size:14px;
-        margin-top:0;
+    .article p {
+        margin-bottom: 22px;
+        font-size: 17px;
+        line-height: 1.75;
+        text-align: justify;
     }
 
-    .article p{
-        margin-bottom:20px;
-        text-align:justify;
+    .article h2 {
+        font-size: 24px;
+        margin-bottom: 21px;
     }
 
-    .article h2{
-        font-size:24px;
-        margin-bottom:21px;
+    .scripture {
+        margin: 22px 0;
+        padding: 12px 16px;
+        font-size: 17px;
+        line-height: 1.65;
     }
 
-    .scripture{
-        padding:12px 17px;
-        font-size:16.5px;
-        line-height:1.5;
-        margin:23px 0;
+    .verse-image {
+        margin: 16px 0 22px;
     }
 
-    .verse-image{
-        margin:16px 0 22px;
+    .verse-image img {
+        width: 75%;
+        max-width: 100%;
     }
 
-    .verse-image img{
-        width:75%;
-        max-width:none;
+    .topic-list {
+        margin: 8px 0 19px;
+        padding-left: 23px;
     }
 
-    .topic-list{
-        margin:8px 0 19px;
-        padding-left:23px;
+    .topic-list li {
+        margin-bottom: 5px;
+        padding-left: 2px;
+        font-size: 17px;
+        line-height: 1.6;
     }
 
-    .topic-list li{
-        margin-bottom:5px;
-        padding-left:2px;
-        line-height:1.45;
+    .topic-list.prophetic {
+        margin-top: 2px;
+        margin-bottom: 8px;
     }
 
-    .topic-list.prophetic{
-        margin-top:2px;
-        margin-bottom:8px;
+    .topic-list.prophetic li {
+        margin-bottom: 1px;
     }
 
-    .topic-list.prophetic li{
-        margin-bottom:1px;
+    .footer-nav a {
+        display: block;
+        margin: 12px 0;
     }
-
-    .footer-nav a{
-        display:block;
-        margin:9px 0;
-    }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
 <main class="page">
 
-<header>
+    <header>
+        <div class="site-name">LA PALABRA EN CÁPSULAS</div>
 
-<div class="site-name">LA PALABRA EN CÁPSULAS</div>
-<div class="author">Por J.V.</div>
+        <div class="author">Por J.V.</div>
 
-<h1>Él está al tanto de la situación…</h1>
+        <h1>Él está al tanto de la situación…</h1>
 
-<div class="part-label">Parte 2</div>
+        <div class="part-label">Parte 2</div>
+    </header>
 
-</header>
+    <article class="article">
 
-<article class="article">
+        <p>
+            Primero Venezuela y luego Colombia fueron sacudidos con sendos terremotos y sabemos
+            que habrán otros países que pasarán por eventos similares, como ha pasado igualmente
+            en Asia.
+        </p>
 
-<p>
-Primero Venezuela y luego Colombia fueron sacudidos con sendos terremotos y sabemos
-que habrán otros países que pasarán por eventos similares, como ha pasado igualmente
-en Asia.
-</p>
+        <p>
+            Todos estos eventos tienen la permisibilidad de Dios, y pareciera que la tierra se subleva
+            y quisiera decir algo. El finado evangelista inglés Charles Spurgeon, en sus sermones,
+            decía que “los desastres o aun los aparentes desórdenes naturales están controlados por la
+            mano divina”. Aun el caos hace parte del orden.
+        </p>
 
-<p>
-Todos estos eventos tienen la permisibilidad de Dios, y pareciera que la tierra se subleva 
-y quisiera decir algo. El finado evangelista inglés Charles Spurgeon, en sus sermones, 
-decía que “los desastres o aun los aparentes desórdenes naturales están controlados por la 
-mano divina”. Aun el caos hace parte del orden.
-</p>
+        <p>
+            Así como las plagas, guerras y rumores de guerras, los terremotos son
+            señal profética,<sup><span class="footnote-ref" title="Mateo 24:4-8">¹⁰</span></sup>
+            básicamente sobre dos puntos:
+        </p>
 
-<ul class="topic-list">
+        <ul class="topic-list prophetic">
+            <li>la venida del Señor y</li>
+            <li>el fin de los tiempos.</li>
+        </ul>
 
-</ul>
+        <p>
+            Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha
+            no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o
+            una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.
+        </p>
 
-<p>
-Así como las plagas, guerras y rumores de guerras, los terremotos son
-señal profética,<sup><span class="footnote-ref" title="Mateo 24:4-8">¹⁰</span></sup> básicamente sobre dos puntos:
-</p>
+        <p>
+            Y, por supuesto, debe ser el Señor nuestro punto de referencia.
+            Estas señales son más que un llamado de atención.
+        </p>
 
-<ul class="topic-list prophetic">
-<li>la venida del Señor y</li>
-<li>el fin de los tiempos.</li>
-</ul>
+        <div class="verse-image">
+            <img
+                src="salmo-91.png"
+                alt="Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7"
+            >
+        </div>
 
-<p>
-Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha
-no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o
-una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.
-</p>
+        <p>
+            Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él
+            quiere que nosotros busquemos. Él dice:
+        </p>
 
-<p>
-Y, por supuesto, debe ser el Señor nuestro punto de referencia.
-Estas señales son más que un llamado de atención.
-</p>
+        <blockquote class="scripture">
+            “Más buscad primeramente el reino de Dios y su justicia —su equilibrio,
+            su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.<sup><span class="footnote-ref" title="Mateo 6:33">¹¹</span></sup>
+        </blockquote>
 
-<div class="verse-image">
-    <img
-        src="salmo-91.png"
-        alt="Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7"
-    >
-</div>
+        <p>
+            Cuando no hay búsqueda de su rostro,<sup><span class="footnote-ref" title="Salmos 27:8">¹²</span></sup>
+            pasamos por situaciones incómodas.
+        </p>
 
-<p>
-Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él
-quiere que nosotros busquemos. Él dice:
-</p>
+        <p>
+            Es bueno que entendamos y aceptemos que las cosas ocurren con la
+            venia divina, pero Él no se deleita en el infortunio del hombre,
+            sino en su paz.<sup><span class="footnote-ref" title="Salmos 35:27-28">¹³</span></sup>
+        </p>
 
-<blockquote class="scripture">
-“Más buscad primeramente el reino de Dios y su justicia —su equilibrio,
-su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.<sup><span class="footnote-ref" title="Mateo 6:33">¹¹</span></sup>
-</blockquote>
+        <p>
+            Por todo lo anterior, debemos guardar una actitud de respeto y temor
+            reverente<sup><span class="footnote-ref" title="Hebreos 12:28">¹⁴</span></sup>
+            hacia el Señor.
+        </p>
 
-<p>
-Cuando no hay búsqueda de su rostro,<sup><span class="footnote-ref" title="Salmos 27:8">¹²</span></sup> pasamos por situaciones incómodas.
-</p>
+        <p>
+            El patriarca Job tuvo una vida de muchas dificultades e infortunios.
+            Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes,
+            fuego y un gran viento. Además, fue atacado por Satanás con enfermedades.
+        </p>
 
-<p>
-Es bueno que entendamos y aceptemos que las cosas ocurren con la
-venia divina, pero Él no se deleita en el infortunio del hombre,
-sino en su paz.<sup><span class="footnote-ref" title="Salmos 35:27-28">¹³</span></sup>
-</p>
+        <p>
+            Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel
+            descomunal ataque del maligno, jamás culpó al Señor por sus males.
+        </p>
 
-<p>
-Por todo lo anterior, debemos guardar una actitud de respeto y temor
-reverente<sup><span class="footnote-ref" title="Hebreos 12:28">¹⁴</span></sup> hacia el Señor.
-</p>
+        <blockquote class="scripture">
+            «En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup>
+        </blockquote>
 
-<p>
-El patriarca Job tuvo una vida de muchas dificultades e infortunios.
-Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes,
-fuego y un gran viento. Además, fue atacado por Satanás con enfermedades.
-</p>
+        <p>
+            Cuando sucede algo desagradable y aun terrible, no culpes a Dios.
+            Él solo se deleita en tu paz.
+        </p>
 
-<p>
-Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel
-descomunal ataque del maligno, jamás culpó al Señor por sus males.
-</p>
+        <p>
+            Sí, es cierto que Él se burla de sus enemigos,<sup><span class="footnote-ref" title="Salmos 2:4">¹⁶</span></sup>
+            pero tú no lo eres. Si lo recibiste, eres su hijo.<sup><span class="footnote-ref" title="1 Juan 3:2; Romanos 8:16">¹⁷</span></sup>
+        </p>
 
-<blockquote class="scripture">
-«En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup>
-</blockquote>
+        <p>
+            Y si no lo has hecho, aquí está la oportunidad.
+        </p>
 
-<p>
-Cuando sucede algo desagradable y aun terrible, no culpes a Dios.
-Él solo se deleita en tu paz.
-</p>
+        <p>
+            Allí no terminó la historia de Job. Después que él hubo orado por sus
+            amigos que erróneamente lo culpaban de su infortunio, Dios le dio una gran bendición
+            al patriarca: el doble de lo que antes había tenido, múltiples bendiciones, más hijos,
+            viviendo 140 años más, muriendo viejo y lleno de días.
+        </p>
 
-<p>
-Sí, es cierto que Él se burla de sus enemigos,<sup><span class="footnote-ref" title="Salmos 2:4">¹⁶</span></sup> pero tú no lo eres.
-Si lo recibiste, eres su hijo.<sup><span class="footnote-ref" title="1 Juan 3:2; Romanos 8:16">¹⁷</span></sup>
-</p>
+        <p>
+            Los que quedaron vivos por la calamidad deben orar y auxiliar a los
+            sobrevivientes y a quienes hoy día están dolidos, pues perdieron a sus
+            seres queridos y posesiones.
+        </p>
 
-<p>
-Y si no lo has hecho, aquí está la oportunidad.
-</p>
+        <p>
+            Después de la tempestad viene la calma y hay que reconstruir.
+        </p>
 
-<p>
-Allí no terminó la historia de Job. Después que él hubo orado por sus
-amigos que erróneamente lo culpaban de su infortunio, Dios le dio una gran bendición
-al patriarca: el doble de lo que antes había tenido, múltiples bendiciones, más hijos,
-viviendo 140 años más, muriendo viejo y lleno de días.
-</p>
+        <blockquote class="scripture">
+            “No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer
+            tú por tu país”.<sup><span class="footnote-ref" title="Frase célebre de John F. Kennedy">¹⁸</span></sup>
+            <cite>Frase célebre de John F. Kennedy</cite>
+        </blockquote>
 
-<p>
-Los que quedaron vivos por la calamidad deben orar y auxiliar a los
-sobrevivientes y a quienes hoy día están dolidos, pues perdieron a sus
-seres queridos y posesiones.
-</p>
+        <p>
+            Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos
+            enseñe justicia.<sup><span class="footnote-ref" title="Oseas 10:12">¹⁹</span></sup>
+        </p>
 
-<p>
-Después de la tempestad viene la calma y hay que reconstruir.
-</p>
+        <p>
+            Hay personas que Dios se lleva por misericordia, y hay personas que Dios
+            deja vivas, también por misericordia.
+        </p>
 
-<blockquote class="scripture">
-“No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer
-tú por tu país”.<sup><span class="footnote-ref" title="Frase célebre de John F. Kennedy">¹⁸</span></sup>
-<cite>Frase célebre de John F. Kennedy</cite>
-</blockquote>
+    </article>
 
-<p>
-Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos
-enseñe justicia.<sup><span class="footnote-ref" title="Oseas 10:12">¹⁹</span></sup>
-</p>
+    <nav class="footer-nav">
+        <a href="el-esta-al-tanto-parte-1.html">
+            ← Volver a Parte 1
+        </a>
 
-<p>
-Hay personas que Dios se lleva por misericordia, y hay personas que Dios
-deja vivas, también por misericordia.
-</p>
-
-</article>
-
-<nav class="footer-nav">
-
-<a href="el-esta-al-tanto-parte-1.html">
-← Volver a Parte 1
-</a>
-
-<a href="index.html">
-Volver a Artículos
-</a>
-
-</nav>
+        <a href="index.html">
+            Volver a Artículos
+        </a>
+    </nav>
 
 </main>
 
