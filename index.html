@@ -38,7 +38,7 @@
 
     /* =====================================================
        PÁGINA PRINCIPAL — PC
-       CONSERVADA SIN CAMBIOS
+       SIN CAMBIOS
        ===================================================== */
 
     .page {
@@ -148,7 +148,7 @@
 
     /* =====================================================
        TELÉFONO VERTICAL
-       VERSIÓN QUE YA QUEDÓ BIEN
+       CONSERVADO
        ===================================================== */
 
     @media (max-width: 700px) and (orientation: portrait) {
@@ -195,20 +195,16 @@
     }
 
     /* =====================================================
-       TELÉFONO HORIZONTAL
-       CASCADA AJUSTADA EXCLUSIVAMENTE PARA HORIZONTAL
+       IPHONE 12 — HORIZONTAL
+       CASCADA CONTROLADA
        ===================================================== */
 
-    @media (max-width: 700px) and (orientation: landscape) {
-
-      body {
-        zoom: 100%;
-      }
+    @media (max-width: 900px) and (orientation: landscape) {
 
       .page {
+        width: 100%;
         padding: 30px 24px 40px;
         margin: 0 auto;
-        width: 100%;
       }
 
       .banner-container {
@@ -216,19 +212,25 @@
       }
 
       .welcome-text {
+        width: 100%;
+        max-width: none;
         font-size: 18px;
         line-height: 1.5;
-        margin-bottom: 32px;
+        margin: 0 auto 32px;
       }
 
       .welcome-pc,
       .welcome-mobile,
       .welcome-mobile-narrow {
-        display: none;
+        display: none !important;
       }
 
       .welcome-landscape {
-        display: block;
+        display: block !important;
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+        text-align: center;
       }
 
       .explore-button-container {
@@ -283,16 +285,15 @@
 
     <div class="welcome-text">
 
-      <!-- CASCADA DE PC: ORIGINAL, SIN CAMBIOS -->
+      <!-- PC: ORIGINAL -->
 
       <p class="welcome-pc">
         Bienvenido a este espacio. Un lugar dedicado a compartir<br>
         ideas prácticas, profundas y accesibles<br>
-        para un caminar seguro con
-        <span class="highlight">Dios</span>
+        para un caminar seguro con <span class="highlight">Dios</span>
       </p>
 
-      <!-- CASCADA PARA TELÉFONO VERTICAL: CONSERVADA -->
+      <!-- TELÉFONO VERTICAL: CONSERVADO -->
 
       <p class="welcome-mobile">
         Bienvenido a este espacio.<br>
@@ -303,18 +304,18 @@
         con <span class="highlight">Dios</span>
       </p>
 
-      <!-- CASCADA PARA TELÉFONO HORIZONTAL: AJUSTADA -->
+      <!-- TELÉFONO HORIZONTAL: CASCADA NUEVA -->
 
       <p class="welcome-landscape">
-        Bienvenido a este espacio.<br>
-        Un lugar dedicado a<br>
-        compartir ideas prácticas,<br>
-        profundas y accesibles<br>
-        para un caminar seguro<br>
-        con <span class="highlight">Dios</span>
+        <span class="landscape-line">Bienvenido a este espacio.</span><br>
+        <span class="landscape-line">Un lugar dedicado a</span><br>
+        <span class="landscape-line">compartir ideas prácticas,</span><br>
+        <span class="landscape-line">profundas y accesibles</span><br>
+        <span class="landscape-line">para un caminar seguro</span><br>
+        <span class="landscape-line">con <span class="highlight">Dios</span></span>
       </p>
 
-      <!-- CASCADA PARA TELÉFONOS MUY ESTRECHOS -->
+      <!-- TELÉFONOS MUY ESTRECHOS — VERTICAL -->
 
       <p class="welcome-mobile-narrow">
         Bienvenido a este espacio.<br>
