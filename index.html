@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -38,7 +39,6 @@
 
     /* =====================================================
        PÁGINA PRINCIPAL — PC
-       SIN CAMBIOS
        ===================================================== */
 
     .page {
@@ -70,7 +70,7 @@
     }
 
     /* =====================================================
-       TEXTO DE BIENVENIDA
+       TEXTO DE BIENVENIDA — PC
        ===================================================== */
 
     .welcome-text {
@@ -148,7 +148,7 @@
 
     /* =====================================================
        TELÉFONO VERTICAL
-       CONSERVADO
+       DISTRIBUCIÓN COMO EN LA FOTO
        ===================================================== */
 
     @media (max-width: 700px) and (orientation: portrait) {
@@ -158,7 +158,7 @@
       }
 
       .page {
-        padding: 32px 24px 40px;
+        padding: 10px 24px 40px;
         margin: 0 auto;
         width: 100%;
       }
@@ -168,19 +168,26 @@
       }
 
       .welcome-text {
-        font-size: 18px;
-        line-height: 1.55;
-        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 2.05;
+        margin: 0 auto 32px;
+        max-width: 240px;
+        font-weight: 400;
+        color: #111;
       }
 
       .welcome-pc,
       .welcome-landscape,
       .welcome-mobile-narrow {
-        display: none;
+        display: none !important;
       }
 
       .welcome-mobile {
         display: block;
+      }
+
+      .welcome-mobile span.highlight {
+        color: #111;
       }
 
       .explore-button-container {
@@ -195,73 +202,71 @@
     }
 
     /* =====================================================
-       IPHONE 12 — HORIZONTAL
-       CASCADA CONTROLADA
+       TELÉFONO HORIZONTAL
+       MISMA DISTRIBUCIÓN DEL PC
        ===================================================== */
 
     @media (max-width: 900px) and (orientation: landscape) {
 
       .page {
-        width: 100%;
-        padding: 30px 24px 40px;
-        margin: 0 auto;
+        width: min(900px, calc(100% - 32px));
+        padding: 10px 40px 22px;
+        margin: 2px auto;
       }
 
       .banner-container {
-        margin-bottom: 24px;
+        margin-bottom: 10px;
       }
 
       .welcome-text {
         width: 100%;
-        max-width: none;
-        font-size: 18px;
-        line-height: 1.5;
-        margin: 0 auto 32px;
+        max-width: 760px;
+        font-size: 22px;
+        line-height: 1.35;
+        margin: 0 auto 22px;
+        font-weight: 500;
+        color: var(--brand-blue);
       }
 
-      .welcome-pc,
+      .welcome-pc {
+        display: block !important;
+      }
+
       .welcome-mobile,
+      .welcome-landscape,
       .welcome-mobile-narrow {
         display: none !important;
       }
 
-      .welcome-landscape {
-        display: block !important;
-        width: 100%;
-        max-width: 560px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
       .explore-button-container {
-        margin-bottom: 24px;
+        margin-bottom: 2px;
       }
 
       .explore-button {
-        min-width: 210px;
-        padding: 14px 38px;
-        font-size: 17px;
+        min-width: 230px;
+        padding: 10px 44px;
+        font-size: 19px;
       }
     }
 
     /* =====================================================
        TELÉFONOS MUY ESTRECHOS — VERTICAL
-       CONSERVADO
        ===================================================== */
 
     @media (max-width: 380px) and (orientation: portrait) {
 
       .welcome-mobile {
-        display: none;
+        display: block !important;
       }
 
       .welcome-mobile-narrow {
-        display: block;
+        display: none !important;
       }
 
       .welcome-text {
-        font-size: 18px;
-        line-height: 1.55;
+        font-size: 16px;
+        line-height: 2.05;
+        max-width: 240px;
       }
     }
 
@@ -285,7 +290,7 @@
 
     <div class="welcome-text">
 
-      <!-- PC: ORIGINAL -->
+      <!-- PC: DISTRIBUCIÓN ORIGINAL -->
 
       <p class="welcome-pc">
         Bienvenido a este espacio. Un lugar dedicado a compartir<br>
@@ -293,37 +298,36 @@
         para un caminar seguro con <span class="highlight">Dios</span>
       </p>
 
-      <!-- TELÉFONO VERTICAL: CONSERVADO -->
+      <!-- TELÉFONO VERTICAL: COMO EN LA FOTO -->
 
       <p class="welcome-mobile">
         Bienvenido a este espacio.<br>
         Un lugar dedicado a<br>
         compartir ideas prácticas,<br>
         profundas y accesibles<br>
-        para un caminar seguro<br>
-        con <span class="highlight">Dios</span>
+        para un caminar<br>
+        seguro con<br>
+        <span class="highlight">Dios</span>
       </p>
 
-      <!-- TELÉFONO HORIZONTAL: CASCADA NUEVA -->
+      <!-- TELÉFONO HORIZONTAL: UTILIZA EL ESTILO DEL PC -->
 
       <p class="welcome-landscape">
-        <span class="landscape-line">Bienvenido a este espacio.</span><br>
-        <span class="landscape-line">Un lugar dedicado a</span><br>
-        <span class="landscape-line">compartir ideas prácticas,</span><br>
-        <span class="landscape-line">profundas y accesibles</span><br>
-        <span class="landscape-line">para un caminar seguro</span><br>
-        <span class="landscape-line">con <span class="highlight">Dios</span></span>
+        Bienvenido a este espacio. Un lugar dedicado a compartir<br>
+        ideas prácticas, profundas y accesibles<br>
+        para un caminar seguro con <span class="highlight">Dios</span>
       </p>
 
-      <!-- TELÉFONOS MUY ESTRECHOS — VERTICAL -->
+      <!-- TELÉFONOS MUY ESTRECHOS: MISMA DISTRIBUCIÓN VERTICAL -->
 
       <p class="welcome-mobile-narrow">
         Bienvenido a este espacio.<br>
         Un lugar dedicado a<br>
         compartir ideas prácticas,<br>
         profundas y accesibles<br>
-        para un caminar seguro<br>
-        con <span class="highlight">Dios</span>
+        para un caminar<br>
+        seguro con<br>
+        <span class="highlight">Dios</span>
       </p>
 
     </div>
@@ -343,3 +347,4 @@
 
 </body>
 </html>
+```
