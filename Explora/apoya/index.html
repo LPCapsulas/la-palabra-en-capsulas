@@ -22,12 +22,12 @@
             padding: 0;
         }
 
-        html,
-        body {
+        html {
             min-height: 100%;
         }
 
         body {
+            min-height: 100vh;
             background: var(--blue);
             color: var(--text);
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -76,6 +76,7 @@
 
         .square-button {
             display: inline-block;
+            max-width: 100%;
             background: var(--blue);
             color: #fff;
             text-decoration: none;
@@ -94,25 +95,36 @@
             color: var(--blue);
         }
 
+        /* ENLACE PARA VOLVER AL MENÚ */
+
         .back {
-            margin-top: 42px;
+            display: block;
+            width: 100%;
+            margin-top: 35px;
             padding-top: 25px;
+            padding-bottom: 10px;
             border-top: 1px solid #d9d9d9;
+            text-align: center;
         }
 
         .back a {
+            display: inline-block;
             color: var(--blue);
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
-            text-decoration: none;
+            line-height: 1.6;
+            text-decoration: underline;
+            padding: 8px 12px;
+            border-radius: 4px;
         }
 
         .back a:hover {
             color: #000;
+            background: #eee8dc;
             text-decoration: underline;
         }
 
-        /* CELULAR: tipografía basada en orar.html */
+        /* CELULAR */
 
         @media (max-width: 700px) {
             body {
@@ -137,13 +149,15 @@
             .support-image {
                 width: 82%;
                 max-width: 456px;
-                margin-bottom: 24px;
+                height: auto;
+                margin: 0 auto 24px;
             }
 
             .message {
                 font-size: 17px;
                 line-height: 1.75;
                 text-align: justify;
+                margin-bottom: 28px;
             }
 
             .message p {
@@ -159,10 +173,13 @@
             .back {
                 margin-top: 35px;
                 padding-top: 22px;
+                padding-bottom: 12px;
             }
 
             .back a {
-                font-size: 16px;
+                font-size: 17px;
+                padding: 10px 12px;
+                line-height: 1.6;
             }
         }
     </style>
@@ -179,14 +196,12 @@
     >
 
     <div class="message">
-
         <p>
             Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo
             a la creación de contenido, con el propósito de seguir ofreciendo material que
             contribuya positivamente al pensamiento, las convicciones y el fortalecimiento
             de la fe de nuestros lectores.
         </p>
-
     </div>
 
     <a
