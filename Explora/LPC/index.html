@@ -1,284 +1,299 @@
-<!doctype html>
-
+```html
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Acerca de LPC — La Palabra en Cápsulas</title>
+    <title>Acerca de LPC — La Palabra en Cápsulas</title>
 
-<style>
+    <style>
+        :root {
+            --text: #252525;
+            --muted: #666;
+            --accent: #17365D;
+            --paper: #F8F4EC;
+            --bg: #f2f0ec;
+            --line: #d9d9d9;
+            --hover: #f1f2f2;
+        }
 
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#F8F4EC;
-    --bg:#f2f0ec;
-    --line:#d9d9d9;
-    --hover:#f1f2f2;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-*{
-    box-sizing:border-box;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+            line-height: 1.8;
+        }
 
-body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:Georgia, "Times New Roman", serif;
-    line-height:1.7;
-    font-size:17px;
-}
+        .page {
+            width: 900px;
+            max-width: calc(100% - 40px);
+            margin: 45px auto;
+            padding: 55px 65px 45px;
+            background: var(--paper);
+            border-radius: 5px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+            transition: background 0.2s ease;
+        }
 
-.page{
-    width:min(900px,92%);
-    margin:42px auto;
-    background:var(--paper);
-    padding:55px 70px 50px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
-    transition:background 0.2s ease;
-}
+        .page:hover {
+            background: var(--hover);
+        }
 
-.page:hover{
-    background:var(--hover);
-}
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-header{
-    text-align:center;
-    margin-bottom:40px;
-}
+        .site-name {
+            margin-bottom: 18px;
+            color: var(--accent);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+            letter-spacing: 0.08em;
+        }
 
-.site-name{
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:18px;
-    color:var(--accent);
-    letter-spacing:.08em;
-    margin-bottom:18px;
-}
+        h1 {
+            margin: 0 0 8px;
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
 
-h1{
-    margin:0;
-    color:var(--accent);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:38px;
-    line-height:1.2;
-    font-weight:600;
-}
+        .subtitle {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 16px;
+            font-style: italic;
+        }
 
-.subtitle{
-    margin-top:14px;
-    color:var(--muted);
-    font-size:15px;
-    font-style:italic;
-}
+        /* Cápsulas */
 
-/* Cápsulas */
+        .capsule {
+            margin: 0 0 28px;
+            padding: 24px 27px;
+            border-left: 4px solid var(--accent);
+            background: #fafafa;
+            transition: background 0.2s ease;
+        }
 
-.capsule{
-    margin:0 0 28px;
-    padding:24px 27px;
-    border-left:4px solid var(--accent);
-    background:#fafafa;
-    transition:background 0.2s ease;
-}
+        .page:hover .capsule {
+            background: var(--hover);
+        }
 
-.page:hover .capsule{
-    background:var(--hover);
-}
+        .capsule-title {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
 
-.capsule-title{
-    margin:0 0 12px;
-    font-family:Georgia,"Times New Roman",serif;
-    color:var(--accent);
-    font-size:23px;
-    line-height:1.3;
-    font-weight:700;
-}
+        .capsule p {
+            margin: 0 0 22px;
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: justify;
+        }
 
-.capsule p{
-    margin:0;
-    text-align:justify;
-}
+        .capsule p:last-child {
+            margin-bottom: 0;
+        }
 
-.capsule p + p{
-    margin-top:18px;
-}
+        .capsule p + p {
+            margin-top: 18px;
+        }
 
-/* Citas bíblicas */
+        /* Citas bíblicas */
 
-.scripture{
-    margin:28px 0 4px;
-    padding:16px 20px;
-    border-left:4px solid var(--accent);
-    background:#fff;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:18px;
-    line-height:1.55;
-    font-style:italic;
-    transition:background 0.2s ease;
-}
+        .scripture {
+            margin: 28px 0 4px;
+            padding: 16px 20px;
+            border-left: 4px solid var(--accent);
+            background: #fff;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            line-height: 1.75;
+            font-style: italic;
+            transition: background 0.2s ease;
+        }
 
-.page:hover .scripture{
-    background:var(--hover);
-}
+        .page:hover .scripture {
+            background: var(--hover);
+        }
 
-.scripture cite{
-    display:block;
-    margin-top:8px;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:14px;
-    color:var(--muted);
-    font-style:normal;
-}
+        .scripture cite {
+            display: block;
+            margin-top: 8px;
+            color: var(--muted);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+        }
 
-/* Pie */
+        /* Navegación final */
 
-.footer-nav{
-    margin-top:40px;
-    padding-top:22px;
-    border-top:1px solid var(--line);
-    text-align:center;
-}
+        .footer-nav {
+            margin-top: 42px;
+            padding-top: 25px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
 
-.footer-nav a{
-    color:var(--accent);
-    text-decoration:none;
-    font-size:14px;
-}
+        .footer-nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+        }
 
-.footer-nav a:hover{
-    text-decoration:underline;
-}
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
 
-@media (max-width:700px){
+        /* CELULAR */
 
-    body{
-        font-size:16.5px;
-        line-height:1.65;
-    }
+        @media (max-width: 700px) {
+            .page {
+                width: auto;
+                max-width: none;
+                margin: 0;
+                padding: 35px 22px 35px;
+                border-radius: 0;
+                box-shadow: none;
+            }
 
-    .page{
-        width:94%;
-        margin:20px auto;
-        padding:34px 25px 35px;
-    }
+            h1 {
+                font-size: 30px;
+                line-height: 1.25;
+            }
 
-    h1{
-        font-size:29px;
-    }
+            .site-name {
+                font-size: 16px;
+            }
 
-    .site-name{
-        font-size:16px;
-    }
+            .subtitle {
+                font-size: 16px;
+            }
 
-    .subtitle{
-        font-size:14px;
-    }
+            .capsule {
+                margin-bottom: 23px;
+                padding: 20px;
+            }
 
-    .capsule{
-        margin-bottom:23px;
-        padding:20px 20px;
-    }
+            .capsule-title {
+                font-size: 21px;
+                margin-bottom: 10px;
+            }
 
-    .capsule-title{
-        font-size:21px;
-        margin-bottom:10px;
-    }
+            .capsule p {
+                font-size: 17px;
+                line-height: 1.75;
+                text-align: justify;
+            }
 
-    .capsule p{
-        text-align:justify;
-    }
+            .scripture {
+                margin: 23px 0 3px;
+                padding: 13px 17px;
+                font-size: 17px;
+                line-height: 1.75;
+            }
 
-    .scripture{
-        margin:23px 0 3px;
-        padding:13px 17px;
-        font-size:17px;
-        line-height:1.5;
-    }
+            .footer-nav {
+                margin-top: 35px;
+                padding-top: 22px;
+            }
 
-    .footer-nav{
-        margin-top:32px;
-    }
-
-}
-
-</style>
-
+            .footer-nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <main class="page">
 
-<header>
+    <header>
+        <div class="site-name">LA PALABRA EN CÁPSULAS</div>
 
-<div class="site-name">LA PALABRA EN CÁPSULAS</div>
+        <h1>Acerca de LPC</h1>
 
-<h1>Acerca de LPC</h1>
+        <div class="subtitle">
+            Una palabra, una cápsula, un mensaje para el camino.
+        </div>
+    </header>
 
-<div class="subtitle">Una palabra, una cápsula, un mensaje para el camino.</div>
+    <section class="capsule">
 
-</header>
+        <h2 class="capsule-title">¿Qué es LPC?</h2>
 
-<section class="capsule">
+        <p>
+            LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>.
+            Cuando me di cuenta, hace unos años, de que había sido salvo por la
+            gracia de Cristo, comencé no solo a hablar de la misericordia de Dios,
+            sino también a distribuir folletos en las calles con mensajes cortos,
+            a los que llamamos “tratados”, y titulé algunos de ellos con ese nombre.
+        </p>
 
-<h2 class="capsule-title">¿Qué es LPC?</h2>
+    </section>
 
-<p>
-LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>. Cuando me di cuenta,
-hace unos años, de que había sido salvo por la gracia de Cristo, comencé no solo
-a hablar de la misericordia de Dios, sino también a distribuir folletos en las calles
-con mensajes cortos, a los que llamamos “tratados”, y titulé algunos de ellos con ese nombre.
-</p>
+    <section class="capsule">
 
-</section>
+        <h2 class="capsule-title">De tratados a mensajes cortos</h2>
 
-<section class="capsule">
+        <p>
+            Con el tiempo, los folletos han sido reemplazados por breves y
+            sustanciosos mensajes en redes sociales.
+        </p>
 
-<h2 class="capsule-title">De tratados a mensajes cortos</h2>
+        <p>
+            Creo que Dios nos da su Palabra diariamente en pequeñas dosis,
+            según lo que necesitamos o somos capaces de recibir, tal como
+            enseñó Jesús, el Maestro.
+        </p>
 
-<p>
-Con el tiempo, los folletos han sido reemplazados por breves y sustanciosos mensajes en redes sociales.
-</p>
+    </section>
 
-<p>
-Creo que Dios nos da su Palabra diariamente en pequeñas dosis, según lo que necesitamos
-o somos capaces de recibir, tal como enseñó Jesús, el Maestro.
-</p>
+    <section class="capsule">
 
-</section>
+        <h2 class="capsule-title">Una palabra para cada día</h2>
 
-<section class="capsule">
+        <blockquote class="scripture">
+            “Danos hoy nuestro pan de cada día”.
+            <cite>Mateo 6:11</cite>
+        </blockquote>
 
-<h2 class="capsule-title">Una palabra para cada día</h2>
+        <blockquote class="scripture">
+            “Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después”. (Jesús)
+            <cite>Juan 13:7</cite>
+        </blockquote>
 
-<blockquote class="scripture">
-“Danos hoy nuestro pan de cada día”.
-<cite>Mateo 6:11</cite>
-</blockquote>
+    </section>
 
-<blockquote class="scripture">
-“Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después”. (Jesús)
-<cite>Juan 13:7</cite>
-</blockquote>
-
-</section>
-
-<nav class="footer-nav">
-
-<a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/menu.html">
-← Volver a Explora
-</a>
-
-</nav>
+    <nav class="footer-nav">
+        <a href="https://lpcapsulas.github.io/la-palabra-en-capsulas/Explora/menu.html">
+            ← Volver a Explora
+        </a>
+    </nav>
 
 </main>
 
 </body>
 </html>
+```
