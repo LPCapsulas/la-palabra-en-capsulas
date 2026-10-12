@@ -1,5 +1,5 @@
+```html
 <!doctype html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -17,8 +17,10 @@ body{
     margin:0;
     padding:0;
     background:#f2f0ec;
-    color:#222;
-    font-family:"Segoe UI",Arial,sans-serif;
+    color:#252525;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    font-size:17px;
+    line-height:1.8;
 }
 
 .page{
@@ -41,13 +43,15 @@ h1{
     text-align:center;
     color:#17365D;
     font-family:Georgia,"Times New Roman",serif;
-    font-size:38px;
+    font-size:36px;
+    line-height:1.2;
     font-weight:700;
 }
 
 .intro{
     text-align:center;
-    font-size:18px;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+    font-size:17px;
     line-height:1.6;
     margin:0 auto 38px;
     max-width:700px;
@@ -74,24 +78,28 @@ h1{
 .article-card h2{
     margin:0 0 10px;
     font-family:Georgia,"Times New Roman",serif;
-    font-size:25px;
+    font-size:27px;
+    line-height:1.3;
     color:#17365D;
 }
 
 .article-card p{
-    margin:0 0 18px;
+    margin:0 0 20px;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
     font-size:17px;
-    line-height:1.6;
-    color:#333;
+    line-height:1.8;
+    color:#252525;
 }
 
 .read-link{
     display:inline-block;
     color:#17365D;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
     font-weight:700;
     text-decoration:none;
     font-size:17px;
-    margin-bottom:12px;
+    line-height:1.8;
+    margin-bottom:14px;
 }
 
 .read-link:hover{
@@ -107,16 +115,19 @@ h1{
 
 .footer-nav a{
     color:#17365D;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
     font-weight:700;
     text-decoration:none;
-    font-size:16px;
+    font-size:17px;
 }
 
 .footer-nav a:hover{
     text-decoration:underline;
 }
 
-@media (max-width:700px){
+/* CELULAR */
+
+@media(max-width:700px){
 
     .page{
         width:94%;
@@ -126,10 +137,12 @@ h1{
 
     h1{
         font-size:31px;
+        line-height:1.25;
     }
 
     .intro{
         font-size:17px;
+        line-height:1.6;
         margin-bottom:30px;
     }
 
@@ -138,67 +151,89 @@ h1{
     }
 
     .article-card h2{
-        font-size:23px;
+        font-size:25px;
+        line-height:1.3;
     }
 
     .article-card p{
-        font-size:16px;
+        font-size:17px;
+        line-height:1.8;
     }
 
     .read-link{
-        font-size:16px;
+        font-size:17px;
+        line-height:1.8;
+        margin-bottom:14px;
     }
 
+    .footer-nav a{
+        font-size:17px;
+    }
+}
+
+/* DISPOSITIVOS SIN MOUSE */
+
+@media(hover:none){
+    .page,
+    .article-card{
+        transition:none;
+    }
+
+    .article-card:hover{
+        transform:none;
+    }
 }
 
 </style>
-
 </head>
 
 <body>
 
 <main class="page">
 
-<h1>Artículos</h1>
+    <h1>Artículos</h1>
 
-<p class="intro">
-    Para reflexionar, y tomar acción.
-</p>
+    <p class="intro">
+        Para reflexionar, y tomar acción.
+    </p>
 
-<section class="article-list">
+    <section class="article-list">
 
-<article class="article-card">
+        <article class="article-card">
 
+            <h2>Él conoce nuestra condición</h2>
 
-<h2>Él conoce nuestra condición</h2>
-<p>
-    Dios sabe nuestras circunstancias, necesidades
-    y aquello que muchas veces enfrentamos en silencio.
-</p>
+            <p>
+                Dios sabe nuestras circunstancias, necesidades
+                y aquello que muchas veces enfrentamos en silencio.
+            </p>
 
-<a class="read-link"
-href="el-esta-al-tanto-parte-1.html">
-Leer Parte 1 → </a>
+            <a class="read-link"
+               href="el-esta-al-tanto-parte-1.html">
+                Leer Parte 1 →
+            </a>
 
-<br>
+            <br>
 
-<a class="read-link"
-href="el-esta-al-tanto-parte-2.html">
-Leer Parte 2 → </a>
+            <a class="read-link"
+               href="el-esta-al-tanto-parte-2.html">
+                Leer Parte 2 →
+            </a>
 
-</article>
+        </article>
 
-</section>
+    </section>
 
-<nav class="footer-nav">
+    <nav class="footer-nav">
 
-<a href="../menu.html">
-    ← Volver al Menú
-</a>
+        <a href="../menu.html">
+            ← Volver al Menú
+        </a>
 
-</nav>
+    </nav>
 
 </main>
 
 </body>
 </html>
+```
