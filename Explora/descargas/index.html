@@ -1,9 +1,12 @@
+
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descargas de La Palabra en Cápsulas: recursos para crecer en la fe cristiana.">
   <title>Descargas — La Palabra en Cápsulas</title>
+
   <style>
     :root {
       --text: #252525;
@@ -30,12 +33,11 @@
       line-height: 1.78;
     }
 
-    /* === AJUSTES PARA COMPU / PC === */
     body {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh; /* Centra verticalmente para ver el botón sin scroll */
+      min-height: 100vh;
       padding: 20px 0;
     }
 
@@ -72,6 +74,45 @@
       margin: 0;
     }
 
+    /* Selector de idiomas */
+    .language-selector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .language-selector button {
+      font: inherit;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .language-selector button:hover {
+      border-color: var(--accent);
+    }
+
+    .language-selector button.active {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .language-selector button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
     .article {
       max-width: 760px;
       margin: auto;
@@ -86,12 +127,12 @@
       text-align: center;
     }
 
-    /* Control de saltos de línea para PC */
     .br-pc {
-      display: inline; /* Activo en PC */
+      display: inline;
     }
+
     .br-movil {
-      display: none;   /* Oculto en PC */
+      display: none;
     }
 
     .card {
@@ -136,8 +177,7 @@
       border-color: var(--accent);
     }
 
-    /* === AJUSTES PARA CELULAR (MÓVIL) - INTACTO === */
-    @media(max-width:600px) {
+    @media (max-width: 600px) {
       body {
         font-size: 17px;
         line-height: 1.65;
@@ -169,12 +209,12 @@
         text-align: center;
       }
 
-      /* Control de saltos de línea para Móvil */
       .br-pc {
-        display: none !important;    /* Oculta el corte de PC */
+        display: none !important;
       }
+
       .br-movil {
-        display: inline !important;  /* Activa los cortes de tu primera foto */
+        display: inline !important;
       }
 
       .card {
@@ -189,42 +229,155 @@
       .back {
         margin-top: 35px;
       }
+
+      .language-selector {
+        gap: 6px;
+      }
+
+      .language-selector button {
+        padding: 7px 10px;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="page">
     <header>
-      <div class="eyebrow">
+      <div class="eyebrow"
+           data-es="La Palabra en Cápsulas"
+           data-en="La Palabra en Cápsulas"
+           data-fr="La Palabra en Cápsulas">
         La Palabra en Cápsulas
       </div>
-      <h1 class="title">
+
+      <h1 class="title"
+          data-es="Descargas"
+          data-en="Downloads"
+          data-fr="Téléchargements">
         Descargas
       </h1>
+
+      <nav class="language-selector" aria-label="Language selector">
+        <button type="button" data-lang="es" class="active"
+                aria-pressed="true">Español</button>
+        <button type="button" data-lang="en"
+                aria-pressed="false">English</button>
+        <button type="button" data-lang="fr"
+                aria-pressed="false">Français</button>
+      </nav>
     </header>
 
     <main class="article">
-      <!-- Saltos de línea condicionales controlados por CSS -->
       <p class="intro">
-        Recursos de LPC para quienes desean conocer más de la fe<br class="br-pc"> cristiana y crecer<br class="br-movil"> en su caminar con Dios
+        <span
+          data-es="Recursos de LPC para quienes desean conocer más de la fe"
+          data-en="LPC resources for those who want to learn more about the Christian faith"
+          data-fr="Ressources de LPC pour ceux qui souhaitent mieux connaître la foi chrétienne">
+          Recursos de LPC para quienes desean conocer más de la fe
+        </span><br class="br-pc">
+        <span
+          data-es="cristiana y crecer"
+          data-en="and grow"
+          data-fr="et grandir">
+          cristiana y crecer
+        </span><br class="br-movil">
+        <span
+          data-es="en su caminar con Dios"
+          data-en="in their walk with God"
+          data-fr="dans leur marche avec Dieu">
+          en su caminar con Dios
+        </span>
       </p>
 
       <div class="card">
-        <h2> Guía para Nuevos Creyentes </h2>
-        <p>
+        <h2
+          data-es="Guía para Nuevos Creyentes"
+          data-en="Guide for New Believers"
+          data-fr="Guide pour les nouveaux croyants">
+          Guía para Nuevos Creyentes
+        </h2>
+
+        <p
+          data-es="Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual."
+          data-en="Simple instructions for beginning your journey of faith, learning how to read the Bible, and developing a healthy spiritual life."
+          data-fr="Des instructions simples pour commencer le chemin de la foi, apprendre à lire la Bible et développer une vie spirituelle saine.">
           Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual.
         </p>
+
         <p>
-          <a href="./guia.html"> Acceder ya → </a>
+          <a href="./guia.html"
+             data-es="Acceder ya →"
+             data-en="Access now →"
+             data-fr="Accéder maintenant →">
+            Acceder ya →
+          </a>
         </p>
       </div>
 
       <div class="back">
-        <a href="../menu.html"> Volver al Menú </a>
+        <a href="../menu.html"
+           data-es="Volver al Menú"
+           data-en="Back to Menu"
+           data-fr="Retour au menu">
+          Volver al Menú
+        </a>
       </div>
     </main>
   </div>
 
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll(".language-selector button");
+      const translatableElements = document.querySelectorAll("[data-es][data-en][data-fr]");
+
+      function changeLanguage(lang) {
+        if (!["es", "en", "fr"].includes(lang)) {
+          lang = "es";
+        }
+
+        document.documentElement.lang = lang;
+
+        translatableElements.forEach(function (element) {
+          const translation = element.getAttribute("data-" + lang);
+
+          if (translation !== null) {
+            element.textContent = translation;
+          }
+        });
+
+        buttons.forEach(function (button) {
+          const isActive = button.getAttribute("data-lang") === lang;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        try {
+          localStorage.setItem("lpc-language", lang);
+        } catch (error) {
+          // La página sigue funcionando si el almacenamiento está deshabilitado.
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          changeLanguage(button.getAttribute("data-lang"));
+        });
+      });
+
+      let savedLanguage = "es";
+
+      try {
+        const storedLanguage = localStorage.getItem("lpc-language");
+        if (["es", "en", "fr"].includes(storedLanguage)) {
+          savedLanguage = storedLanguage;
+        }
+      } catch (error) {
+        // Si no se puede leer el almacenamiento, se utiliza español.
+      }
+
+      changeLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>
