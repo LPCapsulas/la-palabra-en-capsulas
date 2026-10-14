@@ -46,6 +46,44 @@
       background: var(--paper);
       padding: 10px 72px 22px;
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      position: relative;
+    }
+
+    /* =====================================================
+       GOOGLE TRANSLATE WIDGET STYLING
+       ===================================================== */
+
+    .translate-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 15px;
+      padding-top: 5px;
+    }
+
+    /* Blending Google's default fonts with your design template */
+    .goog-te-gadget {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+      font-size: 14px !important;
+      color: var(--muted) !important;
+    }
+
+    /* Hiding the Google branding icon for a cleaner layout appearance */
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+
+    /* Stripping default borders to align cleanly with your text layout */
+    .goog-te-gadget-simple {
+      background-color: transparent !important;
+      border: none !important;
+      cursor: pointer;
+    }
+
+    .goog-te-menu-value span {
+      color: var(--muted) !important;
+      font-weight: 500;
     }
 
     /* =====================================================
@@ -162,6 +200,11 @@
         width: 100%;
       }
 
+      .translate-container {
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
       .banner-container {
         margin-bottom: 24px;
       }
@@ -211,6 +254,11 @@
         width: min(900px, calc(100% - 32px));
         padding: 10px 40px 22px;
         margin: 2px auto;
+      }
+
+      .translate-container {
+        justify-content: flex-end;
+        margin-bottom: 15px;
       }
 
       .banner-container {
@@ -275,6 +323,11 @@
 <body>
 
   <main class="page">
+
+    <!-- SECTOR DE TRADUCCIÓN AUTOMÁTICA -->
+    <div class="translate-container">
+      <div id="google_translate_element"></div>
+    </div>
 
     <!-- IMAGEN DE PORTADA -->
 
@@ -345,6 +398,19 @@
 
   </main>
 
+  <!-- CONFIGURACIÓN DE INICIALIZACIÓN DE LA HERRAMIENTA GOOGLE -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- LLAMADO AL SCRIPT PRINCIPAL DE COMPONENTES DE GOOGLE -->
+  <script type="text/javascript" src="//://google.com"></script>
+
 </body>
 </html>
-
