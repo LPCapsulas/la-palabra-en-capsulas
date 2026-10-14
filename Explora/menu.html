@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -7,240 +8,336 @@
 <title>Mira, Crece y Comparte — La Palabra en Cápsulas</title>
 
 <style>
-:root{
-  --blue:#0F4C81;
-  --gold:#e7c96f;
-  --white:#fff;
-  --soft:#D6D2C4;
+:root {
+  --blue: #0F4C81;
+  --gold: #e7c96f;
+  --white: #fff;
+  --soft: #D6D2C4;
 }
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html,body{
-  margin:0;
-  padding:0;
-  min-height:100%;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
-body{
-  background:var(--blue);
-  color:var(--white);
-  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-  font-size:17px;
-  line-height:1.8;
+body {
+  background: var(--blue);
+  color: var(--white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
-.page{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:42px 28px 30px;
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 28px 30px;
 }
 
-header{
-  text-align:center;
-  margin-top:16px;
-  margin-bottom:32px;
+/* SELECTOR DE IDIOMAS */
+
+.language-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-h1{
-  margin:0;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:46px;
-  line-height:1.2;
-  font-weight:bold;
-  letter-spacing:.5px;
-  color:var(--gold);
+.lang-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.78);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .2s ease;
 }
 
-.intro{
-  display:none;
+.lang-link:hover,
+.lang-link.active {
+  color: var(--gold);
 }
 
-.menu{
-  width:min(850px,100%);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  column-gap:72px;
-  position:relative;
-  margin-top:4px;
+.lang-link.active {
+  font-weight: 700;
 }
 
-.menu::after{
-  content:"";
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:50%;
-  width:1px;
-  background:rgba(255,255,255,.25);
-  transform:translateX(-50%);
+.lang-divider {
+  color: rgba(255,255,255,.45);
+  user-select: none;
 }
 
-.column{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:18px;
+/* ENCABEZADO */
+
+header {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 32px;
 }
 
-.item{
-  width:100%;
-  text-align:center;
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  line-height: 1.2;
+  font-weight: bold;
+  letter-spacing: .5px;
+  color: var(--gold);
 }
 
-.item a{
-  display:inline-block;
-  color:#fff;
-  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-  font-size:23px;
-  line-height:1.4;
-  padding:5px 10px;
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  transition:color .2s ease,border-color .2s ease;
+/* MENÚ */
+
+.menu {
+  width: min(850px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 72px;
+  position: relative;
+  margin-top: 4px;
 }
 
-.item a:hover{
-  color:var(--gold);
-  border-bottom-color:var(--gold);
+.menu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(255,255,255,.25);
+  transform: translateX(-50%);
 }
 
-.back{
-  margin-top:42px;
-  text-align:center;
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
-.back a{
-  color:var(--gold);
-  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-  font-size:18px;
-  line-height:1.5;
-  text-decoration:none;
-  border-bottom:1px solid rgba(231,201,111,.7);
-  transition:color .2s ease,border-color .2s ease;
+.item {
+  width: 100%;
+  text-align: center;
 }
 
-.back a:hover{
-  color:#fff;
-  border-color:#fff;
+.item a {
+  display: inline-block;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 23px;
+  line-height: 1.4;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
 }
 
-@media(max-width:600px){
+.item a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
 
-  .page{
-    align-items:flex-start;
-    padding:34px 24px 28px;
+/* VOLVER A INICIO */
+
+.back {
+  margin-top: 42px;
+  text-align: center;
+}
+
+.back a {
+  color: var(--gold);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231,201,111,.7);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.back a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .page {
+    align-items: flex-start;
+    padding: 18px 24px 28px;
   }
 
-  header{
-    width:100%;
-    margin-top:16px;
-    margin-bottom:28px;
-    text-align:center;
+  .language-bar {
+    margin-bottom: 8px;
   }
 
-  h1{
-    font-size:36px;
-    line-height:1.2;
+  header {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 28px;
+    text-align: center;
   }
 
-  .intro{
-    display:none;
+  h1 {
+    font-size: 36px;
+    line-height: 1.2;
   }
 
-  .menu{
-    display:block;
-    width:100%;
-    margin-top:0;
+  .menu {
+    display: block;
+    width: 100%;
+    margin-top: 0;
   }
 
-  .menu::after{
-    display:none;
+  .menu::after {
+    display: none;
   }
 
-  .column{
-    align-items:flex-start;
-    gap:9px;
+  .column {
+    align-items: flex-start;
+    gap: 9px;
   }
 
-  .column+.column{
-    margin-top:9px;
+  .column + .column {
+    margin-top: 9px;
   }
 
-  .item{
-    text-align:left;
+  .item {
+    text-align: left;
   }
 
-  .item a{
-    font-size:21px;
-    line-height:1.5;
-    padding:3px 0;
+  .item a {
+    font-size: 21px;
+    line-height: 1.5;
+    padding: 3px 0;
   }
 
-  .back{
-    width:100%;
-    margin-top:32px;
-    text-align:center;
+  .back {
+    width: 100%;
+    margin-top: 32px;
+    text-align: center;
   }
 
-  .back a{
-    font-size:17px;
+  .back a {
+    font-size: 17px;
   }
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="page">
 
+  <!-- SELECTOR DE IDIOMAS -->
+
+  <nav class="language-bar" aria-label="Language selection">
+
+    <button type="button"
+      class="lang-link active"
+      id="link-es"
+      onclick="changeLanguage('es')"
+      aria-pressed="true">Español</button>
+
+    <span class="lang-divider">|</span>
+
+    <button type="button"
+      class="lang-link"
+      id="link-en"
+      onclick="changeLanguage('en')"
+      aria-pressed="false">English</button>
+
+    <span class="lang-divider">|</span>
+
+    <button type="button"
+      class="lang-link"
+      id="link-fr"
+      onclick="changeLanguage('fr')"
+      aria-pressed="false">Français</button>
+
+  </nav>
+
   <header>
-    <h1>Mira, Crece y Comparte</h1>
+    <h1 id="page-title">Mira, Crece y Comparte</h1>
   </header>
 
-  <nav class="menu" aria-label="Menú principal">
+  <nav class="menu" id="main-menu" aria-label="Menú principal">
+
+    <!-- COLUMNA IZQUIERDA -->
 
     <div class="column">
 
       <div class="item">
-        <a href="./LPC/index.html">Acerca de LPC</a>
+        <a href="./LPC/index.html"
+           data-es="Acerca de LPC"
+           data-en="About LPC"
+           data-fr="À propos de LPC">Acerca de LPC</a>
       </div>
 
       <div class="item">
-        <a href="./articulos/index.html">Artículos</a>
+        <a href="./articulos/index.html"
+           data-es="Artículos"
+           data-en="Articles"
+           data-fr="Articles">Artículos</a>
       </div>
 
       <div class="item">
-        <a href="./ensenanzas/index.html">Enseñanzas</a>
+        <a href="./ensenanzas/index.html"
+           data-es="Enseñanzas"
+           data-en="Teachings"
+           data-fr="Enseignements">Enseñanzas</a>
       </div>
 
       <div class="item">
-        <a href="./oracion/index.html">Oración</a>
+        <a href="./oracion/index.html"
+           data-es="Oración"
+           data-en="Prayer"
+           data-fr="Prière">Oración</a>
       </div>
 
     </div>
 
+    <!-- COLUMNA DERECHA -->
+
     <div class="column">
 
       <div class="item">
-        <a href="./descargas/index.html">Descargas</a>
+        <a href="./descargas/index.html"
+           data-es="Descargas"
+           data-en="Downloads"
+           data-fr="Téléchargements">Descargas</a>
       </div>
 
       <div class="item">
-        <a href="./testimonios/index.html">Testimonios</a>
+        <a href="./testimonios/index.html"
+           data-es="Testimonios"
+           data-en="Testimonials"
+           data-fr="Témoignages">Testimonios</a>
       </div>
 
       <div class="item">
-        <a href="./proyectos/index.html">Proyectos</a>
+        <a href="./proyectos/index.html"
+           data-es="Proyectos"
+           data-en="Projects"
+           data-fr="Projets">Proyectos</a>
       </div>
 
       <div class="item">
-        <a href="./apoya/index.html">Apoya</a>
+        <a href="./apoya/index.html"
+           data-es="Apoya"
+           data-en="Support"
+           data-fr="Soutenir">Apoya</a>
       </div>
 
     </div>
@@ -248,11 +345,86 @@ h1{
   </nav>
 
   <div class="back">
-    <a href="../index.html">Volver a Inicio</a>
+    <a href="../index.html"
+       id="back-link"
+       data-es="Volver a Inicio"
+       data-en="Back to Home"
+       data-fr="Retour à l’accueil">Volver a Inicio</a>
   </div>
 
 </div>
 
+<script>
+(function () {
+  const translations = {
+    es: {
+      title: 'Mira, Crece y Comparte',
+      documentTitle: 'Mira, Crece y Comparte — La Palabra en Cápsulas',
+      menuLabel: 'Menú principal'
+    },
+
+    en: {
+      title: 'Look, Grow and Share',
+      documentTitle: 'Look, Grow and Share — The Word in Capsules',
+      menuLabel: 'Main menu'
+    },
+
+    fr: {
+      title: 'Découvre, Grandis et Partage',
+      documentTitle: 'Découvre, Grandis et Partage — La Parole en Capsules',
+      menuLabel: 'Menu principal'
+    }
+  };
+
+  function changeLanguage(lang) {
+    if (!translations[lang]) {
+      lang = 'es';
+    }
+
+    document.documentElement.lang = lang;
+    document.title = translations[lang].documentTitle;
+
+    document.getElementById('page-title').textContent =
+      translations[lang].title;
+
+    document.getElementById('main-menu').setAttribute(
+      'aria-label',
+      translations[lang].menuLabel
+    );
+
+    document.querySelectorAll('#main-menu a[data-es]').forEach(function (link) {
+      link.textContent = link.getAttribute('data-' + lang);
+    });
+
+    const backLink = document.getElementById('back-link');
+    backLink.textContent = backLink.getAttribute('data-' + lang);
+
+    document.querySelectorAll('.lang-link').forEach(function (button) {
+      const selected = button.id === 'link-' + lang;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+
+    try {
+      localStorage.setItem('lpc-language', lang);
+    } catch (error) {
+      // El menú sigue funcionando si el almacenamiento está desactivado.
+    }
+  }
+
+  window.changeLanguage = changeLanguage;
+
+  let initialLanguage = 'es';
+
+  try {
+    initialLanguage = localStorage.getItem('lpc-language') || 'es';
+  } catch (error) {
+    initialLanguage = 'es';
+  }
+
+  changeLanguage(initialLanguage);
+})();
+</script>
+
 </body>
 </html>
-
