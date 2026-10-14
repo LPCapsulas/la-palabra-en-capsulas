@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -8,179 +9,230 @@
 
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    padding:0;
-    background:#f2f0ec;
-    color:#252525;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.8;
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f0ec;
+    color: #252525;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-.page{
-    width:92%;
-    max-width:900px;
-    margin:45px auto;
-    background:#F8F4EC;
-    padding:55px 65px 45px;
-    box-shadow:0 3px 14px rgba(0,0,0,0.08);
-    border-radius:4px;
-    transition:background 0.2s ease;
+.page {
+    width: 92%;
+    max-width: 900px;
+    margin: 45px auto;
+    background: #F8F4EC;
+    padding: 55px 65px 45px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: background 0.2s ease;
 }
 
-.page:hover{
-    background:#f1f2f2;
+.page:hover {
+    background: #f1f2f2;
 }
 
-h1{
-    margin:0 0 12px;
-    text-align:center;
-    color:#17365D;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:36px;
-    line-height:1.2;
-    font-weight:700;
+/* SELECTOR DE IDIOMAS */
+
+.language-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-.intro{
-    text-align:center;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    margin:0 auto 38px;
-    max-width:700px;
-    color:#555;
+.lang-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #666;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.article-list{
-    margin-top:20px;
+.lang-link:hover,
+.lang-link.active {
+    color: #17365D;
 }
 
-.article-card{
-    border-left:5px solid #17365D;
-    background:#f8f8f6;
-    padding:24px 28px;
-    margin-bottom:24px;
-    transition:background 0.2s ease,transform 0.2s ease;
+.lang-link.active {
+    font-weight: 700;
 }
 
-.article-card:hover{
-    background:#f1f2f2;
-    transform:translateX(3px);
+.lang-divider {
+    color: #aaa;
+    user-select: none;
 }
 
-.article-card h2{
-    margin:0 0 10px;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:27px;
-    line-height:1.3;
-    color:#17365D;
+/* ENCABEZADO */
+
+h1 {
+    margin: 0 0 12px;
+    text-align: center;
+    color: #17365D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-.article-card p{
-    margin:0 0 20px;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.8;
-    color:#252525;
-    text-align:justify;
+.intro {
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0 auto 38px;
+    max-width: 700px;
+    color: #555;
 }
 
-.read-link{
-    display:inline-block;
-    color:#17365D;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-weight:700;
-    text-decoration:none;
-    font-size:17px;
-    line-height:1.8;
-    margin-bottom:14px;
+/* LISTA DE ARTÍCULOS */
+
+.article-list {
+    margin-top: 20px;
 }
 
-.read-link:hover{
-    text-decoration:underline;
+.article-card {
+    border-left: 5px solid #17365D;
+    background: #f8f8f6;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.footer-nav{
-    text-align:center;
-    margin-top:45px;
-    padding-top:25px;
-    border-top:1px solid #ddd;
+.article-card:hover {
+    background: #f1f2f2;
+    transform: translateX(3px);
 }
 
-.footer-nav a{
-    color:#17365D;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-weight:700;
-    text-decoration:none;
-    font-size:17px;
+.article-card h2 {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    line-height: 1.3;
+    color: #17365D;
 }
 
-.footer-nav a:hover{
-    text-decoration:underline;
+.article-card p {
+    margin: 0 0 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #252525;
+    text-align: justify;
+}
+
+/* ENLACES A LOS ARTÍCULOS */
+
+.read-link {
+    display: inline-block;
+    color: #17365D;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.read-link:hover {
+    text-decoration: underline;
+}
+
+/* NAVEGACIÓN INFERIOR */
+
+.footer-nav {
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-nav a {
+    color: #17365D;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
 }
 
 /* CELULAR */
 
-@media(max-width:700px){
+@media (max-width: 700px) {
 
-    .page{
-        width:94%;
-        margin:25px auto;
-        padding:38px 24px 32px;
+    .page {
+        width: 94%;
+        margin: 25px auto;
+        padding: 25px 24px 32px;
     }
 
-    h1{
-        font-size:31px;
-        line-height:1.25;
+    .language-bar {
+        margin-bottom: 22px;
     }
 
-    .intro{
-        font-size:17px;
-        line-height:1.6;
-        margin-bottom:30px;
+    h1 {
+        font-size: 31px;
+        line-height: 1.25;
     }
 
-    .article-card{
-        padding:21px 20px;
+    .intro {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 30px;
     }
 
-    .article-card h2{
-        font-size:25px;
-        line-height:1.3;
+    .article-card {
+        padding: 21px 20px;
     }
 
-    .article-card p{
-        font-size:17px;
-        line-height:1.8;
+    .article-card h2 {
+        font-size: 25px;
+        line-height: 1.3;
     }
 
-    .read-link{
-        font-size:17px;
-        line-height:1.8;
-        margin-bottom:14px;
+    .article-card p {
+        font-size: 17px;
+        line-height: 1.8;
     }
 
-    .footer-nav a{
-        font-size:17px;
+    .read-link {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+
+    .footer-nav a {
+        font-size: 17px;
     }
 }
 
 /* DISPOSITIVOS SIN MOUSE */
 
-@media(hover:none){
+@media (hover: none) {
+
     .page,
-    .article-card{
-        transition:none;
+    .article-card {
+        transition: none;
     }
 
-    .article-card:hover{
-        transform:none;
+    .article-card:hover {
+        transform: none;
     }
 }
 
@@ -191,32 +243,69 @@ h1{
 
 <main class="page">
 
-    <h1>Artículos</h1>
+    <!-- SELECTOR DE IDIOMAS -->
 
-    <p class="intro">
+    <nav class="language-bar" aria-label="Language selection">
+
+        <button type="button"
+            class="lang-link active"
+            id="link-es"
+            onclick="changeLanguage('es')"
+            aria-pressed="true">Español</button>
+
+        <span class="lang-divider">|</span>
+
+        <button type="button"
+            class="lang-link"
+            id="link-en"
+            onclick="changeLanguage('en')"
+            aria-pressed="false">English</button>
+
+        <span class="lang-divider">|</span>
+
+        <button type="button"
+            class="lang-link"
+            id="link-fr"
+            onclick="changeLanguage('fr')"
+            aria-pressed="false">Français</button>
+
+    </nav>
+
+    <!-- ENCABEZADO -->
+
+    <h1 id="page-title">Artículos</h1>
+
+    <p class="intro" id="page-intro">
         Para reflexionar, y tomar acción.
     </p>
 
-    <section class="article-list">
+    <!-- ARTÍCULOS -->
+
+    <section class="article-list" id="article-list"
+        aria-label="Lista de artículos">
 
         <article class="article-card">
 
-            <h2>Él sabe nuestra condición</h2>
+            <h2 id="article-title">
+                Él sabe nuestra condición
+            </h2>
 
-            <p>
+            <p id="article-description">
                 Dios conoce nuestras circunstancias, necesidades
                 y aquello que muchas veces enfrentamos en silencio.
             </p>
 
             <a class="read-link"
-               href="el-esta-al-tanto-parte-1.html">
+                id="part-1-link"
+                href="el-esta-al-tanto-parte-1.html">
                 Leer Parte 1 →
             </a>
 
             <br>
 
             <a class="read-link"
-               href="el-esta-al-tanto-parte-2.html">
+                id="part-2-link"
+                href="el-esta-al-tanto-parte-2.html">
                 Leer Parte 2 →
             </a>
 
@@ -224,9 +313,12 @@ h1{
 
     </section>
 
-    <nav class="footer-nav">
+    <!-- VOLVER AL MENÚ -->
 
-        <a href="../menu.html">
+    <nav class="footer-nav" aria-label="Navegación inferior">
+
+        <a href="../menu.html"
+            id="back-link">
             ← Volver al Menú
         </a>
 
@@ -234,6 +326,142 @@ h1{
 
 </main>
 
+<script>
+(function () {
+
+    const translations = {
+
+        es: {
+            documentTitle: 'Artículos — La Palabra en Cápsulas',
+            title: 'Artículos',
+            intro: 'Para reflexionar, y tomar acción.',
+            articleTitle: 'Él sabe nuestra condición',
+            description: 'Dios conoce nuestras circunstancias, necesidades y aquello que muchas veces enfrentamos en silencio.',
+            part1: 'Leer Parte 1 →',
+            part2: 'Leer Parte 2 →',
+            back: '← Volver al Menú',
+            articleListLabel: 'Lista de artículos',
+            footerLabel: 'Navegación inferior'
+        },
+
+        en: {
+            documentTitle: 'Articles — The Word in Capsules',
+            title: 'Articles',
+            intro: 'For reflection and action.',
+            articleTitle: 'He Knows Our Condition',
+            description: 'God knows our circumstances, our needs, and the things we often face in silence.',
+            part1: 'Read Part 1 →',
+            part2: 'Read Part 2 →',
+            back: '← Back to Menu',
+            articleListLabel: 'List of articles',
+            footerLabel: 'Footer navigation'
+        },
+
+        fr: {
+            documentTitle: 'Articles — La Parole en Capsules',
+            title: 'Articles',
+            intro: 'Pour réfléchir et passer à l’action.',
+            articleTitle: 'Il connaît notre condition',
+            description: 'Dieu connaît nos circonstances, nos besoins et les épreuves que nous traversons souvent en silence.',
+            part1: 'Lire la partie 1 →',
+            part2: 'Lire la partie 2 →',
+            back: '← Retour au menu',
+            articleListLabel: 'Liste des articles',
+            footerLabel: 'Navigation de bas de page'
+        }
+
+    };
+
+    function changeLanguage(lang) {
+
+        if (!translations[lang]) {
+            lang = 'es';
+        }
+
+        const t = translations[lang];
+
+        document.documentElement.lang = lang;
+        document.title = t.documentTitle;
+
+        document.getElementById('page-title').textContent =
+            t.title;
+
+        document.getElementById('page-intro').textContent =
+            t.intro;
+
+        document.getElementById('article-title').textContent =
+            t.articleTitle;
+
+        document.getElementById('article-description').textContent =
+            t.description;
+
+        document.getElementById('part-1-link').textContent =
+            t.part1;
+
+        document.getElementById('part-2-link').textContent =
+            t.part2;
+
+        document.getElementById('back-link').textContent =
+            t.back;
+
+        document.getElementById('article-list').setAttribute(
+            'aria-label',
+            t.articleListLabel
+        );
+
+        document.querySelector('.footer-nav').setAttribute(
+            'aria-label',
+            t.footerLabel
+        );
+
+        document.querySelector('.language-bar').setAttribute(
+            'aria-label',
+            lang === 'es'
+                ? 'Selección de idioma'
+                : lang === 'en'
+                    ? 'Language selection'
+                    : 'Sélection de la langue'
+        );
+
+        document.querySelectorAll('.lang-link').forEach(
+            function (button) {
+
+                const selected = button.id === 'link-' + lang;
+
+                button.classList.toggle('active', selected);
+
+                button.setAttribute(
+                    'aria-pressed',
+                    String(selected)
+                );
+
+            }
+        );
+
+        try {
+            localStorage.setItem('lpc-language', lang);
+        } catch (error) {
+            // La página sigue funcionando si el almacenamiento está desactivado.
+        }
+
+    }
+
+    window.changeLanguage = changeLanguage;
+
+    let initialLanguage = 'es';
+
+    try {
+        initialLanguage =
+            localStorage.getItem('lpc-language') || 'es';
+    } catch (error) {
+        initialLanguage = 'es';
+    }
+
+    changeLanguage(initialLanguage);
+
+})();
+</script>
+
 </body>
 </html>
-
+```
