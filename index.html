@@ -407,3 +407,77 @@
       es: {
         pc: 'Bienvenido a este espacio. Un lugar dedicado<br>a compartir ideas prácticas, profundas<br>y accesibles para un caminar<br>seguro con <span class="highlight">Dios</span>',
         mobile: 'Bienvenido a este espacio.<br>Un lugar dedicado a<br>compartir ideas prácticas,<br>profundas y accesibles<br>para un caminar<br>seguro con<br><span class="highlight">Dios</span>',
+landscape: 'Bienvenido a este espacio. Un lugar dedicado a compartir
+ideas prácticas, profundas y accesibles
+para un caminar seguro con Dios',
+narrow: 'Bienvenido a este espacio.
+Un lugar dedicado a
+compartir ideas prácticas,
+profundas y accesibles
+para un caminar
+seguro con
+Dios',
+btn: 'EXPLORA'
+},
+en: {
+pc: 'Welcome to this space. A place dedicated
+to sharing practical, profound
+and accessible ideas for a confident
+walk with God',
+mobile: 'Welcome to this space.
+A place dedicated to
+sharing practical,
+profound and accessible
+ideas for a confident
+walk with
+God',
+landscape: 'Welcome to this space. A place dedicated to sharing
+practical, profound and accessible ideas
+for a confident walk with God',
+narrow: 'Welcome to this space.
+A place dedicated to
+sharing practical,
+profound and accessible
+ideas for a confident
+walk with
+God',
+btn: 'EXPLORE'
+},
+fr: {
+pc: 'Bienvenue dans cet espace. Un lieu dédié
+au partage d’idées pratiques, profondes
+et accessibles pour une marche
+sereine avec Dieu',
+mobile: 'Bienvenue dans cet espace.
+Un lieu dédié au
+partage d’idées pratiques,
+profondes et accessibles
+pour une marche
+sereine avec
+Dieu',
+landscape: 'Bienvenue dans cet espace. Un lieu dédié au partage
+d’idées pratiques, profondes et accessibles
+pour une marche sereine avec Dieu',
+narrow: 'Bienvenue dans cet espace.
+Un lieu dédié au
+partage d’idées pratiques,
+profondes et accessibles
+pour une marche
+sereine avec
+Dieu',
+btn: 'EXPLORER'
+}
+};
+function changeLanguage(lang) {
+// Dynamic inline layout swapping
+document.getElementById('text-pc').innerHTML = translations[lang].pc;
+document.getElementById('text-mobile').innerHTML = translations[lang].mobile;
+document.getElementById('text-landscape').innerHTML = translations[lang].landscape;
+document.getElementById('text-narrow').innerHTML = translations[lang].narrow;
+document.getElementById('explore-btn-text').innerHTML = translations[lang].btn;
+// Update accessibility tag attributes
+document.documentElement.lang = lang;
+// Toggle visual selector states
+document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+document.getElementById(btn-${lang}).classList.add('active');
+}
