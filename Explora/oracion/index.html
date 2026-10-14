@@ -3,218 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Oración — La Palabra en Cápsulas</title>
-
 <style>
-:root{
-    --text:#252525;
-    --muted:#666;
-    --accent:#17365D;
-    --paper:#F8F4EC;
-    --bg:#f2f0ec;
-    --line:#d9d9d9;
-    --hover:#e8e3da;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.8;
-}
-
-.page{
-    width:900px;
-    max-width:calc(100% - 40px);
-    margin:45px auto;
-    padding:55px 65px 45px;
-    background:var(--paper);
-    border-radius:5px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.07);
-}
-
-h1{
-    margin:0 0 10px;
-    color:var(--accent);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:36px;
-    line-height:1.2;
-    text-align:center;
-    font-weight:700;
-}
-
-.intro{
-    margin:0 0 42px;
-    color:var(--muted);
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    text-align:center;
-}
-
-.article-card{
-    background:#fff;
-    border-left:5px solid var(--accent);
-    padding:22px 28px 24px;
-    margin-bottom:45px;
-    transition:background-color .25s ease;
-}
-
-.article-card:hover{
-    background-color:var(--hover);
-}
-
-.article-card h2{
-    margin:0 0 8px;
-    color:var(--accent);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:27px;
-    line-height:1.3;
-}
-
-.article-card p{
-    margin:0 0 20px;
-    color:var(--text);
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    line-height:1.8;
-}
-
-.read-link{
-    color:var(--accent);
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    font-size:17px;
-    font-weight:700;
-    line-height:1.6;
-    text-decoration:none;
-}
-
-.read-link:hover{
-    text-decoration:underline;
-}
-
-.bottom-nav{
-    margin-top:0;
-    padding-top:25px;
-    border-top:1px solid var(--line);
-    text-align:center;
-}
-
-.bottom-nav a{
-    color:var(--accent);
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:700;
-}
-
-.bottom-nav a:hover{
-    text-decoration:underline;
-}
-
-/* CELULAR */
-
-@media(max-width:700px){
-
-    .page{
-        width:auto;
-        max-width:none;
-        margin:0;
-        padding:38px 22px 35px;
-        border-radius:0;
-        box-shadow:none;
-    }
-
-    h1{
-        font-size:31px;
-        line-height:1.25;
-    }
-
-    .intro{
-        font-size:17px;
-        margin-bottom:35px;
-    }
-
-    .article-card{
-        padding:20px 20px 22px;
-        border-left-width:4px;
-        margin-bottom:35px;
-    }
-
-    .article-card h2{
-        font-size:25px;
-    }
-
-    .article-card p{
-        font-size:17px;
-        line-height:1.8;
-    }
-
-    .read-link{
-        font-size:17px;
-    }
-
-    .bottom-nav{
-        padding-top:22px;
-    }
-
-    .bottom-nav a{
-        font-size:17px;
-    }
-}
-
-/* DISPOSITIVOS SIN MOUSE */
-
-@media(hover:none){
-    .article-card{
-        transition:none;
-    }
-}
+:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--line:#d9d9d9;--hover:#e8e3da}
+*{box-sizing:border-box}
+body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
+.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:55px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+h1{margin:0 0 10px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;text-align:center;font-weight:700}
+.intro{margin:0 0 28px;color:var(--muted);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.6;text-align:center}
+.language-selector{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 35px}
+.language-selector button{font:600 14px "Segoe UI",Tahoma,sans-serif;color:var(--accent);background:transparent;border:1px solid #b9c2ce;border-radius:20px;padding:6px 13px;cursor:pointer}
+.language-selector button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.article-card{background:#fff;border-left:5px solid var(--accent);padding:22px 28px 24px;margin-bottom:45px;transition:background-color .25s ease}
+.article-card:hover{background-color:var(--hover)}
+.article-card h2{margin:0 0 8px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.3}
+.article-card p{margin:0 0 20px;color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
+.read-link{color:var(--accent);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;font-weight:700;line-height:1.6;text-decoration:none}
+.read-link:hover{text-decoration:underline}
+.bottom-nav{margin-top:0;padding-top:25px;border-top:1px solid var(--line);text-align:center}
+.bottom-nav a{color:var(--accent);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;text-decoration:none;font-size:17px;font-weight:700}
+.bottom-nav a:hover{text-decoration:underline}
+@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:38px 22px 35px;border-radius:0;box-shadow:none}h1{font-size:31px;line-height:1.25}.intro{font-size:17px;margin-bottom:28px}.article-card{padding:20px 20px 22px;border-left-width:4px;margin-bottom:35px}.article-card h2{font-size:25px}.article-card p{font-size:17px;line-height:1.8}.read-link{font-size:17px}.bottom-nav{padding-top:22px}.bottom-nav a{font-size:17px}}
+@media(hover:none){.article-card{transition:none}}
 </style>
-
 </head>
-
 <body>
-
-<div class="page">
-
-    <h1>Oración</h1>
-
-    <p class="intro">
-        Meditando y hablando con Dios.
-    </p>
-
-    <div class="article-card">
-
-        <h2>La Importancia de Orar</h2>
-
-        <p>
-            Una reflexión sobre lo que implica la oración,
-            súplica, acciones de gracias, alabanza, el dar
-            y el lugar que deben ocupar en la vida del creyente.
-        </p>
-
-        <a class="read-link" href="orar.html">
-            Leer artículo →
-        </a>
-
-    </div>
-
-    <div class="bottom-nav">
-        <a href="https://lpcapsulas.com/Explora/menu.html">
-            ← Volver al Menú
-        </a>
-    </div>
-
-</div>
-
+<main class="page">
+<h1 data-i18n="title">Oración</h1>
+<p class="intro" data-i18n="intro">Meditando y hablando con Dios.</p>
+<nav class="language-selector" aria-label="Selector de idioma">
+<button type="button" data-lang="es" aria-pressed="true">Español</button>
+<button type="button" data-lang="en" aria-pressed="false">English</button>
+<button type="button" data-lang="fr" aria-pressed="false">Français</button>
+</nav>
+<article class="article-card">
+<h2 data-i18n="cardTitle">La Importancia de Orar</h2>
+<p data-i18n="cardDesc">Una reflexión sobre lo que implica la oración, súplica, acciones de gracias, alabanza, el dar y el lugar que deben ocupar en la vida del creyente.</p>
+<a class="read-link" href="orar.html" data-i18n="read">Leer artículo →</a>
+</article>
+<div class="bottom-nav"><a href="https://lpcapsulas.com/Explora/menu.html" data-i18n="back">← Volver al Menú</a></div>
+</main>
+<script>
+const translations={
+es:{title:"Oración",intro:"Meditando y hablando con Dios.",cardTitle:"La Importancia de Orar",cardDesc:"Una reflexión sobre lo que implica la oración, súplica, acciones de gracias, alabanza, el dar y el lugar que deben ocupar en la vida del creyente.",read:"Leer artículo →",back:"← Volver al Menú",pageTitle:"Oración — La Palabra en Cápsulas"},
+en:{title:"Prayer",intro:"Meditating and speaking with God.",cardTitle:"The Importance of Prayer",cardDesc:"A reflection on prayer, supplication, thanksgiving, praise, giving, and the place these practices should have in a believer’s life.",read:"Read article →",back:"← Back to Menu",pageTitle:"Prayer — The Word in Capsules"},
+fr:{title:"Prière",intro:"Méditer et parler avec Dieu.",cardTitle:"L’importance de la prière",cardDesc:"Une réflexion sur la prière, la supplication, les actions de grâce, la louange, le don et la place que ces pratiques doivent occuper dans la vie du croyant.",read:"Lire l’article →",back:"← Retour au menu",pageTitle:"Prière — La Parole en Capsules"}
+};
+function setLanguage(lang){
+ if(!translations[lang])lang="es";
+ document.documentElement.lang=lang;
+ try{localStorage.setItem("lpc-language",lang)}catch(e){}
+ document.querySelectorAll("[data-i18n]").forEach(el=>{const value=translations[lang][el.dataset.i18n];if(value!==undefined)el.textContent=value});
+ document.querySelectorAll("[data-lang]").forEach(btn=>btn.setAttribute("aria-pressed",String(btn.dataset.lang===lang)));
+ document.title=translations[lang].pageTitle;
+}
+document.querySelectorAll("[data-lang]").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
+let savedLanguage="es";
+try{savedLanguage=localStorage.getItem("lpc-language")||"es"}catch(e){}
+setLanguage(savedLanguage);
+</script>
 </body>
 </html>
