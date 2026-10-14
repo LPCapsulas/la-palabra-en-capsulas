@@ -322,164 +322,64 @@
       </div>
     </div>
 
-    <!-- CONTENEDOR DE TEXTOS DE BIENVENIDA TOTALMENTE RESTAURADOS -->
+    <!-- CONTENEDOR DE TEXTOS DE BIENVENIDA -->
     <div class="welcome-text">
-
-      <!-- BLOQUE EN ESPAÑOL (IDÉNTICO AL ORIGINAL) -->
+      <!-- CONTENIDO EN ESPAÑOL -->
       <div id="content-es" class="lang-content visible">
-        <p class="welcome-pc">
-          Bienvenido a este espacio. Un lugar dedicado<br>
-          a compartir ideas prácticas, profundas<br>
-          y accesibles para un caminar<br>
-          seguro con <span class="highlight">Dios</span>
-        </p>
-        <p class="welcome-mobile">
-          Bienvenido a este espacio.<br>
-          Un lugar dedicado a<br>
-          compartir ideas prácticas,<br>
-          profundas y accesibles<br>
-          para un caminar<br>
-          seguro con<br>
-          <span class="highlight">Dios</span>
-        </p>
-        <p class="welcome-landscape">
-          Bienvenido a este espacio. Un lugar dedicado a compartir<br>
-          ideas prácticas, profundas y accesibles<br>
-          para un caminar seguro con <span class="highlight">Dios</span>
-        </p>
-        <p class="welcome-mobile-narrow">
-          Bienvenido a este espacio.<br>
-          Un lugar dedicado a<br>
-          compartir ideas prácticas,<br>
-          profundas y accesibles<br>
-          para un caminar<br>
-          seguro con<br>
-          <span class="highlight">Dios</span>
-        </p>
+        <p>Bienvenido a <span class="highlight">La Palabra en Cápsulas</span></p>
       </div>
 
-      <!-- BLOQUE EN INGLÉS TRADUCIDO AL 100% -->
+      <!-- CONTENIDO EN INGLÉS -->
       <div id="content-en" class="lang-content">
-        <p class="welcome-pc">
-          Welcome to this space. A place dedicated<br>
-          to sharing practical, profound<br>
-          and accessible ideas for a confident<br>
-          walk with <span class="highlight">God</span>
-        </p>
-        <p class="welcome-mobile">
-          Welcome to this space.<br>
-          A place dedicated to<br>
-          sharing practical,<br>
-          profound and accessible<br>
-          ideas for a confident<br>
-          walk with<br>
-          <span class="highlight">God</span>
-        </p>
-        <p class="welcome-landscape">
-          Welcome to this space. A place dedicated to sharing<br>
-practical, profound and accessible ideas
+        <p>Welcome to <span class="highlight">The Word in Capsules</span></p>
+      </div>
 
-for a confident walk with God
+      <!-- CONTENIDO EN FRANCÉS -->
+      <div id="content-fr" class="lang-content">
+        <p>Bienvenue à <span class="highlight">La Parole en Capsules</span></p>
+      </div>
+    </div>
 
+    <!-- BOTÓN DE EXPLORACIÓN -->
+    <div class="explore-button-container">
+      <a href="Explora/index.html" class="explore-button" id="btn-explore">EXPLORA</a>
+    </div>
 
-Welcome to this space.
+  </main>
 
-A place dedicated to
+  <!-- LÓGICA DE TRADUCCIÓN (JAVASCRIPT) -->
+  <script>
+    function changeLanguage(lang) {
+      // 1. Quitar clase 'active' de todos los botones y agregarla al seleccionado
+      document.querySelectorAll('.lang-link').forEach(link => link.classList.remove('active'));
+      document.getElementById(`link-${lang}`).classList.add('active');
 
-sharing practical,
+      // 2. Controlar la visibilidad de los bloques de texto de bienvenida
+      document.querySelectorAll('.lang-content').forEach(content => content.classList.remove('visible'));
+      document.getElementById(`content-${lang}`).classList.add('visible');
 
-profound and accessible
+      // 3. Modificar portadas, títulos y botones de acuerdo al idioma
+      const bannerEs = document.getElementById('banner-es');
+      const bannerTranslated = document.getElementById('banner-translated');
+      const transH1 = document.getElementById('translated-h1');
+      const transP = document.getElementById('translated-p');
+      const btnExplore = document.getElementById('btn-explore');
 
-ideas for a confident
-
-walk with
-
-God
-
-Bienvenue dans cet espace. Un lieu dédié
-
-au partage d’idées pratiques, profondes
-
-et accessibles pour une marche
-
-sereine avec Dieu
-
-
-Bienvenue dans cet espace.
-
-Un lieu dédié au
-
-partage d’idées pratiques,
-
-profondes et accessibles
-
-pour une marche
-
-sereine avec
-
-Dieu
-
-
-Bienvenue dans cet espace. Un lieu dédié au partage
-
-d’idées pratiques, profondes et accessibles
-
-pour une marche sereine avec Dieu
-
-
-Bienvenue dans cet espace.
-
-Un lieu dédié au
-
-partage d’idées pratiques,
-
-profondes et accessibles
-
-pour une marche
-
-sereine avec
-
-Dieu
-
-EXPLORA
-
-const buttonTexts = {
-es: 'EXPLORA',
-en: 'EXPLORE',
-fr: 'EXPLORER'
-};
-const titleTexts = {
-en: { h1: "The Word in Capsules", p: "Faith, Power and Life" },
-fr: { h1: "La Parole en Capsules", p: "Foi, Puissance et Vie" }
-};
-function changeLanguage(lang) {
-// 1. Mostrar/Ocultar los bloques de texto correspondientes
-document.querySelectorAll('.lang-content').forEach(block => block.classList.remove('visible'));
-document.getElementById(content-${lang}).classList.add('visible');
-// 2. Traducir el botón de acción principal
-document.getElementById('explore-btn-text').innerHTML = buttonTexts[lang];
-// 3. Control e intercambio dinámico del Banner de Portada
-if (lang === 'es') {
-document.getElementById('banner-es').style.display = 'block';
-document.getElementById('banner-translated').style.display = 'none';
-} else {
-document.getElementById('banner-es').style.display = 'none';
-document.getElementById('banner-translated').style.display = 'block';
-document.getElementById('translated-h1').innerText = titleTexts[lang].h1;
-document.getElementById('translated-p').innerText = titleTexts[lang].p;
+      if (lang === 'es') {
+        bannerEs.style.display = 'block';
+        bannerTranslated.style.display = 'none';
+        btnExplore.textContent = 'EXPLORA';
+      } else if (lang === 'en') {
+        bannerEs.style.display = 'none';
+bannerTranslated.style.display = 'block';
+transH1.textContent = 'The Word in Capsules';
+transP.textContent = 'Faith, Power and Life';
+btnExplore.textContent = 'EXPLORE';
+} else if (lang === 'fr') {
+bannerEs.style.display = 'none';
+bannerTranslated.style.display = 'block';
+transH1.textContent = 'La Parole en Capsules';
+transP.textContent = 'Foi, Puissance et Vie';
+btnExplore.textContent = 'EXPLORER';
 }
-// 4. Cambiar atributo de idioma base en el documento HTML
-document.documentElement.lang = lang;
-// 5. Guardar la elección en la memoria local permanente del navegador (localStorage)
-localStorage.setItem('preferencia_idioma', lang);
-// 6. Actualizar los estilos de la barra de botones activa
-document.querySelectorAll('.lang-link').forEach(link => link.classList.remove('active'));
-document.getElementById(link-${lang}).classList.add('active');
 }
-// Al cargar la página: Leer de inmediato la memoria para saber si hay un idioma guardado
-window.addEventListener('DOMContentLoaded', () => {
-const idiomaGuardado = localStorage.getItem('preferencia_idioma') || 'es';
-if (idiomaGuardado !== 'es') {
-changeLanguage(idiomaGuardado);
-}
-});
