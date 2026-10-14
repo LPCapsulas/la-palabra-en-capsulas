@@ -1,383 +1,174 @@
-
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Descargas de La Palabra en Cápsulas: recursos para crecer en la fe cristiana.">
-  <title>Descargas — La Palabra en Cápsulas</title>
-
-  <style>
-    :root {
-      --text: #252525;
-      --muted: #666;
-      --accent: #17365D;
-      --paper: #f8f4ec;
-      --bg: #f2f0ec;
-      --quote: #f7f4ef;
-      --line: #d9d5ce;
-      --gold: #b89b63;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 19px;
-      line-height: 1.78;
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px 0;
-    }
-
-    .page {
-      width: min(900px, calc(100% - 32px));
-      margin: 0 auto;
-      background: var(--paper);
-      padding: 40px 72px;
-      border: 1px solid rgba(23, 54, 93, .08);
-      border-radius: 10px;
-      box-shadow: 0 5px 24px rgba(0, 0, 0, .05);
-    }
-
-    header {
-      text-align: center;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 20px;
-      margin-bottom: 25px;
-    }
-
-    .eyebrow {
-      font-size: 15px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .title {
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--accent);
-      font-size: 38px;
-      line-height: 1.15;
-      margin: 0;
-    }
-
-    /* Selector de idiomas */
-    .language-selector {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .language-selector button {
-      font: inherit;
-      color: var(--accent);
-      background: transparent;
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      padding: 7px 12px;
-      cursor: pointer;
-      transition: background .2s, color .2s, border-color .2s;
-    }
-
-    .language-selector button:hover {
-      border-color: var(--accent);
-    }
-
-    .language-selector button.active {
-      color: #fff;
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .language-selector button:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .article {
-      max-width: 760px;
-      margin: auto;
-    }
-
-    p {
-      margin: 0 0 18px;
-      text-align: justify;
-    }
-
-    .intro {
-      text-align: center;
-    }
-
-    .br-pc {
-      display: inline;
-    }
-
-    .br-movil {
-      display: none;
-    }
-
-    .card {
-      max-width: 700px;
-      margin: 25px auto 0;
-      padding: 26px;
-      background: #f3f0eb;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-    }
-
-    .card h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--accent);
-      margin: 0 0 10px;
-      font-size: 27px;
-      line-height: 1.3;
-    }
-
-    .card a {
-      color: var(--accent);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
-    }
-
-    .back {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .back a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(23, 54, 93, .35);
-    }
-
-    .back a:hover {
-      border-color: var(--accent);
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 17px;
-        line-height: 1.65;
-        display: block;
-        min-height: auto;
-        padding: 0;
-      }
-
-      .page {
-        width: calc(100% - 20px);
-        margin: 14px auto 25px;
-        padding: 30px 20px 38px;
-        border-radius: 8px;
-      }
-
-      .title {
-        font-size: 31px;
-      }
-
-      .article {
-        max-width: none;
-      }
-
-      p {
-        text-align: left;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .br-pc {
-        display: none !important;
-      }
-
-      .br-movil {
-        display: inline !important;
-      }
-
-      .card {
-        margin-top: 28px;
-        padding: 20px;
-      }
-
-      .card h2 {
-        font-size: 24px;
-      }
-
-      .back {
-        margin-top: 35px;
-      }
-
-      .language-selector {
-        gap: 6px;
-      }
-
-      .language-selector button {
-        padding: 7px 10px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F4EC">
+<title>Descargas — La Palabra en Cápsulas</title>
+<style>
+:root{
+  --text:#17365D;
+  --muted:#555;
+  --accent:#17365D;
+  --paper:#F8F4EC;
+  --bg:#f2f0ec;
+  --line:#d9d4ca;
+  --card:#f3f0ea;
+  --gold:#b89b63;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.8;
+}
+.page{
+  width:810px;
+  max-width:calc(100% - 40px);
+  margin:22px auto;
+  padding:32px 65px 34px;
+  background:var(--paper);
+  border:1px solid #e8e3da;
+  border-radius:10px;
+  box-shadow:0 5px 24px rgba(0,0,0,.06);
+}
+header{text-align:center}
+.brand{
+  font-size:14px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  margin:0 0 7px;
+  line-height:1.5;
+}
+h1{
+  font-size:36px;
+  line-height:1.2;
+  margin:0;
+  color:var(--accent);
+  font-weight:700;
+}
+.language-selector{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+  margin:14px auto 18px;
+}
+.language-selector button{
+  font:13px Arial,Helvetica,sans-serif;
+  color:var(--accent);
+  background:transparent;
+  border:1px solid #d7d2c9;
+  border-radius:5px;
+  padding:7px 12px;
+  cursor:pointer;
+}
+.language-selector button[aria-pressed="true"]{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--gold);
+  outline:1px solid var(--gold);
+  outline-offset:2px;
+}
+.rule{height:1px;background:var(--line);margin:0 0 22px}
+.intro{
+  max-width:560px;
+  margin:0 auto 24px;
+  text-align:center;
+  font-size:17px;
+  line-height:1.8;
+}
+.resource-card{
+  max-width:630px;
+  min-height:214px;
+  margin:0 auto;
+  padding:20px 24px 22px;
+  background:var(--card);
+  border:1px solid #d8d3ca;
+  border-radius:7px;
+}
+.resource-card h2{
+  margin:0 0 7px;
+  font-size:25px;
+  line-height:1.35;
+  color:var(--accent);
+}
+.resource-card p{margin:0 0 15px;line-height:1.8}
+.resource-link{
+  display:inline-block;
+  color:var(--accent);
+  font-weight:700;
+  text-decoration:none;
+}
+.resource-link:hover{text-decoration:underline}
+.back-wrap{text-align:center;margin-top:24px}
+.back-link{color:var(--accent);text-underline-offset:4px}
+@media(max-width:700px){
+  .page{width:auto;max-width:none;margin:0;padding:30px 22px 32px;border:0;border-radius:0;box-shadow:none;min-height:100vh}
+  h1{font-size:32px}
+  .brand{font-size:13px}
+  .intro{font-size:17px;margin-bottom:22px}
+  .resource-card{padding:20px 19px;min-height:0}
+  .resource-card h2{font-size:23px}
+}
+</style>
 </head>
-
 <body>
-  <div class="page">
-    <header>
-      <div class="eyebrow"
-           data-es="La Palabra en Cápsulas"
-           data-en="La Palabra en Cápsulas"
-           data-fr="La Palabra en Cápsulas">
-        La Palabra en Cápsulas
-      </div>
+<main class="page">
+  <header>
+    <div class="brand" id="brand">La Palabra en Cápsulas</div>
+    <h1 id="page-title">Descargas</h1>
+  </header>
 
-      <h1 class="title"
-          data-es="Descargas"
-          data-en="Downloads"
-          data-fr="Téléchargements">
-        Descargas
-      </h1>
+  <nav class="language-selector" aria-label="Selector de idioma">
+    <button type="button" data-lang="es" aria-pressed="true">Español</button>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+    <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+  </nav>
 
-      <nav class="language-selector" aria-label="Language selector">
-        <button type="button" data-lang="es" class="active"
-                aria-pressed="true">Español</button>
-        <button type="button" data-lang="en"
-                aria-pressed="false">English</button>
-        <button type="button" data-lang="fr"
-                aria-pressed="false">Français</button>
-      </nav>
-    </header>
+  <div class="rule"></div>
 
-    <main class="article">
-      <p class="intro">
-        <span
-          data-es="Recursos de LPC para quienes desean conocer más de la fe"
-          data-en="LPC resources for those who want to learn more about the Christian faith"
-          data-fr="Ressources de LPC pour ceux qui souhaitent mieux connaître la foi chrétienne">
-          Recursos de LPC para quienes desean conocer más de la fe
-        </span><br class="br-pc">
-        <span
-          data-es="cristiana y crecer"
-          data-en="and grow"
-          data-fr="et grandir">
-          cristiana y crecer
-        </span><br class="br-movil">
-        <span
-          data-es="en su caminar con Dios"
-          data-en="in their walk with God"
-          data-fr="dans leur marche avec Dieu">
-          en su caminar con Dios
-        </span>
-      </p>
+  <p class="intro" id="intro">Recursos de LPC para quienes desean conocer más de la fe cristiana y crecer en su caminar con Dios</p>
 
-      <div class="card">
-        <h2
-          data-es="Guía para Nuevos Creyentes"
-          data-en="Guide for New Believers"
-          data-fr="Guide pour les nouveaux croyants">
-          Guía para Nuevos Creyentes
-        </h2>
+  <section class="resource-card" aria-labelledby="resource-title">
+    <h2 id="resource-title">Guía para Nuevos Creyentes</h2>
+    <p id="resource-description">Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual.</p>
+    <a class="resource-link" id="resource-link" href="../guias/gnc/index.html">Acceder ya →</a>
+  </section>
 
-        <p
-          data-es="Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual."
-          data-en="Simple instructions for beginning your journey of faith, learning how to read the Bible, and developing a healthy spiritual life."
-          data-fr="Des instructions simples pour commencer le chemin de la foi, apprendre à lire la Bible et développer une vie spirituelle saine.">
-          Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual.
-        </p>
-
-        <p>
-          <a href="./guia.html"
-             data-es="Acceder ya →"
-             data-en="Access now →"
-             data-fr="Accéder maintenant →">
-            Acceder ya →
-          </a>
-        </p>
-      </div>
-
-      <div class="back">
-        <a href="../menu.html"
-           data-es="Volver al Menú"
-           data-en="Back to Menu"
-           data-fr="Retour au menu">
-          Volver al Menú
-        </a>
-      </div>
-    </main>
+  <div class="back-wrap">
+    <a class="back-link" id="back-link" href="../menu.html">Volver al Menú</a>
   </div>
-
-  <script>
-    (function () {
-      const buttons = document.querySelectorAll(".language-selector button");
-      const translatableElements = document.querySelectorAll("[data-es][data-en][data-fr]");
-
-      function changeLanguage(lang) {
-        if (!["es", "en", "fr"].includes(lang)) {
-          lang = "es";
-        }
-
-        document.documentElement.lang = lang;
-
-        translatableElements.forEach(function (element) {
-          const translation = element.getAttribute("data-" + lang);
-
-          if (translation !== null) {
-            element.textContent = translation;
-          }
-        });
-
-        buttons.forEach(function (button) {
-          const isActive = button.getAttribute("data-lang") === lang;
-          button.classList.toggle("active", isActive);
-          button.setAttribute("aria-pressed", String(isActive));
-        });
-
-        try {
-          localStorage.setItem("lpc-language", lang);
-        } catch (error) {
-          // La página sigue funcionando si el almacenamiento está deshabilitado.
-        }
-      }
-
-      buttons.forEach(function (button) {
-        button.addEventListener("click", function () {
-          changeLanguage(button.getAttribute("data-lang"));
-        });
-      });
-
-      let savedLanguage = "es";
-
-      try {
-        const storedLanguage = localStorage.getItem("lpc-language");
-        if (["es", "en", "fr"].includes(storedLanguage)) {
-          savedLanguage = storedLanguage;
-        }
-      } catch (error) {
-        // Si no se puede leer el almacenamiento, se utiliza español.
-      }
-
-      changeLanguage(savedLanguage);
-    })();
-  </script>
+</main>
+<script>
+const translations={
+  es:{brand:'La Palabra en Cápsulas',title:'Descargas',intro:'Recursos de LPC para quienes desean conocer más de la fe cristiana y crecer en su caminar con Dios',resourceTitle:'Guía para Nuevos Creyentes',description:'Instrucciones simples para comenzar el camino de la fe, cómo leer la Biblia y desarrollar una saludable vida espiritual.',access:'Acceder ya →',back:'Volver al Menú',docTitle:'Descargas — La Palabra en Cápsulas'},
+  en:{brand:'The Word in Capsules',title:'Downloads',intro:'LPC resources for those who want to learn more about the Christian faith and grow in their walk with God.',resourceTitle:'A Guide for New Believers',description:'Simple instructions for beginning your journey of faith, learning how to read the Bible, and developing a healthy spiritual life.',access:'Access now →',back:'Back to Menu',docTitle:'Downloads — The Word in Capsules'},
+  fr:{brand:'La Parole en Capsules',title:'Téléchargements',intro:'Des ressources de LPC pour découvrir davantage la foi chrétienne et grandir dans sa marche avec Dieu.',resourceTitle:'Guide pour les nouveaux croyants',description:'Des conseils simples pour commencer le chemin de la foi, apprendre à lire la Bible et développer une vie spirituelle saine.',access:'Accéder maintenant →',back:'Retour au menu',docTitle:'Téléchargements — La Parole en Capsules'}
+};
+function setLanguage(lang){
+  if(!translations[lang]) lang='es';
+  const t=translations[lang];
+  document.documentElement.lang=lang;
+  document.getElementById('brand').textContent=t.brand;
+  document.getElementById('page-title').textContent=t.title;
+  document.getElementById('intro').textContent=t.intro;
+  document.getElementById('resource-title').textContent=t.resourceTitle;
+  document.getElementById('resource-description').textContent=t.description;
+  document.getElementById('resource-link').textContent=t.access;
+  document.getElementById('back-link').textContent=t.back;
+  document.title=t.docTitle;
+  document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+  try{localStorage.setItem('lpc-language',lang)}catch(e){}
+}
+document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+let initialLanguage='es';
+try{initialLanguage=localStorage.getItem('lpc-language')||'es'}catch(e){}
+setLanguage(initialLanguage);
+</script>
 </body>
 </html>
