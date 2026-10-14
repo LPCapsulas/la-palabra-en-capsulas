@@ -4,56 +4,470 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Palabra en Cápsulas — Portada Oficial</title>
+
   <style>
-    /* Estilos CSS principales para la portada y adaptabilidad móvil */
-    :root { --text: #252525; --muted: #666; --accent: #17365D; --brand-blue: #112952; --paper: #fff; --bg: #f2f0ec; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; line-height: 1.8; }
-    .page { width: min(900px, calc(100% - 32px)); margin: 2px auto; background: var(--paper); padding: 10px 72px 22px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
-    .language-bar { display: flex; justify-content: flex-end; gap: 15px; padding: 8px 0 16px 0; font-size: 14px; border-bottom: 1px solid #f0ede6; margin-bottom: 15px; }
-    .lang-link { color: var(--muted); text-decoration: none; font-weight: 500; cursor: pointer; }
-    .lang-link.active { color: var(--brand-blue); font-weight: 700; cursor: default; }
-    .banner-container { text-align: center; margin: 0 auto 10px; width: 100%; max-width: 800px; }
-    .capsules-img { display: block; width: 100%; height: auto; }
-    .welcome-text { text-align: center; max-width: 760px; margin: 0 auto 22px; font-size: 22px; font-weight: 500; color: var(--brand-blue); }
-    .welcome-mobile, .welcome-landscape, .welcome-mobile-narrow { display: none; }
-    .explore-button-container { display: flex; justify-content: center; width: 100%; margin: 0 auto 2px; }
-    .explore-button { display: inline-flex; padding: 10px 44px; background: #fff; color: var(--accent); font-size: 19px; font-weight: 700; letter-spacing: 2.5px; text-decoration: none; border: 2px solid var(--accent); border-radius: 6px; }
+    :root {
+      --text: #252525;
+      --muted: #666;
+      --accent: #17365D;
+      --brand-blue: #112952;
+      --paper: #fff;
+      --bg: #f2f0ec;
+      --quote: #f7f4ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      zoom: 100%;
+    }
+
+    /* =====================================================
+       PÁGINA PRINCIPAL — PC
+       ===================================================== */
+
+    .page {
+      width: min(900px, calc(100% - 32px));
+      margin: 2px auto;
+      background: var(--paper);
+      padding: 10px 72px 22px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    }
+
+    /* =====================================================
+       BARRA DE SELECCIÓN DE IDIOMAS
+       ===================================================== */
+
+    .language-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      padding: 8px 0 16px 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      border-bottom: 1px solid #f0ede6;
+      margin-bottom: 15px;
+    }
+
+    .lang-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s ease;
+    }
+
+    .lang-link:hover {
+      color: var(--accent);
+    }
+
+    .lang-link.active {
+      color: var(--brand-blue);
+      font-weight: 700;
+      cursor: default;
+    }
+
+    .lang-divider {
+      color: #ccc;
+    }
+
+    /* =====================================================
+       IMAGEN DE PORTADA Y TÍTULO DINÁMICO
+       ===================================================== */
+
+    .banner-container {
+      text-align: center;
+      margin: 0 auto 10px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .capsules-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border: 0;
+      outline: none;
+    }
+
+    /* Título dinámico por si decides separar el texto de la imagen en el futuro */
+    .dynamic-title {
+      display: none; /* Se mantiene oculto mientras el texto esté dentro de tu imagen actual */
+      font-size: 2.4rem;
+      color: var(--brand-blue);
+      margin: 15px 0 5px;
+      font-weight: 700;
+    }
+
+    /* =====================================================
+       TEXTO DE BIENVENIDA — PC
+       ===================================================== */
+
+    .welcome-text {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 22px;
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 500;
+      color: var(--brand-blue);
+    }
+
+    .welcome-text p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .welcome-text span.highlight {
+      color: var(--brand-blue);
+    }
+
+    .welcome-mobile,
+    .welcome-landscape,
+    .welcome-mobile-narrow {
+      display: none;
+    }
+
+    /* =====================================================
+       BOTÓN PRINCIPAL — EXPLORA
+       ===================================================== */
+
+    .explore-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto 2px;
+    }
+
+    .explore-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 230px;
+      padding: 10px 44px;
+      background: #ffffff;
+      color: var(--accent);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-decoration: none;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(23,54,93,.08);
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .explore-button:hover {
+      background: var(--accent);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(23,54,93,.18);
+    }
+
+    .explore-button:active {
+      transform: translateY(0);
+    }
+
+    /* =====================================================
+       TELÉFONO VERTICAL
+       ===================================================== */
+
+    @media (max-width: 700px) and (orientation: portrait) {
+      .page {
+        padding: 10px 24px 40px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .language-bar {
+        justify-content: center;
+        padding-bottom: 12px;
+      }
+
+      .banner-container {
+        margin-bottom: 24px;
+      }
+
+      .welcome-text {
+        font-size: 18px;
+        line-height: 2.05;
+        margin: 0 auto 32px;
+        max-width: 240px;
+        font-weight: 400;
+        color: #111;
+      }
+
+      .welcome-pc,
+      .welcome-landscape,
+      .welcome-mobile-narrow {
+        display: none !important;
+      }
+
+      .welcome-mobile {
+        display: block;
+      }
+
+      .welcome-mobile span.highlight {
+        color: #111;
+      }
+
+      .explore-button-container {
+        margin-bottom: 24px;
+      }
+
+      .explore-button {
+        min-width: 200px;
+        padding: 14px 36px;
+        font-size: 17px;
+      }
+    }
+
+    /* =====================================================
+       TELÉFONO HORIZONTAL
+       ===================================================== */
+
+    @media (max-width: 900px) and (orientation: landscape) {
+      .page {
+        width: min(900px, calc(100% - 32px));
+        padding: 10px 40px 22px;
+        margin: 2px auto;
+      }
+
+      .banner-container {
+        margin-bottom: 10px;
+      }
+
+      .welcome-text {
+        width: 100%;
+        max-width: 760px;
+        font-size: 21px;
+        line-height: 1.35;
+        margin: 0 auto 22px;
+        font-weight: 500;
+        color: var(--brand-blue);
+      }
+
+      .welcome-pc {
+        display: block !important;
+      }
+
+      .welcome-mobile,
+      .welcome-landscape,
+      .welcome-mobile-narrow {
+        display: none !important;
+      }
+
+      .explore-button-container {
+        margin-bottom: 2px;
+      }
+
+      .explore-button {
+        min-width: 230px;
+        padding: 10px 44px;
+        font-size: 19px;
+      }
+    }
+
+    /* =====================================================
+       TELÉFONOS MUY ESTRECHOS — VERTICAL
+       ===================================================== */
+
+    @media (max-width: 380px) and (orientation: portrait) {
+      .welcome-mobile {
+        display: block !important;
+      }
+
+      .welcome-mobile-narrow {
+        display: none !important;
+      }
+
+      .welcome-text {
+        font-size: 16px;
+        line-height: 2.05;
+        max-width: 240px;
+      }
+    }
   </style>
 </head>
 <body>
+
   <main class="page">
+
+    <!-- BARRA DE IDIOMAS -->
     <div class="language-bar">
-      <span class="lang-link active" id="link-es" onclick="traducirSitio('es')">Español</span> |
-      <span class="lang-link" id="link-en" onclick="traducirSitio('en')">English</span> |
-      <span class="lang-link" id="link-fr" onclick="traducirSitio('fr')">Français</span>
+      <span class="lang-link active" id="link-es" onclick="changeLanguage('es')">Español</span>
+      <span class="lang-divider">|</span>
+      <span class="lang-link" id="link-en" onclick="changeLanguage('en')">English</span>
+      <span class="lang-divider">|</span>
+      <span class="lang-link" id="link-fr" onclick="changeLanguage('fr')">Français</span>
     </div>
+
+    <!-- IMAGEN DE PORTADA -->
     <div class="banner-container">
       <img class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
+      <h1 class="dynamic-title" id="page-title">La Palabra en Cápsulas</h1>
     </div>
+
+    <!-- TEXTOS DE BIENVENIDA RESTAURADOS POR COMPLETO -->
     <div class="welcome-text">
-      <p class="welcome-pc" id="text-pc">Bienvenido a este espacio...</p>
-      <p class="welcome-mobile" id="text-mobile">Bienvenido a este espacio...</p>
-      <p class="welcome-landscape" id="text-landscape">Bienvenido a este espacio...</p>
-      <p class="welcome-mobile-narrow" id="text-narrow">Bienvenido a este espacio...</p>
+
+      <p class="welcome-pc" id="text-pc">
+        Bienvenido a este espacio. Un lugar dedicado<br>
+        a compartir ideas prácticas, profundas<br>
+        y accesibles para un caminar<br>
+        seguro con <span class="highlight">Dios</span>
+      </p>
+
+      <p class="welcome-mobile" id="text-mobile">
+        Bienvenido a este espacio.<br>
+        Un lugar dedicado a<br>
+        compartir ideas prácticas,<br>
+        profundas y accesibles<br>
+        para un caminar<br>
+        seguro con<br>
+        <span class="highlight">Dios</span>
+      </p>
+
+      <p class="welcome-landscape" id="text-landscape">
+        Bienvenido a este espacio. Un lugar dedicado a compartir<br>
+        ideas prácticas, profundas y accesibles<br>
+        para un caminar seguro con <span class="highlight">Dios</span>
+      </p>
+
+      <p class="welcome-mobile-narrow" id="text-narrow">
+        Bienvenido a este espacio.<br>
+        Un lugar dedicado a<br>
+        compartir ideas prácticas,<br>
+        profundas y accesibles<br>
+        para un caminar<br>
+        seguro con<br>
+        <span class="highlight">Dios</span>
+      </p>
+
     </div>
+
+    <!-- BOTÓN EXPLORA -->
     <div class="explore-button-container">
-      <a class="explore-button" id="explore-btn-text" href="Explora/menu.html"><span>EXPLORA</span></a>
+      <a class="explore-button" id="explore-btn-text" href="Explora/menu.html" aria-label="Explorar La Palabra en Cápsulas">
+        <span>EXPLORA</span>
+      </a>
     </div>
+
   </main>
+
+  <!-- DICCIONARIO COMPLETO Y SISTEMA DE MEMORIA LOCAL -->
   <script type="text/javascript">
-    const bibliotecaTextos = {
-      es: { pc: 'Bienvenido a este espacio...', btn: '<span>EXPLORA</span>' },
-      en: { pc: 'Welcome to this space...', btn: '<span>EXPLORE</span>' },
-      fr: { pc: 'Bienvenue dans cet espace...', btn: '<span>EXPLORER</span>' }
-    };
-    function traducirSitio(idioma) {
-      document.getElementById('text-pc').innerHTML = bibliotecaTextos[idioma].pc;
-      document.getElementById('explore-btn-text').innerHTML = bibliotecaTextos[idioma].btn;
-      document.documentElement.lang = idioma;
-      document.querySelectorAll('.lang-link').forEach(l => l.classList.remove('active'));
-      document.getElementById(`link-${idioma}`).classList.add('active');
-    }
-  </script>
-</body>
-</html>
+    const translations = {
+      es: {
+        title: "La Palabra en Cápsulas",
+        pc: 'Bienvenido a este espacio. Un lugar dedicado<br>a compartir ideas prácticas, profundas<br>y accesibles para un caminar<br>seguro con <span class="highlight">Dios</span>',
+        mobile: 'Bienvenido a este espacio.<br>Un lugar dedicado a<br>compartir ideas prácticas,<br>profundas y accesibles<br>para un caminar<br>seguro con<br><span class="highlight">Dios</span>',
+landscape: 'Bienvenido a este espacio. Un lugar dedicado a compartir
+ideas prácticas, profundas y accesibles
+para un caminar seguro con Dios',
+narrow: 'Bienvenido a este espacio.
+Un lugar dedicado a
+compartir ideas prácticas,
+profundas y accesibles
+para un caminar
+seguro con
+Dios',
+btn: 'EXPLORA'
+},
+en: {
+title: "The Word in Capsules",
+pc: 'Welcome to this space. A place dedicated
+to sharing practical, profound
+and accessible ideas for a confident
+walk with God',
+mobile: 'Welcome to this space.
+A place dedicated to
+sharing practical,
+profound and accessible
+ideas for a confident
+walk with
+God',
+landscape: 'Welcome to this space. A place dedicated to sharing
+practical, profound and accessible ideas
+for a confident walk with God',
+narrow: 'Welcome to this space.
+A place dedicated to
+sharing practical,
+profound and accessible
+ideas for a confident
+walk with
+God',
+btn: 'EXPLORE'
+},
+fr: {
+title: "La Parole en Capsules",
+pc: 'Bienvenue dans cet espace. Un lieu dédié
+au partage d’idées pratiques, profondes
+et accessibles pour une marche
+sereine avec Dieu',
+mobile: 'Bienvenue dans cet espace.
+Un lieu dédié au
+partage d’idées pratiques,
+profondes et accessibles
+pour une marche
+sereine avec
+Dieu',
+landscape: 'Bienvenue dans cet espace. Un lieu dédié au partage
+d’idées pratiques, profondes et accessibles
+pour une marche sereine avec Dieu',
+narrow: 'Bienvenue dans cet espace.
+Un lieu dédié au
+partage d’idées pratiques,
+profondes et accessibles
+pour une marche
+sereine avec
+Dieu',
+btn: 'EXPLORER'
+}
+};
+function changeLanguage(lang) {
+// Reemplazar textos
+document.getElementById('page-title').innerHTML = translations[lang].title;
+document.getElementById('text-pc').innerHTML = translations[lang].pc;
+document.getElementById('text-mobile').innerHTML = translations[lang].mobile;
+document.getElementById('text-landscape').innerHTML = translations[lang].landscape;
+document.getElementById('text-narrow').innerHTML = translations[lang].narrow;
+document.getElementById('explore-btn-text').innerHTML = translations[lang].btn;
+document.documentElement.lang = lang;
+// Guardar elección en la memoria del navegador
+localStorage.setItem('preferencia_idioma', lang);
+// Cambiar estado activo visual
+document.querySelectorAll('.lang-link').forEach(link => link.classList.remove('active'));
+document.getElementById(link-${lang}).classList.add('active');
+}
+// Auto-ejecución al cargar la página: Lee si había un idioma guardado previamente
+window.addEventListener('DOMContentLoaded', () => {
+const idiomaGuardado = localStorage.getItem('preferencia_idioma') || 'es';
+if (idiomaGuardado !== 'es') {
+changeLanguage(idiomaGuardado);
+}
+});
