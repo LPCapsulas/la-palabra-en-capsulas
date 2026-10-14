@@ -317,13 +317,13 @@
 
   <main class="page">
 
-    <!-- BARRA NATIVA DE IDIOMAS (ACTUALIZADA CON ENLACES DIRECTOS REFORZADOS) -->
+    <!-- BARRA NATIVA DE IDIOMAS DIRECTA (HARDCODED FOR INSTANT RELIABILITY) -->
     <div class="language-bar">
       <a href="#" class="lang-link active" onclick="return false;">Español</a>
       <span class="lang-divider">|</span>
-      <a href="#" id="link-en" class="lang-link" target="_blank" rel="noopener noreferrer">English</a>
+      <a href="https://google.com" class="lang-link" target="_blank" rel="noopener noreferrer">English</a>
       <span class="lang-divider">|</span>
-      <a href="#" id="link-fr" class="lang-link" target="_blank" rel="noopener noreferrer">Français</a>
+      <a href="https://google.com" class="lang-link" target="_blank" rel="noopener noreferrer">Français</a>
     </div>
 
     <!-- IMAGEN DE PORTADA -->
@@ -395,21 +395,5 @@
 
   </main>
 
-  <!-- SCRIPT CORREGIDO PARA DIRECCIONAR CORRECTAMENTE A LA PÁGINA TRADUCIDA -->
-  <script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', () => {
-      // Obtains the active URL layout path dynamically
-      let currentUrl = window.location.href;
-
-      // Fallback check: If testing offline locally, use a safe backup representation
-      if (currentUrl.startsWith('file://') || currentUrl.includes('localhost') || currentUrl.includes('127.0.0.1')) {
-        currentUrl = 'https://github.com'; // Temporary placeholder for offline visibility tests
-      }
-      
-      const linkEn = document.getElementById('link-en');
-      const linkFr = document.getElementById('link-fr');
-      
-// Using Google's updated web translation layout structure
-linkEn.href = https://google.com{encodeURIComponent(currentUrl)};
-linkFr.href = https://google.com{encodeURIComponent(currentUrl)};
-});
+</body>
+</html>
