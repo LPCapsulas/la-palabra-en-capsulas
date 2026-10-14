@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -354,15 +353,19 @@
         src="Explora/portada.png"
         alt="La Palabra en Cápsulas — Fe, Poder y Vida">
 
-      <!-- TÍTULO EN INGLÉS Y FRANCÉS -->
+      <img
+        id="banner-en"
+        class="capsules-img"
+        src="Explora/portada-en.png"
+        alt="The Word in Capsules — Faith, Power and Life"
+        style="display:none">
 
-      <div id="banner-translated" class="translated-title-box">
-
-        <h1 id="translated-h1">The Word in Capsules</h1>
-
-        <p id="translated-p">Faith, Power and Life</p>
-
-      </div>
+      <img
+        id="banner-fr"
+        class="capsules-img"
+        src="Explora/portada-fr.png"
+        alt="La Parole en Capsules — Foi, Puissance et Vie"
+        style="display:none">
 
     </div>
 
@@ -468,22 +471,14 @@
         );
       });
 
-      const spanishBanner = document.getElementById('banner-es');
-      const translatedBanner = document.getElementById('banner-translated');
+      document.getElementById('banner-es').style.display =
+        lang === 'es' ? 'block' : 'none';
 
-      if (lang === 'es') {
-        spanishBanner.style.display = 'block';
-        translatedBanner.style.display = 'none';
-      } else {
-        spanishBanner.style.display = 'none';
-        translatedBanner.style.display = 'flex';
+      document.getElementById('banner-en').style.display =
+        lang === 'en' ? 'block' : 'none';
 
-        document.getElementById('translated-h1').textContent =
-          translations[lang].bannerTitle;
-
-        document.getElementById('translated-p').textContent =
-          translations[lang].bannerSubtitle;
-      }
+      document.getElementById('banner-fr').style.display =
+        lang === 'fr' ? 'block' : 'none';
 
       document.getElementById('btn-explore').textContent =
         translations[lang].button;
