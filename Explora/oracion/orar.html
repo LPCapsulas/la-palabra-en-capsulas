@@ -1,333 +1,413 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>La Importancia de Orar — La Palabra en Cápsulas</title>
+<title>La Importancia de Orar — La Palabra en Cápsulas</title>
 
-    <style>
+<style>
+:root {
+    --text: #252525;
+    --muted: #666;
+    --accent: #17365D;
+    --paper: #F8F4EC;
+    --bg: #f2f0ec;
+    --line: #d9d9d9;
+}
 
-        :root{
-            --text:#252525;
-            --muted:#666;
-            --accent:#17365D;
-            --paper:#F8F4EC;
-            --bg:#f2f0ec;
-            --line:#d9d9d9;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        *{
-            box-sizing:border-box;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body{
-            margin:0;
-            padding:0;
-            background:var(--bg);
-            color:var(--text);
-            font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
+.page {
+    width: 900px;
+    max-width: calc(100% - 40px);
+    margin: 45px auto;
+    padding: 35px 65px 45px;
+    background: var(--paper);
+    border-radius: 5px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
 
-        .page{
-            width:900px;
-            max-width:calc(100% - 40px);
-            margin:45px auto;
-            padding:55px 65px 45px;
-            background:var(--paper);
-            border-radius:5px;
-            box-shadow:0 4px 18px rgba(0,0,0,0.07);
-        }
+/* SELECTOR DE IDIOMAS */
 
-        h1{
-            margin:0 0 8px;
-            color:var(--accent);
-            font-family:Georgia, "Times New Roman", serif;
-            font-size:36px;
-            line-height:1.2;
-            text-align:center;
-            font-weight:700;
-        }
+.language-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
 
-        .author{
-            margin:0 0 35px;
-            color:var(--muted);
-            font-size:17px;
-            text-align:center;
-            font-style:italic;
-        }
+.language-bar button {
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
 
-        .banner-img{
-            display:block;
-            width:60%;
-            max-height:300px;
-            object-fit:cover;
-            margin:0 auto 35px;
-            border-radius:6px;
-            box-shadow:0 4px 10px rgba(0,0,0,0.05);
-        }
+.language-bar button:hover,
+.language-bar button.active {
+    background: var(--accent);
+    color: #fff;
+}
 
-        p{
-            margin:0 0 22px;
-            font-size:17px;
-            line-height:1.8;
-            text-align:justify;
-        }
+h1 {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 700;
+}
 
-        /* Números de las citas */
+.author {
+    margin: 0 0 35px;
+    color: var(--muted);
+    font-size: 17px;
+    text-align: center;
+    font-style: italic;
+}
 
-        .footnote-ref{
-            font-size:0.68em;
-            vertical-align:super;
-            line-height:0;
-            color:var(--accent);
-            font-weight:600;
-            cursor:help;
-            text-decoration:none;
-        }
+.banner-img {
+    display: block;
+    width: 60%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 0 auto 35px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-        .footnote-ref:hover{
-            text-decoration:underline;
-        }
+p {
+    margin: 0 0 22px;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
 
-        /* NUEVO: Contenedor interactivo para la oración */
-        .tooltip-container {
-            position: relative;
-            display: inline-block;
-            color: #0066cc;
-            cursor: help;
-        }
+.footnote-ref {
+    font-size: 0.68em;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: help;
+    text-decoration: none;
+}
 
-        /* NUEVO: Cuadro flotante personalizado (Tooltip) */
-        .tooltip-text {
-            visibility: hidden;
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: left;
-            border-radius: 6px;
-            padding: 15px;
-            position: absolute;
-            z-index: 10;
-            bottom: 125%; /* Se posiciona arriba de la palabra */
-            left: 50%;
-            transform: translateX(-50%);
-            
-            /* Ajustes solicitados */
-            width: 320px;         /* Controla la horizontalidad haciéndolo más angosto */
-            font-size: 15px;      /* Letra un poco más grande que el tooltip nativo */
-            line-height: 1.5;     /* Mejor espaciado de lectura */
-            font-weight: normal;  
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            
-            /* Efecto de transición suave */
-            opacity: 0;
-            transition: opacity 0.2s ease-in-out;
-        }
+.footnote-ref:hover {
+    text-decoration: underline;
+}
 
-        /* Flecha pequeña debajo del cuadro */
-        .tooltip-text::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #1a1a1a transparent transparent transparent;
-        }
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    color: #0066cc;
+    cursor: help;
+}
 
-        /* Muestra el cuadro al pasar el cursor sobre la palabra */
-        .tooltip-container:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-        }
+.tooltip-text {
+    visibility: hidden;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 15px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: normal;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
 
-        /* Navegación final */
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+}
 
-        .bottom-nav{
-            margin-top:42px;
-            padding-top:25px;
-            border-top:1px solid var(--line);
-            text-align:center;
-        }
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
 
-        .bottom-nav a{
-            color:var(--accent);
-            text-decoration:none;
-            font-size:16px;
-            font-weight:700;
-        }
+.bottom-nav {
+    margin-top: 42px;
+    padding-top: 25px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
 
-        .bottom-nav a:hover{
-            text-decoration:underline;
-        }
+.bottom-nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
 
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
 
-        /* CELULAR */
+@media (max-width: 700px) {
+    .page {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 25px 22px 35px;
+        border-radius: 0;
+        box-shadow: none;
+    }
 
-        @media (max-width:700px){
+    .language-bar {
+        justify-content: center;
+        margin-bottom: 28px;
+    }
 
-            .page{
-                width:auto;
-                max-width:none;
-                margin:0;
-                padding:35px 22px 35px;
-                border-radius:0;
-                box-shadow:none;
-            }
+    .language-bar button {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
 
-            h1{
-                font-size:30px;
-                line-height:1.25;
-            }
+    h1 {
+        font-size: 30px;
+        line-height: 1.25;
+    }
 
-            .author{
-                font-size:16px;
-                margin-bottom:28px;
-            }
+    .author {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
 
-            .banner-img{
-                width:100%;
-                max-height:none;
-                margin-bottom:30px;
-            }
+    .banner-img {
+        width: 100%;
+        max-height: none;
+        margin-bottom: 30px;
+    }
 
-            p{
-                font-size:17px;
-                line-height:1.75;
-                text-align:justify;
-            }
+    p {
+        font-size: 17px;
+        line-height: 1.75;
+        text-align: justify;
+    }
 
-            /* Ajuste del cuadro para pantallas de celular */
-            .tooltip-text {
-                width: 260px;
-                font-size: 14px;
-            }
+    .tooltip-text {
+        width: 260px;
+        font-size: 14px;
+    }
 
-            .bottom-nav{
-                margin-top:35px;
-                padding-top:22px;
-            }
-
-            .bottom-nav a{
-                font-size:16px;
-            }
-        }
-
-    </style>
+    .bottom-nav {
+        margin-top: 35px;
+        padding-top: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
-
 <div class="page">
 
-    <h1>
-        La Importancia de Orar<sup>
-            <span
-                class="footnote-ref"
-                title="Lucas 18:1; 1 Tesalonicenses 5:16-18; Efesios 6:18"
-            >1</span>
-        </sup>
-    </h1>
+<nav class="language-bar" aria-label="Selector de idioma">
+    <button type="button" data-lang="es" onclick="changeLanguage('es')">Español</button>
+    <button type="button" data-lang="en" onclick="changeLanguage('en')">English</button>
+    <button type="button" data-lang="fr" onclick="changeLanguage('fr')">Français</button>
+</nav>
 
-    <p class="author">Por J.V</p>
+<h1 id="page-title">
+    <span data-es="La Importancia de Orar"
+          data-en="The Importance of Prayer"
+          data-fr="L’importance de la prière">La Importancia de Orar</span><sup><span class="footnote-ref" title="Lucas 18:1; 1 Tesalonicenses 5:16-18; Efesios 6:18">1</span></sup>
+</h1>
 
-    <img
-        src="banner-oracion.jpg"
-        alt="Persona en oración frente al atardecer"
-        class="banner-img"
-    >
+<p class="author">Por J.V.</p>
 
+<img
+    src="banner-oracion.jpg"
+    alt="Persona en oración frente al atardecer"
+    class="banner-img"
+    data-alt-es="Persona en oración frente al atardecer"
+    data-alt-en="Person praying at sunset"
+    data-alt-fr="Personne en prière devant le coucher du soleil">
 
-    <p>
-        Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él <em>anunciaba</em> el reino, <em>enseñaba</em> y <em>oraba</em> a diario, le hicieron una petición simple pero trascendental para sus vidas y las nuestras: “Maestro, enséñanos a orar”<sup>
-            <span
-                class="footnote-ref"
-                title="Lucas 11.1"
-            >2</span>
-        </sup>;
-        él de inmediato, les dio la
-        
-        <!-- MODIFICADO: Estructura HTML personalizada para el cuadro flotante -->
-        <span class="tooltip-container">
-            <strong>oración</strong>
-            <span class="tooltip-text">
-                "Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos. Amén". 
-            </span>
-        </span>
+<p>
+<span data-es="Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él"
+      data-en="When the disciples of the Lord Jesus Christ—those who first heard God's call to follow Him—saw that He"
+      data-fr="Lorsque les disciples du Seigneur Jésus-Christ — ceux qui avaient d’abord entendu l’appel de Dieu à le suivre — virent qu’il">Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él</span>
+<em data-es="anunciaba" data-en="proclaimed" data-fr="annonçait">anunciaba</em>
+<span data-es="el reino," data-en="the kingdom," data-fr="le royaume,">el reino,</span>
+<em data-es="enseñaba" data-en="taught" data-fr="enseignait">enseñaba</em>
+<span data-es="y" data-en="and" data-fr="et">y</span>
+<em data-es="oraba" data-en="prayed" data-fr="priait">oraba</em>
+<span data-es="a diario, le hicieron una petición simple pero trascendental para sus vidas y las nuestras: “Maestro, enséñanos a orar”"
+      data-en="daily, they made a simple yet life-changing request for themselves and for us: “Master, teach us to pray”"
+      data-fr="chaque jour, ils lui adressèrent une demande simple mais déterminante pour leur vie et pour la nôtre : « Maître, apprends-nous à prier »">a diario, le hicieron una petición simple pero trascendental para sus vidas y las nuestras: “Maestro, enséñanos a orar”</span><sup><span class="footnote-ref" title="Lucas 11:1">2</span></sup>;
+<span data-es="él de inmediato, les dio el" data-en="He immediately gave them the" data-fr="il leur donna aussitôt le">él de inmediato, les dio la</span>
 
-        modelo (el “Padre Nuestro”), y no para que fuera repetida ciegamente, sino declarada con sentido, donde cada palabra y línea tiene un significado y propósito específicos; y donde orar y obedecer a Dios, coinciden.
-    </p>
+<span class="tooltip-container">
+<strong data-es="oración" data-en="prayer" data-fr="prière">oración</strong>
+<span class="tooltip-text"
+data-es="«Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos. Amén»."
+data-en="“Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses, as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil; for thine is the kingdom, and the power, and the glory, forever. Amen.”"
+data-fr="« Notre Père, qui es aux cieux, que ton nom soit sanctifié ; que ton règne vienne ; que ta volonté soit faite sur la terre comme au ciel. Donne-nous aujourd’hui notre pain quotidien ; pardonne-nous nos offenses, comme nous pardonnons aussi à ceux qui nous ont offensés ; ne nous induis pas en tentation, mais délivre-nous du mal ; car c’est à toi qu’appartiennent le règne, la puissance et la gloire, pour les siècles des siècles. Amen. »">Padre nuestro, que estás en el cielo...</span>
+</span>
 
+<span data-es="modelo (el “Padre Nuestro”), y no para que fuera repetida ciegamente, sino declarada con sentido, donde cada palabra y línea tiene un significado y propósito específicos; y donde orar y obedecer a Dios, coinciden."
+data-en="as a model (the “Lord’s Prayer”), not to be repeated mindlessly, but spoken with understanding, since each word and line has a specific meaning and purpose, and prayer and obedience to God go hand in hand."
+data-fr="comme modèle (le « Notre Père »), non pas pour être répétée aveuglément, mais pour être prononcée avec intelligence, car chaque mot et chaque phrase ont un sens et un but précis, et la prière et l’obéissance à Dieu vont de pair.">modelo (el “Padre Nuestro”), y no para que fuera repetida ciegamente, sino declarada con sentido, donde cada palabra y línea tiene un significado y propósito específicos; y donde orar y obedecer a Dios, coinciden.</span>
+</p>
 
-    <p>
-        En realidad, orar es tan importante que, elevándola a las alturas (al trono celestial), es el paso inicial y decisivo no solo para nosotros ser perdonados por nuestros pecados cometidos y así ser salvos<sup>
-            <span
-                class="footnote-ref"
-                title="Hechos 22.16"
-            >3</span>
-        </sup>,
-        sino también para invitar la presencia de Dios a nuestro espíritu para siempre<sup>
-            <span
-                class="footnote-ref"
-                title="Juan 14.16-17"
-            >4</span>
-        </sup>.
-        Sin oración, no hay combustible para nuestra vida, y sin ella, estamos perdidos.
-        Por ello es importante establecerla como disciplina; pues, así como el atleta debe entrenar de continuo para mantenerse en forma y apto para competir, el nuevo creyente debe cultivar este hábito pues no hay cosa que el diablo más tema: ver a un hombre y mujer de rodillas.
-    </p>
+<p>
+<span data-es="En realidad, orar es tan importante que, elevándola a las alturas (al trono celestial), es el paso inicial y decisivo no solo para nosotros ser perdonados por nuestros pecados cometidos y así ser salvos"
+data-en="Prayer is so important that lifting it up to heaven, to the heavenly throne, is the first decisive step not only toward receiving forgiveness for our sins and being saved"
+data-fr="En réalité, la prière est si importante que, élevée vers les cieux, jusqu’au trône céleste, elle constitue la première étape décisive non seulement pour recevoir le pardon de nos péchés et être sauvés">En realidad, orar es tan importante que, elevándola a las alturas (al trono celestial), es el paso inicial y decisivo no solo para nosotros ser perdonados por nuestros pecados cometidos y así ser salvos</span><sup><span class="footnote-ref" title="Hechos 22:16">3</span></sup>,
+<span data-es="sino también para invitar la presencia de Dios a nuestro espíritu para siempre"
+data-en="but also toward welcoming God's presence into our spirit forever"
+data-fr="mais aussi pour accueillir éternellement la présence de Dieu dans notre esprit">sino también para invitar la presencia de Dios a nuestro espíritu para siempre</span><sup><span class="footnote-ref" title="Juan 14:16-17">4</span></sup>.
+<span data-es="Sin oración, no hay combustible para nuestra vida, y sin ella, estamos perdidos. Por ello es importante establecerla como disciplina; pues, así como el atleta debe entrenar de continuo para mantenerse en forma y apto para competir, el nuevo creyente debe cultivar este hábito pues no hay cosa que el diablo más tema: ver a un hombre y mujer de rodillas."
+data-en="Without prayer, our lives have no fuel, and without it, we are lost. That is why prayer must become a discipline. Just as an athlete must train continually to stay fit and ready to compete, a new believer must cultivate this habit. Few things frighten the devil more than seeing a man or woman on their knees."
+data-fr="Sans la prière, notre vie manque de carburant et, sans elle, nous sommes perdus. Il est donc important d’en faire une discipline. Tout comme un athlète doit s’entraîner régulièrement pour rester en forme et prêt à concourir, le nouveau croyant doit cultiver cette habitude. Peu de choses effraient davantage le diable que de voir un homme ou une femme à genoux.">Sin oración, no hay combustible para nuestra vida, y sin ella, estamos perdidos. Por ello es importante establecerla como disciplina; pues, así como el atleta debe entrenar de continuo para mantenerse en forma y apto para competir, el nuevo creyente debe cultivar este hábito pues no hay cosa que el diablo más tema: ver a un hombre y mujer de rodillas.</span>
+</p>
 
+<p>
+<span data-es="Se debe creer por lo que se está orando" data-en="We must believe in what we are praying for" data-fr="Nous devons croire en ce pour quoi nous prions">Se debe creer por lo que se está orando</span><sup><span class="footnote-ref" title="Marcos 11:24">5</span></sup>.
+<span data-es="No que no se tenga que tener perseverancia, pero tampoco rayar en el campo de la incredulidad y quedarse orando la misma oración como un ritual"
+data-en="This does not mean that we should lack perseverance, but neither should we cross into unbelief by repeating the same prayer as a ritual"
+data-fr="Cela ne signifie pas qu’il ne faut pas persévérer, mais il ne faut pas non plus tomber dans l’incrédulité en répétant la même prière comme un rituel">No que no se tenga que tener perseverancia, pero tampoco rayar en el campo de la incredulidad y quedarse orando la misma oración como un ritual</span><sup><span class="footnote-ref" title="Mateo 6:7">6</span></sup>.
+<span data-es="Es por ello que “orar sin cesar”" data-en="That is why “pray without ceasing”" data-fr="C’est pourquoi « prier sans cesse »">Es por ello que “orar sin cesar”</span><sup><span class="footnote-ref" title="1 Tesalonicenses 5:17">7</span></sup>
+<span data-es="no significa orar 24 horas, sino tener una actitud de alerta para oír su voz" data-en="does not mean praying 24 hours a day, but remaining alert and ready to hear His voice" data-fr="ne signifie pas prier 24 heures sur 24, mais rester attentif pour entendre sa voix">no significa orar 24 horas, sino tener una actitud de alerta para oír su voz</span><sup><span class="footnote-ref" title="Isaías 28:23">8</span></sup>
+<span data-es="en todo tiempo, hablar con el Padre y hacer lo que Él nos pide en su Palabra." data-en="at all times, speaking with the Father and doing what He asks of us in His Word." data-fr="en tout temps, parler avec le Père et faire ce qu’il nous demande dans sa Parole.">en todo tiempo, hablar con el Padre y hacer lo que Él nos pide en su Palabra.</span>
+<em data-es="Orar, creer, agradecer, adorar y dar" data-en="Praying, believing, giving thanks, worshiping, and giving" data-fr="Prier, croire, remercier, adorer et donner">Orar, creer, agradecer, adorar y dar</em>:
+<span data-es="todas van cogidas de la mano, son inseparables. Por supuesto que hay quienes tienen un llamado a la intercesión y no te van a orar por solo 5 minutos."
+data-en="all go hand in hand; they are inseparable. Of course, some people are called to intercession and will pray for much longer than just five minutes."
+data-fr="ces pratiques vont toutes de pair et sont indissociables. Bien sûr, certaines personnes sont appelées à l’intercession et ne prieront pas seulement cinq minutes.">todas van cogidas de la mano, son inseparables. Por supuesto que hay quienes tienen un llamado a la intercesión y no te van a orar por solo 5 minutos.</span>
+</p>
 
-    <p>
-        Se debe creer por lo que se está orando<sup>
-            <span
-                class="footnote-ref"
-                title="Marcos 11.24"
-            >5</span>
-        </sup>.
-        No que no se tenga que tener perseverancia, pero tampoco rayar en el campo de la incredulidad y quedarse orando la misma oración como un ritual<sup>
-            <span
-                class="footnote-ref"
-                title="Mateo 6.7"
-            >6</span>
-        </sup>.
-        Es por ello que “orar sin cesar”<sup>
-            <span
-                class="footnote-ref"
-                title="1 Tesalonicenses 5.17"
-            >7</span>
-        </sup>
-        no significa orar 24 horas, sino tener una actitud de alerta para oír su voz<sup>
-            <span
-                class="footnote-ref"
-                title="Isaías 28.23"
-            >8</span>
-        </sup>
-        en todo tiempo, hablar con el Padre y hacer lo que Él nos pide en su Palabra.
-        <em>Orar, creer, agradecer, adorar y dar</em>: todas van cogidas de la mano, son inseparables.
-        Por supuesto que hay quienes tienen un llamado a la intercesión y no te van a orar por solo 5 minutos.
+<p>
+<span data-es="El llamado apóstol de la fe, el finado inglés Smith Wigglesworth al ser preguntado cuánto oraba al día, respondió:"
+data-en="The late English preacher Smith Wigglesworth, known as the apostle of faith, was once asked how much he prayed each day. He replied:"
+data-fr="Le prédicateur anglais Smith Wigglesworth, surnommé l’apôtre de la foi, fut un jour interrogé sur le temps qu’il consacrait quotidiennement à la prière. Il répondit :">El llamado apóstol de la fe, el finado inglés Smith Wigglesworth al ser preguntado cuánto oraba al día, respondió:</span>
+<span data-es="“Cuando lo hago, no suelo pasar más de media hora orando en una sola ocasión, pero nunca paso más de media hora sin orar”!"
+data-en="“When I pray, I seldom spend more than half an hour at a time, but I never go more than half an hour without praying!”"
+data-fr="« Quand je prie, je dépasse rarement une demi-heure en une seule fois, mais je ne laisse jamais passer plus d’une demi-heure sans prier ! »">“Cuando lo hago, no suelo pasar más de media hora orando en una sola ocasión, pero nunca paso más de media hora sin orar”!</span>
+</p>
 
-        <p>
-        El llamado apóstol de la fe, el finado inglés Smith Wigglesworth al ser preguntado cuánto oraba al día, respondió:
-        “Cuando lo hago, no suelo pasar más de media hora orando en una sola ocasión, pero nunca paso más de media hora sin orar”!
-    </p>
+<p>
+<span data-es="Y una cosa muy importante para no caer en hipocresía. Así como cuando das, tu mano derecha no debe saber lo que hizo tu izquierda; de la misma forma, no debes tocar trompeta diciéndoles a los demás que oras por ellos. La gente sabrá que lo haces de veras."
+data-en="One very important thing helps us avoid hypocrisy. Just as, when you give, your right hand should not know what your left hand is doing, you should not sound a trumpet to tell others that you are praying for them. People will know when you truly do it."
+data-fr="Un point essentiel nous aide à éviter l’hypocrisie. Tout comme, lorsque tu donnes, ta main droite ne doit pas savoir ce que fait ta main gauche, tu ne dois pas sonner de la trompette pour annoncer aux autres que tu pries pour eux. Les gens sauront si tu le fais sincèrement.">Y una cosa muy importante para no caer en hipocresía. Así como cuando das, tu mano derecha no debe saber lo que hizo tu izquierda; de la misma forma, no debes tocar trompeta diciéndoles a los demás que oras por ellos. La gente sabrá que lo haces de veras.</span>
+</p>
 
-    <p>
-        Y una cosa muy importante para no caer en hipocresía. Así como cuando das, tu mano derecha no debe saber lo que hizo tu
-        izquierda; de la misma forma, no debes tocar trompeta diciendole a los demás que oras por ellos. La gente sabrá que lo 
-        haces de veras.
-    <p>
-        Cuando te sientes a comer, dale gracias y donde quiera que estés, agradécele al Señor por haberte dado la vida y por guardarte a ti y a los tuyos de todo mal y de todo peligro.
-        Ora por tus planes y por los de los misioneros en todo el mundo.
-        Ora por tu presidente y por las autoridades.
-        ¡Eso sí, ora siempre!
-    </p>
+<p>
+<span data-es="Cuando te sientes a comer, dale gracias y donde quiera que estés, agradécele al Señor por haberte dado la vida y por guardarte a ti y a los tuyos de todo mal y de todo peligro."
+data-en="When you sit down to eat, give thanks. Wherever you may be, thank the Lord for giving you life and for protecting you and your loved ones from harm and danger."
+data-fr="Lorsque tu t’assieds pour manger, rends grâce. Où que tu sois, remercie le Seigneur de t’avoir donné la vie et de t’avoir protégé, toi et les tiens, de tout mal et de tout danger.">Cuando te sientes a comer, dale gracias y donde quiera que estés, agradécele al Señor por haberte dado la vida y por guardarte a ti y a los tuyos de todo mal y de todo peligro.</span>
+<span data-es="Ora por tus planes y por los de los misioneros en todo el mundo." data-en="Pray for your plans and for the plans of missionaries around the world." data-fr="Prie pour tes projets et pour ceux des missionnaires du monde entier.">Ora por tus planes y por los de los misioneros en todo el mundo.</span>
+<span data-es="Ora por tu presidente y por las autoridades." data-en="Pray for your president and for those in authority." data-fr="Prie pour ton président et pour les autorités.">Ora por tu presidente y por las autoridades.</span>
+<span data-es="¡Eso sí, ora siempre!" data-en="Above all, always pray!" data-fr="Surtout, prie toujours !">¡Eso sí, ora siempre!</span>
+</p>
 
-
-    <div class="bottom-nav">
-        <a href="../menu.html">← Volver al Menú</a>
-    </div>
+<div class="bottom-nav">
+    <a href="../menu.html"
+       data-es="← Volver al Menú"
+       data-en="← Back to Menu"
+       data-fr="← Retour au menu">← Volver al Menú</a>
+</div>
 
 </div>
 
+<script>
+(function () {
+    const supportedLanguages = ['es', 'en', 'fr'];
+
+    function changeLanguage(lang) {
+        if (!supportedLanguages.includes(lang)) {
+            lang = 'es';
+        }
+
+        document.documentElement.lang = lang;
+
+        /*
+         * Cambia únicamente el contenido de los elementos
+         * que tienen traducciones. Los elementos anidados,
+         * las citas y las cursivas se conservan.
+         */
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (element) {
+            const translation = element.getAttribute('data-' + lang);
+
+            if (translation !== null) {
+                if (element.tagName === 'IMG') {
+                    element.alt = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        document.querySelectorAll('.language-bar button').forEach(function (button) {
+            const active = button.dataset.lang === lang;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        const pageTitle = document.querySelector('#page-title [data-' + lang + ']');
+        const titleText = pageTitle
+            ? pageTitle.getAttribute('data-' + lang)
+            : 'La Importancia de Orar';
+
+        document.title = titleText + ' — La Palabra en Cápsulas';
+
+        try {
+            localStorage.setItem('lpc-language', lang);
+        } catch (error) {
+            /* La página sigue funcionando si el almacenamiento no está disponible. */
+        }
+    }
+
+    window.changeLanguage = changeLanguage;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let savedLanguage = 'es';
+
+        try {
+            savedLanguage = localStorage.getItem('lpc-language') || 'es';
+        } catch (error) {
+            savedLanguage = 'es';
+        }
+
+        changeLanguage(savedLanguage);
+    });
+})();
+</script>
+
 </body>
+</html>
