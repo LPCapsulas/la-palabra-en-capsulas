@@ -209,6 +209,26 @@
       transform: translateY(0);
     }
 
+    /* AJUSTE EXCLUSIVO PARA PC: subir el contenido para mostrar EXPLORA */
+    @media (min-width: 901px) {
+      .page {
+        padding-top: 2px;
+      }
+
+      .language-bar {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+      }
+
+      .banner-container {
+        margin-bottom: 4px;
+      }
+
+      .welcome-text {
+        margin-bottom: 14px;
+      }
+    }
+
     /* TELÉFONO VERTICAL */
 
     @media (max-width: 700px) and (orientation: portrait) {
