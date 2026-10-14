@@ -63,23 +63,20 @@
       margin-bottom: 15px;
     }
 
-    .lang-btn {
-      background: none;
-      border: none;
+    /* Restored link-style indicators for proper mouse focus interaction */
+    .lang-link {
       color: var(--muted);
-      font-family: inherit;
-      font-size: 14px;
+      text-decoration: none;
       font-weight: 500;
       cursor: pointer;
-      padding: 0;
       transition: color 0.2s ease;
     }
 
-    .lang-btn:hover {
+    .lang-link:hover {
       color: var(--accent);
     }
 
-    .lang-btn.active {
+    .lang-link.active {
       color: var(--brand-blue);
       font-weight: 700;
       cursor: default;
@@ -322,13 +319,13 @@
 
   <main class="page">
 
-    <!-- LANGUAGE SWITCHER BAR BUTTONS -->
+    <!-- LANGUAGE BAR (Restored with clean anchor tags and fallback protection) -->
     <div class="language-bar">
-      <button class="lang-btn active" id="btn-es" onclick="changeLanguage('es')">Español</button>
+      <a href="javascript:void(0);" class="lang-link active" id="link-es" onclick="changeLanguage('es')">Español</a>
       <span class="lang-divider">|</span>
-      <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">English</button>
+      <a href="javascript:void(0);" class="lang-link" id="link-en" onclick="changeLanguage('en')">English</a>
       <span class="lang-divider">|</span>
-      <button class="lang-btn" id="btn-fr" onclick="changeLanguage('fr')">Français</button>
+      <a href="javascript:void(0);" class="lang-link" id="link-fr" onclick="changeLanguage('fr')">Français</a>
     </div>
 
     <!-- IMAGEN DE PORTADA -->
@@ -340,7 +337,7 @@
         alt="La Palabra en Cápsulas — Portada">
     </div>
 
-    <!-- TEXTO DE BIENVENIDA CONTAINER (IDs added for localized string switching) -->
+    <!-- TEXTO DE BIENVENIDA -->
 
     <div class="welcome-text">
 
@@ -401,7 +398,7 @@
 
   </main>
 
-  <!-- LOCALLY MANAGED TRANSLATION DATA STRUCTURE -->
+  <!-- INTERNAL TEXT TRANSLATION MATRIX -->
   <script type="text/javascript">
     const translations = {
       es: {
@@ -469,15 +466,15 @@ btn: 'EXPLORER'
 }
 };
 function changeLanguage(lang) {
-// Dynamic inline layout swapping
+// Swaps the text layouts cleanly across target elements
 document.getElementById('text-pc').innerHTML = translations[lang].pc;
 document.getElementById('text-mobile').innerHTML = translations[lang].mobile;
 document.getElementById('text-landscape').innerHTML = translations[lang].landscape;
 document.getElementById('text-narrow').innerHTML = translations[lang].narrow;
 document.getElementById('explore-btn-text').innerHTML = translations[lang].btn;
-// Update accessibility tag attributes
+// Sets document language accessibility value
 document.documentElement.lang = lang;
-// Toggle visual selector states
-document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-document.getElementById(btn-${lang}).classList.add('active');
+// Adjusts visual link states natively
+document.querySelectorAll('.lang-link').forEach(link => link.classList.remove('active'));
+document.getElementById(link-${lang}).classList.add('active');
 }
