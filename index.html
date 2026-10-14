@@ -87,7 +87,7 @@
     }
 
     /* =====================================================
-       IMAGEN DE PORTADA Y TÍTULO DINÁMICO
+       IMAGEN DE PORTADA Y CONTENEDOR DINÁMICO
        ===================================================== */
 
     .banner-container {
@@ -95,6 +95,7 @@
       margin: 0 auto 10px;
       width: 100%;
       max-width: 800px;
+      position: relative;
     }
 
     .capsules-img {
@@ -106,17 +107,33 @@
       outline: none;
     }
 
-    /* Título dinámico por si decides separar el texto de la imagen en el futuro */
-    .dynamic-title {
-      display: none; /* Se mantiene oculto mientras el texto esté dentro de tu imagen actual */
-      font-size: 2.4rem;
-      color: var(--brand-blue);
-      margin: 15px 0 5px;
+    /* Caja de título traducido que aparece solo en Inglés y Francés */
+    .translated-title-box {
+      display: none;
+      background: linear-gradient(135deg, #112952 0%, #17365D 100%);
+      color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 14px rgba(23,54,93,.12);
+    }
+
+    .translated-title-box h1 {
+      font-size: 2.5rem;
       font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .translated-title-box p {
+      font-size: 1.2rem;
+      color: #dfb76c; /* Color dorado elegante para el subtítulo */
+      font-style: italic;
+      letter-spacing: 2px;
     }
 
     /* =====================================================
-       TEXTO DE BIENVENIDA — PC
+       TEXTO DE BIENVENIDA — DINÁMICO
        ===================================================== */
 
     .welcome-text {
@@ -140,10 +157,13 @@
       color: var(--brand-blue);
     }
 
-    .welcome-mobile,
-    .welcome-landscape,
-    .welcome-mobile-narrow {
+    /* Clases de control de visibilidad según idioma activo */
+    .lang-content {
       display: none;
+    }
+    
+    .lang-content.visible {
+      display: block;
     }
 
     /* =====================================================
@@ -212,6 +232,10 @@
         margin-bottom: 24px;
       }
 
+      .translated-title-box h1 {
+        font-size: 1.8rem;
+      }
+
       .welcome-text {
         font-size: 18px;
         line-height: 2.05;
@@ -221,17 +245,7 @@
         color: #111;
       }
 
-      .welcome-pc,
-      .welcome-landscape,
-      .welcome-mobile-narrow {
-        display: none !important;
-      }
-
-      .welcome-mobile {
-        display: block;
-      }
-
-      .welcome-mobile span.highlight {
+      .welcome-text span.highlight {
         color: #111;
       }
 
@@ -271,16 +285,6 @@
         color: var(--brand-blue);
       }
 
-      .welcome-pc {
-        display: block !important;
-      }
-
-      .welcome-mobile,
-      .welcome-landscape,
-      .welcome-mobile-narrow {
-        display: none !important;
-      }
-
       .explore-button-container {
         margin-bottom: 2px;
       }
@@ -291,33 +295,13 @@
         font-size: 19px;
       }
     }
-
-    /* =====================================================
-       TELÉFONOS MUY ESTRECHOS — VERTICAL
-       ===================================================== */
-
-    @media (max-width: 380px) and (orientation: portrait) {
-      .welcome-mobile {
-        display: block !important;
-      }
-
-      .welcome-mobile-narrow {
-        display: none !important;
-      }
-
-      .welcome-text {
-        font-size: 16px;
-        line-height: 2.05;
-        max-width: 240px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <main class="page">
 
-    <!-- BARRA DE IDIOMAS -->
+    <!-- BARRA DE SELECCIÓN DE IDIOMAS -->
     <div class="language-bar">
       <span class="lang-link active" id="link-es" onclick="changeLanguage('es')">Español</span>
       <span class="lang-divider">|</span>
@@ -326,145 +310,173 @@
       <span class="lang-link" id="link-fr" onclick="changeLanguage('fr')">Français</span>
     </div>
 
-    <!-- IMAGEN DE PORTADA -->
+    <!-- SECCIÓN DE PORTADA / BANNER -->
     <div class="banner-container">
-      <img class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
-      <h1 class="dynamic-title" id="page-title">La Palabra en Cápsulas</h1>
+      <!-- Imagen original para la versión en Español -->
+      <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Portada">
+      
+      <!-- Bloque de texto estilizado que reemplaza al banner en idiomas extranjeros -->
+      <div id="banner-translated" class="translated-title-box">
+        <h1 id="translated-h1">The Word in Capsules</h1>
+        <p id="translated-p">Faith, Power and Life</p>
+      </div>
     </div>
 
-    <!-- TEXTOS DE BIENVENIDA RESTAURADOS POR COMPLETO -->
+    <!-- CONTENEDOR DE TEXTOS DE BIENVENIDA TOTALMENTE RESTAURADOS -->
     <div class="welcome-text">
 
-      <p class="welcome-pc" id="text-pc">
-        Bienvenido a este espacio. Un lugar dedicado<br>
-        a compartir ideas prácticas, profundas<br>
-        y accesibles para un caminar<br>
-        seguro con <span class="highlight">Dios</span>
-      </p>
+      <!-- BLOQUE EN ESPAÑOL (IDÉNTICO AL ORIGINAL) -->
+      <div id="content-es" class="lang-content visible">
+        <p class="welcome-pc">
+          Bienvenido a este espacio. Un lugar dedicado<br>
+          a compartir ideas prácticas, profundas<br>
+          y accesibles para un caminar<br>
+          seguro con <span class="highlight">Dios</span>
+        </p>
+        <p class="welcome-mobile">
+          Bienvenido a este espacio.<br>
+          Un lugar dedicado a<br>
+          compartir ideas prácticas,<br>
+          profundas y accesibles<br>
+          para un caminar<br>
+          seguro con<br>
+          <span class="highlight">Dios</span>
+        </p>
+        <p class="welcome-landscape">
+          Bienvenido a este espacio. Un lugar dedicado a compartir<br>
+          ideas prácticas, profundas y accesibles<br>
+          para un caminar seguro con <span class="highlight">Dios</span>
+        </p>
+        <p class="welcome-mobile-narrow">
+          Bienvenido a este espacio.<br>
+          Un lugar dedicado a<br>
+          compartir ideas prácticas,<br>
+          profundas y accesibles<br>
+          para un caminar<br>
+          seguro con<br>
+          <span class="highlight">Dios</span>
+        </p>
+      </div>
 
-      <p class="welcome-mobile" id="text-mobile">
-        Bienvenido a este espacio.<br>
-        Un lugar dedicado a<br>
-        compartir ideas prácticas,<br>
-        profundas y accesibles<br>
-        para un caminar<br>
-        seguro con<br>
-        <span class="highlight">Dios</span>
-      </p>
-
-      <p class="welcome-landscape" id="text-landscape">
-        Bienvenido a este espacio. Un lugar dedicado a compartir<br>
-        ideas prácticas, profundas y accesibles<br>
-        para un caminar seguro con <span class="highlight">Dios</span>
-      </p>
-
-      <p class="welcome-mobile-narrow" id="text-narrow">
-        Bienvenido a este espacio.<br>
-        Un lugar dedicado a<br>
-        compartir ideas prácticas,<br>
-        profundas y accesibles<br>
-        para un caminar<br>
-        seguro con<br>
-        <span class="highlight">Dios</span>
-      </p>
-
-    </div>
-
-    <!-- BOTÓN EXPLORA -->
-    <div class="explore-button-container">
-      <a class="explore-button" id="explore-btn-text" href="Explora/menu.html" aria-label="Explorar La Palabra en Cápsulas">
-        <span>EXPLORA</span>
-      </a>
-    </div>
-
-  </main>
-
-  <!-- DICCIONARIO COMPLETO Y SISTEMA DE MEMORIA LOCAL -->
-  <script type="text/javascript">
-    const translations = {
-      es: {
-        title: "La Palabra en Cápsulas",
-        pc: 'Bienvenido a este espacio. Un lugar dedicado<br>a compartir ideas prácticas, profundas<br>y accesibles para un caminar<br>seguro con <span class="highlight">Dios</span>',
-        mobile: 'Bienvenido a este espacio.<br>Un lugar dedicado a<br>compartir ideas prácticas,<br>profundas y accesibles<br>para un caminar<br>seguro con<br><span class="highlight">Dios</span>',
-landscape: 'Bienvenido a este espacio. Un lugar dedicado a compartir
-ideas prácticas, profundas y accesibles
-para un caminar seguro con Dios',
-narrow: 'Bienvenido a este espacio.
-Un lugar dedicado a
-compartir ideas prácticas,
-profundas y accesibles
-para un caminar
-seguro con
-Dios',
-btn: 'EXPLORA'
-},
-en: {
-title: "The Word in Capsules",
-pc: 'Welcome to this space. A place dedicated
-to sharing practical, profound
-and accessible ideas for a confident
-walk with God',
-mobile: 'Welcome to this space.
-A place dedicated to
-sharing practical,
-profound and accessible
-ideas for a confident
-walk with
-God',
-landscape: 'Welcome to this space. A place dedicated to sharing
+      <!-- BLOQUE EN INGLÉS TRADUCIDO AL 100% -->
+      <div id="content-en" class="lang-content">
+        <p class="welcome-pc">
+          Welcome to this space. A place dedicated<br>
+          to sharing practical, profound<br>
+          and accessible ideas for a confident<br>
+          walk with <span class="highlight">God</span>
+        </p>
+        <p class="welcome-mobile">
+          Welcome to this space.<br>
+          A place dedicated to<br>
+          sharing practical,<br>
+          profound and accessible<br>
+          ideas for a confident<br>
+          walk with<br>
+          <span class="highlight">God</span>
+        </p>
+        <p class="welcome-landscape">
+          Welcome to this space. A place dedicated to sharing<br>
 practical, profound and accessible ideas
-for a confident walk with God',
-narrow: 'Welcome to this space.
+
+for a confident walk with God
+
+
+Welcome to this space.
+
 A place dedicated to
+
 sharing practical,
+
 profound and accessible
+
 ideas for a confident
+
 walk with
-God',
-btn: 'EXPLORE'
-},
-fr: {
-title: "La Parole en Capsules",
-pc: 'Bienvenue dans cet espace. Un lieu dédié
+
+God
+
+Bienvenue dans cet espace. Un lieu dédié
+
 au partage d’idées pratiques, profondes
+
 et accessibles pour une marche
-sereine avec Dieu',
-mobile: 'Bienvenue dans cet espace.
+
+sereine avec Dieu
+
+
+Bienvenue dans cet espace.
+
 Un lieu dédié au
+
 partage d’idées pratiques,
+
 profondes et accessibles
+
 pour une marche
+
 sereine avec
-Dieu',
-landscape: 'Bienvenue dans cet espace. Un lieu dédié au partage
+
+Dieu
+
+
+Bienvenue dans cet espace. Un lieu dédié au partage
+
 d’idées pratiques, profondes et accessibles
-pour une marche sereine avec Dieu',
-narrow: 'Bienvenue dans cet espace.
+
+pour une marche sereine avec Dieu
+
+
+Bienvenue dans cet espace.
+
 Un lieu dédié au
+
 partage d’idées pratiques,
+
 profondes et accessibles
+
 pour une marche
+
 sereine avec
-Dieu',
-btn: 'EXPLORER'
-}
+
+Dieu
+
+EXPLORA
+
+const buttonTexts = {
+es: 'EXPLORA',
+en: 'EXPLORE',
+fr: 'EXPLORER'
+};
+const titleTexts = {
+en: { h1: "The Word in Capsules", p: "Faith, Power and Life" },
+fr: { h1: "La Parole en Capsules", p: "Foi, Puissance et Vie" }
 };
 function changeLanguage(lang) {
-// Reemplazar textos
-document.getElementById('page-title').innerHTML = translations[lang].title;
-document.getElementById('text-pc').innerHTML = translations[lang].pc;
-document.getElementById('text-mobile').innerHTML = translations[lang].mobile;
-document.getElementById('text-landscape').innerHTML = translations[lang].landscape;
-document.getElementById('text-narrow').innerHTML = translations[lang].narrow;
-document.getElementById('explore-btn-text').innerHTML = translations[lang].btn;
+// 1. Mostrar/Ocultar los bloques de texto correspondientes
+document.querySelectorAll('.lang-content').forEach(block => block.classList.remove('visible'));
+document.getElementById(content-${lang}).classList.add('visible');
+// 2. Traducir el botón de acción principal
+document.getElementById('explore-btn-text').innerHTML = buttonTexts[lang];
+// 3. Control e intercambio dinámico del Banner de Portada
+if (lang === 'es') {
+document.getElementById('banner-es').style.display = 'block';
+document.getElementById('banner-translated').style.display = 'none';
+} else {
+document.getElementById('banner-es').style.display = 'none';
+document.getElementById('banner-translated').style.display = 'block';
+document.getElementById('translated-h1').innerText = titleTexts[lang].h1;
+document.getElementById('translated-p').innerText = titleTexts[lang].p;
+}
+// 4. Cambiar atributo de idioma base en el documento HTML
 document.documentElement.lang = lang;
-// Guardar elección en la memoria del navegador
+// 5. Guardar la elección en la memoria local permanente del navegador (localStorage)
 localStorage.setItem('preferencia_idioma', lang);
-// Cambiar estado activo visual
+// 6. Actualizar los estilos de la barra de botones activa
 document.querySelectorAll('.lang-link').forEach(link => link.classList.remove('active'));
 document.getElementById(link-${lang}).classList.add('active');
 }
-// Auto-ejecución al cargar la página: Lee si había un idioma guardado previamente
+// Al cargar la página: Leer de inmediato la memoria para saber si hay un idioma guardado
 window.addEventListener('DOMContentLoaded', () => {
 const idiomaGuardado = localStorage.getItem('preferencia_idioma') || 'es';
 if (idiomaGuardado !== 'es') {
