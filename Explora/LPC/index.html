@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -269,7 +270,7 @@
     </nav>
 
     <header>
-        <div class="site-name">LA PALABRA EN CÁPSULAS</div>
+        <div class="site-name" id="site-name">LA PALABRA EN CÁPSULAS</div>
 
         <h1 id="page-title">Acerca de LPC</h1>
 
@@ -336,111 +337,10 @@
 <script>
     const translations = {
         es: {
+            siteName: "LA PALABRA EN CÁPSULAS",
             title: "Acerca de LPC — La Palabra en Cápsulas",
             pageTitle: "Acerca de LPC",
             subtitle: "Una palabra, una cápsula, un mensaje para el camino.",
             headingWhat: "¿Qué es LPC?",
             textWhat: 'LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>. Cuando me di cuenta, hace unos años, de que había sido salvo por la gracia de Cristo, comencé no solo a hablar de la misericordia de Dios, sino también a distribuir folletos en las calles con mensajes cortos, a los que llamamos “tratados”, y titulé algunos de ellos con ese nombre.',
-            headingEvolution: "De tratados a mensajes cortos",
-            evolution1: "Con el tiempo, los folletos han sido reemplazados por breves y sustanciosos mensajes en redes sociales.",
-            evolution2: "Creo que Dios nos da su Palabra diariamente en pequeñas dosis, según lo que necesitamos o somos capaces de recibir, tal como enseñó Jesús, el Maestro.",
-            headingDaily: "Una palabra para cada día",
-            verseOne: "“Danos hoy nuestro pan de cada día”.",
-            referenceOne: "Mateo 6:11",
-            verseTwo: "“Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después”. (Jesús)",
-            referenceTwo: "Juan 13:7",
-            back: "← Volver a Explora"
-        },
-
-        en: {
-            title: "About LPC — La Palabra en Cápsulas",
-            pageTitle: "About LPC",
-            subtitle: "One word, one capsule, one message for the journey.",
-            headingWhat: "What is LPC?",
-            textWhat: 'LPC is short for <strong>“La Palabra en Cápsulas,”</strong> which means “The Word in Capsules.” A few years ago, when I realized that I had been saved by the grace of Christ, I began not only to speak about God’s mercy, but also to distribute leaflets on the streets containing short messages. We called these leaflets “tracts,” and I gave some of them this name.',
-            headingEvolution: "From tracts to short messages",
-            evolution1: "Over time, printed leaflets have given way to brief yet meaningful messages on social media.",
-            evolution2: "I believe God gives us His Word daily in small portions, according to what we need or are able to receive, just as Jesus, the Teacher, taught.",
-            headingDaily: "A word for every day",
-            verseOne: "“Give us this day our daily bread.”",
-            referenceOne: "Matthew 6:11",
-            verseTwo: "“What I am doing you do not understand now, but you will know after this.” (Jesus)",
-            referenceTwo: "John 13:7",
-            back: "← Back to Explore"
-        },
-
-        fr: {
-            title: "À propos de LPC — La Palabra en Cápsulas",
-            pageTitle: "À propos de LPC",
-            subtitle: "Une parole, une capsule, un message pour le chemin.",
-            headingWhat: "Qu’est-ce que LPC ?",
-            textWhat: 'LPC est l’abréviation de <strong>« La Palabra en Cápsulas »</strong>, ce qui signifie « La Parole en capsules ». Il y a quelques années, lorsque j’ai compris que j’avais été sauvé par la grâce du Christ, j’ai commencé non seulement à parler de la miséricorde de Dieu, mais aussi à distribuer dans les rues des feuillets contenant de courts messages. Nous appelons ces feuillets des « traités », et j’ai donné ce nom à certains d’entre eux.',
-            headingEvolution: "Des traités aux messages courts",
-            evolution1: "Au fil du temps, les feuillets ont été remplacés par de courts messages riches de sens publiés sur les réseaux sociaux.",
-            evolution2: "Je crois que Dieu nous donne chaque jour sa Parole en petites portions, selon nos besoins ou notre capacité à la recevoir, comme Jésus, le Maître, nous l’a enseigné.",
-            headingDaily: "Une parole pour chaque jour",
-            verseOne: "« Donne-nous aujourd’hui notre pain quotidien. »",
-            referenceOne: "Matthieu 6:11",
-            verseTwo: "« Ce que je fais, tu ne le comprends pas maintenant, mais tu le comprendras par la suite. » (Jésus)",
-            referenceTwo: "Jean 13:7",
-            back: "← Retour à Explorer"
-        }
-    };
-
-    function changeLanguage(language) {
-        const selected = translations[language];
-
-        if (!selected) {
-            return;
-        }
-
-        document.documentElement.lang = language;
-        document.title = selected.title;
-
-        document.getElementById("page-title").textContent = selected.pageTitle;
-        document.getElementById("subtitle").textContent = selected.subtitle;
-        document.getElementById("heading-what").textContent = selected.headingWhat;
-        document.getElementById("text-what").innerHTML = selected.textWhat;
-        document.getElementById("heading-evolution").textContent = selected.headingEvolution;
-        document.getElementById("text-evolution-1").textContent = selected.evolution1;
-        document.getElementById("text-evolution-2").textContent = selected.evolution2;
-        document.getElementById("heading-daily").textContent = selected.headingDaily;
-        document.getElementById("verse-one").textContent = selected.verseOne;
-        document.getElementById("reference-one").textContent = selected.referenceOne;
-        document.getElementById("verse-two").textContent = selected.verseTwo;
-        document.getElementById("reference-two").textContent = selected.referenceTwo;
-        document.getElementById("back-link").textContent = selected.back;
-
-        document.querySelectorAll(".language-bar button").forEach(function(button) {
-            const active = button.dataset.lang === language;
-            button.classList.toggle("active", active);
-            button.setAttribute("aria-pressed", active ? "true" : "false");
-        });
-
-        try {
-            localStorage.setItem("lpc-language", language);
-        } catch (error) {
-            // La página sigue funcionando aunque el navegador no permita guardar la preferencia.
-        }
-    }
-
-    (function initializeLanguage() {
-        let savedLanguage = "es";
-
-        try {
-            const storedLanguage = localStorage.getItem("lpc-language");
-
-            if (["es", "en", "fr"].includes(storedLanguage)) {
-                savedLanguage = storedLanguage;
-            }
-        } catch (error) {
-            // Si no se puede leer la preferencia, se muestra español.
-        }
-
-        changeLanguage(savedLanguage);
-    })();
-</script>
-
-</body>
-</html>
-
+            headingEvolution: "De tratados a mensajes
