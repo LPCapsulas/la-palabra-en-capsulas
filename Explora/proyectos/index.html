@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -56,62 +57,34 @@ h1{
   line-height:1.6;
 }
 
-.intro{
-  margin:0 auto 30px;
-  max-width:760px;
-  font-size:18px;
-  line-height:1.75;
-  text-align:justify;
-}
-
-.projects{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-  margin-top:28px;
-}
-
-.project{
-  padding:25px 24px 23px;
+.project-box{
+  margin:0 auto;
+  padding:30px 32px;
+  max-width:780px;
   background:var(--hover);
   border:1px solid var(--hover-line);
+  border-left:5px solid var(--blue);
   border-radius:5px;
+  transition:background .2s ease,border-color .2s ease;
 }
 
-.project h2{
-  margin:0 0 11px;
-  color:var(--accent);
-  font-size:21px;
-  line-height:1.3;
+.project-box:hover{
+  background:#edf4fb;
+  border-color:#a9c9ed;
 }
 
-.project p{
+.project-box p{
   margin:0;
-  color:#444;
-  font-size:16px;
-  line-height:1.65;
-  text-align:justify;
-}
-
-.note{
-  margin:34px auto 0;
-  padding:22px 24px;
-  max-width:760px;
-  border-left:4px solid var(--blue);
-  background:#f4f1eb;
-}
-
-.note h2{
-  margin:0 0 10px;
-  color:var(--accent);
-  font-size:21px;
-}
-
-.note p{
-  margin:0;
+  color:#333;
   font-size:17px;
-  line-height:1.7;
+  line-height:1.85;
   text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+}
+
+.project-box p+p{
+  margin-top:22px;
 }
 
 .buttons{
@@ -141,6 +114,10 @@ h1{
   background:transparent;
   color:var(--accent);
   border:1px solid #bdb7ae;
+}
+
+.button:hover{
+  filter:brightness(.94);
 }
 
 footer{
@@ -183,6 +160,11 @@ footer{
   user-select:none;
 }
 
+.lang-link:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:4px;
+}
+
 @media(max-width:700px){
   .page{
     margin:0;
@@ -198,31 +180,18 @@ footer{
     margin-bottom:28px;
   }
 
-  .intro{
+  .project-box{
+    padding:23px 20px;
+  }
+
+  .project-box p{
     font-size:17px;
-    text-align:justify;
-    line-height:1.7;
-  }
-
-  .projects{
-    grid-template-columns:1fr;
-    gap:16px;
-  }
-
-  .project{padding:22px 20px}
-
-  .project h2{font-size:20px}
-
-  .project p{
-    font-size:16px;
+    line-height:1.8;
     text-align:justify;
   }
 
-  .note{padding:20px}
-
-  .note p{
-    font-size:16px;
-    text-align:justify;
+  .project-box p+p{
+    margin-top:20px;
   }
 
   .buttons{margin-top:30px}
@@ -252,59 +221,26 @@ footer{
     <strong id="subtitle">Llevando el mensaje salvador más allá del portal</strong>
   </div>
 
-  <p class="intro" id="intro">
-    La Palabra en Cápsulas no se limita a publicar contenido en Internet.
-    Entre los objetivos está el llevar las buenas noticias directamente a las
-    personas, especialmente en las calles, parques y otros espacios públicos.
-  </p>
-
-  <div class="projects">
-
-    <div class="project">
-      <h2 id="head-1">Transporte</h2>
-      <p id="desc-1">
-        Para visitar parques y otros lugares para la distribución de material,
-        conversar con las personas y dar a conocer el portal de La Palabra en Cápsulas.
-      </p>
-    </div>
-
-    <div class="project">
-      <h2 id="head-2">Impresión de folletos</h2>
-      <p id="desc-2">
-        Para proveer información sobre los diferentes credos que hay en el mundo
-        y puedan ver y decidir al cual adherirse y encausar su vida espiritual.
-      </p>
-    </div>
-
-    <div class="project">
-      <h2 id="head-3">Amplificador de sonido portátil</h2>
-      <p id="desc-3">
-        Uno inalámbrico y portátil para hablar en espacios abiertos,
-        especialmente en parques, sin depender de instalaciones fijas.
-      </p>
-    </div>
-
-    <div class="project">
-      <h2 id="head-4">Vehículo usado</h2>
-      <p id="desc-4">
-        Un automóvil que alguien no esté usando y que pueda disponer libremente
-        para facilitar el llevar materiales y apoyar las diferentes actividades
-        relacionadas con la misión.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="note">
-    <h2 id="note-head">Calculando los gastos</h2>
-    <p id="note-text">
-      Los contenidos de LPC se ofrecen gratuitamente a quienes visitan el portal.
-      Sin embargo, producir materiales, transportarlos y llevar el mensaje
-      directamente a las personas con ayudas materiales, requiere recursos.
-      Esta página irá mostrando las cosas que precisemos para los que
-      voluntariamente quieran participar en la Obra.
+  <section class="project-box" aria-label="Información del proyecto">
+    <p id="project-text-1">
+      La Palabra en Cápsulas no se limita a publicar contenido en Internet.
+      Entre los objetivos está el llevar las buenas noticias directamente a las
+      personas en espacios públicos, con la idea de compartir contenido,
+      conversar con ellas y dar a conocer nuestro portal de LPC. Siempre será
+      bueno que todos conozcan los diferentes credos que hay en el mundo y
+      puedan ver y decidir al cual adherirse y encausar su vida espiritual.
+      Voy a requerir entre otras cosas por ahora un amplificador de sonido
+      portátil para hablar libremente en espacios abiertos de estos temas.
     </p>
-  </div>
+
+    <p id="project-text-2">
+      Solo oyendo y respondiendo a la verdad es que alguien puede ser edificado
+      espiritualmente para siempre. Los contenidos de LPC se ofrecen
+      gratuitamente a todas las culturas, así la gran mayoría de las cosas
+      tengan un costo (transporte, equipos, ayudas). Y cualquiera puede
+      participar de la Obra de Dios: yendo, orando o dando.
+    </p>
+  </section>
 
   <div class="buttons">
     <a class="button primary" id="vision-link" href="proyecto.html">
@@ -327,21 +263,11 @@ footer{
       title:'Proyectos — La Palabra en Cápsulas',
       h1:'Proyecto',
       subtitle:'Llevando el mensaje salvador más allá del portal',
-      intro:'La Palabra en Cápsulas no se limita a publicar contenido en Internet. Entre los objetivos está el llevar las buenas noticias directamente a las personas, especialmente en las calles, parques y otros espacios públicos.',
-      heads:[
-        'Transporte',
-        'Impresión de folletos',
-        'Amplificador de sonido portátil',
-        'Vehículo usado'
-      ],
-      descs:[
-        'Para visitar parques y otros lugares para la distribución de material, conversar con las personas y dar a conocer el portal de La Palabra en Cápsulas.',
-        'Para proveer información sobre los diferentes credos que hay en el mundo y puedan ver y decidir al cual adherirse y encausar su vida espiritual.',
-        'Uno inalámbrico y portátil para hablar en espacios abiertos, especialmente en parques, sin depender de instalaciones fijas.',
-        'Un automóvil que alguien no esté usando y que pueda disponer libremente para facilitar el llevar materiales y apoyar las diferentes actividades relacionadas con la misión.'
-      ],
-      noteHead:'Calculando los gastos',
-      note:'Los contenidos de LPC se ofrecen gratuitamente a quienes visitan el portal. Sin embargo, producir materiales, transportarlos y llevar el mensaje directamente a las personas con ayudas materiales, requiere recursos. Esta página irá mostrando las cosas que precisemos para los que voluntariamente quieran participar en la Obra.',
+
+      text1:'La Palabra en Cápsulas no se limita a publicar contenido en Internet. Entre los objetivos está el llevar las buenas noticias directamente a las personas en espacios públicos, con la idea de compartir contenido, conversar con ellas y dar a conocer nuestro portal de LPC. Siempre será bueno que todos conozcan los diferentes credos que hay en el mundo y puedan ver y decidir al cual adherirse y encausar su vida espiritual. Voy a requerir entre otras cosas por ahora un amplificador de sonido portátil para hablar libremente en espacios abiertos de estos temas.',
+
+      text2:'Solo oyendo y respondiendo a la verdad es que alguien puede ser edificado espiritualmente para siempre. Los contenidos de LPC se ofrecen gratuitamente a todas las culturas, así la gran mayoría de las cosas tengan un costo (transporte, equipos, ayudas). Y cualquiera puede participar de la Obra de Dios: yendo, orando o dando.',
+
       vision:'La visión de LPC',
       back:'Volver al Menú',
       footer:'La Palabra en Cápsulas'
@@ -349,23 +275,13 @@ footer{
 
     en:{
       title:'Projects — The Word in Capsules',
-      h1:'Projects',
+      h1:'Project',
       subtitle:'Taking the saving message beyond the website',
-      intro:'The Word in Capsules does more than publish content on the Internet. One of its goals is to bring the good news directly to people, especially in streets, parks, and other public spaces.',
-      heads:[
-        'Transportation',
-        'Printing pamphlets',
-        'Portable sound amplifier',
-        'Used vehicle'
-      ],
-      descs:[
-        'To visit parks and other places to distribute materials, talk with people, and introduce them to The Word in Capsules website.',
-        'To provide information about the different faiths in the world so people can learn about them, decide which to follow, and guide their spiritual lives.',
-        'A wireless, portable device for speaking in open spaces, especially parks, without relying on fixed installations.',
-        'A vehicle that someone is no longer using and can freely make available to transport materials and support the various activities related to the mission.'
-      ],
-      noteHead:'Estimating expenses',
-      note:'The content of The Word in Capsules is offered free of charge to visitors. However, producing and transporting materials and bringing the message directly to people requires resources. This page will show the things we need for those who voluntarily wish to participate in the Work.',
+
+      text1:'The Word in Capsules does more than publish content on the Internet. One of its goals is to bring the good news directly to people in public spaces, sharing content, talking with them, and introducing them to our LPC website. It is always good for people to learn about the different faiths in the world so they can explore them, decide which one to follow, and shape their spiritual lives. Among other things, I currently need a portable sound amplifier so I can speak freely about these topics in open spaces.',
+
+      text2:'Only by hearing and responding to the truth can a person be built up spiritually for eternity. LPC content is offered free of charge to all cultures, even though most of the things needed to make this work possible—transportation, equipment, and assistance—come at a cost. Everyone can participate in God’s work by going, praying, or giving.',
+
       vision:'The LPC Vision',
       back:'Back to Menu',
       footer:'The Word in Capsules'
@@ -373,23 +289,13 @@ footer{
 
     fr:{
       title:'Projets — La Parole en Capsules',
-      h1:'Projets',
+      h1:'Projet',
       subtitle:'Porter le message du salut au-delà du portail',
-      intro:'La Parole en Capsules ne se limite pas à publier du contenu sur Internet. L’un de ses objectifs est de porter la bonne nouvelle directement aux personnes, notamment dans les rues, les parcs et autres espaces publics.',
-      heads:[
-        'Transport',
-        'Impression de brochures',
-        'Amplificateur sonore portable',
-        'Véhicule d’occasion'
-      ],
-      descs:[
-        'Pour visiter les parcs et d’autres lieux afin de distribuer du matériel, de parler avec les personnes et de faire connaître le portail de La Parole en Capsules.',
-        'Pour fournir des informations sur les différentes croyances dans le monde, afin que chacun puisse les découvrir, choisir celle qu’il souhaite suivre et orienter sa vie spirituelle.',
-        'Un appareil sans fil et portable pour parler dans des espaces ouverts, notamment dans les parcs, sans dépendre d’installations fixes.',
-        'Un véhicule dont quelqu’un ne se sert plus et qu’il pourrait mettre librement à disposition pour transporter du matériel et soutenir les différentes activités liées à la mission.'
-      ],
-      noteHead:'Évaluer les dépenses',
-      note:'Le contenu de La Parole en Capsules est offert gratuitement aux visiteurs du portail. Cependant, produire et transporter du matériel et porter le message directement aux personnes nécessite des ressources. Cette page présentera les besoins pour ceux qui souhaitent participer volontairement à l’Œuvre.',
+
+      text1:'La Parole en Capsules ne se limite pas à publier du contenu sur Internet. L’un de ses objectifs est de porter la bonne nouvelle directement aux personnes dans les espaces publics, afin de partager du contenu, d’échanger avec elles et de faire connaître notre portail LPC. Il est toujours bon que chacun puisse découvrir les différentes croyances présentes dans le monde, afin de les connaître, de choisir celle à laquelle il souhaite adhérer et d’orienter sa vie spirituelle. Entre autres choses, j’aurai actuellement besoin d’un amplificateur sonore portable pour parler librement de ces sujets dans les espaces ouverts.',
+
+      text2:'C’est en écoutant la vérité et en y répondant qu’une personne peut être édifiée spirituellement pour toujours. Les contenus de LPC sont offerts gratuitement à toutes les cultures, même si la plupart des moyens nécessaires à cette œuvre — transport, équipement et aide — ont un coût. Chacun peut participer à l’œuvre de Dieu en allant, en priant ou en donnant.',
+
       vision:'La vision de LPC',
       back:'Retour au menu',
       footer:'La Parole en Capsules'
@@ -400,20 +306,14 @@ footer{
     if(!T[lang]) lang='es';
 
     const t=T[lang];
+
     document.documentElement.lang=lang;
     document.title=t.title;
 
     document.getElementById('page-title').textContent=t.h1;
     document.getElementById('subtitle').textContent=t.subtitle;
-    document.getElementById('intro').textContent=t.intro;
-
-    for(let i=0;i<4;i++){
-      document.getElementById('head-'+(i+1)).textContent=t.heads[i];
-      document.getElementById('desc-'+(i+1)).textContent=t.descs[i];
-    }
-
-    document.getElementById('note-head').textContent=t.noteHead;
-    document.getElementById('note-text').textContent=t.note;
+    document.getElementById('project-text-1').textContent=t.text1;
+    document.getElementById('project-text-2').textContent=t.text2;
     document.getElementById('vision-link').textContent=t.vision;
     document.getElementById('back-link').textContent=t.back;
     document.getElementById('footer').textContent=t.footer;
@@ -432,7 +332,10 @@ footer{
   let initial='es';
 
   try{
-    initial=localStorage.getItem('lpc-language')||'es';
+    const saved=localStorage.getItem('lpc-language');
+    if(['es','en','fr'].includes(saved)){
+      initial=saved;
+    }
   }catch(e){}
 
   changeLanguage(initial);
