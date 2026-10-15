@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,9 +15,16 @@
             --text: #252525;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        html { min-height: 100%; overflow-x: hidden; }
+        html {
+            min-height: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             min-height: 100vh;
@@ -96,7 +104,9 @@
             text-align: justify;
         }
 
-        .message p { margin: 0 0 22px; }
+        .message p {
+            margin: 0 0 22px;
+        }
 
         .square-button {
             display: inline-block;
@@ -118,7 +128,10 @@
             transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .square-button:hover { background: #fff; color: var(--blue); }
+        .square-button:hover {
+            background: #fff;
+            color: var(--blue);
+        }
 
         .square-button:focus-visible,
         .back a:focus-visible {
@@ -160,7 +173,9 @@
         }
 
         @media (max-width: 700px) {
-            body { background: var(--paper); }
+            body {
+                background: var(--paper);
+            }
 
             .page {
                 width: 100%;
@@ -173,7 +188,9 @@
                 overflow: visible;
             }
 
-            .language-switcher { margin-bottom: 20px; }
+            .language-switcher {
+                margin-bottom: 20px;
+            }
 
             .support-image {
                 width: 82%;
@@ -192,7 +209,9 @@
                 margin-bottom: 28px;
             }
 
-            .message p { margin-bottom: 22px; }
+            .message p {
+                margin-bottom: 22px;
+            }
 
             .square-button {
                 display: inline-block;
@@ -207,17 +226,30 @@
                 padding-bottom: 12px;
             }
 
-            .back a { font-size: 17px; padding: 10px 12px; }
+            .back a {
+                font-size: 17px;
+                padding: 10px 12px;
+            }
         }
     </style>
 </head>
 
 <body>
 <main class="page">
+
     <nav class="language-switcher" aria-label="Language selector">
-        <button type="button" data-language="es" class="active" aria-pressed="true">Español</button>
-        <button type="button" data-language="en" aria-pressed="false">English</button>
-        <button type="button" data-language="fr" aria-pressed="false">Français</button>
+        <button type="button"
+                data-language="es"
+                class="active"
+                aria-pressed="true">Español</button>
+
+        <button type="button"
+                data-language="en"
+                aria-pressed="false">English</button>
+
+        <button type="button"
+                data-language="fr"
+                aria-pressed="false">Français</button>
     </nav>
 
     <img
@@ -234,10 +266,7 @@
             data-es="Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores."
             data-en="Contributions to LPC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
             data-fr="Les contributions à LPC, quel qu’en soit le montant, nous permettent de consacrer davantage de temps à la création de contenu et de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à l’affermissement de la foi de nos lecteurs."
-        >Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo
-            a la creación de contenido, con el propósito de seguir ofreciendo material que
-            contribuya positivamente al pensamiento, las convicciones y el fortalecimiento
-            de la fe de nuestros lectores.</p>
+        >Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores.</p>
     </div>
 
     <a
@@ -258,56 +287,94 @@
             data-fr="Retour au menu"
         >Volver al Menú</a>
     </div>
+
 </main>
 
 <script>
 (() => {
-    const buttons = document.querySelectorAll('.language-switcher button');
-    const translatable = document.querySelectorAll('[data-es][data-en][data-fr]');
+    const buttons = document.querySelectorAll(
+        '.language-switcher button'
+    );
+
+    const translatable = document.querySelectorAll(
+        '[data-es][data-en][data-fr]'
+    );
+
     const image = document.querySelector('.support-image');
+
     const pageTitle = {
         es: 'Apoya — La Palabra en Cápsulas',
         en: 'Support — La Palabra en Cápsulas',
         fr: 'Soutenir — La Palabra en Cápsulas'
     };
 
+    /*
+       Las tres imágenes deben estar en la misma carpeta
+       que este archivo index.html.
+    */
+    const imageByLanguage = {
+        es: 'apoya_lpc.png',
+        en: 'support_lpc_en.png',
+        fr: 'support_lpc_fr.png'
+    };
+
     function changeLanguage(language) {
-        if (!['es', 'en', 'fr'].includes(language)) language = 'es';
+        if (!['es', 'en', 'fr'].includes(language)) {
+            language = 'es';
+        }
 
         document.documentElement.lang = language;
         document.title = pageTitle[language];
 
         translatable.forEach(element => {
+            if (element === image) {
+                return;
+            }
+
             element.textContent = element.dataset[language];
         });
 
+        image.src = imageByLanguage[language];
         image.alt = image.getAttribute('data-alt-' + language);
 
         buttons.forEach(button => {
-            const selected = button.dataset.language === language;
+            const selected =
+                button.dataset.language === language;
+
             button.classList.toggle('active', selected);
-            button.setAttribute('aria-pressed', String(selected));
+
+            button.setAttribute(
+                'aria-pressed',
+                String(selected)
+            );
         });
 
         try {
             localStorage.setItem('lpc-language', language);
         } catch (error) {
-            // The page still works if local storage is unavailable.
+            // La página funciona aunque el almacenamiento no esté disponible.
         }
     }
 
     buttons.forEach(button => {
-        button.addEventListener('click', () => changeLanguage(button.dataset.language));
+        button.addEventListener('click', () => {
+            changeLanguage(button.dataset.language);
+        });
     });
 
     let savedLanguage = 'es';
+
     try {
-        savedLanguage = localStorage.getItem('lpc-language') || 'es';
+        savedLanguage =
+            localStorage.getItem('lpc-language') || 'es';
     } catch (error) {
-        // Use Spanish if local storage is unavailable.
+        savedLanguage = 'es';
     }
+
     changeLanguage(savedLanguage);
 })();
 </script>
+
 </body>
 </html>
+```
