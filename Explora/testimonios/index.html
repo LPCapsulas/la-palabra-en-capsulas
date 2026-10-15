@@ -1,289 +1,37 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Testimonios — La Palabra en Cápsulas</title>
-
-  <style>
-    :root {
-      --text: #252525;
-      --muted: #666;
-      --accent: #17365D;
-      --paper: #F8F4EC;
-      --bg: #f2f0ec;
-      --quote: #f7f4ef;
-      --line: #d9d9d9;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .page {
-      width: 900px;
-      max-width: calc(100% - 40px);
-      margin: 45px auto;
-      padding: 55px 65px 45px;
-      background: var(--paper);
-      border-radius: 5px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 38px;
-    }
-
-    .section-label {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 13px;
-      line-height: 1.5;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
-      line-height: 1.2;
-      color: var(--accent);
-      font-weight: 700;
-      text-align: center;
-      margin: 0;
-    }
-
-    .intro {
-      max-width: 650px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .intro p {
-      margin: 0 0 22px;
-      font-size: 17px;
-      line-height: 1.8;
-      text-align: justify;
-    }
-
-    .intro strong {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .invitation {
-      background: var(--quote);
-      border-left: 4px solid var(--accent);
-      padding: 24px 26px;
-      margin: 34px auto;
-      max-width: 650px;
-    }
-
-    .invitation p {
-      margin: 0 0 16px;
-      font-size: 17px;
-      line-height: 1.8;
-      text-align: justify;
-    }
-
-    .invitation p:last-child {
-      margin-bottom: 0;
-    }
-
-    .read-link {
-      text-align: center;
-      margin: 34px 0 42px;
-    }
-
-    .read-link a {
-      display: inline-block;
-      color: var(--accent);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-bottom: 1px solid var(--accent);
-      transition: color .2s ease, border-color .2s ease;
-    }
-
-    .read-link a:hover {
-      color: #000000;
-      border-color: #000000;
-    }
-
-    .share {
-      text-align: center;
-      margin-top: 42px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-    }
-
-    .share h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
-      line-height: 1.4;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .share p {
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: 17px;
-      line-height: 1.8;
-      text-align: justify;
-    }
-
-    .back-home {
-      text-align: center;
-      margin-top: 42px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-    }
-
-    .back-home a {
-      color: var(--accent);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .back-home a:hover {
-      color: #000000;
-    }
-
-    @media (max-width: 700px) {
-      .page {
-        width: auto;
-        max-width: none;
-        margin: 0;
-        padding: 35px 22px 35px;
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      header {
-        margin-bottom: 32px;
-      }
-
-      h1 {
-        font-size: 30px;
-        line-height: 1.25;
-      }
-
-      .intro {
-        text-align: left;
-      }
-
-      .intro p {
-        font-size: 17px;
-        line-height: 1.75;
-      }
-
-      .invitation {
-        padding: 20px 18px;
-        margin: 28px 0;
-      }
-
-      .invitation p {
-        font-size: 17px;
-        line-height: 1.75;
-      }
-
-      .read-link {
-        margin: 30px 0 36px;
-      }
-
-      .read-link a {
-        font-size: 16px;
-      }
-
-      .share h2 {
-        font-size: 19px;
-      }
-
-      .share p {
-        font-size: 17px;
-        line-height: 1.75;
-      }
-
-      .back-home {
-        margin-top: 36px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonios — La Palabra en Cápsulas</title>
+<style>
+:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--quote:#f7f4ef;--line:#d9d9d9}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
+.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:30px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.language-bar{display:flex;justify-content:flex-end;align-items:center;gap:9px;font-size:13px;line-height:1.5;margin-bottom:20px}.lang-link{padding:0;border:0;background:transparent;color:#555;font:inherit;cursor:pointer}.lang-link:hover,.lang-link.active{color:var(--accent)}.lang-link.active{font-weight:700}.lang-divider{color:#999;user-select:none}
+header{text-align:center;margin-bottom:38px}.section-label{font-size:13px;line-height:1.5;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;color:var(--accent);font-weight:700;text-align:center;margin:0}
+.intro,.invitation{max-width:650px;margin:0 auto}.intro p,.invitation p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}.intro strong{color:var(--accent)}
+.invitation{background:var(--quote);border-left:4px solid var(--accent);padding:24px 26px;margin:34px auto}.invitation p:last-child{margin-bottom:0}
+.read-link{text-align:center;margin:34px 0 42px}.read-link a{display:inline-block;color:var(--accent);font-size:16px;font-weight:700;text-decoration:none;padding:10px 18px;border-bottom:1px solid var(--accent)}
+.back-home{text-align:center;margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}.back-home a{color:var(--accent);font-size:16px;font-weight:700;text-decoration:none}
+@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:22px 22px 35px;border-radius:0;box-shadow:none}header{margin-bottom:32px}h1{font-size:30px;line-height:1.25}.intro p,.invitation p{font-size:17px;line-height:1.75}.invitation{padding:20px 18px;margin:28px 0}.read-link{margin:30px 0 36px}.back-home{margin-top:36px}}
+</style>
 </head>
-
-<body>
-
-  <main class="page">
-
-    <header>
-      <div class="section-label">La Palabra en Cápsulas</div>
-
-      <h1>Testimonios</h1>
-    </header>
-
-    <section class="intro">
-
-      <p>
-        En esta sección de <strong>LPC</strong>, relatamos
-        experiencias reales de lo que Dios ha hecho en nuestras
-        vidas, con la intención de animar a los lectores.
-      </p>
-
-    </section>
-
-    <section class="invitation">
-
-      <p>
-        Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio
-        para que lo publiques. Si quieres, lo puedes ir preparando!
-      </p>
-
-    </section>
-
-    <div class="read-link">
-
-      <a href="./testimonio_personal.html">
-        Por ahora... →
-      </a>
-
-    </div>
-
-    <section class="share">
-
-    </section>
-
-    <div class="back-home">
-
-      <a href="../menu.html">
-        ← Volver al Menú
-      </a>
-
-    </div>
-
-  </main>
-
-</body>
-</html>
-
+<body><main class="page">
+<nav class="language-bar" aria-label="Language selection">
+<button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button><span class="lang-divider">|</span>
+<button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button><span class="lang-divider">|</span>
+<button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+</nav>
+<header><div class="section-label" data-es="La Palabra en Cápsulas" data-en="The Word in Capsules" data-fr="La Parole en Capsules">La Palabra en Cápsulas</div><h1 data-es="Testimonios" data-en="Testimonials" data-fr="Témoignages">Testimonios</h1></header>
+<section class="intro"><p data-es="En esta sección de LPC, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores." data-en="In this section of LPC, we share real experiences of what God has done in our lives, with the intention of encouraging readers." data-fr="Dans cette section de LPC, nous racontons des expériences réelles de ce que Dieu a fait dans nos vies, afin d’encourager les lecteurs.">En esta sección de <strong>LPC</strong>, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores.</p></section>
+<section class="invitation"><p data-es="Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, lo puedes ir preparando!" data-en="If God has done something important in your life, I will soon give you space to share it. If you wish, you can start preparing it!" data-fr="Si Dieu a fait quelque chose d’important dans votre vie, je vous donnerai bientôt l’espace pour le publier. Si vous le souhaitez, vous pouvez déjà le préparer !">Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, lo puedes ir preparando!</p></section>
+<div class="read-link"><a href="./testimonio_personal.html" data-es="Por ahora... →" data-en="For now... →" data-fr="Pour le moment... →">Por ahora... →</a></div>
+<div class="back-home"><a href="../menu.html" data-es="← Volver al Menú" data-en="← Back to Menu" data-fr="← Retour au menu">← Volver al Menú</a></div>
+</main>
+<script>
+(function(){const titles={es:'Testimonios — La Palabra en Cápsulas',en:'Testimonials — The Word in Capsules',fr:'Témoignages — La Parole en Capsules'};
+window.changeLanguage=function(lang){if(!titles[lang])lang='es';document.documentElement.lang=lang;document.title=titles[lang];document.querySelectorAll('[data-es]').forEach(el=>{const value=el.getAttribute('data-'+lang);if(value!==null)el.textContent=value});document.querySelectorAll('.lang-link').forEach(b=>{const active=b.id==='link-'+lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});try{localStorage.setItem('lpc-language',lang)}catch(e){}};
+let lang='es';try{lang=localStorage.getItem('lpc-language')||'es'}catch(e){}changeLanguage(lang)})();
+</script></body></html>
