@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Guía para Nuevos Creyentes de La Palabra en Cápsulas: primeros pasos en la fe cristiana.">
+<meta name="description" content="Guía para Nuevos Creyentes de La Palabra en Cápsulas: primeros pasos en la fe cristiana." data-description-es="Guía para Nuevos Creyentes de La Palabra en Cápsulas: primeros pasos en la fe cristiana." data-description-en="Guide for New Believers from The Word in Capsules: first steps in the Christian faith." data-description-fr="Guide pour les nouveaux croyants de La Parole en Capsules : premiers pas dans la foi chrétienne.">
 <title>Guía para Nuevos Creyentes — La Palabra en Cápsulas</title>
 
 <style>
@@ -677,10 +677,18 @@ h1 {
 
     const titles = {
       es: "Guía para Nuevos Creyentes — La Palabra en Cápsulas",
-      en: "Guide for New Believers — La Palabra en Cápsulas",
-      fr: "Guide pour les nouveaux croyants — La Palabra en Cápsulas"
+      en: "Guide for New Believers — The Word in Capsules",
+      fr: "Guide pour les nouveaux croyants — La Parole en Capsules"
     };
     document.title = titles[lang];
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      const translatedDescription = description.getAttribute("data-description-" + lang);
+      if (translatedDescription) {
+        description.setAttribute("content", translatedDescription);
+      }
+    }
 
     try {
       localStorage.setItem("lpc-language", lang);
