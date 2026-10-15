@@ -507,11 +507,14 @@ h1 {
       <div class="resource">
         <a
           href="https://www.biblegateway.com/passage/?search=Juan%201&version=RVR1960"
+          data-href-es="https://www.biblegateway.com/passage/?search=Juan%201&version=RVR1960"
+          data-href-en="https://www.biblegateway.com/passage/?search=John%201&version=KJV"
+          data-href-fr="https://www.biblegateway.com/passage/?search=Jean%201&version=LSG"
           target="_blank"
           rel="noopener noreferrer"
           data-es="Leer Juan — RVR1960"
-          data-en="Read John — Spanish RVR1960"
-          data-fr="Lire Jean — Bible espagnole RVR1960">Leer Juan — RVR1960</a>
+          data-en="Read John — King James Version"
+          data-fr="Lire Jean — Louis Segond 1910">Leer Juan — RVR1960</a>
       </div>
 
       <p
@@ -656,6 +659,20 @@ h1 {
       const altText = image.getAttribute("data-alt-" + lang);
       if (altText) {
         image.alt = altText;
+      }
+      const imageSources = {
+        es: "salmo-32-8.png",
+        en: "salmo-32-8-en.png",
+        fr: "salmo-32-8-fr.png"
+      };
+      image.src = imageSources[lang];
+    }
+
+    const bibleLink = document.querySelector(".resource a[data-href-es]");
+    if (bibleLink) {
+      const translatedHref = bibleLink.getAttribute("data-href-" + lang);
+      if (translatedHref) {
+        bibleLink.href = translatedHref;
       }
     }
 
