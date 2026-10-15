@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Apoya — La Palabra en Cápsulas</title>
 
     <style>
@@ -15,16 +14,9 @@
             --text: #252525;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            min-height: 100%;
-            overflow-x: hidden;
-        }
+        html { min-height: 100%; overflow-x: hidden; }
 
         body {
             min-height: 100vh;
@@ -45,10 +37,42 @@
             height: auto;
             margin: 0 auto;
             background: var(--paper);
-            padding: 35px 65px 45px;
+            padding: 24px 65px 45px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
             text-align: center;
             overflow: visible;
+        }
+
+        .language-switcher {
+            display: flex;
+            justify-content: flex-end;
+            gap: 7px;
+            margin: 0 0 16px;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .language-switcher button {
+            appearance: none;
+            border: 1px solid var(--blue);
+            border-radius: 4px;
+            padding: 7px 10px;
+            background: transparent;
+            color: var(--blue);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .language-switcher button.active,
+        .language-switcher button:hover {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .language-switcher button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
         }
 
         .support-image {
@@ -72,11 +96,7 @@
             text-align: justify;
         }
 
-        .message p {
-            margin: 0 0 22px;
-        }
-
-        /* BOTÓN PRINCIPAL DE APOYO */
+        .message p { margin: 0 0 22px; }
 
         .square-button {
             display: inline-block;
@@ -98,18 +118,13 @@
             transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .square-button:hover {
-            background: #fff;
-            color: var(--blue);
-        }
+        .square-button:hover { background: #fff; color: var(--blue); }
 
         .square-button:focus-visible,
         .back a:focus-visible {
             outline: 3px solid var(--gold);
             outline-offset: 4px;
         }
-
-        /* ENLACE VOLVER AL MENÚ */
 
         .back {
             display: block;
@@ -144,12 +159,8 @@
             text-decoration: underline;
         }
 
-        /* CELULAR */
-
         @media (max-width: 700px) {
-            body {
-                background: var(--paper);
-            }
+            body { background: var(--paper); }
 
             .page {
                 width: 100%;
@@ -157,10 +168,12 @@
                 min-height: 100vh;
                 height: auto;
                 margin: 0;
-                padding: 35px 22px 35px;
+                padding: 20px 22px 35px;
                 box-shadow: none;
                 overflow: visible;
             }
+
+            .language-switcher { margin-bottom: 20px; }
 
             .support-image {
                 width: 82%;
@@ -179,9 +192,7 @@
                 margin-bottom: 28px;
             }
 
-            .message p {
-                margin-bottom: 22px;
-            }
+            .message p { margin-bottom: 22px; }
 
             .square-button {
                 display: inline-block;
@@ -196,31 +207,37 @@
                 padding-bottom: 12px;
             }
 
-            .back a {
-                font-size: 17px;
-                padding: 10px 12px;
-            }
+            .back a { font-size: 17px; padding: 10px 12px; }
         }
     </style>
 </head>
 
 <body>
-
 <main class="page">
+    <nav class="language-switcher" aria-label="Language selector">
+        <button type="button" data-language="es" class="active" aria-pressed="true">Español</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+        <button type="button" data-language="fr" aria-pressed="false">Français</button>
+    </nav>
 
     <img
         class="support-image"
         src="apoya_lpc.png"
         alt="Apoya — La Palabra en Cápsulas"
+        data-alt-es="Apoya — La Palabra en Cápsulas"
+        data-alt-en="Support — La Palabra en Cápsulas"
+        data-alt-fr="Soutenir — La Palabra en Cápsulas"
     >
 
     <div class="message">
-        <p>
-            Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo
+        <p
+            data-es="Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores."
+            data-en="Contributions to LPC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
+            data-fr="Les contributions à LPC, quel qu’en soit le montant, nous permettent de consacrer davantage de temps à la création de contenu et de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à l’affermissement de la foi de nos lecteurs."
+        >Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo
             a la creación de contenido, con el propósito de seguir ofreciendo material que
             contribuya positivamente al pensamiento, las convicciones y el fortalecimiento
-            de la fe de nuestros lectores.
-        </p>
+            de la fe de nuestros lectores.</p>
     </div>
 
     <a
@@ -228,13 +245,69 @@
         href="https://square.link/u/Et13J8m1"
         target="_blank"
         rel="noopener noreferrer"
+        data-es="Sí, quiero apoyar a LPC"
+        data-en="Yes, I want to support LPC"
+        data-fr="Oui, je souhaite soutenir LPC"
     >Sí, quiero apoyar a LPC</a>
 
     <div class="back">
-        <a href="../menu.html">Volver al Menú</a>
+        <a
+            href="../menu.html"
+            data-es="Volver al Menú"
+            data-en="Back to Menu"
+            data-fr="Retour au menu"
+        >Volver al Menú</a>
     </div>
-
 </main>
 
+<script>
+(() => {
+    const buttons = document.querySelectorAll('.language-switcher button');
+    const translatable = document.querySelectorAll('[data-es][data-en][data-fr]');
+    const image = document.querySelector('.support-image');
+    const pageTitle = {
+        es: 'Apoya — La Palabra en Cápsulas',
+        en: 'Support — La Palabra en Cápsulas',
+        fr: 'Soutenir — La Palabra en Cápsulas'
+    };
+
+    function changeLanguage(language) {
+        if (!['es', 'en', 'fr'].includes(language)) language = 'es';
+
+        document.documentElement.lang = language;
+        document.title = pageTitle[language];
+
+        translatable.forEach(element => {
+            element.textContent = element.dataset[language];
+        });
+
+        image.alt = image.getAttribute('data-alt-' + language);
+
+        buttons.forEach(button => {
+            const selected = button.dataset.language === language;
+            button.classList.toggle('active', selected);
+            button.setAttribute('aria-pressed', String(selected));
+        });
+
+        try {
+            localStorage.setItem('lpc-language', language);
+        } catch (error) {
+            // The page still works if local storage is unavailable.
+        }
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => changeLanguage(button.dataset.language));
+    });
+
+    let savedLanguage = 'es';
+    try {
+        savedLanguage = localStorage.getItem('lpc-language') || 'es';
+    } catch (error) {
+        // Use Spanish if local storage is unavailable.
+    }
+    changeLanguage(savedLanguage);
+})();
+</script>
 </body>
 </html>
