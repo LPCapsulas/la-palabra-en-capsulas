@@ -1,331 +1,45 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Mi Testimonio — La Palabra en Cápsulas</title>
-
-    <style>
-        :root {
-            --text: #252525;
-            --muted: #666;
-            --accent: #17365D;
-            --paper: #F8F4EC;
-            --bg: #f2f0ec;
-            --line: #d9d9d9;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* PÁGINA */
-
-        .page {
-            width: 900px;
-            max-width: calc(100% - 40px);
-            margin: 45px auto;
-            padding: 55px 65px 45px;
-            background: var(--paper);
-            border-radius: 5px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-        }
-
-        /* ENCABEZADO */
-
-        header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .section-label {
-            margin-bottom: 14px;
-            color: var(--accent);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            margin: 0 0 12px;
-            color: var(--accent);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 36px;
-            line-height: 1.2;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .author {
-            margin: 0 0 8px;
-            color: var(--muted);
-            font-size: 17px;
-            text-align: center;
-            font-style: italic;
-        }
-
-        .subtitle {
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 17px;
-            line-height: 1.6;
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* TESTIMONIO */
-
-        .testimony {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .testimony p {
-            margin: 0 0 22px;
-            font-size: 17px;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        /* FRASE DESTACADA */
-
-        .highlight {
-            margin: 35px 0;
-            padding: 22px 25px;
-            background: #f2eadb;
-            border-left: 4px solid var(--accent);
-            color: var(--text);
-            font-size: 17px;
-            line-height: 1.8;
-            font-style: italic;
-            text-align: justify;
-        }
-
-        /* VOLVER A TESTIMONIOS */
-
-        .back-testimonios {
-            margin-top: 42px;
-            padding-top: 25px;
-            border-top: 1px solid var(--line);
-            text-align: center;
-        }
-
-        .back-testimonios a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .back-testimonios a:hover {
-            text-decoration: underline;
-        }
-
-        /* CELULAR */
-
-        @media (max-width: 700px) {
-            .page {
-                width: auto;
-                max-width: none;
-                margin: 0;
-                padding: 35px 22px 35px;
-                border-radius: 0;
-                box-shadow: none;
-            }
-
-            header {
-                margin-bottom: 30px;
-            }
-
-            .section-label {
-                font-size: 12px;
-                letter-spacing: 1.5px;
-            }
-
-            h1 {
-                font-size: 30px;
-                line-height: 1.25;
-            }
-
-            .author {
-                font-size: 16px;
-                margin-bottom: 8px;
-            }
-
-            .subtitle {
-                font-size: 16px;
-                line-height: 1.6;
-            }
-
-            .testimony p {
-                font-size: 17px;
-                line-height: 1.75;
-                margin-bottom: 22px;
-                text-align: justify;
-            }
-
-            .highlight {
-                margin: 30px 0;
-                padding: 20px 18px;
-                font-size: 17px;
-                line-height: 1.75;
-            }
-
-            .back-testimonios {
-                margin-top: 35px;
-                padding-top: 22px;
-            }
-
-            .back-testimonios a {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <main class="page">
-
-        <!-- ENCABEZADO -->
-
-        <header>
-            <div class="section-label">
-                La Palabra en Cápsulas
-            </div>
-
-            <h1>Mi Testimonio</h1>
-
-            <div class="author">
-                Por Jimmy Victoria
-            </div>
-
-            <div class="subtitle">
-                Una historia de fe, salvación y transformación
-            </div>
-        </header>
-
-        <!-- TESTIMONIO -->
-
-        <article class="testimony">
-
-            <p>
-                Una noche, mientras caminaba por la Avenida Roosevelt en
-                Jackson Heights, NY, cerca de las 8 p. m., mirando hacia
-                el frente, a un puesto de periódicos, tuve de repente un
-                pensamiento terrible. Me di cuenta, que no estaba preparado
-                para la eternidad y que si moría, me podía ir al infierno y
-                no precisamente al cielo. Ese momento cambió mi vida.
-            </p>
-
-            <p>
-                Había estado buscando la Verdad en la filosofía en los últimos
-                tres años. Sin embargo, me ayudó mucho el haber estado leyendo
-                la Biblia con juicio, donada por quien, a la postre, se convirtió
-                en mi ayo hacia la fe: un hombre de Dios, sencillo pero al mismo
-                tiempo extraordinario, fuera de lo común, el Sr. Guillermo Villa,
-                quien aún persevera en los caminos de Dios.
-            </p>
-
-            <p>
-                Lo conocí entre octubre y noviembre de 1984, y de inmediato me
-                compartió el evangelio. Para principios de 1985, ya declaraba
-                ante los demás que Jesús era el Hijo de Dios y que yo había nacido
-                de nuevo; sí, lo había recibido como mi Señor y Salvador.
-            </p>
-
-            <p>
-                Gozaba de mucha paz, pues yo había recibido el perdón de Dios
-                que Jesús nos había legado hace más de 20 siglos. Desde entonces
-                ya devoraba las Escrituras Santas y empecé a darlo a conocer a
-                mis familiares y a quien me encontrara en el camino.
-            </p>
-
-            <p>
-                Dos años más tarde, fui bautizado bajo las aguas en la iglesia
-                Community Gospel Church en NY, que pastoreaba el difunto
-                Robert Johansson.
-            </p>
-
-            <p>
-                Posteriormente, el 13 de abril de 1990, en un servicio de
-                impartición donde predicaba el evangelista invitado R. W.
-                Schambach en Family Worship Center, Baton Rouge, Louisiana,
-                ministerio de Jimmy Swaggart, y con imposición de manos,
-                recibí el tan anhelado bautismo en el Espíritu Santo y tuve
-                por primera vez en mi vida, la evidencia física de hablar
-                en otras lenguas.
-            </p>
-
-            <p>
-                Este bautismo, diferente al del agua, avivó en mí muchas
-                capacidades, la principal, de testificar con poder para orar por
-                otros para salvación y sanidad. De esos casos también hablaremos
-                más adelante.
-            </p>
-
-            <p>
-                Siempre me gustó la evangelización —compartir las buenas noticias
-                del evangelio— y tiempo después fui igualmente promovido por el
-                Señor a la enseñanza de la Palabra.
-            </p>
-
-            <p>
-                Entre otras experiencias que compartiré en la sección de
-                "Descargas" de mi página, tuve una muy particular. En la iglesia
-                “Cristo es la Respuesta” de Woodside, en un servicio de
-                ministración a los líderes de la congregación, una mujer,
-                profetisa, me dijo, de parte del Señor, que yo tendría sueños
-                e interpretación de sueños. Y, a través de los años, a fe,
-                que los he tenido.
-            </p>
-
-            <p>
-                Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy,
-                y mi fabuloso hijo Matt.
-            </p>
-
-            <div class="highlight">
-                Hay muchos milagros y dádivas que podemos recibir del Señor;
-                sin embargo, ser salvo, en sí, es el mayor de los milagros y toda
-                persona sobre la faz de la tierra debe decidir ya mismo, dónde
-                quiere pasar la eternidad.
-            </div>
-
-            <p>
-                Puedo dar fe que el evangelio de Jesús es real, que Dios es bueno,
-                justo, santo y misericordioso y que puede salvar a todo aquel que
-                lo busca y le cree. Ven al único Santo Padre, creador del cielo y
-                de la tierra.
-            </p>
-
-        </article>
-
-        <!-- VOLVER A TESTIMONIOS -->
-
-        <div class="back-testimonios">
-            <a href="./index.html">
-                ← Volver a Testimonios
-            </a>
-        </div>
-
-    </main>
-
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Testimonio — La Palabra en Cápsulas</title>
+<style>
+:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--line:#d9d9d9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
+.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:30px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.language-bar{display:flex;justify-content:flex-end;align-items:center;gap:9px;font-size:13px;line-height:1.5;margin-bottom:20px}.lang-link{padding:0;border:0;background:transparent;color:#555;font:inherit;cursor:pointer}.lang-link:hover,.lang-link.active{color:var(--accent)}.lang-link.active{font-weight:700}.lang-divider{color:#999;user-select:none}
+header{text-align:center;margin-bottom:35px}.section-label{margin-bottom:14px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
+h1{margin:0 0 12px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;text-align:center;font-weight:700}.author{margin:0 0 8px;color:var(--muted);font-size:17px;text-align:center;font-style:italic}.subtitle{margin-top:8px;color:var(--muted);font-size:17px;line-height:1.6;text-align:center;font-style:italic}
+.testimony{width:100%;max-width:100%;margin:0 auto}.testimony p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}
+.highlight{margin:35px 0;padding:22px 25px;background:#f2eadb;border-left:4px solid var(--accent);color:var(--text);font-size:17px;line-height:1.8;font-style:italic;text-align:justify}
+.back-testimonios{margin-top:42px;padding-top:25px;border-top:1px solid var(--line);text-align:center}.back-testimonios a{color:var(--accent);text-decoration:none;font-size:16px;font-weight:700}.back-testimonios a:hover{text-decoration:underline}
+@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:22px 22px 35px;border-radius:0;box-shadow:none}header{margin-bottom:30px}.section-label{font-size:12px;letter-spacing:1.5px}h1{font-size:30px;line-height:1.25}.author,.subtitle{font-size:16px}.testimony p{font-size:17px;line-height:1.75;margin-bottom:22px}.highlight{margin:30px 0;padding:20px 18px;font-size:17px;line-height:1.75}.back-testimonios{margin-top:35px;padding-top:22px}}
+</style></head><body><main class="page">
+<nav class="language-bar" aria-label="Language selection">
+<button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+</nav>
+<header><div class="section-label" data-es="La Palabra en Cápsulas" data-en="The Word in Capsules" data-fr="La Parole en Capsules">La Palabra en Cápsulas</div>
+<h1 data-es="Mi Testimonio" data-en="My Testimony" data-fr="Mon témoignage">Mi Testimonio</h1>
+<div class="author" data-es="Por Jimmy Victoria" data-en="By Jimmy Victoria" data-fr="Par Jimmy Victoria">Por Jimmy Victoria</div>
+<div class="subtitle" data-es="Una historia de fe, salvación y transformación" data-en="A story of faith, salvation, and transformation" data-fr="Une histoire de foi, de salut et de transformation">Una historia de fe, salvación y transformación</div></header>
+<article class="testimony">
+<p data-es="Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida." data-en="One night, while walking along Roosevelt Avenue in Jackson Heights, NY, at around 8 p.m., looking ahead toward a newsstand, I suddenly had a terrible thought. I realized that I was not prepared for eternity and that, if I died, I might go to hell and not to heaven. That moment changed my life." data-fr="Un soir, alors que je marchais sur Roosevelt Avenue à Jackson Heights, dans l’État de New York, vers 20 heures, en regardant devant moi vers un kiosque à journaux, une pensée terrible m’est soudain venue. J’ai compris que je n’étais pas prêt pour l’éternité et que, si je mourais, je pouvais aller en enfer et non au ciel. Ce moment a changé ma vie.">Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida.</p>
+<p data-es="Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios." data-en="For the previous three years, I had been searching for the Truth through philosophy. However, reading the Bible carefully helped me greatly. It had been given to me by the person who eventually became my guide toward faith: a man of God, simple yet extraordinary and exceptional, Mr. Guillermo Villa, who continues to persevere in the ways of God." data-fr="Pendant les trois années précédentes, j’avais cherché la Vérité dans la philosophie. Cependant, la lecture attentive de la Bible m’a beaucoup aidé. Elle m’avait été offerte par celui qui est finalement devenu mon guide vers la foi : un homme de Dieu, simple mais extraordinaire, hors du commun, M. Guillermo Villa, qui persévère encore dans les voies de Dieu.">Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios.</p>
+<p data-es="Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Hijo de Dios y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Salvador." data-en="I met him between October and November 1984, and he immediately shared the Gospel with me. By early 1985, I was already declaring to others that Jesus was the Son of God and that I had been born again; yes, I had received Him as my Lord and Savior." data-fr="Je l’ai rencontré entre octobre et novembre 1984, et il m’a aussitôt annoncé l’Évangile. Au début de 1985, je déclarais déjà aux autres que Jésus était le Fils de Dieu et que j’étais né de nouveau ; oui, je l’avais reçu comme mon Seigneur et mon Sauveur.">Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Hijo de Dios y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Salvador.</p>
+<p data-es="Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino." data-en="I experienced great peace, because I had received God's forgiveness, which Jesus made available to us more than twenty centuries ago. From then on, I devoured the Holy Scriptures and began sharing this message with my family and everyone I met along the way." data-fr="Je ressentais une grande paix, car j’avais reçu le pardon de Dieu que Jésus nous a légué il y a plus de vingt siècles. Dès lors, je dévorais les Saintes Écritures et j’ai commencé à faire connaître ce message à ma famille et à toute personne que je rencontrais sur mon chemin.">Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino.</p>
+<p data-es="Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson." data-en="Two years later, I was baptized in water at Community Gospel Church in New York, which was pastored by the late Robert Johansson." data-fr="Deux ans plus tard, j’ai été baptisé d’eau à la Community Gospel Church de New York, dont le pasteur était le regretté Robert Johansson.">Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson.</p>
+<p data-es="Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas." data-en="Later, on April 13, 1990, during a ministry service at Family Worship Center in Baton Rouge, Louisiana—the ministry of Jimmy Swaggart—guest evangelist R. W. Schambach was preaching. Through the laying on of hands, I received the long-awaited baptism in the Holy Spirit and, for the first time in my life, experienced the physical evidence of speaking in other tongues." data-fr="Plus tard, le 13 avril 1990, lors d’un service de ministère au Family Worship Center, à Baton Rouge, en Louisiane — le ministère de Jimmy Swaggart — l’évangéliste invité R. W. Schambach prêchait. Par l’imposition des mains, j’ai reçu le baptême tant attendu du Saint-Esprit et j’ai connu, pour la première fois de ma vie, la manifestation physique du parler en d’autres langues.">Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas.</p>
+<p data-es="Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante." data-en="This baptism, different from water baptism, awakened many abilities in me. The main one was to testify with power and pray for others to receive salvation and healing. We will speak about those cases later as well." data-fr="Ce baptême, différent du baptême d’eau, a ravivé en moi de nombreuses capacités. La principale était de témoigner avec puissance et de prier pour le salut et la guérison des autres. Nous parlerons aussi de ces expériences plus tard.">Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante.</p>
+<p data-es="Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra." data-en="I have always loved evangelism—sharing the good news of the Gospel—and later the Lord also led me into teaching the Word." data-fr="J’ai toujours aimé l’évangélisation — annoncer la bonne nouvelle de l’Évangile — et, plus tard, le Seigneur m’a également conduit vers l’enseignement de la Parole.">Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra.</p>
+<p data-es="Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido." data-en="Among the other experiences I will share in the “Downloads” section of my website, there was one particularly special experience. At the “Christ Is the Answer” church in Woodside, during a ministry service for the congregation's leaders, a woman who was a prophetess told me, on the Lord's behalf, that I would have dreams and interpret dreams. And indeed, over the years, I have had them." data-fr="Parmi les autres expériences que je partagerai dans la section « Téléchargements » de mon site, il y en a une très particulière. À l’église « Christ est la Réponse » de Woodside, lors d’un service destiné aux responsables de la congrégation, une femme prophétesse m’a dit de la part du Seigneur que j’aurais des rêves et que je les interpréterais. Et, en vérité, au fil des années, j’en ai eu.">Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido.</p>
+<p data-es="Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt." data-en="Today I share my life with my wonderful wife and helpmate, Francy, and my fabulous son, Matt." data-fr="Aujourd’hui, je partage ma vie avec ma merveilleuse épouse et précieuse compagne Francy, ainsi qu’avec mon formidable fils Matt.">Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt.</p>
+<div class="highlight" data-es="Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad." data-en="There are many miracles and gifts we can receive from the Lord; however, salvation itself is the greatest of miracles, and every person on the face of the earth must decide right now where they want to spend eternity." data-fr="Nous pouvons recevoir du Seigneur de nombreux miracles et dons ; cependant, le salut en soi est le plus grand des miracles, et chaque personne sur la terre doit décider dès maintenant où elle veut passer l’éternité.">Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad.</div>
+<p data-es="Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra." data-en="I can testify that the Gospel of Jesus is real, that God is good, just, holy, and merciful, and that He can save everyone who seeks Him and believes in Him. Come to the one Holy Father, Creator of heaven and earth." data-fr="Je peux témoigner que l’Évangile de Jésus est réel, que Dieu est bon, juste, saint et miséricordieux, et qu’il peut sauver quiconque le cherche et croit en lui. Venez au seul Père saint, créateur du ciel et de la terre.">Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra.</p>
+</article>
+<div class="back-testimonios"><a href="./index.html" data-es="← Volver a Testimonios" data-en="← Back to Testimonials" data-fr="← Retour aux témoignages">← Volver a Testimonios</a></div>
+</main>
+<script>
+(function(){const titles={es:'Mi Testimonio — La Palabra en Cápsulas',en:'My Testimony — The Word in Capsules',fr:'Mon témoignage — La Parole en Capsules'};
+window.changeLanguage=function(lang){if(!titles[lang])lang='es';document.documentElement.lang=lang;document.title=titles[lang];document.querySelectorAll('[data-es]').forEach(el=>{const value=el.getAttribute('data-'+lang);if(value!==null)el.textContent=value});document.querySelectorAll('.lang-link').forEach(b=>{const active=b.id==='link-'+lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});try{localStorage.setItem('lpc-language',lang)}catch(e){}};
+let lang='es';try{lang=localStorage.getItem('lpc-language')||'es'}catch(e){}changeLanguage(lang)})();
+</script></body></html>
