@@ -1,241 +1,346 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta name="description" content="La Obra de Dios en la Tierra — La Palabra en Cápsulas">
-       <title>La Obra de Dios en la Tierra</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-       <!-- Fuente Inter -->
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400\&display=swap" rel="stylesheet">
+<meta name="description" content="La Obra de Dios en la Tierra — La Palabra en Cápsulas">
+<title>La Obra de Dios en la Tierra</title>
 
-       <style>
-           * {
-               box-sizing: border-box;
-           }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-           body {
-               background-color: #FAF6F0;
-               font-family: 'Inter', Arial, sans-serif;
-               color: #2B2B2B;
-               font-size: 16px;
-               line-height: 1.6;
-               margin: 0;
-               padding: 40px 20px;
-               display: flex;
-               justify-content: center;
-           }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-           .container {
-               max-width: 800px;
-               width: 100%;
-           }
+body {
+    background-color: #FAF6F0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #2B2B2B;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
 
-           header {
-               text-align: center;
-               margin-bottom: 40px;
-           }
+.container {
+    max-width: 800px;
+    width: 100%;
+}
 
-           .subtitle-top {
-               font-size: 14px;
-               text-transform: uppercase;
-               letter-spacing: 2px;
-               color: #555555;
-               margin-bottom: 15px;
-           }
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-           h1 {
-               font-family: Georgia, 'Times New Roman', serif;
-               font-size: 36px;
-               color: #0F3661;
-               margin: 0 0 5px 0;
-               font-weight: bold;
-           }
+.subtitle-top {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555555;
+    margin-bottom: 15px;
+}
 
-           .tagline {
-               font-family: 'Inter', Arial, sans-serif;
-               font-style: italic;
-               color: #8C7B6E;
-               font-size: 17px;
-               margin: 0;
-               text-align: center;
-           }
+h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 36px;
+    color: #0F3661;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
 
-           .card {
-               background-color: #FFFFFF;
-               border-left: 5px solid #0F3661;
-               border-radius: 4px;
-               padding: 30px 40px;
-               margin-bottom: 30px;
-               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-               transition: background-color 0.5s ease-in-out;
-           }
+.tagline {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: italic;
+    color: #8C7B6E;
+    font-size: 17px;
+    margin: 0;
+    text-align: center;
+}
 
-           .card:hover {
-               background-color: #FAFAFA;
-           }
+.card {
+    background-color: #E6F0FA;
+    border-left: 5px solid #0F3661;
+    border-radius: 4px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.5s ease-in-out;
+}
 
-           h2 {
-               font-family: Georgia, 'Times New Roman', serif;
-               font-size: 22px;
-               color: #0F3661;
-               margin-top: 0;
-               margin-bottom: 20px;
-           }
+.card:hover {
+    background-color: #E6F0FA;
+}
 
-           p {
-               font-family: 'Inter', Arial, sans-serif;
-               font-size: 16px;
-               color: #333333;
-               margin-top: 0;
-               margin-bottom: 20px;
-               text-align: justify;
-           }
+h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: #0F3661;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
-           p:last-child {
-               margin-bottom: 0;
-           }
+p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: justify;
+}
 
-           .bold-text {
-               font-weight: 700;
-           }
+p:last-child {
+    margin-bottom: 0;
+}
 
-           .footer-nav {
-               text-align: center;
-               margin-top: 40px;
-               margin-bottom: 20px;
-           }
+.bold-text {
+    font-weight: 700;
+}
 
-           .btn-back {
-               display: inline-block;
-               padding: 12px 30px;
-               background-color: #0F3661;
-               color: #FFFFFF;
-               text-decoration: none;
-               font-family: 'Inter', Arial, sans-serif;
-               font-size: 15px;
-               font-weight: 700;
-               border-radius: 4px;
-               letter-spacing: 1px;
-               transition: background-color 0.3s ease, transform 0.2s ease;
-               box-shadow: 0 2px 6px rgba(15, 54, 97, 0.2);
-           }
+.footer-nav {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 
-           .btn-back:hover {
-               background-color: #164980;
-               transform: translateY(-1px);
-           }
-       
-.language-bar{display:flex;justify-content:flex-end;align-items:center;gap:9px;margin:0 0 22px;font:13px/1.5 'Inter',Arial,sans-serif}
-.lang-link{padding:0;border:0;background:transparent;color:#666;font:inherit;cursor:pointer;text-decoration:none}
-.lang-link:hover,.lang-link.active{color:#0F4C81}
-.lang-link.active{font-weight:700}
-.lang-divider{color:#aaa;user-select:none}
-@media(max-width:700px){.language-bar{margin-bottom:18px}}
+.btn-back {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #0F3661;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(15, 54, 97, 0.2);
+}
 
-    </style>
+.btn-back:hover {
+    background-color: #164980;
+    transform: translateY(-1px);
+}
+
+.language-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 22px;
+    font: 13px/1.5 'Inter', Arial, sans-serif;
+}
+
+.lang-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #666;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.lang-link:hover,
+.lang-link.active {
+    color: #0F4C81;
+}
+
+.lang-link.active {
+    font-weight: 700;
+}
+
+.lang-divider {
+    color: #aaa;
+    user-select: none;
+}
+
+@media (max-width: 700px) {
+    .language-bar {
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 25px 22px;
+    }
+}
+</style>
 </head>
 
 <body>
+<div class="container">
 
-       <div class="container">
+    <nav class="language-bar" aria-label="Language selection">
+        <button type="button" class="lang-link active" id="link-es"
+            onclick="changeLanguage('es')" aria-pressed="true">Español</button>
 
-<nav class="language-bar" aria-label="Language selection">
-<button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button>
-<span class="lang-divider">|</span>
-<button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
-<span class="lang-divider">|</span>
-<button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
-</nav>
+        <span class="lang-divider" aria-hidden="true">|</span>
 
+        <button type="button" class="lang-link" id="link-en"
+            onclick="changeLanguage('en')" aria-pressed="false">English</button>
 
-           <header>
-               <div class="subtitle-top">La Palabra en Cápsulas</div>
+        <span class="lang-divider" aria-hidden="true">|</span>
 
-               <h1>La Obra de Dios en la Tierra</h1>
+        <button type="button" class="lang-link" id="link-fr"
+            onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    </nav>
 
-               <p class="tagline">Una palabra, una cápsula, un mensaje para el camino</p>
-           </header>
+    <header>
+        <div class="subtitle-top">La Palabra en Cápsulas</div>
+        <h1>La Obra de Dios en la Tierra</h1>
+        <p class="tagline">Una palabra, una cápsula, un mensaje para el camino</p>
+    </header>
 
-           <section class="card">
+    <main>
+        <section class="card">
+            <h2>¿Cuál es nuestra comisión?</h2>
 
-               <h2>¿Cuál es nuestra comisión?</h2>
+            <p>
+                La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.
+            </p>
 
-               <p>La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.</p>
+            <p>
+                Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.
+            </p>
+        </section>
 
-               <p>Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.</p>
+        <section class="card">
+            <h2>Demostrar el evangelio</h2>
 
-           </section>
+            <p>
+                Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.
+            </p>
 
-           <section class="card">
+            <p>
+                En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.
+            </p>
+        </section>
+    </main>
 
-               <h2>Demostrar el evangelio</h2>
+    <div class="footer-nav">
+        <a href="https://lpcapsulas.com/Explora/menu.html" class="btn-back">Volver al Menú</a>
+    </div>
 
-               <p>Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.</p>
-
-               <p>En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.</p>
-
-           </section>
-
-           <!-- Botón de Volver al Menú -->
-           <div class="footer-nav">
-               <a href="https://lpcapsulas.com/Explora/menu.html" class="btn-back">Volver al Menú</a>
-           </div>
-
-       </div>
-
+</div>
 
 <script>
-(function(){
-const translations={
-es:{
-title:'La Obra de Dios en la Tierra',doc:'La Obra de Dios en la Tierra',
-subtitle:'La Palabra en Cápsulas',tagline:'Una palabra, una cápsula, un mensaje para el camino',
-h2:['¿Cuál es nuestra comisión?','Demostrar el evangelio'],
-p:[
-'La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.',
-'Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.',
-'Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.',
-'En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.'
-],back:'Volver al Menú'},
-en:{
-title:'The Work of God on Earth',doc:'The Work of God on Earth',
-subtitle:'The Word in Capsules',tagline:'One word, one capsule, a message for the journey',
-h2:['What is our commission?','Demonstrating the Gospel'],
-p:[
-'The commission that the Lord Jesus gave His disciples after His resurrection has remained the same for every generation. There is no other. Perhaps in the past different strategies were used from those we use today, but the message has always been the same, and that is what we must not forget.',
-'Now, because the Bible warns us that in the last days the love of many will grow cold, it falls to us, this generation, to carry the torch of peace and, intelligently and with God’s wisdom, reach the multitude for whom Christ also died on the cross.',
-'But one thing must be clear: we will have to demonstrate the Gospel with <span class="bold-text">signs and wonders</span>, because the world today will demand no less.',
-'In a world that is in darkness, speaks evil, does not distinguish the holy from the profane, and calls good evil and evil good, we cannot expect people to embrace the Christian faith right away. They need a stronger argument to believe and escape the flames of hell. <span class="bold-text">“The whole counsel of God”</span>, which the apostle Paul delivered throughout his ministry, is what we must deliver now.'
-],back:'Back to Menu'},
-fr:{
-title:'L’œuvre de Dieu sur la Terre',doc:'L’œuvre de Dieu sur la Terre',
-subtitle:'La Parole en Capsules',tagline:'Un mot, une capsule, un message pour le chemin',
-h2:['Quelle est notre mission ?','Démontrer l’Évangile'],
-p:[
-'La mission que le Seigneur Jésus a confiée à ses disciples après sa résurrection est restée la même pour toutes les générations. Il n’y en a pas d’autre. Autrefois, des stratégies différentes ont peut-être été utilisées, mais le message a toujours été le même, et nous ne devons pas l’oublier.',
-'Or, puisque la Bible nous avertit qu’aux derniers temps l’amour du plus grand nombre se refroidira, il nous revient, à nous de cette génération, de porter le flambeau de la paix et, avec intelligence et la sagesse de Dieu, d’atteindre toute cette multitude pour laquelle Christ est également mort sur la croix.',
-'Mais une chose est certaine : nous devrons manifester l’Évangile par des <span class="bold-text">signes et des miracles</span>, car le monde d’aujourd’hui n’exigera pas moins.',
-'Dans un monde plongé dans les ténèbres, où l’on parle mal, où l’on ne distingue pas le sacré du profane, où le bien est appelé mal et le mal bien, nous ne pouvons pas nous attendre à ce que les gens adoptent immédiatement la foi chrétienne. Ils ont besoin d’un argument plus solide pour croire et échapper aux flammes de l’enfer. <span class="bold-text">« Tout le conseil de Dieu »</span>, que l’apôtre Paul a transmis au cours de son ministère, est ce que nous devons transmettre aujourd’hui.'
-],back:'Retour au menu'}
-};
-window.changeLanguage=function(lang){
-if(!translations[lang])lang='es';const t=translations[lang];
-document.documentElement.lang=lang;document.title=t.doc;
-document.querySelector('.subtitle-top').textContent=t.subtitle;
-document.querySelector('h1').textContent=t.title;
-document.querySelector('.tagline').textContent=t.tagline;
-document.querySelectorAll('.card h2').forEach((e,i)=>e.textContent=t.h2[i]);
-document.querySelectorAll('.card p').forEach((e,i)=>e.innerHTML=t.p[i]);
-document.querySelector('.btn-back').textContent=t.back;
-document.querySelectorAll('.lang-link').forEach(b=>{const on=b.id==='link-'+lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
-try{localStorage.setItem('lpc-language',lang)}catch(e){}
-};
-let initial='es';try{initial=localStorage.getItem('lpc-language')||'es'}catch(e){}changeLanguage(initial);
+(function () {
+    const translations = {
+        es: {
+            title: 'La Obra de Dios en la Tierra',
+            doc: 'La Obra de Dios en la Tierra',
+            subtitle: 'La Palabra en Cápsulas',
+            tagline: 'Una palabra, una cápsula, un mensaje para el camino',
+            h2: [
+                '¿Cuál es nuestra comisión?',
+                'Demostrar el evangelio'
+            ],
+            p: [
+                'La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.',
+                'Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.',
+                'Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.',
+                'En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.'
+            ],
+            back: 'Volver al Menú'
+        },
+
+        en: {
+            title: 'The Work of God on Earth',
+            doc: 'The Work of God on Earth',
+            subtitle: 'The Word in Capsules',
+            tagline: 'One word, one capsule, a message for the journey',
+            h2: [
+                'What is our commission?',
+                'Demonstrating the Gospel'
+            ],
+            p: [
+                'The commission that the Lord Jesus gave His disciples after His resurrection has remained the same for every generation. There is no other. Perhaps in the past different strategies were used from those we use today, but the message has always been the same, and that is what we must not forget.',
+                'Now, because the Bible warns us that in the last days the love of many will grow cold, it falls to us, this generation, to carry the torch of peace and, intelligently and with God’s wisdom, reach the multitude for whom Christ also died on the cross.',
+                'But one thing must be clear: we will have to demonstrate the Gospel with <span class="bold-text">signs and wonders</span>, because the world today will demand no less.',
+                'In a world that is in darkness, speaks evil, does not distinguish the holy from the profane, and calls good evil and evil good, we cannot expect people to embrace the Christian faith right away. They need a stronger argument to believe and escape the flames of hell. <span class="bold-text">“The whole counsel of God”</span>, which the apostle Paul delivered throughout his ministry, is what we must deliver now.'
+            ],
+            back: 'Back to Menu'
+        },
+
+        fr: {
+            title: 'L’œuvre de Dieu sur la Terre',
+            doc: 'L’œuvre de Dieu sur la Terre',
+            subtitle: 'La Parole en Capsules',
+            tagline: 'Un mot, une capsule, un message pour le chemin',
+            h2: [
+                'Quelle est notre mission ?',
+                'Démontrer l’Évangile'
+            ],
+            p: [
+                'La mission que le Seigneur Jésus a confiée à ses disciples après sa résurrection est restée la même pour toutes les générations. Il n’y en a pas d’autre. Autrefois, des stratégies différentes ont peut-être été utilisées, mais le message a toujours été le même, et nous ne devons pas l’oublier.',
+                'Or, puisque la Bible nous avertit qu’aux derniers temps l’amour du plus grand nombre se refroidira, il nous revient, à nous de cette génération, de porter le flambeau de la paix et, avec intelligence et la sagesse de Dieu, d’atteindre toute cette multitude pour laquelle Christ est également mort sur la croix.',
+                'Mais une chose est certaine : nous devrons manifester l’Évangile par des <span class="bold-text">signes et des miracles</span>, car le monde d’aujourd’hui n’exigera pas moins.',
+                'Dans un monde plongé dans les ténèbres, où l’on parle mal, où l’on ne distingue pas le sacré du profane, où le bien est appelé mal et le mal bien, nous ne pouvons pas nous attendre à ce que les gens adoptent immédiatement la foi chrétienne. Ils ont besoin d’un argument plus solide pour croire et échapper aux flammes de l’enfer. <span class="bold-text">« Tout le conseil de Dieu »</span>, que l’apôtre Paul a transmis au cours de son ministère, est ce que nous devons transmettre aujourd’hui.'
+            ],
+            back: 'Retour au menu'
+        }
+    };
+
+    window.changeLanguage = function (lang) {
+        if (!translations[lang]) {
+            lang = 'es';
+        }
+
+        const t = translations[lang];
+
+        document.documentElement.lang = lang;
+        document.title = t.doc;
+
+        document.querySelector('.subtitle-top').textContent = t.subtitle;
+        document.querySelector('h1').textContent = t.title;
+        document.querySelector('.tagline').textContent = t.tagline;
+
+        document.querySelectorAll('.card h2').forEach(function (element, index) {
+            element.textContent = t.h2[index];
+        });
+
+        document.querySelectorAll('.card p').forEach(function (element, index) {
+            element.innerHTML = t.p[index];
+        });
+
+        document.querySelector('.btn-back').textContent = t.back;
+
+        document.querySelectorAll('.lang-link').forEach(function (button) {
+            const active = button.id === 'link-' + lang;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+        });
+
+        try {
+            localStorage.setItem('lpc-language', lang);
+        } catch (error) {
+            // La página sigue funcionando si el almacenamiento está desactivado.
+        }
+    };
+
+    let initial = 'es';
+
+    try {
+        initial = localStorage.getItem('lpc-language') || 'es';
+    } catch (error) {
+        initial = 'es';
+    }
+
+    window.changeLanguage(initial);
 })();
 </script>
 
 </body>
 </html>
+```
