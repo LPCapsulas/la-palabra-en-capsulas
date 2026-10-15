@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -263,13 +264,18 @@
 <main class="page">
 
     <nav class="language-bar" aria-label="Language selection">
-        <button type="button" data-lang="es" onclick="changeLanguage('es')">ES</button>
-        <button type="button" data-lang="en" onclick="changeLanguage('en')">EN</button>
-        <button type="button" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+        <button type="button" data-lang="es"
+            onclick="changeLanguage('es')">ES</button>
+        <button type="button" data-lang="en"
+            onclick="changeLanguage('en')">EN</button>
+        <button type="button" data-lang="fr"
+            onclick="changeLanguage('fr')">FR</button>
     </nav>
 
     <header>
-        <div class="site-name">LA PALABRA EN CÁPSULAS</div>
+        <div class="site-name" id="site-name">
+            LA PALABRA EN CÁPSULAS
+        </div>
 
         <h1 id="page-title">Acerca de LPC</h1>
 
@@ -282,7 +288,8 @@
         <h2 class="capsule-title" id="heading-what">¿Qué es LPC?</h2>
 
         <p id="text-what">
-            LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>.
+            LPC es la abreviatura de
+            <strong>“La Palabra en Cápsulas”</strong>.
             Cuando me di cuenta, hace unos años, de que había sido salvo por la
             gracia de Cristo, comencé no solo a hablar de la misericordia de Dios,
             sino también a distribuir folletos en las calles con mensajes cortos,
@@ -336,6 +343,7 @@
 <script>
     const translations = {
         es: {
+            siteName: "LA PALABRA EN CÁPSULAS",
             title: "Acerca de LPC — La Palabra en Cápsulas",
             pageTitle: "Acerca de LPC",
             subtitle: "Una palabra, una cápsula, un mensaje para el camino.",
@@ -353,11 +361,12 @@
         },
 
         en: {
-            title: "About LPC — La Palabra en Cápsulas",
+            siteName: "THE WORD IN CAPSULES",
+            title: "About LPC — The Word in Capsules",
             pageTitle: "About LPC",
             subtitle: "One word, one capsule, one message for the journey.",
             headingWhat: "What is LPC?",
-            textWhat: 'LPC is short for <strong>“La Palabra en Cápsulas,”</strong> which means “The Word in Capsules.” A few years ago, when I realized that I had been saved by the grace of Christ, I began not only to speak about God’s mercy, but also to distribute leaflets on the streets containing short messages. We called these leaflets “tracts,” and I gave some of them this name.',
+            textWhat: 'LPC stands for <strong>“The Word in Capsules.”</strong> A few years ago, when I realized that I had been saved by the grace of Christ, I began not only to speak about God’s mercy, but also to distribute leaflets on the streets containing short messages. We called these leaflets “tracts,” and I gave some of them this name.',
             headingEvolution: "From tracts to short messages",
             evolution1: "Over time, printed leaflets have given way to brief yet meaningful messages on social media.",
             evolution2: "I believe God gives us His Word daily in small portions, according to what we need or are able to receive, just as Jesus, the Teacher, taught.",
@@ -370,11 +379,12 @@
         },
 
         fr: {
-            title: "À propos de LPC — La Palabra en Cápsulas",
+            siteName: "LA PAROLE EN CAPSULES",
+            title: "À propos de LPC — La Parole en Capsules",
             pageTitle: "À propos de LPC",
             subtitle: "Une parole, une capsule, un message pour le chemin.",
             headingWhat: "Qu’est-ce que LPC ?",
-            textWhat: 'LPC est l’abréviation de <strong>« La Palabra en Cápsulas »</strong>, ce qui signifie « La Parole en capsules ». Il y a quelques années, lorsque j’ai compris que j’avais été sauvé par la grâce du Christ, j’ai commencé non seulement à parler de la miséricorde de Dieu, mais aussi à distribuer dans les rues des feuillets contenant de courts messages. Nous appelons ces feuillets des « traités », et j’ai donné ce nom à certains d’entre eux.',
+            textWhat: 'LPC est l’abréviation de <strong>« La Parole en Capsules »</strong>. Il y a quelques années, lorsque j’ai compris que j’avais été sauvé par la grâce du Christ, j’ai commencé non seulement à parler de la miséricorde de Dieu, mais aussi à distribuer dans les rues des feuillets contenant de courts messages. Nous appelons ces feuillets des « traités », et j’ai donné ce nom à certains d’entre eux.',
             headingEvolution: "Des traités aux messages courts",
             evolution1: "Au fil du temps, les feuillets ont été remplacés par de courts messages riches de sens publiés sur les réseaux sociaux.",
             evolution2: "Je crois que Dieu nous donne chaque jour sa Parole en petites portions, selon nos besoins ou notre capacité à la recevoir, comme Jésus, le Maître, nous l’a enseigné.",
@@ -397,30 +407,65 @@
         document.documentElement.lang = language;
         document.title = selected.title;
 
-        document.getElementById("page-title").textContent = selected.pageTitle;
-        document.getElementById("subtitle").textContent = selected.subtitle;
-        document.getElementById("heading-what").textContent = selected.headingWhat;
-        document.getElementById("text-what").innerHTML = selected.textWhat;
-        document.getElementById("heading-evolution").textContent = selected.headingEvolution;
-        document.getElementById("text-evolution-1").textContent = selected.evolution1;
-        document.getElementById("text-evolution-2").textContent = selected.evolution2;
-        document.getElementById("heading-daily").textContent = selected.headingDaily;
-        document.getElementById("verse-one").textContent = selected.verseOne;
-        document.getElementById("reference-one").textContent = selected.referenceOne;
-        document.getElementById("verse-two").textContent = selected.verseTwo;
-        document.getElementById("reference-two").textContent = selected.referenceTwo;
-        document.getElementById("back-link").textContent = selected.back;
+        document.getElementById("site-name").textContent =
+            selected.siteName;
 
-        document.querySelectorAll(".language-bar button").forEach(function(button) {
-            const active = button.dataset.lang === language;
-            button.classList.toggle("active", active);
-            button.setAttribute("aria-pressed", active ? "true" : "false");
-        });
+        document.getElementById("page-title").textContent =
+            selected.pageTitle;
+
+        document.getElementById("subtitle").textContent =
+            selected.subtitle;
+
+        document.getElementById("heading-what").textContent =
+            selected.headingWhat;
+
+        document.getElementById("text-what").innerHTML =
+            selected.textWhat;
+
+        document.getElementById("heading-evolution").textContent =
+            selected.headingEvolution;
+
+        document.getElementById("text-evolution-1").textContent =
+            selected.evolution1;
+
+        document.getElementById("text-evolution-2").textContent =
+            selected.evolution2;
+
+        document.getElementById("heading-daily").textContent =
+            selected.headingDaily;
+
+        document.getElementById("verse-one").textContent =
+            selected.verseOne;
+
+        document.getElementById("reference-one").textContent =
+            selected.referenceOne;
+
+        document.getElementById("verse-two").textContent =
+            selected.verseTwo;
+
+        document.getElementById("reference-two").textContent =
+            selected.referenceTwo;
+
+        document.getElementById("back-link").textContent =
+            selected.back;
+
+        document.querySelectorAll(".language-bar button").forEach(
+            function(button) {
+                const active = button.dataset.lang === language;
+
+                button.classList.toggle("active", active);
+
+                button.setAttribute(
+                    "aria-pressed",
+                    active ? "true" : "false"
+                );
+            }
+        );
 
         try {
             localStorage.setItem("lpc-language", language);
         } catch (error) {
-            // La página sigue funcionando aunque el navegador no permita guardar la preferencia.
+            // La página sigue funcionando si no se puede guardar el idioma.
         }
     }
 
@@ -443,3 +488,4 @@
 
 </body>
 </html>
+```
