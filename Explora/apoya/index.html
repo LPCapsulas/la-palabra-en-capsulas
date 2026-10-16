@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -256,20 +257,21 @@
         src="apoya_lpc.png"
         alt="Apoya — La Palabra en Cápsulas"
         data-alt-es="Apoya — La Palabra en Cápsulas"
-        data-alt-en="Support — La Palabra en Cápsulas"
-        data-alt-fr="Soutenez — La Palabra en Cápsulas"
+        data-alt-en="Support — The Word in Capsules"
+        data-alt-fr="Soutenez — La Parole en Capsules"
     >
 
     <div class="message">
         <p
             data-es="Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores."
-            data-en="Contributions to LPC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
+            data-en="Contributions to TWC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
             data-fr="Les contributions à LPC, quel qu’en soit le montant, nous permettent de consacrer davantage de temps à la création de contenu et de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à l’affermissement de la foi de nos lecteurs."
         >Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores.</p>
     </div>
 
     <a
         class="square-button"
+        id="payment-button"
         href="https://square.link/u/Et13J8m1"
         target="_blank"
         rel="noopener noreferrer"
@@ -300,27 +302,34 @@
     );
 
     const image = document.querySelector('.support-image');
+    const paymentButton = document.querySelector('#payment-button');
 
     const pageTitle = {
         es: 'Apoya — La Palabra en Cápsulas',
-        en: 'Support — La Palabra en Cápsulas',
-        fr: 'Soutenez — La Palabra en Cápsulas'
+        en: 'Support — The Word in Capsules',
+        fr: 'Soutenez — La Parole en Capsules'
     };
 
-    /*
-       Las tres imágenes deben estar en la misma carpeta
-       que este archivo index.html.
-    */
     const imageByLanguage = {
-        es: 'apoya.png',
+        es: 'apoya_lpc.png',
         en: 'support.png',
         fr: 'soutenez.png'
     };
+
+    const paymentLinkByLanguage = {
+        es: 'https://square.link/u/Et13J8m1',
+        en: 'https://square.link/u/F8rZyhRi',
+        fr: null
+    };
+
+    let currentLanguage = 'es';
 
     function changeLanguage(language) {
         if (!['es', 'en', 'fr'].includes(language)) {
             language = 'es';
         }
+
+        currentLanguage = language;
 
         document.documentElement.lang = language;
         document.title = pageTitle[language];
@@ -335,6 +344,18 @@
 
         image.src = imageByLanguage[language];
         image.alt = image.getAttribute('data-alt-' + language);
+
+        const paymentLink = paymentLinkByLanguage[language];
+
+        if (paymentLink) {
+            paymentButton.href = paymentLink;
+            paymentButton.removeAttribute('aria-disabled');
+            paymentButton.style.opacity = '1';
+        } else {
+            paymentButton.href = '#';
+            paymentButton.setAttribute('aria-disabled', 'true');
+            paymentButton.style.opacity = '0.7';
+        }
 
         buttons.forEach(button => {
             const selected =
@@ -354,6 +375,16 @@
             // La página funciona aunque el almacenamiento no esté disponible.
         }
     }
+
+    paymentButton.addEventListener('click', event => {
+        if (!paymentLinkByLanguage[currentLanguage]) {
+            event.preventDefault();
+
+            alert(
+                'Le lien de paiement en français sera disponible prochainement.'
+            );
+        }
+    });
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -376,4 +407,4 @@
 
 </body>
 </html>
-
+```
