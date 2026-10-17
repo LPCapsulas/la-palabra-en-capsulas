@@ -28,12 +28,12 @@
       font-family: "Segoe UI", sans-serif;
       font-size: 17px;
       line-height: 1.8;
-      overflow: hidden; /* Botón siempre visible en PC al 100% sin scroll */
+      overflow: hidden; /* Mantiene la interfaz fija en PC al 100% de pantalla sin scrollbars */
     }
 
     .page {
       width: min(900px, calc(100% - 32px));
-      height: calc(100vh - 4px);
+      height: calc(100vh - 4px); /* Forzado a ocupar exactamente el alto visible del dispositivo */
       margin: 2px auto;
       padding: 16px 56px 24px;
       background: var(--paper);
@@ -42,6 +42,7 @@
       flex-direction: column;
     }
 
+    /* Selector de idiomas superior */
     .language-bar {
       display: flex;
       justify-content: flex-end;
@@ -69,6 +70,7 @@
       font-weight: bold;
     }
 
+    /* Contenedor principal elástico */
     .content-wrapper {
       flex: 1;
       display: flex;
@@ -76,6 +78,7 @@
       justify-content: space-between;
     }
 
+    /* Sección de la imagen */
     .image-container {
       text-align: center;
       margin-bottom: 10px;
@@ -84,10 +87,11 @@
     .cover-image {
       max-width: 100%;
       height: auto;
-      max-height: 48vh;
+      max-height: 48vh; /* Proporción ideal para monitores de PC */
       object-fit: contain;
     }
 
+    /* Bloque central de textos en cascada */
     .text-container {
       text-align: center;
       display: flex;
@@ -97,15 +101,15 @@
       margin-bottom: 15px;
     }
 
-    /* Contenedor del botón dinámico */
+    /* Contenedor inferior del botón dinámico */
     .action-container {
       text-align: center;
       padding-bottom: 15px;
       margin-top: auto;
-      min-height: 55px; /* Reserva el espacio para evitar saltos visuales */
+      min-height: 55px; /* Evita parpadeos o saltos visuales al inyectar el botón */
     }
 
-    /* Estilos heredados por el botón inyectado */
+    /* Estilos globales aplicados al botón inyectado en tiempo real */
     .btn-explore {
       display: inline-block;
       background-color: var(--brand-blue);
@@ -121,10 +125,10 @@
       background-color: var(--accent);
     }
 
-    /* RESPONSIVO: Celular vertical estirado al máximo para no dejar huecos */
+    /* AJUSTES RESPONSIVOS: Celular vertical optimizado al extremo */
     @media (max-width: 600px) {
       html, body {
-        overflow: hidden;
+        overflow: hidden; /* Congela la pantalla en móviles para prevenir desbordamientos */
       }
 
       .page {
@@ -133,17 +137,17 @@
       }
 
       .cover-image {
-        max-height: 62vh; /* Imagen aún más alta para empujar agresivamente el texto hacia abajo */
+        max-height: 62vh; /* Imagen estirada agresivamente para empujar todo hacia abajo */
         width: 100%;
       }
 
       html, body {
-        font-size: 22px; /* Letra grande para rellenar de forma compacta el espacio inferior */
+        font-size: 22px; /* Letras robustas que ocupan y rellenan los huecos vacíos inferiores */
         line-height: 1.5;
       }
 
       .text-container {
-        gap: 20px;
+        gap: 20px; /* Mayor separación interna para estirar la cascada en móvil vertical */
       }
     }
   </style>
@@ -152,7 +156,10 @@
 
   <div class="page">
     <header class="language-bar">
+      <!-- Los atributos data-lang enlazan de forma estricta e inequívoca con el script de abajo -->
       <a href="?lang=es" class="lang-link" data-lang="es">Español</a> | 
+      <a href="?lang=en" class="lang-link" data-lang="en">English</a> | 
+      <a href="?lang=fr" class="lang-link" data-lang="fr">Français</a> | 
       <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
     </header>
 
@@ -166,18 +173,31 @@
         <p id="subtitle">Tu dosis diaria de inspiración y conocimiento.</p>
       </div>
 
-      <!-- EL BOTÓN YA NO EXISTE EN EL HTML. Se creará desde cero con JavaScript -->
+      <!-- EL HTML NACE LIMPIO. El botón no existe aquí para anular problemas de caché de rutas antiguas -->
       <div class="action-container" id="button-box"></div>
     </div>
   </div>
 
   <script>
+    // Base de datos de traducciones y enrutamientos físicos exactos
     const translations = {
       es: {
         title: "La Palabra en Cápsulas",
         subtitle: "Tu dosis diaria de inspiración y conocimiento.",
         btnText: "Explora",
         btnUrl: "index_es.html"
+      },
+      en: {
+        title: "The Word in Capsules",
+        subtitle: "Your daily dose of inspiration and knowledge.",
+        btnText: "Explore",
+        btnUrl: "index_en.html"
+      },
+      fr: {
+        title: "La Parole en Capsules",
+        subtitle: "Votre dose quotidienne d'inspiration et de connaissances.",
+        btnText: "Explorer",
+        btnUrl: "index_fr.html"
       },
       zh: {
         title: "胶囊话语",
@@ -187,33 +207,34 @@
       }
     };
 
+    // Función unificada que borra, reescribe e instala la interfaz correspondiente
     function setLanguage(lang) {
       if (!translations[lang]) lang = 'es';
 
-      // Guardar idioma preferido
+      // Almacenamos permanentemente la opción del usuario en el navegador local
       localStorage.setItem('user_language', lang);
       document.documentElement.lang = lang;
       
-      // Actualizar textos básicos
+      // Actualizamos los bloques de texto estáticos
       document.getElementById('title').textContent = translations[lang].title;
       document.getElementById('subtitle').textContent = translations[lang].subtitle;
       
-      // SOLUCIÓN DEFINITIVA: Desinstalar botón viejo e instalar uno nuevo desde cero
+      // DESINSTALACIÓN Y MONTAJE DESDE CERO DEL BOTÓN DE ACCIÓN
       const buttonBox = document.getElementById('button-box');
-      buttonBox.innerHTML = ''; // Limpia por completo cualquier rastro del botón anterior
+      buttonBox.innerHTML = ''; // Destruye cualquier botón residual que esté flotando en la memoria
 
-      // Construcción del elemento <a> limpio y directo en el DOM
+      // Fabricamos el elemento web nativo <a>
       const newBtn = document.createElement('a');
       newBtn.className = 'btn-explore';
       newBtn.textContent = translations[lang].btnText;
       
-      // Forzar de forma nativa e independiente la URL correcta según el idioma actual
+      // Forzamos directamente por código su dirección URL correspondiente
       newBtn.setAttribute('href', translations[lang].btnUrl);
       
-      // Adjuntar el botón recién creado al contenedor de la interfaz
+      // Adjuntamos la estructura recién construida al diseño visual
       buttonBox.appendChild(newBtn);
 
-      // Actualizar la clase activa del selector de idiomas
+      // Reajustamos dinámicamente el estilo ".active" en la barra de idiomas superior
       document.querySelectorAll('.lang-link').forEach(link => {
         if (link.getAttribute('data-lang') === lang) {
           link.classList.add('active');
@@ -223,12 +244,28 @@
       });
     }
 
-    // Sistema de detección jerárquico (URL -> Memoria local -> Español por defecto)
+    // Algoritmo de detección jerárquica instantánea (URL -> Memoria interna del dispositivo -> Español por defecto)
     const urlParams = new URLSearchParams(window.location.search);
     const savedLang = localStorage.getItem('user_language');
     const currentLang = urlParams.get('lang') || savedLang || 'es';
     
+    // Ejecución inicial reactiva al cargar el archivo en el servidor
     setLanguage(currentLang);
+
+    // CONTROLADOR DE INTERCEPCIÓN DE CLICS: Detiene recargas sucias que causen saltos de idioma involuntarios
+    document.querySelectorAll('.lang-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Apaga la recarga por defecto del navegador web
+        
+        const selectedLang = this.getAttribute('data-lang');
+        
+        // Empuja silenciosamente el parámetro correspondiente (?lang=xx) en la URL visible
+        history.pushState(null, '', `?lang=${selectedLang}`);
+        
+        // Ejecuta la reescritura total e inmediata del botón y los textos correspondientes
+        setLanguage(selectedLang);
+      });
+    });
   </script>
 </body>
 </html>
