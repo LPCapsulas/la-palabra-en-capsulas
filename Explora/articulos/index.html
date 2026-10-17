@@ -264,6 +264,14 @@ h1 {
 
         <button type="button"
             class="lang-link"
+            id="link-zh"
+            onclick="changeLanguage('zh')"
+            aria-pressed="false">简体中文</button>
+
+        <span class="lang-divider">|</span>
+
+        <button type="button"
+            class="lang-link"
             id="link-fr"
             onclick="changeLanguage('fr')"
             aria-pressed="false">Français</button>
@@ -367,6 +375,19 @@ h1 {
             back: '← Retour au menu',
             articleListLabel: 'Liste des articles',
             footerLabel: 'Navigation de bas de page'
+        },
+
+        zh: {
+            documentTitle: '文章 — 胶囊中的话语',
+            title: '文章',
+            intro: '引发思考，并付诸行动。',
+            articleTitle: '祂知道我们的处境',
+            description: '上帝知道我们的处境和需要，也知道那些我们常常默默承受的事情。',
+            part1: '阅读第一部分 →',
+            part2: '阅读第二部分 →',
+            back: '← 返回菜单',
+            articleListLabel: '文章列表',
+            footerLabel: '页脚导航'
         }
 
     };
@@ -419,7 +440,9 @@ h1 {
                 ? 'Selección de idioma'
                 : lang === 'en'
                     ? 'Language selection'
-                    : 'Sélection de la langue'
+                    : lang === 'fr'
+                        ? 'Sélection de la langue'
+                        : '语言选择'
         );
 
         document.querySelectorAll('.lang-link').forEach(
@@ -463,4 +486,3 @@ h1 {
 
 </body>
 </html>
-
