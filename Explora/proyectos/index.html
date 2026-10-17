@@ -210,6 +210,9 @@ footer{
     <button type="button" class="lang-link" id="link-en"
       onclick="changeLanguage('en')" aria-pressed="false">English</button>
     <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-zh"
+      onclick="changeLanguage('zh')" aria-pressed="false">简体中文</button>
+    <span class="lang-divider">|</span>
     <button type="button" class="lang-link" id="link-fr"
       onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
   </nav>
@@ -286,6 +289,17 @@ footer{
       footer:'The Word in Capsules'
     },
 
+    zh:{
+      title:'项目 — 胶囊中的圣言',
+      h1:'项目',
+      subtitle:'将救恩的信息带到网站之外',
+      text1:'“胶囊中的圣言”不仅仅是在互联网上发布内容。我们的目标之一，是在公共场所直接向人们传递福音，分享内容、与人交流，并让大家认识 LPC 网站。让每个人了解世界上不同的信仰，并在没有压力的情况下自行了解、选择所愿意信奉的信仰，以及如何引导自己的属灵生活，这总是有益的。目前，我还需要一些设备，例如便携式扩音器，以便在户外自由地谈论这些主题。',
+      text2:'只有聆听真理并回应真理，人才能在属灵生命上得到建立，直到永远。LPC 向各种文化背景的人免费提供内容，尽管开展这项工作所需的大多数事项——交通、设备和援助——都需要费用。每个人都可以通过出去传扬、祷告或奉献来参与上帝的工作。',
+      vision:'LPC 的异象',
+      back:'返回菜单',
+      footer:'胶囊中的圣言'
+    },
+
     fr:{
       title:'Projets — La Parole en Capsules',
       h1:'Projet',
@@ -332,7 +346,7 @@ footer{
 
   try{
     const saved=localStorage.getItem('lpc-language');
-    if(['es','en','fr'].includes(saved)){
+    if(['es','en','zh','fr'].includes(saved)){
       initial=saved;
     }
   }catch(e){}
@@ -343,4 +357,3 @@ footer{
 
 </body>
 </html>
-
