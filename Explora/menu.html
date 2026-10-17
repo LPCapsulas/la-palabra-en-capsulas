@@ -265,6 +265,14 @@ h1 {
       onclick="changeLanguage('fr')"
       aria-pressed="false">Français</button>
 
+    <span class="lang-divider">|</span>
+
+    <button type="button"
+      class="lang-link"
+      id="link-zh-CN"
+      onclick="changeLanguage('zh-CN')"
+      aria-pressed="false">中文</button>
+
   </nav>
 
   <header>
@@ -281,28 +289,32 @@ h1 {
         <a href="./LPC/index.html"
            data-es="Acerca de LPC"
            data-en="About LPC"
-           data-fr="À propos de LPC">Acerca de LPC</a>
+           data-fr="À propos de LPC"
+           data-zh-CN="关于 LPC">Acerca de LPC</a>
       </div>
 
       <div class="item">
         <a href="./articulos/index.html"
            data-es="Artículos"
            data-en="Articles"
-           data-fr="Articles">Artículos</a>
+           data-fr="Articles"
+           data-zh-CN="文章">Artículos</a>
       </div>
 
       <div class="item">
         <a href="./ensenanzas/index.html"
            data-es="Enseñanzas"
            data-en="Teachings"
-           data-fr="Enseignements">Enseñanzas</a>
+           data-fr="Enseignements"
+           data-zh-CN="教导">Enseñanzas</a>
       </div>
 
       <div class="item">
         <a href="./oracion/index.html"
            data-es="Oración"
            data-en="Prayer"
-           data-fr="Prière">Oración</a>
+           data-fr="Prière"
+           data-zh-CN="祷告">Oración</a>
       </div>
 
     </div>
@@ -315,28 +327,32 @@ h1 {
         <a href="./descargas/index.html"
            data-es="Descargas"
            data-en="Downloads"
-           data-fr="Téléchargements">Descargas</a>
+           data-fr="Téléchargements"
+           data-zh-CN="下载资源">Descargas</a>
       </div>
 
       <div class="item">
         <a href="./testimonios/index.html"
            data-es="Testimonios"
            data-en="Testimonials"
-           data-fr="Témoignages">Testimonios</a>
+           data-fr="Témoignages"
+           data-zh-CN="见证">Testimonios</a>
       </div>
 
       <div class="item">
         <a href="./proyectos/index.html"
            data-es="Proyectos"
            data-en="Projects"
-           data-fr="Projets">Proyectos</a>
+           data-fr="Projets"
+           data-zh-CN="项目">Proyectos</a>
       </div>
 
       <div class="item">
         <a href="./apoya/index.html"
            data-es="Donaciones"
            data-en="Support"
-           data-fr="Soutenir">Apoya</a>
+           data-fr="Soutenir"
+           data-zh-CN="支持我们">Apoya</a>
       </div>
 
     </div>
@@ -348,7 +364,8 @@ h1 {
        id="back-link"
        data-es="Volver a Inicio"
        data-en="Back to Home"
-       data-fr="Retour à l’accueil">Volver a Inicio</a>
+       data-fr="Retour à l’accueil"
+       data-zh-CN="返回首页">Volver a Inicio</a>
   </div>
 
 </div>
@@ -372,6 +389,12 @@ h1 {
       title: 'Découvre, Grandis et Partage',
       documentTitle: 'Découvre, Grandis et Partage — La Parole en Capsules',
       menuLabel: 'Menu principal'
+    },
+
+    'zh-CN': {
+      title: '观看、成长与分享',
+      documentTitle: '观看、成长与分享 — 胶囊中的圣言',
+      menuLabel: '主菜单'
     }
   };
 
@@ -392,11 +415,11 @@ h1 {
     );
 
     document.querySelectorAll('#main-menu a[data-es]').forEach(function (link) {
-      link.textContent = link.getAttribute('data-' + lang);
+      link.textContent = link.getAttribute('data-' + lang) || link.getAttribute('data-es');
     });
 
     const backLink = document.getElementById('back-link');
-    backLink.textContent = backLink.getAttribute('data-' + lang);
+    backLink.textContent = backLink.getAttribute('data-' + lang) || backLink.getAttribute('data-es');
 
     document.querySelectorAll('.lang-link').forEach(function (button) {
       const selected = button.id === 'link-' + lang;
