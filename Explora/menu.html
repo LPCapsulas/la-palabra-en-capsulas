@@ -261,17 +261,17 @@ h1 {
 
     <button type="button"
       class="lang-link"
-      id="link-fr"
-      onclick="changeLanguage('fr')"
-      aria-pressed="false">Français</button>
+      id="link-zh"
+      onclick="changeLanguage('zh')"
+      aria-pressed="false">中文</button>
 
     <span class="lang-divider">|</span>
 
     <button type="button"
       class="lang-link"
-      id="link-zh-CN"
-      onclick="changeLanguage('zh-CN')"
-      aria-pressed="false">中文</button>
+      id="link-fr"
+      onclick="changeLanguage('fr')"
+      aria-pressed="false">Français</button>
 
   </nav>
 
@@ -288,33 +288,33 @@ h1 {
       <div class="item">
         <a href="./LPC/index.html"
            data-es="Acerca de LPC"
+           data-zh="关于 LPC"
            data-en="About LPC"
-           data-fr="À propos de LPC"
-           data-zh-CN="关于 LPC">Acerca de LPC</a>
+           data-fr="À propos de LPC">Acerca de LPC</a>
       </div>
 
       <div class="item">
         <a href="./articulos/index.html"
            data-es="Artículos"
+           data-zh="文章"
            data-en="Articles"
-           data-fr="Articles"
-           data-zh-CN="文章">Artículos</a>
+           data-fr="Articles">Artículos</a>
       </div>
 
       <div class="item">
         <a href="./ensenanzas/index.html"
            data-es="Enseñanzas"
+           data-zh="教导"
            data-en="Teachings"
-           data-fr="Enseignements"
-           data-zh-CN="教导">Enseñanzas</a>
+           data-fr="Enseignements">Enseñanzas</a>
       </div>
 
       <div class="item">
         <a href="./oracion/index.html"
            data-es="Oración"
+           data-zh="祷告"
            data-en="Prayer"
-           data-fr="Prière"
-           data-zh-CN="祷告">Oración</a>
+           data-fr="Prière">Oración</a>
       </div>
 
     </div>
@@ -326,33 +326,33 @@ h1 {
       <div class="item">
         <a href="./descargas/index.html"
            data-es="Descargas"
+           data-zh="下载资源"
            data-en="Downloads"
-           data-fr="Téléchargements"
-           data-zh-CN="下载资源">Descargas</a>
+           data-fr="Téléchargements">Descargas</a>
       </div>
 
       <div class="item">
         <a href="./testimonios/index.html"
            data-es="Testimonios"
+           data-zh="见证"
            data-en="Testimonials"
-           data-fr="Témoignages"
-           data-zh-CN="见证">Testimonios</a>
+           data-fr="Témoignages">Testimonios</a>
       </div>
 
       <div class="item">
         <a href="./proyectos/index.html"
            data-es="Proyectos"
+           data-zh="项目"
            data-en="Projects"
-           data-fr="Projets"
-           data-zh-CN="项目">Proyectos</a>
+           data-fr="Projets">Proyectos</a>
       </div>
 
       <div class="item">
         <a href="./apoya/index.html"
            data-es="Donaciones"
+           data-zh="支持 LPC"
            data-en="Support"
-           data-fr="Soutenir"
-           data-zh-CN="支持我们">Apoya</a>
+           data-fr="Soutenir">Apoya</a>
       </div>
 
     </div>
@@ -363,9 +363,9 @@ h1 {
     <a href="../index.html"
        id="back-link"
        data-es="Volver a Inicio"
+           data-zh="返回首页"
        data-en="Back to Home"
-       data-fr="Retour à l’accueil"
-       data-zh-CN="返回首页">Volver a Inicio</a>
+       data-fr="Retour à l’accueil">Volver a Inicio</a>
   </div>
 
 </div>
@@ -391,9 +391,9 @@ h1 {
       menuLabel: 'Menu principal'
     },
 
-    'zh-CN': {
-      title: '观看、成长与分享',
-      documentTitle: '观看、成长与分享 — 胶囊中的圣言',
+    zh: {
+      title: '认识、成长与分享',
+      documentTitle: '认识、成长与分享 — 胶囊中的圣言',
       menuLabel: '主菜单'
     }
   };
@@ -403,7 +403,7 @@ h1 {
       lang = 'es';
     }
 
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
     document.title = translations[lang].documentTitle;
 
     document.getElementById('page-title').textContent =
@@ -415,11 +415,11 @@ h1 {
     );
 
     document.querySelectorAll('#main-menu a[data-es]').forEach(function (link) {
-      link.textContent = link.getAttribute('data-' + lang) || link.getAttribute('data-es');
+      link.textContent = link.getAttribute('data-' + lang);
     });
 
     const backLink = document.getElementById('back-link');
-    backLink.textContent = backLink.getAttribute('data-' + lang) || backLink.getAttribute('data-es');
+    backLink.textContent = backLink.getAttribute('data-' + lang);
 
     document.querySelectorAll('.lang-link').forEach(function (button) {
       const selected = button.id === 'link-' + lang;
