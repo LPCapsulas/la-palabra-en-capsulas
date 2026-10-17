@@ -355,10 +355,10 @@
       <button
         type="button"
         class="lang-link"
-        id="link-fr"
-        onclick="changeLanguage('fr')"
+        id="link-zh"
+        onclick="changeLanguage('zh')"
         aria-pressed="false">
-        Français
+        中文
       </button>
 
       <span class="lang-divider">|</span>
@@ -366,10 +366,10 @@
       <button
         type="button"
         class="lang-link"
-        id="link-zh-CN"
-        onclick="changeLanguage('zh-CN')"
+        id="link-fr"
+        onclick="changeLanguage('fr')"
         aria-pressed="false">
-        中文
+        Français
       </button>
 
     </nav>
@@ -397,11 +397,6 @@
         src="Explora/portada-fr.png"
         alt="La Parole en Capsules — Foi, Puissance et Vie"
         style="display:none">
-
-      <div id="banner-zh-CN" class="translated-title-box" lang="zh-CN" style="display:none">
-        <h1>胶囊中的圣言</h1>
-        <p>信心、能力与生命</p>
-      </div>
 
     </div>
 
@@ -453,11 +448,14 @@
 
       </div>
 
-      <div id="content-zh-CN" class="lang-content" lang="zh-CN">
-        <p>欢迎来到这个空间。这里致力于分享<br>
-        实用、深刻而易于理解的理念，<br>
-        帮助您与上帝同行，<br>
-        踏上坚定而稳妥的信仰之路。</p>
+      <div id="content-zh" class="lang-content">
+        <p lang="zh-CN">
+          欢迎来到这个空间。<br>
+          这里分享实用、深刻<br>
+          且容易理解的内容，<br>
+          帮助您在与上帝同行的<br>
+          信仰道路上稳步前行。
+        </p>
       </div>
 
     </section>
@@ -502,11 +500,11 @@
         button: 'EXPLORER'
       },
 
-      'zh-CN': {
-        title: '胶囊中的圣言 — 官方主页',
+      zh: {
+        title: '胶囊中的圣言 — 官方首页',
         bannerTitle: '胶囊中的圣言',
         bannerSubtitle: '信心、能力与生命',
-        button: '探索'
+        button: '探索内容'
       }
     };
 
@@ -515,7 +513,7 @@
         lang = 'es';
       }
 
-      document.documentElement.lang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
       document.title = translations[lang].title;
 
       document.querySelectorAll('.lang-link').forEach(link => {
@@ -541,8 +539,9 @@
       document.getElementById('banner-fr').style.display =
         lang === 'fr' ? 'block' : 'none';
 
-      document.getElementById('banner-zh-CN').style.display =
-        lang === 'zh-CN' ? 'flex' : 'none';
+      /* 暂无中文横幅图片时，显示原始品牌横幅。 */
+      document.getElementById('banner-es').style.display =
+        (lang === 'es' || lang === 'zh') ? 'block' : 'none';
 
       document.getElementById('btn-explore').textContent =
         translations[lang].button;
