@@ -37,7 +37,7 @@
       padding: 10px 72px 22px;
       box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
     }
-    /* SELECTOR DE IDIOMAS */
+    /* SELECTOR DE IDIOMAS (CORREGIDO CON POSICIONAMIENTO SEGURO) */
     .language-bar {
       display: flex;
       justify-content: flex-end;
@@ -48,6 +48,8 @@
       border-bottom: 1px solid #f0ede6;
       font-size: 13px;
       line-height: 1.5;
+      position: relative;
+      z-index: 10;
     }
     .lang-link {
       color: var(--muted);
@@ -58,6 +60,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: color .2s ease;
+      display: inline-block;
     }
     .lang-link:hover {
       color: var(--accent);
@@ -76,6 +79,8 @@
       max-width: 800px;
       margin: 0 auto 10px;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     .capsules-img {
       display: block;
@@ -276,7 +281,7 @@
       <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false"> Français </button>
     </nav>
 
-    <!-- BANNER CONTENEDOR (CON LA IMAGEN DE CHINA AGREGADA) -->
+    <!-- BANNER CONTENEDOR -->
     <div class="banner-container">
       <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Fe, Poder y Vida">
       <img id="banner-en" class="capsules-img" src="Explora/portada-en.png" alt="The Word in Capsules — Faith, Power and Life" style="display:none">
@@ -287,13 +292,13 @@
     <!-- TEXTO COMPLETO DE BIENVENIDA -->
     <section class="welcome-text" aria-live="polite">
       <div id="content-es" class="lang-content visible">
-        <p> Bienvenido a este space. Un lugar<br> dedicado a compartir ideas<br> prácticas, profundas<br> y accesibles para<br> un caminar<br> seguro con<br> Dios </p>
+        <p> Bienvenido a este espacio. Un lugar<br> dedicado a compartir ideas<br> prácticas, profundas<br> y accesibles para<br> un caminar<br> seguro con<br> Dios </p>
       </div>
       <div id="content-en" class="lang-content">
         <p> Welcome to this space. A place<br> dedicated to sharing<br> practical, profound<br> and accessible<br> ideas for<br> walking<br> securely<br> with<br> God. </p>
       </div>
       <div id="content-fr" class="lang-content">
-        <p> Bienvenue dans cet espace. Un lieu<br> consacré au partage d'idées<br> pratiques, profondes<br> et accessibles pour<br> marcher en toute<br> confiance avec<br> Dieu. </p>
+        <p> Bienvenue dans cet espacio. Un lieu<br> consacré au partage d'idées<br> pratiques, profondes<br> et accessibles pour<br> marcher en toute<br> confiance avec<br> Dieu. </p>
       </div>
       <div id="content-zh" class="lang-content">
         <p lang="zh-CN"> 欢迎来到这个空间。<br> 这里分享实用、深刻<br> 且容易理解的内容，<br> 帮助您在与上帝同行的<br> 信仰道路上稳步前行。 </p>
@@ -327,9 +332,8 @@
         link.classList.toggle('active', selected);
         link.setAttribute('aria-pressed', String(selected));
       });
-      
-      document.querySelectorAll('.lang-content').forEach(content => {
 Use code with caution.
+document.querySelectorAll('.lang-content').forEach(content => {
 content.classList.toggle('visible', content.id === 'content-' + lang);
 });
 // Control de visibilidad de las imágenes de las portadas
