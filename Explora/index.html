@@ -38,11 +38,20 @@
       width: min(900px, calc(100% - 32px));
       min-height: calc(100vh - 4px);
       margin: 2px auto;
-      padding: 8px 56px 18px;
+      padding: 16px 56px 24px;
       background: var(--paper);
       box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
       display: flex;
       flex-direction: column;
+      justify-content: space-between; /* Distribuye los bloques optimizando el espacio inferior */
+    }
+
+    /* Contenedor intermedio para agrupar elementos superiores y centrar el contenido */
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     /* Selector de idiomas */
@@ -53,7 +62,7 @@
       flex-wrap: wrap;
       gap: 8px;
       padding: 2px 0 8px;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       border-bottom: 1px solid #f0ede6;
       font-size: 13px;
       flex-shrink: 0;
@@ -82,7 +91,7 @@
     .banner-container {
       width: 100%;
       max-width: 580px;
-      margin: 0 auto 6px;
+      margin: 0 auto 12px;
       text-align: center;
       flex-shrink: 0;
     }
@@ -104,7 +113,7 @@
     .welcome-text {
       width: 100%;
       max-width: 760px;
-      margin: 0 auto 8px;
+      margin: 0 auto 16px;
       color: var(--brand-blue);
       text-align: center;
     }
@@ -126,9 +135,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto 8px;
+      margin: 12px auto 0;
       padding: 0;
       flex-shrink: 0;
+      width: 100%;
     }
 
     .explore-button {
@@ -157,40 +167,37 @@
     /* PC y pantallas horizontales */
     @media (min-width: 701px) {
       .page {
-        padding: 8px 56px 14px;
+        padding: 12px 56px 20px;
       }
       .language-bar {
-        margin-bottom: 6px;
+        margin-bottom: 12px;
         padding-bottom: 7px;
       }
       .banner-container {
         max-width: 580px;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
       }
       .welcome-text {
-        margin-bottom: 6px;
-      }
-      .explore-button-container {
-        margin-bottom: 4px;
+        margin-bottom: 12px;
       }
     }
 
     /* PC con poca altura disponible */
     @media (min-width: 701px) and (max-height: 800px) {
       .page {
-        padding-top: 4px;
-        padding-bottom: 8px;
+        padding-top: 8px;
+        padding-bottom: 12px;
       }
       .language-bar {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         padding-bottom: 4px;
       }
       .banner-container {
         max-width: 500px;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
       }
       .welcome-text {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         line-height: 1.55;
       }
       .explore-button {
@@ -206,20 +213,20 @@
         width: 100%;
         min-height: 100vh;
         margin: 0;
-        padding: 10px 20px 36px;
+        padding: 12px 20px 24px;
         box-shadow: none;
       }
       .language-bar {
         justify-content: center;
         gap: 7px;
         padding: 4px 0 10px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         font-size: 13px;
       }
       .banner-container {
         width: 100%;
         max-width: none;
-        margin: 0 auto 24px;
+        margin: 0 auto 16px;
       }
       .capsules-img {
         width: 100%;
@@ -228,11 +235,12 @@
       .welcome-text {
         width: 100%;
         max-width: 340px;
-        margin: 0 auto 32px;
+        margin: 0 auto 20px;
         line-height: 1.85;
       }
       .explore-button-container {
-        margin: 0 auto 12px;
+        margin-top: auto; /* Empuja el botón al extremo inferior del contenedor de la pantalla */
+        padding-top: 16px;
       }
       .explore-button {
         min-width: 230px;
@@ -244,18 +252,15 @@
     /* Celulares con pantallas muy altas */
     @media (max-width: 700px) and (orientation: portrait) and (min-height: 750px) {
       .page {
-        padding-top: 12px;
-        padding-bottom: 40px;
+        padding-top: 16px;
+        padding-bottom: 32px;
       }
       .banner-container {
-        margin-bottom: 28px;
+        margin-bottom: 24px;
       }
       .welcome-text {
         max-width: 350px;
-        margin-bottom: 38px;
-      }
-      .explore-button-container {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
       }
     }
 
@@ -297,6 +302,7 @@
 <body>
 
   <main class="page">
+    <!-- Barra superior fija de navegación de idiomas -->
     <nav class="language-bar" aria-label="Seleccionar idioma">
       <button type="button" class="lang-link active" id="link-es" aria-pressed="true" onclick="changeLanguage('es')">
         Español
@@ -315,39 +321,42 @@
       </button>
     </nav>
 
-    <!-- Imágenes de portada: solo se muestra el idioma activo -->
-    <div class="banner-container">
-      <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="Portada en español">
-      <img id="banner-en" class="capsules-img" src="Explora/portada-en.png" alt="Cover in English" hidden>
-      <img id="banner-fr" class="capsules-img" src="Explora/portada-fr.png" alt="Couverture en français" hidden>
-      <img id="banner-zh-CN" class="capsules-img" src="Explora/portada-zh.png" alt="中文封面" hidden>
+    <!-- Bloque central expansivo para portadas y textos -->
+    <div class="main-content">
+      <!-- Imágenes de portada -->
+      <div class="banner-container">
+        <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="Portada en español">
+        <img id="banner-en" class="capsules-img" src="Explora/portada-en.png" alt="Cover in English" hidden>
+        <img id="banner-fr" class="capsules-img" src="Explora/portada-fr.png" alt="Couverture en français" hidden>
+        <img id="banner-zh-CN" class="capsules-img" src="Explora/portada-zh.png" alt="中文封面" hidden>
+      </div>
+
+      <!-- Bienvenida traducida -->
+      <section class="welcome-text" aria-live="polite">
+        <div id="content-es" class="lang-content visible">
+          <p>
+            Bienvenido a este espacio. Un lugar dedicado a compartir ideas prácticas, profundas y accesibles para un caminar seguro con Dios.
+          </p>
+        </div>
+        <div id="content-en" class="lang-content" hidden>
+          <p>
+            Welcome to this space. A place dedicated to sharing practical, profound and accessible ideas for walking securely with God.
+          </p>
+        </div>
+        <div id="content-fr" class="lang-content" hidden>
+          <p>
+            Bienvenue dans cet espacio. Un lieu consacré au partage d'idées pratiques, profondes et accessibles pour marcher en toute confiance avec Dieu.
+          </p>
+        </div>
+        <div id="content-zh-CN" class="lang-content" hidden>
+          <p>
+            欢迎来到这个空间。这里致力于分享实用、深刻而易于理解的理念， 帮助您与上帝同行，踏上坚定而稳妥的信仰之路。
+          </p>
+        </div>
+      </section>
     </div>
 
-    <!-- Bienvenida traducida -->
-    <section class="welcome-text" aria-live="polite">
-      <div id="content-es" class="lang-content visible">
-        <p>
-          Bienvenido a este espacio. Un lugar dedicado a compartir ideas prácticas, profundas y accesibles para un caminar seguro con Dios.
-        </p>
-      </div>
-      <div id="content-en" class="lang-content" hidden>
-        <p>
-          Welcome to this space. A place dedicated to sharing practical, profound and accessible ideas for walking securely with God.
-        </p>
-      </div>
-      <div id="content-fr" class="lang-content" hidden>
-        <p>
-          Bienvenue dans cet espace. Un lieu consacré au partage d'idées pratiques, profondes et accessibles pour marcher en toute confiance avec Dieu.
-        </p>
-      </div>
-      <div id="content-zh-CN" class="lang-content" hidden>
-        <p>
-          欢迎来到这个空间。这里致力于分享实用、深刻而易于理解的理念， 帮助您与上帝同行，踏上坚定而稳妥的信仰之路。
-        </p>
-      </div>
-    </section>
-
-    <!-- Botón principal -->
+    <!-- Botón principal en el extremo inferior -->
     <div class="explore-button-container">
       <a href="Explora/menu.html" class="explore-button" id="btn-explore"> EXPLORA </a>
     </div>
@@ -355,10 +364,10 @@
 
   <script>
     const translations = {
-      es: { title: 'La Palabra en Cápsulas — Portada Oficial', button: 'EXPLORA' },
-      en: { title: 'The Word in Capsules — Official Home', button: 'EXPLORE' },
-      fr: { title: 'La Parole en Capsules — Accueil officiel', button: 'EXPLORER' },
-      'zh-CN': { title: '胶囊中的圣言 — 官方主页', button: '探索' }
+      es: { title: 'La Palabra en Cápsulas — Portada Oficial', button: 'EXPLORA', targetUrl: 'Explora/menu.html' },
+      en: { title: 'The Word in Capsules — Official Home', button: 'EXPLORE', targetUrl: 'Explora/menu-en.html' },
+      fr: { title: 'La Parole en Capsules — Accueil officiel', button: 'EXPLORER', targetUrl: 'Explora/menu-fr.html' },
+      'zh-CN': { title: '胶囊中的圣言 — 官方主页', button: '探索', targetUrl: 'Explora/menu-zh.html' }
     };
 
     function changeLanguage(lang) {
@@ -367,20 +376,18 @@
       document.title = translations[lang].title;
 
       /* Actualizar selector de idiomas */
-      document.querySelectorAll('.lang-link').forEach(link => {
-        const isActive = link.id === 'link-' + lang;
-        link.classList.toggle('active', isActive);
-        link.setAttribute('aria-pressed', String(isActive));
-      });
-
-      /* Ocultar todos los textos y mostrar el seleccionado */
-      document.querySelectorAll('.lang-content').forEach(content => {
-        const isActive = content.id === 'content-' + lang;
-        content.classList.toggle('visible', isActive);
-        content.hidden = !isActive;
-      });
-
-      /* Ocultar todas las portadas antes de mostrar la correcta */
+document.querySelectorAll('.lang-link').forEach(link => {
+const isActive = link.id === 'link-' + lang;
+link.classList.toggle('active', isActive);
+link.setAttribute('aria-pressed', String(isActive));
+});
+/* Ocultar todos los textos y mostrar el seleccionado */
+document.querySelectorAll('.lang-content').forEach(content => {
+const isActive = content.id === 'content-' + lang;
+content.classList.toggle('visible', isActive);
+content.hidden = !isActive;
+});
+/* Ocultar todas las portadas antes de mostrar la correcta */
 document.querySelectorAll('.capsules-img').forEach(img => {
 img.hidden = true;
 });
@@ -388,8 +395,10 @@ const activeBanner = document.getElementById('banner-' + lang);
 if (activeBanner) {
 activeBanner.hidden = false;
 }
-/* Traducir el botón */
-document.getElementById('btn-explore').textContent = translations[lang].button;
+/* Traducir el texto del botón y ajustar la ruta de destino según el idioma */
+const exploreBtn = document.getElementById('btn-explore');
+exploreBtn.textContent = translations[lang].button;
+exploreBtn.setAttribute('href', translations[lang].targetUrl);
 /* Guardar el idioma elegido /
 try {
 localStorage.setItem('lpc-language', lang);
