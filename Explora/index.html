@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>La Palabra en Cápsulas — Portada Oficial</title>
+
+  <style>
+    :root {
+      --text: #252525;
+      --muted: #666;
+      --accent: #17365D;
+      --brand-blue: #112952;
+      --paper: #fff;
+      --bg: #f2f0ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      zoom: 100%;
+    }
+
+    .page {
+      width: min(900px, calc(100% - 32px));
+      margin: 2px auto;
+      background: var(--paper);
+      padding: 10px 72px 22px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+    }
+
+    /* SELECTOR DE IDIOMAS */
+
+    .language-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 0 14px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #f0ede6;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .lang-link {
+      color: var(--muted);
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .lang-link:hover {
+      color: var(--accent);
+    }
+
+    .lang-link.active {
+      color: var(--brand-blue);
+      font-weight: 700;
+    }
+
+    .lang-divider {
+      color: #ccc;
+      user-select: none;
+    }
+
+    /* PORTADA */
+
+    .banner-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+
+    .capsules-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* PORTADA EN INGLÉS Y FRANCÉS */
+
+    .translated-title-box {
+      display: none;
+      min-height: 200px;
+      padding: 35px 15px 24px;
+      background: linear-gradient(
+        135deg,
+        #fffdf8 0%,
+        #f7f0e3 50%,
+        #fffdf8 100%
+      );
+      border: 1px solid #e3d7c3;
+      color: var(--brand-blue);
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .translated-title-box h1 {
+      max-width: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 4vw, 42px);
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .translated-title-box p {
+      margin-top: 12px;
+      color: #9b793d;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      font-style: italic;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* BIENVENIDA */
+
+    .welcome-text {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      color: var(--brand-blue);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .welcome-text p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.visible {
+      display: block;
+    }
+
+    /* BOTÓN EXPLORA */
+
+    .explore-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto 2px;
+    }
+
+    .explore-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 230px;
+      padding: 10px 30px;
+      background: #fff;
+      color: var(--accent);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      box-shadow: 0 3px 10px rgba(23, 54, 93, .07);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .explore-button:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(23, 54, 93, .16);
+    }
+
+    .explore-button:active {
+      transform: translateY(0);
+    }
+
+    /* AJUSTE EXCLUSIVO PARA PC: subir el contenido para mostrar EXPLORA */
+    @media (min-width: 901px) {
+      .page {
+        padding-top: 2px;
+      }
+
+      .language-bar {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+      }
+
+      .banner-container {
+        margin-bottom: 4px;
+      }
+
+      .welcome-text {
+        margin-bottom: 14px;
+      }
+    }
+
+    /* TELÉFONO VERTICAL */
+
+    @media (max-width: 700px) and (orientation: portrait) {
+      .page {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px 24px 30px;
+      }
+
+      .language-bar {
+        justify-content: flex-end;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+      }
+
+      .banner-container {
+        margin-bottom: 10px;
+      }
+
+      .translated-title-box {
+        min-height: 155px;
+        padding: 22px 10px;
+      }
+
+      .translated-title-box h1 {
+        font-size: clamp(23px, 7vw, 32px);
+      }
+
+      .translated-title-box p {
+        font-size: 15px;
+      }
+
+      .welcome-text {
+        max-width: 290px;
+        margin: 0 auto 22px;
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+
+      .welcome-text p {
+        text-align: center;
+      }
+
+      .explore-button-container {
+        margin-bottom: 4px;
+      }
+
+      .explore-button {
+        min-width: 180px;
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+    }
+
+    /* TELÉFONO HORIZONTAL */
+
+    @media (max-width: 900px) and (orientation: landscape) {
+      .page {
+        width: min(900px, calc(100% - 32px));
+        padding: 10px 40px 22px;
+        margin: 2px auto;
+      }
+
+      .banner-container {
+        margin-bottom: 10px;
+      }
+
+      .translated-title-box {
+        min-height: 155px;
+        padding: 20px 12px;
+      }
+
+      .translated-title-box h1 {
+        font-size: clamp(25px, 4vw, 36px);
+      }
+
+      .welcome-text {
+        max-width: 760px;
+        margin: 0 auto 22px;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .explore-button {
+        min-width: 200px;
+        padding: 10px 30px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- SELECTOR DE IDIOMAS -->
+
+    <nav class="language-bar" aria-label="Language selection">
+
+      <button
+        type="button"
+        class="lang-link active"
+        id="link-es"
+        onclick="changeLanguage('es')"
+        aria-pressed="true">
+        Español
+      </button>
+
+      <span class="lang-divider">|</span>
+
+      <button
+        type="button"
+        class="lang-link"
+        id="link-en"
+        onclick="changeLanguage('en')"
+        aria-pressed="false">
+        English
+      </button>
+
+      <span class="lang-divider">|</span>
+
+      <button
+        type="button"
+        class="lang-link"
+        id="link-fr"
+        onclick="changeLanguage('fr')"
+        aria-pressed="false">
+        Français
+      </button>
+
+      <span class="lang-divider">|</span>
+
+      <button
+        type="button"
+        class="lang-link"
+        id="link-zh-CN"
+        onclick="changeLanguage('zh-CN')"
+        aria-pressed="false">
+        中文
+      </button>
+
+    </nav>
+
+    <!-- BANNER ORIGINAL EN ESPAÑOL -->
+
+    <div class="banner-container">
+
+      <img
+        id="banner-es"
+        class="capsules-img"
+        src="Explora/portada.png"
+        alt="La Palabra en Cápsulas — Fe, Poder y Vida">
+
+      <img
+        id="banner-en"
+        class="capsules-img"
+        src="Explora/portada-en.png"
+        alt="The Word in Capsules — Faith, Power and Life"
+        style="display:none">
+
+      <img
+        id="banner-fr"
+        class="capsules-img"
+        src="Explora/portada-fr.png"
+        alt="La Parole en Capsules — Foi, Puissance et Vie"
+        style="display:none">
+
+      <div id="banner-zh-CN" class="translated-title-box" lang="zh-CN" style="display:none">
+        <h1>胶囊中的圣言</h1>
+        <p>信心、能力与生命</p>
+      </div>
+
+    </div>
+
+    <!-- TEXTO COMPLETO DE BIENVENIDA -->
+
+    <section class="welcome-text" aria-live="polite">
+
+      <div id="content-es" class="lang-content visible">
+
+        <p>
+          Bienvenido a este espacio. Un lugar<br>
+          dedicado a compartir ideas<br>
+          prácticas, profundas<br>
+          y accesibles para<br>
+          un caminar<br>
+          seguro con<br>
+          Dios
+        </p>
+
+      </div>
+
+      <div id="content-en" class="lang-content">
+
+        <p>
+          Welcome to this space. A place<br>
+          dedicated to sharing<br>
+          practical, profound<br>
+          and accessible<br>
+          ideas for<br>
+          walking<br>
+          securely<br>
+          with<br>
+          God.
+        </p>
+
+      </div>
+
+      <div id="content-fr" class="lang-content">
+
+        <p>
+          Bienvenue dans cet espace. Un lieu<br>
+          consacré au partage d'idées<br>
+          pratiques, profondes<br>
+          et accessibles pour<br>
+          marcher en toute<br>
+          confiance avec<br>
+          Dieu.
+        </p>
+
+      </div>
+
+      <div id="content-zh-CN" class="lang-content" lang="zh-CN">
+        <p>欢迎来到这个空间。这里致力于分享<br>
+        实用、深刻而易于理解的理念，<br>
+        帮助您与上帝同行，<br>
+        踏上坚定而稳妥的信仰之路。</p>
+      </div>
+
+    </section>
+
+    <!-- BOTÓN PRINCIPAL -->
+
+    <div class="explore-button-container">
+
+      <a
+        href="Explora/menu.html"
+        class="explore-button"
+        id="btn-explore">
+        EXPLORA
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- CAMBIO INMEDIATO DE IDIOMA Y PREFERENCIA GUARDADA -->
+
+  <script>
+    const translations = {
+      es: {
+        title: 'La Palabra en Cápsulas — Portada Oficial',
+        bannerTitle: '',
+        bannerSubtitle: '',
+        button: 'EXPLORA'
+      },
+
+      en: {
+        title: 'The Word in Capsules — Official Home',
+        bannerTitle: 'The Word in Capsules',
+        bannerSubtitle: 'Faith, Power and Life',
+        button: 'EXPLORE'
+      },
+
+      fr: {
+        title: 'La Parole en Capsules — Accueil officiel',
+        bannerTitle: 'La Parole en Capsules',
+        bannerSubtitle: 'Foi, Puissance et Vie',
+        button: 'EXPLORER'
+      },
+
+      'zh-CN': {
+        title: '胶囊中的圣言 — 官方主页',
+        bannerTitle: '胶囊中的圣言',
+        bannerSubtitle: '信心、能力与生命',
+        button: '探索'
+      }
+    };
+
+    function changeLanguage(lang) {
+      if (!translations[lang]) {
+        lang = 'es';
+      }
+
+      document.documentElement.lang = lang;
+      document.title = translations[lang].title;
+
+      document.querySelectorAll('.lang-link').forEach(link => {
+        const selected = link.id === 'link-' + lang;
+
+        link.classList.toggle('active', selected);
+        link.setAttribute('aria-pressed', String(selected));
+      });
+
+      document.querySelectorAll('.lang-content').forEach(content => {
+        content.classList.toggle(
+          'visible',
+          content.id === 'content-' + lang
+        );
+      });
+
+      document.getElementById('banner-es').style.display =
+        lang === 'es' ? 'block' : 'none';
+
+      document.getElementById('banner-en').style.display =
+        lang === 'en' ? 'block' : 'none';
+
+      document.getElementById('banner-fr').style.display =
+        lang === 'fr' ? 'block' : 'none';
+
+      document.getElementById('banner-zh-CN').style.display =
+        lang === 'zh-CN' ? 'flex' : 'none';
+
+      document.getElementById('btn-explore').textContent =
+        translations[lang].button;
+
+      try {
+        localStorage.setItem('lpc-language', lang);
+      } catch (error) {
+        // La página sigue funcionando aunque el almacenamiento
+        // del navegador esté deshabilitado.
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      let savedLanguage = 'es';
+
+      try {
+        savedLanguage = localStorage.getItem('lpc-language') || 'es';
+      } catch (error) {
+        savedLanguage = 'es';
+      }
+
+      changeLanguage(savedLanguage);
+    });
+  </script>
+
+</body>
+</html>
