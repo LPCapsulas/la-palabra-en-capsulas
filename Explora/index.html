@@ -28,12 +28,12 @@
       font-family: "Segoe UI", sans-serif;
       font-size: 17px;
       line-height: 1.8;
-      overflow: hidden; /* Elimina scrollbars innecesarias en PC */
+      overflow: hidden; /* Botón siempre visible en PC al 100% sin scroll */
     }
 
     .page {
       width: min(900px, calc(100% - 32px));
-      height: calc(100vh - 4px); /* Forzado a ocupar exactamente el alto de pantalla visible */
+      height: calc(100vh - 4px);
       margin: 2px auto;
       padding: 16px 56px 24px;
       background: var(--paper);
@@ -42,7 +42,6 @@
       flex-direction: column;
     }
 
-    /* Selector de idiomas fijo arriba */
     .language-bar {
       display: flex;
       justify-content: flex-end;
@@ -70,15 +69,13 @@
       font-weight: bold;
     }
 
-    /* Contenedor principal de contenido */
     .content-wrapper {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Empuja los bloques de forma simétrica */
+      justify-content: space-between;
     }
 
-    /* Sección de imagen */
     .image-container {
       text-align: center;
       margin-bottom: 10px;
@@ -87,11 +84,10 @@
     .cover-image {
       max-width: 100%;
       height: auto;
-      max-height: 48vh; /* Ajuste óptimo para PC y Pantallas grandes */
+      max-height: 48vh;
       object-fit: contain;
     }
 
-    /* Textos con efecto cascada */
     .text-container {
       text-align: center;
       display: flex;
@@ -101,18 +97,20 @@
       margin-bottom: 15px;
     }
 
-    /* Botón de acción principal fijo abajo */
+    /* Contenedor del botón dinámico */
     .action-container {
       text-align: center;
       padding-bottom: 15px;
       margin-top: auto;
+      min-height: 55px; /* Reserva el espacio para evitar saltos visuales */
     }
 
+    /* Estilos heredados por el botón inyectado */
     .btn-explore {
       display: inline-block;
       background-color: var(--brand-blue);
       color: white;
-      padding: 14px 40px; /* Un poco más grande para mejor impacto visual */
+      padding: 14px 40px;
       text-decoration: none;
       border-radius: 4px;
       font-weight: bold;
@@ -123,10 +121,10 @@
       background-color: var(--accent);
     }
 
-    /* RESPONSIVO: Celular vertical sin espacios vacíos abajo */
+    /* RESPONSIVO: Celular vertical estirado al máximo para no dejar huecos */
     @media (max-width: 600px) {
       html, body {
-        overflow: hidden; /* Mantiene la app fija en una sola pantalla de celular */
+        overflow: hidden;
       }
 
       .page {
@@ -135,17 +133,17 @@
       }
 
       .cover-image {
-        max-height: 55vh; /* Hacemos la imagen mucho más alta en celulares para desplazar el texto hacia abajo */
+        max-height: 62vh; /* Imagen aún más alta para empujar agresivamente el texto hacia abajo */
         width: 100%;
       }
 
       html, body {
-        font-size: 20px; /* Incrementamos la fuente global del celular */
-        line-height: 1.6;
+        font-size: 22px; /* Letra grande para rellenar de forma compacta el espacio inferior */
+        line-height: 1.5;
       }
 
       .text-container {
-        gap: 18px; /* Incrementamos la separación interna para rellenar verticalmente */
+        gap: 20px;
       }
     }
   </style>
@@ -154,7 +152,6 @@
 
   <div class="page">
     <header class="language-bar">
-      <!-- Cambiados a enlaces estándar con parámetros directos -->
       <a href="?lang=es" class="lang-link" data-lang="es">Español</a> | 
       <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
     </header>
@@ -169,15 +166,12 @@
         <p id="subtitle">Tu dosis diaria de inspiración y conocimiento.</p>
       </div>
 
-      <div class="action-container">
-        <!-- Sin HREF por defecto en el HTML para evitar redirecciones erróneas previas a JS -->
-        <a id="explore-btn" class="btn-explore">Explora</a>
-      </div>
+      <!-- EL BOTÓN YA NO EXISTE EN EL HTML. Se creará desde cero con JavaScript -->
+      <div class="action-container" id="button-box"></div>
     </div>
   </div>
 
   <script>
-    // Datos de traducción y URLs de destino exactas
     const translations = {
       es: {
         title: "La Palabra en Cápsulas",
@@ -196,22 +190,30 @@
     function setLanguage(lang) {
       if (!translations[lang]) lang = 'es';
 
-      // 1. Guardar la elección del usuario de forma persistente en el dispositivo
+      // Guardar idioma preferido
       localStorage.setItem('user_language', lang);
-
-      // 2. Modificar atributos globales del HTML
       document.documentElement.lang = lang;
       
-      // 3. Reemplazar Textos
+      // Actualizar textos básicos
       document.getElementById('title').textContent = translations[lang].title;
       document.getElementById('subtitle').textContent = translations[lang].subtitle;
       
-      // 4. CAMBIO RADICAL DEL BOTÓN: Forzamos la reescritura directa de la propiedad nativa del DOM
-      const mainBtn = document.getElementById('explore-btn');
-      mainBtn.textContent = translations[lang].btnText;
-      mainBtn.href = translations[lang].btnUrl;
+      // SOLUCIÓN DEFINITIVA: Desinstalar botón viejo e instalar uno nuevo desde cero
+      const buttonBox = document.getElementById('button-box');
+      buttonBox.innerHTML = ''; // Limpia por completo cualquier rastro del botón anterior
 
-      // 5. Actualizar los estilos de la barra superior
+      // Construcción del elemento <a> limpio y directo en el DOM
+      const newBtn = document.createElement('a');
+      newBtn.className = 'btn-explore';
+      newBtn.textContent = translations[lang].btnText;
+      
+      // Forzar de forma nativa e independiente la URL correcta según el idioma actual
+      newBtn.setAttribute('href', translations[lang].btnUrl);
+      
+      // Adjuntar el botón recién creado al contenedor de la interfaz
+      buttonBox.appendChild(newBtn);
+
+      // Actualizar la clase activa del selector de idiomas
       document.querySelectorAll('.lang-link').forEach(link => {
         if (link.getAttribute('data-lang') === lang) {
           link.classList.add('active');
@@ -221,15 +223,12 @@
       });
     }
 
-    // LÓGICA DE DETECCIÓN PRIORITARIA:
-    // Primero revisa si hay un parámetro en la URL (?lang=zh). Si no hay, revisa si el usuario ya guardó su preferencia en localStorage. Si tampoco hay, usa español por defecto.
+    // Sistema de detección jerárquico (URL -> Memoria local -> Español por defecto)
     const urlParams = new URLSearchParams(window.location.search);
     const savedLang = localStorage.getItem('user_language');
     const currentLang = urlParams.get('lang') || savedLang || 'es';
     
-    // Ejecutar inmediatamente al cargar la página
     setLanguage(currentLang);
   </script>
 </body>
 </html>
-
