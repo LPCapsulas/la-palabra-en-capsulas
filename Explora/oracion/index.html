@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -34,6 +34,7 @@ h1{margin:0 0 10px;color:var(--accent);font-family:Georgia,"Times New Roman",ser
 <nav class="language-selector" aria-label="Selector de idioma">
 <button type="button" data-lang="es" aria-pressed="true">Español</button>
 <button type="button" data-lang="en" aria-pressed="false">English</button>
+<button type="button" data-lang="zh" aria-pressed="false">中文</button>
 <button type="button" data-lang="fr" aria-pressed="false">Français</button>
 </nav>
 <article class="article-card">
@@ -47,6 +48,7 @@ h1{margin:0 0 10px;color:var(--accent);font-family:Georgia,"Times New Roman",ser
 const translations={
 es:{title:"Oración",intro:"Meditando y hablando con Dios.",cardTitle:"La Importancia de Orar",cardDesc:"Una reflexión sobre lo que implica la oración, súplica, acciones de gracias, alabanza, el dar y el lugar que deben ocupar en la vida del creyente.",read:"Leer artículo →",back:"← Volver al Menú",pageTitle:"Oración — La Palabra en Cápsulas"},
 en:{title:"Prayer",intro:"Meditating and speaking with God.",cardTitle:"The Importance of Prayer",cardDesc:"A reflection on prayer, supplication, thanksgiving, praise, giving, and the place these practices should have in a believer’s life.",read:"Read article →",back:"← Back to Menu",pageTitle:"Prayer — The Word in Capsules"},
+zh:{title:"祷告",intro:"默想上帝，并与祂交谈。",cardTitle:"祷告的重要性",cardDesc:"本文反思祷告、恳求、感恩、赞美、奉献，以及这些实践在信徒生命中应有的位置。",read:"阅读文章 →",back:"← 返回菜单",pageTitle:"祷告 — 胶囊圣言"},
 fr:{title:"Prière",intro:"Méditer et parler avec Dieu.",cardTitle:"L’importance de la prière",cardDesc:"Une réflexion sur la prière, la supplication, les actions de grâce, la louange, le don et la place que ces pratiques doivent occuper dans la vie du croyant.",read:"Lire l’article →",back:"← Retour au menu",pageTitle:"Prière — La Parole en Capsules"}
 };
 function setLanguage(lang){
