@@ -361,6 +361,17 @@
         Français
       </button>
 
+      <span class="lang-divider">|</span>
+
+      <button
+        type="button"
+        class="lang-link"
+        id="link-zh-CN"
+        onclick="changeLanguage('zh-CN')"
+        aria-pressed="false">
+        中文
+      </button>
+
     </nav>
 
     <!-- BANNER ORIGINAL EN ESPAÑOL -->
@@ -386,6 +397,11 @@
         src="Explora/portada-fr.png"
         alt="La Parole en Capsules — Foi, Puissance et Vie"
         style="display:none">
+
+      <div id="banner-zh-CN" class="translated-title-box" lang="zh-CN" style="display:none">
+        <h1>胶囊中的圣言</h1>
+        <p>信心、能力与生命</p>
+      </div>
 
     </div>
 
@@ -437,6 +453,13 @@
 
       </div>
 
+      <div id="content-zh-CN" class="lang-content" lang="zh-CN">
+        <p>欢迎来到这个空间。这里致力于分享<br>
+        实用、深刻而易于理解的理念，<br>
+        帮助您与上帝同行，<br>
+        踏上坚定而稳妥的信仰之路。</p>
+      </div>
+
     </section>
 
     <!-- BOTÓN PRINCIPAL -->
@@ -477,6 +500,13 @@
         bannerTitle: 'La Parole en Capsules',
         bannerSubtitle: 'Foi, Puissance et Vie',
         button: 'EXPLORER'
+      },
+
+      'zh-CN': {
+        title: '胶囊中的圣言 — 官方主页',
+        bannerTitle: '胶囊中的圣言',
+        bannerSubtitle: '信心、能力与生命',
+        button: '探索'
       }
     };
 
@@ -510,6 +540,9 @@
 
       document.getElementById('banner-fr').style.display =
         lang === 'fr' ? 'block' : 'none';
+
+      document.getElementById('banner-zh-CN').style.display =
+        lang === 'zh-CN' ? 'flex' : 'none';
 
       document.getElementById('btn-explore').textContent =
         translations[lang].button;
