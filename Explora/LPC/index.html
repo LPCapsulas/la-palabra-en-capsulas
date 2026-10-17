@@ -267,6 +267,8 @@
             onclick="changeLanguage('es')">ES</button>
         <button type="button" data-lang="en"
             onclick="changeLanguage('en')">EN</button>
+        <button type="button" data-lang="zh"
+            onclick="changeLanguage('zh')">中文</button>
         <button type="button" data-lang="fr"
             onclick="changeLanguage('fr')">FR</button>
     </nav>
@@ -393,6 +395,24 @@
             verseTwo: "« Ce que je fais, tu ne le comprends pas maintenant, mais tu le comprendras par la suite. » (Jésus)",
             referenceTwo: "Jean 13:7",
             back: "← Retour à Explorer"
+        },
+
+        zh: {
+            siteName: "胶囊中的圣言",
+            title: "关于 LPC — 胶囊中的圣言",
+            pageTitle: "关于 LPC",
+            subtitle: "一句话，一个胶囊，一则陪伴人生旅程的信息。",
+            headingWhat: "什么是 LPC？",
+            textWhat: 'LPC 是“胶囊中的圣言”（La Palabra en Cápsulas）的缩写。几年前，当我意识到自己因基督的恩典而得救时，我开始不仅讲述上帝的怜悯，也在街头分发印有简短信息的传单。我们称这些传单为“福音单张”，我也用这个名称为其中一些作品命名。',
+            headingEvolution: "从福音单张到简短信息",
+            evolution1: "随着时间推移，纸质传单逐渐被社交媒体上简短而有深意的信息所取代。",
+            evolution2: "我相信，上帝每天都按着我们的需要或接受能力，将祂的话语一点一点地赐给我们，正如教师耶稣所教导的那样。",
+            headingDaily: "每日一句话",
+            verseOne: "“我们日用的饮食，今日赐给我们。”",
+            referenceOne: "马太福音 6:11",
+            verseTwo: "“我所做的，你如今不知道，后来必明白。”（耶稣）",
+            referenceTwo: "约翰福音 13:7",
+            back: "← 返回探索"
         }
     };
 
@@ -404,6 +424,7 @@
         }
 
         document.documentElement.lang = language;
+        document.documentElement.dir = "ltr";
         document.title = selected.title;
 
         document.getElementById("site-name").textContent =
@@ -474,7 +495,7 @@
         try {
             const storedLanguage = localStorage.getItem("lpc-language");
 
-            if (["es", "en", "fr"].includes(storedLanguage)) {
+            if (["es", "en", "fr", "zh"].includes(storedLanguage)) {
                 savedLanguage = storedLanguage;
             }
         } catch (error) {
@@ -487,4 +508,3 @@
 
 </body>
 </html>
-
