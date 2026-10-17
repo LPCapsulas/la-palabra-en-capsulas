@@ -28,12 +28,12 @@
       font-family: "Segoe UI", sans-serif;
       font-size: 17px;
       line-height: 1.8;
-      overflow-x: hidden;
+      overflow: hidden; /* Evita scrolls innecesarios en PC al 100% */
     }
 
     .page {
       width: min(900px, calc(100% - 32px));
-      min-height: calc(100vh - 4px);
+      height: calc(100vh - 4px); /* Forzado a ocupar exactamente el alto de pantalla */
       margin: 2px auto;
       padding: 16px 56px 24px;
       background: var(--paper);
@@ -50,7 +50,7 @@
       flex-wrap: wrap;
       gap: 8px;
       padding: 2px 0 8px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       border-bottom: 1px solid #f0ede6;
       font-size: 13px;
       flex-shrink: 0;
@@ -75,36 +75,36 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: space-between; /* Distribuye el espacio eficientemente */
     }
 
     /* Sección de imagen */
     .image-container {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .cover-image {
       max-width: 100%;
       height: auto;
-      max-height: 40vh;
+      max-height: 45vh; /* Ajuste óptimo para PC */
       object-fit: contain;
     }
 
-    /* SOLUCIÓN ESPACIO VERTICAL: El contenedor se estira y centra el texto */
+    /* Contenedor de texto */
     .text-container {
       text-align: center;
-      flex: 1; 
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Centra el texto verticalmente en el espacio sobrante */
-      gap: 12px; /* Espacio controlado entre el título y el subtítulo */
-      margin-bottom: 20px;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 15px;
     }
 
-    /* Botón de acción principal */
+    /* Botón de acción principal abajo */
     .action-container {
       text-align: center;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
       margin-top: auto;
     }
 
@@ -123,20 +123,29 @@
       background-color: var(--accent);
     }
 
-    /* RESPONSIVO: Ajustes optimizados para celular vertical */
+    /* RESPONSIVO: Celular vertical sin espacios muertos */
     @media (max-width: 600px) {
+      html, body {
+        overflow: hidden; /* Mantiene la app fija en una sola pantalla de celular */
+      }
+      
       .page {
         padding: 16px 20px 20px;
+        height: calc(100vh - 4px);
       }
 
       .cover-image {
-        max-height: 48vh; /* Ampliamos un poco más la imagen para rellenar espacio */
+        max-height: 52vh; /* Imagen mucho más alta para empujar el contenido hacia abajo */
         width: 100%;
       }
 
       html, body {
-        font-size: 18px;
+        font-size: 19px; /* Texto más grande para ocupar espacio */
         line-height: 1.6;
+      }
+      
+      .text-container {
+        gap: 16px; /* Más espacio entre título y subtítulo en móviles */
       }
     }
   </style>
@@ -145,7 +154,7 @@
 
   <div class="page">
     <header class="language-bar">
-      <a href="?lang=es" class="lang-link active" data-lang="es">Español</a> | 
+      <a href="?lang=es" class="lang-link" data-lang="es">Español</a> | 
       <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
     </header>
 
@@ -160,45 +169,41 @@
       </div>
 
       <div class="action-container">
-        <!-- El href inicial se configurará dinámicamente mediante el script de abajo -->
-        <a href="index_es.html" id="explore-btn" class="btn-explore">Explora</a>
+        <!-- Eliminado el href fijo para evitar que cargue español por defecto -->
+        <a id="explore-btn" class="btn-explore">Explora</a>
       </div>
     </div>
   </div>
 
   <script>
-    // Diccionario de textos y enlaces corregidos
     const translations = {
       es: {
         title: "La Palabra en Cápsulas",
         subtitle: "Tu dosis diaria de inspiración y conocimiento.",
         btnText: "Explora",
-        btnUrl: "index_es.html?lang=es" // Añadimos el parámetro para asegurar consistencia
+        btnUrl: "index_es.html"
       },
       zh: {
         title: "胶囊话语",
         subtitle: "您每日的灵感与知识。",
         btnText: "探索",
-        btnUrl: "index_zh.html?lang=zh" // Redirección explícita a la sección en chino
+        btnUrl: "index_zh.html"
       }
     };
 
     function setLanguage(lang) {
       if (!translations[lang]) lang = 'es';
 
-      // Actualizar idioma global del documento
       document.documentElement.lang = lang;
-      
-      // Cambiar textos dinámicamente
       document.getElementById('title').textContent = translations[lang].title;
       document.getElementById('subtitle').textContent = translations[lang].subtitle;
       
-      // SOLUCIÓN PUNTO 2: Forzar actualización del texto y la URL del botón
+      // SOLUCIÓN TOTAL CHINO: Reescribe el href de cero en tiempo real con javascript puro
       const mainBtn = document.getElementById('explore-btn');
       mainBtn.textContent = translations[lang].btnText;
-      mainBtn.setAttribute('href', translations[lang].btnUrl);
+      mainBtn.href = translations[lang].btnUrl;
 
-      // Actualizar la clase activa en la barra superior de selección
+      // Actualizar los estados activos de las pestañas superiores limpiamente
       document.querySelectorAll('.lang-link').forEach(link => {
         if (link.getAttribute('data-lang') === lang) {
           link.classList.add('active');
@@ -208,18 +213,16 @@
       });
     }
 
-    // Detectar idioma desde la URL actual
+    // Comprobar la URL primero
     const urlParams = new URLSearchParams(window.location.search);
     const currentLang = urlParams.get('lang') || 'es';
     setLanguage(currentLang);
 
-    // Manejar el cambio de idioma al hacer clic en las opciones superiores
+    // Interceptar clics de la barra superior y cambiar el estado sin romper el botón inferior
     document.querySelectorAll('.lang-link').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const lang = link.getAttribute('data-lang');
-        
-        // Actualiza el historial del navegador para reflejar el idioma correcto
         history.pushState(null, '', `?lang=${lang}`);
         setLanguage(lang);
       });
