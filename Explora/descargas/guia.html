@@ -479,7 +479,17 @@ h1 {
       if (translation !== null) element.textContent = translation;
     });
     const image = document.querySelector(".author-image");
-    if (image) { const altText = image.getAttribute("data-alt-" + lang); if (altText) image.alt = altText; }
+    if (image) {
+      const imageFiles = {
+        es: "salmo-32-8.png",
+        en: "salmo-32-8-en.png",
+        zh: "salmo-32-8-zh.png",
+        fr: "salmo-32-8-fr.png"
+      };
+      image.src = imageFiles[lang];
+      const altText = image.getAttribute("data-alt-" + lang);
+      if (altText) image.alt = altText;
+    }
     const bibleLink = document.querySelector(".resource a");
     if (bibleLink) {
       const links = { es: "https://www.biblegateway.com/passage/?search=Juan%201&version=RVR1960", en: "https://www.biblegateway.com/passage/?search=John%201&version=KJV", zh: "https://www.biblegateway.com/passage/?search=%E7%BA%A6%E7%BF%B0%E7%A6%8F%E9%9F%B3%201&version=CUVS", fr: "https://www.biblegateway.com/passage/?search=Jean%201&version=LSG" };
