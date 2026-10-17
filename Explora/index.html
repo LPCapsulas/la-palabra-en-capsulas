@@ -1,12 +1,9 @@
-
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>La Palabra en Cápsulas — Portada Oficial</title>
-
   <style>
     :root {
       --text: #252525;
@@ -49,7 +46,6 @@
     }
 
     /* Selector de idiomas */
-
     .language-bar {
       display: flex;
       justify-content: flex-end;
@@ -77,14 +73,12 @@
       font-weight: 700;
     }
 
-    .lang-link:focus-visible,
-    .explore-button:focus-visible {
+    .lang-link:focus-visible, .explore-button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
     }
 
     /* Portadas */
-
     .banner-container {
       width: 100%;
       max-width: 580px;
@@ -107,7 +101,6 @@
     }
 
     /* Texto de bienvenida */
-
     .welcome-text {
       width: 100%;
       max-width: 760px;
@@ -129,7 +122,6 @@
     }
 
     /* Botón Explora */
-
     .explore-button-container {
       display: flex;
       justify-content: center;
@@ -154,9 +146,7 @@
       text-decoration: none;
       border: 1px solid var(--accent);
       border-radius: 4px;
-      transition:
-        background-color .2s ease,
-        color .2s ease;
+      transition: background-color .2s ease, color .2s ease;
     }
 
     .explore-button:hover {
@@ -165,54 +155,44 @@
     }
 
     /* PC y pantallas horizontales */
-
     @media (min-width: 701px) {
       .page {
         padding: 8px 56px 14px;
       }
-
       .language-bar {
         margin-bottom: 6px;
         padding-bottom: 7px;
       }
-
       .banner-container {
         max-width: 580px;
         margin-bottom: 4px;
       }
-
       .welcome-text {
         margin-bottom: 6px;
       }
-
       .explore-button-container {
         margin-bottom: 4px;
       }
     }
 
     /* PC con poca altura disponible */
-
     @media (min-width: 701px) and (max-height: 800px) {
       .page {
         padding-top: 4px;
         padding-bottom: 8px;
       }
-
       .language-bar {
         margin-bottom: 4px;
         padding-bottom: 4px;
       }
-
       .banner-container {
         max-width: 500px;
         margin-bottom: 2px;
       }
-
       .welcome-text {
         margin-bottom: 4px;
         line-height: 1.55;
       }
-
       .explore-button {
         min-height: 40px;
         padding-top: 6px;
@@ -221,7 +201,6 @@
     }
 
     /* Celular vertical */
-
     @media (max-width: 700px) and (orientation: portrait) {
       .page {
         width: 100%;
@@ -230,7 +209,6 @@
         padding: 10px 20px 36px;
         box-shadow: none;
       }
-
       .language-bar {
         justify-content: center;
         gap: 7px;
@@ -238,29 +216,24 @@
         margin-bottom: 14px;
         font-size: 13px;
       }
-
       .banner-container {
         width: 100%;
         max-width: none;
         margin: 0 auto 24px;
       }
-
       .capsules-img {
         width: 100%;
         height: auto;
       }
-
       .welcome-text {
         width: 100%;
         max-width: 340px;
         margin: 0 auto 32px;
         line-height: 1.85;
       }
-
       .explore-button-container {
         margin: 0 auto 12px;
       }
-
       .explore-button {
         min-width: 230px;
         min-height: 48px;
@@ -269,53 +242,43 @@
     }
 
     /* Celulares con pantallas muy altas */
-
-    @media (max-width: 700px) and (orientation: portrait)
-      and (min-height: 750px) {
+    @media (max-width: 700px) and (orientation: portrait) and (min-height: 750px) {
       .page {
         padding-top: 12px;
         padding-bottom: 40px;
       }
-
       .banner-container {
         margin-bottom: 28px;
       }
-
       .welcome-text {
         max-width: 350px;
         margin-bottom: 38px;
       }
-
       .explore-button-container {
         margin-bottom: 16px;
       }
     }
 
     /* Celulares en horizontal */
-
     @media (max-width: 900px) and (orientation: landscape) {
       .page {
         width: 100%;
         min-height: 100vh;
         padding: 6px 24px 12px;
       }
-
       .language-bar {
         margin-bottom: 4px;
         padding-bottom: 4px;
       }
-
       .banner-container {
         max-width: 380px;
         margin-bottom: 4px;
       }
-
       .welcome-text {
         max-width: 600px;
         margin-bottom: 6px;
         line-height: 1.5;
       }
-
       .explore-button {
         min-height: 40px;
         padding-top: 6px;
@@ -324,7 +287,6 @@
     }
 
     /* Accesibilidad: reducir animaciones */
-
     @media (prefers-reduced-motion: reduce) {
       .explore-button {
         transition: none;
@@ -332,221 +294,116 @@
     }
   </style>
 </head>
-
 <body>
-  <main class="page">
 
+  <main class="page">
     <nav class="language-bar" aria-label="Seleccionar idioma">
-      <button
-        type="button"
-        class="lang-link active"
-        id="link-es"
-        aria-pressed="true"
-        onclick="changeLanguage('es')">
+      <button type="button" class="lang-link active" id="link-es" aria-pressed="true" onclick="changeLanguage('es')">
         Español
       </button>
-
       <span aria-hidden="true">|</span>
-
-      <button
-        type="button"
-        class="lang-link"
-        id="link-en"
-        aria-pressed="false"
-        onclick="changeLanguage('en')">
+      <button type="button" class="lang-link" id="link-en" aria-pressed="false" onclick="changeLanguage('en')">
         English
       </button>
-
       <span aria-hidden="true">|</span>
-
-      <button
-        type="button"
-        class="lang-link"
-        id="link-fr"
-        aria-pressed="false"
-        onclick="changeLanguage('fr')">
+      <button type="button" class="lang-link" id="link-fr" aria-pressed="false" onclick="changeLanguage('fr')">
         Français
       </button>
-
       <span aria-hidden="true">|</span>
-
-      <button
-        type="button"
-        class="lang-link"
-        id="link-zh-CN"
-        aria-pressed="false"
-        onclick="changeLanguage('zh-CN')">
+      <button type="button" class="lang-link" id="link-zh-CN" aria-pressed="false" onclick="changeLanguage('zh-CN')">
         中文
       </button>
     </nav>
 
     <!-- Imágenes de portada: solo se muestra el idioma activo -->
-
     <div class="banner-container">
-      <img
-        id="banner-es"
-        class="capsules-img"
-        src="Explora/portada.png"
-        alt="Portada en español">
-
-      <img
-        id="banner-en"
-        class="capsules-img"
-        src="Explora/portada-en.png"
-        alt="Cover in English"
-        hidden>
-
-      <img
-        id="banner-fr"
-        class="capsules-img"
-        src="Explora/portada-fr.png"
-        alt="Couverture en français"
-        hidden>
-
-      <img
-        id="banner-zh-CN"
-        class="capsules-img"
-        src="Explora/portada-zh.png"
-        alt="中文封面"
-        hidden>
+      <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="Portada en español">
+      <img id="banner-en" class="capsules-img" src="Explora/portada-en.png" alt="Cover in English" hidden>
+      <img id="banner-fr" class="capsules-img" src="Explora/portada-fr.png" alt="Couverture en français" hidden>
+      <img id="banner-zh-CN" class="capsules-img" src="Explora/portada-zh.png" alt="中文封面" hidden>
     </div>
 
     <!-- Bienvenida traducida -->
-
     <section class="welcome-text" aria-live="polite">
-
       <div id="content-es" class="lang-content visible">
         <p>
-          Bienvenido a este espacio. Un lugar dedicado a compartir ideas
-          prácticas, profundas y accesibles para un caminar seguro con Dios.
+          Bienvenido a este espacio. Un lugar dedicado a compartir ideas prácticas, profundas y accesibles para un caminar seguro con Dios.
         </p>
       </div>
-
       <div id="content-en" class="lang-content" hidden>
         <p>
-          Welcome to this space. A place dedicated to sharing practical,
-          profound and accessible ideas for walking securely with God.
+          Welcome to this space. A place dedicated to sharing practical, profound and accessible ideas for walking securely with God.
         </p>
       </div>
-
       <div id="content-fr" class="lang-content" hidden>
         <p>
-          Bienvenue dans cet espace. Un lieu consacré au partage d'idées
-          pratiques, profondes et accessibles pour marcher en toute confiance
-          avec Dieu.
+          Bienvenue dans cet espace. Un lieu consacré au partage d'idées pratiques, profondes et accessibles pour marcher en toute confiance avec Dieu.
         </p>
       </div>
-
       <div id="content-zh-CN" class="lang-content" hidden>
         <p>
-          欢迎来到这个空间。这里致力于分享实用、深刻而易于理解的理念，
-          帮助您与上帝同行，踏上坚定而稳妥的信仰之路。
+          欢迎来到这个空间。这里致力于分享实用、深刻而易于理解的理念， 帮助您与上帝同行，踏上坚定而稳妥的信仰之路。
         </p>
       </div>
-
     </section>
 
     <!-- Botón principal -->
-
     <div class="explore-button-container">
-      <a
-        href="Explora/menu.html"
-        class="explore-button"
-        id="btn-explore">
-        EXPLORA
-      </a>
+      <a href="Explora/menu.html" class="explore-button" id="btn-explore"> EXPLORA </a>
     </div>
-
   </main>
 
   <script>
     const translations = {
-      es: {
-        title: 'La Palabra en Cápsulas — Portada Oficial',
-        button: 'EXPLORA'
-      },
-
-      en: {
-        title: 'The Word in Capsules — Official Home',
-        button: 'EXPLORE'
-      },
-
-      fr: {
-        title: 'La Parole en Capsules — Accueil officiel',
-        button: 'EXPLORER'
-      },
-
-      'zh-CN': {
-        title: '胶囊中的圣言 — 官方主页',
-        button: '探索'
-      }
+      es: { title: 'La Palabra en Cápsulas — Portada Oficial', button: 'EXPLORA' },
+      en: { title: 'The Word in Capsules — Official Home', button: 'EXPLORE' },
+      fr: { title: 'La Parole en Capsules — Accueil officiel', button: 'EXPLORER' },
+      'zh-CN': { title: '胶囊中的圣言 — 官方主页', button: '探索' }
     };
 
     function changeLanguage(lang) {
-      if (!translations[lang]) {
-        lang = 'es';
-      }
-
+      if (!translations[lang]) { lang = 'es'; }
       document.documentElement.lang = lang;
       document.title = translations[lang].title;
 
       /* Actualizar selector de idiomas */
-
       document.querySelectorAll('.lang-link').forEach(link => {
         const isActive = link.id === 'link-' + lang;
-
         link.classList.toggle('active', isActive);
         link.setAttribute('aria-pressed', String(isActive));
       });
 
       /* Ocultar todos los textos y mostrar el seleccionado */
-
       document.querySelectorAll('.lang-content').forEach(content => {
         const isActive = content.id === 'content-' + lang;
-
         content.classList.toggle('visible', isActive);
         content.hidden = !isActive;
       });
 
       /* Ocultar todas las portadas antes de mostrar la correcta */
-
-      document.querySelectorAll('.capsules-img').forEach(img => {
-        img.hidden = true;
-      });
-
-      const activeBanner = document.getElementById('banner-' + lang);
-
-      if (activeBanner) {
-        activeBanner.hidden = false;
-      }
-
-      /* Traducir el botón */
-
-      document.getElementById('btn-explore').textContent =
-        translations[lang].button;
-
-      /* Guardar el idioma elegido */
-
-      try {
-        localStorage.setItem('lpc-language', lang);
-      } catch (e) {
-        /* La página sigue funcionando si el almacenamiento no está disponible */
-      }
-    }
-
-    /* Restaurar el idioma al cargar la página */
-
-    document.addEventListener('DOMContentLoaded', function () {
-      let savedLanguage = 'es';
-
-      try {
-        savedLanguage = localStorage.getItem('lpc-language') || 'es';
-      } catch (e) {
-        /* Utilizar español como idioma predeterminado */
-      }
-
-      changeLanguage(savedLanguage);
-    });
-  </script>
-</body>
-</html>
+document.querySelectorAll('.capsules-img').forEach(img => {
+img.hidden = true;
+});
+const activeBanner = document.getElementById('banner-' + lang);
+if (activeBanner) {
+activeBanner.hidden = false;
+}
+/* Traducir el botón */
+document.getElementById('btn-explore').textContent = translations[lang].button;
+/* Guardar el idioma elegido /
+try {
+localStorage.setItem('lpc-language', lang);
+} catch (e) {
+/ La página sigue funcionando si el almacenamiento no está disponible */
+}
+}
+/* Restaurar el idioma al cargar la página /
+document.addEventListener('DOMContentLoaded', function () {
+let savedLanguage = 'es';
+try {
+savedLanguage = localStorage.getItem('lpc-language') || 'es';
+} catch (e) {
+/ Utilizar español como idioma predeterminado */
+}
+changeLanguage(savedLanguage);
+});
