@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Palabra en Cápsulas — Portada Oficial</title>
-
   <style>
     :root {
       --text: #252525;
@@ -14,17 +13,15 @@
       --paper: #fff;
       --bg: #f2f0ec;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     html {
       scroll-behavior: smooth;
+      height: 100%;
     }
-
     body {
       margin: 0;
       background: var(--bg);
@@ -33,16 +30,20 @@
       font-size: 17px;
       line-height: 1.8;
       zoom: 100%;
+      /* Flexbox para optimizar celulares */
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
-
     .page {
       width: min(900px, calc(100% - 32px));
       margin: 2px auto;
       background: var(--paper);
       padding: 10px 72px 22px;
       box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+      display: flex;
+      flex-direction: column;
     }
-
     /* SELECTOR DE IDIOMAS */
     .language-bar {
       display: flex;
@@ -55,7 +56,6 @@
       font-size: 13px;
       line-height: 1.5;
     }
-
     .lang-link {
       color: var(--muted);
       background: none;
@@ -66,21 +66,17 @@
       text-decoration: none;
       transition: color .2s ease;
     }
-
     .lang-link:hover {
       color: var(--accent);
     }
-
     .lang-link.active {
       color: var(--brand-blue);
       font-weight: 700;
     }
-
     .lang-divider {
       color: #ccc;
       user-select: none;
     }
-
     /* PORTADA */
     .banner-container {
       width: 100%;
@@ -88,14 +84,12 @@
       margin: 0 auto 10px;
       text-align: center;
     }
-
     .capsules-img {
       display: block;
       width: 100%;
       height: auto;
       margin: 0 auto;
     }
-
     /* BIENVENIDA */
     .welcome-text {
       max-width: 760px;
@@ -107,21 +101,21 @@
       line-height: 1.35;
       text-align: center;
     }
-
     .welcome-text p {
       margin: 0;
       padding: 0;
       text-align: center;
     }
-
+    /* Ajuste de interlineado exclusivo para subir el texto excepto en Chino */
+    html:not([lang="zh-CN"]) .welcome-text p {
+      line-height: 1.25;
+    }
     .lang-content {
       display: none;
     }
-
     .lang-content.visible {
       display: block;
     }
-
     /* BOTÓN EXPLORA */
     .explore-button-container {
       display: flex;
@@ -130,7 +124,6 @@
       width: 100%;
       margin: 0 auto 2px;
     }
-
     .explore-button {
       display: inline-flex;
       align-items: center;
@@ -147,82 +140,78 @@
       border: 1px solid var(--accent);
       border-radius: 4px;
       box-shadow: 0 3px 10px rgba(23, 54, 93, .07);
-      transition: transform .2s ease, box-shadow .2s ease,
-                  background .2s ease, color .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
     }
-
     .explore-button:hover {
       background: var(--accent);
       color: #fff;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(23, 54, 93, .16);
     }
-
     .explore-button:active {
       transform: translateY(0);
     }
-
     /* AJUSTE EXCLUSIVO PARA PC */
     @media (min-width: 901px) {
       .page {
         padding-top: 2px;
       }
-
       .language-bar {
         padding-bottom: 8px;
         margin-bottom: 8px;
       }
-
       .banner-container {
         margin-bottom: 4px;
       }
-
+      /* Compactamos el espacio inferior del texto en PC para acercar el botón */
       .welcome-text {
-        margin-bottom: 14px;
-      }
-    }
-
-    /* TELÉFONO VERTICAL */
-    @media (max-width: 700px) and (orientation: portrait) {
-      .page {
-        width: 100%;
-        margin: 0 auto;
-        padding: 10px 24px 30px;
-      }
-
-      .language-bar {
-        justify-content: flex-end;
-        padding-bottom: 12px;
-        margin-bottom: 12px;
-      }
-
-      .banner-container {
         margin-bottom: 10px;
       }
-
+    }
+    /* TELÉFONO VERTICAL */
+    @media (max-width: 700px) and (orientation: portrait) {
+      body {
+        height: 100vh;
+      }
+      .page {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 16px 24px 40px;
+        justify-content: flex-start;
+      }
+      .language-bar {
+        justify-content: flex-end;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+      .banner-container {
+        margin-bottom: 20px; /* Alarga la separación de la imagen hacia abajo */
+      }
       .welcome-text {
         max-width: 290px;
-        margin: 0 auto 22px;
-        font-size: 15px;
-        line-height: 1.4;
+        margin: 0 auto auto; /* El margen automático empuja dinámicamente los elementos ocupando el espacio vacío */
+        font-size: 16px;
+        line-height: 1.45;
         font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1; /* Permite al bloque de texto expandirse para llenar la pantalla verticalmente */
       }
-
       .welcome-text p {
         text-align: center;
       }
-
       .explore-button-container {
-        margin-bottom: 4px;
+        margin-top: auto;
+        margin-bottom: 10px;
       }
-
       .explore-button {
-        min-width: 180px;
-        padding: 10px 25px;
-        font-size: 14px;
+        min-width: 200px;
+        padding: 12px 30px;
+        font-size: 15px;
       }
     }
-
     /* TELÉFONO HORIZONTAL */
     @media (max-width: 900px) and (orientation: landscape) {
       .page {
@@ -230,18 +219,15 @@
         padding: 10px 40px 22px;
         margin: 2px auto;
       }
-
       .banner-container {
         margin-bottom: 10px;
       }
-
       .welcome-text {
         max-width: 760px;
         margin: 0 auto 22px;
         font-size: 16px;
         line-height: 1.4;
       }
-
       .explore-button {
         min-width: 200px;
         padding: 10px 30px;
@@ -250,230 +236,102 @@
     }
   </style>
 </head>
-
 <body>
   <main class="page">
-
     <!-- SELECTOR DE IDIOMAS -->
     <nav class="language-bar" aria-label="Language selection">
-      <button type="button" class="lang-link active"
-        id="link-es" onclick="changeLanguage('es')"
-        aria-pressed="true">Español</button>
-
+      <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button>
       <span class="lang-divider">|</span>
-
-      <button type="button" class="lang-link"
-        id="link-en" onclick="changeLanguage('en')"
-        aria-pressed="false">English</button>
-
+      <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
       <span class="lang-divider">|</span>
-
-      <button type="button" class="lang-link"
-        id="link-fr" onclick="changeLanguage('fr')"
-        aria-pressed="false">Français</button>
-
+      <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
       <span class="lang-divider">|</span>
-
-      <button type="button" class="lang-link"
-        id="link-zh-CN" onclick="changeLanguage('zh-CN')"
-        aria-pressed="false">中文</button>
+      <button type="button" class="lang-link" id="link-zh-CN" onclick="changeLanguage('zh-CN')" aria-pressed="false">中文</button>
     </nav>
 
     <!-- PORTADAS GRÁFICAS -->
     <div class="banner-container">
-      <img id="banner-es" class="capsules-img"
-        src="Explora/portada.png"
-        alt="La Palabra en Cápsulas — Fe, Poder y Vida">
-
-      <img id="banner-en" class="capsules-img"
-        src="Explora/portada-en.png"
-        alt="The Word in Capsules — Faith, Power and Life"
-        style="display:none">
-
-      <img id="banner-fr" class="capsules-img"
-        src="Explora/portada-fr.png"
-        alt="La Parole en Capsules — Foi, Puissance et Vie"
-        style="display:none">
-
-      <img id="banner-zh-CN" class="capsules-img"
-        src="Explora/portada-zh.png"
-        alt="胶囊中的圣言 — 信心、能力与生命"
-        style="display:none">
+      <img id="banner-es" class="capsules-img" src="Explora/portada.png" alt="La Palabra en Cápsulas — Fe, Poder y Vida">
+      <img id="banner-en" class="capsules-img" src="Explora/portada-en.png" alt="The Word in Capsules — Faith, Power and Life" style="display:none">
+      <img id="banner-fr" class="capsules-img" src="Explora/portada-fr.png" alt="La Parole en Capsules — Foi, Puissance et Vie" style="display:none">
+      <img id="banner-zh-CN" class="capsules-img" src="Explora/portada-zh.png" alt="胶囊中的圣言 — 信心、能力与生命" style="display:none">
     </div>
 
     <!-- TEXTO DE BIENVENIDA -->
     <section class="welcome-text" aria-live="polite">
       <div id="content-es" class="lang-content visible">
-        <p>Bienvenido a este espacio. Un lugar<br>
-          dedicado a compartir ideas<br>
-          prácticas, profundas<br>
-          y accesibles para<br>
-          un caminar<br>
-          seguro con<br>
-          Dios</p>
+        <p>Bienvenido a este espacio. Un lugar<br> dedicado a compartir ideas<br> prácticas, profundas<br> y accesibles para<br> un caminar<br> seguro con<br> Dios</p>
       </div>
-
       <div id="content-en" class="lang-content" lang="en">
-        <p>Welcome to this space. A place<br>
-          dedicated to sharing<br>
-          practical, profound<br>
-          and accessible<br>
-          ideas for<br>
-          walking<br>
-          securely<br>
-          with<br>
-          God.</p>
+        <p>Welcome to this space. A place<br> dedicated to sharing<br> practical, profound<br> and accessible<br> ideas for<br> walking<br> securely<br> with<br> God.</p>
       </div>
-
       <div id="content-fr" class="lang-content" lang="fr">
-        <p>Bienvenue dans cet espace. Un lieu<br>
-          consacré au partage d'idées<br>
-          pratiques, profondes<br>
-          et accessibles pour<br>
-          marcher en toute<br>
-          confiance avec<br>
-          Dieu.</p>
+        <p>Bienvenue dans cet espacio. Un lieu<br> consacré au partage d'idées<br> pratiques, profondes<br> et accessibles pour<br> marcher en toute<br> confiance avec<br> Dieu.</p>
       </div>
-
       <div id="content-zh-CN" class="lang-content" lang="zh-CN">
-        <p>欢迎来到这个空间。这里致力于分享<br>
-          实用、深刻而易于理解的理念，<br>
-          帮助您与上帝同行，<br>
-          踏上坚定而稳妥的信仰之路。</p>
+        <p>欢迎来到这个空间。这里致力于分享<br> 实用、深刻而易于理解的理念，<br> 帮助您与上帝同行，<br> 踏上坚定而稳妥的信仰之路。</p>
       </div>
     </section>
 
     <!-- BOTÓN PRINCIPAL -->
     <div class="explore-button-container">
-      <a href="/Explora/menu.html?lang=es"
-         class="explore-button"
-         id="btn-explore">EXPLORA</a>
+      <a href="/Explora/menu.html?lang=es" class="explore-button" id="btn-explore">EXPLORA</a>
     </div>
-
   </main>
 
   <script>
     "use strict";
-
     const translations = {
-      es: {
-        title: "La Palabra en Cápsulas — Portada Oficial",
-        button: "EXPLORA",
-        menuLanguage: "es"
-      },
-
-      en: {
-        title: "The Word in Capsules — Official Home",
-        button: "EXPLORE",
-        menuLanguage: "en"
-      },
-
-      fr: {
-        title: "La Parole en Capsules — Accueil officiel",
-        button: "EXPLORER",
-        menuLanguage: "fr"
-      },
-
-      "zh-CN": {
-        title: "胶囊中的圣言 — 官方主页",
-        button: "探索",
-        menuLanguage: "zh"
-      }
+      es: { title: "La Palabra en Cápsulas — Portada Oficial", button: "EXPLORA", menuLanguage: "es" },
+      en: { title: "The Word in Capsules — Official Home", button: "EXPLORE", menuLanguage: "en" },
+      fr: { title: "La Parole en Capsules — Accueil officiel", button: "EXPLORER", menuLanguage: "fr" },
+      "zh-CN": { title: "胶囊中的圣言 — 官方主页", button: "探索", menuLanguage: "zh" }
     };
 
     function saveLanguage(lang) {
       try {
         localStorage.setItem("lpc-language", lang);
         localStorage.setItem("user_language", lang);
-      } catch (error) {
-        // La página sigue funcionando aunque el almacenamiento no esté disponible.
-      }
+      } catch (error) {}
     }
 
     function getInitialLanguage() {
       const params = new URLSearchParams(window.location.search);
       const requestedLanguage = params.get("lang");
-
-      const urlLanguageMap = {
-        es: "es",
-        en: "en",
-        fr: "fr",
-        zh: "zh-CN",
-        "zh-CN": "zh-CN"
-      };
-
+      const urlLanguageMap = { es: "es", en: "en", fr: "fr", zh: "zh-CN", "zh-CN": "zh-CN" };
       if (requestedLanguage && urlLanguageMap[requestedLanguage]) {
         return urlLanguageMap[requestedLanguage];
       }
-
       try {
-        const savedLanguage =
-          localStorage.getItem("lpc-language") ||
-          localStorage.getItem("user_language");
-
-        if (savedLanguage === "zh") {
-          return "zh-CN";
-        }
-
-        if (translations[savedLanguage]) {
-          return savedLanguage;
-        }
-      } catch (error) {
-        // Si no hay almacenamiento, se usa español.
-      }
-
+        const savedLanguage = localStorage.getItem("lpc-language") || localStorage.getItem("user_language");
+        if (savedLanguage === "zh") { return "zh-CN"; }
+        if (translations[savedLanguage]) { return savedLanguage; }
+      } catch (error) {}
       return "es";
     }
 
     function changeLanguage(lang) {
-      if (!translations[lang]) {
-        lang = "es";
-      }
-
+      if (!translations[lang]) { lang = "es"; }
       const content = translations[lang];
-
-      document.documentElement.lang = lang;
-      document.title = content.title;
-
-      document.querySelectorAll(".lang-link").forEach(function (link) {
-        const selected = link.id === "link-" + lang;
-
-        link.classList.toggle("active", selected);
-        link.setAttribute("aria-pressed", String(selected));
-      });
-
-      document.querySelectorAll(".lang-content").forEach(function (element) {
-        element.classList.toggle(
-          "visible",
-          element.id === "content-" + lang
-        );
-      });
-
-      document.getElementById("banner-es").style.display =
-        lang === "es" ? "block" : "none";
-
-      document.getElementById("banner-en").style.display =
-        lang === "en" ? "block" : "none";
-
-      document.getElementById("banner-fr").style.display =
-        lang === "fr" ? "block" : "none";
-
-      document.getElementById("banner-zh-CN").style.display =
-        lang === "zh-CN" ? "block" : "none";
-
-      const exploreButton = document.getElementById("btn-explore");
-
-      exploreButton.textContent = content.button;
-      exploreButton.href =
-        "/Explora/menu.html?lang=" + content.menuLanguage;
-
-      saveLanguage(lang);
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      changeLanguage(getInitialLanguage());
-    });
-  </script>
-</body>
-</html>
-
+document.documentElement.lang = lang;
+document.title = content.title;
+document.querySelectorAll(".lang-link").forEach(function (link) {
+const selected = link.id === "link-" + lang;
+link.classList.toggle("active", selected);
+link.setAttribute("aria-pressed", String(selected));
+});
+document.querySelectorAll(".lang-content").forEach(function (element) {
+element.classList.toggle("visible", element.id === "content-" + lang);
+});
+document.getElementById("banner-es").style.display = lang === "es" ? "block" : "none";
+document.getElementById("banner-en").style.display = lang === "en" ? "block" : "none";
+document.getElementById("banner-fr").style.display = lang === "fr" ? "block" : "none";
+document.getElementById("banner-zh-CN").style.display = lang === "zh-CN" ? "block" : "none";
+const exploreButton = document.getElementById("btn-explore");
+exploreButton.textContent = content.button;
+exploreButton.href = "/Explora/menu.html?lang=" + content.menuLanguage;
+saveLanguage(lang);
+}
+document.addEventListener("DOMContentLoaded", function () {
+changeLanguage(getInitialLanguage());
+});
