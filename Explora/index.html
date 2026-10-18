@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -176,44 +177,134 @@ html, body {
 
 <script>
 (function () {
+  "use strict";
 
   const translations = {
     es: {
       title: "La Palabra en Cápsulas",
       subtitle: "Tu dosis diaria de inspiración y conocimiento.",
       btnText: "Explora",
-      btnUrl: "Explora/menu.html?lang=es"
+      btnUrl: "/Explora/menu.html?lang=es"
     },
 
     en: {
       title: "The Word in Capsules",
       subtitle: "Your daily dose of inspiration and knowledge.",
       btnText: "Explore",
-      btnUrl: "Explora/menu.html?lang=en"
+      btnUrl: "/Explora/menu.html?lang=en"
     },
 
     zh: {
       title: "胶囊话语",
       subtitle: "您每日的灵感与知识。",
       btnText: "探索",
-      btnUrl: "Explora/menu.html?lang=zh"
+      btnUrl: "/Explora/menu.html?lang=zh"
     },
 
     fr: {
       title: "La Parole en Capsules",
       subtitle: "Votre dose quotidienne d'inspiration et de connaissances.",
       btnText: "Explorer",
-      btnUrl: "Explora/menu.html?lang=fr"
+      btnUrl: "/Explora/menu.html?lang=fr"
     }
   };
+
+  function saveLanguage(lang) {
+    try {
+      localStorage.setItem("user_language", lang);
+      localStorage.setItem("lpc-language", lang);
+    } catch (error) {
+      // La página seguirá funcionando si el almacenamiento no está disponible.
+    }
+  }
+
+  function getInitialLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    const requestedLanguage = params.get("lang");
+
+    if (requestedLanguage && translations[requestedLanguage]) {
+      return requestedLanguage;
+    }
+
+    try {
+      const savedLanguage =
+        localStorage.getItem("lpc-language") ||
+        localStorage.getItem("user_language");
+
+      if (savedLanguage && translations[savedLanguage]) {
+        return savedLanguage;
+      }
+    } catch (error) {
+      // Se utilizará español como idioma predeterminado.
+    }
+
+    return "es";
+  }
 
   function setLanguage(lang) {
     if (!translations[lang]) {
       lang = "es";
     }
 
-    try {
-      localStorage.setItem("user_language", lang);
-      localStorage.setItem("lpc-language", lang);
-    } catch (error) {
-      // La navegación sigue funcionando si el
+    const content = translations[lang];
+
+    document.documentElement.lang = lang;
+    document.getElementById("title").textContent = content.title;
+    document.getElementById("subtitle").textContent = content.subtitle;
+
+    document.querySelectorAll(".lang-link").forEach(function (link) {
+      const isActive = link.dataset.lang === lang;
+
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    const buttonBox = document.getElementById("button-box");
+    buttonBox.replaceChildren();
+
+    const button = document.createElement("a");
+    button.className = "btn-explore";
+    button.href = content.btnUrl;
+    button.textContent = content.btnText;
+    button.setAttribute("aria-label", content.btnText);
+
+    buttonBox.appendChild(button);
+
+    saveLanguage(lang);
+  }
+
+  document.querySelectorAll(".lang-link").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const lang = link.dataset.lang;
+
+      if (!translations[lang]) {
+        return;
+      }
+
+      setLanguage(lang);
+
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.set("lang", lang);
+
+      window.history.replaceState({}, "", newUrl.href);
+    });
+  });
+
+  window.addEventListener("popstate", function () {
+    setLanguage(getInitialLanguage());
+  });
+
+  setLanguage(getInitialLanguage());
+})();
+</script>
+
+</body>
+</html>
+```
