@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -349,7 +350,7 @@ h1 {
 
       <div class="item">
         <a href="./apoya/index.html"
-           data-es="Donaciones"
+           data-es="Apoya"
            data-zh="支持 LPC"
            data-en="Support"
            data-fr="Soutenir">Apoya</a>
@@ -363,7 +364,7 @@ h1 {
     <a href="../index.html"
        id="back-link"
        data-es="Volver a Inicio"
-           data-zh="返回首页"
+       data-zh="返回首页"
        data-en="Back to Home"
        data-fr="Retour à l’accueil">Volver a Inicio</a>
   </div>
@@ -372,6 +373,7 @@ h1 {
 
 <script>
 (function () {
+
   const translations = {
     es: {
       title: 'Mira, Crece y Comparte',
@@ -429,6 +431,7 @@ h1 {
 
     try {
       localStorage.setItem('lpc-language', lang);
+      localStorage.setItem('user_language', lang);
     } catch (error) {
       // El menú sigue funcionando si el almacenamiento está desactivado.
     }
@@ -436,17 +439,28 @@ h1 {
 
   window.changeLanguage = changeLanguage;
 
+  /* LEE PRIMERO EL IDIOMA ENVIADO POR LA PORTADA */
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedLanguage = urlParams.get('lang');
+
   let initialLanguage = 'es';
 
   try {
-    initialLanguage = localStorage.getItem('lpc-language') || 'es';
+    initialLanguage =
+      requestedLanguage ||
+      localStorage.getItem('lpc-language') ||
+      localStorage.getItem('user_language') ||
+      'es';
   } catch (error) {
-    initialLanguage = 'es';
+    initialLanguage = requestedLanguage || 'es';
   }
 
   changeLanguage(initialLanguage);
+
 })();
 </script>
 
 </body>
 </html>
+```
