@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -283,7 +284,7 @@ html[dir="rtl"] .text-container {
     <div class="image-container">
       <img
         id="cover-image"
-        src="portada.jpg"
+        src="portada.png"
         alt="La Palabra en Cápsulas"
         class="cover-image">
     </div>
@@ -308,7 +309,7 @@ html[dir="rtl"] .text-container {
       subtitle: "Tu dosis diaria de inspiración y conocimiento.",
       btnText: "Explora",
       btnUrl: "/Explora/menu.html?lang=es",
-      image: "portada.jpg",
+      image: "portada.png",
       imageAlt: "La Palabra en Cápsulas",
       dir: "ltr"
     },
@@ -388,9 +389,7 @@ html[dir="rtl"] .text-container {
     try {
       localStorage.setItem("user_language", lang);
       localStorage.setItem("lpc-language", lang);
-    } catch (error) {
-      /* La página sigue funcionando si el navegador bloquea localStorage. */
-    }
+    } catch (error) {}
   }
 
   function getInitialLanguage() {
@@ -409,9 +408,7 @@ html[dir="rtl"] .text-container {
       if (savedLanguage && translations[savedLanguage]) {
         return savedLanguage;
       }
-    } catch (error) {
-      /* Se utiliza español si no se puede consultar el almacenamiento. */
-    }
+    } catch (error) {}
 
     return "es";
   }
@@ -448,8 +445,8 @@ html[dir="rtl"] .text-container {
     coverImage.onerror = function () {
       this.onerror = null;
 
-      if (this.getAttribute("src") !== "portada.jpg") {
-        this.src = "portada.jpg";
+      if (this.getAttribute("src") !== "portada.png") {
+        this.src = "portada.png";
         this.alt = "La Palabra en Cápsulas";
       }
     };
@@ -512,4 +509,4 @@ html[dir="rtl"] .text-container {
 
 </body>
 </html>
-
+```
