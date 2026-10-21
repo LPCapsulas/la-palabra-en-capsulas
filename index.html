@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8f4ec">
+<meta name="theme-color" content="#F8F4EC">
 <title>La Palabra en Cápsulas — Portada Oficial</title>
 
 <style>
@@ -13,7 +13,6 @@
   --azul-boton: #0F4C81;
   --fondo: #F8F4EC;
   --dorado: #B99A59;
-  --texto: #26384A;
 }
 
 * {
@@ -29,7 +28,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background: var(--fondo);
-  color: var(--texto);
+  color: var(--azul);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -38,7 +37,7 @@ body {
   max-width: 1100px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 12px 22px 18px;
+  padding: 10px 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,27 +49,25 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 7px 19px;
-  padding: 7px 0 12px;
+  gap: 6px 19px;
+  padding: 5px 0 12px;
 }
 
 .language-button {
   border: 0;
+  padding: 4px 2px;
   background: transparent;
   color: var(--azul);
-  padding: 4px 2px;
   font: inherit;
   font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
-  transition: color 0.2s ease;
 }
 
 .language-button:hover,
 .language-button:focus-visible {
   color: var(--dorado);
   text-decoration: underline;
-  outline: none;
 }
 
 .language-button.active {
@@ -98,9 +95,10 @@ body {
 
 .cover-image {
   display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: calc(100vh - 175px);
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: calc(100vh - 190px);
   object-fit: contain;
   object-position: center;
   margin: 0 auto;
@@ -109,18 +107,19 @@ body {
 .welcome {
   width: 100%;
   max-width: 820px;
-  margin: 12px auto 13px;
-  padding: 0 8px;
+  margin: 14px auto 16px;
+  padding: 0 10px;
   color: var(--azul);
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(16px, 2vw, 21px);
+  font-size: clamp(17px, 2vw, 22px);
   line-height: 1.55;
 }
 
 .welcome-line {
   display: block;
   opacity: 0;
+  transform: translateY(9px);
   animation: cascade-in 0.65s ease forwards;
 }
 
@@ -129,18 +128,14 @@ body {
 }
 
 .welcome-line:nth-child(2) {
-  animation-delay: 0.38s;
+  animation-delay: 0.4s;
 }
 
 .welcome-line:nth-child(3) {
-  animation-delay: 0.64s;
+  animation-delay: 0.68s;
 }
 
 @keyframes cascade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -154,50 +149,32 @@ body {
   min-width: 180px;
   min-height: 46px;
   margin: 0 auto 5px;
-  padding: 11px 32px;
+  padding: 10px 30px;
   border: 1px solid var(--azul-boton);
   border-radius: 7px;
   background: var(--azul-boton);
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.3px;
   box-shadow: 0 3px 8px rgba(23, 54, 93, 0.15);
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .explore-button:hover,
 .explore-button:focus-visible {
   background: var(--azul);
-  box-shadow: 0 5px 12px rgba(23, 54, 93, 0.22);
   transform: translateY(-1px);
-  outline: none;
 }
 
-[dir="rtl"] .welcome {
+html[dir="rtl"] .welcome {
   direction: rtl;
 }
 
 @media (min-width: 761px) {
-  .page {
-    padding-top: 12px;
-    padding-bottom: 16px;
-  }
-
-  .language-bar {
-    gap: 8px 22px;
-    padding-bottom: 12px;
-  }
-
   .cover-image {
-    max-width: 100%;
-    max-height: calc(100vh - 185px);
+    max-width: 900px;
   }
 
   .welcome {
@@ -224,12 +201,7 @@ body {
 
   .separator {
     width: calc(100% - 24px);
-    margin: 0 auto 7px;
-  }
-
-  .cover-area {
-    width: 100%;
-    flex: 0 0 auto;
+    margin-bottom: 7px;
   }
 
   .cover-image {
@@ -238,28 +210,20 @@ body {
     max-height: 48svh;
     height: auto;
     object-fit: contain;
-    object-position: center top;
-    margin: 0 auto;
+    object-position: center;
   }
 
   .welcome {
-    width: 100%;
     margin: 8px auto 10px;
     padding: 0 15px;
     font-size: 16px;
     line-height: 1.42;
-    text-align: center;
-  }
-
-  .welcome-line {
-    margin-bottom: 2px;
   }
 
   .explore-button {
     min-width: 165px;
     min-height: 43px;
-    margin: 0 auto 5px;
-    padding: 9px 28px;
+    padding: 9px 26px;
     font-size: 16px;
   }
 }
@@ -293,7 +257,7 @@ body {
 
 @media (max-height: 700px) and (max-width: 760px) {
   .cover-image {
-    max-height: 40svh;
+    max-height: 39svh;
   }
 
   .welcome {
@@ -311,17 +275,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
   .welcome-line {
     opacity: 1;
     transform: none;
+    animation: none;
+  }
+
+  * {
+    transition: none !important;
   }
 }
 </style>
@@ -331,24 +292,24 @@ body {
 <main class="page">
 
   <nav class="language-bar" aria-label="Seleccionar idioma">
-    <button class="language-button active" type="button" data-lang="es" lang="es" aria-pressed="true">Español</button>
-    <button class="language-button" type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
-    <button class="language-button" type="button" data-lang="fr" lang="fr" aria-pressed="false">Français</button>
-    <button class="language-button" type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">中文</button>
-    <button class="language-button" type="button" data-lang="it" lang="it" aria-pressed="false">Italiano</button>
-    <button class="language-button" type="button" data-lang="pt" lang="pt" aria-pressed="false">Português</button>
-    <button class="language-button" type="button" data-lang="he" lang="he" aria-pressed="false">עברית</button>
-    <button class="language-button" type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button>
+    <button class="language-button active" type="button" data-lang="es" aria-pressed="true">Español</button>
+    <button class="language-button" type="button" data-lang="en" aria-pressed="false">English</button>
+    <button class="language-button" type="button" data-lang="fr" aria-pressed="false">Français</button>
+    <button class="language-button" type="button" data-lang="zh" aria-pressed="false">中文</button>
+    <button class="language-button" type="button" data-lang="it" aria-pressed="false">Italiano</button>
+    <button class="language-button" type="button" data-lang="pt" aria-pressed="false">Português</button>
+    <button class="language-button" type="button" data-lang="he" aria-pressed="false">עברית</button>
+    <button class="language-button" type="button" data-lang="ar" aria-pressed="false">العربية</button>
   </nav>
 
   <div class="separator" aria-hidden="true"></div>
 
-  <section class="cover-area" aria-label="Portada de La Palabra en Cápsulas">
+  <section class="cover-area">
     <img
       id="coverImage"
       class="cover-image"
-      src="/Explora/portada.jpg"
-      alt="Portada original de La Palabra en Cápsulas con las cápsulas FE, PODER y VIDA"
+      src="/Explora/portada.png"
+      alt="La Palabra en Cápsulas: Fe, Poder y Vida"
       fetchpriority="high"
     >
 
@@ -369,127 +330,119 @@ body {
 (function () {
   "use strict";
 
+  const spanishImage = "/Explora/portada.png";
+
   const translations = {
     es: {
-      htmlLang: "es",
-      direction: "ltr",
-      image: "/Explora/portada.jpg",
-      alt: "Portada original de La Palabra en Cápsulas con las cápsulas FE, PODER y VIDA",
+      lang: "es",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Portada Oficial",
       welcome: [
         "¡Bienvenido a La Palabra en Cápsulas!",
         "Un espacio para fortalecer tu fe y crecer en conocimiento.",
         "Mira, crece y comparte."
       ],
       button: "Explora",
-      menu: "/Explora/menu.html?lang=es",
-      title: "La Palabra en Cápsulas — Portada Oficial"
+      menu: "/Explora/menu.html?lang=es"
     },
     en: {
-      htmlLang: "en",
-      direction: "ltr",
+      lang: "en",
+      dir: "ltr",
       image: "/Explora/portada-en.png",
-      alt: "The Word in Capsules cover",
+      title: "The Word in Capsules — Official Home",
       welcome: [
         "Welcome to The Word in Capsules!",
         "A place to strengthen your faith and grow in knowledge.",
         "Look, Grow and Share."
       ],
       button: "Explore",
-      menu: "/Explora/menu.html?lang=en",
-      title: "The Word in Capsules — Official Home"
+      menu: "/Explora/menu.html?lang=en"
     },
     fr: {
-      htmlLang: "fr",
-      direction: "ltr",
+      lang: "fr",
+      dir: "ltr",
       image: "/Explora/portada-fr.png",
-      alt: "Couverture de La Parole en Capsules",
+      title: "La Parole en Capsules — Page d’accueil officielle",
       welcome: [
         "Bienvenue sur La Parole en Capsules !",
         "Un espace pour fortifier votre foi et approfondir vos connaissances.",
         "Découvre, grandis et partage."
       ],
       button: "Explorer",
-      menu: "/Explora/menu.html?lang=fr",
-      title: "La Parole en Capsules — Page d’accueil officielle"
+      menu: "/Explora/menu.html?lang=fr"
     },
     zh: {
-      htmlLang: "zh-CN",
-      direction: "ltr",
+      lang: "zh-CN",
+      dir: "ltr",
       image: "/Explora/portada-zh.png",
-      alt: "中文《胶囊中的话语》封面",
+      title: "胶囊中的话语 — 官方主页",
       welcome: [
         "欢迎来到《胶囊中的话语》！",
         "在这里坚定信仰，增长知识。",
         "阅读、成长、分享。"
       ],
       button: "开始探索",
-      menu: "/Explora/menu.html?lang=zh",
-      title: "胶囊中的话语 — 官方主页"
+      menu: "/Explora/menu.html?lang=zh"
     },
     it: {
-      htmlLang: "it",
-      direction: "ltr",
-      image: "/Explora/portada.jpg",
-      alt: "Copertina di La Palabra en Cápsulas",
+      lang: "it",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Pagina ufficiale",
       welcome: [
         "Benvenuto a La Palabra en Cápsulas!",
         "Uno spazio per rafforzare la fede e crescere nella conoscenza.",
         "Guarda, cresci e condividi."
       ],
       button: "Esplora",
-      menu: "/Explora/menu.html?lang=it",
-      title: "La Palabra en Cápsulas — Pagina ufficiale"
+      menu: "/Explora/menu.html?lang=it"
     },
     pt: {
-      htmlLang: "pt",
-      direction: "ltr",
-      image: "/Explora/portada.jpg",
-      alt: "Capa de La Palabra en Cápsulas",
+      lang: "pt",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Página oficial",
       welcome: [
         "Bem-vindo a La Palabra en Cápsulas!",
         "Um espaço para fortalecer a fé e crescer em conhecimento.",
         "Veja, cresça e compartilhe."
       ],
       button: "Explorar",
-      menu: "/Explora/menu.html?lang=pt",
-      title: "La Palabra en Cápsulas — Página oficial"
+      menu: "/Explora/menu.html?lang=pt"
     },
     he: {
-      htmlLang: "he",
-      direction: "rtl",
-      image: "/Explora/portada.jpg",
-      alt: "שער La Palabra en Cápsulas",
+      lang: "he",
+      dir: "rtl",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — דף הבית הרשמי",
       welcome: [
         "ברוכים הבאים ל־La Palabra en Cápsulas!",
         "מקום לחיזוק האמונה ולהעמקת הידע.",
         "התבוננו, צמחו ושתפו."
       ],
       button: "גלו",
-      menu: "/Explora/menu.html?lang=he",
-      title: "La Palabra en Cápsulas — דף הבית הרשמי"
+      menu: "/Explora/menu.html?lang=he"
     },
     ar: {
-      htmlLang: "ar",
-      direction: "rtl",
-      image: "/Explora/portada.jpg",
-      alt: "غلاف La Palabra en Cápsulas",
+      lang: "ar",
+      dir: "rtl",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — الصفحة الرئيسية الرسمية",
       welcome: [
         "مرحبًا بكم في La Palabra en Cápsulas!",
         "مساحة لتعزيز الإيمان والنمو في المعرفة.",
         "اكتشف، انمُ وشارك."
       ],
       button: "استكشف",
-      menu: "/Explora/menu.html?lang=ar",
-      title: "La Palabra en Cápsulas — الصفحة الرئيسية الرسمية"
+      menu: "/Explora/menu.html?lang=ar"
     }
   };
 
-  const coverImage = document.getElementById("coverImage");
-  const welcomeText = document.getElementById("welcomeText");
-  const exploreButton = document.getElementById("exploreButton");
+  const image = document.getElementById("coverImage");
+  const welcome = document.getElementById("welcomeText");
+  const explore = document.getElementById("exploreButton");
   const languageButtons = document.querySelectorAll(".language-button");
-
-  let currentLanguage = "es";
 
   function getInitialLanguage() {
     const params = new URLSearchParams(window.location.search);
@@ -507,61 +460,54 @@ body {
       if (saved && translations[saved]) {
         return saved;
       }
-    } catch (error) {
-      // La página funciona también si el navegador bloquea localStorage.
-    }
+    } catch (error) {}
 
     return "es";
   }
 
-  function showWelcome(lines) {
-    welcomeText.replaceChildren();
+  function renderWelcome(lines) {
+    welcome.replaceChildren();
 
     lines.forEach(function (line, index) {
       const span = document.createElement("span");
       span.className = "welcome-line";
       span.textContent = line;
-      span.style.animationDelay = (0.12 + index * 0.26) + "s";
-      welcomeText.appendChild(span);
+      span.style.animationDelay = (0.12 + index * 0.28) + "s";
+      welcome.appendChild(span);
     });
   }
 
   function setLanguage(language) {
-    const selected = translations[language] ? language : "es";
-    const data = translations[selected];
+    const key = translations[language] ? language : "es";
+    const data = translations[key];
 
-    currentLanguage = selected;
-
-    document.documentElement.lang = data.htmlLang;
-    document.documentElement.dir = data.direction;
+    document.documentElement.lang = data.lang;
+    document.documentElement.dir = data.dir;
     document.title = data.title;
 
-    coverImage.alt = data.alt;
-    coverImage.onerror = function () {
-      if (coverImage.getAttribute("src") !== "/Explora/portada.jpg") {
-        coverImage.onerror = null;
-        coverImage.src = "/Explora/portada.jpg";
+    image.onerror = function () {
+      if (image.getAttribute("src") !== spanishImage) {
+        image.onerror = null;
+        image.src = spanishImage;
       }
     };
-    coverImage.src = data.image;
 
-    showWelcome(data.welcome);
+    image.src = data.image;
+    renderWelcome(data.welcome);
 
-    exploreButton.textContent = data.button;
-    exploreButton.href = data.menu;
+    explore.textContent = data.button;
+    explore.href = data.menu;
 
     languageButtons.forEach(function (button) {
-      const active = button.dataset.lang === selected;
+      const active = button.dataset.lang === key;
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
     try {
-      localStorage.setItem("lpc-language", selected);
-      localStorage.setItem("user_language", selected);
-    } catch (error) {
-      // El cambio de idioma sigue funcionando sin almacenamiento local.
-    }
+      localStorage.setItem("lpc-language", key);
+      localStorage.setItem("user_language", key);
+    } catch (error) {}
   }
 
   languageButtons.forEach(function (button) {
