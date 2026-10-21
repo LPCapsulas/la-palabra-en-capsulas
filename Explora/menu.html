@@ -14,9 +14,7 @@
   --soft: #D6D2C4;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -41,12 +39,12 @@ body {
 }
 
 /* SELECTOR DE IDIOMAS */
-
 .language-bar {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-wrap: wrap;
   gap: 9px;
   margin-bottom: 8px;
   font-size: 13px;
@@ -64,27 +62,12 @@ body {
   transition: color .2s ease;
 }
 
-.lang-link:hover,
-.lang-link.active {
-  color: var(--gold);
-}
-
-.lang-link.active {
-  font-weight: 700;
-}
-
-.lang-divider {
-  color: rgba(255,255,255,.45);
-  user-select: none;
-}
+.lang-link:hover, .lang-link.active { color: var(--gold); }
+.lang-link.active { font-weight: 700; }
+.lang-divider { color: rgba(255,255,255,.45); user-select: none; }
 
 /* ENCABEZADO */
-
-header {
-  text-align: center;
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
+header { text-align: center; margin-top: 16px; margin-bottom: 32px; }
 
 h1 {
   margin: 0;
@@ -97,7 +80,6 @@ h1 {
 }
 
 /* MENÚ */
-
 .menu {
   width: min(850px, 100%);
   display: grid;
@@ -118,17 +100,8 @@ h1 {
   transform: translateX(-50%);
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-
-.item {
-  width: 100%;
-  text-align: center;
-}
+.column { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.item { width: 100%; text-align: center; }
 
 .item a {
   display: inline-block;
@@ -142,17 +115,10 @@ h1 {
   transition: color .2s ease, border-color .2s ease;
 }
 
-.item a:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
+.item a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
 /* VOLVER A INICIO */
-
-.back {
-  margin-top: 42px;
-  text-align: center;
-}
+.back { margin-top: 42px; text-align: center; }
 
 .back a {
   color: var(--gold);
@@ -164,273 +130,152 @@ h1 {
   transition: color .2s ease, border-color .2s ease;
 }
 
-.back a:hover {
-  color: #fff;
-  border-color: #fff;
-}
+.back a:hover { color: #fff; border-color: #fff; }
 
 /* CELULAR */
-
 @media (max-width: 600px) {
-  .page {
-    align-items: flex-start;
-    padding: 18px 24px 28px;
-  }
+  .page { align-items: flex-start; padding: 18px 24px 28px; }
+  .language-bar { margin-bottom: 8px; justify-content: flex-start; gap: 6px; }
+  header { width: 100%; margin-top: 16px; margin-bottom: 28px; text-align: center; }
+  h1 { font-size: 36px; line-height: 1.2; }
+  .menu { display: block; width: 100%; margin-top: 0; }
+  .menu::after { display: none; }
+  .column { align-items: flex-start; gap: 9px; }
+  .column + .column { margin-top: 9px; }
+  .item { text-align: left; }
+  .item a { font-size: 21px; line-height: 1.5; padding: 3px 0; }
+  .back { width: 100%; margin-top: 32px; text-align: center; }
+  .back a { font-size: 17px; }
+}
 
-  .language-bar {
-    margin-bottom: 8px;
-  }
-
-  header {
-    width: 100%;
-    margin-top: 16px;
-    margin-bottom: 28px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 1.2;
-  }
-
-  .menu {
-    display: block;
-    width: 100%;
-    margin-top: 0;
-  }
-
-  .menu::after {
-    display: none;
-  }
-
-  .column {
-    align-items: flex-start;
-    gap: 9px;
-  }
-
-  .column + .column {
-    margin-top: 9px;
-  }
-
-  .item {
-    text-align: left;
-  }
-
-  .item a {
-    font-size: 21px;
-    line-height: 1.5;
-    padding: 3px 0;
-  }
-
-  .back {
-    width: 100%;
-    margin-top: 32px;
-    text-align: center;
-  }
-
-  .back a {
-    font-size: 17px;
-  }
+/* RTL: Hebrew and Arabic */
+html[dir="rtl"] .page { direction: rtl; }
+html[dir="rtl"] .language-bar { justify-content: flex-start; }
+html[dir="rtl"] .menu { direction: rtl; }
+html[dir="rtl"] .menu::after { left: 50%; }
+@media (max-width: 600px) {
+  html[dir="rtl"] .column { align-items: flex-start; }
+  html[dir="rtl"] .item { text-align: right; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="page">
 
-  <!-- SELECTOR DE IDIOMAS -->
-
   <nav class="language-bar" aria-label="Language selection">
-
-    <button type="button"
-      class="lang-link active"
-      id="link-es"
-      onclick="changeLanguage('es')"
-      aria-pressed="true">Español</button>
-
+    <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button>
     <span class="lang-divider">|</span>
-
-    <button type="button"
-      class="lang-link"
-      id="link-en"
-      onclick="changeLanguage('en')"
-      aria-pressed="false">English</button>
-
+    <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
     <span class="lang-divider">|</span>
-
-    <button type="button"
-      class="lang-link"
-      id="link-zh"
-      onclick="changeLanguage('zh')"
-      aria-pressed="false">中文</button>
-
+    <button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')" aria-pressed="false">中文</button>
     <span class="lang-divider">|</span>
-
-    <button type="button"
-      class="lang-link"
-      id="link-fr"
-      onclick="changeLanguage('fr')"
-      aria-pressed="false">Français</button>
-
+    <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-it" onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-pt" onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-he" onclick="changeLanguage('he')" aria-pressed="false">עברית</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ar" onclick="changeLanguage('ar')" aria-pressed="false">العربية</button>
   </nav>
 
-  <header>
-    <h1 id="page-title">Mira, Crece y Comparte</h1>
-  </header>
+  <header><h1 id="page-title">Mira, Crece y Comparte</h1></header>
 
   <nav class="menu" id="main-menu" aria-label="Menú principal">
-
-    <!-- COLUMNA IZQUIERDA -->
-
     <div class="column">
-
-      <div class="item">
-        <a href="./LPC/index.html"
-           data-es="Acerca de LPC"
-           data-zh="关于 LPC"
-           data-en="About LPC"
-           data-fr="À propos de LPC">Acerca de LPC</a>
-      </div>
-
-      <div class="item">
-        <a href="./articulos/index.html"
-           data-es="Artículos"
-           data-zh="文章"
-           data-en="Articles"
-           data-fr="Articles">Artículos</a>
-      </div>
-
-      <div class="item">
-        <a href="./ensenanzas/index.html"
-           data-es="Enseñanzas"
-           data-zh="教导"
-           data-en="Teachings"
-           data-fr="Enseignements">Enseñanzas</a>
-      </div>
-
-      <div class="item">
-        <a href="./oracion/index.html"
-           data-es="Oración"
-           data-zh="祷告"
-           data-en="Prayer"
-           data-fr="Prière">Oración</a>
-      </div>
-
+      <div class="item"><a href="./LPC/index.html" data-es="Acerca de LPC" data-en="About LPC" data-zh="关于 LPC" data-fr="À propos de LPC" data-it="Informazioni su LPC" data-pt="Sobre a LPC" data-he="אודות LPC" data-ar="حول LPC">Acerca de LPC</a></div>
+      <div class="item"><a href="./articulos/index.html" data-es="Artículos" data-en="Articles" data-zh="文章" data-fr="Articles" data-it="Articoli" data-pt="Artigos" data-he="מאמרים" data-ar="مقالات">Artículos</a></div>
+      <div class="item"><a href="./ensenanzas/index.html" data-es="Enseñanzas" data-en="Teachings" data-zh="教导" data-fr="Enseignements" data-it="Insegnamenti" data-pt="Ensinamentos" data-he="לימוד" data-ar="تعاليم">Enseñanzas</a></div>
+      <div class="item"><a href="./oracion/index.html" data-es="Oración" data-en="Prayer" data-zh="祷告" data-fr="Prière" data-it="Preghiera" data-pt="Oração" data-he="תפילה" data-ar="الصلاة">Oración</a></div>
     </div>
-
-    <!-- COLUMNA DERECHA -->
-
     <div class="column">
-
-      <div class="item">
-        <a href="./descargas/index.html"
-           data-es="Descargas"
-           data-zh="下载资源"
-           data-en="Downloads"
-           data-fr="Téléchargements">Descargas</a>
-      </div>
-
-      <div class="item">
-        <a href="./testimonios/index.html"
-           data-es="Testimonios"
-           data-zh="见证"
-           data-en="Testimonials"
-           data-fr="Témoignages">Testimonios</a>
-      </div>
-
-      <div class="item">
-        <a href="./proyectos/index.html"
-           data-es="Proyectos"
-           data-zh="项目"
-           data-en="Projects"
-           data-fr="Projets">Proyectos</a>
-      </div>
-
-      <div class="item">
-        <a href="./apoya/index.html"
-           data-es="Apoya"
-           data-zh="支持 LPC"
-           data-en="Support"
-           data-fr="Soutenir">Apoya</a>
-      </div>
-
+      <div class="item"><a href="./descargas/index.html" data-es="Descargas" data-en="Downloads" data-zh="下载资源" data-fr="Téléchargements" data-it="Download" data-pt="Downloads" data-he="הורדות" data-ar="التنزيلات">Descargas</a></div>
+      <div class="item"><a href="./testimonios/index.html" data-es="Testimonios" data-en="Testimonials" data-zh="见证" data-fr="Témoignages" data-it="Testimonianze" data-pt="Testemunhos" data-he="עדויות" data-ar="شهادات">Testimonios</a></div>
+      <div class="item"><a href="./proyectos/index.html" data-es="Proyectos" data-en="Projects" data-zh="项目" data-fr="Projets" data-it="Progetti" data-pt="Projetos" data-he="פרויקטים" data-ar="مشاريع">Proyectos</a></div>
+      <div class="item"><a href="./apoya/index.html" data-es="Apoya" data-en="Support" data-zh="支持 LPC" data-fr="Soutenir" data-it="Sostieni" data-pt="Apoie" data-he="תמיכה" data-ar="ادعم">Apoya</a></div>
     </div>
-
   </nav>
 
   <div class="back">
-    <a href="../index.html"
-       id="back-link"
-       data-es="Volver a Inicio"
-       data-zh="返回首页"
-       data-en="Back to Home"
-       data-fr="Retour à l’accueil">Volver a Inicio</a>
+    <a href="../index.html" id="back-link"
+       data-es="Volver a Inicio" data-en="Back to Home" data-zh="返回首页"
+       data-fr="Retour à l’accueil" data-it="Torna alla Home" data-pt="Voltar ao início"
+       data-he="חזרה לדף הבית" data-ar="العودة إلى الصفحة الرئيسية">Volver a Inicio</a>
   </div>
-
 </div>
 
 <script>
 (function () {
-
   const translations = {
     es: {
-      title: 'Mira, Crece y Comparte',
-      documentTitle: 'Mira, Crece y Comparte — La Palabra en Cápsulas',
-      menuLabel: 'Menú principal'
+      title: "Mira, Crece y Comparte",
+      documentTitle: "Mira, Crece y Comparte — La Palabra en Cápsulas",
+      menuLabel: "Menú principal"
     },
-
     en: {
-      title: 'Look, Grow and Share',
-      documentTitle: 'Look, Grow and Share — The Word in Capsules',
-      menuLabel: 'Main menu'
+      title: "Look, Grow and Share",
+      documentTitle: "Look, Grow and Share — The Word in Capsules",
+      menuLabel: "Main menu"
     },
-
     fr: {
-      title: 'Découvre, Grandis et Partage',
-      documentTitle: 'Découvre, Grandis et Partage — La Parole en Capsules',
-      menuLabel: 'Menu principal'
+      title: "Découvre, Grandis et Partage",
+      documentTitle: "Découvre, Grandis et Partage — La Parole en Capsules",
+      menuLabel: "Menu principal"
     },
-
     zh: {
-      title: '认识、成长与分享',
-      documentTitle: '认识、成长与分享 — 胶囊中的圣言',
-      menuLabel: '主菜单'
+      title: "认识、成长与分享",
+      documentTitle: "认识、成长与分享 — 胶囊中的圣言",
+      menuLabel: "主菜单"
+    },
+    it: {
+      title: "Guarda, Cresci e Condividi",
+      documentTitle: "Guarda, Cresci e Condividi — La Parola in Capsule",
+      menuLabel: "Menu principale"
+    },
+    pt: {
+      title: "Veja, Cresça e Compartilhe",
+      documentTitle: "Veja, Cresça e Compartilhe — A Palavra em Cápsulas",
+      menuLabel: "Menu principal"
+    },
+    he: {
+      title: "התבונן, צמח ושתף",
+      documentTitle: "התבונן, צמח ושתף — דבר אלוהים בקפסולות",
+      menuLabel: "תפריט ראשי"
+    },
+    ar: {
+      title: "تأمّل، انمُ وشارك",
+      documentTitle: "تأمّل، انمُ وشارك — كلمة الله في كبسولات",
+      menuLabel: "القائمة الرئيسية"
     }
   };
 
   function changeLanguage(lang) {
-    if (!translations[lang]) {
-      lang = 'es';
-    }
+    if (!translations[lang]) lang = "es";
 
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+    document.documentElement.dir = ["he", "ar"].includes(lang) ? "rtl" : "ltr";
     document.title = translations[lang].documentTitle;
+    document.getElementById("page-title").textContent = translations[lang].title;
+    document.getElementById("main-menu").setAttribute("aria-label", translations[lang].menuLabel);
 
-    document.getElementById('page-title').textContent =
-      translations[lang].title;
-
-    document.getElementById('main-menu').setAttribute(
-      'aria-label',
-      translations[lang].menuLabel
-    );
-
-    document.querySelectorAll('#main-menu a[data-es]').forEach(function (link) {
-      link.textContent = link.getAttribute('data-' + lang);
+    document.querySelectorAll("#main-menu a[data-es]").forEach(function (link) {
+      link.textContent = link.getAttribute("data-" + lang) || link.getAttribute("data-es");
     });
 
-    const backLink = document.getElementById('back-link');
-    backLink.textContent = backLink.getAttribute('data-' + lang);
+    const backLink = document.getElementById("back-link");
+    backLink.textContent = backLink.getAttribute("data-" + lang) || backLink.getAttribute("data-es");
 
-    document.querySelectorAll('.lang-link').forEach(function (button) {
-      const selected = button.id === 'link-' + lang;
-      button.classList.toggle('active', selected);
-      button.setAttribute('aria-pressed', String(selected));
+    document.querySelectorAll(".lang-link").forEach(function (button) {
+      const selected = button.id === "link-" + lang;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
     });
 
     try {
-      localStorage.setItem('lpc-language', lang);
-      localStorage.setItem('user_language', lang);
+      localStorage.setItem("lpc-language", lang);
+      localStorage.setItem("user_language", lang);
     } catch (error) {
       // El menú sigue funcionando si el almacenamiento está desactivado.
     }
@@ -438,28 +283,19 @@ h1 {
 
   window.changeLanguage = changeLanguage;
 
-  /* LEE PRIMERO EL IDIOMA ENVIADO POR LA PORTADA */
-
   const urlParams = new URLSearchParams(window.location.search);
-  const requestedLanguage = urlParams.get('lang');
-
-  let initialLanguage = 'es';
+  const requestedLanguage = urlParams.get("lang");
+  let initialLanguage = "es";
 
   try {
-    initialLanguage =
-      requestedLanguage ||
-      localStorage.getItem('lpc-language') ||
-      localStorage.getItem('user_language') ||
-      'es';
+    initialLanguage = requestedLanguage || localStorage.getItem("lpc-language") ||
+      localStorage.getItem("user_language") || "es";
   } catch (error) {
-    initialLanguage = requestedLanguage || 'es';
+    initialLanguage = requestedLanguage || "es";
   }
 
   changeLanguage(initialLanguage);
-
 })();
 </script>
-
 </body>
 </html>
-
