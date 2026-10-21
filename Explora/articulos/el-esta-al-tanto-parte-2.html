@@ -18,11 +18,22 @@
  const buttons=document.querySelectorAll('[data-lang]');
  const navLinks=document.querySelectorAll('.footer-nav a');
  const data=window.translations;
+ const siteNames={
+  es:'LA PALABRA EN CÁPSULAS',
+  en:'THE WORD IN CAPSULES',
+  zh:'胶囊中的话语',
+  fr:'LA PAROLE EN CAPSULES',
+  it:'LA PAROLA IN CAPSULE',
+  pt:'A PALAVRA EM CÁPSULAS',
+  he:'הַדָּבָר בִּכְמַסּוֹת',
+  ar:'الكلمة في كبسولات'
+ };
  function setLanguage(lang){
   if(!data[lang]) lang='es';
   document.documentElement.lang=lang;
   document.documentElement.dir=(lang==='ar'||lang==='he')?'rtl':'ltr';
   document.title=data[lang].title;
+  document.querySelector('.site-name').textContent=siteNames[lang]||siteNames.es;
   document.querySelector('.author').textContent=data[lang].author;
   document.querySelector('h1').textContent=data[lang].heading;
   document.querySelector('.part-label').textContent=data[lang].part;
