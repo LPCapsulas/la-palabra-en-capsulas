@@ -279,6 +279,91 @@ padding-bottom: 7px;
 }
 }
 
+/* Celular en posición vertical: imagen más alta y texto más legible.
+   Estas reglas no modifican la presentación de PC. */
+@media (max-width: 760px) and (orientation: portrait) {
+.cover-image {
+max-height: 43svh;
+}
+
+.welcome {
+margin: 7px auto 8px;
+font-size: clamp(17px, 4.6vw, 20px);
+line-height: 1.30;
+}
+
+.explore-button {
+min-height: 43px;
+font-size: 16px;
+}
+}
+
+/* En celulares verticales pequeños, se reserva espacio para que Explora siga visible. */
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 700px) {
+.cover-image {
+max-height: 37svh;
+}
+
+.welcome {
+margin-top: 4px;
+margin-bottom: 5px;
+font-size: clamp(16px, 4.2vw, 18px);
+line-height: 1.23;
+}
+
+.explore-button {
+min-height: 40px;
+padding-top: 7px;
+padding-bottom: 7px;
+}
+}
+
+/* Celular en posición horizontal: composición compacta, similar a la de PC. */
+@media (max-width: 900px) and (orientation: landscape) {
+.page {
+min-height: 100svh;
+padding: 3px 12px 6px;
+}
+
+.language-bar {
+gap: 3px 14px;
+padding: 2px 6px 5px;
+}
+
+.language-button {
+font-size: 12px;
+padding: 2px 1px;
+}
+
+.separator {
+margin-bottom: 4px;
+}
+
+.cover-image {
+width: 100%;
+max-width: 900px;
+max-height: 40svh;
+}
+
+.welcome {
+margin: 4px auto 5px;
+padding: 0 8px;
+font-size: clamp(14px, 2.1vw, 18px);
+line-height: 1.22;
+}
+
+.welcome-line:first-child {
+margin-bottom: 0.28em;
+}
+
+.explore-button {
+min-width: 150px;
+min-height: 38px;
+padding: 6px 22px;
+font-size: 15px;
+}
+}
+
 @media (prefers-reduced-motion: reduce) {
 .welcome-line {
 opacity: 1;
