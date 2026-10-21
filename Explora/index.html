@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -226,7 +227,7 @@ html, body {
     <div class="image-container">
       <img
         id="cover-image"
-        src="/Explora/portada.png"
+        src="/Explora/portada.jpg"
         alt="Portada de La Palabra en Cápsulas"
         class="cover-image"
       >
@@ -252,7 +253,7 @@ html, body {
       subtitle: "Tu dosis diaria de inspiración y conocimiento.",
       btnText: "Explora",
       btnUrl: "/Explora/menu.html?lang=es",
-      image: "/Explora/portada.png",
+      image: "/Explora/portada.jpg",
       direction: "ltr"
     },
 
@@ -267,168 +268,4 @@ html, body {
 
     zh: {
       title: "胶囊话语",
-      subtitle: "您每日的灵感与知识。",
-      btnText: "探索",
-      btnUrl: "/Explora/menu.html?lang=zh",
-      image: "/Explora/portada-zh.png",
-      direction: "ltr"
-    },
-
-    fr: {
-      title: "La Parole en Capsules",
-      subtitle: "Votre dose quotidienne d'inspiration et de connaissances.",
-      btnText: "Explorer",
-      btnUrl: "/Explora/menu.html?lang=fr",
-      image: "/Explora/portada-fr.png",
-      direction: "ltr"
-    },
-
-    it: {
-      title: "La Parola in Capsule",
-      subtitle: "La tua dose quotidiana di ispirazione e conoscenza.",
-      btnText: "Esplora",
-      btnUrl: "/Explora/menu.html?lang=it",
-      image: null,
-      direction: "ltr"
-    },
-
-    pt: {
-      title: "A Palavra em Cápsulas",
-      subtitle: "Sua dose diária de inspiração e conhecimento.",
-      btnText: "Explore",
-      btnUrl: "/Explora/menu.html?lang=pt",
-      image: null,
-      direction: "ltr"
-    },
-
-    he: {
-      title: "המילה בכמוסות",
-      subtitle: "המנה היומית שלך של השראה וידע.",
-      btnText: "גלה",
-      btnUrl: "/Explora/menu.html?lang=he",
-      image: null,
-      direction: "rtl"
-    },
-
-    ar: {
-      title: "الكلمة في كبسولات",
-      subtitle: "جرعتك اليومية من الإلهام والمعرفة.",
-      btnText: "استكشف",
-      btnUrl: "/Explora/menu.html?lang=ar",
-      image: null,
-      direction: "rtl"
-    }
-  };
-
-  function saveLanguage(lang) {
-    try {
-      localStorage.setItem("user_language", lang);
-      localStorage.setItem("lpc-language", lang);
-    } catch (error) {
-      // La página seguirá funcionando sin almacenamiento local.
-    }
-  }
-
-  function getInitialLanguage() {
-    const params = new URLSearchParams(window.location.search);
-    const requestedLanguage = params.get("lang");
-
-    if (requestedLanguage && translations[requestedLanguage]) {
-      return requestedLanguage;
-    }
-
-    try {
-      const savedLanguage =
-        localStorage.getItem("lpc-language") ||
-        localStorage.getItem("user_language");
-
-      if (savedLanguage && translations[savedLanguage]) {
-        return savedLanguage;
-      }
-    } catch (error) {
-      // Se usará español como idioma predeterminado.
-    }
-
-    return "es";
-  }
-
-  function setLanguage(lang) {
-    if (!translations[lang]) {
-      lang = "es";
-    }
-
-    const content = translations[lang];
-
-    document.documentElement.lang = lang;
-    document.documentElement.dir = content.direction;
-
-    document.getElementById("title").textContent = content.title;
-    document.getElementById("subtitle").textContent = content.subtitle;
-
-    const coverImage = document.getElementById("cover-image");
-
-    if (content.image) {
-      coverImage.src = content.image;
-      coverImage.alt = content.title;
-      coverImage.style.display = "block";
-      coverImage.onerror = function () {
-        coverImage.style.display = "none";
-      };
-    } else {
-      coverImage.removeAttribute("src");
-      coverImage.style.display = "none";
-      coverImage.onerror = null;
-    }
-
-    document.querySelectorAll(".lang-link").forEach(function (link) {
-      const isActive = link.dataset.lang === lang;
-
-      link.classList.toggle("active", isActive);
-
-      if (isActive) {
-        link.setAttribute("aria-current", "true");
-      } else {
-        link.removeAttribute("aria-current");
-      }
-    });
-
-    const buttonBox = document.getElementById("button-box");
-    buttonBox.replaceChildren();
-
-    const button = document.createElement("a");
-    button.className = "btn-explore";
-    button.href = content.btnUrl;
-    button.textContent = content.btnText;
-    button.setAttribute("aria-label", content.btnText);
-
-    buttonBox.appendChild(button);
-
-    saveLanguage(lang);
-  }
-
-  document.querySelectorAll(".lang-link").forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const lang = link.dataset.lang;
-
-      setLanguage(lang);
-
-      const newUrl = new URL(window.location.href);
-      newUrl.searchParams.set("lang", lang);
-
-      window.history.replaceState({}, "", newUrl.href);
-    });
-  });
-
-  window.addEventListener("popstate", function () {
-    setLanguage(getInitialLanguage());
-  });
-
-  setLanguage(getInitialLanguage());
-})();
-</script>
-
-</body>
-</html>
-
+      subtitle: "您每日的
