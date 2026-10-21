@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -22,47 +23,41 @@
 }
 
 html, body {
-  min-height: 100%;
+  height: 100%;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-size: 17px;
   line-height: 1.8;
-}
-
-body {
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 .page {
   width: min(900px, calc(100% - 32px));
-  min-height: calc(100vh - 4px);
+  height: calc(100vh - 4px);
   margin: 2px auto;
   padding: 16px 56px 24px;
   background: var(--paper);
-  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
   display: flex;
   flex-direction: column;
 }
 
 .language-bar {
-  display: grid;
-  grid-template-columns: repeat(8, max-content);
-  justify-content: end;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  column-gap: 12px;
-  row-gap: 4px;
-  padding: 2px 0 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 0 8px;
   margin-bottom: 10px;
   border-bottom: 1px solid #f0ede6;
   font-size: 13px;
-  line-height: 1.8;
   flex-shrink: 0;
 }
 
 .lang-link {
-  display: inline-block;
   color: var(--muted);
   background: none;
   border: 0;
@@ -74,7 +69,6 @@ body {
 
 .lang-link:hover {
   color: var(--accent);
-  text-decoration: underline;
 }
 
 .lang-link.active {
@@ -93,18 +87,15 @@ body {
 .image-container {
   text-align: center;
   margin-bottom: 10px;
-  opacity: 0;
-  animation: cascadeIn .8s ease-out forwards;
-  animation-delay: .15s;
+  min-height: 0;
 }
 
 .cover-image {
   display: block;
+  margin: 0 auto;
   max-width: 100%;
-  width: auto;
   height: auto;
   max-height: 48vh;
-  margin: 0 auto;
   object-fit: contain;
 }
 
@@ -115,18 +106,15 @@ body {
   justify-content: center;
   gap: 12px;
   margin-bottom: 15px;
-  opacity: 0;
-  animation: cascadeIn .8s ease-out forwards;
-  animation-delay: .45s;
 }
 
 .text-container h1 {
-  font-size: 1.8em;
+  font-size: clamp(23px, 4vw, 34px);
   line-height: 1.3;
 }
 
 .text-container p {
-  overflow-wrap: anywhere;
+  line-height: 1.6;
 }
 
 .action-container {
@@ -134,9 +122,6 @@ body {
   padding-bottom: 15px;
   margin-top: auto;
   min-height: 55px;
-  opacity: 0;
-  animation: cascadeIn .8s ease-out forwards;
-  animation-delay: .75s;
 }
 
 .btn-explore {
@@ -147,145 +132,105 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
-  transition: background .3s, transform .3s;
+  transition: background 0.3s;
 }
 
 .btn-explore:hover {
   background-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-html[dir="rtl"] .language-bar {
-  justify-content: start;
-}
-
-html[dir="rtl"] .text-container {
-  direction: rtl;
-}
-
-@keyframes cascadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .image-container,
-  .text-container,
-  .action-container {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .btn-explore {
-    transition: none;
-  }
 }
 
 @media (max-width: 600px) {
   html, body {
+    overflow: hidden;
     font-size: 22px;
     line-height: 1.5;
   }
 
   .page {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 16px 16px 24px;
+    width: calc(100% - 16px);
+    padding: 12px 16px 18px;
+    height: calc(100vh - 4px);
   }
 
   .language-bar {
-    grid-template-columns: repeat(4, max-content);
     justify-content: center;
-    column-gap: 16px;
+    column-gap: 7px;
     row-gap: 4px;
-    font-size: 13px;
-    padding-bottom: 10px;
-  }
-
-  .content-wrapper {
-    justify-content: flex-start;
-    gap: 18px;
-  }
-
-  .image-container {
-    margin-top: 4px;
-    margin-bottom: 0;
+    font-size: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
   }
 
   .cover-image {
+    max-height: 54vh;
     width: 100%;
-    max-height: 52vh;
-    object-fit: contain;
   }
 
   .text-container {
-    gap: 16px;
-    margin-bottom: 4px;
+    gap: 12px;
   }
 
   .text-container h1 {
-    font-size: 1.35em;
+    font-size: 25px;
   }
 
-  .action-container {
-    margin-top: auto;
-    padding-top: 8px;
-    padding-bottom: 10px;
+  .text-container p {
+    font-size: 18px;
   }
 
   .btn-explore {
-    padding: 12px 30px;
+    padding: 12px 28px;
   }
 }
 
-@media (max-width: 380px) {
-  .language-bar {
-    column-gap: 12px;
-    font-size: 12px;
-  }
-
-  .page {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
+@media (max-height: 650px) {
   .cover-image {
-    max-height: 46vh;
+    max-height: 42vh;
+  }
+
+  .text-container {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .action-container {
+    padding-bottom: 6px;
   }
 }
 </style>
 </head>
 
 <body>
+
 <div class="page">
 
-  <nav class="language-bar" aria-label="Seleccionar idioma">
+  <header class="language-bar" aria-label="Seleccionar idioma">
     <a href="?lang=es" class="lang-link" data-lang="es">Español</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=en" class="lang-link" data-lang="en">English</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=fr" class="lang-link" data-lang="fr">Français</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=it" class="lang-link" data-lang="it">Italiano</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=pt" class="lang-link" data-lang="pt">Português</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=he" class="lang-link" data-lang="he">עברית</a>
+    <span aria-hidden="true">|</span>
     <a href="?lang=ar" class="lang-link" data-lang="ar">العربية</a>
-  </nav>
+  </header>
 
   <div class="content-wrapper">
 
     <div class="image-container">
       <img
         id="cover-image"
-        src="portada.png"
-        alt="La Palabra en Cápsulas"
-        class="cover-image">
+        src="/Explora/portada.png"
+        alt="Portada de La Palabra en Cápsulas"
+        class="cover-image"
+      >
     </div>
 
     <div class="text-container">
@@ -308,9 +253,8 @@ html[dir="rtl"] .text-container {
       subtitle: "Tu dosis diaria de inspiración y conocimiento.",
       btnText: "Explora",
       btnUrl: "/Explora/menu.html?lang=es",
-      image: "portada.png",
-      imageAlt: "La Palabra en Cápsulas",
-      dir: "ltr"
+      image: "/Explora/portada.png",
+      direction: "ltr"
     },
 
     en: {
@@ -318,9 +262,8 @@ html[dir="rtl"] .text-container {
       subtitle: "Your daily dose of inspiration and knowledge.",
       btnText: "Explore",
       btnUrl: "/Explora/menu.html?lang=en",
-      image: "portada-en.png",
-      imageAlt: "The Word in Capsules",
-      dir: "ltr"
+      image: "/Explora/portada-en.png",
+      direction: "ltr"
     },
 
     zh: {
@@ -328,9 +271,8 @@ html[dir="rtl"] .text-container {
       subtitle: "您每日的灵感与知识。",
       btnText: "探索",
       btnUrl: "/Explora/menu.html?lang=zh",
-      image: "portada-zh.png",
-      imageAlt: "胶囊话语",
-      dir: "ltr"
+      image: "/Explora/portada-zh.png",
+      direction: "ltr"
     },
 
     fr: {
@@ -338,9 +280,8 @@ html[dir="rtl"] .text-container {
       subtitle: "Votre dose quotidienne d'inspiration et de connaissances.",
       btnText: "Explorer",
       btnUrl: "/Explora/menu.html?lang=fr",
-      image: "portada-fr.png",
-      imageAlt: "La Parole en Capsules",
-      dir: "ltr"
+      image: "/Explora/portada-fr.png",
+      direction: "ltr"
     },
 
     it: {
@@ -348,29 +289,26 @@ html[dir="rtl"] .text-container {
       subtitle: "La tua dose quotidiana di ispirazione e conoscenza.",
       btnText: "Esplora",
       btnUrl: "/Explora/menu.html?lang=it",
-      image: "portada-it.png",
-      imageAlt: "La Parola in Capsule",
-      dir: "ltr"
+      image: null,
+      direction: "ltr"
     },
 
     pt: {
       title: "A Palavra em Cápsulas",
       subtitle: "Sua dose diária de inspiração e conhecimento.",
-      btnText: "Explorar",
+      btnText: "Explore",
       btnUrl: "/Explora/menu.html?lang=pt",
-      image: "portada-pt.png",
-      imageAlt: "A Palavra em Cápsulas",
-      dir: "ltr"
+      image: null,
+      direction: "ltr"
     },
 
     he: {
-      title: "הדבר בכמוסות",
+      title: "המילה בכמוסות",
       subtitle: "המנה היומית שלך של השראה וידע.",
       btnText: "גלה",
       btnUrl: "/Explora/menu.html?lang=he",
-      image: "portada-he.png",
-      imageAlt: "הדבר בכמוסות",
-      dir: "rtl"
+      image: null,
+      direction: "rtl"
     },
 
     ar: {
@@ -378,9 +316,8 @@ html[dir="rtl"] .text-container {
       subtitle: "جرعتك اليومية من الإلهام والمعرفة.",
       btnText: "استكشف",
       btnUrl: "/Explora/menu.html?lang=ar",
-      image: "portada-ar.png",
-      imageAlt: "الكلمة في كبسولات",
-      dir: "rtl"
+      image: null,
+      direction: "rtl"
     }
   };
 
@@ -388,7 +325,9 @@ html[dir="rtl"] .text-container {
     try {
       localStorage.setItem("user_language", lang);
       localStorage.setItem("lpc-language", lang);
-    } catch (error) {}
+    } catch (error) {
+      // La página seguirá funcionando sin almacenamiento local.
+    }
   }
 
   function getInitialLanguage() {
@@ -407,23 +346,11 @@ html[dir="rtl"] .text-container {
       if (savedLanguage && translations[savedLanguage]) {
         return savedLanguage;
       }
-    } catch (error) {}
+    } catch (error) {
+      // Se usará español como idioma predeterminado.
+    }
 
     return "es";
-  }
-
-  function restartCascade() {
-    const elements = [
-      document.querySelector(".image-container"),
-      document.querySelector(".text-container"),
-      document.querySelector(".action-container")
-    ];
-
-    elements.forEach(function (element) {
-      element.style.animation = "none";
-      void element.offsetWidth;
-      element.style.animation = "";
-    });
   }
 
   function setLanguage(lang) {
@@ -434,24 +361,25 @@ html[dir="rtl"] .text-container {
     const content = translations[lang];
 
     document.documentElement.lang = lang;
-    document.documentElement.dir = content.dir;
+    document.documentElement.dir = content.direction;
 
     document.getElementById("title").textContent = content.title;
     document.getElementById("subtitle").textContent = content.subtitle;
 
     const coverImage = document.getElementById("cover-image");
 
-    coverImage.onerror = function () {
-      this.onerror = null;
-
-      if (this.getAttribute("src") !== "portada.png") {
-        this.src = "portada.png";
-        this.alt = "La Palabra en Cápsulas";
-      }
-    };
-
-    coverImage.src = content.image;
-    coverImage.alt = content.imageAlt;
+    if (content.image) {
+      coverImage.src = content.image;
+      coverImage.alt = content.title;
+      coverImage.style.display = "block";
+      coverImage.onerror = function () {
+        coverImage.style.display = "none";
+      };
+    } else {
+      coverImage.removeAttribute("src");
+      coverImage.style.display = "none";
+      coverImage.onerror = null;
+    }
 
     document.querySelectorAll(".lang-link").forEach(function (link) {
       const isActive = link.dataset.lang === lang;
@@ -477,7 +405,6 @@ html[dir="rtl"] .text-container {
     buttonBox.appendChild(button);
 
     saveLanguage(lang);
-    restartCascade();
   }
 
   document.querySelectorAll(".lang-link").forEach(function (link) {
@@ -486,14 +413,11 @@ html[dir="rtl"] .text-container {
 
       const lang = link.dataset.lang;
 
-      if (!translations[lang]) {
-        return;
-      }
-
       setLanguage(lang);
 
       const newUrl = new URL(window.location.href);
       newUrl.searchParams.set("lang", lang);
+
       window.history.replaceState({}, "", newUrl.href);
     });
   });
@@ -508,4 +432,4 @@ html[dir="rtl"] .text-container {
 
 </body>
 </html>
-
+```
