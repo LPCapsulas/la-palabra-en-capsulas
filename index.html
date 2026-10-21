@@ -282,6 +282,11 @@ padding-bottom: 7px;
 /* Celular en posición vertical: imagen más alta y texto más legible.
    Estas reglas no modifican la presentación de PC. */
 @media (max-width: 760px) and (orientation: portrait) {
+/* Un poco más de aire entre la bienvenida y el mensaje que sigue. */
+.welcome-line:first-child {
+margin-bottom: 0.85em;
+}
+
 .cover-image {
 /* Aprovecha más altura para que se lean mejor las cápsulas de la izquierda,
    reservando espacio para el mensaje y el botón Explora. */
@@ -305,6 +310,10 @@ font-size: 16px;
 
 /* En celulares verticales pequeños, se reserva espacio para que Explora siga visible. */
 @media (max-width: 760px) and (orientation: portrait) and (max-height: 700px) {
+.welcome-line:first-child {
+margin-bottom: 0.7em;
+}
+
 .cover-image {
 /* En pantallas bajas, se adapta al espacio restante para mantener visible Explora. */
 max-height: min(42svh, calc(100svh - 315px));
