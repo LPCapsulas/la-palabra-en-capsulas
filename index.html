@@ -283,13 +283,15 @@ padding-bottom: 7px;
    Estas reglas no modifican la presentación de PC. */
 @media (max-width: 760px) and (orientation: portrait) {
 .cover-image {
-max-height: 43svh;
+/* Aprovecha más altura para que se lean mejor las cápsulas de la izquierda,
+   reservando espacio para el mensaje y el botón Explora. */
+max-height: min(47svh, calc(100svh - 330px));
 }
 
 .welcome {
-margin: 13px auto 12px;
-font-size: 18px;
-line-height: 1.60;
+margin: 10px auto 9px;
+font-size: 19px;
+line-height: 1.42;
 }
 
 .explore-button {
@@ -301,14 +303,15 @@ font-size: 16px;
 /* En celulares verticales pequeños, se reserva espacio para que Explora siga visible. */
 @media (max-width: 760px) and (orientation: portrait) and (max-height: 700px) {
 .cover-image {
-max-height: 34svh;
+/* En pantallas bajas, se adapta al espacio restante para mantener visible Explora. */
+max-height: min(42svh, calc(100svh - 315px));
 }
 
 .welcome {
-margin-top: 8px;
-margin-bottom: 7px;
-font-size: 18px;
-line-height: 1.42;
+margin-top: 7px;
+margin-bottom: 6px;
+font-size: 19px;
+line-height: 1.30;
 }
 
 .explore-button {
