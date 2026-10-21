@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -26,7 +27,7 @@ html, body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 17px;
   line-height: 1.8;
   overflow: hidden;
@@ -131,7 +132,7 @@ html, body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background .3s;
 }
 
 .btn-explore:hover {
@@ -200,7 +201,6 @@ html, body {
 </head>
 
 <body>
-
 <div class="page">
 
   <header class="language-bar" aria-label="Seleccionar idioma">
@@ -208,9 +208,9 @@ html, body {
     <span aria-hidden="true">|</span>
     <a href="?lang=en" class="lang-link" data-lang="en">English</a>
     <span aria-hidden="true">|</span>
-    <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
-    <span aria-hidden="true">|</span>
     <a href="?lang=fr" class="lang-link" data-lang="fr">Français</a>
+    <span aria-hidden="true">|</span>
+    <a href="?lang=zh" class="lang-link" data-lang="zh">中文</a>
     <span aria-hidden="true">|</span>
     <a href="?lang=it" class="lang-link" data-lang="it">Italiano</a>
     <span aria-hidden="true">|</span>
@@ -226,15 +226,15 @@ html, body {
     <div class="image-container">
       <img
         id="cover-image"
+        class="cover-image"
         src="/Explora/portada.jpg"
         alt="Portada de La Palabra en Cápsulas"
-        class="cover-image"
       >
     </div>
 
     <div class="text-container">
       <h1 id="title">La Palabra en Cápsulas</h1>
-      <p id="subtitle">Tu dosis diaria de inspiración y conocimiento.</p>
+      <p id="subtitle">Fe, Poder y Vida</p>
     </div>
 
     <div class="action-container" id="button-box"></div>
@@ -246,86 +246,88 @@ html, body {
 (function () {
   "use strict";
 
+  const SPANISH_IMAGE = "/Explora/portada.jpg";
+
   const translations = {
     es: {
       title: "La Palabra en Cápsulas",
-      subtitle: "Tu dosis diaria de inspiración y conocimiento.",
+      subtitle: "Fe, Poder y Vida",
       btnText: "Explora",
       btnUrl: "/Explora/menu.html?lang=es",
-      image: "/Explora/portada.jpg",
+      image: SPANISH_IMAGE,
       direction: "ltr"
     },
 
     en: {
       title: "The Word in Capsules",
-      subtitle: "Your daily dose of inspiration and knowledge.",
+      subtitle: "Faith, Power and Life",
       btnText: "Explore",
       btnUrl: "/Explora/menu.html?lang=en",
       image: "/Explora/portada-en.png",
       direction: "ltr"
     },
 
-    zh: {
-      title: "胶囊话语",
-      subtitle: "您每日的灵感与知识。",
-      btnText: "探索",
-      btnUrl: "/Explora/menu.html?lang=zh",
-      image: "/Explora/portada-zh.png",
-      direction: "ltr"
-    },
-
     fr: {
       title: "La Parole en Capsules",
-      subtitle: "Votre dose quotidienne d'inspiration et de connaissances.",
+      subtitle: "Foi, Puissance et Vie",
       btnText: "Explorer",
       btnUrl: "/Explora/menu.html?lang=fr",
       image: "/Explora/portada-fr.png",
       direction: "ltr"
     },
 
+    zh: {
+      title: "胶囊话语",
+      subtitle: "信心、能力与生命",
+      btnText: "探索",
+      btnUrl: "/Explora/menu.html?lang=zh",
+      image: "/Explora/portada-zh.png",
+      direction: "ltr"
+    },
+
     it: {
       title: "La Parola in Capsule",
-      subtitle: "La tua dose quotidiana di ispirazione e conoscenza.",
+      subtitle: "Fede, Potenza e Vita",
       btnText: "Esplora",
       btnUrl: "/Explora/menu.html?lang=it",
-      image: "/Explora/portada-it.png",
+      image: SPANISH_IMAGE,
       direction: "ltr"
     },
 
     pt: {
       title: "A Palavra em Cápsulas",
-      subtitle: "Sua dose diária de inspiração e conhecimento.",
+      subtitle: "Fé, Poder e Vida",
       btnText: "Explore",
       btnUrl: "/Explora/menu.html?lang=pt",
-      image: "/Explora/portada-pt.png",
+      image: SPANISH_IMAGE,
       direction: "ltr"
     },
 
     he: {
       title: "המילה בכמוסות",
-      subtitle: "המנה היומית שלך של השראה וידע.",
+      subtitle: "אמונה, כוח וחיים",
       btnText: "גלה",
       btnUrl: "/Explora/menu.html?lang=he",
-      image: "/Explora/portada-he.png",
+      image: SPANISH_IMAGE,
       direction: "rtl"
     },
 
     ar: {
       title: "الكلمة في كبسولات",
-      subtitle: "جرعتك اليومية من الإلهام والمعرفة.",
+      subtitle: "الإيمان والقوة والحياة",
       btnText: "استكشف",
       btnUrl: "/Explora/menu.html?lang=ar",
-      image: "/Explora/portada-ar.png",
+      image: SPANISH_IMAGE,
       direction: "rtl"
     }
   };
 
   function saveLanguage(lang) {
     try {
-      localStorage.setItem("user_language", lang);
       localStorage.setItem("lpc-language", lang);
+      localStorage.setItem("user_language", lang);
     } catch (error) {
-      // La página funciona aunque el almacenamiento no esté disponible.
+      // La página sigue funcionando si el navegador bloquea el almacenamiento.
     }
   }
 
@@ -346,7 +348,7 @@ html, body {
         return savedLanguage;
       }
     } catch (error) {
-      // Se usará español como idioma predeterminado.
+      // Se usará español como opción predeterminada.
     }
 
     return "es";
@@ -365,23 +367,22 @@ html, body {
     document.getElementById("title").textContent = content.title;
     document.getElementById("subtitle").textContent = content.subtitle;
 
-    const coverImage = document.getElementById("cover-image");
+    const image = document.getElementById("cover-image");
 
-    if (content.image) {
-      coverImage.style.display = "block";
-      coverImage.alt = content.title;
-      coverImage.onerror = function () {
-        coverImage.style.display = "none";
-      };
-      coverImage.src = content.image;
-    }
+    image.onerror = function () {
+      image.onerror = null;
+      image.src = SPANISH_IMAGE;
+      image.alt = "Portada de La Palabra en Cápsulas";
+    };
+
+    image.src = content.image || SPANISH_IMAGE;
+    image.alt = content.title;
 
     document.querySelectorAll(".lang-link").forEach(function (link) {
-      const isActive = link.dataset.lang === lang;
+      const active = link.dataset.lang === lang;
+      link.classList.toggle("active", active);
 
-      link.classList.toggle("active", isActive);
-
-      if (isActive) {
+      if (active) {
         link.setAttribute("aria-current", "true");
       } else {
         link.removeAttribute("aria-current");
@@ -395,8 +396,6 @@ html, body {
     button.className = "btn-explore";
     button.href = content.btnUrl;
     button.textContent = content.btnText;
-    button.setAttribute("aria-label", content.btnText);
-
     buttonBox.appendChild(button);
 
     saveLanguage(lang);
@@ -405,23 +404,12 @@ html, body {
   document.querySelectorAll(".lang-link").forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
-
-      const lang = link.dataset.lang;
-      setLanguage(lang);
-
-      const newUrl = new URL(window.location.href);
-      newUrl.searchParams.set("lang", lang);
-      window.history.replaceState({}, "", newUrl.href);
+      setLanguage(link.dataset.lang);
     });
-  });
-
-  window.addEventListener("popstate", function () {
-    setLanguage(getInitialLanguage());
   });
 
   setLanguage(getInitialLanguage());
 })();
 </script>
-
 </body>
 </html>
