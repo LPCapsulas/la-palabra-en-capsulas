@@ -1,10 +1,8 @@
-
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>La Palabra en Cápsulas — Portada Oficial</title>
 
 <style>
@@ -32,15 +30,13 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 17px;
-  line-height: 1.7;
 }
 
 .page {
-  width: min(900px, calc(100% - 32px));
+  width: min(1000px, calc(100% - 24px));
   min-height: 100vh;
   margin: 0 auto;
-  padding: 12px 36px 24px;
+  padding: 8px 20px 16px;
   background: var(--paper);
   box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
   display: flex;
@@ -52,9 +48,9 @@ body {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px 9px;
-  padding: 5px 0 12px;
-  margin-bottom: 14px;
+  gap: 5px 10px;
+  padding: 5px 0 10px;
+  margin-bottom: 8px;
   border-bottom: 1px solid #f0ede6;
   font-size: 13px;
   flex-shrink: 0;
@@ -80,7 +76,11 @@ body {
 
 .cover-area {
   width: 100%;
-  text-align: center;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cover-image {
@@ -88,33 +88,15 @@ body {
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 67vh;
+  max-height: calc(100vh - 115px);
   object-fit: contain;
   margin: 0 auto;
 }
 
-.text-container {
-  text-align: center;
-  padding: 14px 0 8px;
-}
-
-.text-container h1 {
-  margin: 0 0 4px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(23px, 4vw, 32px);
-  line-height: 1.3;
-}
-
-.text-container p {
-  margin: 0;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
 .action-container {
   text-align: center;
-  padding: 14px 0 22px;
-  margin-top: auto;
+  padding: 12px 0 4px;
+  flex-shrink: 0;
 }
 
 .btn-explore {
@@ -136,50 +118,42 @@ body {
 
 @media (min-width: 601px) {
   .page {
-    min-height: 100vh;
+    width: min(1100px, calc(100% - 24px));
   }
 
   .cover-image {
-    max-height: 64vh;
+    max-height: calc(100vh - 105px);
   }
 }
 
 @media (max-width: 600px) {
   .page {
-    width: calc(100% - 12px);
+    width: 100%;
     min-height: 100vh;
-    padding: 10px 12px 18px;
+    padding: 8px 10px 14px;
   }
 
   .language-bar {
     justify-content: center;
-    column-gap: 7px;
+    column-gap: 8px;
     row-gap: 5px;
     font-size: 12px;
     padding-bottom: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+  }
+
+  .cover-area {
+    flex: 1;
   }
 
   .cover-image {
     width: 100%;
+    max-width: 100%;
     max-height: none;
   }
 
-  .text-container {
-    padding-top: 12px;
-  }
-
-  .text-container h1 {
-    font-size: 25px;
-  }
-
-  .text-container p {
-    font-size: 17px;
-  }
-
   .action-container {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding: 10px 0 2px;
   }
 
   .btn-explore {
@@ -204,21 +178,14 @@ body {
     <a href="#" class="lang-link" data-lang="ar" lang="ar">العربية</a>
   </nav>
 
-  <main>
-    <div class="cover-area">
-      <img
-        id="cover-image"
-        class="cover-image"
-        src="/Explora/portada.jpg"
-        alt="Portada de La Palabra en Cápsulas: Fe, Poder y Vida"
-        fetchpriority="high"
-      >
-    </div>
-
-    <div class="text-container">
-      <h1 id="title">La Palabra en Cápsulas</h1>
-      <p id="subtitle">Fe, Poder y Vida</p>
-    </div>
+  <main class="cover-area">
+    <img
+      id="cover-image"
+      class="cover-image"
+      src="/Explora/portada.jpg"
+      alt="Portada de La Palabra en Cápsulas: Fe, Poder y Vida"
+      fetchpriority="high"
+    >
   </main>
 
   <div class="action-container">
@@ -239,71 +206,48 @@ body {
 
   const translations = {
     es: {
-      title: "La Palabra en Cápsulas",
-      subtitle: "Fe, Poder y Vida",
       button: "Explora",
       menu: "/Explora/menu.html?lang=es",
       image: SPANISH_IMAGE,
       direction: "ltr"
     },
-
     en: {
-      title: "The Word in Capsules",
-      subtitle: "Faith, Power and Life",
       button: "Explore",
       menu: "/Explora/menu.html?lang=en",
       image: "/Explora/portada-en.png",
       direction: "ltr"
     },
-
     fr: {
-      title: "La Parole en Capsules",
-      subtitle: "Foi, Puissance et Vie",
       button: "Explorer",
       menu: "/Explora/menu.html?lang=fr",
       image: "/Explora/portada-fr.png",
       direction: "ltr"
     },
-
     zh: {
-      title: "胶囊话语",
-      subtitle: "信心、能力与生命",
       button: "探索",
       menu: "/Explora/menu.html?lang=zh",
       image: "/Explora/portada-zh.png",
       direction: "ltr"
     },
-
     it: {
-      title: "La Parola in Capsule",
-      subtitle: "Fede, Potenza e Vita",
       button: "Esplora",
       menu: "/Explora/menu.html?lang=it",
       image: SPANISH_IMAGE,
       direction: "ltr"
     },
-
     pt: {
-      title: "A Palavra em Cápsulas",
-      subtitle: "Fé, Poder e Vida",
       button: "Explore",
       menu: "/Explora/menu.html?lang=pt",
       image: SPANISH_IMAGE,
       direction: "ltr"
     },
-
     he: {
-      title: "המילה בכמוסות",
-      subtitle: "אמונה, כוח וחיים",
       button: "גלה",
       menu: "/Explora/menu.html?lang=he",
       image: SPANISH_IMAGE,
       direction: "rtl"
     },
-
     ar: {
-      title: "الكلمة في كبسولات",
-      subtitle: "الإيمان والقوة والحياة",
       button: "استكشف",
       menu: "/Explora/menu.html?lang=ar",
       image: SPANISH_IMAGE,
@@ -312,17 +256,9 @@ body {
   };
 
   const image = document.getElementById("cover-image");
-  const title = document.getElementById("title");
-  const subtitle = document.getElementById("subtitle");
   const button = document.getElementById("explore-button");
   const languageLinks = document.querySelectorAll(".lang-link");
 
-  let currentLanguage = "es";
-
-  /*
-    Si una imagen traducida no está disponible,
-    se muestra la portada española como alternativa.
-  */
   image.addEventListener("error", function () {
     if (!image.src.endsWith(SPANISH_IMAGE)) {
       image.src = SPANISH_IMAGE;
@@ -335,7 +271,7 @@ body {
       localStorage.setItem("lpc-language", lang);
       localStorage.setItem("user_language", lang);
     } catch (error) {
-      // La página continúa funcionando sin almacenamiento local.
+      // La página sigue funcionando sin almacenamiento local.
     }
   }
 
@@ -368,19 +304,15 @@ body {
     }
 
     const content = translations[lang];
-    currentLanguage = lang;
 
     document.documentElement.lang = lang;
     document.documentElement.dir = content.direction;
 
-    title.textContent = content.title;
-    subtitle.textContent = content.subtitle;
     button.textContent = content.button;
     button.href = content.menu;
 
     languageLinks.forEach(function (link) {
       const selected = link.dataset.lang === lang;
-
       link.classList.toggle("active", selected);
 
       if (selected) {
@@ -390,17 +322,13 @@ body {
       }
     });
 
-    /*
-      La imagen española ya está en el HTML.
-      Solo se cambia al seleccionar otro idioma.
-    */
     if (lang === "es") {
       if (!image.src.endsWith(SPANISH_IMAGE)) {
         image.src = SPANISH_IMAGE;
       }
       image.alt = "Portada de La Palabra en Cápsulas: Fe, Poder y Vida";
     } else {
-      image.alt = content.title;
+      image.alt = "Portada de " + content.button;
       image.src = content.image || SPANISH_IMAGE;
     }
 
