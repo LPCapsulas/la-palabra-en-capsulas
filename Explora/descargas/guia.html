@@ -334,6 +334,9 @@ h1 {
   .language-selector {
     gap: 6px;
   }
+  html[dir="rtl"] body { direction: rtl; }
+  html[dir="rtl"] .chapter p, html[dir="rtl"] .intro, html[dir="rtl"] .prayer p { text-align: right; }
+  html[dir="rtl"] .scripture { border-left: 1px solid var(--line); border-right: 4px solid var(--gold); text-align: right; }
 
   .language-selector button {
     padding: 7px 10px;
@@ -354,6 +357,10 @@ h1 {
 <button aria-pressed="true" class="active" data-lang="es" type="button">Español</button>
 <button aria-pressed="false" data-lang="en" type="button">English</button>
 <button aria-pressed="false" data-lang="zh" type="button">简体中文</button><button aria-pressed="false" data-lang="fr" type="button">Français</button>
+<button aria-pressed="false" data-lang="it" type="button">Italiano</button>
+<button aria-pressed="false" data-lang="pt" type="button">Português</button>
+<button aria-pressed="false" data-lang="he" type="button">עברית</button>
+<button aria-pressed="false" data-lang="ar" type="button">العربية</button>
 </nav>
 </header>
 <p class="intro" data-en="Beginning a new life with God is a wonderful experience. This guide has been prepared to help you take some of your first steps in the Christian faith, know God better, and grow in your relationship with Him." data-es="Comenzar una nueva vida con Dios es una experiencia maravillosa. Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación con Él." data-fr="Commencer une nouvelle vie avec Dieu est une expérience merveilleuse. Ce guide a été préparé pour vous aider à faire vos premiers pas dans la foi chrétienne, à mieux connaître Dieu et à grandir dans votre relation avec Lui." data-zh="与上帝开始新的生活是一段美好的经历。本指南旨在帮助你迈出基督信仰的第一步，更深入地认识上帝，并在与祂的关系中成长。">
@@ -470,42 +477,94 @@ h1 {
 (function () {
   const buttons = document.querySelectorAll(".language-selector button");
   const translatableElements = document.querySelectorAll("[data-es][data-en][data-fr][data-zh]");
+  const translations = {
+    it: {
+      "La Palabra en Cápsulas":"La Parola in Capsule", "Guía para Nuevos Creyentes":"Guida per i Nuovi Credenti", "Por J.V.":"A cura di J.V.",
+      "Comenzar una nueva vida con Dios es una experiencia maravillosa. Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación con Él.":"Iniziare una nuova vita con Dio è un'esperienza meravigliosa. Questa guida è stata preparata per aiutarti a muovere i primi passi nella fede cristiana, conoscere meglio Dio e crescere nella tua relazione con Lui.",
+      "Capítulo 1 — Debes nacer de nuevo":"Capitolo 1 — Devi nascere di nuovo", "Capítulo 2 — Lo que significa arrepentirse":"Capitolo 2 — Che cosa significa pentirsi", "Capítulo 3 — Empieza a leer la Biblia":"Capitolo 3 — Inizia a leggere la Bibbia", "Capítulo 4 — Sométete, según corresponda":"Capitolo 4 — Sottomettiti all'autorità legittima", "Capítulo 5 — Siembra e invierte en almas":"Capitolo 5 — Semina e investi nelle anime", "Oración y compromiso":"Preghiera e impegno",
+      "Juan 3:3":"Giovanni 3:3", "2 Corintios 5:17":"2 Corinzi 5:17", "Marcos 1:15":"Marco 1:15", "1 Juan 1:9":"1 Giovanni 1:9", "1 Pedro 2:2":"1 Pietro 2:2", "Santiago 4:7":"Giacomo 4:7", "2 Corintios 9:6":"2 Corinzi 9:6", "Leer Juan — RVR1960":"Leggi Giovanni", "← Volver al Menú":"← Torna al menu",
+      "Dios Padre, gracias por haberme dado una nueva vida. Ayúdame a conocerte, obedecerte y crecer cada día. Enséñame a amarte, a servir a otros y a compartir con ellos lo que tú has hecho en mi vida. En el Nombre de Jesús, Amén.":"Dio Padre, grazie per avermi dato una vita nuova. Aiutami a conoscerti, a ubbidirti e a crescere ogni giorno. Insegnami ad amarti, a servire gli altri e a condividere con loro ciò che hai fatto nella mia vita. Nel nome di Gesù, amen."
+    },
+    pt: {
+      "La Palabra en Cápsulas":"A Palavra em Cápsulas", "Guía para Nuevos Creyentes":"Guia para Novos Crentes", "Por J.V.":"Por J.V.",
+      "Comenzar una nueva vida con Dios es una experiencia maravillosa. Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación con Él.":"Começar uma nova vida com Deus é uma experiência maravilhosa. Este guia foi preparado para ajudar você a dar os primeiros passos na fé cristã, conhecer melhor a Deus e crescer no seu relacionamento com Ele.",
+      "Capítulo 1 — Debes nacer de nuevo":"Capítulo 1 — Você precisa nascer de novo", "Capítulo 2 — Lo que significa arrepentirse":"Capítulo 2 — O que significa arrepender-se", "Capítulo 3 — Empieza a leer la Biblia":"Capítulo 3 — Comece a ler a Bíblia", "Capítulo 4 — Sométete, según corresponda":"Capítulo 4 — Submeta-se à autoridade legítima", "Capítulo 5 — Siembra e invierte en almas":"Capítulo 5 — Semeie e invista em vidas", "Oración y compromiso":"Oração e compromisso",
+      "Juan 3:3":"João 3:3", "2 Corintios 5:17":"2 Coríntios 5:17", "Marcos 1:15":"Marcos 1:15", "1 Juan 1:9":"1 João 1:9", "1 Pedro 2:2":"1 Pedro 2:2", "Santiago 4:7":"Tiago 4:7", "2 Corintios 9:6":"2 Coríntios 9:6", "Leer Juan — RVR1960":"Leia João", "← Volver al Menú":"← Voltar ao menu",
+      "Dios Padre, gracias por haberme dado una nueva vida. Ayúdame a conocerte, obedecerte y crecer cada día. Enséñame a amarte, a servir a otros y a compartir con ellos lo que tú has hecho en mi vida. En el Nombre de Jesús, Amén.":"Deus Pai, obrigado por me dar uma nova vida. Ajuda-me a conhecer-te, obedecer-te e crescer a cada dia. Ensina-me a amar-te, servir os outros e compartilhar com eles o que fizeste em minha vida. Em nome de Jesus, amém."
+    },
+    he: {
+      "La Palabra en Cápsulas":"הדבר בכמוסות", "Guía para Nuevos Creyentes":"מדריך למאמינים חדשים", "Por J.V.":"מאת J.V.",
+      "Comenzar una nueva vida con Dios es una experiencia maravillosa. Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación con Él.":"התחלת חיים חדשים עם אלוהים היא חוויה נפלאה. מדריך זה נועד לעזור לך לעשות את צעדיך הראשונים באמונה המשיחית, להכיר את אלוהים טוב יותר ולצמוח בקשר שלך איתו.",
+      "Capítulo 1 — Debes nacer de nuevo":"פרק 1 — עליך להיוולד מחדש", "Capítulo 2 — Lo que significa arrepentirse":"פרק 2 — משמעות החרטה", "Capítulo 3 — Empieza a leer la Biblia":"פרק 3 — התחל לקרוא בתנ״ך", "Capítulo 4 — Sométete, según corresponda":"פרק 4 — קבל סמכות ראויה", "Capítulo 5 — Siembra e invierte en almas":"פרק 5 — זרע והשקע בנשמות", "Oración y compromiso":"תפילה והתחייבות",
+      "Juan 3:3":"יוחנן 3:3", "2 Corintios 5:17":"השנייה לקורינתים 5:17", "Marcos 1:15":"מרקוס 1:15", "1 Juan 1:9":"הראשונה ליוחנן 1:9", "1 Pedro 2:2":"הראשונה לפטרוס 2:2", "Santiago 4:7":"יעקב 4:7", "2 Corintios 9:6":"השנייה לקורינתים 9:6", "Leer Juan — RVR1960":"קרא את הבשורה על פי יוחנן", "← Volver al Menú":"← חזרה לתפריט",
+      "Dios Padre, gracias por haberme dado una nueva vida. Ayúdame a conocerte, obedecerte y crecer cada día. Enséñame a amarte, a servir a otros y a compartir con ellos lo que tú has hecho en mi vida. En el Nombre de Jesús, Amén.":"אלוהים האב, תודה שנתת לי חיים חדשים. עזור לי להכיר אותך, לציית לך ולצמוח בכל יום. למד אותי לאהוב אותך, לשרת אחרים ולשתף אותם במה שעשית בחיי. בשם ישוע, אמן."
+    },
+    ar: {
+      "La Palabra en Cápsulas":"الكلمة في كبسولات", "Guía para Nuevos Creyentes":"دليل للمؤمنين الجدد", "Por J.V.":"بقلم J.V.",
+      "Comenzar una nueva vida con Dios es una experiencia maravillosa. Esta guía ha sido preparada para ayudarte a dar algunos de tus primeros pasos en la fe cristiana, conocer mejor a Dios y crecer en tu relación con Él.":"إن بدء حياة جديدة مع الله تجربة رائعة. أُعِدّ هذا الدليل لمساعدتك على اتخاذ خطواتك الأولى في الإيمان المسيحي، ومعرفة الله بصورة أفضل، والنمو في علاقتك به.",
+      "Capítulo 1 — Debes nacer de nuevo":"الفصل الأول — يجب أن تولد من جديد", "Capítulo 2 — Lo que significa arrepentirse":"الفصل الثاني — معنى التوبة", "Capítulo 3 — Empieza a leer la Biblia":"الفصل الثالث — ابدأ بقراءة الكتاب المقدس", "Capítulo 4 — Sométete, según corresponda":"الفصل الرابع — اخضع للسلطة الشرعية", "Capítulo 5 — Siembra e invierte en almas":"الفصل الخامس — ازرع واستثمر في النفوس", "Oración y compromiso":"الصلاة والالتزام",
+      "Juan 3:3":"يوحنا 3:3", "2 Corintios 5:17":"كورنثوس الثانية 5:17", "Marcos 1:15":"مرقس 1:15", "1 Juan 1:9":"يوحنا الأولى 1:9", "1 Pedro 2:2":"بطرس الأولى 2:2", "Santiago 4:7":"يعقوب 4:7", "2 Corintios 9:6":"كورنثوس الثانية 9:6", "Leer Juan — RVR1960":"اقرأ إنجيل يوحنا", "← Volver al Menú":"← العودة إلى القائمة",
+      "Dios Padre, gracias por haberme dado una nueva vida. Ayúdame a conocerte, obedecerte y crecer cada día. Enséñame a amarte, a servir a otros y a compartir con ellos lo que tú has hecho en mi vida. En el Nombre de Jesús, Amén.":"أيها الآب السماوي، شكرًا لأنك منحتني حياة جديدة. ساعدني أن أعرفك وأطيعك وأنمو كل يوم. علّمني أن أحبك وأخدم الآخرين وأشاركهم ما صنعته في حياتي. باسم يسوع، آمين."
+    }
+  };
+  const config = {
+    es:{nav:"Selector de idioma",title:"Guía para Nuevos Creyentes — La Palabra en Cápsulas",back:"← Volver al Menú",dir:"ltr"},
+    en:{nav:"Language selector",title:"Guide for New Believers — The Word in Capsules",back:"← Back to Menu",dir:"ltr"},
+    zh:{nav:"语言选择",title:"新信徒指南——胶囊中的圣言",back:"← 返回菜单",dir:"ltr"},
+    fr:{nav:"Sélecteur de langue",title:"Guide pour les nouveaux croyants — La Parole en Capsules",back:"← Retour au menu",dir:"ltr"},
+    it:{nav:"Selettore della lingua",title:"Guida per i Nuovi Credenti — La Parola in Capsule",back:"← Torna al menu",dir:"ltr"},
+    pt:{nav:"Seletor de idioma",title:"Guia para Novos Crentes — A Palavra em Cápsulas",back:"← Voltar ao menu",dir:"ltr"},
+    he:{nav:"בחירת שפה",title:"מדריך למאמינים חדשים — הדבר בכמוסות",back:"← חזרה לתפריט",dir:"rtl"},
+    ar:{nav:"اختيار اللغة",title:"دليل للمؤمنين الجدد — الكلمة في كبسولات",back:"← العودة إلى القائمة",dir:"rtl"}
+  };
+  const imageFiles = {es:"salmo-32-8.png",en:"salmo-32-8-en.png",zh:"salmo-32-8-zh.png",fr:"salmo-32-8-fr.png",it:"salmo-32-8.png",pt:"salmo-32-8.png",he:"salmo-32-8.png",ar:"salmo-32-8.png"};
+  const bibleLinks = {
+    es:"https://www.biblegateway.com/passage/?search=Juan%201&version=RVR1960",
+    en:"https://www.biblegateway.com/passage/?search=John%201&version=KJV",
+    zh:"https://www.biblegateway.com/passage/?search=%E7%BA%A6%E7%BF%B0%E7%A6%8F%E9%9F%B3%201&version=CUVS",
+    fr:"https://www.biblegateway.com/passage/?search=Jean%201&version=LSG",
+    it:"https://www.biblegateway.com/passage/?search=Giovanni%201&version=NR2006",
+    pt:"https://www.biblegateway.com/passage/?search=Jo%C3%A3o%201&version=ARC",
+    he:"https://www.biblegateway.com/passage/?search=%D7%99%D7%95%D7%97%D7%A0%D7%9F%201&version=HNV",
+    ar:"https://www.biblegateway.com/passage/?search=%D9%8A%D9%88%D8%AD%D9%86%D8%A7%201&version=ERV-AR"
+  };
   function changeLanguage(lang) {
-    if (!["es", "en", "zh", "fr"].includes(lang)) lang = "es";
+    if (!Object.prototype.hasOwnProperty.call(config, lang)) lang = "es";
     document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
-    translatableElements.forEach(function (element) {
-      const translation = element.getAttribute("data-" + lang);
-      if (translation !== null) element.textContent = translation;
+    document.documentElement.dir = config[lang].dir;
+    translatableElements.forEach(function(el) {
+      let value = el.getAttribute("data-" + lang);
+      if (value === null && translations[lang]) value = translations[lang][el.getAttribute("data-es")];
+      if (value === null || value === undefined || value === "") value = el.getAttribute("data-en") || el.getAttribute("data-es");
+      if (value !== null) el.textContent = value;
     });
     const image = document.querySelector(".author-image");
     if (image) {
-      const imageFiles = {
-        es: "salmo-32-8.png",
-        en: "salmo-32-8-en.png",
-        zh: "salmo-32-8-zh.png",
-        fr: "salmo-32-8-fr.png"
-      };
       image.src = imageFiles[lang];
-      const altText = image.getAttribute("data-alt-" + lang);
-      if (altText) image.alt = altText;
+      const alts = {es:"Salmo 32:8",en:"Psalm 32:8",zh:"诗篇 32:8",fr:"Psaume 32:8",it:"Salmo 32:8",pt:"Salmo 32:8",he:"תהילים 32:8",ar:"مزمور 32:8"};
+      image.alt = alts[lang];
     }
-    const bibleLink = document.querySelector(".resource a");
-    if (bibleLink) {
-      const links = { es: "https://www.biblegateway.com/passage/?search=Juan%201&version=RVR1960", en: "https://www.biblegateway.com/passage/?search=John%201&version=KJV", zh: "https://www.biblegateway.com/passage/?search=%E7%BA%A6%E7%BF%B0%E7%A6%8F%E9%9F%B3%201&version=CUVS", fr: "https://www.biblegateway.com/passage/?search=Jean%201&version=LSG" };
-      bibleLink.href = links[lang];
+    const link = document.querySelector(".resource a");
+    if (link) {
+      link.href = bibleLinks[lang];
+      const translated = translations[lang] && translations[lang][link.getAttribute("data-es")];
+      if (translated) link.textContent = translated;
+      else link.textContent = link.getAttribute("data-" + lang) || link.getAttribute("data-en") || link.getAttribute("data-es");
     }
     const nav = document.querySelector(".language-selector");
-    if (nav) nav.setAttribute("aria-label", ({ es: "Selector de idioma", en: "Language selector", zh: "语言选择", fr: "Sélecteur de langue" })[lang]);
-    buttons.forEach(function (button) { const active = button.getAttribute("data-lang") === lang; button.classList.toggle("active", active); button.setAttribute("aria-pressed", String(active)); });
-    document.title = ({ es: "Guía para Nuevos Creyentes — La Palabra en Cápsulas", en: "Guide for New Believers — The Word in Capsules", zh: "新信徒指南——胶囊中的圣言", fr: "Guide pour les nouveaux croyants — La Parole en Capsules" })[lang];
-    const description = document.querySelector('meta[name="description"]');
-    if (description) { const translated = description.getAttribute("data-description-" + lang); if (translated) description.setAttribute("content", translated); }
-    try { localStorage.setItem("lpc-language", lang); } catch (error) {}
+    if (nav) nav.setAttribute("aria-label", config[lang].nav);
+    const back = document.querySelector(".back");
+    if (back) back.textContent = config[lang].back;
+    buttons.forEach(function(b) { const active = b.getAttribute("data-lang") === lang; b.classList.toggle("active", active); b.setAttribute("aria-pressed", String(active)); });
+    document.title = config[lang].title;
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", desc.getAttribute("data-description-" + lang) || config[lang].title);
+    try { localStorage.setItem("lpc-language", lang); localStorage.setItem("user_language", lang); } catch(e) {}
   }
-  buttons.forEach(function (button) { button.addEventListener("click", function () { changeLanguage(button.getAttribute("data-lang")); }); });
-  let savedLanguage = "es";
-  try { const stored = localStorage.getItem("lpc-language"); if (["es", "en", "zh", "fr"].includes(stored)) savedLanguage = stored; } catch (error) {}
-  changeLanguage(savedLanguage);
+  buttons.forEach(function(b) { b.addEventListener("click", function() { changeLanguage(b.getAttribute("data-lang")); }); });
+  let saved = "es";
+  try { const stored = localStorage.getItem("lpc-language") || localStorage.getItem("user_language"); if (Object.prototype.hasOwnProperty.call(config, stored)) saved = stored; } catch(e) {}
+  changeLanguage(saved);
 })();
 </script>
 </body>
