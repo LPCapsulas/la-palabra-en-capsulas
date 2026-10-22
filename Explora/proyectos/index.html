@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Proyectos de La Palabra en Cápsulas: compartir las buenas noticias y participar en la Obra de Dios.">
 <title>Proyectos — La Palabra en Cápsulas</title>
 
 <style>
@@ -43,7 +44,7 @@ h1{
   text-align:center;
   color:var(--accent);
   font-size:36px;
-  line-height:1.2;
+  line-height:1.3;
   font-weight:700;
 }
 
@@ -53,7 +54,7 @@ h1{
   text-align:center;
   color:#555;
   font-size:18px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 .project-box{
@@ -76,7 +77,7 @@ h1{
   margin:0;
   color:#333;
   font-size:17px;
-  line-height:1.85;
+  line-height:1.9;
   text-align:justify;
   text-justify:inter-word;
   hyphens:auto;
@@ -102,6 +103,7 @@ h1{
   font-family:Georgia,"Times New Roman",serif;
   font-size:14px;
   font-weight:bold;
+  text-align:center;
 }
 
 .button.primary{
@@ -115,9 +117,7 @@ h1{
   border:1px solid #bdb7ae;
 }
 
-.button:hover{
-  filter:brightness(.94);
-}
+.button:hover{filter:brightness(.94)}
 
 footer{
   margin-top:36px;
@@ -130,15 +130,16 @@ footer{
 
 .language-bar{
   display:flex;
-  justify-content:flex-end;
+  justify-content:center;
   align-items:center;
-  gap:9px;
-  margin:0 0 22px;
-  font:13px/1.5 Georgia,"Times New Roman",serif;
+  gap:8px;
+  margin:0 0 24px;
+  flex-wrap:wrap;
+  font:13px/1.8 Georgia,"Times New Roman",serif;
 }
 
 .lang-link{
-  padding:0;
+  padding:2px 0;
   border:0;
   background:transparent;
   color:#666;
@@ -148,9 +149,7 @@ footer{
 }
 
 .lang-link:hover,
-.lang-link.active{
-  color:#0F4C81;
-}
+.lang-link.active{color:var(--blue)}
 
 .lang-link.active{font-weight:700}
 
@@ -164,10 +163,44 @@ footer{
   outline-offset:4px;
 }
 
+/* Hebreo y árabe: escritura de derecha a izquierda */
+html[lang="he"] .project-box,
+html[lang="ar"] .project-box{
+  direction:rtl;
+}
+
+html[lang="he"] .project-box p,
+html[lang="ar"] .project-box p{
+  text-align:right;
+  text-justify:auto;
+  line-height:2;
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+html[lang="he"] .project-box{
+  border-left:1px solid var(--hover-line);
+  border-right:5px solid var(--blue);
+}
+
+html[lang="ar"] .project-box{
+  border-left:1px solid var(--hover-line);
+  border-right:5px solid var(--blue);
+}
+
+html[lang="he"] .subtitle,
+html[lang="ar"] .subtitle{
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+html[lang="he"] .button,
+html[lang="ar"] .button{
+  font-family:Tahoma,Arial,sans-serif;
+}
+
 @media(max-width:700px){
   .page{
     margin:0;
-    padding:30px 20px 36px;
+    padding:25px 20px 36px;
     border:none;
     box-shadow:none;
   }
@@ -179,23 +212,22 @@ footer{
     margin-bottom:28px;
   }
 
-  .project-box{
-    padding:23px 20px;
-  }
+  .project-box{padding:23px 20px}
 
   .project-box p{
     font-size:17px;
-    line-height:1.8;
-    text-align:justify;
+    line-height:1.9;
   }
 
-  .project-box p+p{
-    margin-top:20px;
-  }
+  .project-box p+p{margin-top:20px}
 
   .buttons{margin-top:30px}
 
-  .language-bar{margin-bottom:18px}
+  .language-bar{
+    margin-bottom:22px;
+    gap:7px;
+    font-size:12px;
+  }
 }
 </style>
 </head>
@@ -207,14 +239,33 @@ footer{
     <button type="button" class="lang-link active" id="link-es"
       onclick="changeLanguage('es')" aria-pressed="true">Español</button>
     <span class="lang-divider">|</span>
+
     <button type="button" class="lang-link" id="link-en"
       onclick="changeLanguage('en')" aria-pressed="false">English</button>
     <span class="lang-divider">|</span>
+
     <button type="button" class="lang-link" id="link-zh"
       onclick="changeLanguage('zh')" aria-pressed="false">简体中文</button>
     <span class="lang-divider">|</span>
+
     <button type="button" class="lang-link" id="link-fr"
       onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    <span class="lang-divider">|</span>
+
+    <button type="button" class="lang-link" id="link-it"
+      onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+    <span class="lang-divider">|</span>
+
+    <button type="button" class="lang-link" id="link-pt"
+      onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+    <span class="lang-divider">|</span>
+
+    <button type="button" class="lang-link" id="link-he"
+      onclick="changeLanguage('he')" aria-pressed="false" lang="he">עברית</button>
+    <span class="lang-divider">|</span>
+
+    <button type="button" class="lang-link" id="link-ar"
+      onclick="changeLanguage('ar')" aria-pressed="false" lang="ar">العربية</button>
   </nav>
 
   <h1 id="page-title">Proyecto</h1>
@@ -223,24 +274,27 @@ footer{
     <strong id="subtitle">Llevando el mensaje salvador más allá del portal</strong>
   </div>
 
-  <section class="project-box" aria-label="Información del proyecto">
+  <section class="project-box" id="project-box"
+    aria-label="Información del proyecto" dir="ltr">
+
     <p id="project-text-1">
       La Palabra en Cápsulas no se limita a publicar contenido en Internet.
-      Entre los objetivos está el llevar las buenas noticias directamente a las
-      personas en espacios públicos, con la idea de compartir contenido,
-      conversar con ellas y dar a conocer nuestra página Web. Siempre será
-      bueno que todos conozcan los diferentes credos que hay en el mundo y
-      puedan ver y decidir -sin presiones- al cual adherirse y encausar su vida
-      espiritual. Voy a requerir entre otras cosas por ahora, un amplificador de
-      sonido portátil para hablar libremente en espacios abiertos de estos temas.
+      Entre sus objetivos está llevar las buenas noticias directamente a las
+      personas en espacios públicos, compartir contenido, conversar con ellas
+      y dar a conocer nuestra página web. Es bueno que todos conozcan los
+      diferentes credos que existen en el mundo y puedan informarse y decidir,
+      sin presiones, a cuál adherirse y cómo encauzar su vida espiritual.
+      Por ahora, entre otras cosas, necesitaré un amplificador de sonido
+      portátil para hablar libremente sobre estos temas en espacios abiertos.
     </p>
 
     <p id="project-text-2">
-      Solo oyendo y respondiendo a la verdad es que alguien puede ser edificado
-      espiritualmente para siempre. Los contenidos de La Palabra en Cápsulas se ofrecen
-      gratuitamente a todas las culturas, así la gran mayoría de las cosas
-      tengan un costo (transporte, equipos, ayudas). Y cualquiera puede
-      participar de la Obra de Dios: yendo, orando o dando.
+      Solo oyendo y respondiendo a la verdad puede alguien ser edificado
+      espiritualmente para siempre. Los contenidos de La Palabra en Cápsulas
+      se ofrecen gratuitamente a todas las culturas, aunque la mayoría de los
+      recursos necesarios para esta labor —transporte, equipos y ayudas—
+      tienen un costo. Cualquiera puede participar en la Obra de Dios:
+      yendo, orando o dando.
     </p>
   </section>
 
@@ -265,62 +319,118 @@ footer{
       title:'Proyectos — La Palabra en Cápsulas',
       h1:'Proyecto',
       subtitle:'Llevando el mensaje salvador más allá del portal',
-
-      text1:'La Palabra en Cápsulas no se limita a publicar contenido en Internet. Entre los objetivos está el llevar las buenas noticias directamente a las personas en espacios públicos, con la idea de compartir contenido, conversar con ellas y dar a conocer nuestro portal de LPC. Siempre será bueno que todos conozcan los diferentes credos que hay en el mundo y puedan ver y decidir al cual adherirse y encausar su vida espiritual. Voy a requerir entre otras cosas por ahora un amplificador de sonido portátil para hablar libremente en espacios abiertos de estos temas.',
-
-      text2:'Solo oyendo y respondiendo a la verdad es que alguien puede ser edificado espiritualmente para siempre. Los contenidos de LPC se ofrecen gratuitamente a todas las culturas, así la gran mayoría de las cosas tengan un costo (transporte, equipos, ayudas). Y cualquiera puede participar de la Obra de Dios: yendo, orando o dando.',
-
+      text1:'La Palabra en Cápsulas no se limita a publicar contenido en Internet. Entre sus objetivos está llevar las buenas noticias directamente a las personas en espacios públicos, compartir contenido, conversar con ellas y dar a conocer nuestra página web. Es bueno que todos conozcan los diferentes credos que existen en el mundo y puedan informarse y decidir, sin presiones, a cuál adherirse y cómo encauzar su vida espiritual. Por ahora, entre otras cosas, necesitaré un amplificador de sonido portátil para hablar libremente sobre estos temas en espacios abiertos.',
+      text2:'Solo oyendo y respondiendo a la verdad puede alguien ser edificado espiritualmente para siempre. Los contenidos de La Palabra en Cápsulas se ofrecen gratuitamente a todas las culturas, aunque la mayoría de los recursos necesarios para esta labor —transporte, equipos y ayudas— tienen un costo. Cualquiera puede participar en la Obra de Dios: yendo, orando o dando.',
       vision:'La visión de LPC',
       back:'Volver al Menú',
-      footer:'La Palabra en Cápsulas'
+      footer:'La Palabra en Cápsulas',
+      aria:'Información del proyecto',
+      dir:'ltr'
     },
 
     en:{
       title:'Projects — The Word in Capsules',
       h1:'Project',
       subtitle:'Taking the saving message beyond the website',
-
-      text1:'The Word in Capsules does more than publish content on the Internet. One of its goals is to bring the good news directly to people in public spaces, sharing content, talking with them, and introducing them to our LPC website. It is always good for people to learn about the different faiths in the world so they can explore them and decide, without pressure, which one to follow and how to shape their spiritual lives. Among other things, I currently need a portable sound amplifier so I can speak freely about these topics in open spaces.',
-
-      text2:'Only by hearing and responding to the truth can a person be built up spiritually for eternity. The content of LPC is offered free of charge to all cultures, even though most of the things needed to make this work possible—transportation, equipment, and assistance—come at a cost. Everyone can participate in God’s work by going, praying, or giving.',
-
+      text1:'The Word in Capsules does more than publish content on the Internet. One of its goals is to bring the good news directly to people in public spaces, share content, talk with them, and introduce them to our website. It is worthwhile for people to learn about the different faiths in the world so they can explore them and decide, without pressure, which one to follow and how to guide their spiritual lives. For now, among other things, I need a portable sound amplifier so I can speak freely about these topics in open spaces.',
+      text2:'Only by hearing the truth and responding to it can a person be spiritually built up for eternity. The content of The Word in Capsules is offered free of charge to people from all cultures, even though most of the resources needed for this work—transportation, equipment, and assistance—cost money. Everyone can participate in God’s work by going, praying, or giving.',
       vision:'The LPC Vision',
       back:'Back to Menu',
-      footer:'The Word in Capsules'
+      footer:'The Word in Capsules',
+      aria:'Project information',
+      dir:'ltr'
     },
 
     zh:{
       title:'项目 — 胶囊中的圣言',
       h1:'项目',
       subtitle:'将救恩的信息带到网站之外',
-      text1:'“胶囊中的圣言”不仅仅是在互联网上发布内容。我们的目标之一，是在公共场所直接向人们传递福音，分享内容、与人交流，并让大家认识 LPC 网站。让每个人了解世界上不同的信仰，并在没有压力的情况下自行了解、选择所愿意信奉的信仰，以及如何引导自己的属灵生活，这总是有益的。目前，我还需要一些设备，例如便携式扩音器，以便在户外自由地谈论这些主题。',
-      text2:'只有聆听真理并回应真理，人才能在属灵生命上得到建立，直到永远。LPC 向各种文化背景的人免费提供内容，尽管开展这项工作所需的大多数事项——交通、设备和援助——都需要费用。每个人都可以通过出去传扬、祷告或奉献来参与上帝的工作。',
+      text1:'“胶囊中的圣言”不仅仅是在互联网上发布内容。我们的目标之一，是在公共场所直接向人们传递福音、分享内容、与人交流，并让大家认识我们的网站。让人们了解世界上不同的信仰，能够在没有压力的情况下自行了解和选择愿意信奉的信仰，并思考如何引导自己的属灵生活，是一件有益的事。目前，除了其他需要之外，我还需要一台便携式扩音器，以便在户外自由地谈论这些主题。',
+      text2:'只有聆听真理并回应真理，人才能在属灵生命上得到建立，直到永远。“胶囊中的圣言”向各种文化背景的人免费提供内容，尽管开展这项工作所需的大多数资源——交通、设备和援助——都需要费用。每个人都可以通过出去传扬、祷告或奉献来参与上帝的工作。',
       vision:'LPC 的异象',
       back:'返回菜单',
-      footer:'胶囊中的圣言'
+      footer:'胶囊中的圣言',
+      aria:'项目介绍',
+      dir:'ltr'
     },
 
     fr:{
       title:'Projets — La Parole en Capsules',
       h1:'Projet',
-      subtitle:'Porter le message du salut au-delà du portail',
-
-      text1:'La Parole en Capsules ne se limite pas à publier du contenu sur Internet. L’un de ses objectifs est de porter la bonne nouvelle directement aux personnes dans les espaces publics, afin de partager du contenu, d’échanger avec elles et de faire connaître notre site Web LPC. Il est toujours bon que chacun puisse découvrir les différentes croyances présentes dans le monde et choisir, sans pression, celle à laquelle il souhaite adhérer et selon laquelle il veut orienter sa vie spirituelle. Entre autres choses, j’aurai actuellement besoin d’un amplificateur sonore portable pour parler librement de ces sujets dans les espaces ouverts.',
-
-      text2:'C’est en écoutant la vérité et en y répondant qu’une personne peut être édifiée spirituellement pour toujours. Les contenus de LPC sont offerts gratuitement à toutes les cultures, même si la plupart des moyens nécessaires à cette œuvre — transport, équipement et aide — ont un coût. Chacun peut participer à l’œuvre de Dieu en allant, en priant ou en donnant.',
-
+      subtitle:'Porter le message du salut au-delà du site Web',
+      text1:'La Parole en Capsules ne se limite pas à publier du contenu sur Internet. L’un de ses objectifs est de porter la bonne nouvelle directement aux personnes dans les espaces publics, de partager du contenu, d’échanger avec elles et de leur faire connaître notre site Web. Il est utile que chacun découvre les différentes croyances présentes dans le monde et puisse s’informer et choisir, sans pression, celle à laquelle il souhaite adhérer et selon laquelle il veut orienter sa vie spirituelle. Pour le moment, j’aurai notamment besoin d’un amplificateur sonore portable afin de parler librement de ces sujets dans les espaces ouverts.',
+      text2:'C’est en écoutant la vérité et en y répondant qu’une personne peut être édifiée spirituellement pour toujours. Les contenus de La Parole en Capsules sont offerts gratuitement à toutes les cultures, même si la plupart des ressources nécessaires à cette œuvre — transport, équipement et aide — ont un coût. Chacun peut participer à l’œuvre de Dieu en allant, en priant ou en donnant.',
       vision:'La vision de LPC',
       back:'Retour au menu',
-      footer:'La Parole en Capsules'
+      footer:'La Parole en Capsules',
+      aria:'Informations sur le projet',
+      dir:'ltr'
+    },
+
+    it:{
+      title:'Progetti — La Parola in Capsule',
+      h1:'Progetto',
+      subtitle:'Portare il messaggio della salvezza oltre il sito web',
+      text1:'La Parola in Capsule non si limita a pubblicare contenuti su Internet. Uno dei suoi obiettivi è portare la buona notizia direttamente alle persone negli spazi pubblici, condividere contenuti, dialogare con loro e far conoscere il nostro sito web. È utile che tutti conoscano le diverse fedi presenti nel mondo, così da potersi informare e decidere, senza pressioni, a quale aderire e come orientare la propria vita spirituale. Per il momento, tra le altre cose, avrò bisogno di un amplificatore audio portatile per parlare liberamente di questi argomenti negli spazi aperti.',
+      text2:'Solo ascoltando la verità e rispondendo ad essa una persona può essere edificata spiritualmente per sempre. I contenuti de La Parola in Capsule sono offerti gratuitamente a persone di tutte le culture, anche se la maggior parte delle risorse necessarie per quest’opera — trasporti, attrezzature e aiuti — comporta dei costi. Tutti possono partecipare all’opera di Dio andando, pregando o donando.',
+      vision:'La visione di LPC',
+      back:'Torna al menu',
+      footer:'La Parola in Capsule',
+      aria:'Informazioni sul progetto',
+      dir:'ltr'
+    },
+
+    pt:{
+      title:'Projetos — A Palavra em Cápsulas',
+      h1:'Projeto',
+      subtitle:'Levando a mensagem da salvação para além do site',
+      text1:'A Palavra em Cápsulas não se limita a publicar conteúdo na Internet. Um de seus objetivos é levar as boas-novas diretamente às pessoas em espaços públicos, compartilhar conteúdo, conversar com elas e divulgar nosso site. É bom que todos conheçam as diferentes crenças existentes no mundo, para que possam se informar e decidir, sem pressão, a qual desejam aderir e como orientar sua vida espiritual. Por enquanto, entre outras coisas, precisarei de um amplificador de som portátil para falar livremente sobre esses assuntos em espaços abertos.',
+      text2:'Somente ouvindo a verdade e respondendo a ela é que uma pessoa pode ser edificada espiritualmente para sempre. Os conteúdos de A Palavra em Cápsulas são oferecidos gratuitamente a todas as culturas, embora a maioria dos recursos necessários para esse trabalho — transporte, equipamentos e ajuda — tenha um custo. Todos podem participar da obra de Deus indo, orando ou contribuindo.',
+      vision:'A visão da LPC',
+      back:'Voltar ao menu',
+      footer:'A Palavra em Cápsulas',
+      aria:'Informações sobre o projeto',
+      dir:'ltr'
+    },
+
+    he:{
+      title:'פרויקטים — דבר אלוהים בקפסולות',
+      h1:'פרויקט',
+      subtitle:'להביא את מסר הישועה אל מעבר לאתר האינטרנט',
+      text1:'דבר אלוהים בקפסולות אינו מסתפק בפרסום תכנים באינטרנט. אחת ממטרותיו היא להביא את הבשורה הטובה ישירות אל האנשים במקומות ציבוריים, לשתף תכנים, לשוחח עם אנשים ולהכיר להם את אתר האינטרנט שלנו. חשוב שאנשים יכירו את האמונות השונות בעולם, יוכלו ללמוד עליהן ולהחליט ללא לחץ באיזו אמונה לבחור וכיצד לכוון את חייהם הרוחניים. בשלב זה, בין היתר, אני זקוק למגבר קול נייד כדי לדבר בחופשיות על נושאים אלה במקומות פתוחים.',
+      text2:'רק באמצעות שמיעת האמת והתגובה אליה אדם יכול להיבנות מבחינה רוחנית לעד. התכנים של דבר אלוהים בקפסולות מוצעים ללא תשלום לאנשים מכל התרבויות, אף שרוב המשאבים הדרושים לעבודה זו — תחבורה, ציוד וסיוע — כרוכים בעלויות. כל אחד יכול להשתתף בעבודת האלוהים באמצעות יציאה לפעולה, תפילה או תרומה.',
+      vision:'החזון של LPC',
+      back:'חזרה לתפריט',
+      footer:'דבר אלוהים בקפסולות',
+      aria:'מידע על הפרויקט',
+      dir:'rtl'
+    },
+
+    ar:{
+      title:'المشروعات — كلمة الله في كبسولات',
+      h1:'المشروع',
+      subtitle:'إيصال رسالة الخلاص إلى ما وراء الموقع الإلكتروني',
+      text1:'لا تقتصر كلمة الله في كبسولات على نشر المحتوى عبر الإنترنت. فمن أهدافها إيصال البشارة مباشرة إلى الناس في الأماكن العامة، ومشاركة المحتوى، والتحاور معهم، وتعريفهم بموقعنا الإلكتروني. ومن المفيد أن يتعرف الناس على المعتقدات المختلفة في العالم، وأن تتاح لهم فرصة التعلم واتخاذ قرارهم، دون ضغوط، بشأن المعتقد الذي يريدون اتباعه وكيفية توجيه حياتهم الروحية. وفي الوقت الحالي، أحتاج، من بين أمور أخرى، إلى مكبر صوت محمول لكي أتحدث بحرية عن هذه الموضوعات في الأماكن المفتوحة.',
+      text2:'لا يمكن للإنسان أن ينمو روحيًا إلى الأبد إلا من خلال سماع الحق والاستجابة له. يُقدَّم محتوى كلمة الله في كبسولات مجانًا لجميع الثقافات، رغم أن معظم الموارد اللازمة لهذا العمل — مثل النقل والمعدات والمساعدات — تتطلب نفقات. ويمكن للجميع المشاركة في عمل الله من خلال الذهاب أو الصلاة أو العطاء.',
+      vision:'رؤية LPC',
+      back:'العودة إلى القائمة',
+      footer:'كلمة الله في كبسولات',
+      aria:'معلومات عن المشروع',
+      dir:'rtl'
     }
   };
 
   window.changeLanguage = function(lang){
-    if(!T[lang]) lang='es';
+    if(!Object.prototype.hasOwnProperty.call(T,lang)){
+      lang='es';
+    }
 
     const t=T[lang];
 
-    document.documentElement.lang=lang;
+    document.documentElement.lang =
+      lang === 'zh' ? 'zh-CN' : lang;
+
+    document.documentElement.dir=t.dir;
     document.title=t.title;
 
     document.getElementById('page-title').textContent=t.h1;
@@ -330,6 +440,10 @@ footer{
     document.getElementById('vision-link').textContent=t.vision;
     document.getElementById('back-link').textContent=t.back;
     document.getElementById('footer').textContent=t.footer;
+
+    const projectBox=document.getElementById('project-box');
+    projectBox.setAttribute('aria-label',t.aria);
+    projectBox.setAttribute('dir',t.dir);
 
     document.querySelectorAll('.lang-link').forEach(function(button){
       const selected=button.id==='link-'+lang;
@@ -346,7 +460,8 @@ footer{
 
   try{
     const saved=localStorage.getItem('lpc-language');
-    if(['es','en','zh','fr'].includes(saved)){
+
+    if(saved && Object.prototype.hasOwnProperty.call(T,saved)){
       initial=saved;
     }
   }catch(e){}
