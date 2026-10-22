@@ -1,38 +1,448 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Testimonios — La Palabra en Cápsulas</title>
+
 <style>
-:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--quote:#f7f4ef;--line:#d9d9d9}
-*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
-.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:30px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
-.language-bar{display:flex;justify-content:flex-end;align-items:center;gap:9px;font-size:13px;line-height:1.5;margin-bottom:20px}.lang-link{padding:0;border:0;background:transparent;color:#555;font:inherit;cursor:pointer}.lang-link:hover,.lang-link.active{color:var(--accent)}.lang-link.active{font-weight:700}.lang-divider{color:#999;user-select:none}
-header{text-align:center;margin-bottom:38px}.section-label{font-size:13px;line-height:1.5;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h1{font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;color:var(--accent);font-weight:700;text-align:center;margin:0}
-.intro,.invitation{max-width:650px;margin:0 auto}.intro p,.invitation p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}.intro strong{color:var(--accent)}
-.invitation{background:var(--quote);border-left:4px solid var(--accent);padding:24px 26px;margin:34px auto}.invitation p:last-child{margin-bottom:0}
-.read-link{text-align:center;margin:34px 0 42px}.read-link a{display:inline-block;color:var(--accent);font-size:16px;font-weight:700;text-decoration:none;padding:10px 18px;border-bottom:1px solid var(--accent)}
-.back-home{text-align:center;margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}.back-home a{color:var(--accent);font-size:16px;font-weight:700;text-decoration:none}
-@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:22px 22px 35px;border-radius:0;box-shadow:none}header{margin-bottom:32px}h1{font-size:30px;line-height:1.25}.intro p,.invitation p{font-size:17px;line-height:1.75}.invitation{padding:20px 18px;margin:28px 0}.read-link{margin:30px 0 36px}.back-home{margin-top:36px}}
+:root {
+  --text: #252525;
+  --muted: #666;
+  --accent: #17365D;
+  --paper: #F8F4EC;
+  --bg: #f2f0ec;
+  --quote: #f7f4ef;
+  --line: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.page {
+  width: 900px;
+  max-width: calc(100% - 40px);
+  margin: 45px auto;
+  padding: 30px 65px 45px;
+  background: var(--paper);
+  border-radius: 5px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.07);
+}
+
+/* SELECTOR DE LOS OCHO IDIOMAS */
+
+.language-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lang-link {
+  padding: 7px 11px;
+  border: 1px solid #d5d0c7;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.lang-link:hover {
+  background: #e9e4db;
+}
+
+.lang-link.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  font-weight: 700;
+  outline: 2px solid #c9a65b;
+  outline-offset: 2px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-label {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.intro,
+.invitation {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.intro p,
+.invitation p {
+  margin: 0 0 22px;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.intro strong {
+  color: var(--accent);
+}
+
+.invitation {
+  background: var(--quote);
+  border-left: 4px solid var(--accent);
+  padding: 24px 26px;
+  margin: 34px auto;
+}
+
+.invitation p:last-child {
+  margin-bottom: 0;
+}
+
+.read-link {
+  text-align: center;
+  margin: 34px 0 42px;
+}
+
+.read-link a {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--accent);
+}
+
+.read-link a:hover,
+.back-home a:hover {
+  text-decoration: underline;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.back-home a {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* IDIOMAS CON ESCRITURA DE DERECHA A IZQUIERDA */
+
+html[dir="rtl"] .intro p,
+html[dir="rtl"] .invitation p {
+  text-align: right;
+}
+
+html[dir="rtl"] .invitation {
+  border-left: 0;
+  border-right: 4px solid var(--accent);
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 700px) {
+  .page {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 22px 22px 35px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .language-bar {
+    gap: 8px;
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+  }
+
+  .lang-link {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  header {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .intro p,
+  .invitation p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .invitation {
+    padding: 20px 18px;
+    margin: 28px 0;
+  }
+
+  .read-link {
+    margin: 30px 0 36px;
+  }
+
+  .back-home {
+    margin-top: 36px;
+  }
+}
 </style>
 </head>
-<body><main class="page">
-<nav class="language-bar" aria-label="Language selection">
-<button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button><span class="lang-divider">|</span>
-<button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button><span class="lang-divider">|</span>
-<button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')" aria-pressed="false">中文</button><span class="lang-divider">|</span>
-<button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+
+<body>
+<main class="page">
+
+<!-- SELECTOR DE IDIOMAS -->
+<nav class="language-bar" aria-label="Selección de idioma">
+
+  <button type="button" class="lang-link active"
+    id="link-es" onclick="changeLanguage('es')"
+    aria-pressed="true">Español</button>
+
+  <button type="button" class="lang-link"
+    id="link-en" onclick="changeLanguage('en')"
+    aria-pressed="false">English</button>
+
+  <button type="button" class="lang-link"
+    id="link-zh" onclick="changeLanguage('zh')"
+    aria-pressed="false">简体中文</button>
+
+  <button type="button" class="lang-link"
+    id="link-fr" onclick="changeLanguage('fr')"
+    aria-pressed="false">Français</button>
+
+  <button type="button" class="lang-link"
+    id="link-it" onclick="changeLanguage('it')"
+    aria-pressed="false">Italiano</button>
+
+  <button type="button" class="lang-link"
+    id="link-pt" onclick="changeLanguage('pt')"
+    aria-pressed="false">Português</button>
+
+  <button type="button" class="lang-link"
+    id="link-he" onclick="changeLanguage('he')"
+    aria-pressed="false">עברית</button>
+
+  <button type="button" class="lang-link"
+    id="link-ar" onclick="changeLanguage('ar')"
+    aria-pressed="false">العربية</button>
+
 </nav>
-<header><div class="section-label" data-es="La Palabra en Cápsulas" data-zh="胶囊中的话语" data-en="The Word in Capsules" data-fr="La Parole en Capsules">La Palabra en Cápsulas</div><h1 data-es="Testimonios" data-zh="见证" data-en="Testimonials" data-fr="Témoignages">Testimonios</h1></header>
-<section class="intro"><p data-es="En esta sección de LPC, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores." data-zh="在 LPC 的这一栏目中，我们分享上帝在我们生命中所成就的真实经历，盼望借此鼓励读者。" data-en="In this section of LPC, we share real experiences of what God has done in our lives, with the intention of encouraging readers." data-fr="Dans cette section de LPC, nous racontons des expériences réelles de ce que Dieu a fait dans nos vies, afin d’encourager les lecteurs.">En esta sección de <strong>LPC</strong>, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores.</p></section>
-<section class="invitation"><p data-es="Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, lo puedes ir preparando!" data-zh="如果上帝也在你的生命中成就了重要的事，我很快会提供一个空间，让你分享出来。如果你愿意，现在就可以开始准备！" data-en="If God has done something important in your life, I will soon give you space to share it. If you wish, you can start preparing it!" data-fr="Si Dieu a fait quelque chose d’important dans votre vie, je vous donnerai bientôt l’espace pour le publier. Si vous le souhaitez, vous pouvez déjà le préparer !">Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, lo puedes ir preparando!</p></section>
-<div class="read-link"><a href="./testimonio_personal.html" data-es="Por ahora... →" data-zh="暂且…… →" data-en="For now... →" data-fr="Pour le moment... →">Por ahora... →</a></div>
-<div class="back-home"><a href="../menu.html" data-es="← Volver al Menú" data-zh="← 返回菜单" data-en="← Back to Menu" data-fr="← Retour au menu">← Volver al Menú</a></div>
+
+<header>
+  <div class="section-label"
+    data-es="La Palabra en Cápsulas"
+    data-en="The Word in Capsules"
+    data-zh="胶囊中的话语"
+    data-fr="La Parole en Capsules"
+    data-it="La Parola in Capsule"
+    data-pt="A Palavra em Cápsulas"
+    data-he="הדבר בכמוסות"
+    data-ar="الكلمة في كبسولات">
+    La Palabra en Cápsulas
+  </div>
+
+  <h1
+    data-es="Testimonios"
+    data-en="Testimonials"
+    data-zh="见证"
+    data-fr="Témoignages"
+    data-it="Testimonianze"
+    data-pt="Testemunhos"
+    data-he="עדויות"
+    data-ar="الشهادات">
+    Testimonios
+  </h1>
+</header>
+
+<section class="intro">
+  <p
+    data-es="En esta sección de LPC, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores."
+    data-en="In this section of LPC, we share real experiences of what God has done in our lives, with the intention of encouraging readers."
+    data-zh="在 LPC 的这一栏目中，我们分享上帝在我们生命中所成就的真实经历，盼望借此鼓励读者。"
+    data-fr="Dans cette section de LPC, nous racontons des expériences réelles de ce que Dieu a fait dans nos vies, afin d’encourager les lecteurs."
+    data-it="In questa sezione di LPC, raccontiamo esperienze reali di ciò che Dio ha fatto nelle nostre vite, con l’intento di incoraggiare i lettori."
+    data-pt="Nesta seção da LPC, compartilhamos experiências reais do que Deus fez em nossas vidas, com o objetivo de encorajar os leitores."
+    data-he="במדור זה של LPC אנו משתפים חוויות אמיתיות של מה שאלוהים עשה בחיינו, במטרה לעודד את הקוראים."
+    data-ar="في هذا القسم من LPC، نشارك تجارب حقيقية لما فعله الله في حياتنا، بهدف تشجيع القراء.">
+    En esta sección de <strong>LPC</strong>, relatamos experiencias reales de lo que Dios ha hecho en nuestras vidas, con la intención de animar a los lectores.
+  </p>
+</section>
+
+<section class="invitation">
+  <p
+    data-es="Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, ¡lo puedes ir preparando!"
+    data-en="If God has done something important in your life, I will soon give you space to share it. If you wish, you can start preparing it!"
+    data-zh="如果上帝也在你的生命中成就了重要的事，我很快会提供一个空间，让你分享出来。如果你愿意，现在就可以开始准备！"
+    data-fr="Si Dieu a fait quelque chose d’important dans votre vie, je vous donnerai bientôt un espace pour le partager. Si vous le souhaitez, vous pouvez déjà le préparer !"
+    data-it="Se Dio ha fatto qualcosa di importante nella tua vita, presto ti darò uno spazio per condividerlo. Se vuoi, puoi già iniziare a prepararlo!"
+    data-pt="Se Deus fez algo importante em sua vida, em breve lhe darei um espaço para compartilhar isso. Se quiser, você já pode começar a preparar seu testemunho!"
+    data-he="אם אלוהים עשה דבר משמעותי בחייך, בקרוב אתן לך מקום לשתף אותו. אם תרצה, תוכל להתחיל להכין את עדותך כבר עכשיו!"
+    data-ar="إذا صنع الله أمرًا مهمًا في حياتك، فسأوفر لك قريبًا مساحة لمشاركته. وإذا أردت، يمكنك البدء في إعداد شهادتك من الآن!">
+    Si Dios ha hecho algo importante en la tuya, pronto te daré el espacio para que lo publiques. Si quieres, ¡lo puedes ir preparando!
+  </p>
+</section>
+
+<div class="read-link">
+  <a href="./testimonio_personal.html"
+    data-es="Por ahora... →"
+    data-en="For now... →"
+    data-zh="暂且…… →"
+    data-fr="Pour le moment... →"
+    data-it="Per ora... →"
+    data-pt="Por enquanto... →"
+    data-he="בינתיים... →"
+    data-ar="في الوقت الحالي... →">
+    Por ahora... →
+  </a>
+</div>
+
+<div class="back-home">
+  <a href="../menu.html"
+    data-es="← Volver al Menú"
+    data-en="← Back to Menu"
+    data-zh="← 返回菜单"
+    data-fr="← Retour au menu"
+    data-it="← Torna al menu"
+    data-pt="← Voltar ao menu"
+    data-he="← חזרה לתפריט"
+    data-ar="← العودة إلى القائمة">
+    ← Volver al Menú
+  </a>
+</div>
+
 </main>
+
 <script>
-(function(){const titles={es:'Testimonios — La Palabra en Cápsulas',en:'Testimonials — The Word in Capsules',fr:'Témoignages — La Parole en Capsules',zh:'见证 — 胶囊中的话语'};
-window.changeLanguage=function(lang){if(!titles[lang])lang='es';document.documentElement.lang=lang;document.title=titles[lang];document.querySelectorAll('[data-es]').forEach(el=>{const value=el.getAttribute('data-'+lang);if(value!==null)el.textContent=value});document.querySelectorAll('.lang-link').forEach(b=>{const active=b.id==='link-'+lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});try{localStorage.setItem('lpc-language',lang)}catch(e){}};
-let lang='es';try{lang=localStorage.getItem('lpc-language')||'es'}catch(e){}changeLanguage(lang)})();
-</script></body></html>
+(function () {
+
+  const languages = {
+    es: {
+      title: "Testimonios — La Palabra en Cápsulas",
+      dir: "ltr"
+    },
+    en: {
+      title: "Testimonials — The Word in Capsules",
+      dir: "ltr"
+    },
+    zh: {
+      title: "见证 — 胶囊中的话语",
+      dir: "ltr"
+    },
+    fr: {
+      title: "Témoignages — La Parole en Capsules",
+      dir: "ltr"
+    },
+    it: {
+      title: "Testimonianze — La Parola in Capsule",
+      dir: "ltr"
+    },
+    pt: {
+      title: "Testemunhos — A Palavra em Cápsulas",
+      dir: "ltr"
+    },
+    he: {
+      title: "עדויות — הדבר בכמוסות",
+      dir: "rtl"
+    },
+    ar: {
+      title: "الشهادات — الكلمة في كبسولات",
+      dir: "rtl"
+    }
+  };
+
+  window.changeLanguage = function (lang) {
+    if (!languages[lang]) {
+      lang = "es";
+    }
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = languages[lang].dir;
+    document.title = languages[lang].title;
+
+    document.querySelectorAll("[data-es]").forEach(function (el) {
+      const translation = el.getAttribute("data-" + lang);
+
+      if (translation !== null) {
+        el.textContent = translation;
+      }
+    });
+
+    document.querySelectorAll(".lang-link").forEach(function (button) {
+      const active = button.id === "link-" + lang;
+
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    try {
+      localStorage.setItem("lpc-language", lang);
+    } catch (e) {
+      // El selector funciona aunque el almacenamiento esté bloqueado.
+    }
+  };
+
+  let savedLanguage = "es";
+
+  try {
+    savedLanguage = localStorage.getItem("lpc-language") || "es";
+  } catch (e) {
+    // Se utiliza español si el almacenamiento no está disponible.
+  }
+
+  changeLanguage(savedLanguage);
+
+})();
+</script>
+
+</body>
+</html>
+```
