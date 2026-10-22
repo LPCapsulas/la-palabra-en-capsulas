@@ -1,348 +1,343 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Apoya — La Palabra en Cápsulas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apoya — La Palabra en Cápsulas</title>
 
-    <style>
-        :root {
-            --blue: #0F4C81;
-            --gold: #e7c96f;
-            --white: #fff;
-            --paper: #F8F4EC;
-            --text: #252525;
-        }
+<style>
+:root {
+    --blue: #0F4C81;
+    --gold: #e7c96f;
+    --white: #fff;
+    --paper: #F8F4EC;
+    --text: #252525;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            min-height: 100%;
-            overflow-x: hidden;
-        }
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+}
 
-        body {
-            min-height: 100vh;
-            height: auto;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background: var(--blue);
-            color: var(--text);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 17px;
-            line-height: 1.8;
-        }
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--blue);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
 
-        .page {
-            width: 900px;
-            max-width: calc(100% - 40px);
-            min-height: 100vh;
-            height: auto;
-            margin: 0 auto;
-            background: var(--paper);
-            padding: 24px 65px 45px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-            text-align: center;
-            overflow: visible;
-        }
+.page {
+    width: 900px;
+    max-width: calc(100% - 40px);
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 24px 35px 45px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+    text-align: center;
+    overflow: visible;
+}
 
-        .language-switcher {
-            display: flex;
-            justify-content: flex-end;
-            gap: 7px;
-            margin: 0 0 16px;
-            font-size: 14px;
-            line-height: 1.3;
-        }
+/* Selector de los ocho idiomas */
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0 0 22px;
+    font-size: 13px;
+    line-height: 1.5;
+}
 
-        .language-switcher button {
-            appearance: none;
-            border: 1px solid var(--blue);
-            border-radius: 4px;
-            padding: 7px 10px;
-            background: transparent;
-            color: var(--blue);
-            font: inherit;
-            font-weight: 700;
-            cursor: pointer;
-        }
+.language-switcher button {
+    appearance: none;
+    border: 1px solid #d9d2c6;
+    border-radius: 5px;
+    padding: 7px 10px;
+    background: transparent;
+    color: var(--blue);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
 
-        .language-switcher button.active,
-        .language-switcher button:hover {
-            background: var(--blue);
-            color: #fff;
-        }
+.language-switcher button.active,
+.language-switcher button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+}
 
-        .language-switcher button:focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 3px;
-        }
+.language-switcher button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
 
-        .support-image {
-            display: block;
-            width: min(100%, 360px);
-            height: auto;
-            max-height: none;
-            object-fit: contain;
-            margin: 0 auto 18px;
-        }
+.support-image {
+    display: block;
+    width: min(100%, 360px);
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 24px;
+}
 
-        .message {
-            display: block;
-            position: relative;
-            width: 100%;
-            max-width: 720px;
-            margin: 0 auto 24px;
-            color: var(--text);
-            font-size: 17px;
-            line-height: 1.8;
-            text-align: justify;
-        }
+.message {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 24px;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
 
-        .message p {
-            margin: 0 0 22px;
-        }
+.message p { margin: 0 0 22px; }
 
-        .square-button {
-            display: inline-block;
-            position: relative;
-            visibility: visible;
-            opacity: 1;
-            max-width: 100%;
-            margin: 0 auto;
-            background: var(--blue);
-            color: #fff;
-            text-decoration: none;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            line-height: 1.5;
-            padding: 13px 32px;
-            border-radius: 5px;
-            border: 2px solid var(--blue);
-            transition: background 0.2s ease, color 0.2s ease;
-        }
+.square-button {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 auto;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 13px 32px;
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    transition: background .2s ease, color .2s ease;
+}
 
-        .square-button:hover {
-            background: #fff;
-            color: var(--blue);
-        }
+.square-button:hover {
+    background: #fff;
+    color: var(--blue);
+}
 
-        .square-button:focus-visible,
-        .back a:focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 4px;
-        }
+.square-button:focus-visible,
+.back a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
 
-        .back {
-            display: block;
-            position: relative;
-            clear: both;
-            visibility: visible;
-            opacity: 1;
-            width: 100%;
-            margin: 32px auto 0;
-            padding: 22px 0 12px;
-            border-top: 1px solid #d9d9d9;
-            text-align: center;
-            overflow: visible;
-        }
+.back {
+    width: 100%;
+    margin: 32px auto 0;
+    padding: 22px 0 12px;
+    border-top: 1px solid #d9d9d9;
+    text-align: center;
+}
 
-        .back a {
-            display: inline-block;
-            position: relative;
-            color: var(--blue);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            line-height: 1.6;
-            text-decoration: underline;
-            padding: 8px 12px;
-            cursor: pointer;
-        }
+.back a {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-decoration: underline;
+    padding: 8px 12px;
+}
 
-        .back a:hover {
-            color: #000;
-            background: #eee8dc;
-            text-decoration: underline;
-        }
+.back a:hover {
+    color: #000;
+    background: #eee8dc;
+}
 
-        @media (max-width: 700px) {
-            body {
-                background: var(--paper);
-            }
+[dir="rtl"] .message { text-align: right; }
 
-            .page {
-                width: 100%;
-                max-width: none;
-                min-height: 100vh;
-                height: auto;
-                margin: 0;
-                padding: 20px 22px 35px;
-                box-shadow: none;
-                overflow: visible;
-            }
+@media (max-width: 700px) {
+    body { background: var(--paper); }
 
-            .language-switcher {
-                margin-bottom: 20px;
-            }
+    .page {
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px 22px 35px;
+        box-shadow: none;
+    }
 
-            .support-image {
-                width: 82%;
-                max-width: 456px;
-                height: auto;
-                max-height: none;
-                object-fit: contain;
-                margin: 0 auto 24px;
-            }
+    .language-switcher {
+        justify-content: center;
+        gap: 7px;
+        margin-bottom: 22px;
+    }
 
-            .message {
-                width: 100%;
-                font-size: 17px;
-                line-height: 1.75;
-                text-align: justify;
-                margin-bottom: 28px;
-            }
+    .language-switcher button { padding: 7px 9px; }
 
-            .message p {
-                margin-bottom: 22px;
-            }
+    .support-image {
+        width: 82%;
+        max-width: 456px;
+        margin: 0 auto 24px;
+    }
 
-            .square-button {
-                display: inline-block;
-                max-width: 100%;
-                font-size: 17px;
-                padding: 12px 22px;
-            }
+    .message {
+        width: 100%;
+        font-size: 17px;
+        line-height: 1.75;
+        margin-bottom: 28px;
+    }
 
-            .back {
-                margin-top: 35px;
-                padding-top: 22px;
-                padding-bottom: 12px;
-            }
+    .square-button {
+        font-size: 17px;
+        padding: 12px 22px;
+    }
 
-            .back a {
-                font-size: 17px;
-                padding: 10px 12px;
-            }
-        }
-    </style>
+    .back {
+        margin-top: 35px;
+        padding-top: 22px;
+        padding-bottom: 12px;
+    }
+
+    .back a {
+        font-size: 17px;
+        padding: 10px 12px;
+    }
+}
+</style>
 </head>
 
 <body>
 <main class="page">
 
-    <nav class="language-switcher" aria-label="Language selector">
-        <button type="button"
-                data-language="es"
-                class="active"
-                aria-pressed="true">Español</button>
+<nav class="language-switcher" aria-label="Selector de idiomas">
+    <button type="button" data-language="es" class="active" aria-pressed="true">Español</button>
+    <button type="button" data-language="en" aria-pressed="false">English</button>
+    <button type="button" data-language="zh" aria-pressed="false">简体中文</button>
+    <button type="button" data-language="fr" aria-pressed="false">Français</button>
+    <button type="button" data-language="it" aria-pressed="false">Italiano</button>
+    <button type="button" data-language="pt" aria-pressed="false">Português</button>
+    <button type="button" data-language="he" aria-pressed="false">עברית</button>
+    <button type="button" data-language="ar" aria-pressed="false">العربية</button>
+</nav>
 
-        <button type="button"
-                data-language="en"
-                aria-pressed="false">English</button>
+<img
+    class="support-image"
+    src="apoya.png"
+    alt="Apoya — La Palabra en Cápsulas"
+    data-alt-es="Apoya — La Palabra en Cápsulas"
+    data-alt-en="Support — The Word in Capsules"
+    data-alt-zh="支持 — 胶囊中的话语"
+    data-alt-fr="Soutenez — La Parole en Capsules"
+    data-alt-it="Sostieni — La Parola in Capsule"
+    data-alt-pt="Apoie — A Palavra em Cápsulas"
+    data-alt-he="תמכו — דבר אלוהים בכמוסות"
+    data-alt-ar="ادعموا — كلمة الله في كبسولات"
+>
 
-        <button type="button"
-                data-language="fr"
-                aria-pressed="false">Français</button>
-    </nav>
+<div class="message">
+<p
+    data-es="Las contribuciones a LPC de cualquier cantidad nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores."
+    data-en="Contributions to TWC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
+    data-zh="无论金额多少，对 LPC 的支持都能让我们投入更多时间创作内容，继续提供有益于读者思考、信念以及信仰成长的材料。"
+    data-fr="Les contributions à LPC, quel qu’en soit le montant, nous permettent de consacrer davantage de temps à la création de contenu et de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à l’affermissement de la foi de nos lecteurs."
+    data-it="I contributi a LPC, di qualsiasi importo, ci permettono di dedicare più tempo alla creazione di contenuti e di continuare a offrire materiale che contribuisca positivamente al pensiero, alle convinzioni e al rafforzamento della fede dei nostri lettori."
+    data-pt="As contribuições à LPC, de qualquer valor, permitem-nos dedicar mais tempo à criação de conteúdo e continuar oferecendo materiais que contribuam positivamente para o pensamento, as convicções e o fortalecimento da fé dos nossos leitores."
+    data-he="תרומות ל-LPC, בכל סכום, מאפשרות לנו להקדיש זמן רב יותר ליצירת תוכן ולהמשיך להציע חומרים התורמים באופן חיובי לחשיבה, לאמונות ולחיזוק האמונה של קוראינו."
+    data-ar="تتيح لنا المساهمات المقدمة إلى LPC، مهما كان مبلغها، تخصيص مزيد من الوقت لإنشاء المحتوى ومواصلة تقديم مواد تسهم إيجابيًا في تفكير قرائنا وقناعاتهم وتقوية إيمانهم."
+>Las contribuciones a LPC de cualquier cantidad nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores.</p>
+</div>
 
-    <img
-        class="support-image"
-        src="apoya.png"
-        alt="Apoya — La Palabra en Cápsulas"
-        data-alt-es="Apoya — La Palabra en Cápsulas"
-        data-alt-en="Support — The Word in Capsules"
-        data-alt-fr="Soutenez — La Parole en Capsules"
-    >
+<a
+    class="square-button"
+    id="payment-button"
+    href="https://square.link/u/Et13J8m1"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-es="Sí, quiero apoyar a LPC"
+    data-en="Yes, I want to support TWC"
+    data-zh="是的，我愿意支持 LPC"
+    data-fr="Oui, je souhaite soutenir LPC"
+    data-it="Sì, desidero sostenere LPC"
+    data-pt="Sim, quero apoiar a LPC"
+    data-he="כן, אני רוצה לתמוך ב-LPC"
+    data-ar="نعم، أريد دعم LPC"
+> Sí, quiero apoyar a LPC </a>
 
-    <div class="message">
-        <p
-            data-es="Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores."
-            data-en="Contributions to TWC, in any amount, allow us to devote more time to creating content and to continue offering material that positively supports our readers’ thinking, convictions, and faith."
-            data-fr="Les contributions à LPC, quel qu’en soit le montant, nous permettent de consacrer davantage de temps à la création de contenu et de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à l’affermissement de la foi de nos lecteurs."
-        >Las contribuciones a LPC de cualquier cantidad, nos permiten dedicar más tiempo a la creación de contenido, con el propósito de seguir ofreciendo material que contribuya positivamente al pensamiento, las convicciones y el fortalecimiento de la fe de nuestros lectores.</p>
-    </div>
-
+<div class="back">
     <a
-        class="square-button"
-        id="payment-button"
-        href="https://square.link/u/Et13J8m1"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-es="Sí, quiero apoyar a LPC"
-        data-en="Yes, I want to support TWC"
-        data-fr="Oui, je souhaite soutenir LPC"
-    >Sí, quiero apoyar a LPC</a>
-
-    <div class="back">
-        <a
-            href="../menu.html"
-            data-es="Volver al Menú"
-            data-en="Back to Menu"
-            data-fr="Retour au menu"
-        >Volver al Menú</a>
-    </div>
+        href="../menu.html"
+        data-es="← Volver al Menú"
+        data-en="← Back to Menu"
+        data-zh="← 返回菜单"
+        data-fr="← Retour au menu"
+        data-it="← Torna al menu"
+        data-pt="← Voltar ao menu"
+        data-he="← חזרה לתפריט"
+        data-ar="← العودة إلى القائمة"
+    >← Volver al Menú</a>
+</div>
 
 </main>
 
 <script>
 (() => {
-    const buttons = document.querySelectorAll(
-        '.language-switcher button'
-    );
+    const languages = ['es', 'en', 'zh', 'fr', 'it', 'pt', 'he', 'ar'];
 
-    const translatable = document.querySelectorAll(
-        '[data-es][data-en][data-fr]'
-    );
-
+    const buttons = document.querySelectorAll('.language-switcher button');
+    const translatable = document.querySelectorAll('[data-es]');
     const image = document.querySelector('.support-image');
     const paymentButton = document.querySelector('#payment-button');
 
     const pageTitle = {
         es: 'Apoya — La Palabra en Cápsulas',
         en: 'Support — The Word in Capsules',
-        fr: 'Soutenez — La Parole en Capsules'
+        zh: '支持 — 胶囊中的话语',
+        fr: 'Soutenez — La Parole en Capsules',
+        it: 'Sostieni — La Parola in Capsule',
+        pt: 'Apoie — A Palavra em Cápsulas',
+        he: 'תמכו — דבר אלוהים בכמוסות',
+        ar: 'ادعموا — كلمة الله في كبسولات'
     };
 
+    /*
+      Comprueba que los nombres de las imágenes de los idiomas nuevos
+      coincidan con los archivos realmente subidos al repositorio.
+    */
     const imageByLanguage = {
         es: 'apoya.png',
         en: 'support.png',
-        fr: 'soutenez.png'
+        zh: 'apoya-zh.png',
+        fr: 'soutenez.png',
+        it: 'sostieni.png',
+        pt: 'apoie.png',
+        he: 'support-he.png',
+        ar: 'support-ar.png'
     };
 
+    /* Se conservan únicamente los enlaces de pago proporcionados. */
     const paymentLinkByLanguage = {
         es: 'https://square.link/u/Et13J8m1',
         en: 'https://square.link/u/F8rZyhRi',
         fr: 'https://square.link/u/96UuC9kW'
     };
 
-    let currentLanguage = 'es';
-
     function changeLanguage(language) {
-        if (!['es', 'en', 'fr'].includes(language)) {
-            language = 'es';
-        }
-
-        currentLanguage = language;
+        if (!languages.includes(language)) language = 'es';
 
         document.documentElement.lang = language;
+        document.documentElement.dir =
+            ['he', 'ar'].includes(language) ? 'rtl' : 'ltr';
+
         document.title = pageTitle[language];
 
         translatable.forEach(element => {
-            if (element === image) {
-                return;
-            }
-
-            element.textContent = element.dataset[language];
+            const value = element.getAttribute('data-' + language);
+            if (value !== null) element.textContent = value;
         });
 
         image.src = imageByLanguage[language];
-        image.alt = image.getAttribute('data-alt-' + language);
+        image.alt = image.getAttribute('data-alt-' + language) || pageTitle[language];
 
         const paymentLink = paymentLinkByLanguage[language];
 
@@ -350,22 +345,18 @@
             paymentButton.href = paymentLink;
             paymentButton.removeAttribute('aria-disabled');
             paymentButton.style.opacity = '1';
+            paymentButton.style.pointerEvents = 'auto';
         } else {
-            paymentButton.href = '#';
+            paymentButton.href = '#payment-unavailable';
             paymentButton.setAttribute('aria-disabled', 'true');
-            paymentButton.style.opacity = '0.7';
+            paymentButton.style.opacity = '0.65';
+            paymentButton.style.pointerEvents = 'none';
         }
 
         buttons.forEach(button => {
-            const selected =
-                button.dataset.language === language;
-
+            const selected = button.dataset.language === language;
             button.classList.toggle('active', selected);
-
-            button.setAttribute(
-                'aria-pressed',
-                String(selected)
-            );
+            button.setAttribute('aria-pressed', String(selected));
         });
 
         try {
@@ -374,16 +365,6 @@
             // La página funciona aunque el almacenamiento no esté disponible.
         }
     }
-
-    paymentButton.addEventListener('click', event => {
-        if (!paymentLinkByLanguage[currentLanguage]) {
-            event.preventDefault();
-
-            alert(
-                'Le lien de paiement en français sera disponible prochainement.'
-            );
-        }
-    });
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -394,8 +375,8 @@
     let savedLanguage = 'es';
 
     try {
-        savedLanguage =
-            localStorage.getItem('lpc-language') || 'es';
+        const storedLanguage = localStorage.getItem('lpc-language');
+        if (languages.includes(storedLanguage)) savedLanguage = storedLanguage;
     } catch (error) {
         savedLanguage = 'es';
     }
@@ -406,3 +387,4 @@
 
 </body>
 </html>
+```
