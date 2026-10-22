@@ -102,6 +102,10 @@ p {
     text-align: justify;
 }
 
+html[dir="rtl"] .language-bar { justify-content: flex-start; }
+html[dir="rtl"] p { direction: rtl; text-align: justify; }
+html[dir="rtl"] .tooltip-text { direction: rtl; text-align: right; }
+
 .footnote-ref {
     font-size: 0.68em;
     vertical-align: super;
@@ -241,6 +245,10 @@ p {
     <button type="button" data-lang="en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
     <button type="button" data-lang="zh" onclick="changeLanguage('zh')" aria-pressed="false">中文</button>
     <button type="button" data-lang="fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    <button type="button" data-lang="it" onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+    <button type="button" data-lang="pt" onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+    <button type="button" data-lang="he" onclick="changeLanguage('he')" aria-pressed="false">עברית</button>
+    <button type="button" data-lang="ar" onclick="changeLanguage('ar')" aria-pressed="false">العربية</button>
 </nav>
 
 <h1 id="page-title">
@@ -265,6 +273,7 @@ p {
     data-alt-fr="Personne en prière devant le coucher du soleil"
     data-alt-zh="日落时祷告的人">
 
+<div id="article-content">
 <p>
 <span data-es="Cuando los discípulos del Señor Jesucristo —aquellos que inicialmente oyeron el llamado de Dios para seguirle— vieron que él"
       data-en="When the disciples of the Lord Jesus Christ—those who first heard God's call to follow Him—saw that He"
@@ -348,6 +357,8 @@ data-fr="Lorsque tu t’assieds pour manger, rends grâce. Où que tu sois, reme
 <span data-es="¡Eso sí, ora siempre!" data-en="Above all, always pray!" data-fr="Surtout, prie toujours !" data-zh="总要祷告！">¡Eso sí, ora siempre!</span>
 </p>
 
+</div>
+
 <div class="bottom-nav">
     <a href="../menu.html"
        data-es="← Volver al Menú"
@@ -359,64 +370,100 @@ data-fr="Lorsque tu t’assieds pour manger, rends grâce. Où que tu sois, reme
 
 <script>
 (function () {
-    const supportedLanguages = ['es', 'en', 'zh', 'fr'];
+    const supportedLanguages = ['es', 'en', 'zh', 'fr', 'it', 'pt', 'he', 'ar'];
+    const article = document.getElementById('article-content');
+    const originalArticleHTML = article.innerHTML;
+
+    const newTranslations = {
+      it: {
+        title: 'L’importanza della preghiera', author: 'Di J.V.', alt: 'Una persona che prega davanti al tramonto', back: '← Torna al menu', dir: 'ltr',
+        html: `
+<p>Quando i discepoli del Signore Gesù Cristo — coloro che per primi avevano udito la chiamata di Dio a seguirlo — videro che egli <em>annunciava</em> il regno, <em>insegnava</em> e <em>pregava</em> ogni giorno, gli rivolsero una richiesta semplice ma decisiva per la loro vita e per la nostra: «Maestro, insegnaci a pregare»<sup><span class="footnote-ref" title="Luca 11:1">2</span></sup>; egli diede subito loro la <span class="tooltip-container"><strong>preghiera</strong><span class="tooltip-text">«Padre nostro che sei nei cieli, sia santificato il tuo nome; venga il tuo regno; sia fatta la tua volontà, come in cielo così in terra. Dacci oggi il nostro pane quotidiano; rimetti a noi i nostri debiti, come anche noi li rimettiamo ai nostri debitori; e non ci indurre in tentazione, ma liberaci dal male; perché tuo è il regno, la potenza e la gloria nei secoli. Amen».</span></span> come modello (il «Padre nostro»), non perché fosse ripetuta ciecamente, ma pronunciata con consapevolezza: ogni parola e ogni frase hanno un significato e uno scopo precisi, e pregare e obbedire a Dio vanno di pari passo.</p>
+<p>In realtà, la preghiera è così importante che elevarla al trono celeste è il primo passo decisivo non solo per ricevere il perdono dei peccati commessi ed essere salvati<sup><span class="footnote-ref" title="Atti 22:16">3</span></sup>, ma anche per accogliere per sempre la presenza di Dio nel nostro spirito<sup><span class="footnote-ref" title="Giovanni 14:16-17">4</span></sup>. Senza preghiera, la nostra vita è senza energia e siamo perduti. Per questo è importante farne una disciplina: come un atleta deve allenarsi continuamente per restare in forma e pronto a gareggiare, il nuovo credente deve coltivare questa abitudine. Una delle cose che il diavolo teme di più è vedere un uomo o una donna in ginocchio.</p>
+<p>Dobbiamo credere in ciò per cui preghiamo<sup><span class="footnote-ref" title="Marco 11:24">5</span></sup>. Questo non significa che non occorra perseverare, ma neppure sconfinare nell’incredulità ripetendo la stessa preghiera come un rituale<sup><span class="footnote-ref" title="Matteo 6:7">6</span></sup>. Perciò «pregate incessantemente»<sup><span class="footnote-ref" title="1 Tessalonicesi 5:17">7</span></sup> non significa pregare ventiquattr’ore al giorno, bensì restare vigili e pronti ad ascoltare la sua voce<sup><span class="footnote-ref" title="Isaia 28:23">8</span></sup>, parlare sempre con il Padre e fare ciò che ci chiede nella sua Parola. <em>Pregare, credere, ringraziare, adorare e dare</em>: tutto è collegato e inseparabile. Naturalmente, alcuni sono chiamati all’intercessione e pregano ben più di soli cinque minuti.</p>
+<p>Il predicatore inglese Smith Wigglesworth, chiamato l’apostolo della fede, quando gli fu chiesto quanto pregasse ogni giorno, rispose: «Quando prego, raramente passo più di mezz’ora in una sola volta, ma non lascio mai passare più di mezz’ora senza pregare!»</p>
+<p>Un punto importante per non cadere nell’ipocrisia: come quando fai l’elemosina la mano destra non deve sapere ciò che fa la sinistra, così non devi suonare la tromba per dire agli altri che preghi per loro. Le persone sapranno se lo fai davvero.</p>
+<p>Quando ti siedi a mangiare, ringrazia; ovunque tu sia, ringrazia il Signore per averti dato la vita e per aver protetto te e i tuoi da ogni male e pericolo. Prega per i tuoi progetti e per quelli dei missionari in tutto il mondo. Prega per il tuo presidente e per le autorità. <em>Soprattutto, prega sempre!</em></p>`
+      },
+      pt: {
+        title: 'A Importância da Oração', author: 'Por J.V.', alt: 'Pessoa orando diante do pôr do sol', back: '← Voltar ao menu', dir: 'ltr',
+        html: `
+<p>Quando os discípulos do Senhor Jesus Cristo — aqueles que primeiro ouviram o chamado de Deus para segui-lo — viram que ele <em>anunciava</em> o reino, <em>ensinava</em> e <em>orava</em> diariamente, fizeram-lhe um pedido simples, mas decisivo para suas vidas e para as nossas: “Mestre, ensina-nos a orar”<sup><span class="footnote-ref" title="Lucas 11:1">2</span></sup>; imediatamente, ele lhes deu a <span class="tooltip-container"><strong>oração</strong><span class="tooltip-text">“Pai nosso, que estás nos céus, santificado seja o teu nome; venha o teu reino; seja feita a tua vontade, assim na terra como no céu. O pão nosso de cada dia dá-nos hoje; perdoa-nos as nossas dívidas, assim como nós perdoamos aos nossos devedores; e não nos deixes cair em tentação, mas livra-nos do mal; porque teu é o reino, o poder e a glória para sempre. Amém.”</span></span> como modelo (o “Pai-Nosso”), não para ser repetida cegamente, mas pronunciada com entendimento, pois cada palavra e frase tem um significado e propósito específicos; orar e obedecer a Deus caminham juntos.</p>
+<p>Na verdade, a oração é tão importante que elevá-la ao trono celestial é o primeiro passo decisivo não apenas para receber o perdão dos pecados cometidos e ser salvo<sup><span class="footnote-ref" title="Atos 22:16">3</span></sup>, mas também para acolher para sempre a presença de Deus em nosso espírito<sup><span class="footnote-ref" title="João 14:16-17">4</span></sup>. Sem oração, falta combustível à nossa vida e estamos perdidos. Por isso, é importante estabelecer a oração como disciplina: assim como um atleta precisa treinar continuamente para manter-se em forma e pronto para competir, o novo convertido deve cultivar esse hábito. Uma das coisas que o diabo mais teme é ver um homem ou uma mulher de joelhos.</p>
+<p>É preciso crer naquilo pelo qual estamos orando<sup><span class="footnote-ref" title="Marcos 11:24">5</span></sup>. Isso não significa deixar de perseverar, mas também não devemos cair na incredulidade, repetindo a mesma oração como um ritual<sup><span class="footnote-ref" title="Mateus 6:7">6</span></sup>. Por isso, “orai sem cessar”<sup><span class="footnote-ref" title="1 Tessalonicenses 5:17">7</span></sup> não significa orar 24 horas por dia, mas manter-se alerta para ouvir a voz dele<sup><span class="footnote-ref" title="Isaías 28:23">8</span></sup>, falar sempre com o Pai e fazer o que ele nos pede em sua Palavra. <em>Orar, crer, agradecer, adorar e dar</em>: tudo caminha junto e é inseparável. É claro que algumas pessoas são chamadas à intercessão e não oram por apenas cinco minutos.</p>
+<p>O falecido pregador inglês Smith Wigglesworth, conhecido como apóstolo da fé, foi perguntado quanto tempo orava por dia. Ele respondeu: “Quando oro, raramente passo mais de meia hora de cada vez, mas nunca fico mais de meia hora sem orar!”</p>
+<p>Uma coisa muito importante para não cair na hipocrisia: assim como, ao dar, a mão direita não deve saber o que a esquerda fez, você não deve tocar trombeta para dizer aos outros que ora por eles. As pessoas saberão se você faz isso de verdade.</p>
+<p>Quando se sentar para comer, agradeça; onde quer que esteja, agradeça ao Senhor por lhe dar a vida e por proteger você e os seus de todo mal e perigo. Ore por seus planos e pelos planos dos missionários em todo o mundo. Ore pelo seu presidente e pelas autoridades. <em>Acima de tudo, ore sempre!</em></p>`
+      },
+      he: {
+        title: 'חשיבות התפילה', author: 'מאת J.V.', alt: 'אדם מתפלל מול השקיעה', back: '← חזרה לתפריט', dir: 'rtl',
+        html: `
+<p>כאשר תלמידי האדון ישוע המשיח — אלה ששמעו לראשונה את קריאתו של אלוהים ללכת אחריו — ראו שהוא <em>מכריז</em> על המלכות, <em>מלמד</em> ו<em>מתפלל</em> מדי יום, הם ביקשו ממנו בקשה פשוטה אך מכרעת לחייהם ולחיינו: „מורה, למד אותנו להתפלל”<sup><span class="footnote-ref" title="לוקס 11:1">2</span></sup>; והוא מיד נתן להם את <span class="tooltip-container"><strong>התפילה</strong><span class="tooltip-text">„אבינו שבשמים, יתקדש שמך; תבוא מלכותך; ייעשה רצונך בארץ כמו בשמים. את לחם חוקנו תן לנו היום; וסלח לנו על חובותינו, כאשר סלחנו גם אנחנו לחייבינו; ואל תביאנו לידי ניסיון, כי אם הצילנו מן הרע; כי לך המלכות והגבורה והתפארת לעולמי עולמים. אמן.”</span></span> כדגם („תפילת האדון”), לא כדי לחזור עליה באופן עיוור, אלא לומר אותה מתוך הבנה, שכן לכל מילה ולכל שורה יש משמעות ותכלית; התפילה והציות לאלוהים הולכים יחד.</p>
+<p>התפילה חשובה כל כך, שהעלאתה אל כס המלכות שבשמים היא הצעד הראשון והמכריע לא רק לקבלת סליחה על חטאינו ולהיוושע<sup><span class="footnote-ref" title="מעשי השליחים 22:16">3</span></sup>, אלא גם לקבלת נוכחותו של אלוהים ברוחנו לעד<sup><span class="footnote-ref" title="יוחנן 14:16–17">4</span></sup>. בלי תפילה אין דלק לחיינו ואנו אובדים. לכן חשוב להפוך אותה למשמעת קבועה: כשם שספורטאי חייב להתאמן בהתמדה כדי להישאר בכושר ומוכן לתחרות, כך על המאמין החדש לטפח את ההרגל הזה. אחד הדברים שהשטן חושש מהם ביותר הוא לראות גבר או אישה כורעים ברך.</p>
+<p>עלינו להאמין בדבר שאנו מתפללים עליו<sup><span class="footnote-ref" title="מרקוס 11:24">5</span></sup>. אין פירוש הדבר שעלינו לוותר על התמדה, אך גם אין לגלוש לחוסר אמונה ולחזור על אותה תפילה כטקס<sup><span class="footnote-ref" title="מתי 6:7">6</span></sup>. לכן „התפללו בלי הפסקה”<sup><span class="footnote-ref" title="תסלוניקים א׳ 5:17">7</span></sup> אין פירושו להתפלל עשרים וארבע שעות ביממה, אלא להיות ערניים ומוכנים לשמוע את קולו<sup><span class="footnote-ref" title="ישעיהו 28:23">8</span></sup>, לדבר עם האב בכל עת ולעשות את מה שהוא מבקש מאיתנו בדברו. <em>להתפלל, להאמין, להודות, לעבוד את אלוהים ולתת</em> — כל אלה קשורים זה בזה ואינם נפרדים. כמובן, יש מי שנקראו לתפילת השתדלות ומתפללים הרבה יותר מחמש דקות.</p>
+<p>כאשר שאלו את המטיף האנגלי המנוח סמית׳ ויגלסוורת׳, שכונה שליח האמונה, כמה זמן הוא מתפלל ביום, הוא השיב: „כשאני מתפלל, לעיתים רחוקות אני מתפלל יותר מחצי שעה ברציפות, אך לעולם איני נותן לחלוף יותר מחצי שעה בלי להתפלל!”</p>
+<p>דבר חשוב מאוד כדי שלא ליפול לצביעות: כשם שבנתינה ידך הימנית אינה צריכה לדעת מה עשתה השמאלית, כך אין להכריז בקול גדול בפני אחרים שאתה מתפלל למענם. אנשים יידעו אם אתה עושה זאת באמת.</p>
+<p>כשאתה מתיישב לאכול, הודה לאלוהים; ובכל מקום שבו תהיה, הודה לאדון על שנתן לך חיים ועל ששמר עליך ועל בני ביתך מכל רע ומכל סכנה. התפלל על תוכניותיך ועל תוכניותיהם של מיסיונרים בכל העולם. התפלל למען נשיאך ולמען בעלי הסמכות. <em>ומעל הכול, התפלל תמיד!</em></p>`
+      },
+      ar: {
+        title: 'أهمية الصلاة', author: 'بقلم J.V.', alt: 'شخص يصلّي أمام غروب الشمس', back: 'العودة إلى القائمة ←', dir: 'rtl',
+        html: `
+<p>عندما رأى تلاميذ الرب يسوع المسيح — الذين سمعوا أولًا دعوة الله ليتبعوه — أنه <em>يعلن</em> الملكوت، و<em>يعلّم</em>، و<em>يصلّي</em> كل يوم، طلبوا منه طلبًا بسيطًا لكنه حاسم لحياتهم ولحياتنا: «يا معلّم، علّمنا أن نصلّي»<sup><span class="footnote-ref" title="لوقا 11:1">2</span></sup>؛ فأعطاهم فورًا <span class="tooltip-container"><strong>الصلاة</strong><span class="tooltip-text">«أبانا الذي في السماوات، ليتقدّس اسمك؛ ليأتِ ملكوتك؛ لتكن مشيئتك كما في السماء كذلك على الأرض. خبزنا كفافنا أعطنا اليوم؛ واغفر لنا ذنوبنا كما نغفر نحن أيضًا للمذنبين إلينا؛ ولا تدخلنا في تجربة، لكن نجّنا من الشرير؛ لأن لك الملك والقوة والمجد إلى الأبد. آمين».</span></span> نموذجًا («الصلاة الربّانية»)، لا لكي تُكرَّر بلا تفكير، بل لتُقال بفهم، لأن لكل كلمة وعبارة معنى وهدفًا محددًا؛ فالصلاة وطاعة الله تسيران معًا.</p>
+<p>الصلاة مهمة جدًا؛ فرفعها إلى العرش السماوي هو الخطوة الأولى والحاسمة، ليس فقط لنيل مغفرة خطايانا والخلاص<sup><span class="footnote-ref" title="أعمال الرسل 22:16">3</span></sup>، بل أيضًا لاستقبال حضور الله في أرواحنا إلى الأبد<sup><span class="footnote-ref" title="يوحنا 14:16–17">4</span></sup>. من دون الصلاة تفقد حياتنا وقودها ونضلّ الطريق. لذلك ينبغي أن نجعل الصلاة ممارسة ثابتة؛ فكما يجب على الرياضي أن يتدرّب باستمرار ليحافظ على لياقته واستعداده للمنافسة، ينبغي للمؤمن الجديد أن ينمّي هذه العادة. ومن أكثر الأمور التي يخشاها إبليس أن يرى رجلًا أو امرأة راكعين للصلاة.</p>
+<p>ينبغي أن نؤمن بما نصلّي من أجله<sup><span class="footnote-ref" title="مرقس 11:24">5</span></sup>. لا يعني هذا ألّا نثابر، لكن ينبغي أيضًا ألّا نقع في عدم الإيمان بتكرار الصلاة نفسها وكأنها طقس<sup><span class="footnote-ref" title="متى 6:7">6</span></sup>. لذلك فإن عبارة «صلّوا بلا انقطاع»<sup><span class="footnote-ref" title="تسالونيكي الأولى 5:17">7</span></sup> لا تعني الصلاة أربعًا وعشرين ساعة في اليوم، بل البقاء متيقظين ومستعدين لسماع صوته<sup><span class="footnote-ref" title="إشعياء 28:23">8</span></sup>، والتحدث مع الآب في كل حين وفعل ما يطلبه منا في كلمته. <em>الصلاة والإيمان والشكر والعبادة والعطاء</em> أمور مترابطة لا تنفصل. وبالطبع، هناك من دُعوا إلى الشفاعة ويصلّون أكثر بكثير من خمس دقائق.</p>
+<p>سُئل الواعظ الإنجليزي الراحل سميث ويغلسورث، المعروف برسول الإيمان، عن مقدار الوقت الذي يقضيه في الصلاة يوميًا، فأجاب: «عندما أصلّي، نادرًا ما أتجاوز نصف ساعة في المرة الواحدة، لكنني لا أترك نصف ساعة تمرّ من دون صلاة!»</p>
+<p>وهناك أمر مهم جدًا لتجنّب الرياء: كما أن يدك اليمنى لا ينبغي أن تعرف ما تفعله يدك اليسرى عندما تعطي، لا تُعلن للآخرين بصوت عالٍ أنك تصلّي من أجلهم. سيعرف الناس إن كنت تفعل ذلك بصدق.</p>
+<p>عندما تجلس لتناول الطعام، اشكر الله؛ وأينما كنت، اشكر الرب لأنه منحك الحياة وحماك أنت وأحباءك من كل شر وخطر. صلِّ من أجل خططك ومن أجل خطط المرسلين في جميع أنحاء العالم. صلِّ من أجل رئيسك والمسؤولين. <em>وفوق كل شيء، صلِّ دائمًا!</em></p>`
+      }
+    };
 
     function changeLanguage(lang) {
-        if (!supportedLanguages.includes(lang)) {
-            lang = 'es';
-        }
+      if (!supportedLanguages.includes(lang)) lang = 'es';
+      const rtl = lang === 'he' || lang === 'ar';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = rtl ? 'rtl' : 'ltr';
+      article.dir = rtl ? 'rtl' : 'ltr';
 
-        document.documentElement.lang = lang;
-
-        /*
-         * Cambia únicamente el contenido de los elementos
-         * que tienen traducciones. Los elementos anidados,
-         * las citas y las cursivas se conservan.
-         */
+      if (newTranslations[lang]) {
+        const t = newTranslations[lang];
+        article.innerHTML = t.html;
+        const titleSpan = document.querySelector('#page-title > span');
+        titleSpan.textContent = t.title;
+        document.querySelector('.author').textContent = t.author;
+        const img = document.querySelector('.banner-img');
+        img.alt = t.alt;
+        const back = document.querySelector('.bottom-nav a');
+        back.textContent = t.back;
+        document.title = t.title + ' — La Palabra en Cápsulas';
+      } else {
+        article.innerHTML = originalArticleHTML;
         document.querySelectorAll('[data-' + lang + ']').forEach(function (element) {
-            const translation = element.getAttribute('data-' + lang);
-
-            if (translation !== null) {
-                if (element.tagName === 'IMG') {
-                    element.alt = translation;
-                } else {
-                    element.textContent = translation;
-                }
-            }
+          const translation = element.getAttribute('data-' + lang);
+          if (translation !== null) {
+            if (element.tagName === 'IMG') element.alt = translation;
+            else element.textContent = translation;
+          }
         });
+        const titleSpan = document.querySelector('#page-title > span[data-' + lang + ']');
+        const image = document.querySelector('.banner-img');
+        const translatedAlt = image.getAttribute('data-alt-' + lang);
+        if (translatedAlt) image.alt = translatedAlt;
+        document.title = (titleSpan ? titleSpan.getAttribute('data-' + lang) : 'La Importancia de Orar') + ' — La Palabra en Cápsulas';
+      }
 
-        document.querySelectorAll('.language-bar button').forEach(function (button) {
-            const active = button.dataset.lang === lang;
-            button.classList.toggle('active', active);
-            button.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-
-        const pageTitle = document.querySelector('#page-title [data-' + lang + ']');
-        const titleText = pageTitle
-            ? pageTitle.getAttribute('data-' + lang)
-            : 'La Importancia de Orar';
-
-        document.title = titleText + ' — La Palabra en Cápsulas';
-
-        try {
-            localStorage.setItem('lpc-language', lang);
-        } catch (error) {
-            /* La página sigue funcionando si el almacenamiento no está disponible. */
-        }
+      document.querySelectorAll('.language-bar button').forEach(function (button) {
+        const active = button.dataset.lang === lang;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      try { localStorage.setItem('lpc-language', lang); } catch (error) {}
     }
 
     window.changeLanguage = changeLanguage;
-
     document.addEventListener('DOMContentLoaded', function () {
-        let savedLanguage = 'es';
-
-        try {
-            savedLanguage = localStorage.getItem('lpc-language') || 'es';
-        } catch (error) {
-            savedLanguage = 'es';
-        }
-
-        changeLanguage(savedLanguage);
+      let savedLanguage = 'es';
+      try { savedLanguage = localStorage.getItem('lpc-language') || 'es'; } catch (error) {}
+      changeLanguage(savedLanguage);
     });
 })();
 </script>
