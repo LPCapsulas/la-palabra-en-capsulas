@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,8 +50,9 @@ h1 {
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 36px;
     color: #0F3661;
-    margin: 0 0 5px 0;
+    margin: 0 0 12px;
     font-weight: bold;
+    line-height: 1.35;
 }
 
 .tagline {
@@ -61,6 +62,7 @@ h1 {
     font-size: 17px;
     margin: 0;
     text-align: center;
+    line-height: 1.7;
 }
 
 .card {
@@ -83,6 +85,7 @@ h2 {
     color: #0F3661;
     margin-top: 0;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 p {
@@ -92,6 +95,7 @@ p {
     margin-top: 0;
     margin-bottom: 20px;
     text-align: justify;
+    line-height: 1.8;
 }
 
 p:last-child {
@@ -130,15 +134,16 @@ p:last-child {
 
 .language-bar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 9px;
-    margin: 0 0 22px;
-    font: 13px/1.5 'Inter', Arial, sans-serif;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 30px;
+    font: 13px/1.8 'Inter', Arial, sans-serif;
 }
 
 .lang-link {
-    padding: 0;
+    padding: 2px 0;
     border: 0;
     background: transparent;
     color: #666;
@@ -161,17 +166,88 @@ p:last-child {
     user-select: none;
 }
 
+.lang-link:focus-visible {
+    outline: 2px solid #0F4C81;
+    outline-offset: 4px;
+}
+
+/* Hebreo y árabe: escritura de derecha a izquierda */
+html[lang="he"] .card,
+html[lang="ar"] .card {
+    border-left: 1px solid #E6F0FA;
+    border-right: 5px solid #0F3661;
+}
+
+html[lang="he"] .card,
+html[lang="ar"] .card {
+    direction: rtl;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="he"] .card p,
+html[lang="ar"] .card p {
+    text-align: right;
+    text-justify: auto;
+    line-height: 2;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="he"] h1,
+html[lang="he"] h2,
+html[lang="he"] .tagline,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] .tagline {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="he"] .btn-back,
+html[lang="ar"] .btn-back {
+    font-family: Tahoma, Arial, sans-serif;
+    letter-spacing: 0;
+}
+
 @media (max-width: 700px) {
+    body {
+        padding: 25px 16px;
+    }
+
     .language-bar {
-        margin-bottom: 18px;
+        margin-bottom: 25px;
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    header {
+        margin-bottom: 30px;
     }
 
     h1 {
         font-size: 30px;
     }
 
+    .tagline {
+        font-size: 16px;
+    }
+
     .card {
         padding: 25px 22px;
+        margin-bottom: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .btn-back {
+        max-width: 100%;
+        padding: 12px 24px;
+        letter-spacing: 0.5px;
     }
 }
 </style>
@@ -183,57 +259,74 @@ p:last-child {
     <nav class="language-bar" aria-label="Language selection">
         <button type="button" class="lang-link active" id="link-es"
             onclick="changeLanguage('es')" aria-pressed="true">Español</button>
-
         <span class="lang-divider" aria-hidden="true">|</span>
 
         <button type="button" class="lang-link" id="link-en"
             onclick="changeLanguage('en')" aria-pressed="false">English</button>
-
         <span class="lang-divider" aria-hidden="true">|</span>
 
         <button type="button" class="lang-link" id="link-zh"
-            onclick="changeLanguage('zh')" aria-pressed="false">中文</button>
-
+            onclick="changeLanguage('zh')" aria-pressed="false" lang="zh-CN">简体中文</button>
         <span class="lang-divider" aria-hidden="true">|</span>
 
         <button type="button" class="lang-link" id="link-fr"
             onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+
+        <button type="button" class="lang-link" id="link-it"
+            onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+
+        <button type="button" class="lang-link" id="link-pt"
+            onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+
+        <button type="button" class="lang-link" id="link-he"
+            onclick="changeLanguage('he')" aria-pressed="false" lang="he">עברית</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+
+        <button type="button" class="lang-link" id="link-ar"
+            onclick="changeLanguage('ar')" aria-pressed="false" lang="ar">العربية</button>
     </nav>
 
     <header>
-        <div class="subtitle-top">La Palabra en Cápsulas</div>
-        <h1>La Obra de Dios en la Tierra</h1>
-        <p class="tagline">Una palabra, una cápsula, un mensaje para el camino</p>
+        <div class="subtitle-top" id="site-name">La Palabra en Cápsulas</div>
+        <h1 id="page-title">La Obra de Dios en la Tierra</h1>
+        <p class="tagline" id="tagline">Una palabra, una cápsula, un mensaje para el camino</p>
     </header>
 
     <main>
         <section class="card">
-            <h2>¿Cuál es nuestra comisión?</h2>
+            <h2 id="heading-1">¿Cuál es nuestra comisión?</h2>
 
-            <p>
+            <p id="paragraph-1">
                 La comisión que el Señor Jesús asignó a sus discípulos después de resucitar, ha sido la misma para todas las generaciones. No existe otra. Quizás en el pasado se utilizaban estrategias diferentes a las que usamos hoy, pero el mensaje siempre ha sido el mismo, y eso es lo que no podemos olvidar.
             </p>
 
-            <p>
+            <p id="paragraph-2">
                 Ahora bien, debido a que la Biblia nos advierte que en los postreros tiempos el amor de muchos se enfriará, nos corresponderá a nosotros, los de esta generación, llevar la antorcha de la paz, e inteligentemente y con la sabiduría de Dios, llegar a toda una multitud por la que Cristo murió igualmente en la cruz.
             </p>
         </section>
 
         <section class="card">
-            <h2>Demostrar el evangelio</h2>
+            <h2 id="heading-2">Demostrar el evangelio</h2>
 
-            <p>
-                Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.
+            <p id="paragraph-3">
+                Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con
+                <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.
             </p>
 
-            <p>
-                En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.
+            <p id="paragraph-4">
+                En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno.
+                <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.
             </p>
         </section>
     </main>
 
     <div class="footer-nav">
-        <a href="https://lpcapsulas.com/Explora/menu.html" class="btn-back">Volver al Menú</a>
+        <a href="https://lpcapsulas.com/Explora/menu.html" class="btn-back" id="back-link">
+            Volver al Menú
+        </a>
     </div>
 
 </div>
@@ -243,8 +336,7 @@ p:last-child {
     const translations = {
         es: {
             title: 'La Obra de Dios en la Tierra',
-            doc: 'La Obra de Dios en la Tierra',
-            subtitle: 'La Palabra en Cápsulas',
+            site: 'La Palabra en Cápsulas',
             tagline: 'Una palabra, una cápsula, un mensaje para el camino',
             h2: [
                 '¿Cuál es nuestra comisión?',
@@ -256,31 +348,31 @@ p:last-child {
                 'Pero de algo debemos estar seguros: tendremos que exhibir el evangelio con <span class="bold-text">señales y milagros</span>, pues el mundo de hoy no exigirá menos.',
                 'En un mundo que está en oscuridad, que habla mal, que no separa lo santo de lo profano, que a lo bueno le dicen malo y a lo malo le llaman bueno, no podemos esperar que abracen de buenas a primeras la fe cristiana. Ellos requieren un argumento más sólido para poder creer y escapar de las llamas del infierno. <span class="bold-text">“Todo el consejo de Dios”</span>, el que dio el apóstol Pablo durante su vida ministerial, es el que tenemos que dar nosotros ahora.'
             ],
-            back: 'Volver al Menú'
+            back: 'Volver al Menú',
+            dir: 'ltr'
         },
 
         en: {
             title: 'The Work of God on Earth',
-            doc: 'The Work of God on Earth',
-            subtitle: 'The Word in Capsules',
+            site: 'The Word in Capsules',
             tagline: 'One word, one capsule, a message for the journey',
             h2: [
                 'What is our commission?',
                 'Demonstrating the Gospel'
             ],
             p: [
-                'The commission that the Lord Jesus gave His disciples after His resurrection has remained the same for every generation. There is no other. Perhaps in the past different strategies were used from those we use today, but the message has always been the same, and that is what we must not forget.',
-                'Now, because the Bible warns us that in the last days the love of many will grow cold, it falls to us, this generation, to carry the torch of peace and, intelligently and with God’s wisdom, reach the multitude for whom Christ also died on the cross.',
+                'The commission that the Lord Jesus gave His disciples after His resurrection has remained the same for every generation. There is no other. Perhaps different strategies were used in the past than those we use today, but the message has always been the same, and that is what we must not forget.',
+                'Because the Bible warns us that in the last days the love of many will grow cold, it falls to us, this generation, to carry the torch of peace and, with intelligence and God’s wisdom, reach the multitude for whom Christ also died on the cross.',
                 'But one thing must be clear: we will have to demonstrate the Gospel with <span class="bold-text">signs and wonders</span>, because the world today will demand no less.',
                 'In a world that is in darkness, speaks evil, does not distinguish the holy from the profane, and calls good evil and evil good, we cannot expect people to embrace the Christian faith right away. They need a stronger argument to believe and escape the flames of hell. <span class="bold-text">“The whole counsel of God”</span>, which the apostle Paul delivered throughout his ministry, is what we must deliver now.'
             ],
-            back: 'Back to Menu'
+            back: 'Back to Menu',
+            dir: 'ltr'
         },
 
         zh: {
             title: '上帝在地上的工作',
-            doc: '上帝在地上的工作',
-            subtitle: '胶囊中的话语',
+            site: '胶囊中的圣言',
             tagline: '一句话，一个胶囊，一条人生旅途的信息',
             h2: [
                 '我们的使命是什么？',
@@ -292,13 +384,13 @@ p:last-child {
                 '但有一点我们必须确信：我们必须藉着<span class="bold-text">神迹奇事</span>来彰显福音，因为今天的世界不会要求得更少。',
                 '在一个黑暗的世界里，人们口出恶言，不分别圣与俗，把善称为恶，把恶称为善；我们不能指望他们立刻接受基督信仰。他们需要更有力的论据才能相信，并逃离地狱的火焰。使徒保罗在他的事奉生涯中所传讲的<span class="bold-text">“上帝全部的旨意”</span>，也是我们今天必须传讲的。'
             ],
-            back: '返回菜单'
+            back: '返回菜单',
+            dir: 'ltr'
         },
 
         fr: {
             title: 'L’œuvre de Dieu sur la Terre',
-            doc: 'L’œuvre de Dieu sur la Terre',
-            subtitle: 'La Parole en Capsules',
+            site: 'La Parole en Capsules',
             tagline: 'Un mot, une capsule, un message pour le chemin',
             h2: [
                 'Quelle est notre mission ?',
@@ -306,37 +398,113 @@ p:last-child {
             ],
             p: [
                 'La mission que le Seigneur Jésus a confiée à ses disciples après sa résurrection est restée la même pour toutes les générations. Il n’y en a pas d’autre. Autrefois, des stratégies différentes ont peut-être été utilisées, mais le message a toujours été le même, et nous ne devons pas l’oublier.',
-                'Or, puisque la Bible nous avertit qu’aux derniers temps l’amour du plus grand nombre se refroidira, il nous revient, à nous de cette génération, de porter le flambeau de la paix et, avec intelligence et la sagesse de Dieu, d’atteindre toute cette multitude pour laquelle Christ est également mort sur la croix.',
+                'Puisque la Bible nous avertit qu’aux derniers temps l’amour du plus grand nombre se refroidira, il nous revient, à nous de cette génération, de porter le flambeau de la paix et, avec intelligence et la sagesse de Dieu, d’atteindre cette multitude pour laquelle Christ est également mort sur la croix.',
                 'Mais une chose est certaine : nous devrons manifester l’Évangile par des <span class="bold-text">signes et des miracles</span>, car le monde d’aujourd’hui n’exigera pas moins.',
                 'Dans un monde plongé dans les ténèbres, où l’on parle mal, où l’on ne distingue pas le sacré du profane, où le bien est appelé mal et le mal bien, nous ne pouvons pas nous attendre à ce que les gens adoptent immédiatement la foi chrétienne. Ils ont besoin d’un argument plus solide pour croire et échapper aux flammes de l’enfer. <span class="bold-text">« Tout le conseil de Dieu »</span>, que l’apôtre Paul a transmis au cours de son ministère, est ce que nous devons transmettre aujourd’hui.'
             ],
-            back: 'Retour au menu'
+            back: 'Retour au menu',
+            dir: 'ltr'
+        },
+
+        it: {
+            title: 'L’opera di Dio sulla Terra',
+            site: 'La Parola in Capsule',
+            tagline: 'Una parola, una capsula, un messaggio per il cammino',
+            h2: [
+                'Qual è la nostra missione?',
+                'Dimostrare il Vangelo'
+            ],
+            p: [
+                'La missione che il Signore Gesù affidò ai suoi discepoli dopo la risurrezione è rimasta la stessa per tutte le generazioni. Non ce n’è un’altra. Forse in passato si utilizzavano strategie diverse da quelle di oggi, ma il messaggio è sempre stato lo stesso, e questo è ciò che non dobbiamo dimenticare.',
+                'Poiché la Bibbia ci avverte che negli ultimi tempi l’amore di molti si raffredderà, spetta a noi, la generazione di oggi, portare la fiaccola della pace e raggiungere, con intelligenza e con la sapienza di Dio, la moltitudine per la quale anche Cristo è morto sulla croce.',
+                'Di una cosa dobbiamo essere certi: dovremo dimostrare il Vangelo con <span class="bold-text">segni e miracoli</span>, perché il mondo di oggi non si accontenterà di meno.',
+                'In un mondo immerso nelle tenebre, in cui si parla male, non si distingue il sacro dal profano e si chiama male il bene e bene il male, non possiamo aspettarci che le persone abbraccino immediatamente la fede cristiana. Hanno bisogno di argomenti più solidi per credere e sfuggire alle fiamme dell’inferno. <span class="bold-text">“Tutto il consiglio di Dio”</span>, che l’apostolo Paolo annunciò durante il suo ministero, è ciò che dobbiamo annunciare anche noi oggi.'
+            ],
+            back: 'Torna al menu',
+            dir: 'ltr'
+        },
+
+        pt: {
+            title: 'A Obra de Deus na Terra',
+            site: 'A Palavra em Cápsulas',
+            tagline: 'Uma palavra, uma cápsula, uma mensagem para a caminhada',
+            h2: [
+                'Qual é a nossa missão?',
+                'Demonstrar o Evangelho'
+            ],
+            p: [
+                'A missão que o Senhor Jesus confiou aos seus discípulos depois de ressuscitar continua sendo a mesma para todas as gerações. Não existe outra. Talvez no passado fossem utilizadas estratégias diferentes das que usamos hoje, mas a mensagem sempre foi a mesma, e não podemos nos esquecer disso.',
+                'Como a Bíblia nos adverte que, nos últimos tempos, o amor de muitos esfriará, cabe a nós, desta geração, levar a tocha da paz e, com inteligência e a sabedoria de Deus, alcançar a multidão pela qual Cristo também morreu na cruz.',
+                'De uma coisa devemos ter certeza: teremos de demonstrar o Evangelho com <span class="bold-text">sinais e milagres</span>, pois o mundo de hoje não exigirá menos.',
+                'Em um mundo mergulhado na escuridão, onde se fala mal, não se distingue o sagrado do profano e se chama o bem de mal e o mal de bem, não podemos esperar que as pessoas abracem imediatamente a fé cristã. Elas precisam de um argumento mais sólido para crer e escapar das chamas do inferno. <span class="bold-text">“Todo o conselho de Deus”</span>, que o apóstolo Paulo transmitiu durante seu ministério, é o que também devemos transmitir agora.'
+            ],
+            back: 'Voltar ao menu',
+            dir: 'ltr'
+        },
+
+        he: {
+            title: 'עבודת אלוהים על פני הארץ',
+            site: 'דבר אלוהים בקפסולות',
+            tagline: 'מילה אחת, קפסולה אחת, מסר לדרך',
+            h2: [
+                'מהי השליחות שלנו?',
+                'להמחיש את הבשורה'
+            ],
+            p: [
+                'השליחות שהפקיד האדון ישוע בידי תלמידיו לאחר שקם לתחייה נותרה זהה בכל הדורות. אין שליחות אחרת. ייתכן שבעבר השתמשו בשיטות שונות מאלה שבהן אנו משתמשים כיום, אך המסר תמיד היה אותו מסר, ואסור לנו לשכוח זאת.',
+                'מכיוון שהתנ״ך מזהיר אותנו שבאחרית הימים אהבתם של רבים תתקרר, מוטלת עלינו, בני הדור הזה, האחריות לשאת את לפיד השלום ולהגיע, בתבונה ובחוכמת אלוהים, אל ההמונים שגם למענם מת המשיח על הצלב.',
+                'בדבר אחד עלינו להיות בטוחים: יהיה עלינו להציג את הבשורה באמצעות <span class="bold-text">אותות ומופתים</span>, משום שהעולם של ימינו לא יסתפק בפחות מכך.',
+                'בעולם השרוי בחושך, שבו מדברים רעות, אינם מבדילים בין קודש לחול, קוראים לטוב רע ולרע טוב, איננו יכולים לצפות שאנשים יקבלו מיד את האמונה הנוצרית. הם זקוקים לטיעון מוצק יותר כדי להאמין ולהינצל מאש הגיהינום. <span class="bold-text">״כל עצת אלוהים״</span>, שאותה מסר השליח פאולוס במהלך שירותו, היא גם המסר שעלינו למסור כיום.'
+            ],
+            back: 'חזרה לתפריט',
+            dir: 'rtl'
+        },
+
+        ar: {
+            title: 'عمل الله على الأرض',
+            site: 'كلمة الله في كبسولات',
+            tagline: 'كلمة واحدة، كبسولة واحدة، ورسالة للطريق',
+            h2: [
+                'ما هي رسالتنا؟',
+                'إظهار الإنجيل'
+            ],
+            p: [
+                'إن الرسالة التي كلّف بها الرب يسوع تلاميذه بعد قيامته من بين الأموات ظلت هي نفسها عبر جميع الأجيال. ولا توجد رسالة أخرى. ربما استُخدمت في الماضي أساليب مختلفة عن تلك التي نستخدمها اليوم، لكن الرسالة ظلت دائمًا واحدة، وهذا ما يجب ألا ننساه.',
+                'وبما أن الكتاب المقدس يحذرنا من أن محبة كثيرين ستبرد في الأيام الأخيرة، فإن مسؤوليتنا نحن، أبناء هذا الجيل، هي حمل شعلة السلام والوصول، بحكمة وذكاء من الله، إلى الجموع التي مات المسيح أيضًا من أجلها على الصليب.',
+                'هناك أمر يجب أن نكون على يقين منه: علينا أن نظهر الإنجيل من خلال <span class="bold-text">الآيات والعجائب</span>، لأن عالم اليوم لن يرضى بأقل من ذلك.',
+                'في عالم يعيش في الظلمة، وتنتشر فيه الأقوال الشريرة، ولا يُميَّز فيه المقدس عن الدنيوي، ويُسمّى فيه الخير شرًا والشر خيرًا، لا يمكننا أن نتوقع أن يقبل الناس الإيمان المسيحي فورًا. إنهم يحتاجون إلى حجة أقوى لكي يؤمنوا وينجوا من لهيب جهنم. إن <span class="bold-text">«مشورة الله كاملة»</span>، التي أعلنها الرسول بولس طوال خدمته، هي الرسالة التي يجب علينا نحن أيضًا أن نعلنها اليوم.'
+            ],
+            back: 'العودة إلى القائمة',
+            dir: 'rtl'
         }
     };
 
     window.changeLanguage = function (lang) {
-        if (!translations[lang]) {
+        if (!Object.prototype.hasOwnProperty.call(translations, lang)) {
             lang = 'es';
         }
 
         const t = translations[lang];
 
-        document.documentElement.lang = lang;
-        document.title = t.doc;
+        document.documentElement.lang =
+            lang === 'zh' ? 'zh-CN' : lang;
 
-        document.querySelector('.subtitle-top').textContent = t.subtitle;
-        document.querySelector('h1').textContent = t.title;
-        document.querySelector('.tagline').textContent = t.tagline;
+        document.documentElement.dir = t.dir;
+        document.title = t.title;
 
-        document.querySelectorAll('.card h2').forEach(function (element, index) {
-            element.textContent = t.h2[index];
-        });
+        document.getElementById('site-name').textContent = t.site;
+        document.getElementById('page-title').textContent = t.title;
+        document.getElementById('tagline').textContent = t.tagline;
 
-        document.querySelectorAll('.card p').forEach(function (element, index) {
-            element.innerHTML = t.p[index];
-        });
+        document.getElementById('heading-1').textContent = t.h2[0];
+        document.getElementById('heading-2').textContent = t.h2[1];
 
-        document.querySelector('.btn-back').textContent = t.back;
+        document.getElementById('paragraph-1').innerHTML = t.p[0];
+        document.getElementById('paragraph-2').innerHTML = t.p[1];
+        document.getElementById('paragraph-3').innerHTML = t.p[2];
+        document.getElementById('paragraph-4').innerHTML = t.p[3];
+
+        document.getElementById('back-link').textContent = t.back;
 
         document.querySelectorAll('.lang-link').forEach(function (button) {
             const active = button.id === 'link-' + lang;
@@ -354,7 +522,11 @@ p:last-child {
     let initial = 'es';
 
     try {
-        initial = localStorage.getItem('lpc-language') || 'es';
+        const saved = localStorage.getItem('lpc-language');
+
+        if (saved && Object.prototype.hasOwnProperty.call(translations, saved)) {
+            initial = saved;
+        }
     } catch (error) {
         initial = 'es';
     }
