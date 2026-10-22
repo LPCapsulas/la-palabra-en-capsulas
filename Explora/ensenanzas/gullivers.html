@@ -1,450 +1,630 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="description" content="Un té en Gullivers: una reflexión sobre el amor al prójimo y el crecimiento cristiano. La Palabra en Cápsulas.">
 <title>Un té en Gullivers — La Palabra en Cápsulas</title>
 
 <style>
-    :root {
-        --text: #252525;
-        --muted: #666;
-        --accent: #17365D;
-        --paper: #F8F4EC;
-        --bg: #f2f0ec;
-        --quote: #f7f4ef;
-        --line: #d9d9d9;
-    }
+:root{
+  --text:#252525;
+  --muted:#666;
+  --accent:#17365D;
+  --paper:#F8F4EC;
+  --bg:#f2f0ec;
+  --quote:#f7f4ef;
+  --line:#d9d9d9;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  font-size:17px;
+  line-height:1.8;
+}
+.page{
+  width:900px;
+  max-width:calc(100% - 40px);
+  margin:45px auto;
+  padding:55px 65px 45px;
+  background:var(--paper);
+  border-radius:5px;
+  box-shadow:0 4px 18px rgba(0,0,0,.07);
+}
+header{text-align:center;margin-bottom:38px}
+.section-label{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+h1{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:36px;
+  line-height:1.2;
+  color:var(--accent);
+  font-weight:700;
+}
+.author{
+  font-size:17px;
+  line-height:1.8;
+  color:var(--muted);
+  margin-top:4px;
+  margin-bottom:8px;
+}
+.language-selector{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 auto 28px;
+}
+.language-selector button{
+  font:600 14px "Segoe UI",Tahoma,sans-serif;
+  color:var(--accent);
+  background:transparent;
+  border:1px solid #b9c2ce;
+  border-radius:20px;
+  padding:6px 13px;
+  cursor:pointer;
+}
+.language-selector button:hover,
+.language-selector button[aria-pressed="true"]{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
+.language-selector button:focus-visible,
+a:focus-visible{
+  outline:3px solid #b58b35;
+  outline-offset:3px;
+}
+.article{max-width:720px;margin:0 auto}
+.article p{
+  margin:0 0 22px;
+  font-size:17px;
+  line-height:1.8;
+  text-align:justify;
+}
+.article strong{color:var(--accent);font-weight:700}
+.dialogue{
+  background:var(--quote);
+  border-left:4px solid var(--accent);
+  padding:22px 26px;
+  margin:30px 0 32px;
+}
+.dialogue p{
+  margin:0 0 12px;
+  font-size:17px;
+  line-height:1.8;
+  text-align:justify;
+}
+.dialogue p:last-child{margin-bottom:0}
+.reflection{margin-top:34px}
+.reflection-title{
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--accent);
+  font-size:25px;
+  line-height:1.4;
+  margin:0 0 18px;
+  font-weight:700;
+}
+.image-space{
+  width:100%;
+  margin:38px auto;
+  text-align:center;
+}
+.image-space img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+.article-nav{
+  margin-top:48px;
+  padding-top:26px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.article-nav a{
+  color:var(--accent);
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+  margin:0 12px;
+}
+.article-nav a:hover{color:#315f91}
 
-    * {
-        box-sizing: border-box;
-    }
+/* Hebreo y árabe */
+html[dir="rtl"] body{
+  font-family:Tahoma,"Segoe UI",Arial,sans-serif;
+}
+html[dir="rtl"] .section-label{letter-spacing:0}
+html[dir="rtl"] .article p,
+html[dir="rtl"] .dialogue p{text-align:right}
+html[dir="rtl"] .dialogue{
+  border-left:0;
+  border-right:4px solid var(--accent);
+}
+html[dir="rtl"] .reflection-title{text-align:right}
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 17px;
-        line-height: 1.8;
-    }
-
-    .page {
-        width: 900px;
-        max-width: calc(100% - 40px);
-        margin: 45px auto;
-        padding: 55px 65px 45px;
-        background: var(--paper);
-        border-radius: 5px;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-    }
-
-    header {
-        text-align: center;
-        margin-bottom: 38px;
-    }
-
-    .section-label {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 13px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 12px;
-        line-height: 1.5;
-    }
-
-    h1 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 36px;
-        line-height: 1.2;
-        color: var(--accent);
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .author {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 17px;
-        line-height: 1.8;
-        color: var(--muted);
-        margin-top: 4px;
-        margin-bottom: 8px;
-    }
-
-    .language-selector{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 28px}
-    .language-selector button{font:600 14px "Segoe UI",Tahoma,sans-serif;color:var(--accent);background:transparent;border:1px solid #b9c2ce;border-radius:20px;padding:6px 13px;cursor:pointer}
-    .language-selector button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
-
-    .article {
-        max-width: 720px;
-        margin: 0 auto;
-    }
-
-    .article p {
-        margin: 0 0 22px;
-        font-size: 17px;
-        line-height: 1.8;
-        text-align: justify;
-    }
-
-    .article strong {
-        color: var(--accent);
-        font-weight: 700;
-    }
-
-    .dialogue {
-        background: var(--quote);
-        border-left: 4px solid var(--accent);
-        padding: 22px 26px;
-        margin: 30px 0 32px;
-    }
-
-    .dialogue p {
-        margin: 0 0 12px;
-        font-size: 17px;
-        line-height: 1.8;
-        text-align: justify;
-    }
-
-    .dialogue p:last-child {
-        margin-bottom: 0;
-    }
-
-    .reflection {
-        margin-top: 34px;
-    }
-
-    .reflection-title {
-        font-family: Georgia, "Times New Roman", serif;
-        color: var(--accent);
-        font-size: 25px;
-        line-height: 1.4;
-        margin: 0 0 18px;
-        font-weight: 700;
-    }
-
-    .image-space {
-        width: 100%;
-        margin: 38px auto;
-        text-align: center;
-    }
-
-    .image-space img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .article-nav {
-        margin-top: 48px;
-        padding-top: 26px;
-        border-top: 1px solid var(--line);
-        text-align: center;
-    }
-
-    .article-nav a {
-        color: var(--accent);
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        text-decoration: none;
-        margin: 0 12px;
-    }
-
-    .article-nav a:hover {
-        color: #000000;
-    }
-
-    @media (max-width: 700px) {
-        .page {
-            width: auto;
-            max-width: none;
-            margin: 0;
-            padding: 35px 22px 35px;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
-        header {
-            margin-bottom: 32px;
-        }
-
-        .section-label {
-            font-size: 13px;
-        }
-
-        h1 {
-            font-size: 30px;
-            line-height: 1.25;
-        }
-
-        .author {
-            font-size: 16px;
-            line-height: 1.75;
-        }
-
-        .article {
-            max-width: none;
-        }
-
-        .article p {
-            font-size: 17px;
-            line-height: 1.75;
-        }
-
-        .dialogue {
-            padding: 20px 18px;
-            margin: 28px 0 30px;
-        }
-
-        .dialogue p {
-            font-size: 17px;
-            line-height: 1.75;
-        }
-
-        .reflection-title {
-            font-size: 23px;
-            line-height: 1.4;
-        }
-
-        .article-nav {
-            margin-top: 40px;
-        }
-
-        .article-nav a {
-            display: block;
-            margin: 12px 0;
-        }
-    }
+@media(max-width:700px){
+  .page{
+    width:auto;
+    max-width:none;
+    margin:0;
+    padding:35px 22px;
+    border-radius:0;
+    box-shadow:none;
+  }
+  header{margin-bottom:32px}
+  .section-label{font-size:13px}
+  h1{font-size:30px;line-height:1.25}
+  .author{font-size:16px;line-height:1.75}
+  .article{max-width:none}
+  .article p{font-size:17px;line-height:1.75}
+  .dialogue{padding:20px 18px;margin:28px 0 30px}
+  .dialogue p{font-size:17px;line-height:1.75}
+  .reflection-title{font-size:23px;line-height:1.4}
+  .article-nav{margin-top:40px}
+  .article-nav a{display:block;margin:12px 0}
+}
+@media(max-width:380px){
+  .page{padding:30px 18px}
+  .language-selector{gap:6px}
+  .language-selector button{padding:5px 10px;font-size:13px}
+}
 </style>
 </head>
 
 <body>
-
 <main class="page">
+<header>
+  <div class="section-label" id="brand">La Palabra en Cápsulas</div>
+  <h1 id="title">Un té en Gullivers</h1>
+  <div class="author" id="author">Por J.V.</div>
+</header>
 
-    <header>
-
-        <div class="section-label">
-            La Palabra en Cápsulas
-        </div>
-
-        <h1>Un té en Gullivers</h1>
-
-        <div class="author">
-            Por J.V.
-        </div>
-
-    </header>
-
-
-<nav class="language-selector" aria-label="Language selector">
-<button type="button" data-lang="es" aria-pressed="true">Español</button>
-<button type="button" data-lang="en" aria-pressed="false">English</button>
-<button type="button" data-lang="fr" aria-pressed="false">Français</button>
-<button type="button" data-lang="zh" aria-pressed="false">中文</button>
+<nav class="language-selector" aria-label="Selector de idioma">
+  <button type="button" data-lang="es" aria-pressed="true">Español</button>
+  <button type="button" data-lang="en" aria-pressed="false">English</button>
+  <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+  <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+  <button type="button" data-lang="it" aria-pressed="false">Italiano</button>
+  <button type="button" data-lang="pt" aria-pressed="false">Português</button>
+  <button type="button" data-lang="he" aria-pressed="false">עברית</button>
+  <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
 </nav>
 
-    <article class="article">
+<article class="article">
+  <div id="opening"></div>
 
-        <p>
-            Lo que quiero transmitir me lo enseñó la misma persona que me
-            compartió el evangelio.
-        </p>
+  <div class="dialogue" id="dialogue"></div>
 
-        <p>
-            Una vez nos encontrábamos en “Gullivers”, un sitio en la calle
-            82 St., una mañana de 1986-87, donde vendían un delicioso
-            sándwich de pescado, café, té y otras delicias.
-        </p>
+  <div id="afterDialogue"></div>
 
-        <p>
-            Íbamos a menudo a tomar té y hablar de la Palabra de Dios.
-            Recuerden que les dije en el testimonio que, con mi nuevo
-            nacimiento, vino un nuevo brío sobre mí. En realidad, estaba
-            tan fogoso que queríamos hablar del Señor todo el tiempo.
-        </p>
+  <section class="reflection">
+    <h2 class="reflection-title" id="reflectionTitle">Bienestar del prójimo</h2>
+    <div id="reflection"></div>
+  </section>
 
-        <p>
-            Pues así como hablas a tu mejor amigo de aquella chica que
-            acabas de conocer y de la cual crees estar enamorado, pues así
-            pasa en las cosas espirituales. Tú has encontrado a tu
-            Salvador, Señor y Cuidador, y por ello hablas con Él y de Él.
-        </p>
+  <!-- La imagen central podrá insertarse aquí cuando esté disponible. -->
 
-        <p>
-            Esa mañana el local, aunque era amplio, estaba prácticamente solo
-            y, por lo tanto, había muchas mesas disponibles. Yo, como
-            siempre, andaba con mi maletín, el cual puse en la silla
-            contigua. Pensé:
-            <strong>“Hay mucho espacio, pongámoslo ahí”.</strong>
-        </p>
-
-        <p>
-            El hombre de Dios me dijo:
-        </p>
-
-        <div class="dialogue">
-
-            <p>
-                —Ponlo en tu asiento.
-            </p>
-
-            <p>
-                —¿Qué cosa? —le pregunté.
-            </p>
-
-            <p>
-                —Pues tu maletín.
-            </p>
-
-            <p>
-                Y en tono suave agregó:
-            </p>
-
-            <p>
-                —Estás siendo egoísta con los demás.
-            </p>
-
-            <p>
-                —Amigo, no hay nadie prácticamente en el lugar
-                —le repliqué, casi irritado.
-            </p>
-
-            <p>
-                A lo cual él me respondió:
-            </p>
-
-            <p>
-                “¿Ves? Estás asumiendo que nadie va a venir. Y no te das
-                cuenta de que, si alguien lo hace, puede, por no causarte
-                molestias, declinar pedirte el asiento y prácticamente lo
-                habrás perjudicado. ¡No estás pensando en los demás!”
-            </p>
-
-        </div>
-
-        <!-- ESTOS DOS PÁRRAFOS QUEDAN FUERA DE LA BARRA VERTICAL -->
-
-        <p style="margin-top: 15px;">
-            En mis comienzos, aceptaba las correcciones muy a regañadientes
-            y no está bien, pues debemos aceptar cuando otros están
-            en lo cierto y nosotros no. Por ello, hoy día,
-            no puedo enfatizar lo suficiente, la importancia
-            de los ayos y colaboradores que debemos tener en
-            nuestro caminar cristiano.
-        </p>
-
-        <p style="margin-top: 15px;">
-            Con el tiempo he comprobado que es difícil que una persona
-            que no se ha sometido a nadie a otro miembro(s) en el Cuerpo
-            de Cristo, le dé alguna vez la razón a otro, aun estando en error.
-        </p>
-
-        <p>
-            Ese mismo día me di cuenta de que la cosa no iba a ser tan
-            fácil y que, en adelante, me iban a dar “garrote” en sentido
-            espiritual.
-        </p>
-
-        <p>
-            ¡Les aseguro que no fue la única vez que me “cascaron”!
-        </p>
-
-        <div class="reflection">
-
-            <h2 class="reflection-title">
-                Bienestar del prójimo
-            </h2>
-
-            <p>
-                En una cápsula, eso es el cristianismo:
-                <strong>pensar y actuar</strong> a favor de los demás,
-                -así no los estemos viendo- para que sean salvos.
-            </p>
-
-            <p>
-                El recibir un mensaje en tu lugar de reunión y alojarlo en
-                tu cerebro es una cosa. Recibir “verdades” en tu corazón,
-                vivirlas y aplicarlas por el resto de tu vida es otra.
-            </p>
-
-            <p>
-                A veces decimos: “No ahorraremos esfuerzo” o “hasta la
-                última gota de sudor” por esto o aquello. Pero
-                <strong>JESÚS</strong> derramó su vida hasta la muerte,
-                y así Dios nos libró de la potestad de las tinieblas, y
-                nos trasladó al reino de su amado Hijo.
-            </p>
-
-            <p>
-                Él siempre nos tuvo en cuenta, y aún lo hace.
-            </p>
-
-        </div>
-
-        <!--
-        IMAGEN CENTRAL — SE INSERTARÁ AQUÍ
-        -->
-
-        <div class="article-nav">
-
-            <a href="./index.html">
-                ← Volver a Enseñanzas
-            </a>
-
-            <a href="../menu.html">
-                Volver al Menú
-            </a>
-
-        </div>
-
-    </article>
-
+  <nav class="article-nav" aria-label="Navegación del artículo">
+    <a id="back1" href="./index.html">← Volver a Enseñanzas</a>
+    <a id="back2" href="../menu.html">Volver al Menú</a>
+  </nav>
+</article>
 </main>
 
 <script>
-const languageText={
-es:{brand:'La Palabra en Cápsulas',title:'Un té en Gullivers',author:'Por J.V.',p:['Lo que quiero transmitir me lo enseñó la misma persona que me compartió el evangelio.','Una vez nos encontrábamos en “Gullivers”, un sitio en la calle 82 St., una mañana de 1986-87, donde vendían un delicioso sándwich de pescado, café, té y otras delicias.','Íbamos a menudo a tomar té y hablar de la Palabra de Dios. Recuerden que les dije en el testimonio que, con mi nuevo nacimiento, vino un nuevo brío sobre mí. En realidad, estaba tan fogoso que queríamos hablar del Señor todo el tiempo.','Pues así como hablas a tu mejor amigo de aquella chica que acabas de conocer y de la cual crees estar enamorado, pues así pasa en las cosas espirituales. Tú has encontrado a tu Salvador, Señor y Cuidador, y por ello hablas con Él y de Él.','Esa mañana el local, aunque era amplio, estaba prácticamente solo y, por lo tanto, había muchas mesas disponibles. Yo, como siempre, andaba con mi maletín, el cual puse en la silla contigua. Pensé: <strong>“Hay mucho espacio, pongámoslo ahí”.</strong>','El hombre de Dios me dijo:','—Ponlo en tu asiento.','—¿Qué cosa? —le pregunté.','—Pues tu maletín.','Y en tono suave agregó:','—Estás siendo egoísta con los demás.','—Amigo, no hay nadie prácticamente en el lugar —le repliqué, casi irritado.','A lo cual él me respondió:','“¿Ves? Estás asumiendo que nadie va a venir. Y no te das cuenta de que, si alguien lo hace, puede, por no causarte molestias, declinar pedirte el asiento y prácticamente lo habrás perjudicado. ¡No estás pensando en los demás!”','En mis comienzos, aceptaba las correcciones muy a regañadientes y no está bien, pues debemos aceptar cuando otros están en lo cierto y nosotros no. Por ello, hoy día, no puedo enfatizar lo suficiente, la importancia de los ayos y colaboradores que debemos tener en nuestro caminar cristiano.','Con el tiempo he comprobado que es difícil que una persona que no se ha sometido a nadie a otro miembro(s) en el Cuerpo de Cristo, le dé alguna vez la razón a otro, aun estando en error.','Ese mismo día me di cuenta de que la cosa no iba a ser tan fácil y que, en adelante, me iban a dar “garrote” en sentido espiritual.','¡Les aseguro que no fue la única vez que me “cascaron”!','En una cápsula, eso es el cristianismo: <strong>pensar y actuar</strong> a favor de los demás, -así no los estemos viendo- para que sean salvos.','El recibir un mensaje en tu lugar de reunión y alojarlo en tu cerebro es una cosa. Recibir “verdades” en tu corazón, vivirlas y aplicarlas por el resto de tu vida es otra.','A veces decimos: “No ahorraremos esfuerzo” o “hasta la última gota de sudor” por esto o aquello. Pero <strong>JESÚS</strong> derramó su vida hasta la muerte, y así Dios nos libró de la potestad de las tinieblas, y nos trasladó al reino de su amado Hijo.','Él siempre nos tuvo en cuenta, y aún lo hace.'],heading:'Bienestar del prójimo',back1:'← Volver a Enseñanzas',back2:'Volver al Menú'},
-en:{brand:'The Word in Capsules',title:'Tea at Gullivers',author:'By J.V.',p:['The lesson I want to share was taught to me by the very person who shared the gospel with me.','One morning in 1986–87, we were at “Gullivers,” a place on 82nd Street that sold a delicious fish sandwich, coffee, tea, and other treats.','We often went there for tea and to talk about the Word of God. As I mentioned in my testimony, my new birth brought a fresh zeal into my life. I was so enthusiastic that we wanted to talk about the Lord all the time.','Just as you tell your best friend about a girl you have just met and think you are falling in love with, the same happens in spiritual matters. You have found your Savior, Lord, and Caretaker, so you talk with Him and about Him.','That morning, although the place was spacious, it was almost empty, so plenty of tables were available. As usual, I had my briefcase with me and placed it on the neighboring chair. I thought: <strong>“There’s plenty of room; let’s put it there.”</strong>','The man of God said to me:','“Put it on your own seat.”','“What?” I asked.','“Your briefcase.”','Then he added gently:','“You’re being selfish toward others.”','“My friend, there’s practically nobody here,” I replied, almost irritated.','He answered:','“See? You’re assuming no one else will come. You don’t realize that if someone does arrive, they might avoid asking you for the seat so as not to inconvenience you, and you will have practically disadvantaged them. You’re not thinking about others!”','At first, I accepted correction very reluctantly, and that was not right. We should acknowledge when others are right and we are not. I cannot stress enough the importance of mentors and fellow believers who walk alongside us on our Christian journey.','Over time, I have found that someone who has never submitted to another member of the Body of Christ has difficulty acknowledging that another person is right—even when they themselves are wrong.','That very day I realized this would not be so easy and that, from then on, I would receive some spiritual “discipline.”','I assure you, that was not the only time I was given a spiritual “spanking”!','In a nutshell, that is Christianity: <strong>thinking and acting</strong> for the good of others—even when we cannot see them—so that they may be saved.','Hearing a message at your place of worship and storing it in your mind is one thing. Receiving “truths” in your heart, living them, and applying them for the rest of your life is another.','Sometimes we say, “We will spare no effort” or “until the last drop of sweat” for this or that. But <strong>JESUS</strong> poured out His life unto death, and God delivered us from the dominion of darkness and brought us into the kingdom of His beloved Son.','He has always taken us into account, and He still does.'],heading:'Caring for Our Neighbor',back1:'← Back to Teachings',back2:'Back to Menu'},
-fr:{brand:'La Parole en Capsules',title:'Un thé chez Gullivers',author:'Par J.V.',p:['Ce que je veux transmettre m’a été enseigné par la personne même qui m’a annoncé l’Évangile.','Un matin de 1986-1987, nous étions chez « Gullivers », un établissement situé sur la 82e Rue, où l’on vendait un délicieux sandwich au poisson, du café, du thé et d’autres gourmandises.','Nous y allions souvent pour prendre le thé et parler de la Parole de Dieu. Comme je l’ai raconté dans mon témoignage, ma nouvelle naissance a fait naître en moi un nouvel élan. J’étais si enthousiaste que nous voulions parler du Seigneur tout le temps.','Tout comme vous parlez à votre meilleur ami d’une jeune femme que vous venez de rencontrer et dont vous pensez être amoureux, il en va de même dans la vie spirituelle. Vous avez trouvé votre Sauveur, Seigneur et Protecteur ; vous parlez donc avec Lui et de Lui.','Ce matin-là, bien que le lieu fût spacieux, il était presque vide et de nombreuses tables étaient libres. Comme toujours, j’avais ma mallette et je l’ai posée sur la chaise voisine. Je me suis dit : <strong>« Il y a beaucoup de place, mettons-la là. »</strong>','L’homme de Dieu m’a dit :','— Mets-la sur ta propre chaise.','— Quoi donc ? lui ai-je demandé.','— Ta mallette.','Puis il ajouta doucement :','— Tu fais preuve d’égoïsme envers les autres.','— Mon ami, il n’y a pratiquement personne ici, lui ai-je répondu, presque irrité.','Il m’a alors répondu :','« Tu vois ? Tu supposes que personne ne viendra. Tu ne te rends pas compte que si quelqu’un arrive, il pourrait renoncer à te demander la chaise pour ne pas te déranger, et tu l’aurais ainsi désavantagé. Tu ne penses pas aux autres ! »','À mes débuts, j’acceptais les corrections à contrecœur, et ce n’était pas bien. Nous devons reconnaître que les autres ont raison lorsque nous avons tort. Je ne saurais trop insister sur l’importance des guides et des collaborateurs dans notre marche chrétienne.','Avec le temps, j’ai constaté qu’une personne qui ne s’est jamais soumise à un autre membre du Corps du Christ a du mal à reconnaître que quelqu’un d’autre a raison, même lorsqu’elle-même se trompe.','Ce jour-là, j’ai compris que les choses ne seraient pas si faciles et que, désormais, j’allais recevoir des remontrances sur le plan spirituel.','Je vous assure que ce ne fut pas la seule fois où j’ai été ainsi « corrigé » !','En quelques mots, voilà le christianisme : <strong>penser et agir</strong> pour le bien des autres — même lorsque nous ne les voyons pas — afin qu’ils soient sauvés.','Entendre un message dans son lieu de réunion et le garder dans son esprit est une chose. Accueillir les « vérités » dans son cœur, les vivre et les appliquer tout au long de sa vie en est une autre.','Nous disons parfois : « Nous ne ménagerons aucun effort » ou « jusqu’à la dernière goutte de sueur » pour ceci ou cela. Mais <strong>JÉSUS</strong> a donné sa vie jusqu’à la mort ; ainsi, Dieu nous a délivrés du pouvoir des ténèbres et nous a transférés dans le royaume de son Fils bien-aimé.','Il a toujours pensé à nous, et il continue de le faire.'],heading:'Le bien-être du prochain',back1:'← Retour aux enseignements',back2:'Retour au menu'},
-zh:{brand:'胶囊圣言',title:'在 Gullivers 喝茶',author:'作者：J.V.',p:[
-'我想分享的这件事，是教我认识福音的那个人亲自教给我的。',
-'1986年至1987年间的一个早晨，我们在一家名叫“Gullivers”的店里。它位于第82街，出售美味的鱼肉三明治、咖啡、茶和其他点心。',
-'我们常常去那里喝茶、谈论上帝的话语。正如我在个人见证中所说的，重生为我的生命带来了新的热忱。事实上，我热情洋溢，以至于我们总想谈论主。',
-'这就像你向最好的朋友谈起刚认识、并且觉得自己已经爱上的女孩一样；属灵的事也是如此。你已经找到了你的救主、主和看顾者，因此你会与祂交谈，也会谈论祂。',
-'那天早上，店面虽然宽敞，却几乎没有人，所以有很多空桌子。像往常一样，我带着公文包，并把它放在旁边的椅子上。我心想：<strong>“地方这么大，就放在那里吧。”</strong>',
-'那位属神的人对我说：',
-'“把它放在你自己的座位上。”',
-'“什么？”我问。',
-'“你的公文包。”',
-'然后，他温和地补充说：',
-'“你这样做对别人很自私。”',
-'“朋友，这里几乎没有人啊。”我几乎带着恼怒回答。',
-'他接着对我说：',
-'“你看，你认定不会有人来了。你没有想到，如果有人来了，为了不打扰你，他可能不好意思向你要那个座位，结果你实际上就给他造成了不便。你没有替别人着想！”',
-'刚开始时，我很不情愿地接受别人的纠正，这是不对的；当别人是对的、而我们错了时，我们就应该承认。我再怎么强调，在基督徒的生命道路上，有属灵导师和同行的弟兄姊妹陪伴是多么重要，也不为过。',
-'随着时间过去，我发现，一个从未顺服过基督身体中其他肢体的人，即使自己错了，也很难承认别人是对的。',
-'就在那一天，我意识到事情不会那么容易；从那以后，我将在属灵方面受到不少“管教”。',
-'我向你们保证，这绝不是我第一次受到这样的属灵“责打”！',
-'用一句话来说，这就是基督信仰：为了别人的益处而<strong>思想并采取行动</strong>——即使我们看不见他们——使他们可以得救。',
-'在聚会的地方听到一篇信息，并把它记在脑海里，是一回事；把“真理”领受在心里，在生活中实践，并在余生持续应用，则是另一回事。',
-'有时，我们会说，为了某件事“我们会竭尽全力”，或“直到流尽最后一滴汗”。然而，<strong>耶稣</strong>舍命至死；因此，上帝救我们脱离黑暗的权势，把我们迁入祂爱子的国度。',
-'祂一直顾念我们，直到如今仍然如此。'
-],heading:'顾念他人的福祉',back1:'← 返回教导文章',back2:'返回菜单'}
-};
-function setLanguage(lang){if(!languageText[lang])lang='es';const t=languageText[lang];document.documentElement.lang=lang;localStorage.setItem('lpc-language',lang);const head=document.querySelector('.section-label');if(head)head.textContent=t.brand;document.querySelector('h1').textContent=t.title;document.querySelector('.author').textContent=t.author;const ps=[...document.querySelectorAll('.article > p, .dialogue p, .reflection p')];ps.forEach((el,i)=>{if(t.p[i]!==undefined)el.innerHTML=t.p[i]});document.querySelector('.reflection-title').textContent=t.heading;const links=document.querySelectorAll('.article-nav a');if(links[0])links[0].textContent=t.back1;if(links[1])links[1].textContent=t.back2;document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));document.title=lang==='en'?'Tea at Gullivers — The Word in Capsules':lang==='fr'?'Un thé chez Gullivers — La Parole en Capsules':lang==='zh'?'在 Gullivers 喝茶 — 胶囊圣言':'Un té en Gullivers — La Palabra en Cápsulas'}
-document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));setLanguage(localStorage.getItem('lpc-language')||'es');
-</script>
+const translations = {
+es: {
+  brand:"La Palabra en Cápsulas",
+  title:"Un té en Gullivers",
+  author:"Por J.V.",
+  opening:[
+    "Lo que quiero transmitir me lo enseñó la misma persona que me compartió el evangelio.",
+    "Una vez nos encontrábamos en “Gullivers”, un sitio en la calle 82 St., una mañana de 1986-87, donde vendían un delicioso sándwich de pescado, café, té y otras delicias.",
+    "Íbamos a menudo a tomar té y hablar de la Palabra de Dios. Recuerden que les dije en el testimonio que, con mi nuevo nacimiento, vino un nuevo brío sobre mí. En realidad, estaba tan fogoso que queríamos hablar del Señor todo el tiempo.",
+    "Pues así como hablas a tu mejor amigo de aquella chica que acabas de conocer y de la cual crees estar enamorado, pues así pasa en las cosas espirituales. Tú has encontrado a tu Salvador, Señor y Cuidador, y por ello hablas con Él y de Él.",
+    "Esa mañana el local, aunque era amplio, estaba prácticamente solo y, por lo tanto, había muchas mesas disponibles. Yo, como siempre, andaba con mi maletín, el cual puse en la silla contigua. Pensé: <strong>“Hay mucho espacio, pongámoslo ahí”.</strong>",
+    "El hombre de Dios me dijo:"
+  ],
+  dialogue:[
+    "—Ponlo en tu asiento.",
+    "—¿Qué cosa? —le pregunté.",
+    "—Pues tu maletín.",
+    "Y en tono suave agregó:",
+    "—Estás siendo egoísta con los demás.",
+    "—Amigo, no hay nadie prácticamente en el lugar —le repliqué, casi irritado.",
+    "A lo cual él me respondió:",
+    "“¿Ves? Estás asumiendo que nadie va a venir. Y no te das cuenta de que, si alguien lo hace, puede, por no causarte molestias, declinar pedirte el asiento y prácticamente lo habrás perjudicado. ¡No estás pensando en los demás!”"
+  ],
+  after:[
+    "En mis comienzos, aceptaba las correcciones muy a regañadientes y no está bien, pues debemos aceptar cuando otros están en lo cierto y nosotros no. Por ello, hoy día, no puedo enfatizar lo suficiente la importancia de los ayos y colaboradores que debemos tener en nuestro caminar cristiano.",
+    "Con el tiempo he comprobado que es difícil que una persona que no se ha sometido a otro miembro del Cuerpo de Cristo le dé alguna vez la razón a otro, aun estando en error.",
+    "Ese mismo día me di cuenta de que la cosa no iba a ser tan fácil y que, en adelante, me iban a dar “garrote” en sentido espiritual.",
+    "¡Les aseguro que no fue la única vez que me “cascaron”!"
+  ],
+  reflectionTitle:"Bienestar del prójimo",
+  reflection:[
+    "En una cápsula, eso es el cristianismo: <strong>pensar y actuar</strong> a favor de los demás —así no los estemos viendo— para que sean salvos.",
+    "El recibir un mensaje en tu lugar de reunión y alojarlo en tu cerebro es una cosa. Recibir “verdades” en tu corazón, vivirlas y aplicarlas por el resto de tu vida es otra.",
+    "A veces decimos: “No ahorraremos esfuerzo” o “hasta la última gota de sudor” por esto o aquello. Pero <strong>JESÚS</strong> derramó su vida hasta la muerte, y así Dios nos libró de la potestad de las tinieblas y nos trasladó al reino de su amado Hijo.",
+    "Él siempre nos tuvo en cuenta, y aún lo hace."
+  ],
+  back1:"← Volver a Enseñanzas",
+  back2:"Volver al Menú",
+  docTitle:"Un té en Gullivers — La Palabra en Cápsulas",
+  dir:"ltr"
+},
 
+en: {
+  brand:"The Word in Capsules",
+  title:"Tea at Gullivers",
+  author:"By J.V.",
+  opening:[
+    "The lesson I want to share was taught to me by the very person who shared the gospel with me.",
+    "One morning in 1986–87, we were at “Gullivers,” a place on 82nd Street that sold a delicious fish sandwich, coffee, tea, and other treats.",
+    "We often went there for tea and to talk about the Word of God. As I mentioned in my testimony, my new birth brought a fresh zeal into my life. I was so enthusiastic that we wanted to talk about the Lord all the time.",
+    "Just as you tell your best friend about a girl you have just met and think you are falling in love with, the same happens in spiritual matters. You have found your Savior, Lord, and Caretaker, so you talk with Him and about Him.",
+    "That morning, although the place was spacious, it was almost empty, so plenty of tables were available. As usual, I had my briefcase with me and placed it on the neighboring chair. I thought: <strong>“There’s plenty of room; let’s put it there.”</strong>",
+    "The man of God said to me:"
+  ],
+  dialogue:[
+    "“Put it on your own seat.”",
+    "“What?” I asked.",
+    "“Your briefcase.”",
+    "Then he added gently:",
+    "“You’re being selfish toward others.”",
+    "“My friend, there’s practically nobody here,” I replied, almost irritated.",
+    "He answered:",
+    "“See? You’re assuming no one else will come. You don’t realize that if someone does arrive, they might avoid asking you for the seat so as not to inconvenience you, and you will have practically disadvantaged them. You’re not thinking about others!”"
+  ],
+  after:[
+    "At first, I accepted correction very reluctantly, and that was not right. We should acknowledge when others are right and we are not. I cannot stress enough the importance of mentors and fellow believers who walk alongside us on our Christian journey.",
+    "Over time, I have found that someone who has never submitted to another member of the Body of Christ has difficulty acknowledging that another person is right—even when they themselves are wrong.",
+    "That very day I realized this would not be so easy and that, from then on, I would receive some spiritual “discipline.”",
+    "I assure you, that was not the only time I received a spiritual “spanking”!"
+  ],
+  reflectionTitle:"Caring for Our Neighbor",
+  reflection:[
+    "In a nutshell, that is Christianity: <strong>thinking and acting</strong> for the good of others—even when we cannot see them—so that they may be saved.",
+    "Hearing a message at your place of worship and storing it in your mind is one thing. Receiving “truths” in your heart, living them, and applying them for the rest of your life is another.",
+    "Sometimes we say, “We will spare no effort” or “until the last drop of sweat” for this or that. But <strong>JESUS</strong> poured out His life unto death, and God delivered us from the dominion of darkness and brought us into the kingdom of His beloved Son.",
+    "He has always taken us into account, and He still does."
+  ],
+  back1:"← Back to Teachings",
+  back2:"Back to Menu",
+  docTitle:"Tea at Gullivers — The Word in Capsules",
+  dir:"ltr"
+},
+
+fr: {
+  brand:"La Parole en Capsules",
+  title:"Un thé chez Gullivers",
+  author:"Par J.V.",
+  opening:[
+    "Ce que je veux transmettre m’a été enseigné par la personne même qui m’a annoncé l’Évangile.",
+    "Un matin de 1986-1987, nous étions chez « Gullivers », un établissement situé sur la 82e Rue, où l’on vendait un délicieux sandwich au poisson, du café, du thé et d’autres gourmandises.",
+    "Nous y allions souvent pour prendre le thé et parler de la Parole de Dieu. Comme je l’ai raconté dans mon témoignage, ma nouvelle naissance a fait naître en moi un nouvel élan. J’étais si enthousiaste que nous voulions parler du Seigneur tout le temps.",
+    "Tout comme vous parlez à votre meilleur ami d’une jeune femme que vous venez de rencontrer et dont vous pensez être amoureux, il en va de même dans la vie spirituelle. Vous avez trouvé votre Sauveur, Seigneur et Protecteur ; vous parlez donc avec Lui et de Lui.",
+    "Ce matin-là, bien que le lieu fût spacieux, il était presque vide et de nombreuses tables étaient libres. Comme toujours, j’avais ma mallette et je l’ai posée sur la chaise voisine. Je me suis dit : <strong>« Il y a beaucoup de place, mettons-la là. »</strong>",
+    "L’homme de Dieu m’a dit :"
+  ],
+  dialogue:[
+    "— Mets-la sur ta propre chaise.",
+    "— Quoi donc ? lui ai-je demandé.",
+    "— Ta mallette.",
+    "Puis il ajouta doucement :",
+    "— Tu fais preuve d’égoïsme envers les autres.",
+    "— Mon ami, il n’y a pratiquement personne ici, lui ai-je répondu, presque irrité.",
+    "Il m’a alors répondu :",
+    "« Tu vois ? Tu supposes que personne ne viendra. Tu ne te rends pas compte que si quelqu’un arrive, il pourrait renoncer à te demander la chaise pour ne pas te déranger, et tu l’aurais ainsi désavantagé. Tu ne penses pas aux autres ! »"
+  ],
+  after:[
+    "À mes débuts, j’acceptais les corrections à contrecœur, et ce n’était pas bien. Nous devons reconnaître que les autres ont raison lorsque nous avons tort. Je ne saurais trop insister sur l’importance des guides et des collaborateurs dans notre marche chrétienne.",
+    "Avec le temps, j’ai constaté qu’une personne qui ne s’est jamais soumise à un autre membre du Corps du Christ a du mal à reconnaître que quelqu’un d’autre a raison, même lorsqu’elle-même se trompe.",
+    "Ce jour-là, j’ai compris que les choses ne seraient pas si faciles et que, désormais, j’allais recevoir des remontrances sur le plan spirituel.",
+    "Je vous assure que ce ne fut pas la seule fois où j’ai ainsi été « corrigé » !"
+  ],
+  reflectionTitle:"Le bien-être du prochain",
+  reflection:[
+    "En quelques mots, voilà le christianisme : <strong>penser et agir</strong> pour le bien des autres — même lorsque nous ne les voyons pas — afin qu’ils soient sauvés.",
+    "Entendre un message dans son lieu de réunion et le garder dans son esprit est une chose. Accueillir les « vérités » dans son cœur, les vivre et les appliquer tout au long de sa vie en est une autre.",
+    "Nous disons parfois : « Nous ne ménagerons aucun effort » ou « jusqu’à la dernière goutte de sueur » pour ceci ou cela. Mais <strong>JÉSUS</strong> a donné sa vie jusqu’à la mort ; ainsi, Dieu nous a délivrés du pouvoir des ténèbres et nous a transférés dans le royaume de son Fils bien-aimé.",
+    "Il a toujours pensé à nous, et il continue de le faire."
+  ],
+  back1:"← Retour aux enseignements",
+  back2:"Retour au menu",
+  docTitle:"Un thé chez Gullivers — La Parole en Capsules",
+  dir:"ltr"
+},
+
+zh: {
+  brand:"胶囊中的圣言",
+  title:"在 Gullivers 喝茶",
+  author:"作者：J.V.",
+  opening:[
+    "我想分享的这件事，是教我认识福音的那个人亲自教给我的。",
+    "1986年至1987年间的一个早晨，我们在一家名叫“Gullivers”的店里。它位于第82街，出售美味的鱼肉三明治、咖啡、茶和其他点心。",
+    "我们常常去那里喝茶、谈论上帝的话语。正如我在个人见证中所说的，重生为我的生命带来了新的热忱。事实上，我热情洋溢，以至于我们总想谈论主。",
+    "这就像你向最好的朋友谈起刚认识、并且觉得自己已经爱上的女孩一样；属灵的事也是如此。你已经找到了你的救主、主和看顾者，因此你会与祂交谈，也会谈论祂。",
+    "那天早上，店面虽然宽敞，却几乎没有人，所以有很多空桌子。像往常一样，我带着公文包，并把它放在旁边的椅子上。我心想：<strong>“地方这么大，就放在那里吧。”</strong>",
+    "那位属神的人对我说："
+  ],
+  dialogue:[
+    "“把它放在你自己的座位上。”",
+    "“什么？”我问。",
+    "“你的公文包。”",
+    "然后，他温和地补充说：",
+    "“你这样做对别人很自私。”",
+    "“朋友，这里几乎没有人啊。”我几乎带着恼怒回答。",
+    "他接着对我说：",
+    "“你看，你认定不会有人来了。你没有想到，如果有人来了，为了不打扰你，他可能不好意思向你要那个座位，结果你实际上就给他造成了不便。你没有替别人着想！”"
+  ],
+  after:[
+    "刚开始时，我很不情愿地接受别人的纠正，这是不对的；当别人是对的、而我们错了时，我们就应该承认。我再怎么强调，在基督徒的生命道路上，有属灵导师和同行的弟兄姊妹陪伴是多么重要，也不为过。",
+    "随着时间过去，我发现，一个从未顺服过基督身体中其他肢体的人，即使自己错了，也很难承认别人是对的。",
+    "就在那一天，我意识到事情不会那么容易；从那以后，我将在属灵方面受到不少“管教”。",
+    "我向你们保证，这绝不是我第一次受到这样的属灵“责打”！"
+  ],
+  reflectionTitle:"顾念他人的福祉",
+  reflection:[
+    "用一句话来说，这就是基督信仰：为了别人的益处而<strong>思想并采取行动</strong>——即使我们看不见他们——使他们可以得救。",
+    "在聚会的地方听到一篇信息，并把它记在脑海里，是一回事；把“真理”领受在心里，在生活中实践，并在余生持续应用，则是另一回事。",
+    "有时，我们会说，为了某件事“我们会竭尽全力”，或“直到流尽最后一滴汗”。然而，<strong>耶稣</strong>舍命至死；因此，上帝救我们脱离黑暗的权势，把我们迁入祂爱子的国度。",
+    "祂一直顾念我们，直到如今仍然如此。"
+  ],
+  back1:"← 返回教导文章",
+  back2:"返回菜单",
+  docTitle:"在 Gullivers 喝茶 — 胶囊中的圣言",
+  dir:"ltr"
+},
+
+it: {
+  brand:"La Parola in Capsule",
+  title:"Un tè da Gullivers",
+  author:"Di J.V.",
+  opening:[
+    "Ciò che desidero trasmettere mi è stato insegnato proprio dalla persona che mi ha annunciato il Vangelo.",
+    "Una mattina del 1986-1987 ci trovavamo da “Gullivers”, un locale sulla 82ª Strada dove vendevano un delizioso panino con pesce, caffè, tè e altre specialità.",
+    "Ci andavamo spesso per prendere il tè e parlare della Parola di Dio. Come ho raccontato nella mia testimonianza, la mia nuova nascita portò nella mia vita un nuovo entusiasmo. Ero così pieno di fervore che volevamo parlare del Signore in continuazione.",
+    "Proprio come racconti al tuo migliore amico di una ragazza che hai appena conosciuto e di cui pensi di esserti innamorato, così accade anche nelle cose spirituali. Hai trovato il tuo Salvatore, Signore e Custode, e per questo parli con Lui e di Lui.",
+    "Quella mattina il locale, pur essendo spazioso, era praticamente vuoto e c'erano molti tavoli liberi. Come sempre, avevo con me la mia valigetta e la posai sulla sedia accanto. Pensai: <strong>«C'è tanto spazio, mettiamola lì».</strong>",
+    "L'uomo di Dio mi disse:"
+  ],
+  dialogue:[
+    "«Mettila sulla tua sedia».",
+    "«Che cosa?» gli chiesi.",
+    "«La tua valigetta».",
+    "Poi aggiunse con tono pacato:",
+    "«Stai dimostrando egoismo verso gli altri».",
+    "«Amico, qui non c'è praticamente nessuno», risposi quasi irritato.",
+    "Allora lui mi rispose:",
+    "«Vedi? Stai dando per scontato che non verrà nessuno. Non ti rendi conto che, se arrivasse qualcuno, potrebbe rinunciare a chiederti quella sedia per non disturbarti, e così lo avresti praticamente penalizzato. Non stai pensando agli altri!»"
+  ],
+  after:[
+    "All'inizio accettavo le correzioni molto malvolentieri, e questo non era giusto. Dobbiamo riconoscere quando gli altri hanno ragione e noi abbiamo torto. Non sottolineerò mai abbastanza l'importanza di guide spirituali e collaboratori che ci accompagnino nel nostro cammino cristiano.",
+    "Col tempo ho constatato che chi non si è mai sottomesso a un altro membro del Corpo di Cristo fa fatica a riconoscere che un'altra persona abbia ragione, anche quando è lui stesso a sbagliare.",
+    "Quel giorno stesso capii che non sarebbe stato così facile e che, da quel momento in poi, avrei ricevuto qualche bella lezione sul piano spirituale.",
+    "Vi assicuro che non fu l'unica volta in cui ricevetti una simile “strigliata” spirituale!"
+  ],
+  reflectionTitle:"Il bene del prossimo",
+  reflection:[
+    "In poche parole, questo è il cristianesimo: <strong>pensare e agire</strong> per il bene degli altri, anche quando non li vediamo, affinché possano essere salvati.",
+    "Ascoltare un messaggio nel luogo in cui ci riuniamo e conservarlo nella mente è una cosa. Accogliere le “verità” nel cuore, viverle e metterle in pratica per il resto della vita è un'altra.",
+    "A volte diciamo: «Non risparmieremo alcuno sforzo» oppure «fino all'ultima goccia di sudore» per questa o quella cosa. Ma <strong>GESÙ</strong> ha donato la propria vita fino alla morte; così Dio ci ha liberati dal dominio delle tenebre e ci ha trasferiti nel regno del suo amato Figlio.",
+    "Egli ha sempre tenuto conto di noi e continua a farlo."
+  ],
+  back1:"← Torna agli insegnamenti",
+  back2:"Torna al menu",
+  docTitle:"Un tè da Gullivers — La Parola in Capsule",
+  dir:"ltr"
+},
+
+pt: {
+  brand:"A Palavra em Cápsulas",
+  title:"Um chá no Gullivers",
+  author:"Por J.V.",
+  opening:[
+    "O que desejo transmitir foi-me ensinado pela própria pessoa que compartilhou o evangelho comigo.",
+    "Certa manhã, em 1986 ou 1987, estávamos no “Gullivers”, um estabelecimento na 82nd Street onde vendiam um delicioso sanduíche de peixe, café, chá e outras iguarias.",
+    "Íamos lá com frequência para tomar chá e conversar sobre a Palavra de Deus. Como contei no meu testemunho, meu novo nascimento trouxe um novo entusiasmo à minha vida. Eu estava tão cheio de fervor que queríamos falar do Senhor o tempo todo.",
+    "Assim como você conta ao seu melhor amigo sobre uma moça que acabou de conhecer e por quem acredita estar apaixonado, o mesmo acontece nas coisas espirituais. Você encontrou seu Salvador, Senhor e Cuidador e, por isso, conversa com Ele e fala sobre Ele.",
+    "Naquela manhã, embora o local fosse espaçoso, estava praticamente vazio e havia muitas mesas disponíveis. Como sempre, eu estava com minha maleta e a coloquei na cadeira ao lado. Pensei: <strong>“Há bastante espaço; vamos colocá-la ali.”</strong>",
+    "O homem de Deus me disse:"
+  ],
+  dialogue:[
+    "“Coloque-a no seu próprio assento.”",
+    "“O quê?”, perguntei.",
+    "“Sua maleta.”",
+    "Então ele acrescentou suavemente:",
+    "“Você está sendo egoísta com os outros.”",
+    "“Amigo, praticamente não há ninguém aqui”, respondi, quase irritado.",
+    "Ele então me respondeu:",
+    "“Está vendo? Você está supondo que ninguém virá. Não percebe que, se alguém chegar, talvez deixe de lhe pedir o assento para não incomodá-lo e, na prática, você terá prejudicado essa pessoa. Você não está pensando nos outros!”"
+  ],
+  after:[
+    "No começo, eu aceitava as correções com muita relutância, e isso não era certo. Devemos reconhecer quando os outros têm razão e nós estamos errados. Não consigo enfatizar o suficiente a importância de mentores espirituais e colaboradores que nos acompanhem em nossa caminhada cristã.",
+    "Com o tempo, constatei que uma pessoa que nunca se submeteu a outro membro do Corpo de Cristo tem dificuldade para reconhecer que outra pessoa está certa, mesmo quando ela própria está errada.",
+    "Naquele mesmo dia, percebi que as coisas não seriam tão fáceis e que, dali em diante, receberia algumas boas lições no campo espiritual.",
+    "Garanto a vocês que não foi a única vez que recebi uma dessas “correções” espirituais!"
+  ],
+  reflectionTitle:"O bem do próximo",
+  reflection:[
+    "Em poucas palavras, isso é o cristianismo: <strong>pensar e agir</strong> em favor dos outros — mesmo quando não os vemos — para que sejam salvos.",
+    "Ouvir uma mensagem no lugar onde nos reunimos e guardá-la na mente é uma coisa. Receber as “verdades” no coração, vivê-las e aplicá-las pelo resto da vida é outra.",
+    "Às vezes dizemos: “Não pouparemos esforços” ou “até a última gota de suor” por isto ou aquilo. Mas <strong>JESUS</strong> entregou sua vida até a morte; assim, Deus nos libertou do domínio das trevas e nos transportou para o reino de seu Filho amado.",
+    "Ele sempre levou em conta a nossa vida e continua fazendo isso."
+  ],
+  back1:"← Voltar aos ensinamentos",
+  back2:"Voltar ao menu",
+  docTitle:"Um chá no Gullivers — A Palavra em Cápsulas",
+  dir:"ltr"
+},
+
+he: {
+  brand:"דבר אלוהים בתמצית",
+  title:"תה ב־Gullivers",
+  author:"מאת J.V.",
+  opening:[
+    "את הדבר שאני רוצה להעביר לי לימד האדם עצמו שבישר לי את הבשורה.",
+    "בוקר אחד בשנים 1986–1987 היינו ב־Gullivers, מקום ברחוב 82 שבו מכרו כריך דגים טעים, קפה, תה ומאכלים נוספים.",
+    "נהגנו ללכת לשם לעיתים קרובות כדי לשתות תה ולדבר על דבר אלוהים. כפי שסיפרתי בעדות האישית שלי, הלידה החדשה הביאה לחיי התלהבות מחודשת. הייתי מלא כל כך בלהט, שרצינו לדבר על האדון כל הזמן.",
+    "כשם שאתה מספר לחברך הטוב ביותר על בחורה שזה עתה הכרת ושאתה חושב שהתאהבת בה, כך קורה גם בעניינים רוחניים. מצאת את המושיע שלך, את אדונך ואת מי שדואג לך, ולכן אתה מדבר איתו ועליו.",
+    "באותו בוקר המקום היה מרווח אך כמעט ריק, ולכן היו שולחנות רבים פנויים. כמו תמיד, הייתה איתי תיקיית המסמכים שלי, והנחתי אותה על הכיסא שלצדי. חשבתי: <strong>״יש כאן הרבה מקום, נשים אותה שם.״</strong>",
+    "איש האלוהים אמר לי:"
+  ],
+  dialogue:[
+    "״שים אותה על הכיסא שלך.״",
+    "״מה?״ שאלתי.",
+    "״את התיק שלך.״",
+    "ואז הוסיף בעדינות:",
+    "״אתה נוהג באנוכיות כלפי אחרים.״",
+    "״ידידי, כמעט שאין כאן איש,״ השבתי, כמעט בכעס.",
+    "הוא ענה לי:",
+    "״אתה רואה? אתה מניח שאיש לא יבוא. אינך מבין שאם מישהו יגיע, ייתכן שהוא יוותר על בקשת הכיסא כדי לא להטריח אותך, וכך למעשה תפגע בו. אינך חושב על אחרים!״"
+  ],
+  after:[
+    "בתחילת דרכי קיבלתי תיקונים בחוסר רצון רב, וזה לא היה נכון. עלינו להכיר בכך שאחרים צודקים כאשר אנחנו טועים. איני יכול להדגיש מספיק את חשיבותם של מדריכים רוחניים ושל שותפים לדרך המלווים אותנו בהליכתנו עם המשיח.",
+    "עם הזמן נוכחתי לדעת שאדם שמעולם לא קיבל את סמכותו של חבר אחר בגוף המשיח מתקשה להודות שאדם אחר צודק, אפילו כאשר הוא עצמו טועה.",
+    "באותו יום הבנתי שהדרך לא תהיה קלה כל כך, ושמעתה אקבל לא מעט תוכחה בתחום הרוחני.",
+    "אני מבטיח לכם שזו לא הייתה הפעם היחידה שבה קיבלתי ״נזיפה״ רוחנית!"
+  ],
+  reflectionTitle:"דאגה לזולת",
+  reflection:[
+    "בקיצור, זהו עיקרון הנצרות: <strong>לחשוב ולפעול</strong> לטובת אחרים — גם כשאיננו רואים אותם — כדי שייוושעו.",
+    "לשמוע מסר במקום שבו אנו מתכנסים ולשמור אותו בזיכרון הוא דבר אחד. לקבל את ה״אמיתות״ בלב, לחיות לפיהן וליישם אותן לאורך כל החיים הוא דבר אחר.",
+    "לפעמים אנו אומרים שלא נחסוך במאמץ, או שנעשה דבר מה ״עד טיפת הזיעה האחרונה״. אך <strong>ישוע</strong> מסר את חייו עד מוות, וכך הציל אותנו אלוהים משלטון החושך והעביר אותנו אל מלכות בנו האהוב.",
+    "אלוהים תמיד התחשב בנו, והוא ממשיך לעשות זאת גם היום."
+  ],
+  back1:"← חזרה ללימודים",
+  back2:"חזרה לתפריט",
+  docTitle:"תה ב־Gullivers — דבר אלוהים בתמצית",
+  dir:"rtl"
+},
+
+ar: {
+  brand:"كلمة الله في كبسولات",
+  title:"شاي في غوليفرز",
+  author:"بقلم J.V.",
+  opening:[
+    "الشخص الذي علّمني ما أريد أن أنقله إليكم هو نفسه الذي شاركني بشارة الإنجيل.",
+    "في صباح من عام 1986 أو 1987، كنا في مكان يُسمّى «غوليفرز» في الشارع الثاني والثمانين، وكانوا يبيعون فيه شطائر السمك اللذيذة والقهوة والشاي وغيرها من المأكولات.",
+    "كنا نذهب إلى هناك كثيرًا لشرب الشاي والتحدث عن كلمة الله. وكما ذكرت في شهادتي، فإن ولادتي الجديدة جلبت إلى حياتي حماسة متجددة. كنت متحمسًا جدًا حتى إننا أردنا التحدث عن الرب طوال الوقت.",
+    "كما تتحدث إلى أعز أصدقائك عن فتاة تعرّفت إليها للتو وتظن أنك وقعت في حبها، هكذا يحدث الأمر أيضًا في الحياة الروحية. لقد وجدت مخلّصك وربك ومن يعتني بك، ولذلك تتحدث معه وعنه.",
+    "في ذلك الصباح، كان المكان واسعًا لكنه شبه خالٍ، وكانت هناك طاولات كثيرة متاحة. وكالعادة، كانت حقيبتي معي، فوضعتها على الكرسي المجاور. قلت في نفسي: <strong>«هناك مساحة كبيرة، فلنضعها هنا».</strong>",
+    "فقال لي رجل الله:"
+  ],
+  dialogue:[
+    "«ضعها على مقعدك أنت».",
+    "«ماذا؟» سألته.",
+    "«حقيبتك».",
+    "ثم أضاف بهدوء:",
+    "«أنت تتصرف بأنانية تجاه الآخرين».",
+    "«يا صديقي، لا يوجد أحد هنا تقريبًا»، أجبته وقد بدأت أشعر بالانزعاج.",
+    "فردّ عليّ قائلًا:",
+    "«أرأيت؟ أنت تفترض أن أحدًا لن يأتي. ولا تدرك أنه إذا جاء شخص ما، فقد يمتنع عن طلب المقعد منك حتى لا يزعجك، وبذلك تكون قد أضررت به عمليًا. أنت لا تفكر في الآخرين!»"
+  ],
+  after:[
+    "في بداياتي، كنت أتقبل التصحيح على مضض شديد، ولم يكن ذلك صحيحًا. علينا أن نعترف عندما يكون الآخرون على صواب ونكون نحن مخطئين. ولا أستطيع أن أؤكد بما يكفي أهمية المرشدين الروحيين والإخوة الذين يرافقوننا في مسيرتنا المسيحية.",
+    "ومع مرور الوقت، أدركت أن الشخص الذي لم يخضع يومًا لعضو آخر في جسد المسيح يجد صعوبة في الاعتراف بأن شخصًا آخر على حق، حتى عندما يكون هو نفسه مخطئًا.",
+    "في ذلك اليوم أدركت أن الأمر لن يكون سهلًا كما ظننت، وأنني سأتلقى منذ ذلك الحين توبيخًا وتأديبًا روحيًا.",
+    "أؤكد لكم أن تلك لم تكن المرة الوحيدة التي تلقيت فيها مثل هذا «التأديب» الروحي!"
+  ],
+  reflectionTitle:"الاهتمام بالآخرين",
+  reflection:[
+    "باختصار، هذا هو جوهر المسيحية: أن <strong>نفكر ونتصرف</strong> من أجل خير الآخرين، حتى عندما لا نراهم، لكي ينالوا الخلاص.",
+    "أن تسمع رسالة في مكان اجتماعك وتحتفظ بها في ذهنك أمر، وأن تستقبل «الحقائق» في قلبك وتعيش بها وتطبقها طوال حياتك أمر آخر.",
+    "أحيانًا نقول إننا لن ندخر جهدًا، أو إننا سنواصل العمل «حتى آخر قطرة عرق» من أجل هذا الأمر أو ذاك. لكن <strong>يسوع</strong> بذل حياته حتى الموت، وهكذا أنقذنا الله من سلطان الظلمة ونقلنا إلى ملكوت ابنه الحبيب.",
+    "لقد وضعنا الله دائمًا في حسبانه، ولا يزال يفعل ذلك حتى اليوم."
+  ],
+  back1:"← العودة إلى التعاليم",
+  back2:"العودة إلى القائمة",
+  docTitle:"شاي في غوليفرز — كلمة الله في كبسولات",
+  dir:"rtl"
+}
+};
+
+function makeParagraphs(items){
+  return items.map(function(item){
+    const p=document.createElement("p");
+    p.innerHTML=item;
+    return p;
+  });
+}
+
+function renderSection(id,items){
+  const section=document.getElementById(id);
+  section.replaceChildren(...makeParagraphs(items));
+}
+
+function setLanguage(lang){
+  if(!Object.prototype.hasOwnProperty.call(translations,lang)){
+    lang="es";
+  }
+
+  const t=translations[lang];
+
+  document.documentElement.lang=lang==="zh"?"zh-CN":lang;
+  document.documentElement.dir=t.dir;
+  document.title=t.docTitle;
+
+  document.getElementById("brand").textContent=t.brand;
+  document.getElementById("title").textContent=t.title;
+  document.getElementById("author").textContent=t.author;
+
+  renderSection("opening",t.opening);
+  renderSection("dialogue",t.dialogue);
+  renderSection("afterDialogue",t.after);
+  renderSection("reflection",t.reflection);
+
+  document.getElementById("reflectionTitle").textContent=t.reflectionTitle;
+  document.getElementById("back1").textContent=t.back1;
+  document.getElementById("back2").textContent=t.back2;
+
+  document.querySelectorAll("[data-lang]").forEach(function(button){
+    button.setAttribute(
+      "aria-pressed",
+      String(button.dataset.lang===lang)
+    );
+  });
+
+  try{
+    localStorage.setItem("lpc-language",lang);
+  }catch(error){
+    // La página funciona también si el almacenamiento no está disponible.
+  }
+}
+
+document.querySelectorAll("[data-lang]").forEach(function(button){
+  button.addEventListener("click",function(){
+    setLanguage(button.dataset.lang);
+  });
+});
+
+(function initializeLanguage(){
+  let lang="es";
+
+  try{
+    const saved=localStorage.getItem("lpc-language");
+    if(Object.prototype.hasOwnProperty.call(translations,saved)){
+      lang=saved;
+    }
+  }catch(error){
+    // El idioma inicial será español.
+  }
+
+  setLanguage(lang);
+})();
+</script>
 </body>
 </html>
