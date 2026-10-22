@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es" class="notranslate">
 <head>
@@ -7,277 +7,130 @@
 <meta name="google" content="notranslate">
 <meta name="googlebot" content="notranslate">
 <meta name="robots" content="notranslate">
+<meta name="translator" content="no">
 <title>Él está al tanto — Parte 1 — La Palabra en Cápsulas</title>
 
 <style>
 :root {
-  --text: #252525;
-  --muted: #666;
-  --accent: #17365D;
-  --paper: #F8F4EC;
-  --bg: #f2f0ec;
-  --line: #d9d9d9;
+  --text:#252525; --muted:#666; --accent:#17365D;
+  --paper:#F8F4EC; --bg:#f2f0ec; --line:#d9d9d9;
 }
-
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin:0; padding:0; background:var(--bg); color:var(--text);
+  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
 }
-
 .page {
-  width: 900px;
-  max-width: calc(100% - 40px);
-  margin: 35px auto;
-  padding: 48px 65px 45px;
-  background: var(--paper);
-  border-radius: 5px;
-  box-shadow: 0 4px 18px rgba(0,0,0,.07);
+  width:900px; max-width:calc(100% - 40px); margin:35px auto;
+  padding:48px 65px 45px; background:var(--paper); border-radius:5px;
+  box-shadow:0 4px 18px rgba(0,0,0,.07);
 }
-
-header {
-  text-align: center;
-  margin-bottom: 26px;
-}
-
+header { text-align:center; margin-bottom:26px; }
 .site-name {
-  margin-bottom: 8px;
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
+  margin-bottom:8px; color:var(--accent); font-size:13px;
+  font-weight:700; letter-spacing:1.8px;
 }
-
-.author {
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 17px;
-  font-style: italic;
-}
-
+.author { margin:0 0 12px; color:var(--muted); font-size:17px; font-style:italic; }
 h1 {
-  margin: 0 0 8px;
-  color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 36px;
-  line-height: 1.2;
-  font-weight: 700;
+  margin:0 0 8px; color:var(--accent);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:36px; line-height:1.2; font-weight:700;
 }
-
-.part-label {
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: 16px;
-  font-style: italic;
-}
-
+.part-label { margin-top:5px; color:var(--muted); font-size:16px; font-style:italic; }
 .language-selector {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 auto 30px;
-  flex-wrap: wrap;
+  display:flex; justify-content:center; gap:8px;
+  margin:0 auto 30px; flex-wrap:wrap;
 }
-
 .language-selector button {
-  min-height: 40px;
-  border: 1px solid var(--accent);
-  border-radius: 5px;
-  padding: 8px 15px;
-  background: transparent;
-  color: var(--accent);
-  font: 600 14px "Segoe UI", Tahoma, sans-serif;
-  cursor: pointer;
-  transition: background .2s, color .2s;
+  min-height:40px; border:1px solid var(--accent); border-radius:5px;
+  padding:8px 15px; background:transparent; color:var(--accent);
+  font:600 14px "Segoe UI",Tahoma,sans-serif; cursor:pointer;
+  transition:background .2s,color .2s;
 }
-
 .language-selector button[aria-pressed="true"],
 .language-selector button:hover,
-.language-selector button:focus-visible {
-  background: var(--accent);
-  color: #fff;
-}
-
+.language-selector button:focus-visible { background:var(--accent); color:#fff; }
 .article p {
-  margin: 0 0 22px;
-  font-size: 17px;
-  line-height: 1.8;
-  text-align: justify;
+  margin:0 0 22px; font-size:17px; line-height:1.8; text-align:justify;
 }
-
 .cascade {
-  margin: 22px 0 25px;
-  padding: 4px 0 4px 20px;
-  border-left: 3px solid var(--accent);
-  font-size: 17px;
-  line-height: 1.7;
+  margin:22px 0 25px; padding:4px 0 4px 20px;
+  border-left:3px solid var(--accent); font-size:17px; line-height:1.7;
 }
-
-.cascade div { margin-bottom: 5px; }
-.cascade div:last-child { margin-bottom: 0; }
-
+.cascade div { margin-bottom:5px; }
+.cascade div:last-child { margin-bottom:0; }
 .scripture {
-  margin: 23px 0;
-  padding: 12px 20px;
-  border-left: 3px solid var(--accent);
-  font-size: 17px;
-  line-height: 1.7;
-  text-align: justify;
+  margin:23px 0; padding:12px 20px; border-left:3px solid var(--accent);
+  font-size:17px; line-height:1.7; text-align:justify;
 }
-
 .footnote-ref {
-  display: inline-block;
-  position: relative;
-  font-size: 19px !important;
-  vertical-align: super;
-  line-height: 1;
-  color: var(--accent);
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0 2px;
-  -webkit-tap-highlight-color: transparent;
+  display:inline-block; position:relative; font-size:19px!important;
+  vertical-align:super; line-height:1; color:var(--accent);
+  font-weight:700; cursor:pointer; text-decoration:none; padding:0 2px;
+  -webkit-tap-highlight-color:transparent;
 }
-
-.footnote-ref:hover { text-decoration: underline; }
-
+.footnote-ref:hover { text-decoration:underline; }
 .footnote-popup {
-  display: none;
-  position: absolute;
-  left: 50%;
-  bottom: 135%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: max-content;
-  max-width: min(280px, 78vw);
-  padding: 10px 13px;
-  border-radius: 6px;
-  background: #17365D;
-  color: #fff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  white-space: normal;
-  box-shadow: 0 3px 12px rgba(0,0,0,.2);
-  pointer-events: none;
+  display:none; position:absolute; left:50%; bottom:135%;
+  transform:translateX(-50%); z-index:1000; width:max-content;
+  max-width:min(280px,78vw); padding:10px 13px; border-radius:6px;
+  background:#17365D; color:#fff;
+  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  font-size:15px; font-weight:400; line-height:1.5; text-align:center;
+  white-space:normal; box-shadow:0 3px 12px rgba(0,0,0,.2);
+  pointer-events:none;
 }
-
-.footnote-ref.show-note .footnote-popup {
-  display: block;
-}
-
+.footnote-ref.show-note .footnote-popup { display:block; }
 .footer-nav {
-  margin-top: 35px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  text-align: center;
+  margin-top:35px; padding-top:22px; border-top:1px solid var(--line);
+  text-align:center;
 }
-
 .footer-nav a {
-  display: inline-block;
-  margin: 8px 10px;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
+  display:inline-block; margin:8px 10px; color:var(--accent);
+  text-decoration:none; font-size:16px; font-weight:700;
 }
-
-.footer-nav a:hover { text-decoration: underline; }
-
+.footer-nav a:hover { text-decoration:underline; }
+html[dir="rtl"] body { direction:rtl; }
+html[dir="rtl"] header { text-align:center; }
 html[dir="rtl"] .article p,
-html[dir="rtl"] .scripture {
-  text-align: right;
-}
-
+html[dir="rtl"] .scripture { text-align:right; }
 html[dir="rtl"] .cascade {
-  border-left: 0;
-  border-right: 3px solid var(--accent);
-  padding-left: 0;
-  padding-right: 20px;
+  border-left:0; border-right:3px solid var(--accent);
+  padding-left:0; padding-right:20px;
 }
-
-html[dir="rtl"] .footnote-popup { direction: rtl; }
-
+html[dir="rtl"] .footnote-popup { direction:rtl; }
 html[lang="zh"] .article,
 html[lang="zh"] .scripture {
-  font-family: "Noto Sans CJK SC", "Microsoft YaHei",
-               "PingFang SC", sans-serif;
+  font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;
 }
-
-@media (max-width: 700px) {
+@media (max-width:700px) {
   .page {
-    width: auto;
-    max-width: none;
-    margin: 0;
-    padding: 30px 22px;
-    border-radius: 0;
-    box-shadow: none;
+    width:auto; max-width:none; margin:0; padding:30px 22px;
+    border-radius:0; box-shadow:none;
   }
-
-  header { margin-bottom: 24px; }
-
-  .site-name {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-  }
-
-  h1 { font-size: 30px; line-height: 1.3; }
-  .author { font-size: 16px; }
-  .part-label { font-size: 15px; }
-
-  .language-selector {
-    gap: 7px;
-    margin-bottom: 26px;
-  }
-
-  .language-selector button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .article p {
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
+  header { margin-bottom:24px; }
+  .site-name { font-size:12px; letter-spacing:1.5px; }
+  h1 { font-size:30px; line-height:1.3; }
+  .author { font-size:16px; }
+  .part-label { font-size:15px; }
+  .language-selector { gap:7px; margin-bottom:26px; }
+  .language-selector button { padding:8px 12px; font-size:14px; }
+  .article p { font-size:17px; line-height:1.8; }
   .cascade {
-    margin: 18px 0 22px;
-    padding-left: 16px;
-    font-size: 17px;
-    line-height: 1.7;
+    margin:18px 0 22px; padding-left:16px;
+    font-size:17px; line-height:1.7;
   }
-
-  .scripture {
-    margin: 22px 0;
-    padding: 12px 16px;
-    font-size: 17px;
-    line-height: 1.7;
-  }
-
-  .footnote-ref { font-size: 20px !important; }
-  .footnote-popup { font-size: 15px; max-width: 75vw; }
-
-  .footer-nav a {
-    display: block;
-    margin: 14px 0;
-  }
+  .scripture { margin:22px 0; padding:12px 16px; font-size:17px; line-height:1.7; }
+  .footnote-ref { font-size:20px!important; }
+  .footnote-popup { font-size:15px; max-width:75vw; }
+  .footer-nav a { display:block; margin:14px 0; }
 }
 </style>
 </head>
 
 <body>
 <main class="page">
-
 <header>
   <div class="site-name">LA PALABRA EN CÁPSULAS</div>
   <div class="author">Por J.V.</div>
@@ -290,6 +143,10 @@ html[lang="zh"] .scripture {
   <button type="button" data-lang="en" aria-pressed="false">English</button>
   <button type="button" data-lang="zh" aria-pressed="false">中文</button>
   <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+  <button type="button" data-lang="it" aria-pressed="false">Italiano</button>
+  <button type="button" data-lang="pt" aria-pressed="false">Português</button>
+  <button type="button" data-lang="he" aria-pressed="false">עברית</button>
+  <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
 </nav>
 
 <article class="article"></article>
@@ -298,18 +155,15 @@ html[lang="zh"] .scripture {
   <a href="el-esta-al-tanto-parte-2.html" id="next-link"></a>
   <a href="index.html" id="back-link"></a>
 </nav>
-
 </main>
 
 <script>
 const translations = {
 es: {
-title: "Él está al tanto — Parte 1 — La Palabra en Cápsulas",
-author: "Por J.V.",
-heading: "Él está al tanto",
-part: "Parte 1",
-nav: ["Continuar con Parte 2 →", "← Volver a Artículos"],
-article: `
+title:"Él está al tanto — Parte 1 — La Palabra en Cápsulas",
+author:"Por J.V.", heading:"Él está al tanto", part:"Parte 1",
+nav:["Continuar con Parte 2 →","← Volver a Artículos"],
+article:`
 <p>Amigos, nadie está exento de sufrir algo tan terrible como un terremoto o de una situación angustiosa. Pero de algo sí estoy seguro: Dios es misericordioso<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">Efesios 2:4-5</span></span></sup>, y por tanto, podemos pedir su protección.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">Salmos 18:2</span></span></sup> Desde hace un tiempo, además de mis oraciones regulares, he incluido en ellas un <strong>refuerzo</strong>: pedir al Altísimo que nos proteja de toda cosa negativa.</p>
 <div class="cascade"><div>• Calamidad, accidente, secuestro, tsunami, huracán o terremoto.</div><div>• Accidentes, atracos y extorsiones.</div><div>• Enfermedades crueles y dolorosas.</div><div>• Y, como dice la oración modelo, que nos libre de todo mal.</div></div>
 <p>Como escribí arriba, esos elementos los he incluido en mis oraciones. Debemos elevar nuestra petición al único Santo Padre del cielo que hay, en el nombre de Jesús, y agradecer al final, creyendo que Él ya lo ha hecho. Adore al Señor en ese mismo instante con acción de gracias, pues eso es de su agrado.</p>
@@ -333,90 +187,192 @@ article: `
 },
 
 en: {
-title: "He Is Aware — Part 1 — La Palabra en Cápsulas",
-author: "By J.V.",
-heading: "He Is Aware",
-part: "Part 1",
-nav: ["Continue to Part 2 →", "← Back to Articles"],
-article: `
+title:"He Is Aware — Part 1 — La Palabra en Cápsulas",
+author:"By J.V.", heading:"He Is Aware", part:"Part 1",
+nav:["Continue to Part 2 →","← Back to Articles"],
+article:`
 <p>Friends, no one is exempt from suffering something as terrible as an earthquake or an anguishing situation. But there is one thing I am sure of: God is merciful<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">Ephesians 2:4-5</span></span></sup>, and therefore we can ask for His protection.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">Psalm 18:2</span></span></sup> For some time now, in addition to my regular prayers, I have included an extra <strong>reinforcement</strong>: asking the Most High to protect us from every kind of harm.</p>
 <div class="cascade"><div>• Calamity, accident, kidnapping, tsunami, hurricane, or earthquake.</div><div>• Accidents, robberies, and extortion.</div><div>• Cruel and painful illnesses.</div><div>• And, as the model prayer says, that He deliver us from all evil.</div></div>
 <p>As I wrote above, I have included these things in my prayers. We should lift our request to the one Holy Father in heaven, in the name of Jesus, and give thanks at the end, believing that He has already done it. Worship the Lord at that very moment with thanksgiving, for this pleases Him.</p>
-<p>The Christian church around the world does not entrust its own country to idols, statues, or anything that displeases God. Those who do so have not been born again, and we should share God’s counsel with them so they can go through the process of conversion. Let me tell you: some have turned to idols out of ignorance, not conviction; that is why believers should share the gospel with those who are seeking.</p>
-<p>Jeremiah 7 and 44 are two very forceful chapters of the Bible in which the Lord warns about the dangers of worshiping the <em>queen of heaven</em>. In ancient times, according to Greek mythology, that deity was called Artemis; later, Diana in Asia Minor—today’s Turkey.</p>
-<p>Later, the popes in Rome, thinking of what name to give a female divinity to resemble ancient pagan deities, chose the name of someone who had existed and said: “Mary.”</p>
+<p>The Christian church around the world does not entrust its own country to idols, statues, or anything that displeases God. Those who do so have not been born again, and we should share God’s counsel with them so they can go through the process of conversion. Some have turned to idols out of ignorance, not conviction; that is why believers should share the gospel with those who are seeking.</p>
+<p>Jeremiah 7 and 44 are two forceful chapters in which the Lord warns about the dangers of worshiping the <em>queen of heaven</em>. In ancient times, according to Greek mythology, that deity was called Artemis; later, Diana in Asia Minor—today’s Turkey.</p>
+<p>Later, the popes in Rome, seeking a name for a female divinity resembling ancient pagan deities, chose the name of someone who had existed and said: “Mary.”</p>
 <p>She never wanted to be venerated. Religion was the one that did so.</p>
-<p>And here I want to be clear. Mary, the mother of Jesus, was a devout woman, but she too needed a Savior: her own son! She said:</p>
+<p>Mary, the mother of Jesus, was a devout woman, but she too needed a Savior: her own son! She said:</p>
 <blockquote class="scripture">“My soul magnifies the Lord, and my spirit rejoices in God my Savior.”<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">Luke 1:46-47</span></span></sup></blockquote>
 <p>Jesus is the Christ,<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">Matthew 16:16</span></span></sup> and Christ is God over all.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">Romans 9:5</span></span></sup></p>
 <p>At the wedding in Cana, Mary said about her son:</p>
 <blockquote class="scripture">“Do whatever he tells you.”<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">John 2:5</span></span></sup></blockquote>
 <p>Millions around the world do not know this simple truth, and there are still Catholic priests who serve a dead god hanging on a cross.</p>
-<p>I do recognize that some people in traditional religion try to help many who suffer, but their mistaken doctrine does not let them see beyond what their eyes can see, and they continue to picture Jesus on a cross.</p>
-<p>If you want to know the truth, you must read the Bible to learn more about Jesus, His life, and what He did for us.</p>
+<p>Some people in traditional religion try to help those who suffer, but their mistaken doctrine does not let them see beyond what their eyes can see, and they continue to picture Jesus on a cross.</p>
+<p>If you want to know the truth, read the Bible to learn more about Jesus, His life, and what He did for us.</p>
 <p>We must pray for our leaders and proclaim the gospel to them, not only because it is our duty, but because if we do not, we will have no country.</p>
-<p>“Those who sin in ignorance are condemned in ignorance” is a popular saying. Again, if someone does not walk according to the Bible but has good intentions and wants to do good, we should speak to that person respectfully so they can correct their path.</p>
+<p>“Those who sin in ignorance are condemned in ignorance” is a popular saying. If someone does not walk according to the Bible but has good intentions and wants to do good, we should speak respectfully so they can correct their path.</p>
 <blockquote class="scripture">The good news is that Jesus is no longer on a wooden cross: after dying for our sins, He rose from the dead on the third day, ascended to heaven, and is seated at the Father’s right hand.</blockquote>
 <p>God is jealous and does not allow Himself to be shared.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">Exodus 20:5</span></span></sup> If someone speaks about Jesus Christ on one hand and burns incense to Mary or to the spirits of the dead on the other,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">Deuteronomy 18:10-12</span></span></sup>—a serious error—it will not work.</p>
 <p>If you want to be sure, consider the Father, the Son, and the Holy Spirit. Everything with the Godhead; without it, nothing.</p>`
 },
 
 zh: {
-title: "祂无所不知 — 第一部分 — La Palabra en Cápsulas",
-author: "作者：J.V.",
-heading: "祂无所不知",
-part: "第一部分",
-nav: ["继续阅读第二部分 →", "← 返回文章列表"],
-article: `
+title:"祂无所不知 — 第一部分 — La Palabra en Cápsulas",
+author:"作者：J.V.", heading:"祂无所不知", part:"第一部分",
+nav:["继续阅读第二部分 →","← 返回文章列表"],
+article:`
 <p>朋友们，没有人能够完全避免遭遇地震这样的可怕灾难，或经历令人痛苦的处境。但有一件事我深信不疑：上帝满有怜悯<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">以弗所书 2:4-5</span></span></sup>，因此我们可以祈求祂的保护。<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">诗篇 18:2</span></span></sup> 一段时间以来，除了平常的祷告，我还加入了一项<strong>额外的祈求</strong>：求至高的上帝保护我们，远离一切不好的事。</p>
 <div class="cascade"><div>• 灾难、事故、绑架、海啸、飓风或地震。</div><div>• 意外事故、抢劫和敲诈勒索。</div><div>• 残酷而痛苦的疾病。</div><div>• 还有，正如主祷文所说，求祂救我们脱离一切凶恶。</div></div>
 <p>正如我前面所写的，我已经把这些事项加入自己的祷告中。我们应当奉耶稣的名，向那位在天上的圣父祈求，并在祷告结束时献上感谢，相信祂已经成就了我们所求的。就在那一刻，以感恩敬拜主，因为这是祂所喜悦的。</p>
-<p>世界各地的基督教会不应把自己的国家托付给偶像、雕像，或任何令上帝不喜悦的事物。这样做的人尚未真正重生；我们应当把上帝的教导分享给他们，使他们能够经历悔改归信的过程。请听我说：有些人转向偶像是因为无知，而不是出于坚定的信念。因此，信徒应当向那些正在寻求真理的人传扬福音。</p>
-<p>《耶利米书》第7章和第44章是圣经中两段非常明确的经文，主在其中警告人们敬拜<strong>天后</strong>的危险。根据希腊神话，古代人称这位神祇为阿耳忒弥斯；后来，在小亚细亚，也就是今天的土耳其，人们称她为狄安娜。</p>
-<p>后来，罗马的教皇们想为一位女性神祇取一个名字，使她看起来与古代异教神祇相似，于是选择了一个真实存在过的人的名字，并称她为“玛利亚”。</p>
+<p>世界各地的基督教会不应把自己的国家托付给偶像、雕像，或任何令上帝不喜悦的事物。这样做的人尚未真正重生；我们应当把上帝的教导分享给他们，使他们经历悔改归信。有些人转向偶像是因为无知，而不是出于坚定的信念。因此，信徒应当向那些正在寻求真理的人传扬福音。</p>
+<p>《耶利米书》第7章和第44章警告人们敬拜<strong>天后</strong>的危险。根据希腊神话，古代人称这位神祇为阿耳忒弥斯；后来，在小亚细亚，也就是今天的土耳其，人们称她为狄安娜。</p>
+<p>后来，罗马的教皇们想为一位女性神祇取一个与古代异教神祇相似的名字，于是选择了一个真实存在过的人的名字，并称她为“玛利亚”。</p>
 <p>她从未要求人们敬拜她。是宗教让人这样做的。</p>
-<p>在这里，我想把话说清楚。耶稣的母亲玛利亚是一位敬虔的妇女，但她同样需要一位救主——那就是她自己的儿子！她曾说：</p>
+<p>耶稣的母亲玛利亚是一位敬虔的妇女，但她同样需要一位救主——她自己的儿子！她曾说：</p>
 <blockquote class="scripture">“我心尊主为大；我灵以神我的救主为乐。”<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">路加福音 1:46-47</span></span></sup></blockquote>
 <p>耶稣就是基督，<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">马太福音 16:16</span></span></sup> 而基督是超乎万有的上帝。<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">罗马书 9:5</span></span></sup></p>
 <p>在迦拿的婚宴上，玛利亚谈到她的儿子时说：</p>
 <blockquote class="scripture">“他告诉你们什么，你们就做什么。”<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">约翰福音 2:5</span></span></sup></blockquote>
 <p>世界上有数以百万计的人不明白这个简单的真理，甚至仍有天主教神父事奉一个被钉在十字架上的死去的神。</p>
-<p>我并不是不知道，传统宗教中有些人试图帮助许多正在受苦的人。然而，他们错误的教义使他们无法看见眼前所见之外的真相，因此仍然把耶稣看作在十字架上。</p>
+<p>传统宗教中有些人试图帮助正在受苦的人。然而，他们错误的教义使他们无法看见眼前所见之外的真相，因此仍然把耶稣看作在十字架上。</p>
 <p>如果你想认识真理，就应当阅读圣经，更深入地认识耶稣、祂的一生，以及祂为我们所做的一切。</p>
 <p>我们应当为执政者祷告，并向他们宣讲福音。这不仅是我们的责任；如果我们不这样做，我们的国家也将失去应有的根基。</p>
-<p>“无知犯罪的人，也因无知而受定罪”是一句民间俗语。再说一次：如果有人没有按照圣经的教导生活，但怀着善意，也真心想行善，我们就应当尊重地与他交谈，帮助他纠正自己的道路。</p>
+<p>“无知犯罪的人，也因无知而受定罪”是一句民间俗语。如果有人没有按照圣经的教导生活，但怀着善意、真心想行善，我们就应当尊重地与他交谈，帮助他纠正自己的道路。</p>
 <blockquote class="scripture">好消息是，耶稣如今不再在木头十字架上。祂为我们的罪死后，第三天从死里复活，升上天，并坐在天父的右边。</blockquote>
 <p>上帝是忌邪的，不允许人把祂与其他对象并列敬拜。<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">出埃及记 20:5</span></span></sup> 如果有人一方面谈论耶稣基督，另一方面却向玛利亚或死者的灵焚香，<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">申命记 18:10-12</span></span></sup>，这就是严重的错误，最终不会带来好的结果。</p>
 <p>如果你想作出明确的选择，就当仰望圣父、圣子和圣灵。凡事都当归于上帝；离开祂，一切便失去了根基。</p>`
 },
 
 fr: {
-title: "Il est au courant — Partie 1 — La Palabra en Cápsulas",
-author: "Par J.V.",
-heading: "Il est au courant",
-part: "Partie 1",
-nav: ["Continuer vers la partie 2 →", "← Retour aux articles"],
-article: `
+title:"Il est au courant — Partie 1 — La Palabra en Cápsulas",
+author:"Par J.V.", heading:"Il est au courant", part:"Partie 1",
+nav:["Continuer vers la partie 2 →","← Retour aux articles"],
+article:`
 <p>Amis, personne n’est à l’abri d’une épreuve aussi terrible qu’un tremblement de terre ou d’une situation angoissante. Mais je suis sûr d’une chose : Dieu est miséricordieux<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">Éphésiens 2:4-5</span></span></sup> et nous pouvons donc demander sa protection.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">Psaume 18:2</span></span></sup> Depuis quelque temps, en plus de mes prières habituelles, j’y ai ajouté un <strong>renforcement</strong> : demander au Très-Haut de nous protéger de toute chose négative.</p>
 <div class="cascade"><div>• Catastrophe, accident, enlèvement, tsunami, ouragan ou tremblement de terre.</div><div>• Accidents, vols et extorsions.</div><div>• Maladies cruelles et douloureuses.</div><div>• Et, comme le dit la prière modèle, qu’il nous délivre de tout mal.</div></div>
-<p>Comme je l’ai écrit plus haut, j’ai inclus ces éléments dans mes prières. Nous devons adresser notre demande au seul Saint Père qui est au ciel, au nom de Jésus, puis rendre grâce en croyant qu’il l’a déjà exaucée. Adorez le Seigneur à cet instant même avec des actions de grâce, car cela lui plaît.</p>
-<p>L’Église chrétienne dans le monde ne confie pas son propre pays à des idoles, à des statues ou à tout ce qui déplaît à Dieu. Ceux qui le font ne sont pas nés de nouveau ; nous devons leur transmettre le conseil de Dieu afin qu’ils puissent suivre un chemin de conversion. Et laissez-moi vous dire ceci : certaines personnes se sont tournées vers les idoles par ignorance, et non par conviction. C’est pourquoi les croyants doivent annoncer l’Évangile à ceux qui cherchent.</p>
-<p>Jérémie 7 et 44 sont deux chapitres très explicites de la Bible dans lesquels le Seigneur met en garde contre les dangers du culte de la <em>reine du ciel</em>. Dans l’Antiquité, cette divinité était appelée Artémis selon la mythologie grecque, puis Diane en Asie Mineure — l’actuelle Turquie.</p>
-<p>Plus tard, les papes de Rome, cherchant un nom pour une divinité féminine qui rappelle les anciennes divinités païennes, ont choisi le nom d’une personne qui avait réellement existé et ont dit : « Marie ».</p>
+<p>J’ai inclus ces éléments dans mes prières. Nous devons adresser notre demande au seul Saint Père qui est au ciel, au nom de Jésus, puis rendre grâce en croyant qu’il l’a déjà exaucée. Adorez le Seigneur à cet instant avec des actions de grâce, car cela lui plaît.</p>
+<p>L’Église chrétienne ne confie pas son pays à des idoles, à des statues ou à ce qui déplaît à Dieu. Ceux qui le font ne sont pas nés de nouveau ; nous devons leur transmettre le conseil de Dieu afin qu’ils suivent un chemin de conversion. Certaines personnes se sont tournées vers les idoles par ignorance, et non par conviction. C’est pourquoi les croyants doivent annoncer l’Évangile à ceux qui cherchent.</p>
+<p>Jérémie 7 et 44 mettent en garde contre les dangers du culte de la <em>reine du ciel</em>. Dans l’Antiquité, cette divinité était appelée Artémis selon la mythologie grecque, puis Diane en Asie Mineure — l’actuelle Turquie.</p>
+<p>Plus tard, les papes de Rome, cherchant un nom pour une divinité féminine rappelant les anciennes divinités païennes, ont choisi le nom d’une personne qui avait réellement existé : « Marie ».</p>
 <p>Elle n’a jamais voulu être vénérée. C’est la religion qui l’a fait.</p>
-<p>Et je veux être clair sur ce point. Marie, la mère de Jésus, était une femme pieuse, mais elle avait elle aussi besoin d’un Sauveur : son propre fils ! Elle a dit :</p>
+<p>Marie, la mère de Jésus, était une femme pieuse, mais elle avait elle aussi besoin d’un Sauveur : son propre fils ! Elle a dit :</p>
 <blockquote class="scripture">« Mon âme exalte le Seigneur, et mon esprit se réjouit en Dieu, mon Sauveur. »<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">Luc 1:46-47</span></span></sup></blockquote>
 <p>Jésus est le Christ,<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">Matthieu 16:16</span></span></sup> et le Christ est Dieu au-dessus de toutes choses.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">Romains 9:5</span></span></sup></p>
 <p>Lors des noces de Cana, Marie a dit au sujet de son fils :</p>
 <blockquote class="scripture">« Faites tout ce qu’il vous dira. »<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">Jean 2:5</span></span></sup></blockquote>
-<p>Des millions de personnes dans le monde ne connaissent pas cette vérité simple, et il existe encore des prêtres catholiques qui servent un dieu mort, suspendu à une croix.</p>
-<p>Je ne nie pas que certaines personnes de la religion traditionnelle essaient d’aider ceux qui souffrent, mais leur doctrine erronée les empêche de voir au-delà de ce que leurs yeux perçoivent ; ils continuent à représenter Jésus sur une croix.</p>
-<p>Si vous voulez connaître la vérité, vous devez lire la Bible pour mieux connaître Jésus, sa vie et ce qu’il a fait pour nous.</p>
+<p>Des millions de personnes ne connaissent pas cette vérité simple, et il existe encore des prêtres catholiques qui servent un dieu mort, suspendu à une croix.</p>
+<p>Certaines personnes de la religion traditionnelle essaient d’aider ceux qui souffrent, mais leur doctrine erronée les empêche de voir au-delà de ce que leurs yeux perçoivent ; elles continuent à représenter Jésus sur une croix.</p>
+<p>Si vous voulez connaître la vérité, lisez la Bible pour mieux connaître Jésus, sa vie et ce qu’il a fait pour nous.</p>
 <p>Nous devons prier pour nos dirigeants et leur annoncer l’Évangile, non seulement parce que c’est notre devoir, mais aussi parce que, si nous ne le faisons pas, nous n’aurons plus de pays.</p>
-<p>« Celui qui pèche par ignorance est condamné par ignorance » est un dicton populaire. Encore une fois, si quelqu’un ne marche pas selon la Bible mais a de bonnes intentions et veut faire le bien, il faut lui parler avec respect afin qu’il corrige sa conduite.</p>
+<p>« Celui qui pèche par ignorance est condamné par ignorance » est un dicton populaire. Si quelqu’un ne marche pas selon la Bible mais a de bonnes intentions, il faut lui parler avec respect afin qu’il corrige sa conduite.</p>
 <blockquote class="scripture">La bonne nouvelle, c’est que Jésus n’est plus sur un bois : après être mort pour nos péchés, il est ressuscité des morts le troisième jour, il est monté au ciel et siège à la droite du Père.</blockquote>
-<p>Dieu est jaloux et n’accepte pas d’être partagé.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">Exode 20:5</span></span></sup> Si quelqu’un parle de Jésus-Christ d’un côté et brûle de l’encens à Marie ou aux esprits des défunts de l’autre,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">Deutéronome 18:10-12</span></span></sup> — ce qui est une grave erreur — cela ne fonctionnera pas.</p>
+<p>Dieu est jaloux et n’accepte pas d’être partagé.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">Exode 20:5</span></span></sup> Si quelqu’un parle de Jésus-Christ et brûle de l’encens à Marie ou aux esprits des défunts,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">Deutéronome 18:10-12</span></span></sup> — ce qui est une grave erreur — cela ne fonctionnera pas.</p>
 <p>Si vous voulez être sûr de votre choix, considérez le Père, le Fils et le Saint-Esprit. Tout avec la Divinité, sans elle, rien.</p>`
+},
+
+it: {
+title:"Lui sa tutto — Parte 1 — La Palabra en Cápsulas",
+author:"Di J.V.", heading:"Lui sa tutto", part:"Parte 1",
+nav:["Continua con la Parte 2 →","← Torna agli articoli"],
+article:`
+<p>Amici, nessuno è esente dal vivere qualcosa di terribile come un terremoto o una situazione angosciante. Ma di una cosa sono sicuro: Dio è misericordioso<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">Efesini 2:4-5</span></span></sup> e possiamo quindi chiedere la sua protezione.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">Salmo 18:2</span></span></sup> Da qualche tempo, oltre alle mie preghiere abituali, ho aggiunto un <strong>rinforzo</strong>: chiedere all’Altissimo di proteggerci da ogni cosa negativa.</p>
+<div class="cascade"><div>• Calamità, incidente, rapimento, tsunami, uragano o terremoto.</div><div>• Incidenti, rapine ed estorsioni.</div><div>• Malattie crudeli e dolorose.</div><div>• E, come dice la preghiera modello, che ci liberi da ogni male.</div></div>
+<p>Come ho scritto sopra, ho incluso questi elementi nelle mie preghiere. Dobbiamo rivolgere la nostra richiesta all’unico Santo Padre che è nei cieli, nel nome di Gesù, e infine ringraziare, credendo che Egli abbia già agito. Adorate il Signore in quel momento con gratitudine, perché questo gli è gradito.</p>
+<p>La Chiesa cristiana nel mondo non affida il proprio paese agli idoli, alle statue o a ciò che dispiace a Dio. Chi lo fa non è nato di nuovo; dobbiamo condividere con lui l’insegnamento di Dio, affinché possa intraprendere il cammino della conversione. Alcuni si sono rivolti agli idoli per ignoranza, non per convinzione: per questo i credenti devono annunciare il Vangelo a chi è in ricerca.</p>
+<p>Geremia 7 e 44 sono capitoli della Bibbia molto chiari: il Signore avverte dei pericoli del culto della <em>regina del cielo</em>. Secondo la mitologia greca, nell’antichità questa divinità era chiamata Artemide e in seguito Diana in Asia Minore, l’attuale Turchia.</p>
+<p>In seguito, i papi a Roma, cercando un nome per una divinità femminile simile alle antiche divinità pagane, scelsero il nome di una persona realmente esistita: «Maria».</p>
+<p>Lei non ha mai voluto essere venerata. È stata la religione a farlo.</p>
+<p>Maria, la madre di Gesù, era una donna devota, ma aveva anche lei bisogno di un Salvatore: suo figlio! Disse:</p>
+<blockquote class="scripture">«L’anima mia magnifica il Signore, e lo spirito mio esulta in Dio, mio Salvatore».<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">Luca 1:46-47</span></span></sup></blockquote>
+<p>Gesù è il Cristo,<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">Matteo 16:16</span></span></sup> e Cristo è Dio sopra ogni cosa.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">Romani 9:5</span></span></sup></p>
+<p>Alle nozze di Cana, Maria disse riguardo a suo figlio:</p>
+<blockquote class="scripture">«Fate tutto quello che vi dirà».<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">Giovanni 2:5</span></span></sup></blockquote>
+<p>Milioni di persone nel mondo non conoscono questa semplice verità, e ci sono ancora sacerdoti cattolici che servono un dio morto, appeso a una croce.</p>
+<p>Alcune persone della religione tradizionale cercano di aiutare chi soffre, ma la loro dottrina errata impedisce loro di vedere oltre ciò che appare ai loro occhi, e continuano a immaginare Gesù sulla croce.</p>
+<p>Se vuoi conoscere la verità, leggi la Bibbia per conoscere meglio Gesù, la sua vita e ciò che ha fatto per noi.</p>
+<p>Dobbiamo pregare per i nostri governanti e annunciare loro il Vangelo, non solo perché è nostro dovere, ma anche perché, se non lo facciamo, non avremo un paese.</p>
+<p>«Chi pecca per ignoranza, per ignoranza viene condannato» è un detto popolare. Se qualcuno non vive secondo la Bibbia ma ha buone intenzioni e desidera fare del bene, dobbiamo parlargli con rispetto affinché corregga il suo cammino.</p>
+<blockquote class="scripture">La buona notizia è che Gesù non è più su un legno: dopo essere morto per i nostri peccati, è risorto dai morti il terzo giorno, è salito al cielo e siede alla destra del Padre.</blockquote>
+<p>Dio è geloso e non accetta di essere condiviso.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">Esodo 20:5</span></span></sup> Se qualcuno parla di Gesù Cristo ma poi offre incenso a Maria o agli spiriti dei defunti,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">Deuteronomio 18:10-12</span></span></sup>, commette un grave errore che non porterà a nulla di buono.</p>
+<p>Se vuoi fare la scelta giusta, considera il Padre, il Figlio e lo Spirito Santo. Tutto con la Divinità; senza di essa, niente.</p>`
+},
+
+pt: {
+title:"Ele está ciente — Parte 1 — La Palabra en Cápsulas",
+author:"Por J.V.", heading:"Ele está ciente", part:"Parte 1",
+nav:["Continuar para a Parte 2 →","← Voltar aos artigos"],
+article:`
+<p>Amigos, ninguém está livre de sofrer algo tão terrível como um terremoto ou uma situação angustiante. Mas de uma coisa tenho certeza: Deus é misericordioso<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">Efésios 2:4-5</span></span></sup> e, portanto, podemos pedir sua proteção.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">Salmos 18:2</span></span></sup> Há algum tempo, além das minhas orações habituais, acrescentei um <strong>reforço</strong>: pedir ao Altíssimo que nos proteja de todo mal.</p>
+<div class="cascade"><div>• Calamidade, acidente, sequestro, tsunami, furacão ou terremoto.</div><div>• Acidentes, assaltos e extorsões.</div><div>• Doenças cruéis e dolorosas.</div><div>• E, como diz a oração-modelo, que nos livre de todo mal.</div></div>
+<p>Como escrevi acima, incluí esses elementos nas minhas orações. Devemos apresentar nosso pedido ao único Santo Pai que está nos céus, em nome de Jesus, e agradecer ao final, crendo que Ele já o realizou. Adore o Senhor naquele mesmo instante com ações de graças, pois isso lhe agrada.</p>
+<p>A igreja cristã no mundo não entrega seu próprio país a ídolos, estátuas ou a qualquer coisa que desagrade a Deus. Quem faz isso ainda não nasceu de novo; devemos compartilhar o conselho de Deus para que essa pessoa passe pelo processo de conversão. Algumas pessoas recorreram aos ídolos por ignorância, não por convicção; por isso, os cristãos devem anunciar o evangelho aos que estão buscando.</p>
+<p>Jeremias 7 e 44 são capítulos contundentes da Bíblia, nos quais o Senhor adverte sobre os perigos de adorar a <em>rainha dos céus</em>. Segundo a mitologia grega, antigamente essa divindade era chamada Ártemis e, depois, Diana na Ásia Menor, hoje Turquia.</p>
+<p>Mais tarde, os papas em Roma, procurando um nome para uma divindade feminina semelhante às antigas divindades pagãs, escolheram o nome de alguém que realmente existiu: “Maria”.</p>
+<p>Ela nunca quis ser venerada. Foi a religião que fez isso.</p>
+<p>Maria, mãe de Jesus, era uma mulher piedosa, mas também precisava de um Salvador: seu próprio filho! Ela disse:</p>
+<blockquote class="scripture">“A minha alma engrandece ao Senhor, e o meu espírito se alegra em Deus, meu Salvador.”<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">Lucas 1:46-47</span></span></sup></blockquote>
+<p>Jesus é o Cristo,<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">Mateus 16:16</span></span></sup> e Cristo é Deus sobre todas as coisas.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">Romanos 9:5</span></span></sup></p>
+<p>Nas bodas de Caná, Maria disse a respeito de seu filho:</p>
+<blockquote class="scripture">“Fazei tudo quanto ele vos disser.”<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">João 2:5</span></span></sup></blockquote>
+<p>Milhões de pessoas no mundo não conhecem essa verdade simples, e ainda há sacerdotes católicos que servem a um deus morto, pendurado numa cruz.</p>
+<p>Algumas pessoas da religião tradicional tentam ajudar quem sofre, mas sua doutrina equivocada não lhes permite enxergar além do que os olhos veem, e continuam imaginando Jesus numa cruz.</p>
+<p>Se você quer conhecer a verdade, leia a Bíblia para conhecer melhor Jesus, sua vida e o que Ele fez por nós.</p>
+<p>Devemos orar por nossos governantes e anunciar-lhes o evangelho, não apenas porque é nosso dever, mas também porque, se não o fizermos, não teremos país.</p>
+<p>“Quem peca por ignorância, por ignorância é condenado” é um ditado popular. Se alguém não vive conforme a Bíblia, mas tem boas intenções e deseja fazer o bem, devemos falar com respeito para que corrija seu caminho.</p>
+<blockquote class="scripture">A boa notícia é que Jesus não está mais num madeiro: depois de morrer por nossos pecados, ressuscitou dos mortos ao terceiro dia, subiu ao céu e está sentado à direita do Pai.</blockquote>
+<p>Deus é zeloso e não admite ser compartilhado.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">Êxodo 20:5</span></span></sup> Se alguém fala de Jesus Cristo, mas por outro lado queima incenso para Maria ou para espíritos de falecidos,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">Deuteronômio 18:10-12</span></span></sup>, comete um grave erro que não dará bom resultado.</p>
+<p>Se quiser ter certeza de sua escolha, considere o Pai, o Filho e o Espírito Santo. Tudo com a Divindade; sem ela, nada.</p>`
+},
+
+he: {
+title:"הוא יודע — חלק ראשון — La Palabra en Cápsulas",
+author:"מאת J.V.", heading:"הוא יודע", part:"חלק ראשון",
+nav:["המשך לחלק השני ←","← חזרה למאמרים"],
+article:`
+<p>חברים, איש אינו חסין מפני אסון נורא כמו רעידת אדמה או מפני מצב מעורר מצוקה. אבל בדבר אחד אני בטוח: אלוהים רחום<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">האיגרת אל האפסים 2:4-5</span></span></sup>, ולכן אנו יכולים לבקש את הגנתו.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">תהילים 18:2</span></span></sup> מזה זמן מה, נוסף על תפילותיי הרגילות, הוספתי <strong>חיזוק</strong>: לבקש מהעליון להגן עלינו מכל דבר רע.</p>
+<div class="cascade"><div>• אסון, תאונה, חטיפה, צונאמי, הוריקן או רעידת אדמה.</div><div>• תאונות, מעשי שוד וסחיטה.</div><div>• מחלות אכזריות וכואבות.</div><div>• וכפי שנאמר בתפילה לדוגמה, שיציל אותנו מכל רע.</div></div>
+<p>כפי שכתבתי למעלה, שילבתי את הדברים האלה בתפילותיי. עלינו להפנות את בקשתנו אל האב הקדוש היחיד שבשמים, בשם ישוע, ולהודות בסוף מתוך אמונה שהוא כבר פעל. עבדו את האדון באותו רגע בהודיה, כי הדבר רצוי בעיניו.</p>
+<p>הקהילה הנוצרית בעולם אינה מפקידה את ארצה בידי אלילים, פסלים או דברים המכעיסים את אלוהים. מי שעושה זאת עדיין לא נולד מחדש; עלינו לשתף אותו בעצת אלוהים כדי שיוכל לעבור תהליך של חזרה בתשובה. יש אנשים שפנו לאלילים מתוך בורות ולא מתוך אמונה שלמה, ולכן על המאמינים לבשר את הבשורה למבקשי האמת.</p>
+<p>ירמיהו פרקים ז׳ ומ״ד מזהירים מפני הסכנות שבעבודת <em>מלכת השמים</em>. לפי המיתולוגיה היוונית, בעת העתיקה נקראה האלה ארטמיס, ובהמשך דיאנה באסיה הקטנה, בטורקיה של ימינו.</p>
+<p>מאוחר יותר, האפיפיורים ברומא חיפשו שם לאלוהות נשית שתזכיר את האלוהויות הפגאניות הקדומות, ובחרו בשם של אישה שהתקיימה במציאות: „מרים”.</p>
+<p>היא מעולם לא ביקשה שיסגדו לה. הדת היא שעשתה זאת.</p>
+<p>מרים, אמו של ישוע, הייתה אישה יראת אלוהים, אך גם היא נזקקה למושיע: לבנה שלה! היא אמרה:</p>
+<blockquote class="scripture">„תגדל נפשי את האדון ותגל רוחי באלוהים מושיעי.”<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">לוקס 1:46-47</span></span></sup></blockquote>
+<p>ישוע הוא המשיח,<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">מתי 16:16</span></span></sup> והמשיח הוא אלוהים על הכול.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">רומים 9:5</span></span></sup></p>
+<p>בחתונה בקנה אמרה מרים על בנה:</p>
+<blockquote class="scripture">„כל אשר יאמר לכם עשו.”<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">יוחנן 2:5</span></span></sup></blockquote>
+<p>מיליונים בעולם אינם מכירים את האמת הפשוטה הזאת, ועדיין יש כמרים קתולים המשרתים אל מת התלוי על צלב.</p>
+<p>יש אנשים בדת המסורתית המנסים לעזור לסובלים, אך תורתם השגויה מונעת מהם לראות מעבר למה שעיניהם רואות, והם ממשיכים לדמיין את ישוע על הצלב.</p>
+<p>אם ברצונך לדעת את האמת, קרא את כתבי הקודש כדי להכיר טוב יותר את ישוע, את חייו ואת מה שעשה למעננו.</p>
+<p>עלינו להתפלל בעד מנהיגינו ולהכריז בפניהם את הבשורה, לא רק מפני שזו חובתנו, אלא גם מפני שאם לא נעשה זאת, לא יהיה לנו עתיד לאומי.</p>
+<p>„החוטא מתוך בורות נידון מתוך בורות” הוא פתגם עממי. אם אדם אינו חי לפי כתבי הקודש אך כוונותיו טובות והוא רוצה לעשות טוב, עלינו לדבר אליו בכבוד כדי שיוכל לתקן את דרכו.</p>
+<blockquote class="scripture">הבשורה הטובה היא שישוע אינו עוד תלוי על עץ. לאחר שמת בעד חטאינו, הוא קם מן המתים ביום השלישי, עלה השמימה ויושב לימין האב.</blockquote>
+<p>אלוהים הוא אל קנא ואינו מסכים לחלוק את כבודו עם אחרים.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">שמות 20:5</span></span></sup> אם אדם מדבר על ישוע המשיח ובו בזמן מקטיר קטורת למרים או לרוחות המתים,<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">דברים 18:10-12</span></span></sup>, זו טעות חמורה שלא תביא לתוצאה טובה.</p>
+<p>אם ברצונך לבחור בדרך הנכונה, פנה אל האב, הבן ורוח הקודש. הכול עם האלוהות; בלעדיה אין דבר.</p>`
+},
+
+ar: {
+title:"إنه يعلم — الجزء الأول — La Palabra en Cápsulas",
+author:"بقلم J.V.", heading:"إنه يعلم", part:"الجزء الأول",
+nav:["تابع إلى الجزء الثاني ←","← العودة إلى المقالات"],
+article:`
+<p>أصدقائي، لا أحد بمنأى عن التعرض لشيء فظيع كالزلزال أو لموقف يسبب الضيق. لكنني متأكد من أمر واحد: الله رحيم<sup><span class="footnote-ref" role="button" tabindex="0">¹<span class="footnote-popup">أفسس 2:4-5</span></span></sup>، ولذلك يمكننا أن نطلب حمايته.<sup><span class="footnote-ref" role="button" tabindex="0">²<span class="footnote-popup">مزمور 18:2</span></span></sup> ومنذ فترة، أضفت إلى صلواتي المعتادة <strong>تعزيزًا</strong>: أن أطلب من العليّ أن يحمينا من كل شر.</p>
+<div class="cascade"><div>• الكوارث والحوادث والاختطاف والتسونامي والأعاصير والزلازل.</div><div>• الحوادث والسرقات والابتزاز.</div><div>• الأمراض القاسية والمؤلمة.</div><div>• وكما تقول الصلاة النموذجية، أن ينقذنا من كل شر.</div></div>
+<p>كما كتبت أعلاه، أدرجت هذه الأمور في صلواتي. علينا أن نرفع طلبنا إلى الآب القدوس الوحيد الذي في السماء، باسم يسوع، وأن نشكر في النهاية مؤمنين بأنه قد فعل ذلك بالفعل. اعبدوا الرب في تلك اللحظة بالشكر، لأن هذا يرضيه.</p>
+<p>لا تسلّم الكنيسة المسيحية في العالم بلادها للأصنام أو التماثيل أو لأي شيء لا يرضي الله. ومن يفعل ذلك لم يولد من جديد؛ وعلينا أن نشاركه مشورة الله لكي يسير في طريق التوبة. بعض الناس لجؤوا إلى الأصنام بسبب الجهل لا الاقتناع، ولهذا ينبغي للمؤمنين أن يعلنوا الإنجيل للباحثين عن الحق.</p>
+<p>يحذّر الإصحاحان السابع والرابع والأربعون من سفر إرميا من مخاطر عبادة <em>ملكة السماء</em>. ووفقًا للأساطير اليونانية، كان اسم هذه الإلهة في العصور القديمة أرتميس، ثم ديانا في آسيا الصغرى، أي تركيا اليوم.</p>
+<p>وفي وقت لاحق، بحث باباوات روما عن اسم لإلهة أنثى يشبه أسماء الآلهة الوثنية القديمة، فاختاروا اسم امرأة وُجدت بالفعل وقالوا: «مريم».</p>
+<p>لم تطلب مريم قط أن تُعبد أو تُكرّم بهذه الطريقة؛ بل فعل الدين ذلك.</p>
+<p>كانت مريم، أم يسوع، امرأة تقية، لكنها احتاجت هي أيضًا إلى مخلّص: ابنها نفسه! قالت:</p>
+<blockquote class="scripture">«تعظّم نفسي الرب، وتبتهج روحي بالله مخلّصي».<sup><span class="footnote-ref" role="button" tabindex="0">³<span class="footnote-popup">لوقا 1:46-47</span></span></sup></blockquote>
+<p>يسوع هو المسيح،<sup><span class="footnote-ref" role="button" tabindex="0">⁴<span class="footnote-popup">متى 16:16</span></span></sup> والمسيح هو الله فوق الجميع.<sup><span class="footnote-ref" role="button" tabindex="0">⁵<span class="footnote-popup">رومية 9:5</span></span></sup></p>
+<p>في عرس قانا، قالت مريم عن ابنها:</p>
+<blockquote class="scripture">«مهما قال لكم فافعلوه».<sup><span class="footnote-ref" role="button" tabindex="0">⁶<span class="footnote-popup">يوحنا 2:5</span></span></sup></blockquote>
+<p>هناك ملايين في العالم لا يعرفون هذه الحقيقة البسيطة، ولا يزال بعض الكهنة الكاثوليك يخدمون إلهًا ميتًا معلّقًا على صليب.</p>
+<p>يحاول بعض أتباع الديانات التقليدية مساعدة المتألمين، لكن عقيدتهم الخاطئة تمنعهم من رؤية ما وراء ما تراه أعينهم، ويستمرون في تصور يسوع معلّقًا على الصليب.</p>
+<p>إذا أردت معرفة الحق، فاقرأ الكتاب المقدس لتتعرف أكثر إلى يسوع وحياته وما فعله من أجلنا.</p>
+<p>علينا أن نصلي من أجل حكامنا ونعلن لهم الإنجيل، ليس فقط لأن ذلك واجبنا، بل لأننا إن لم نفعل فلن يكون لنا وطن.</p>
+<p>«من يخطئ عن جهل يُدان عن جهل» قول شائع. إذا كان شخص لا يسلك وفق الكتاب المقدس، لكنه حسن النية ويريد فعل الخير، فعلينا أن نتحدث إليه باحترام حتى يصحح طريقه.</p>
+<blockquote class="scripture">الخبر السار هو أن يسوع لم يعد على خشبة الصليب؛ فبعد أن مات من أجل خطايانا، قام من بين الأموات في اليوم الثالث، وصعد إلى السماء وجلس عن يمين الآب.</blockquote>
+<p>الله غيور ولا يقبل أن يُشاركه أحد في العبادة.<sup><span class="footnote-ref" role="button" tabindex="0">⁷<span class="footnote-popup">الخروج 20:5</span></span></sup> فإذا تحدث شخص عن يسوع المسيح من جهة، وأحرق البخور لمريم أو لأرواح الموتى من جهة أخرى،<sup><span class="footnote-ref" role="button" tabindex="0">⁸<span class="footnote-popup">التثنية 18:10-12</span></span></sup> فذلك خطأ جسيم لن يؤدي إلى نتيجة صالحة.</p>
+<p>إذا أردت أن تختار الطريق الصحيح، فتمسّك بالآب والابن والروح القدس. كل شيء مع الله، وبدونه لا شيء.</p>`
 }
 };
 
@@ -428,44 +384,42 @@ article: `
 
   function bindNotes() {
     article.querySelectorAll(".footnote-ref").forEach(note => {
-      note.setAttribute("aria-expanded", "false");
+      note.setAttribute("aria-expanded","false");
 
-      note.addEventListener("click", event => {
+      note.addEventListener("click",event => {
         event.preventDefault();
         event.stopPropagation();
-
         const wasOpen = note.classList.contains("show-note");
 
         article.querySelectorAll(".footnote-ref.show-note").forEach(openNote => {
           openNote.classList.remove("show-note");
-          openNote.setAttribute("aria-expanded", "false");
+          openNote.setAttribute("aria-expanded","false");
         });
 
         if (!wasOpen) {
           note.classList.add("show-note");
-          note.setAttribute("aria-expanded", "true");
+          note.setAttribute("aria-expanded","true");
         }
       });
 
-      note.addEventListener("keydown", event => {
+      note.addEventListener("keydown",event => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
           note.click();
         }
-
         if (event.key === "Escape") {
           note.classList.remove("show-note");
-          note.setAttribute("aria-expanded", "false");
+          note.setAttribute("aria-expanded","false");
         }
       });
     });
   }
 
-  document.addEventListener("click", event => {
+  document.addEventListener("click",event => {
     if (!event.target.closest(".footnote-ref")) {
       article.querySelectorAll(".footnote-ref.show-note").forEach(note => {
         note.classList.remove("show-note");
-        note.setAttribute("aria-expanded", "false");
+        note.setAttribute("aria-expanded","false");
       });
     }
   });
@@ -475,11 +429,14 @@ article: `
     if (!translation) return;
 
     document.documentElement.lang = lang;
-    document.documentElement.dir = "ltr";
+    document.documentElement.dir = (lang === "he" || lang === "ar") ? "rtl" : "ltr";
     document.title = translation.title;
 
     document.querySelector(".site-name").textContent =
-      lang === "zh" ? "胶囊中的话语" : "LA PALABRA EN CÁPSULAS";
+      lang === "zh" ? "胶囊中的话语" :
+      lang === "he" ? "המילה בכמוסות" :
+      lang === "ar" ? "الكلمة في كبسولات" :
+      "LA PALABRA EN CÁPSULAS";
 
     document.querySelector(".author").textContent = translation.author;
     document.querySelector("h1").textContent = translation.heading;
@@ -490,34 +447,31 @@ article: `
     backLink.textContent = translation.nav[1];
 
     buttons.forEach(button => {
-      button.setAttribute(
-        "aria-pressed",
-        String(button.dataset.lang === lang)
-      );
+      button.setAttribute("aria-pressed",String(button.dataset.lang === lang));
     });
 
-    document.querySelector(".language-selector")
-      .setAttribute(
-        "aria-label",
-        lang === "zh" ? "选择语言" :
-        lang === "en" ? "Select language" :
-        lang === "fr" ? "Choisir la langue" :
-        "Seleccionar idioma"
-      );
+    const labels = {
+      es:"Seleccionar idioma",
+      en:"Select language",
+      zh:"选择语言",
+      fr:"Choisir la langue",
+      it:"Seleziona la lingua",
+      pt:"Selecionar idioma",
+      he:"בחירת שפה",
+      ar:"اختيار اللغة"
+    };
+    document.querySelector(".language-selector").setAttribute("aria-label",labels[lang]);
 
     bindNotes();
 
-    try {
-      localStorage.setItem("lpc-language", lang);
-    } catch (error) {}
+    try { localStorage.setItem("lpc-language",lang); } catch (error) {}
   }
 
   buttons.forEach(button => {
-    button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    button.addEventListener("click",() => setLanguage(button.dataset.lang));
   });
 
   let initialLanguage = "es";
-
   try {
     const savedLanguage = localStorage.getItem("lpc-language");
     if (translations[savedLanguage]) initialLanguage = savedLanguage;
@@ -526,6 +480,6 @@ article: `
   setLanguage(initialLanguage);
 })();
 </script>
-
 </body>
 </html>
+```
