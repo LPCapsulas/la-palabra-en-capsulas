@@ -122,18 +122,6 @@ body {
   animation: cascade-in 0.65s ease forwards;
 }
 
-.welcome-line:nth-child(1) {
-  animation-delay: 0.12s;
-}
-
-.welcome-line:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.welcome-line:nth-child(3) {
-  animation-delay: 0.68s;
-}
-
 @keyframes cascade-in {
   to {
     opacity: 1;
@@ -521,7 +509,7 @@ html[dir="rtl"] .welcome {
   }
 
   function renderWelcome(lines) {
-    welcome.replaceChildren();
+    welcome.innerHTML = "";
 
     lines.forEach(function (line, index) {
       const span = document.createElement("span");
