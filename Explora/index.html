@@ -42,38 +42,46 @@ body {
   align-items: center;
 }
 
+/* SELECTOR DE IDIOMAS ADAPTADO DE MENU.HTML */
 .language-bar {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 6px 19px;
+  gap: 6px 12px;
   padding: 5px 0 12px;
+  font-size: 14px;
 }
 
-.language-button {
+.lang-link {
   border: 0;
   padding: 4px 2px;
   background: transparent;
   color: var(--azul);
   font: inherit;
-  font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.language-button:hover,
-.language-button:focus-visible {
+.lang-link:hover {
   color: var(--dorado);
   text-decoration: underline;
 }
 
-.language-button.active {
+.lang-link.active {
   font-weight: 700;
+  color: var(--azul);
   text-decoration: underline;
   text-decoration-color: var(--dorado);
   text-underline-offset: 4px;
+}
+
+.lang-divider {
+  color: rgba(23, 54, 93, 0.35);
+  user-select: none;
 }
 
 .separator {
@@ -159,17 +167,6 @@ html[dir="rtl"] .welcome {
   direction: rtl;
 }
 
-@media (min-width: 761px) {
-  .cover-image {
-    max-width: 900px;
-  }
-
-  .welcome {
-    margin-top: 10px;
-    margin-bottom: 12px;
-  }
-}
-
 @media (max-width: 760px) {
   .page {
     min-height: 100svh;
@@ -177,13 +174,9 @@ html[dir="rtl"] .welcome {
   }
 
   .language-bar {
-    gap: 4px 13px;
+    gap: 4px 8px;
     padding: 5px 8px 9px;
-  }
-
-  .language-button {
     font-size: 13px;
-    padding: 4px 1px;
   }
 
   .separator {
@@ -192,12 +185,7 @@ html[dir="rtl"] .welcome {
   }
 
   .cover-image {
-    width: 100%;
-    max-width: 100%;
     max-height: 48svh;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
   }
 
   .welcome {
@@ -215,59 +203,12 @@ html[dir="rtl"] .welcome {
   }
 }
 
-@media (max-width: 380px) {
-  .language-bar {
-    column-gap: 10px;
-    row-gap: 3px;
-  }
-
-  .language-button {
-    font-size: 12px;
-  }
-
-  .cover-image {
-    max-height: 44svh;
-  }
-
-  .welcome {
-    margin-top: 6px;
-    margin-bottom: 7px;
-    padding: 0 12px;
-    font-size: 15px;
-    line-height: 1.35;
-  }
-
-  .explore-button {
-    min-height: 41px;
-  }
-}
-
-@media (max-height: 700px) and (max-width: 760px) {
-  .cover-image {
-    max-height: 39svh;
-  }
-
-  .welcome {
-    margin-top: 5px;
-    margin-bottom: 6px;
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .explore-button {
-    min-height: 38px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .welcome-line {
     opacity: 1;
     transform: none;
     animation: none;
   }
-
   * {
     transition: none !important;
   }
@@ -278,19 +219,30 @@ html[dir="rtl"] .welcome {
 <body>
 <main class="page">
 
-  <nav class="language-bar" aria-label="Seleccionar idioma">
-    <button class="language-button active" type="button" data-lang="es" aria-pressed="true">Español</button>
-    <button class="language-button" type="button" data-lang="en" aria-pressed="false">English</button>
-    <button class="language-button" type="button" data-lang="zh" aria-pressed="false">中文</button>
-    <button class="language-button" type="button" data-lang="fr" aria-pressed="false">Français</button>
-    <button class="language-button" type="button" data-lang="it" aria-pressed="false">Italiano</button>
-    <button class="language-button" type="button" data-lang="pt" aria-pressed="false">Português</button>
-    <button class="language-button" type="button" data-lang="he" aria-pressed="false">עברית</button>
-    <button class="language-button" type="button" data-lang="ar" aria-pressed="false">العربية</button>
-    <button class="language-button" type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
-    <button class="language-button" type="button" data-lang="ru" aria-pressed="false">Русский</button>
-    <button class="language-button" type="button" data-lang="de" aria-pressed="false">Deutsch</button>
-    <button class="language-button" type="button" data-lang="ja" aria-pressed="false">日本語</button>
+  <nav class="language-bar" aria-label="Language selection">
+    <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')" aria-pressed="false">中文</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-it" onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-pt" onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-he" onclick="changeLanguage('he')" aria-pressed="false">עברית</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ar" onclick="changeLanguage('ar')" aria-pressed="false">العربية</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-hi" onclick="changeLanguage('hi')" aria-pressed="false">हिन्दी</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ru" onclick="changeLanguage('ru')" aria-pressed="false">Русский</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-de" onclick="changeLanguage('de')" aria-pressed="false">Deutsch</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ja" onclick="changeLanguage('ja')" aria-pressed="false">日本語</button>
   </nav>
 
   <div class="separator" aria-hidden="true"></div>
@@ -364,7 +316,7 @@ html[dir="rtl"] .welcome {
       menu: "/Explora/menu.html?lang=fr"
     },
     zh: {
-      lang: "zh",
+      lang: "zh-CN",
       dir: "ltr",
       image: "/Explora/portada-zh.png",
       title: "胶囊中的话语 — 官方主页",
@@ -485,32 +437,9 @@ html[dir="rtl"] .welcome {
   const image = document.getElementById("coverImage");
   const welcome = document.getElementById("welcomeText");
   const explore = document.getElementById("exploreButton");
-  const languageButtons = document.querySelectorAll(".language-button");
-
-  function getInitialLanguage() {
-    const params = new URLSearchParams(window.location.search);
-    const requested = params.get("lang");
-
-    if (requested && translations[requested]) {
-      return requested;
-    }
-
-    try {
-      const saved =
-        localStorage.getItem("lpc-language") ||
-        localStorage.getItem("user_language");
-
-      if (saved && translations[saved]) {
-        return saved;
-      }
-    } catch (error) {}
-
-    return "es";
-  }
 
   function renderWelcome(lines) {
     welcome.innerHTML = "";
-
     lines.forEach(function (line, index) {
       const span = document.createElement("span");
       span.className = "welcome-line";
@@ -520,9 +449,9 @@ html[dir="rtl"] .welcome {
     });
   }
 
-  function setLanguage(language) {
-    const key = translations[language] ? language : "es";
-    const data = translations[key];
+  function changeLanguage(lang) {
+    if (!translations[lang]) lang = "es";
+    const data = translations[lang];
 
     document.documentElement.lang = data.lang;
     document.documentElement.dir = data.dir;
@@ -541,25 +470,32 @@ html[dir="rtl"] .welcome {
     explore.textContent = data.button;
     explore.href = data.menu;
 
-    languageButtons.forEach(function (button) {
-      const active = button.dataset.lang === key;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", active ? "true" : "false");
+    document.querySelectorAll(".lang-link").forEach(function (button) {
+      const selected = button.id === "link-" + lang;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
     });
 
     try {
-      localStorage.setItem("lpc-language", key);
-      localStorage.setItem("user_language", key);
+      localStorage.setItem("lpc-language", lang);
+      localStorage.setItem("user_language", lang);
     } catch (error) {}
   }
 
-  languageButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      setLanguage(button.dataset.lang);
-    });
-  });
+  window.changeLanguage = changeLanguage;
 
-  setLanguage(getInitialLanguage());
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedLanguage = urlParams.get("lang");
+  let initialLanguage = "es";
+
+  try {
+    initialLanguage = requestedLanguage || localStorage.getItem("lpc-language") ||
+      localStorage.getItem("user_language") || "es";
+  } catch (error) {
+    initialLanguage = requestedLanguage || "es";
+  }
+
+  changeLanguage(initialLanguage);
 })();
 </script>
 </body>
