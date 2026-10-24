@@ -42,7 +42,7 @@ body {
   align-items: center;
 }
 
-/* SELECTOR DE IDIOMAS */
+/* SELECTOR DE IDIOMAS ADAPTADO DE MENU.HTML */
 .language-bar {
   width: 100%;
   display: flex;
@@ -190,4 +190,355 @@ html[dir="rtl"] .welcome {
     max-height: 40svh;
   }
 
-  .welcome
+  .welcome {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 10px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .welcome-line {
+    margin-bottom: 8px;
+  }
+
+  .explore-button {
+    min-width: 170px;
+    min-height: 45px;
+    padding: 10px 28px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-line {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  * {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+  <nav class="language-bar" aria-label="Language selection">
+    <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')" aria-pressed="false">中文</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-it" onclick="changeLanguage('it')" aria-pressed="false">Italiano</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-pt" onclick="changeLanguage('pt')" aria-pressed="false">Português</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-he" onclick="changeLanguage('he')" aria-pressed="false">עברית</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ar" onclick="changeLanguage('ar')" aria-pressed="false">العربية</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-hi" onclick="changeLanguage('hi')" aria-pressed="false">हिन्दी</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ru" onclick="changeLanguage('ru')" aria-pressed="false">Русский</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-de" onclick="changeLanguage('de')" aria-pressed="false">Deutsch</button>
+    <span class="lang-divider">|</span>
+    <button type="button" class="lang-link" id="link-ja" onclick="changeLanguage('ja')" aria-pressed="false">日本語</button>
+  </nav>
+
+  <div class="separator" aria-hidden="true"></div>
+
+  <section class="cover-area">
+    <img
+      id="coverImage"
+      class="cover-image"
+      src="/Explora/portada.png"
+      alt="La Palabra en Cápsulas: Fe, Poder y Vida"
+      fetchpriority="high"
+    >
+
+    <div id="welcomeText" class="welcome" aria-live="polite">
+      <span class="welcome-line">Bienvenido a este espacio.</span>
+      <span class="welcome-line">Un lugar dedicado a</span>
+      <span class="welcome-line">compartir ideas prácticas,</span>
+      <span class="welcome-line">profundas y accesibles</span>
+      <span class="welcome-line">para un caminar</span>
+      <span class="welcome-line">seguro con Dios</span>
+    </div>
+
+    <a id="exploreButton" class="explore-button" href="/Explora/menu.html?lang=es">
+      Explora
+    </a>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  const spanishImage = "/Explora/portada.png";
+
+  const translations = {
+    es: {
+      lang: "es",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Portada Oficial",
+      welcome: [
+        "Bienvenido a este espacio.",
+        "Un lugar dedicado a",
+        "compartir ideas prácticas,",
+        "profundas y accesibles",
+        "para un caminar",
+        "seguro con Dios"
+      ],
+      button: "Explora",
+      menu: "/Explora/menu.html?lang=es"
+    },
+    en: {
+      lang: "en",
+      dir: "ltr",
+      image: "/Explora/portada-en.png",
+      title: "The Word in Capsules — Official Home",
+      welcome: [
+        "Welcome to this space.",
+        "A place dedicated to",
+        "sharing practical, profound,",
+        "and accessible ideas",
+        "for a confident walk",
+        "with God"
+      ],
+      button: "Explore",
+      menu: "/Explora/menu.html?lang=en"
+    },
+    fr: {
+      lang: "fr",
+      dir: "ltr",
+      image: "/Explora/portada-fr.png",
+      title: "La Parole en Capsules — Page d’accueil officielle",
+      welcome: [
+        "Bienvenue dans cet espace.",
+        "Un lieu dédié au",
+        "partage d'idées pratiques,",
+        "profondes et accessibles",
+        "pour une marche sereine",
+        "avec Dieu"
+      ],
+      button: "Explorer",
+      menu: "/Explora/menu.html?lang=fr"
+    },
+    zh: {
+      lang: "zh-CN",
+      dir: "ltr",
+      image: "/Explora/portada-zh.png",
+      title: "胶囊中的话语 — 官方主页",
+      welcome: [
+        "欢迎来到这个空间。",
+        "致力于分享",
+        "实用、深刻且通俗易懂的想法，",
+        "陪伴您",
+        "与神同行"
+      ],
+      button: "开始探索",
+      menu: "/Explora/menu.html?lang=zh"
+    },
+    it: {
+      lang: "it",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Pagina ufficiale",
+      welcome: [
+        "Benvenuto in questo spazio.",
+        "Un luogo dedicato a",
+        "condividere idee pratiche,",
+        "profonde e accessibili",
+        "per un cammino sicuro",
+        "con Dio"
+      ],
+      button: "Esplora",
+      menu: "/Explora/menu.html?lang=it"
+    },
+    pt: {
+      lang: "pt",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Página oficial",
+      welcome: [
+        "Bem-vindo a este espaço.",
+        "Um lugar dedicado a",
+        "compartilhar ideias práticas,",
+        "profundas e acessíveis",
+        "para uma caminhada segura",
+        "com Deus"
+      ],
+      button: "Explorar",
+      menu: "/Explora/menu.html?lang=pt"
+    },
+    he: {
+      lang: "he",
+      dir: "rtl",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — דף הבית הרשמי",
+      welcome: [
+        "ברוכים הבאים למרחב זה.",
+        "מקום המוקדש לשתף",
+        "רעיונות מעשיים, עמוקים ונגישים",
+        "להליכה בטוחה",
+        "עם אלוהים"
+      ],
+      button: "גלו",
+      menu: "/Explora/menu.html?lang=he"
+    },
+    ar: {
+      lang: "ar",
+      dir: "rtl",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — الصفحة الرئيسية الرسمية",
+      welcome: [
+        "مرحبًا بكم في هذا المساحة.",
+        "مكان مخصص لمشاركة",
+        "أفكار عملية وعميقة ومتاحة",
+        "لمسيرة آمنة",
+        "مع الله"
+      ],
+      button: "استكشف",
+      menu: "/Explora/menu.html?lang=ar"
+    },
+    hi: {
+      lang: "hi",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — आधिकारिक मुखपृष्ठ",
+      welcome: [
+        "इस स्थान में आपका स्वागत है।",
+        "व्यावहारिक, व्यावहारिक,",
+        "गहरे और सुलभ विचारों को साझा करने dedicated",
+        "ईश्वर के साथ एक सुरक्षित",
+        "चाल के लिए"
+      ],
+      button: "खोजें",
+      menu: "/Explora/menu.html?lang=hi"
+    },
+    ru: {
+      lang: "ru",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Официальная главная страница",
+      welcome: [
+        "Добро пожаловать в это пространство.",
+        "Место, посвященное",
+        "обмену практичными, глубокими",
+        "и доступными идеями",
+        "для уверенной ходьбы",
+        "с Богом"
+      ],
+      button: "Исследовать",
+      menu: "/Explora/menu.html?lang=ru"
+    },
+    de: {
+      lang: "de",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — Offizielle Startseite",
+      welcome: [
+        "Willkommen in diesem Raum.",
+        "Ein Ort, der gewidmet ist,",
+        "praktische, tiefe und zugängliche Ideas zu teilen,",
+        "für einen sicheren Weg",
+        "mit Gott"
+      ],
+      button: "Entdecken",
+      menu: "/Explora/menu.html?lang=de"
+    },
+    ja: {
+      lang: "ja",
+      dir: "ltr",
+      image: spanishImage,
+      title: "La Palabra en Cápsulas — 公式ホームページ",
+      welcome: [
+        "ようこそこの場所へ。",
+        "実践的で深遠で、",
+        "分かりやすい考えを共有し、",
+        "神と共に歩む確かな歩みのために",
+        "捧げられた場所です"
+      ],
+      button: "探検する",
+      menu: "/Explora/menu.html?lang=ja"
+    }
+  };
+
+  const image = document.getElementById("coverImage");
+  const welcome = document.getElementById("welcomeText");
+  const explore = document.getElementById("exploreButton");
+
+  function renderWelcome(lines) {
+    welcome.innerHTML = "";
+    lines.forEach(function (line, index) {
+      const span = document.createElement("span");
+      span.className = "welcome-line";
+      span.textContent = line;
+      span.style.animationDelay = (0.12 + index * 0.25) + "s";
+      welcome.appendChild(span);
+    });
+  }
+
+  function changeLanguage(lang) {
+    if (!translations[lang]) lang = "es";
+    const data = translations[lang];
+
+    document.documentElement.lang = data.lang;
+    document.documentElement.dir = data.dir;
+    document.title = data.title;
+
+    image.onerror = function () {
+      if (image.getAttribute("src") !== spanishImage) {
+        image.onerror = null;
+        image.src = spanishImage;
+      }
+    };
+
+    image.src = data.image;
+    renderWelcome(data.welcome);
+
+    explore.textContent = data.button;
+    explore.href = data.menu;
+
+    document.querySelectorAll(".lang-link").forEach(function (button) {
+      const selected = button.id === "link-" + lang;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+
+    try {
+      localStorage.setItem("lpc-language", lang);
+      localStorage.setItem("user_language", lang);
+    } catch (error) {}
+  }
+
+  window.changeLanguage = changeLanguage;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedLanguage = urlParams.get("lang");
+  let initialLanguage = "es";
+
+  try {
+    initialLanguage = requestedLanguage || localStorage.getItem("lpc-language") ||
+      localStorage.getItem("user_language") || "es";
+  } catch (error) {
+    initialLanguage = requestedLanguage || "es";
+  }
+
+  changeLanguage(initialLanguage);
+})();
+</script>
+</body>
+</html>
