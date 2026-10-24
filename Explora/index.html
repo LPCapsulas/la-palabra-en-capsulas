@@ -42,6 +42,7 @@ body {
   align-items: center;
 }
 
+/* SELECTOR DE IDIOMAS ADAPTADO DE MENU.HTML */
 .language-bar {
   width: 100%;
   display: flex;
@@ -113,21 +114,20 @@ body {
 .welcome {
   width: 100%;
   max-width: 820px;
-  margin: 18px auto 18px;
+  margin: 14px auto 16px;
   padding: 0 10px;
   color: var(--azul);
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .welcome-line {
   display: block;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(9px);
   animation: cascade-in 0.65s ease forwards;
-  margin-bottom: 5px;
 }
 
 @keyframes cascade-in {
@@ -143,7 +143,7 @@ body {
   align-items: center;
   min-width: 180px;
   min-height: 46px;
-  margin: 10px auto 15px;
+  margin: 0 auto 5px;
   padding: 10px 30px;
   border: 1px solid var(--azul-boton);
   border-radius: 7px;
@@ -167,46 +167,39 @@ html[dir="rtl"] .welcome {
   direction: rtl;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .page {
     min-height: 100svh;
-    padding: 10px 12px 20px;
+    padding: 5px 0 10px;
   }
 
   .language-bar {
     gap: 4px 8px;
-    padding: 5px 0 10px;
+    padding: 5px 8px 9px;
     font-size: 13px;
   }
 
   .separator {
-    width: 100%;
-    margin-bottom: 10px;
+    width: calc(100% - 24px);
+    margin-bottom: 7px;
   }
 
   .cover-image {
-    max-height: 40svh;
+    max-height: 48svh;
   }
 
   .welcome {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    padding: 0 10px;
-    font-size: 17px;
-    line-height: 1.5;
-  }
-
-  .welcome-line {
-    margin-bottom: 8px;
+    margin: 8px auto 10px;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 1.42;
   }
 
   .explore-button {
-    min-width: 170px;
-    min-height: 45px;
-    padding: 10px 28px;
+    min-width: 165px;
+    min-height: 43px;
+    padding: 9px 26px;
     font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 20px;
   }
 }
 
@@ -264,12 +257,9 @@ html[dir="rtl"] .welcome {
     >
 
     <div id="welcomeText" class="welcome" aria-live="polite">
-      <span class="welcome-line">Bienvenido a este espacio.</span>
-      <span class="welcome-line">Un lugar dedicado a</span>
-      <span class="welcome-line">compartir ideas prácticas,</span>
-      <span class="welcome-line">profundas y accesibles</span>
-      <span class="welcome-line">para un caminar</span>
-      <span class="welcome-line">seguro con Dios</span>
+      <span class="welcome-line">¡Bienvenido a La Palabra en Cápsulas!</span>
+      <span class="welcome-line">Un espacio para fortalecer tu fe y crecer en conocimiento.</span>
+      <span class="welcome-line">Mira, crece y comparte.</span>
     </div>
 
     <a id="exploreButton" class="explore-button" href="/Explora/menu.html?lang=es">
@@ -278,6 +268,7 @@ html[dir="rtl"] .welcome {
   </section>
 
 </main>
+
 <script>
 (function () {
   "use strict";
@@ -291,12 +282,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — Portada Oficial",
       welcome: [
-        "Bienvenido a este espacio.",
-        "Un lugar dedicado a",
-        "compartir ideas prácticas,",
-        "profundas y accesibles",
-        "para un caminar",
-        "seguro con Dios"
+        "¡Bienvenido a La Palabra en Cápsulas!",
+        "Un espacio para fortalecer tu fe y crecer en conocimiento.",
+        "Mira, crece y comparte."
       ],
       button: "Explora",
       menu: "/Explora/menu.html?lang=es"
@@ -307,12 +295,9 @@ html[dir="rtl"] .welcome {
       image: "/Explora/portada-en.png",
       title: "The Word in Capsules — Official Home",
       welcome: [
-        "Welcome to this space.",
-        "A place dedicated to",
-        "sharing practical, profound,",
-        "and accessible ideas",
-        "for a confident walk",
-        "with God"
+        "Welcome to The Word in Capsules!",
+        "A place to strengthen your faith and grow in knowledge.",
+        "Look, Grow and Share."
       ],
       button: "Explore",
       menu: "/Explora/menu.html?lang=en"
@@ -323,12 +308,9 @@ html[dir="rtl"] .welcome {
       image: "/Explora/portada-fr.png",
       title: "La Parole en Capsules — Page d’accueil officielle",
       welcome: [
-        "Bienvenue dans cet espace.",
-        "Un lieu dédié au",
-        "partage d'idées pratiques,",
-        "profondes et accessibles",
-        "pour une marche sereine",
-        "avec Dieu"
+        "Bienvenue sur La Parole en Capsules !",
+        "Un espace pour fortifier votre foi et approfondir vos connaissances.",
+        "Découvre, grandis et partage."
       ],
       button: "Explorer",
       menu: "/Explora/menu.html?lang=fr"
@@ -339,11 +321,9 @@ html[dir="rtl"] .welcome {
       image: "/Explora/portada-zh.png",
       title: "胶囊中的话语 — 官方主页",
       welcome: [
-        "欢迎来到这个空间。",
-        "致力于分享",
-        "实用、深刻且通俗易懂的想法，",
-        "陪伴您",
-        "与神同行"
+        "欢迎来到《胶囊中的话语》！",
+        "在这里坚定信仰，增长知识。",
+        "阅读、成长、分享。"
       ],
       button: "开始探索",
       menu: "/Explora/menu.html?lang=zh"
@@ -354,12 +334,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — Pagina ufficiale",
       welcome: [
-        "Benvenuto in questo spazio.",
-        "Un luogo dedicato a",
-        "condividere idee pratiche,",
-        "profonde e accessibili",
-        "per un cammino sicuro",
-        "con Dio"
+        "Benvenuto a La Palabra en Cápsulas!",
+        "Uno spazio per rafforzare la fede e crescere nella conoscenza.",
+        "Guarda, cresci e condividi."
       ],
       button: "Esplora",
       menu: "/Explora/menu.html?lang=it"
@@ -370,12 +347,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — Página oficial",
       welcome: [
-        "Bem-vindo a este espaço.",
-        "Um lugar dedicado a",
-        "compartilhar ideias práticas,",
-        "profundas e acessíveis",
-        "para uma caminhada segura",
-        "com Deus"
+        "Bem-vindo a La Palabra en Cápsulas!",
+        "Um espaço para fortalecer a fé e crescer em conhecimento.",
+        "Veja, cresça e compartilhe."
       ],
       button: "Explorar",
       menu: "/Explora/menu.html?lang=pt"
@@ -386,11 +360,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — דף הבית הרשמי",
       welcome: [
-        "ברוכים הבאים למרחב זה.",
-        "מקום המוקדש לשתף",
-        "רעיונות מעשיים, עמוקים ונגישים",
-        "להליכה בטוחה",
-        "עם אלוהים"
+        "ברוכים הבאים ל־La Palabra en Cápsulas!",
+        "מקום לחיזוק האמונה ולהעמקת הידע.",
+        "התבוננו, צמחו ושתפו."
       ],
       button: "גלו",
       menu: "/Explora/menu.html?lang=he"
@@ -401,11 +373,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — الصفحة الرئيسية الرسمية",
       welcome: [
-        "مرحبًا بكم في هذا المساحة.",
-        "مكان مخصص لمشاركة",
-        "أفكار عملية وعميقة ومتاحة",
-        "لمسيرة آمنة",
-        "مع الله"
+        "مرحبًا بكم في La Palabra en Cápsulas!",
+        "مساحة لتعزيز الإيمان والنمو في المعرفة.",
+        "اكتشف، انمُ وشارك."
       ],
       button: "استكشف",
       menu: "/Explora/menu.html?lang=ar"
@@ -416,11 +386,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — आधिकारिक मुखपृष्ठ",
       welcome: [
-        "इस स्थान में आपका स्वागत है।",
-        "व्यावहारिक, व्यावहारिक,",
-        "गहरे और सुलभ विचारों को साझा करने dedicated",
-        "ईश्वर के साथ एक सुरक्षित",
-        "चाल के लिए"
+        "La Palabra en Cápsulas में आपका स्वागत है!",
+        "आस्था को मज़बूत करने और ज्ञान में बढ़ने का एक स्थान।",
+        "देखें, बढ़ें और साझा करें।"
       ],
       button: "खोजें",
       menu: "/Explora/menu.html?lang=hi"
@@ -431,12 +399,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — Официальная главная страница",
       welcome: [
-        "Добро пожаловать в это пространство.",
-        "Место, посвященное",
-        "обмену практичными, глубокими",
-        "и доступными идеями",
-        "для уверенной ходьбы",
-        "с Богом"
+        "Добро пожаловать на La Palabra en Cápsulas!",
+        "Место, где можно укрепить веру и расширить знания.",
+        "Смотри, расти и делись."
       ],
       button: "Исследовать",
       menu: "/Explora/menu.html?lang=ru"
@@ -447,11 +412,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — Offizielle Startseite",
       welcome: [
-        "Willkommen in diesem Raum.",
-        "Ein Ort, der gewidmet ist,",
-        "praktische, tiefe und zugängliche Ideas zu teilen,",
-        "für einen sicheren Weg",
-        "mit Gott"
+        "Willkommen bei La Palabra en Cápsulas!",
+        "Ein Ort, um den Glauben zu stärken und Wissen zu erweitern.",
+        "Entdecken, wachsen und teilen."
       ],
       button: "Entdecken",
       menu: "/Explora/menu.html?lang=de"
@@ -462,11 +425,9 @@ html[dir="rtl"] .welcome {
       image: spanishImage,
       title: "La Palabra en Cápsulas — 公式ホームページ",
       welcome: [
-        "ようこそこの場所へ。",
-        "実践的で深遠で、",
-        "分かりやすい考えを共有し、",
-        "神と共に歩む確かな歩みのために",
-        "捧げられた場所です"
+        "La Palabra en Cápsulasへようこそ！",
+        "信仰を強め、知識を深めるための場所です。",
+        "見て、成長し、分かち合いましょう。"
       ],
       button: "探検する",
       menu: "/Explora/menu.html?lang=ja"
@@ -483,7 +444,7 @@ html[dir="rtl"] .welcome {
       const span = document.createElement("span");
       span.className = "welcome-line";
       span.textContent = line;
-      span.style.animationDelay = (0.12 + index * 0.25) + "s";
+      span.style.animationDelay = (0.12 + index * 0.28) + "s";
       welcome.appendChild(span);
     });
   }
