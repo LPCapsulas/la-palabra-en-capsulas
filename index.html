@@ -49,10 +49,10 @@ body {
 
 .page {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 10px 20px 16px;
+  padding: 8px 16px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +65,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px 19px;
-  padding: 5px 0 12px;
+  padding: 5px 0 10px;
 }
 
 .language-button {
@@ -94,11 +94,11 @@ body {
 
 .separator {
   width: 100%;
-  max-width: 850px;
+  max-width: 1000px;
   height: 1px;
   flex-shrink: 0;
   background: var(--dorado);
-  margin: 0 auto 10px;
+  margin: 0 auto 8px;
 }
 
 .cover-area {
@@ -111,9 +111,9 @@ body {
 .cover-image {
   display: block;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: auto;
-  max-height: calc(100svh - 300px);
+  max-height: calc(100svh - 340px);
   object-fit: contain;
   object-position: center;
   margin: 0 auto;
@@ -121,32 +121,30 @@ body {
 
 .welcome {
   width: 100%;
-  max-width: 900px;
-  margin: 12px auto 15px;
+  max-width: 1000px;
+  margin: 15px auto 18px;
   padding: 0 10px;
   color: var(--azul);
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(19px, 2vw, 23px);
-  line-height: 1.34;
+  font-size: clamp(22px, 2.3vw, 29px);
+  line-height: 1.32;
 }
 
 .welcome-line {
   display: block;
   opacity: 0;
-  transform: translateY(16px);
-  animation: cascade-in 0.65s ease forwards;
+  transform: translateY(18px);
+  animation: cascade-in 0.7s ease forwards;
 }
 
-/* Primera línea: título de bienvenida */
 .welcome-line:first-child {
-  margin-bottom: 9px;
-  font-size: 1.22em;
+  margin-bottom: 12px;
+  font-size: 1.25em;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
-/* Última línea: énfasis visual */
 .welcome-line:last-child {
   font-weight: 700;
   color: var(--azul-boton);
@@ -163,17 +161,17 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 180px;
-  min-height: 46px;
-  margin: 0 auto 5px;
-  padding: 10px 30px;
+  min-width: 200px;
+  min-height: 52px;
+  margin: 0 auto 8px;
+  padding: 12px 34px;
   border: 1px solid var(--azul-boton);
   border-radius: 7px;
   background: var(--azul-boton);
   color: #fff;
   text-decoration: none;
   text-align: center;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   box-shadow: 0 3px 8px rgba(23, 54, 93, 0.15);
   transition: background 0.2s ease, transform 0.2s ease;
@@ -190,30 +188,20 @@ html[dir="rtl"] .welcome {
 }
 
 @media (min-width: 761px) {
-  .page {
-    padding-top: 8px;
-    padding-bottom: 12px;
-  }
-
-  .language-bar {
-    padding-bottom: 9px;
-  }
-
   .cover-image {
-    max-height: calc(100svh - 300px);
+    max-height: calc(100svh - 340px);
   }
 
   .welcome {
-    margin-top: 9px;
-    margin-bottom: 11px;
-    line-height: 1.28;
+    margin-top: 10px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 760px) {
   .page {
     min-height: 100svh;
-    padding: 5px 0 10px;
+    padding: 5px 0 12px;
   }
 
   .language-bar {
@@ -228,7 +216,7 @@ html[dir="rtl"] .welcome {
 
   .separator {
     width: calc(100% - 24px);
-    margin-bottom: 7px;
+    margin-bottom: 5px;
   }
 
   .cover-image {
@@ -241,22 +229,22 @@ html[dir="rtl"] .welcome {
   }
 
   .welcome {
-    margin: 8px auto 10px;
-    padding: 0 14px;
-    font-size: 19px;
+    margin: 10px auto 13px;
+    padding: 0 12px;
+    font-size: clamp(20px, 5.3vw, 25px);
     line-height: 1.3;
   }
 
   .welcome-line:first-child {
-    margin-bottom: 9px;
-    font-size: 1.18em;
+    margin-bottom: 10px;
+    font-size: 1.2em;
   }
 
   .explore-button {
-    min-width: 165px;
-    min-height: 44px;
-    padding: 9px 26px;
-    font-size: 16px;
+    min-width: 185px;
+    min-height: 48px;
+    padding: 10px 28px;
+    font-size: 18px;
   }
 }
 
@@ -276,33 +264,33 @@ html[dir="rtl"] .welcome {
   }
 
   .welcome {
-    margin-top: 6px;
-    margin-bottom: 8px;
-    padding: 0 12px;
-    font-size: 17px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    font-size: 19px;
     line-height: 1.27;
   }
 
   .welcome-line:first-child {
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
 
   .explore-button {
-    min-height: 41px;
+    min-height: 45px;
   }
 }
 
 @media (max-height: 700px) and (max-width: 760px) {
   .cover-image {
-    height: 35svh;
-    max-height: 35svh;
+    height: 34svh;
+    max-height: 34svh;
   }
 
   .welcome {
     margin-top: 5px;
-    margin-bottom: 6px;
-    font-size: 16px;
-    line-height: 1.23;
+    margin-bottom: 7px;
+    font-size: 18px;
+    line-height: 1.22;
   }
 
   .welcome-line:first-child {
@@ -310,9 +298,9 @@ html[dir="rtl"] .welcome {
   }
 
   .explore-button {
-    min-height: 38px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    min-height: 42px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
@@ -354,8 +342,8 @@ html[dir="rtl"] .welcome {
     <img
       id="coverImage"
       class="cover-image"
-      src="/Explora/portada.jpg"
-      alt="La Palabra en Cápsulas: Fe, Poder y Vida"
+      src="/Explora/portada.png"
+      alt="Portada de La Palabra en Cápsulas"
       fetchpriority="high"
     >
 
@@ -380,7 +368,7 @@ html[dir="rtl"] .welcome {
 (function () {
   "use strict";
 
-  const spanishImage = "/Explora/portada.jpg";
+  const spanishImage = "/Explora/portada.png";
 
   const translations = {
     es: {
