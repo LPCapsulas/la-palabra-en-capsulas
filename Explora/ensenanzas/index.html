@@ -213,6 +213,10 @@ html[dir="rtl"] .back-home a{
   <button type="button" data-lang="pt" aria-pressed="false">Português</button>
   <button type="button" data-lang="he" aria-pressed="false">עברית</button>
   <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+  <button type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+  <button type="button" data-lang="ru" aria-pressed="false">Русский</button>
+  <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+  <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
 </nav>
 
 <section class="intro">
@@ -329,6 +333,54 @@ const T = {
     back:"العودة إلى القائمة ←",
     documentTitle:"تعاليم وتأملات — كلمة الله في كبسولات",
     dir:"rtl"
+  },
+
+  hi: {
+    brand:"कैप्सूल में परमेश्वर का वचन",
+    title:"शिक्षाएँ",
+    intro:"परमेश्वर के वचन के अनुभवों, बातचीत और सत्यों से जन्मे विचार, जिन्हें दैनिक जीवन में लागू करने के उद्देश्य से साझा किया गया है।",
+    cardTitle:"Gullivers में चाय",
+    cardDesc:"एक सुबह, चाय पीते हुए और परमेश्वर के वचन पर बातचीत करते समय, एक ब्रीफ़केस से जुड़ी साधारण घटना ने मुझे दूसरों के बारे में सोचने का महत्वपूर्ण सबक सिखाया।",
+    read:"कहानी पढ़ें →",
+    back:"← मेनू पर वापस जाएँ",
+    documentTitle:"शिक्षाएँ — कैप्सूल में परमेश्वर का वचन",
+    dir:"ltr"
+  },
+
+  ru: {
+    brand:"СЛОВО В КАПСУЛАХ",
+    title:"Наставления",
+    intro:"Размышления, рождённые жизненным опытом, беседами и истинами Слова Божьего, чтобы применять их в повседневной жизни.",
+    cardTitle:"Чай в Gullivers",
+    cardDesc:"Однажды утром, когда я пил чай и беседовал о Слове Божьем, простой случай с портфелем преподал мне важный урок о том, как думать о других.",
+    read:"Читать историю →",
+    back:"← Вернуться в меню",
+    documentTitle:"Наставления — Слово в капсулах",
+    dir:"ltr"
+  },
+
+  de: {
+    brand:"DAS WORT IN KAPSELN",
+    title:"Lehren",
+    intro:"Gedanken, die aus Erfahrungen, Gesprächen und Wahrheiten aus Gottes Wort entstehen, damit wir sie im Alltag anwenden können.",
+    cardTitle:"Ein Tee bei Gullivers",
+    cardDesc:"Eines Morgens lehrte mich eine einfache Situation mit einer Aktentasche, während ich Tee trank und über Gottes Wort sprach, eine wichtige Lektion darüber, an andere zu denken.",
+    read:"Die Geschichte lesen →",
+    back:"← Zurück zum Menü",
+    documentTitle:"Lehren — Das Wort in Kapseln",
+    dir:"ltr"
+  },
+
+  ja: {
+    brand:"カプセルに込められたみことば",
+    title:"教え",
+    intro:"神の御言葉に基づく経験や会話、真理から生まれた考察を、日々の生活に生かすことを目的として紹介します。",
+    cardTitle:"Gulliversでのお茶",
+    cardDesc:"ある朝、お茶を飲みながら神の御言葉について話していたとき、書類かばんにまつわる何気ない出来事から、他の人のことを考える大切さを学びました。",
+    read:"物語を読む →",
+    back:"← メニューに戻る",
+    documentTitle:"教え — カプセルに込められたみことば",
+    dir:"ltr"
   }
 };
 
@@ -363,6 +415,7 @@ function setLanguage(language){
 
   try{
     localStorage.setItem("lpc-language",language);
+    localStorage.setItem("user_language",language);
   }catch(error){
     // La página sigue funcionando aunque el almacenamiento esté bloqueado.
   }
@@ -376,20 +429,23 @@ document.querySelectorAll("[data-lang]").forEach(function(button){
 
 (function initializeLanguage(){
   let language="es";
-
-  try{
-    const savedLanguage=localStorage.getItem("lpc-language");
-
-    if(savedLanguage && Object.prototype.hasOwnProperty.call(T,savedLanguage)){
-      language=savedLanguage;
+  const params=new URLSearchParams(window.location.search);
+  const requested=params.get("lang");
+  if(requested){
+    const normalized=requested.toLowerCase()==="zh-cn" ? "zh" : requested.toLowerCase();
+    if(Object.prototype.hasOwnProperty.call(T,normalized)) language=normalized;
+  }else{
+    try{
+      const savedLanguage=localStorage.getItem("lpc-language") || localStorage.getItem("user_language");
+      if(savedLanguage && Object.prototype.hasOwnProperty.call(T,savedLanguage)){
+        language=savedLanguage;
+      }
+    }catch(error){
+      // Si no se puede leer el almacenamiento, se utiliza español.
     }
-  }catch(error){
-    // Si no se puede leer el almacenamiento, se utiliza español.
   }
-
   setLanguage(language);
 })();
 </script>
 </body>
 </html>
-
