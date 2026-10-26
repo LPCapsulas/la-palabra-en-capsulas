@@ -1,59 +1,567 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Él está al tanto — Parte 2 — La Palabra en Cápsulas</title><style>
-:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--line:#d9d9d9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif}.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:55px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}header{text-align:center;margin-bottom:30px}.site-name{margin-bottom:8px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1.8px}.author{margin:0 0 12px;color:var(--muted);font-size:17px;font-style:italic}h1{margin:0 0 8px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;font-weight:700}.part-label{margin-top:5px;color:var(--muted);font-size:16px;font-style:italic}.article p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}.cascade{margin:22px 0 25px;padding:4px 0 4px 20px;border-left:3px solid var(--accent);font-size:17px;line-height:1.7}.cascade div{margin-bottom:5px}.cascade div:last-child{margin-bottom:0}.scripture{margin:23px 0;padding:12px 20px;border-left:3px solid var(--accent);font-size:17px;line-height:1.7;text-align:justify}.scripture cite{display:block;margin-top:8px;color:var(--muted);font-size:14px;font-style:italic}.footnote-ref{display:inline-block;position:relative;font-size:19px!important;vertical-align:super;line-height:1;color:var(--accent);font-weight:400!important;cursor:pointer;text-decoration:none;padding:0 2px;-webkit-tap-highlight-color:transparent}.footnote-ref:hover{text-decoration:underline}.footnote-popup{display:none;position:absolute;left:50%;bottom:135%;transform:translateX(-50%);z-index:1000;width:max-content;max-width:min(260px,80vw);padding:9px 12px;border-radius:6px;background:#17365D;color:#fff;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:15px;font-weight:400;line-height:1.4;text-align:center;white-space:normal;box-shadow:0 3px 12px rgba(0,0,0,.2);pointer-events:none}.footnote-ref.show-note .footnote-popup{display:block}.language-selector{display:flex;justify-content:center;gap:8px;margin:0 auto 28px;flex-wrap:wrap}.language-selector button{border:1px solid var(--accent);border-radius:4px;padding:7px 13px;background:transparent;color:var(--accent);font:600 14px "Segoe UI",Tahoma,sans-serif;cursor:pointer}.language-selector button[aria-pressed="true"],.language-selector button:hover{background:var(--accent);color:#fff}.footer-nav{margin-top:35px;padding-top:22px;border-top:1px solid var(--line);text-align:center}.footer-nav a{display:inline-block;margin:0 10px;color:var(--accent);text-decoration:none;font-size:16px;font-weight:700}.footer-nav a:hover{text-decoration:underline}@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:35px 22px;border-radius:0;box-shadow:none}header{margin-bottom:25px}.site-name{font-size:12px;letter-spacing:1.5px}h1{font-size:30px;line-height:1.25}.author{font-size:16px}.part-label{font-size:15px}.article p{font-size:17px;line-height:1.75}.cascade{margin:18px 0 22px;padding-left:16px;font-size:17px;line-height:1.6}.scripture{margin:22px 0;padding:12px 16px;font-size:17px;line-height:1.65}.footnote-ref{font-size:20px!important}.footnote-popup{font-size:15px;max-width:75vw}.footer-nav a{display:block;margin:12px 0}}
-[dir="rtl"] .article,[dir="rtl"] .scripture,[dir="rtl"] .cascade{text-align:right;direction:rtl}[dir="rtl"] .scripture{border-left:0;border-right:3px solid var(--accent);padding-left:20px;padding-right:20px}[dir="rtl"] .cascade{border-left:0;border-right:3px solid var(--accent);padding-left:0;padding-right:20px}[dir="rtl"] .footnote-popup{direction:rtl} .verse-image{text-align:center;margin:24px 0}.verse-image img{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:4px} </style>
-</head><body><main class="page">
-<header><div class="site-name">LA PALABRA EN CÁPSULAS</div><div class="author">Por J.V.</div><h1>Él está al tanto</h1><div class="part-label">Parte 2</div></header>
-<nav class="language-selector" aria-label="Language selector"><button type="button" data-lang="es" aria-pressed="true">Español</button><button type="button" data-lang="en" aria-pressed="false">English</button><button type="button" data-lang="zh" aria-pressed="false">简体中文</button><button type="button" data-lang="fr" aria-pressed="false">Français</button><button type="button" data-lang="it" aria-pressed="false">Italiano</button><button type="button" data-lang="pt" aria-pressed="false">Português</button><button type="button" data-lang="he" aria-pressed="false">עברית</button><button type="button" data-lang="ar" aria-pressed="false">العربية</button></nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F4EC">
+<title>Él está al tanto — Parte 2 — La Palabra en Cápsulas</title>
+<style>
+:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--line:#d9d9d9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif}
+.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:55px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+header{text-align:center;margin-bottom:30px}
+.site-name{margin-bottom:8px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1.8px}
+.author{margin:0 0 12px;color:var(--muted);font-size:17px;font-style:italic}
+h1{margin:0 0 8px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;font-weight:700}
+.part-label{margin-top:5px;color:var(--muted);font-size:16px;font-style:italic}
+.article p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}
+.topic-list{margin:0 0 22px;padding-left:28px;font-size:17px;line-height:1.8}
+.topic-list li{margin-bottom:5px}
+.scripture{margin:23px 0;padding:12px 20px;border-left:3px solid var(--accent);font-size:17px;line-height:1.7;text-align:justify}
+.scripture cite{display:block;margin-top:8px;color:var(--muted);font-size:14px;font-style:italic}
+.footnote-ref{display:inline-block;position:relative;font-size:19px!important;vertical-align:super;line-height:1;color:var(--accent);font-weight:400!important;cursor:pointer;text-decoration:none;padding:0 2px;-webkit-tap-highlight-color:transparent}
+.footnote-ref:hover{text-decoration:underline}
+.footnote-popup{display:none;position:absolute;left:50%;bottom:135%;transform:translateX(-50%);z-index:1000;width:max-content;max-width:min(260px,80vw);padding:9px 12px;border-radius:6px;background:#17365D;color:#fff;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:15px;font-weight:400;line-height:1.4;text-align:center;white-space:normal;box-shadow:0 3px 12px rgba(0,0,0,.2);pointer-events:none}
+.footnote-ref.show-note .footnote-popup{display:block}
+.language-selector{display:flex;justify-content:center;gap:8px;margin:0 auto 28px;flex-wrap:wrap}
+.language-selector button{border:1px solid var(--accent);border-radius:4px;padding:7px 13px;background:transparent;color:var(--accent);font:600 14px "Segoe UI",Tahoma,sans-serif;cursor:pointer}
+.language-selector button[aria-pressed="true"],.language-selector button:hover{background:var(--accent);color:#fff}
+.footer-nav{margin-top:35px;padding-top:22px;border-top:1px solid var(--line);text-align:center}
+.footer-nav a{display:inline-block;margin:0 10px;color:var(--accent);text-decoration:none;font-size:16px;font-weight:700}
+.footer-nav a:hover{text-decoration:underline}
+.verse-image{text-align:center;margin:24px 0}
+.verse-image img{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;border-radius:4px}
+[dir="rtl"] .article,[dir="rtl"] .scripture,[dir="rtl"] .cascade,[dir="rtl"] .topic-list{text-align:right;direction:rtl}
+[dir="rtl"] .scripture{border-left:0;border-right:3px solid var(--accent);padding-left:20px;padding-right:20px}
+[dir="rtl"] .cascade{border-left:0;border-right:3px solid var(--accent);padding-left:0;padding-right:20px}
+[dir="rtl"] .topic-list{padding-left:0;padding-right:28px}
+[dir="rtl"] .footnote-popup{direction:rtl}
+html[lang^="zh"] body{font-family:"Microsoft YaHei","Noto Sans SC",sans-serif}
+html[lang="ja"] body{font-family:"Yu Gothic","Meiryo","Noto Sans JP",sans-serif}
+html[lang="hi"] body{font-family:"Noto Sans Devanagari","Mangal","Segoe UI",sans-serif}
+@media(max-width:700px){
+.page{width:auto;max-width:none;margin:0;padding:35px 22px;border-radius:0;box-shadow:none}
+header{margin-bottom:25px}
+.site-name{font-size:12px;letter-spacing:1.5px}
+h1{font-size:30px;line-height:1.25}
+.author{font-size:16px}
+.part-label{font-size:15px}
+.article p{font-size:17px;line-height:1.75}
+.topic-list{padding-left:24px;font-size:17px;line-height:1.7}
+.scripture{margin:22px 0;padding:12px 16px;font-size:17px;line-height:1.65}
+.footnote-ref{font-size:20px!important}
+.footnote-popup{font-size:15px;max-width:75vw}
+.footer-nav a{display:block;margin:12px 0}
+[dir="rtl"] .topic-list{padding-right:24px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+<header>
+<div class="site-name">LA PALABRA EN CÁPSULAS</div>
+<div class="author">Por J.V.</div>
+<h1>Él está al tanto</h1>
+<div class="part-label">Parte 2</div>
+</header>
+
+<nav class="language-selector" aria-label="Seleccionar idioma">
+<button type="button" data-lang="es" aria-pressed="true">Español</button>
+<button type="button" data-lang="en" aria-pressed="false">English</button>
+<button type="button" data-lang="zh" aria-pressed="false">简体中文</button>
+<button type="button" data-lang="fr" aria-pressed="false">Français</button>
+<button type="button" data-lang="it" aria-pressed="false">Italiano</button>
+<button type="button" data-lang="pt" aria-pressed="false">Português</button>
+<button type="button" data-lang="he" aria-pressed="false">עברית</button>
+<button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+<button type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+<button type="button" data-lang="ru" aria-pressed="false">Русский</button>
+<button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+<button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+</nav>
+
 <article class="article"></article>
-<nav class="footer-nav"><a href="el-esta-al-tanto-parte-1.html"></a><a href="index.html"></a></nav>
+<nav class="footer-nav">
+<a href="el-esta-al-tanto-parte-1.html"></a>
+<a href="index.html"></a>
+</nav>
 </main>
-<!-- Imágenes del versículo: sube estos archivos a la misma carpeta que este HTML: salmo-91.png (español), salmo-91-en.png (inglés), salmo-91-zh.png (chino), salmo-91-fr.png (francés), salmo-91-it.png (italiano), salmo-91-pt.png (portugués), salmo-91-he.png (hebreo) y salmo-91-ar.png (árabe). -->
-<script>window.translations = {"es":{"title":"Él está al tanto — Parte 2 — La Palabra en Cápsulas","author":"Por J.V.","heading":"Él está al tanto","part":"Parte 2","article":"<p>Primero Venezuela y luego Colombia fueron sacudidos con sendos terremotos y sabemos que habrá otros países que pasarán por eventos similares, como ha pasado igualmente en Asia y recientemente en la Florida.</p>\n<p>Todos estos eventos tienen la permisibilidad de Dios, y pareciera que la tierra se subleva y quisiera decir algo. El finado evangelista inglés Charles Spurgeon, en sus sermones, decía que “los desastres o aun los aparentes desórdenes naturales están controlados por la mano divina”. Aun el caos hace parte del orden.</p>\n<p>Así como las plagas, guerras y rumores de guerras, los terremotos son señal profética,<sup><span class=\"footnote-ref\" title=\"Mateo 24:4-8\">¹⁰</span></sup> básicamente sobre dos puntos:</p>\n<ul class=\"topic-list prophetic\"><li>la venida del Señor y</li><li>el fin de los tiempos.</li></ul>\n<p>Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.</p>\n<p>Y, por supuesto, debe ser el Señor nuestro punto de referencia. Estas señales son más que un llamado de atención.</p>\n<div class=\"verse-image\"><img src=\"salmo-91.png\" alt=\"Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7\"></div>\n<p>Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él quiere que nosotros busquemos. Él dice:</p>\n<blockquote class=\"scripture\">“Más buscad primeramente el reino de Dios y su justicia —su equilibrio, su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.<sup><span class=\"footnote-ref\" title=\"Mateo 6:33\">¹¹</span></sup></blockquote>\n<p>Cuando no hay búsqueda de su rostro,<sup><span class=\"footnote-ref\" title=\"Salmos 27:8\">¹²</span></sup> pasamos por situaciones incómodas.</p>\n<p>Es bueno que entendamos y aceptemos que las cosas ocurren con la venia divina, pero Él no se deleita en el infortunio del hombre, sino en su paz.<sup><span class=\"footnote-ref\" title=\"Salmos 35:27-28\">¹³</span></sup></p>\n<p>Por todo lo anterior, debemos guardar una actitud de respeto y temor reverente<sup><span class=\"footnote-ref\" title=\"Hebreos 12:28\">¹⁴</span></sup> hacia el Señor.</p>\n<p>El patriarca Job tuvo una vida de muchas dificultades e infortunios. Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes, fuego y un gran viento. Además, fue atacado por Satanás con enfermedades.</p>\n<p>Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel descomunal ataque del maligno, jamás culpó al Señor por sus males.</p>\n<blockquote class=\"scripture\">«En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».<sup><span class=\"footnote-ref\" title=\"Job 1:22\">¹⁵</span></sup></blockquote>\n<p>Cuando sucede algo desagradable y aun terrible, no culpes a Dios. Él solo se deleita en tu paz.</p>\n<p>Sí, es cierto que Él se burla de sus enemigos,<sup><span class=\"footnote-ref\" title=\"Salmos 2:4\">¹⁶</span></sup> pero tú no lo eres. Si lo recibiste, eres su hijo.<sup><span class=\"footnote-ref\" title=\"1 Juan 3:2; Romanos 8:16\">¹⁷</span></sup></p>\n<p>Y si no lo has hecho, aquí está la oportunidad.</p>\n<p>Allí no terminó la historia de Job. Después que él hubo orado por sus amigos que erróneamente lo culpaban de su infortunio, Dios le dio una gran bendición al patriarca: el doble de lo que antes había tenido, múltiples bendiciones, más hijos, viviendo 140 años más, muriendo viejo y lleno de días.</p>\n<p>Los que quedaron vivos por la calamidad deben orar y auxiliar a los sobrevivientes y a quienes hoy día están dolidos, pues perdieron a sus seres queridos y posesiones.</p>\n<p>Después de la tempestad viene la calma y hay que reconstruir.</p>\n<blockquote class=\"scripture\">“No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer tú por tu país”.<sup><span class=\"footnote-ref\" title=\"Frase célebre de John F. Kennedy\">¹⁸</span></sup><cite>Frase célebre de John F. Kennedy</cite></blockquote>\n<p>Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos enseñe justicia.<sup><span class=\"footnote-ref\" title=\"Oseas 10:12\">¹⁹</span></sup></p>\n<p>Hay personas que Dios se lleva por misericordia, y hay personas que Dios deja vivas, también por misericordia.</p>","nav":["← Volver a Parte 1","Volver a Artículos"]},"en":{"title":"He Is Aware — Part 2 — La Palabra en Cápsulas","author":"By J.V.","heading":"He Is Aware","part":"Part 2","article":"<p>First Venezuela, and then Colombia, were shaken by major earthquakes. We know that other countries will experience similar events, as has also happened in Asia and recently in Florida.</p>\n<p>All these events are permitted by God, and it seems as though the earth is rebelling and wants to say something. The late English evangelist Charles Spurgeon said in his sermons that “disasters, or even apparent natural disorder, are controlled by the divine hand.” Even chaos is part of order.</p>\n<p>Like plagues, wars, and rumors of wars, earthquakes are prophetic signs,<sup><span class=\"footnote-ref\" title=\"Matthew 24:4-8\">¹⁰</span></sup> mainly concerning two things:</p>\n<ul class=\"topic-list prophetic\"><li>the coming of the Lord, and</li><li>the end of the age.</li></ul>\n<p>Volcanoes can be predicted accurately; however, to date there is still no device that can predict when an earthquake or aftershock will occur. Perhaps someday. Google only detects it once it has already begun.</p>\n<p>And, of course, the Lord must be our point of reference. These signs are more than a wake-up call.</p>\n<div class=\"verse-image\"><img src=\"salmo-91-en.png\" alt=\"A thousand may fall at your side, ten thousand at your right hand, but it will not come near you. Psalm 91:7\"></div>\n<p>God is a God of order, equilibrium, and balance. That is what He wants us to seek. He says:</p>\n<blockquote class=\"scripture\">“But seek first the kingdom of God and His righteousness—His balance, His way of being and doing what is right—and all these things will be added to you.”<sup><span class=\"footnote-ref\" title=\"Matthew 6:33\">¹¹</span></sup></blockquote>\n<p>When we do not seek His face,<sup><span class=\"footnote-ref\" title=\"Psalm 27:8\">¹²</span></sup> we go through uncomfortable situations.</p>\n<p>It is good for us to understand and accept that things happen with divine permission, but He does not delight in human misfortune; He delights in our peace.<sup><span class=\"footnote-ref\" title=\"Psalm 35:27-28\">¹³</span></sup></p>\n<p>For all these reasons, we should maintain an attitude of respect and reverent fear<sup><span class=\"footnote-ref\" title=\"Hebrews 12:28\">¹⁴</span></sup> toward the Lord.</p>\n<p>The patriarch Job lived through many hardships and misfortunes. He lost his family and wealth after becoming a victim of thieves and robbers, fire, and a great wind. He was also afflicted by Satan with illnesses.</p>\n<p>Although he earnestly sought explanations from God for that immense attack of the evil one, he never blamed the Lord for his suffering.</p>\n<blockquote class=\"scripture\">“In all this Job did not sin nor charge God with wrong.”<sup><span class=\"footnote-ref\" title=\"Job 1:22\">¹⁵</span></sup></blockquote>\n<p>When something unpleasant, even terrible, happens, do not blame God. He delights in your peace.</p>\n<p>Yes, it is true that He laughs at His enemies,<sup><span class=\"footnote-ref\" title=\"Psalm 2:4\">¹⁶</span></sup> but you are not His enemy. If you have received Him, you are His child.<sup><span class=\"footnote-ref\" title=\"1 John 3:2; Romans 8:16\">¹⁷</span></sup></p>\n<p>And if you have not done so, here is your opportunity.</p>\n<p>That was not the end of Job’s story. After he prayed for his friends, who had wrongly blamed him for his misfortune, God greatly blessed the patriarch: he received twice what he had before, many blessings, more children, and lived another 140 years, dying old and full of days.</p>\n<p>Those who survived the calamity should pray for and help the survivors and those who are grieving today because they have lost loved ones and possessions.</p>\n<p>After the storm comes calm, and rebuilding must begin.</p>\n<blockquote class=\"scripture\">“Ask not what your country can do for you—ask what you can do for your country.”<sup><span class=\"footnote-ref\" title=\"Famous quote by John F. Kennedy\">¹⁸</span></sup><cite>Famous quote by John F. Kennedy</cite></blockquote>\n<p>It is time to act. It is time to seek the Lord, so that He may come and teach us righteousness.<sup><span class=\"footnote-ref\" title=\"Hosea 10:12\">¹⁹</span></sup></p>\n<p>There are people whom God takes away in mercy, and there are people whom God leaves alive, also in mercy.</p>","nav":["← Back to Part 1","Back to Articles"]},"fr":{"title":"Il est au courant — Partie 2 — La Palabra en Cápsulas","author":"Par J.V.","heading":"Il est au courant","part":"Partie 2","article":"<p>D’abord le Venezuela, puis la Colombie, ont été secoués par de puissants tremblements de terre. Nous savons que d’autres pays connaîtront des événements semblables, comme cela s’est également produit en Asie et récemment en Floride.</p>\n<p>Tous ces événements sont permis par Dieu, et l’on dirait que la terre se révolte et veut dire quelque chose. Le défunt évangéliste anglais Charles Spurgeon disait dans ses sermons que « les catastrophes, ou même les désordres naturels apparents, sont contrôlés par la main divine ». Même le chaos fait partie de l’ordre.</p>\n<p>Comme les fléaux, les guerres et les rumeurs de guerres, les tremblements de terre sont des signes prophétiques,<sup><span class=\"footnote-ref\" title=\"Matthieu 24:4-8\">¹⁰</span></sup> qui concernent essentiellement deux choses :</p>\n<ul class=\"topic-list prophetic\"><li>la venue du Seigneur, et</li><li>la fin des temps.</li></ul>\n<p>Les éruptions volcaniques peuvent être prévues avec précision ; cependant, à ce jour, aucun appareil ne permet encore de prédire quand un tremblement de terre ou une réplique se produira. Peut-être un jour. Google ne le détecte qu’une fois qu’il a commencé.</p>\n<p>Et, bien sûr, le Seigneur doit être notre point de référence. Ces signes sont plus qu’un simple avertissement.</p>\n<div class=\"verse-image\"><img src=\"salmo-91-fr.png\" alt=\"Mille tomberont à ton côté et dix mille à ta droite, mais tu ne seras pas atteint. Psaume 91:7\"></div>\n<p>Dieu est un Dieu d’ordre, d’équilibre et d’harmonie. C’est ce qu’il veut que nous recherchions. Il dit :</p>\n<blockquote class=\"scripture\">« Cherchez premièrement le royaume de Dieu et sa justice — son équilibre, sa manière d’être et d’agir avec justice — et toutes ces choses vous seront données par-dessus. »<sup><span class=\"footnote-ref\" title=\"Matthieu 6:33\">¹¹</span></sup></blockquote>\n<p>Lorsque nous ne cherchons pas sa face,<sup><span class=\"footnote-ref\" title=\"Psaume 27:8\">¹²</span></sup> nous traversons des situations pénibles.</p>\n<p>Il est bon de comprendre et d’accepter que les choses arrivent avec la permission divine, mais Dieu ne se réjouit pas du malheur de l’être humain ; il se réjouit de sa paix.<sup><span class=\"footnote-ref\" title=\"Psaume 35:27-28\">¹³</span></sup></p>\n<p>Pour toutes ces raisons, nous devons garder une attitude de respect et de crainte révérencielle<sup><span class=\"footnote-ref\" title=\"Hébreux 12:28\">¹⁴</span></sup> envers le Seigneur.</p>\n<p>Le patriarche Job a connu de nombreuses difficultés et de nombreux malheurs. Il a perdu sa famille et ses richesses, victime de voleurs et de brigands, du feu et d’un grand vent. Satan l’a également frappé par la maladie.</p>\n<p>Bien qu’il ait cherché avec ardeur auprès de Dieu des explications à cette attaque terrible du mal, il n’a jamais accusé le Seigneur de ses souffrances.</p>\n<blockquote class=\"scripture\">« En tout cela, Job ne pécha point et n’attribua rien d’injuste à Dieu. »<sup><span class=\"footnote-ref\" title=\"Job 1:22\">¹⁵</span></sup></blockquote>\n<p>Lorsqu’un événement désagréable, voire terrible, survient, n’accusez pas Dieu. Il se réjouit de votre paix.</p>\n<p>Oui, il est vrai qu’il se moque de ses ennemis,<sup><span class=\"footnote-ref\" title=\"Psaume 2:4\">¹⁶</span></sup> mais vous n’êtes pas son ennemi. Si vous l’avez reçu, vous êtes son enfant.<sup><span class=\"footnote-ref\" title=\"1 Jean 3:2 ; Romains 8:16\">¹⁷</span></sup></p>\n<p>Et si vous ne l’avez pas encore fait, voici l’occasion.</p>\n<p>L’histoire de Job ne s’est pas terminée là. Après avoir prié pour ses amis qui l’accusaient à tort de son malheur, Dieu bénit abondamment le patriarche : il reçut le double de ce qu’il avait auparavant, de nombreuses bénédictions, d’autres enfants, et vécut encore 140 ans, mourant vieux et rassasié de jours.</p>\n<p>Ceux qui ont survécu à la catastrophe doivent prier pour les survivants et aider ceux qui souffrent aujourd’hui d’avoir perdu des êtres chers et leurs biens.</p>\n<p>Après la tempête vient le calme, et il faut reconstruire.</p>\n<blockquote class=\"scripture\">« Ne demande pas ce que ton pays peut faire pour toi ; demande ce que tu peux faire pour ton pays. »<sup><span class=\"footnote-ref\" title=\"Citation célèbre de John F. Kennedy\">¹⁸</span></sup><cite>Citation célèbre de John F. Kennedy</cite></blockquote>\n<p>Il est temps d’agir. Il est temps de chercher le Seigneur afin qu’il vienne nous enseigner la justice.<sup><span class=\"footnote-ref\" title=\"Osée 10:12\">¹⁹</span></sup></p>\n<p>Il y a des personnes que Dieu reprend dans sa miséricorde, et d’autres qu’il laisse en vie, également par miséricorde.</p>","nav":["← Retour à la partie 1","Retour aux articles"]},"it":{"title":"Egli è al corrente — Parte 2 — La Palabra en Cápsulas","author":"Di J.V.","heading":"Egli è al corrente","part":"Parte 2","nav":["← Torna alla Parte 1","Torna agli articoli"],"article":"<p>Prima il Venezuela e poi la Colombia sono stati scossi da forti terremoti. Sappiamo che altri paesi vivranno eventi simili, come è accaduto anche in Asia e, recentemente, in Florida.</p>\n<p>Tutti questi eventi sono permessi da Dio, e sembra che la terra si ribelli e voglia dire qualcosa. Il defunto evangelista inglese Charles Spurgeon affermava nei suoi sermoni che «le catastrofi, e persino gli apparenti disordini naturali, sono controllati dalla mano divina». Anche il caos fa parte dell’ordine.</p>\n<p>Come le piaghe, le guerre e le voci di guerre, i terremoti sono segni profetici,<sup><span class=\"footnote-ref\" title=\"Matteo 24:4-8\">¹⁰</span></sup> che riguardano soprattutto due cose:</p><ul class=\"topic-list prophetic\"><li>la venuta del Signore;</li><li>la fine dei tempi.</li></ul>\n<p>Le eruzioni vulcaniche possono essere previste con precisione; tuttavia, finora non esiste alcun dispositivo capace di prevedere quando si verificherà un terremoto o una scossa di assestamento. Forse un giorno. Google lo rileva soltanto quando è già iniziato.</p>\n<p>E, naturalmente, il Signore deve essere il nostro punto di riferimento. Questi segni sono più di un semplice richiamo all’attenzione.</p><div class=\"verse-image\"><img src=\"salmo-91-it.png\" alt=\"Mille cadranno al tuo fianco e diecimila alla tua destra, ma nulla ti colpirà. Salmo 91:7\"></div>\n<p>Dio è un Dio di ordine, equilibrio e armonia. È questo che vuole che cerchiamo. Egli dice:</p><blockquote class=\"scripture\">«Cercate prima il regno di Dio e la sua giustizia — il suo equilibrio, il suo modo di essere e di agire con giustizia — e tutte queste cose vi saranno date in aggiunta».<sup><span class=\"footnote-ref\" title=\"Matteo 6:33\">¹¹</span></sup></blockquote>\n<p>Quando non cerchiamo il suo volto,<sup><span class=\"footnote-ref\" title=\"Salmi 27:8\">¹²</span></sup> attraversiamo situazioni difficili.</p><p>È bene capire e accettare che le cose accadono con il permesso divino, ma Dio non si compiace della disgrazia dell’uomo: si compiace della sua pace.<sup><span class=\"footnote-ref\" title=\"Salmi 35:27-28\">¹³</span></sup></p>\n<p>Per tutti questi motivi, dobbiamo mantenere verso il Signore un atteggiamento di rispetto e timore reverenziale.<sup><span class=\"footnote-ref\" title=\"Ebrei 12:28\">¹⁴</span></sup></p><p>Il patriarca Giobbe visse molte difficoltà e sventure. Perse la famiglia e le ricchezze a causa di ladri e predoni, del fuoco e di un forte vento. Inoltre, Satana lo colpì con delle malattie.</p><p>Pur cercando con fervore una spiegazione da Dio per quell’attacco devastante del maligno, non incolpò mai il Signore delle sue sofferenze.</p><blockquote class=\"scripture\">«In tutto questo Giobbe non peccò e non attribuì a Dio alcuna colpa».<sup><span class=\"footnote-ref\" title=\"Giobbe 1:22\">¹⁵</span></sup></blockquote><p>Quando accade qualcosa di spiacevole, persino di terribile, non incolpare Dio. Egli si compiace della tua pace.</p><p>È vero che ride dei suoi nemici,<sup><span class=\"footnote-ref\" title=\"Salmi 2:4\">¹⁶</span></sup> ma tu non sei suo nemico. Se lo hai accolto, sei suo figlio.<sup><span class=\"footnote-ref\" title=\"1 Giovanni 3:2; Romani 8:16\">¹⁷</span></sup></p><p>E se non lo hai ancora fatto, questa è la tua occasione.</p><p>La storia di Giobbe non finì lì. Dopo che ebbe pregato per i suoi amici, che lo accusavano ingiustamente della sua disgrazia, Dio benedisse grandemente il patriarca: gli diede il doppio di ciò che aveva prima, molte benedizioni, altri figli e altri 140 anni di vita; morì vecchio e sazio di giorni.</p><p>Chi è sopravvissuto alla calamità deve pregare e aiutare gli altri sopravvissuti e coloro che oggi soffrono per aver perso i propri cari e i propri beni.</p><p>Dopo la tempesta torna la calma, ed è necessario ricostruire.</p><blockquote class=\"scripture\">«Non chiederti che cosa può fare il tuo paese per te; chiediti che cosa puoi fare tu per il tuo paese».<sup><span class=\"footnote-ref\" title=\"Citazione celebre di John F. Kennedy\">¹⁸</span></sup><cite>Citazione celebre di John F. Kennedy</cite></blockquote><p>È tempo di agire. È tempo di cercare il Signore, affinché venga a insegnarci la giustizia.<sup><span class=\"footnote-ref\" title=\"Osea 10:12\">¹⁹</span></sup></p><p>Ci sono persone che Dio richiama a sé per misericordia e persone che lascia in vita, anch’esse per misericordia.</p>"},"pt":{"title":"Ele está ciente — Parte 2 — La Palabra en Cápsulas","author":"Por J.V.","heading":"Ele está ciente","part":"Parte 2","nav":["← Voltar à Parte 1","Voltar aos artigos"],"article":"<p>Primeiro a Venezuela e depois a Colômbia foram abaladas por fortes terremotos. Sabemos que outros países passarão por eventos semelhantes, como também aconteceu na Ásia e, recentemente, na Flórida.</p><p>Todos esses acontecimentos são permitidos por Deus, e parece que a terra se revolta e quer dizer alguma coisa. O falecido evangelista inglês Charles Spurgeon dizia em seus sermões que “as catástrofes, ou até mesmo as aparentes desordens naturais, são controladas pela mão divina”. Até o caos faz parte da ordem.</p><p>Assim como as pragas, as guerras e os rumores de guerras, os terremotos são sinais proféticos,<sup><span class=\"footnote-ref\" title=\"Mateus 24:4-8\">¹⁰</span></sup> principalmente sobre dois pontos:</p><ul class=\"topic-list prophetic\"><li>a vinda do Senhor; e</li><li>o fim dos tempos.</li></ul><p>As erupções vulcânicas podem ser previstas com precisão; entretanto, até hoje não existe aparelho capaz de prever quando ocorrerá um terremoto ou uma réplica. Talvez um dia. O Google só o detecta quando já começou.</p><p>E, naturalmente, o Senhor deve ser nosso ponto de referência. Esses sinais são mais do que um alerta.</p><div class=\"verse-image\"><img src=\"salmo-91-pt.png\" alt=\"Mil cairão ao teu lado e dez mil à tua direita, mas tu não serás atingido. Salmo 91:7\"></div><p>Deus é um Deus de ordem, equilíbrio e harmonia. É isso que Ele quer que busquemos. Ele diz:</p><blockquote class=\"scripture\">“Buscai primeiro o reino de Deus e a sua justiça — seu equilíbrio, sua maneira de ser e de agir com justiça — e todas essas coisas vos serão acrescentadas.”<sup><span class=\"footnote-ref\" title=\"Mateus 6:33\">¹¹</span></sup></blockquote><p>Quando não buscamos a sua face,<sup><span class=\"footnote-ref\" title=\"Salmos 27:8\">¹²</span></sup> passamos por situações difíceis.</p><p>É bom compreender e aceitar que as coisas acontecem com a permissão divina, mas Deus não se alegra com o infortúnio humano; Ele se alegra com a paz.<sup><span class=\"footnote-ref\" title=\"Salmos 35:27-28\">¹³</span></sup></p><p>Por tudo isso, devemos manter uma atitude de respeito e temor reverente<sup><span class=\"footnote-ref\" title=\"Hebreus 12:28\">¹⁴</span></sup> diante do Senhor.</p><p>O patriarca Jó viveu muitas dificuldades e infortúnios. Perdeu a família e as riquezas ao ser vítima de ladrões e assaltantes, do fogo e de um grande vento. Além disso, Satanás o atacou com doenças.</p><p>Embora tenha buscado ardentemente explicações de Deus para aquele enorme ataque do maligno, nunca culpou o Senhor por seus sofrimentos.</p><blockquote class=\"scripture\">“Em tudo isso Jó não pecou, nem atribuiu a Deus falta alguma.”<sup><span class=\"footnote-ref\" title=\"Jó 1:22\">¹⁵</span></sup></blockquote><p>Quando acontecer algo desagradável, até mesmo terrível, não culpe Deus. Ele se alegra com a sua paz.</p><p>Sim, é verdade que Ele zomba de seus inimigos,<sup><span class=\"footnote-ref\" title=\"Salmos 2:4\">¹⁶</span></sup> mas você não é seu inimigo. Se você o recebeu, é filho dele.<sup><span class=\"footnote-ref\" title=\"1 João 3:2; Romanos 8:16\">¹⁷</span></sup></p><p>E, se ainda não o fez, esta é a oportunidade.</p><p>A história de Jó não terminou ali. Depois que orou por seus amigos, que o culpavam injustamente por sua desgraça, Deus abençoou grandemente o patriarca: deu-lhe o dobro do que possuía antes, muitas bênçãos, mais filhos e mais 140 anos de vida; ele morreu idoso e cheio de dias.</p><p>Os que sobreviveram à calamidade devem orar e ajudar os demais sobreviventes e aqueles que hoje sofrem por terem perdido entes queridos e seus bens.</p><p>Depois da tempestade vem a calmaria, e é preciso reconstruir.</p><blockquote class=\"scripture\">“Não pergunte o que seu país pode fazer por você; pergunte o que você pode fazer por seu país.”<sup><span class=\"footnote-ref\" title=\"Frase célebre de John F. Kennedy\">¹⁸</span></sup><cite>Frase célebre de John F. Kennedy</cite></blockquote><p>É tempo de agir. É tempo de buscar o Senhor, para que venha nos ensinar a justiça.<sup><span class=\"footnote-ref\" title=\"Oseias 10:12\">¹⁹</span></sup></p><p>Há pessoas que Deus leva por misericórdia e há pessoas que Ele deixa vivas, também por misericórdia.</p>"},"zh":{"title":"祂知晓一切 — 第二部分 — La Palabra en Cápsulas","author":"作者：J.V.","heading":"祂知晓一切","part":"第二部分","nav":["← 返回第一部分","返回文章目录"],"article":"<p>委内瑞拉先后发生强烈地震，随后哥伦比亚也遭到地震袭击。我们知道，其他国家也可能经历类似事件，亚洲以及最近佛罗里达发生的情况就是例子。</p><p>这些事件都在上帝所容许的范围之内，仿佛大地正在反抗，想要传达某种信息。已故英国福音布道家查尔斯·司布真在讲道中说过：“灾难，甚至表面上的自然失序，也都在神圣之手的掌管之下。”混乱也属于秩序的一部分。</p><p>地震与灾害、战争和战争的传闻一样，都是预言中的征兆，<sup><span class=\"footnote-ref\" title=\"马太福音 24:4-8\">¹⁰</span></sup>主要涉及两件事：</p><ul class=\"topic-list prophetic\"><li>主的降临；</li><li>末后的日子。</li></ul><p>火山活动有时可以准确预测；然而，直到今天，还没有设备能够预知地震或余震何时发生。也许将来会有。谷歌只能在地震已经开始后才检测到它。</p><p>当然，主必须是我们所仰望的对象。这些征兆不仅仅是提醒。</p><div class=\"verse-image\"><img src=\"salmo-91-zh.png\" alt=\"虽有千人仆倒在你旁边，万人仆倒在你右边，这灾却不得临近你。诗篇91:7\"></div><p>上帝是有秩序、平衡与和谐的上帝。这正是祂希望我们寻求的。祂说：</p><blockquote class=\"scripture\">“你们要先求祂的国和祂的义——祂的平衡，以及祂行事为人的公义——这些东西都要加给你们了。”<sup><span class=\"footnote-ref\" title=\"马太福音 6:33\">¹¹</span></sup></blockquote><p>当我们不寻求祂的面，<sup><span class=\"footnote-ref\" title=\"诗篇 27:8\">¹²</span></sup>就会经历令人不安的处境。</p><p>我们应当明白并接受，事情是在上帝的许可下发生的；但祂并不以人的不幸为乐，而是喜悦人得享平安。<sup><span class=\"footnote-ref\" title=\"诗篇 35:27-28\">¹³</span></sup></p><p>因此，我们应当以尊重和敬畏的态度来到主面前。<sup><span class=\"footnote-ref\" title=\"希伯来书 12:28\">¹⁴</span></sup></p><p>族长约伯一生经历了许多艰难和不幸。他因盗贼、强盗、火灾和大风而失去了家人和财产。此外，撒但还用疾病攻击他。</p><p>尽管他迫切地向上帝寻求那场邪恶攻击的解释，他却从未因自己的苦难责怪主。</p><blockquote class=\"scripture\">“在这一切的事上，约伯并不犯罪，也不以上帝为愚妄。”<sup><span class=\"footnote-ref\" title=\"约伯记 1:22\">¹⁵</span></sup></blockquote><p>当令人不快、甚至可怕的事情发生时，不要责怪上帝。祂喜悦你得享平安。</p><p>祂确实会嗤笑祂的仇敌，<sup><span class=\"footnote-ref\" title=\"诗篇 2:4\">¹⁶</span></sup>但你不是祂的仇敌。你若接受了祂，就是祂的儿女。<sup><span class=\"footnote-ref\" title=\"约翰一书 3:2；罗马书 8:16\">¹⁷</span></sup></p><p>如果你还没有接受祂，现在就是机会。</p><p>约伯的故事并未就此结束。他为那些错误地指责他遭遇不幸的朋友祷告之后，上帝大大赐福给他：使他所得的比从前加倍，赐下许多福分和更多儿女，并让他又活了140年，年老且日子满足而终。</p><p>在灾难中幸存的人应当祷告，并帮助其他幸存者，以及今天因失去亲人和财物而悲痛的人。</p><p>风暴过后会归于平静，我们必须重建家园。</p><blockquote class=\"scripture\">“不要问你的国家能为你做什么，而要问你能为国家做什么。”<sup><span class=\"footnote-ref\" title=\"约翰·F·肯尼迪的名言\">¹⁸</span></sup><cite>约翰·F·肯尼迪的名言</cite></blockquote><p>现在是行动的时候。现在是寻求主的时候，求祂来教导我们公义。<sup><span class=\"footnote-ref\" title=\"何西阿书 10:12\">¹⁹</span></sup></p><p>有些人蒙上帝怜悯而被祂接去，也有些人蒙怜悯而被祂留下生命。</p>"},"he":{"title":"הוא מודע — חלק 2 — הדבר בכמוסות","author":"מאת J.V.","heading":"הוא מודע","part":"חלק 2","nav":["← חזרה לחלק 1","חזרה למאמרים"],"article":"<p>תחילה ונצואלה ולאחר מכן קולומביה רעדו בעקבות רעידות אדמה חזקות. אנו יודעים שגם מדינות אחרות עלולות לחוות אירועים דומים, כפי שקרה גם באסיה ולאחרונה בפלורידה.</p><p>כל האירועים האלה מתרחשים ברשות אלוהים, ונראה כאילו האדמה מתקוממת ורוצה לומר דבר מה. המטיף האנגלי המנוח צ'ארלס ספרג'ן אמר בדרשותיו ש״אסונות, ואפילו אי־סדרים טבעיים לכאורה, נתונים לשליטה של היד האלוהית״. גם הכאוס הוא חלק מן הסדר.</p><p>כמו המגפות, המלחמות והשמועות על מלחמות, רעידות אדמה הן סימנים נבואיים,<sup><span class=\"footnote-ref\" title=\"מתי 24:4–8\">¹⁰</span></sup> הנוגעים בעיקר לשני דברים:</p><ul class=\"topic-list prophetic\"><li>ביאת האדון;</li><li>אחרית הימים.</li></ul><p>אפשר לחזות התפרצויות געשיות בדיוק; אולם עד היום אין מכשיר שיכול לחזות מתי תתרחש רעידת אדמה או רעידת משנה. אולי בעתיד. גוגל מזהה אותה רק לאחר שכבר החלה.</p><p>וכמובן, האדון חייב להיות נקודת ההתייחסות שלנו. הסימנים האלה הם יותר מאזהרה.</p><div class=\"verse-image\"><img src=\"salmo-91-he.png\" alt=\"ייפול מצדך אלף ורבבה מימינך, אליך לא ייגש. תהילים צ״א:ז׳\"></div><p>אלוהים הוא אל של סדר, איזון והרמוניה. זה מה שהוא רוצה שנבקש. הוא אומר:</p><blockquote class=\"scripture\">״בקשו תחילה את מלכות אלוהים ואת צדקתו — את האיזון שלו ואת דרכו לעשות את הישר — וכל הדברים האלה ייווספו לכם״.<sup><span class=\"footnote-ref\" title=\"מתי 6:33\">¹¹</span></sup></blockquote><p>כאשר איננו מבקשים את פניו,<sup><span class=\"footnote-ref\" title=\"תהילים 27:8\">¹²</span></sup> אנו עוברים מצבים לא נעימים.</p><p>חשוב להבין ולקבל שהדברים מתרחשים ברשות האלוהית, אך אלוהים אינו חפץ באסונו של האדם; הוא חפץ בשלומו.<sup><span class=\"footnote-ref\" title=\"תהילים 35:27–28\">¹³</span></sup></p><p>לכן עלינו לנהוג כלפי האדון בכבוד וביראה עמוקה.<sup><span class=\"footnote-ref\" title=\"עברים 12:28\">¹⁴</span></sup></p><p>איוב, אבי האומה, עבר קשיים ואסונות רבים. הוא איבד את משפחתו ואת רכושו בעקבות גנבים ושודדים, אש ורוח גדולה. נוסף על כך, השטן תקף אותו במחלות.</p><p>אף שחיפש בכל לבו הסבר מאלוהים למתקפה העצומה של הרע, הוא מעולם לא האשים את האדון בסבלו.</p><blockquote class=\"scripture\">״בכל זאת לא חטא איוב ולא הטיח אשמה באלוהים״.<sup><span class=\"footnote-ref\" title=\"איוב 1:22\">¹⁵</span></sup></blockquote><p>כאשר קורה דבר לא נעים, ואפילו נורא, אל תאשים את אלוהים. הוא חפץ בשלומך.</p><p>נכון שהוא לועג לאויביו,<sup><span class=\"footnote-ref\" title=\"תהילים 2:4\">¹⁶</span></sup> אך אתה אינך אויבו. אם קיבלת אותו, אתה ילדו.<sup><span class=\"footnote-ref\" title=\"יוחנן הראשונה 3:2; רומים 8:16\">¹⁷</span></sup></p><p>ואם עדיין לא עשית זאת, זו ההזדמנות שלך.</p><p>סיפורו של איוב לא הסתיים שם. לאחר שהתפלל בעד חבריו, שהאשימו אותו שלא בצדק באסונו, בירך אלוהים את איוב בשפע: הוא קיבל פי שניים ממה שהיה לו קודם, ברכות רבות, ילדים נוספים וחי עוד 140 שנה; הוא מת זקן ושבע ימים.</p><p>מי שנותרו בחיים לאחר האסון צריכים להתפלל ולסייע לניצולים האחרים ולאלה המתאבלים כיום על אובדן יקיריהם ורכושם.</p><p>אחרי הסערה בא השקט, ויש לבנות מחדש.</p><blockquote class=\"scripture\">״אל תשאל מה ארצך יכולה לעשות למענך; שאל מה אתה יכול לעשות למען ארצך״.<sup><span class=\"footnote-ref\" title=\"ציטוט מפורסם של ג׳ון פ׳ קנדי\">¹⁸</span></sup><cite>ציטוט מפורסם של ג׳ון פ׳ קנדי</cite></blockquote><p>הגיע הזמן לפעול. הגיע הזמן לבקש את האדון, כדי שיבוא וילמד אותנו צדק.<sup><span class=\"footnote-ref\" title=\"הושע 10:12\">¹⁹</span></sup></p><p>יש אנשים שאלוהים לוקח אליו ברחמיו, ויש אנשים שהוא משאיר בחיים, גם כן ברחמיו.</p>"},"ar":{"title":"إنه على علم — الجزء الثاني — La Palabra en Cápsulas","author":"بقلم J.V.","heading":"إنه على علم","part":"الجزء الثاني","nav":["← العودة إلى الجزء الأول","العودة إلى المقالات"],"article":"<p>تعرضت فنزويلا أولاً ثم كولومبيا لزلازل قوية. ونعلم أن دولاً أخرى قد تمر بأحداث مماثلة، كما حدث أيضاً في آسيا ومؤخراً في فلوريدا.</p><p>تقع هذه الأحداث جميعها بإذن الله، وكأن الأرض تتمرد وتحاول أن تقول شيئاً. وكان الواعظ الإنجيلي الإنجليزي الراحل تشارلز سبيرجن يقول في عظاته إن «الكوارث، وحتى الاضطرابات الطبيعية الظاهرية، تخضع لسيطرة اليد الإلهية». فحتى الفوضى جزء من النظام.</p><p>ومثل الأوبئة والحروب وأخبار الحروب، تُعد الزلازل علامات نبوية،<sup><span class=\"footnote-ref\" title=\"متى 24:4-8\">¹⁰</span></sup> وتتعلق أساساً بأمرين:</p><ul class=\"topic-list prophetic\"><li>مجيء الرب؛</li><li>نهاية الأزمنة.</li></ul><p>يمكن التنبؤ بالانفجارات البركانية بدقة؛ لكن حتى الآن لا يوجد جهاز يستطيع التنبؤ بموعد وقوع زلزال أو هزة ارتدادية. ربما يحدث ذلك في المستقبل. لا تكتشفه جوجل إلا بعد أن يكون قد بدأ بالفعل.</p><p>وبالطبع، يجب أن يكون الرب مرجعنا الأساسي. فهذه العلامات أكثر من مجرد تنبيه.</p><div class=\"verse-image\"><img src=\"salmo-91-ar.png\" alt=\"يسقط عن جانبك ألف وربوات عن يمينك، أما أنت فلا يقترب إليك. مزمور 91:7\"></div><p>الله إله النظام والتوازن والانسجام، وهذا ما يريدنا أن نسعى إليه. فهو يقول:</p><blockquote class=\"scripture\">«اطلبوا أولاً ملكوت الله وبرّه — توازنه وطريقته في الوجود والعمل بالعدل — وهذه كلها تُزاد لكم».<sup><span class=\"footnote-ref\" title=\"متى 6:33\">¹¹</span></sup></blockquote><p>عندما لا نطلب وجهه،<sup><span class=\"footnote-ref\" title=\"مزمور 27:8\">¹²</span></sup> نمر بظروف غير مريحة.</p><p>من الجيد أن نفهم ونقبل أن الأمور تحدث بإذن الله، لكنه لا يسرّ بمصيبة الإنسان، بل يسرّ بسلامه.<sup><span class=\"footnote-ref\" title=\"مزمور 35:27-28\">¹³</span></sup></p><p>لهذه الأسباب كلها، ينبغي أن نحافظ على موقف من الاحترام والرهبة المقدسة تجاه الرب.<sup><span class=\"footnote-ref\" title=\"عبرانيين 12:28\">¹⁴</span></sup></p><p>عاش أيوب، الأب الجليل، صعوبات ومصائب كثيرة. فقد عائلته وثروته بسبب اللصوص وقطاع الطرق والنار والريح العظيمة. كما أصابه الشيطان بالأمراض.</p><p>ومع أنه طلب بإلحاح من الله تفسيراً لذلك الهجوم الهائل من الشرير، فإنه لم يلم الرب قط على آلامه.</p><blockquote class=\"scripture\">«في كل هذا لم يخطئ أيوب ولم ينسب إلى الله ظلماً».<sup><span class=\"footnote-ref\" title=\"أيوب 1:22\">¹⁵</span></sup></blockquote><p>عندما يحدث أمر مزعج، بل ومروّع، فلا تلُم الله. فهو يسرّ بسلامك.</p><p>صحيح أنه يستهزئ بأعدائه،<sup><span class=\"footnote-ref\" title=\"مزمور 2:4\">¹⁶</span></sup> لكنك لست عدوه. إذا قبلته فأنت ابنه.<sup><span class=\"footnote-ref\" title=\"يوحنا الأولى 3:2؛ رومية 8:16\">¹⁷</span></sup></p><p>وإن لم تفعل ذلك بعد، فهذه فرصتك.</p><p>لم تنتهِ قصة أيوب عند ذلك. فبعد أن صلى من أجل أصدقائه الذين اتهموه ظلماً بالتسبب في مصيبته، بارك الله أيوب بركة عظيمة: أعطاه ضعف ما كان لديه من قبل، وبركات كثيرة وأبناء آخرين، وعاش 140 سنة إضافية، ثم مات شيخاً وشبعان الأيام.</p><p>ينبغي للذين نجوا من الكارثة أن يصلّوا ويساعدوا الناجين الآخرين وكل من يحزن اليوم لفقدان أحبائه وممتلكاته.</p><p>بعد العاصفة يأتي الهدوء، ولا بد من إعادة البناء.</p><blockquote class=\"scripture\">«لا تسأل ماذا يمكن لوطنك أن يفعل من أجلك؛ بل اسأل ماذا يمكنك أن تفعل أنت من أجل وطنك».<sup><span class=\"footnote-ref\" title=\"مقولة شهيرة لجون ف. كينيدي\">¹⁸</span></sup><cite>مقولة شهيرة لجون ف. كينيدي</cite></blockquote><p>حان وقت العمل. وحان وقت طلب الرب لكي يأتي ويعلّمنا البرّ.<sup><span class=\"footnote-ref\" title=\"هوشع 10:12\">¹⁹</span></sup></p><p>هناك أشخاص يأخذهم الله إليه برحمته، وهناك أشخاص يُبقيهم أحياء أيضاً برحمته.</p>"}};</script>
+
+<script>
+window.translations = {
+es:{
+title:"Él está al tanto — Parte 2 — La Palabra en Cápsulas",
+author:"Por J.V.",heading:"Él está al tanto",part:"Parte 2",
+nav:["← Volver a Parte 1","Volver a Artículos"],
+article:`<p>Primero Venezuela y luego Colombia fueron sacudidos con sendos terremotos y sabemos que habrá otros países que pasarán por eventos similares, como ha pasado igualmente en Asia y recientemente en la Florida.</p>
+<p>Todos estos eventos tienen la permisibilidad de Dios, y pareciera que la tierra se subleva y quisiera decir algo. El finado evangelista inglés Charles Spurgeon, en sus sermones, decía que “los desastres o aun los aparentes desórdenes naturales están controlados por la mano divina”. Aun el caos hace parte del orden.</p>
+<p>Así como las plagas, guerras y rumores de guerras, los terremotos son señal profética,<sup><span class="footnote-ref" title="Mateo 24:4-8">¹⁰</span></sup> básicamente sobre dos puntos:</p>
+<ul class="topic-list prophetic"><li>la venida del Señor y</li><li>el fin de los tiempos.</li></ul>
+<p>Los volcanes se pueden predecir con exactitud; sin embargo, hasta la fecha no hay aún dispositivo alguno que prediga cuándo se viene un terremoto o una réplica. Quizás algún día. Google solo lo detecta cuando ya ha iniciado.</p>
+<p>Y, por supuesto, debe ser el Señor nuestro punto de referencia. Estas señales son más que un llamado de atención.</p>
+<div class="verse-image"><img src="salmo-91.png" alt="Mil caerán a tu lado y diez mil a tu diestra; mas a ti no llegará. Salmo 91:7"></div>
+<p>Dios es un Dios de orden, de equilibrio, de balance. Y eso es lo que Él quiere que nosotros busquemos. Él dice:</p>
+<blockquote class="scripture">“Más buscad primeramente el reino de Dios y su justicia —su equilibrio, su forma de ser y hacer justicia—, y todas estas cosas os serán añadidas”.<sup><span class="footnote-ref" title="Mateo 6:33">¹¹</span></sup></blockquote>
+<p>Cuando no hay búsqueda de su rostro,<sup><span class="footnote-ref" title="Salmos 27:8">¹²</span></sup> pasamos por situaciones incómodas.</p>
+<p>Es bueno que entendamos y aceptemos que las cosas ocurren con la venia divina, pero Él no se deleita en el infortunio del hombre, sino en su paz.<sup><span class="footnote-ref" title="Salmos 35:27-28">¹³</span></sup></p>
+<p>Por todo lo anterior, debemos guardar una actitud de respeto y temor reverente<sup><span class="footnote-ref" title="Hebreos 12:28">¹⁴</span></sup> hacia el Señor.</p>
+<p>El patriarca Job tuvo una vida de muchas dificultades e infortunios. Perdió a su familia y riquezas al ser víctima de ladrones y asaltantes, fuego y un gran viento. Además, fue atacado por Satanás con enfermedades.</p>
+<p>Y, a pesar de que buscó con ahínco explicaciones ante Dios por todo aquel descomunal ataque del maligno, jamás culpó al Señor por sus males.</p>
+<blockquote class="scripture">«En todo esto no pecó Job, ni atribuyó a Dios despropósito alguno».<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup></blockquote>
+<p>Cuando sucede algo desagradable y aun terrible, no culpes a Dios. Él solo se deleita en tu paz.</p>
+<p>Sí, es cierto que Él se burla de sus enemigos,<sup><span class="footnote-ref" title="Salmos 2:4">¹⁶</span></sup> pero tú no lo eres. Si lo recibiste, eres su hijo.<sup><span class="footnote-ref" title="1 Juan 3:2; Romanos 8:16">¹⁷</span></sup></p>
+<p>Y si no lo has hecho, aquí está la oportunidad.</p>
+<p>Allí no terminó la historia de Job. Después que él hubo orado por sus amigos que erróneamente lo culpaban de su infortunio, Dios le dio una gran bendición al patriarca: el doble de lo que antes había tenido, múltiples bendiciones, más hijos, viviendo 140 años más, muriendo viejo y lleno de días.</p>
+<p>Los que quedaron vivos por la calamidad deben orar y auxiliar a los sobrevivientes y a quienes hoy día están dolidos, pues perdieron a sus seres queridos y posesiones.</p>
+<p>Después de la tempestad viene la calma y hay que reconstruir.</p>
+<blockquote class="scripture">“No preguntes qué puede hacer tu país por ti; pregunta qué puedes hacer tú por tu país”.<sup><span class="footnote-ref" title="Frase célebre de John F. Kennedy">¹⁸</span></sup><cite>Frase célebre de John F. Kennedy</cite></blockquote>
+<p>Es tiempo de actuar. Es tiempo de buscar al Señor, para que venga y nos enseñe justicia.<sup><span class="footnote-ref" title="Oseas 10:12">¹⁹</span></sup></p>
+<p>Hay personas que Dios se lleva por misericordia, y hay personas que Dios deja vivas, también por misericordia.</p>`
+},
+en:{
+title:"He Is Aware — Part 2 — La Palabra en Cápsulas",
+author:"By J.V.",heading:"He Is Aware",part:"Part 2",
+nav:["← Back to Part 1","Back to Articles"],
+article:`<p>First Venezuela, and then Colombia, were shaken by major earthquakes. We know that other countries will experience similar events, as has also happened in Asia and recently in Florida.</p>
+<p>All these events are permitted by God, and it seems as though the earth is rebelling and wants to say something. The late English evangelist Charles Spurgeon said in his sermons that “disasters, or even apparent natural disorder, are controlled by the divine hand.” Even chaos is part of order.</p>
+<p>Like plagues, wars, and rumors of wars, earthquakes are prophetic signs,<sup><span class="footnote-ref" title="Matthew 24:4-8">¹⁰</span></sup> mainly concerning two things:</p>
+<ul class="topic-list prophetic"><li>the coming of the Lord, and</li><li>the end of the age.</li></ul>
+<p>Volcanoes can be predicted accurately; however, to date there is still no device that can predict when an earthquake or aftershock will occur. Perhaps someday. Google only detects it once it has already begun.</p>
+<p>And, of course, the Lord must be our point of reference. These signs are more than a wake-up call.</p>
+<div class="verse-image"><img src="salmo-91-en.png" alt="A thousand may fall at your side, ten thousand at your right hand, but it will not come near you. Psalm 91:7"></div>
+<p>God is a God of order, equilibrium, and balance. That is what He wants us to seek. He says:</p>
+<blockquote class="scripture">“But seek first the kingdom of God and His righteousness—His balance, His way of being and doing what is right—and all these things will be added to you.”<sup><span class="footnote-ref" title="Matthew 6:33">¹¹</span></sup></blockquote>
+<p>When we do not seek His face,<sup><span class="footnote-ref" title="Psalm 27:8">¹²</span></sup> we go through uncomfortable situations.</p>
+<p>It is good for us to understand and accept that things happen with divine permission, but He does not delight in human misfortune; He delights in our peace.<sup><span class="footnote-ref" title="Psalm 35:27-28">¹³</span></sup></p>
+<p>For all these reasons, we should maintain an attitude of respect and reverent fear<sup><span class="footnote-ref" title="Hebrews 12:28">¹⁴</span></sup> toward the Lord.</p>
+<p>The patriarch Job lived through many hardships and misfortunes. He lost his family and wealth after becoming a victim of thieves and robbers, fire, and a great wind. He was also afflicted by Satan with illnesses.</p>
+<p>Although he earnestly sought explanations from God for that immense attack of the evil one, he never blamed the Lord for his suffering.</p>
+<blockquote class="scripture">“In all this Job did not sin nor charge God with wrong.”<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup></blockquote>
+<p>When something unpleasant, even terrible, happens, do not blame God. He delights in your peace.</p>
+<p>Yes, it is true that He laughs at His enemies,<sup><span class="footnote-ref" title="Psalm 2:4">¹⁶</span></sup> but you are not His enemy. If you have received Him, you are His child.<sup><span class="footnote-ref" title="1 John 3:2; Romans 8:16">¹⁷</span></sup></p>
+<p>And if you have not done so, here is your opportunity.</p>
+<p>That was not the end of Job’s story. After he prayed for his friends, who had wrongly blamed him for his misfortune, God greatly blessed the patriarch: he received twice what he had before, many blessings, more children, and lived another 140 years, dying old and full of days.</p>
+<p>Those who survived the calamity should pray for and help the survivors and those who are grieving today because they have lost loved ones and possessions.</p>
+<p>After the storm comes calm, and rebuilding must begin.</p>
+<blockquote class="scripture">“Ask not what your country can do for you—ask what you can do for your country.”<sup><span class="footnote-ref" title="Famous quote by John F. Kennedy">¹⁸</span></sup><cite>Famous quote by John F. Kennedy</cite></blockquote>
+<p>It is time to act. It is time to seek the Lord, so that He may come and teach us righteousness.<sup><span class="footnote-ref" title="Hosea 10:12">¹⁹</span></sup></p>
+<p>There are people whom God takes away in mercy, and there are people whom God leaves alive, also in mercy.</p>`
+},
+fr:{
+title:"Il est au courant — Partie 2 — La Palabra en Cápsulas",
+author:"Par J.V.",heading:"Il est au courant",part:"Partie 2",
+nav:["← Retour à la partie 1","Retour aux articles"],
+article:`<p>D’abord le Venezuela, puis la Colombie, ont été secoués par de puissants tremblements de terre. Nous savons que d’autres pays connaîtront des événements semblables, comme cela s’est également produit en Asie et récemment en Floride.</p>
+<p>Tous ces événements sont permis par Dieu, et l’on dirait que la terre se révolte et veut dire quelque chose. Le défunt évangéliste anglais Charles Spurgeon disait dans ses sermons que « les catastrophes, ou même les désordres naturels apparents, sont contrôlés par la main divine ». Même le chaos fait partie de l’ordre.</p>
+<p>Comme les fléaux, les guerres et les rumeurs de guerres, les tremblements de terre sont des signes prophétiques,<sup><span class="footnote-ref" title="Matthieu 24:4-8">¹⁰</span></sup> qui concernent essentiellement deux choses :</p>
+<ul class="topic-list prophetic"><li>la venue du Seigneur, et</li><li>la fin des temps.</li></ul>
+<p>Les éruptions volcaniques peuvent être prévues avec précision ; cependant, à ce jour, aucun appareil ne permet encore de prédire quand un tremblement de terre ou une réplique se produira. Peut-être un jour. Google ne le détecte qu’une fois qu’il a commencé.</p>
+<p>Et, bien sûr, le Seigneur doit être notre point de référence. Ces signes sont plus qu’un simple avertissement.</p>
+<div class="verse-image"><img src="salmo-91-fr.png" alt="Mille tomberont à ton côté et dix mille à ta droite, mais tu ne seras pas atteint. Psaume 91:7"></div>
+<p>Dieu est un Dieu d’ordre, d’équilibre et d’harmonie. C’est ce qu’il veut que nous recherchions. Il dit :</p>
+<blockquote class="scripture">« Cherchez premièrement le royaume de Dieu et sa justice — son équilibre, sa manière d’être et d’agir avec justice — et toutes ces choses vous seront données par-dessus. »<sup><span class="footnote-ref" title="Matthieu 6:33">¹¹</span></sup></blockquote>
+<p>Lorsque nous ne cherchons pas sa face,<sup><span class="footnote-ref" title="Psaume 27:8">¹²</span></sup> nous traversons des situations pénibles.</p>
+<p>Il est bon de comprendre et d’accepter que les choses arrivent avec la permission divine, mais Dieu ne se réjouit pas du malheur de l’être humain ; il se réjouit de sa paix.<sup><span class="footnote-ref" title="Psaume 35:27-28">¹³</span></sup></p>
+<p>Pour toutes ces raisons, nous devons garder une attitude de respect et de crainte révérencielle<sup><span class="footnote-ref" title="Hébreux 12:28">¹⁴</span></sup> envers le Seigneur.</p>
+<p>Le patriarche Job a connu de nombreuses difficultés et de nombreux malheurs. Il a perdu sa famille et ses richesses, victime de voleurs et de brigands, du feu et d’un grand vent. Satan l’a également frappé par la maladie.</p>
+<p>Bien qu’il ait cherché avec ardeur auprès de Dieu des explications à cette attaque terrible du mal, il n’a jamais accusé le Seigneur de ses souffrances.</p>
+<blockquote class="scripture">« En tout cela, Job ne pécha point et n’attribua rien d’injuste à Dieu. »<sup><span class="footnote-ref" title="Job 1:22">¹⁵</span></sup></blockquote>
+<p>Lorsqu’un événement désagréable, voire terrible, survient, n’accusez pas Dieu. Il se réjouit de votre paix.</p>
+<p>Oui, il est vrai qu’il se moque de ses ennemis,<sup><span class="footnote-ref" title="Psaume 2:4">¹⁶</span></sup> mais vous n’êtes pas son ennemi. Si vous l’avez reçu, vous êtes son enfant.<sup><span class="footnote-ref" title="1 Jean 3:2 ; Romains 8:16">¹⁷</span></sup></p>
+<p>Et si vous ne l’avez pas encore fait, voici l’occasion.</p>
+<p>L’histoire de Job ne s’est pas terminée là. Après avoir prié pour ses amis qui l’accusaient à tort de son malheur, Dieu bénit abondamment le patriarche : il reçut le double de ce qu’il avait auparavant, de nombreuses bénédictions, d’autres enfants, et vécut encore 140 ans, mourant vieux et rassasié de jours.</p>
+<p>Ceux qui ont survécu à la catastrophe doivent prier pour les survivants et aider ceux qui souffrent aujourd’hui d’avoir perdu des êtres chers et leurs biens.</p>
+<p>Après la tempête vient le calme, et il faut reconstruire.</p>
+<blockquote class="scripture">« Ne demande pas ce que ton pays peut faire pour toi ; demande ce que tu peux faire pour ton pays. »<sup><span class="footnote-ref" title="Citation célèbre de John F. Kennedy">¹⁸</span></sup><cite>Citation célèbre de John F. Kennedy</cite></blockquote>
+<p>Il est temps d’agir. Il est temps de chercher le Seigneur afin qu’il vienne nous enseigner la justice.<sup><span class="footnote-ref" title="Osée 10:12">¹⁹</span></sup></p>
+<p>Il y a des personnes que Dieu reprend dans sa miséricorde, et d’autres qu’il laisse en vie, également par miséricorde.</p>`
+},
+it:{
+title:"Egli è al corrente — Parte 2 — La Palabra en Cápsulas",
+author:"Di J.V.",heading:"Egli è al corrente",part:"Parte 2",
+nav:["← Torna alla Parte 1","Torna agli articoli"],
+article:`<p>Prima il Venezuela e poi la Colombia sono stati scossi da forti terremoti. Sappiamo che altri paesi vivranno eventi simili, come è accaduto anche in Asia e, recentemente, in Florida.</p>
+<p>Tutti questi eventi sono permessi da Dio, e sembra che la terra si ribelli e voglia dire qualcosa. Il defunto evangelista inglese Charles Spurgeon affermava nei suoi sermoni che «le catastrofi, e persino gli apparenti disordini naturali, sono controllati dalla mano divina». Anche il caos fa parte dell’ordine.</p>
+<p>Come le piaghe, le guerre e le voci di guerre, i terremoti sono segni profetici,<sup><span class="footnote-ref" title="Matteo 24:4-8">¹⁰</span></sup> che riguardano soprattutto due cose:</p>
+<ul class="topic-list prophetic"><li>la venuta del Signore;</li><li>la fine dei tempi.</li></ul>
+<p>Le eruzioni vulcaniche possono essere previste con precisione; tuttavia, finora non esiste alcun dispositivo capace di prevedere quando si verificherà un terremoto o una scossa di assestamento. Forse un giorno. Google lo rileva soltanto quando è già iniziato.</p>
+<p>E, naturalmente, il Signore deve essere il nostro punto di riferimento. Questi segni sono più di un semplice richiamo all’attenzione.</p>
+<div class="verse-image"><img src="salmo-91-it.png" alt="Mille cadranno al tuo fianco e diecimila alla tua destra, ma nulla ti colpirà. Salmo 91:7"></div>
+<p>Dio è un Dio di ordine, equilibrio e armonia. È questo che vuole che cerchiamo. Egli dice:</p>
+<blockquote class="scripture">«Cercate prima il regno di Dio e la sua giustizia — il suo equilibrio, il suo modo di essere e di agire con giustizia — e tutte queste cose vi saranno date in aggiunta».<sup><span class="footnote-ref" title="Matteo 6:33">¹¹</span></sup></blockquote>
+<p>Quando non cerchiamo il suo volto,<sup><span class="footnote-ref" title="Salmi 27:8">¹²</span></sup> attraversiamo situazioni difficili.</p>
+<p>È bene capire e accettare che le cose accadono con il permesso divino, ma Dio non si compiace della disgrazia dell’uomo: si compiace della sua pace.<sup><span class="footnote-ref" title="Salmi 35:27-28">¹³</span></sup></p>
+<p>Per tutti questi motivi, dobbiamo mantenere verso il Signore un atteggiamento di rispetto e timore reverenziale.<sup><span class="footnote-ref" title="Ebrei 12:28">¹⁴</span></sup></p>
+<p>Il patriarca Giobbe visse molte difficoltà e sventure. Perse la famiglia e le ricchezze a causa di ladri e predoni, del fuoco e di un forte vento. Inoltre, Satana lo colpì con delle malattie.</p>
+<p>Pur cercando con fervore una spiegazione da Dio per quell’attacco devastante del maligno, non incolpò mai il Signore delle sue sofferenze.</p>
+<blockquote class="scripture">«In tutto questo Giobbe non peccò e non attribuì a Dio alcuna colpa».<sup><span class="footnote-ref" title="Giobbe 1:22">¹⁵</span></sup></blockquote>
+<p>Quando accade qualcosa di spiacevole, persino di terribile, non incolpare Dio. Egli si compiace della tua pace.</p>
+<p>È vero che ride dei suoi nemici,<sup><span class="footnote-ref" title="Salmi 2:4">¹⁶</span></sup> ma tu non sei suo nemico. Se lo hai accolto, sei suo figlio.<sup><span class="footnote-ref" title="1 Giovanni 3:2; Romani 8:16">¹⁷</span></sup></p>
+<p>E se non lo hai ancora fatto, questa è la tua occasione.</p>
+<p>La storia di Giobbe non finì lì. Dopo che ebbe pregato per i suoi amici, che lo accusavano ingiustamente della sua disgrazia, Dio benedisse grandemente il patriarca: gli diede il doppio di ciò che aveva prima, molte benedizioni, altri figli e altri 140 anni di vita; morì vecchio e sazio di giorni.</p>
+<p>Chi è sopravvissuto alla calamità deve pregare e aiutare gli altri sopravvissuti e coloro che oggi soffrono per aver perso i propri cari e i propri beni.</p>
+<p>Dopo la tempesta torna la calma, ed è necessario ricostruire.</p>
+<blockquote class="scripture">«Non chiederti che cosa può fare il tuo paese per te; chiediti che cosa puoi fare tu per il tuo paese».<sup><span class="footnote-ref" title="Citazione celebre di John F. Kennedy">¹⁸</span></sup><cite>Citazione celebre di John F. Kennedy</cite></blockquote>
+<p>È tempo di agire. È tempo di cercare il Signore, affinché venga a insegnarci la giustizia.<sup><span class="footnote-ref" title="Osea 10:12">¹⁹</span></sup></p>
+<p>Ci sono persone che Dio richiama a sé per misericordia e persone che lascia in vita, anch’esse per misericordia.</p>`
+},
+pt:{
+title:"Ele está ciente — Parte 2 — La Palabra en Cápsulas",
+author:"Por J.V.",heading:"Ele está ciente",part:"Parte 2",
+nav:["← Voltar à Parte 1","Voltar aos artigos"],
+article:`<p>Primeiro a Venezuela e depois a Colômbia foram abaladas por fortes terremotos. Sabemos que outros países passarão por eventos semelhantes, como também aconteceu na Ásia e, recentemente, na Flórida.</p>
+<p>Todos esses acontecimentos são permitidos por Deus, e parece que a terra se revolta e quer dizer alguma coisa. O falecido evangelista inglês Charles Spurgeon dizia em seus sermões que “as catástrofes, ou até mesmo as aparentes desordens naturais, são controladas pela mão divina”. Até o caos faz parte da ordem.</p>
+<p>Assim como as pragas, as guerras e os rumores de guerras, os terremotos são sinais proféticos,<sup><span class="footnote-ref" title="Mateus 24:4-8">¹⁰</span></sup> principalmente sobre dois pontos:</p>
+<ul class="topic-list prophetic"><li>a vinda do Senhor; e</li><li>o fim dos tempos.</li></ul>
+<p>As erupções vulcânicas podem ser previstas com precisão; entretanto, até hoje não existe aparelho capaz de prever quando ocorrerá um terremoto ou uma réplica. Talvez um dia. O Google só o detecta quando já começou.</p>
+<p>E, naturalmente, o Senhor deve ser nosso ponto de referência. Esses sinais são mais do que um alerta.</p>
+<div class="verse-image"><img src="salmo-91-pt.png" alt="Mil cairão ao teu lado e dez mil à tua direita, mas tu não serás atingido. Salmo 91:7"></div>
+<p>Deus é um Deus de ordem, equilíbrio e harmonia. É isso que Ele quer que busquemos. Ele diz:</p>
+<blockquote class="scripture">“Buscai primeiro o reino de Deus e a sua justiça — seu equilíbrio, sua maneira de ser e de agir com justiça — e todas essas coisas vos serão acrescentadas.”<sup><span class="footnote-ref" title="Mateus 6:33">¹¹</span></sup></blockquote>
+<p>Quando não buscamos a sua face,<sup><span class="footnote-ref" title="Salmos 27:8">¹²</span></sup> passamos por situações difíceis.</p>
+<p>É bom compreender e aceitar que as coisas acontecem com a permissão divina, mas Deus não se alegra com o infortúnio humano; Ele se alegra com a paz.<sup><span class="footnote-ref" title="Salmos 35:27-28">¹³</span></sup></p>
+<p>Por tudo isso, devemos manter uma atitude de respeito e temor reverente<sup><span class="footnote-ref" title="Hebreus 12:28">¹⁴</span></sup> diante do Senhor.</p>
+<p>O patriarca Jó viveu muitas dificuldades e infortúnios. Perdeu a família e as riquezas ao ser vítima de ladrões e assaltantes, do fogo e de um grande vento. Além disso, Satanás o atacou com doenças.</p>
+<p>Embora tenha buscado ardentemente explicações de Deus para aquele enorme ataque do maligno, nunca culpou o Senhor por seus sofrimentos.</p>
+<blockquote class="scripture">“Em tudo isso Jó não pecou, nem atribuiu a Deus falta alguma.”<sup><span class="footnote-ref" title="Jó 1:22">¹⁵</span></sup></blockquote>
+<p>Quando acontecer algo desagradável, até mesmo terrível, não culpe Deus. Ele se alegra com a sua paz.</p>
+<p>Sim, é verdade que Ele zomba de seus inimigos,<sup><span class="footnote-ref" title="Salmos 2:4">¹⁶</span></sup> mas você não é seu inimigo. Se você o recebeu, é filho dele.<sup><span class="footnote-ref" title="1 João 3:2; Romanos 8:16">¹⁷</span></sup></p>
+<p>E, se ainda não o fez, esta é a oportunidade.</p>
+<p>A história de Jó não terminou ali. Depois que orou por seus amigos, que o culpavam injustamente por sua desgraça, Deus abençoou grandemente o patriarca: deu-lhe o dobro do que possuía antes, muitas bênçãos, mais filhos e mais 140 anos de vida; ele morreu idoso e cheio de dias.</p>
+<p>Os que sobreviveram à calamidade devem orar e ajudar os demais sobreviventes e aqueles que hoje sofrem por terem perdido entes queridos e seus bens.</p>
+<p>Depois da tempestade vem a calmaria, e é preciso reconstruir.</p>
+<blockquote class="scripture">“Não pergunte o que seu país pode fazer por você; pergunte o que você pode fazer por seu país.”<sup><span class="footnote-ref" title="Frase célebre de John F. Kennedy">¹⁸</span></sup><cite>Frase célebre de John F. Kennedy</cite></blockquote>
+<p>É tempo de agir. É tempo de buscar o Senhor, para que venha nos ensinar a justiça.<sup><span class="footnote-ref" title="Oseias 10:12">¹⁹</span></sup></p>
+<p>Há pessoas que Deus leva por misericórdia e há pessoas que Ele deixa vivas, também por misericórdia.</p>`
+},
+zh:{
+title:"祂知晓一切 — 第二部分 — La Palabra en Cápsulas",
+author:"作者：J.V.",heading:"祂知晓一切",part:"第二部分",
+nav:["← 返回第一部分","返回文章目录"],
+article:`<p>委内瑞拉先后发生强烈地震，随后哥伦比亚也遭到地震袭击。我们知道，其他国家也可能经历类似事件，亚洲以及最近佛罗里达发生的情况就是例子。</p>
+<p>这些事件都在上帝所容许的范围之内，仿佛大地正在反抗，想要传达某种信息。已故英国福音布道家查尔斯·司布真在讲道中说过：“灾难，甚至表面上的自然失序，也都在神圣之手的掌管之下。”混乱也属于秩序的一部分。</p>
+<p>地震与灾害、战争和战争的传闻一样，都是预言中的征兆，<sup><span class="footnote-ref" title="马太福音 24:4-8">¹⁰</span></sup>主要涉及两件事：</p>
+<ul class="topic-list prophetic"><li>主的降临；</li><li>末后的日子。</li></ul>
+<p>火山活动有时可以准确预测；然而，直到今天，还没有设备能够预知地震或余震何时发生。也许将来会有。谷歌只能在地震已经开始后才检测到它。</p>
+<p>当然，主必须是我们所仰望的对象。这些征兆不仅仅是提醒。</p>
+<div class="verse-image"><img src="salmo-91-zh.png" alt="虽有千人仆倒在你旁边，万人仆倒在你右边，这灾却不得临近你。诗篇91:7"></div>
+<p>上帝是有秩序、平衡与和谐的上帝。这正是祂希望我们寻求的。祂说：</p>
+<blockquote class="scripture">“你们要先求祂的国和祂的义——祂的平衡，以及祂行事为人的公义——这些东西都要加给你们了。”<sup><span class="footnote-ref" title="马太福音 6:33">¹¹</span></sup></blockquote>
+<p>当我们不寻求祂的面，<sup><span class="footnote-ref" title="诗篇 27:8">¹²</span></sup>就会经历令人不安的处境。</p>
+<p>我们应当明白并接受，事情是在上帝的许可下发生的；但祂并不以人的不幸为乐，而是喜悦人得享平安。<sup><span class="footnote-ref" title="诗篇 35:27-28">¹³</span></sup></p>
+<p>因此，我们应当以尊重和敬畏的态度来到主面前。<sup><span class="footnote-ref" title="希伯来书 12:28">¹⁴</span></sup></p>
+<p>族长约伯一生经历了许多艰难和不幸。他因盗贼、强盗、火灾和大风而失去了家人和财产。此外，撒但还用疾病攻击他。</p>
+<p>尽管他迫切地向上帝寻求那场邪恶攻击的解释，他却从未因自己的苦难责怪主。</p>
+<blockquote class="scripture">“在这一切的事上，约伯并不犯罪，也不以上帝为愚妄。”<sup><span class="footnote-ref" title="约伯记 1:22">¹⁵</span></sup></blockquote>
+<p>当令人不快、甚至可怕的事情发生时，不要责怪上帝。祂喜悦你得享平安。</p>
+<p>祂确实会嗤笑祂的仇敌，<sup><span class="footnote-ref" title="诗篇 2:4">¹⁶</span></sup>但你不是祂的仇敌。你若接受了祂，就是祂的儿女。<sup><span class="footnote-ref" title="约翰一书 3:2；罗马书 8:16">¹⁷</span></sup></p>
+<p>如果你还没有接受祂，现在就是机会。</p>
+<p>约伯的故事并未就此结束。他为那些错误地指责他遭遇不幸的朋友祷告之后，上帝大大赐福给他：使他所得的比从前加倍，赐下许多福分和更多儿女，并让他又活了140年，年老且日子满足而终。</p>
+<p>在灾难中幸存的人应当祷告，并帮助其他幸存者，以及今天因失去亲人和财物而悲痛的人。</p>
+<p>风暴过后会归于平静，我们必须重建家园。</p>
+<blockquote class="scripture">“不要问你的国家能为你做什么，而要问你能为国家做什么。”<sup><span class="footnote-ref" title="约翰·F·肯尼迪的名言">¹⁸</span></sup><cite>约翰·F·肯尼迪的名言</cite></blockquote>
+<p>现在是行动的时候。现在是寻求主的时候，求祂来教导我们公义。<sup><span class="footnote-ref" title="何西阿书 10:12">¹⁹</span></sup></p>
+<p>有些人蒙上帝怜悯而被祂接去，也有些人蒙怜悯而被祂留下生命。</p>`
+},
+he:{
+title:"הוא מודע — חלק 2 — הדבר בכמוסות",
+author:"מאת J.V.",heading:"הוא מודע",part:"חלק 2",
+nav:["← חזרה לחלק 1","חזרה למאמרים"],
+article:`<p>תחילה ונצואלה ולאחר מכן קולומביה רעדו בעקבות רעידות אדמה חזקות. אנו יודעים שגם מדינות אחרות עלולות לחוות אירועים דומים, כפי שקרה גם באסיה ולאחרונה בפלורידה.</p>
+<p>כל האירועים האלה מתרחשים ברשות אלוהים, ונראה כאילו האדמה מתקוממת ורוצה לומר דבר מה. המטיף האנגלי המנוח צ'ארלס ספרג'ן אמר בדרשותיו ש״אסונות, ואפילו אי־סדרים טבעיים לכאורה, נתונים לשליטה של היד האלוהית״. גם הכאוס הוא חלק מן הסדר.</p>
+<p>כמו המגפות, המלחמות והשמועות על מלחמות, רעידות אדמה הן סימנים נבואיים,<sup><span class="footnote-ref" title="מתי 24:4–8">¹⁰</span></sup> הנוגעים בעיקר לשני דברים:</p>
+<ul class="topic-list prophetic"><li>ביאת האדון;</li><li>אחרית הימים.</li></ul>
+<p>אפשר לחזות התפרצויות געשיות בדיוק; אולם עד היום אין מכשיר שיכול לחזות מתי תתרחש רעידת אדמה או רעידת משנה. אולי בעתיד. גוגל מזהה אותה רק לאחר שכבר החלה.</p>
+<p>וכמובן, האדון חייב להיות נקודת ההתייחסות שלנו. הסימנים האלה הם יותר מאזהרה.</p>
+<div class="verse-image"><img src="salmo-91-he.png" alt="ייפול מצדך אלף ורבבה מימינך, אליך לא ייגש. תהילים צ״א:ז׳"></div>
+<p>אלוהים הוא אל של סדר, איזון והרמוניה. זה מה שהוא רוצה שנבקש. הוא אומר:</p>
+<blockquote class="scripture">״בקשו תחילה את מלכות אלוהים ואת צדקתו — את האיזון שלו ואת דרכו לעשות את הישר — וכל הדברים האלה ייווספו לכם״.<sup><span class="footnote-ref" title="מתי 6:33">¹¹</span></sup></blockquote>
+<p>כאשר איננו מבקשים את פניו,<sup><span class="footnote-ref" title="תהילים 27:8">¹²</span></sup> אנו עוברים מצבים לא נעימים.</p>
+<p>חשוב להבין ולקבל שהדברים מתרחשים ברשות האלוהית, אך אלוהים אינו חפץ באסונו של האדם; הוא חפץ בשלומו.<sup><span class="footnote-ref" title="תהילים 35:27–28">¹³</span></sup></p>
+<p>לכן עלינו לנהוג כלפי האדון בכבוד וביראה עמוקה.<sup><span class="footnote-ref" title="עברים 12:28">¹⁴</span></sup></p>
+<p>איוב, אבי האומה, עבר קשיים ואסונות רבים. הוא איבד את משפחתו ואת רכושו בעקבות גנבים ושודדים, אש ורוח גדולה. נוסף על כך, השטן תקף אותו במחלות.</p>
+<p>אף שחיפש בכל לבו הסבר מאלוהים למתקפה העצומה של הרע, הוא מעולם לא האשים את האדון בסבלו.</p>
+<blockquote class="scripture">״בכל זאת לא חטא איוב ולא הטיח אשמה באלוהים״.<sup><span class="footnote-ref" title="איוב 1:22">¹⁵</span></sup></blockquote>
+<p>כאשר קורה דבר לא נעים, ואפילו נורא, אל תאשים את אלוהים. הוא חפץ בשלומך.</p>
+<p>נכון שהוא לועג לאויביו,<sup><span class="footnote-ref" title="תהילים 2:4">¹⁶</span></sup> אך אתה אינך אויבו. אם קיבלת אותו, אתה ילדו.<sup><span class="footnote-ref" title="יוחנן הראשונה 3:2; רומים 8:16">¹⁷</span></sup></p>
+<p>ואם עדיין לא עשית זאת, זו ההזדמנות שלך.</p>
+<p>סיפורו של איוב לא הסתיים שם. לאחר שהתפלל בעד חבריו, שהאשימו אותו שלא בצדק באסונו, בירך אלוהים את איוב בשפע: הוא קיבל פי שניים ממה שהיה לו קודם, ברכות רבות, ילדים נוספים וחי עוד 140 שנה; הוא מת זקן ושבע ימים.</p>
+<p>מי שנותרו בחיים לאחר האסון צריכים להתפלל ולסייע לניצולים האחרים ולאלה המתאבלים כיום על אובדן יקיריהם ורכושם.</p>
+<p>אחרי הסערה בא השקט, ויש לבנות מחדש.</p>
+<blockquote class="scripture">״אל תשאל מה ארצך יכולה לעשות למענך; שאל מה אתה יכול לעשות למען ארצך״.<sup><span class="footnote-ref" title="ציטוט מפורסם של ג׳ון פ׳ קנדי">¹⁸</span></sup><cite>ציטוט מפורסם של ג׳ון פ׳ קנדי</cite></blockquote>
+<p>הגיע הזמן לפעול. הגיע הזמן לבקש את האדון, כדי שיבוא וילמד אותנו צדק.<sup><span class="footnote-ref" title="הושע 10:12">¹⁹</span></sup></p>
+<p>יש אנשים שאלוהים לוקח אליו ברחמיו, ויש אנשים שהוא משאיר בחיים, גם כן ברחמיו.</p>`
+},
+ar:{
+title:"إنه على علم — الجزء الثاني — La Palabra en Cápsulas",
+author:"بقلم J.V.",heading:"إنه على علم",part:"الجزء الثاني",
+nav:["← العودة إلى الجزء الأول","العودة إلى المقالات"],
+article:`<p>تعرضت فنزويلا أولاً ثم كولومبيا لزلازل قوية. ونعلم أن دولاً أخرى قد تمر بأحداث مماثلة، كما حدث أيضاً في آسيا ومؤخراً في فلوريدا.</p>
+<p>تقع هذه الأحداث جميعها بإذن الله، وكأن الأرض تتمرد وتحاول أن تقول شيئاً. وكان الواعظ الإنجيلي الإنجليزي الراحل تشارلز سبيرجن يقول في عظاته إن «الكوارث، وحتى الاضطرابات الطبيعية الظاهرية، تخضع لسيطرة اليد الإلهية». فحتى الفوضى جزء من النظام.</p>
+<p>ومثل الأوبئة والحروب وأخبار الحروب، تُعد الزلازل علامات نبوية،<sup><span class="footnote-ref" title="متى 24:4-8">¹⁰</span></sup> وتتعلق أساساً بأمرين:</p>
+<ul class="topic-list prophetic"><li>مجيء الرب؛</li><li>نهاية الأزمنة.</li></ul>
+<p>يمكن التنبؤ بالانفجارات البركانية بدقة؛ لكن حتى الآن لا يوجد جهاز يستطيع التنبؤ بموعد وقوع زلزال أو هزة ارتدادية. ربما يحدث ذلك في المستقبل. لا تكتشفه جوجل إلا بعد أن يكون قد بدأ بالفعل.</p>
+<p>وبالطبع، يجب أن يكون الرب مرجعنا الأساسي. فهذه العلامات أكثر من مجرد تنبيه.</p>
+<div class="verse-image"><img src="salmo-91-ar.png" alt="يسقط عن جانبك ألف وربوات عن يمينك، أما أنت فلا يقترب إليك. مزمور 91:7"></div>
+<p>الله إله النظام والتوازن والانسجام، وهذا ما يريدنا أن نسعى إليه. فهو يقول:</p>
+<blockquote class="scripture">«اطلبوا أولاً ملكوت الله وبرّه — توازنه وطريقته في الوجود والعمل بالعدل — وهذه كلها تُزاد لكم».<sup><span class="footnote-ref" title="متى 6:33">¹¹</span></sup></blockquote>
+<p>عندما لا نطلب وجهه،<sup><span class="footnote-ref" title="مزمور 27:8">¹²</span></sup> نمر بظروف غير مريحة.</p>
+<p>من الجيد أن نفهم ونقبل أن الأمور تحدث بإذن الله، لكنه لا يسرّ بمصيبة الإنسان، بل يسرّ بسلامه.<sup><span class="footnote-ref" title="مزمور 35:27-28">¹³</span></sup></p>
+<p>لهذه الأسباب كلها، ينبغي أن نحافظ على موقف من الاحترام والرهبة المقدسة تجاه الرب.<sup><span class="footnote-ref" title="عبرانيين 12:28">¹⁴</span></sup></p>
+<p>عاش أيوب، الأب الجليل، صعوبات ومصائب كثيرة. فقد عائلته وثروته بسبب اللصوص وقطاع الطرق والنار والريح العظيمة. كما أصابه الشيطان بالأمراض.</p>
+<p>ومع أنه طلب بإلحاح من الله تفسيراً لذلك الهجوم الهائل من الشرير، فإنه لم يلم الرب قط على آلامه.</p>
+<blockquote class="scripture">«في كل هذا لم يخطئ أيوب ولم ينسب إلى الله ظلماً».<sup><span class="footnote-ref" title="أيوب 1:22">¹⁵</span></sup></blockquote>
+<p>عندما يحدث أمر مزعج، بل ومروّع، فلا تلُم الله. فهو يسرّ بسلامك.</p>
+<p>صحيح أنه يستهزئ بأعدائه،<sup><span class="footnote-ref" title="مزمور 2:4">¹⁶</span></sup> لكنك لست عدوه. إذا قبلته فأنت ابنه.<sup><span class="footnote-ref" title="يوحنا الأولى 3:2؛ رومية 8:16">¹⁷</span></sup></p>
+<p>وإن لم تفعل ذلك بعد، فهذه فرصتك.</p>
+<p>لم تنتهِ قصة أيوب عند ذلك. فبعد أن صلى من أجل أصدقائه الذين اتهموه ظلماً بالتسبب في مصيبته، بارك الله أيوب بركة عظيمة: أعطاه ضعف ما كان لديه من قبل، وبركات كثيرة وأبناء آخرين، وعاش 140 سنة إضافية، ثم مات شيخاً وشبعان الأيام.</p>
+<p>ينبغي للذين نجوا من الكارثة أن يصلّوا ويساعدوا الناجين الآخرين وكل من يحزن اليوم لفقدان أحبائه وممتلكاته.</p>
+<p>بعد العاصفة يأتي الهدوء، ولا بد من إعادة البناء.</p>
+<blockquote class="scripture">«لا تسأل ماذا يمكن لوطنك أن يفعل من أجلك؛ بل اسأل ماذا يمكنك أن تفعل أنت من أجل وطنك».<sup><span class="footnote-ref" title="مقولة شهيرة لجون ف. كينيدي">¹⁸</span></sup><cite>مقولة شهيرة لجون ف. كينيدي</cite></blockquote>
+<p>حان وقت العمل. وحان وقت طلب الرب لكي يأتي ويعلّمنا البرّ.<sup><span class="footnote-ref" title="هوشع 10:12">¹⁹</span></sup></p>
+<p>هناك أشخاص يأخذهم الله إليه برحمته، وهناك أشخاص يُبقيهم أحياء أيضاً برحمته.</p>`
+},
+hi:{
+title:"वह सब जानता है — भाग 2 — कैप्सूल में परमेश्वर का वचन",
+author:"लेखक: J.V.",heading:"वह सब जानता है",part:"भाग 2",
+nav:["← भाग 1 पर लौटें","लेखों पर लौटें"],
+article:`<p>पहले वेनेज़ुएला और फिर कोलंबिया शक्तिशाली भूकंपों से हिल गए। हम जानते हैं कि दूसरे देश भी ऐसी ही घटनाओं का सामना करेंगे, जैसा एशिया में और हाल ही में फ्लोरिडा में भी हुआ है।</p>
+<p>इन सभी घटनाओं की अनुमति परमेश्वर देता है, और ऐसा लगता है मानो धरती विद्रोह कर रही हो और कुछ कहना चाहती हो। दिवंगत अंग्रेज़ प्रचारक चार्ल्स स्पर्जन अपने उपदेशों में कहते थे कि “आपदाएँ और यहाँ तक कि प्राकृतिक अव्यवस्था जैसी दिखने वाली घटनाएँ भी ईश्वरीय हाथ के नियंत्रण में हैं।” अराजकता भी व्यवस्था का हिस्सा है।</p>
+<p>महामारियों, युद्धों और युद्ध की अफ़वाहों की तरह भूकंप भी भविष्यवाणी के संकेत हैं,<sup><span class="footnote-ref" title="मत्ती 24:4-8">¹⁰</span></sup> जो मुख्य रूप से दो बातों से संबंधित हैं:</p>
+<ul class="topic-list prophetic"><li>प्रभु का आगमन; और</li><li>युग का अंत।</li></ul>
+<p>ज्वालामुखी विस्फोटों का सटीक अनुमान लगाया जा सकता है; लेकिन आज तक ऐसा कोई उपकरण नहीं है जो बता सके कि भूकंप या उसके बाद का झटका कब आएगा। शायद भविष्य में ऐसा संभव हो। Google इसका पता तभी लगाता है जब भूकंप शुरू हो चुका होता है।</p>
+<p>और निस्संदेह, प्रभु ही हमारा मार्गदर्शक होना चाहिए। ये संकेत केवल चेतावनी से कहीं बढ़कर हैं।</p>
+<div class="verse-image"><img src="salmo-91-hi.png" alt="तेरे पास एक हजार और तेरी दाहिनी ओर दस हजार गिरेंगे, परन्तु वह तेरे निकट न आएगा। भजन 91:7"></div>
+<p>परमेश्वर व्यवस्था, संतुलन और सामंजस्य का परमेश्वर है। वह चाहता है कि हम इन्हीं बातों की खोज करें। वह कहता है:</p>
+<blockquote class="scripture">“पहले परमेश्वर के राज्य और उसकी धार्मिकता की खोज करो—उसके संतुलन तथा उसके न्यायपूर्ण आचरण की—तो ये सब वस्तुएँ तुम्हें मिल जाएँगी।”<sup><span class="footnote-ref" title="मत्ती 6:33">¹¹</span></sup></blockquote>
+<p>जब हम उसके दर्शन की खोज नहीं करते,<sup><span class="footnote-ref" title="भजन संहिता 27:8">¹²</span></sup> तो हमें कठिन परिस्थितियों से गुजरना पड़ता है।</p>
+<p>हमें यह समझना और स्वीकार करना चाहिए कि घटनाएँ परमेश्वर की अनुमति से होती हैं, लेकिन वह मनुष्य की विपत्ति से प्रसन्न नहीं होता; वह उसकी शांति से प्रसन्न होता है।<sup><span class="footnote-ref" title="भजन संहिता 35:27-28">¹³</span></sup></p>
+<p>इसीलिए हमें प्रभु के प्रति आदर और श्रद्धापूर्ण भय का भाव रखना चाहिए।<sup><span class="footnote-ref" title="इब्रानियों 12:28">¹⁴</span></sup></p>
+<p>कुलपति अय्यूब ने अपने जीवन में अनेक कठिनाइयों और विपत्तियों का सामना किया। चोरों, लुटेरों, आग और तेज़ आँधी के कारण उसने अपना परिवार और संपत्ति खो दी। इसके अतिरिक्त, शैतान ने उसे बीमारियों से भी पीड़ित किया।</p>
+<p>उस दुष्ट के भयानक आक्रमण का कारण जानने के लिए परमेश्वर से बार-बार प्रार्थना करने के बावजूद, अय्यूब ने अपने दुखों के लिए कभी प्रभु को दोष नहीं दिया।</p>
+<blockquote class="scripture">“इन सब बातों में अय्यूब ने न तो पाप किया और न परमेश्वर पर दोष लगाया।”<sup><span class="footnote-ref" title="अय्यूब 1:22">¹⁵</span></sup></blockquote>
+<p>जब कोई अप्रिय, यहाँ तक कि भयानक घटना घटे, तो परमेश्वर को दोष मत दो। वह तुम्हारी शांति से प्रसन्न होता है।</p>
+<p>यह सच है कि वह अपने शत्रुओं पर हँसता है,<sup><span class="footnote-ref" title="भजन संहिता 2:4">¹⁶</span></sup> लेकिन तुम उसके शत्रु नहीं हो। यदि तुमने उसे स्वीकार किया है, तो तुम उसकी संतान हो।<sup><span class="footnote-ref" title="1 यूहन्ना 3:2; रोमियों 8:16">¹⁷</span></sup></p>
+<p>और यदि तुमने अभी तक ऐसा नहीं किया है, तो यह तुम्हारा अवसर है।</p>
+<p>अय्यूब की कहानी वहीं समाप्त नहीं हुई। अपने उन मित्रों के लिए प्रार्थना करने के बाद, जिन्होंने गलत रूप से उसकी विपत्ति के लिए उसे दोषी ठहराया था, परमेश्वर ने उसे भरपूर आशीष दी: उसे पहले से दुगुना मिला, अनेक आशीषें मिलीं, और अधिक संतान हुई। वह 140 वर्ष और जीवित रहा तथा वृद्धावस्था में संतुष्ट होकर मरा।</p>
+<p>आपदा से बचने वालों को अन्य बचे हुए लोगों के लिए प्रार्थना करनी चाहिए और उन लोगों की सहायता करनी चाहिए जो अपने प्रियजनों और संपत्ति को खोकर आज दुखी हैं।</p>
+<p>तूफ़ान के बाद शांति आती है, और फिर पुनर्निर्माण करना पड़ता है।</p>
+<blockquote class="scripture">“यह मत पूछो कि तुम्हारा देश तुम्हारे लिए क्या कर सकता है; पूछो कि तुम अपने देश के लिए क्या कर सकते हो।”<sup><span class="footnote-ref" title="जॉन एफ. केनेडी का प्रसिद्ध कथन">¹⁸</span></sup><cite>जॉन एफ. केनेडी का प्रसिद्ध कथन</cite></blockquote>
+<p>अब कार्य करने का समय है। प्रभु की खोज करने का समय है, ताकि वह आकर हमें धार्मिकता सिखाए।<sup><span class="footnote-ref" title="होशे 10:12">¹⁹</span></sup></p>
+<p>कुछ लोगों को परमेश्वर अपनी दया से अपने पास बुला लेता है, और कुछ को अपनी दया से जीवित रहने देता है।</p>`
+},
+ru:{
+title:"Он всё знает — Часть 2 — Слово в капсулах",
+author:"Автор: J.V.",heading:"Он всё знает",part:"Часть 2",
+nav:["← Вернуться к части 1","Вернуться к статьям"],
+article:`<p>Сначала Венесуэлу, а затем Колумбию потрясли сильные землетрясения. Мы знаем, что и другие страны столкнутся с подобными событиями, как это уже происходило в Азии и недавно во Флориде.</p>
+<p>Все эти события происходят по Божьему попущению, и кажется, будто земля восстаёт и пытается что-то сказать. Покойный английский проповедник Чарльз Сперджен говорил в своих проповедях, что «бедствия и даже кажущиеся природные беспорядки находятся под контролем Божественной руки». Даже хаос является частью порядка.</p>
+<p>Как и бедствия, войны и слухи о войнах, землетрясения являются пророческими знамениями,<sup><span class="footnote-ref" title="Матфея 24:4–8">¹⁰</span></sup> которые прежде всего указывают на два события:</p>
+<ul class="topic-list prophetic"><li>пришествие Господа;</li><li>конец времён.</li></ul>
+<p>Извержения вулканов можно предсказывать достаточно точно. Однако до сих пор не существует устройства, способного предсказать, когда произойдёт землетрясение или повторный толчок. Возможно, однажды такое устройство появится. Google обнаруживает землетрясение лишь после того, как оно уже началось.</p>
+<p>И, конечно, Господь должен быть нашей главной точкой отсчёта. Эти знамения — не просто предупреждение.</p>
+<div class="verse-image"><img src="salmo-91-ru.png" alt="Падут подле тебя тысяча и десять тысяч одесную тебя, но к тебе не приблизится. Псалом 90:7"></div>
+<p>Бог — Бог порядка, равновесия и гармонии. Именно этого Он хочет, чтобы мы искали. Он говорит:</p>
+<blockquote class="scripture">«Ищите прежде Царства Божия и правды Его — Его равновесия и Его праведного пути, — и всё это приложится вам».<sup><span class="footnote-ref" title="Матфея 6:33">¹¹</span></sup></blockquote>
+<p>Когда мы не ищем лица Его,<sup><span class="footnote-ref" title="Псалом 26:8">¹²</span></sup> мы оказываемся в трудных обстоятельствах.</p>
+<p>Нам важно понимать и принимать, что события происходят с Божьего позволения, но Бог не радуется несчастьям человека; Он радуется его миру и благополучию.<sup><span class="footnote-ref" title="Псалом 34:27–28">¹³</span></sup></p>
+<p>Поэтому мы должны относиться к Господу с уважением и благоговейным страхом.<sup><span class="footnote-ref" title="Евреям 12:28">¹⁴</span></sup></p>
+<p>Патриарх Иов пережил множество трудностей и несчастий. Он потерял семью и имущество из-за воров и разбойников, огня и сильного ветра. Кроме того, сатана поразил его болезнями.</p>
+<p>Хотя Иов настойчиво искал у Бога объяснения этому страшному нападению зла, он никогда не обвинял Господа в своих страданиях.</p>
+<blockquote class="scripture">«Во всём этом не согрешил Иов и не произнёс ничего неразумного о Боге».<sup><span class="footnote-ref" title="Иов 1:22">¹⁵</span></sup></blockquote>
+<p>Когда случается что-то неприятное, даже ужасное, не обвиняй Бога. Он радуется твоему миру.</p>
+<p>Да, Он смеётся над Своими врагами,<sup><span class="footnote-ref" title="Псалом 2:4">¹⁶</span></sup> но ты не Его враг. Если ты принял Его, ты — Его дитя.<sup><span class="footnote-ref" title="1 Иоанна 3:2; Римлянам 8:16">¹⁷</span></sup></p>
+<p>А если ты ещё не сделал этого, сейчас у тебя есть такая возможность.</p>
+<p>История Иова на этом не закончилась. После того как он помолился за друзей, несправедливо обвинявших его в собственном несчастье, Бог щедро благословил его: он получил вдвое больше прежнего, множество благословений и новых детей, прожил ещё 140 лет и умер в глубокой старости, насытившись днями.</p>
+<p>Пережившие бедствие должны молиться за других уцелевших и помогать тем, кто сегодня скорбит из-за потери близких и имущества.</p>
+<p>После бури наступает затишье, и нужно восстанавливать разрушенное.</p>
+<blockquote class="scripture">«Не спрашивай, что твоя страна может сделать для тебя; спроси, что ты можешь сделать для своей страны».<sup><span class="footnote-ref" title="Известное высказывание Джона Ф. Кеннеди">¹⁸</span></sup><cite>Известное высказывание Джона Ф. Кеннеди</cite></blockquote>
+<p>Пришло время действовать. Пришло время искать Господа, чтобы Он пришёл и научил нас праведности.<sup><span class="footnote-ref" title="Осии 10:12">¹⁹</span></sup></p>
+<p>Есть люди, которых Бог забирает к Себе по милости, и есть люди, которых Он по Своей милости оставляет в живых.</p>`
+},
+de:{
+title:"Er weiß alles — Teil 2 — DAS WORT IN KAPSELN",
+author:"Von J.V.",heading:"Er weiß alles",part:"Teil 2",
+nav:["← Zurück zu Teil 1","Zurück zu den Artikeln"],
+article:`<p>Zuerst wurde Venezuela und danach Kolumbien von schweren Erdbeben erschüttert. Wir wissen, dass auch andere Länder ähnliche Ereignisse erleben werden, wie es bereits in Asien und vor Kurzem in Florida geschehen ist.</p>
+<p>All diese Ereignisse geschehen mit Gottes Zulassung, und es scheint, als würde sich die Erde auflehnen und etwas sagen wollen. Der verstorbene englische Evangelist Charles Spurgeon sagte in seinen Predigten, dass „Katastrophen und selbst scheinbare Unordnungen in der Natur von der göttlichen Hand gelenkt werden“. Auch das Chaos ist Teil der Ordnung.</p>
+<p>Wie Seuchen, Kriege und Kriegsgerüchte sind Erdbeben prophetische Zeichen,<sup><span class="footnote-ref" title="Matthäus 24,4–8">¹⁰</span></sup> die sich vor allem auf zwei Dinge beziehen:</p>
+<ul class="topic-list prophetic"><li>das Kommen des Herrn und</li><li>das Ende der Zeiten.</li></ul>
+<p>Vulkanausbrüche lassen sich mit einiger Genauigkeit vorhersagen. Bis heute gibt es jedoch kein Gerät, das vorhersagen kann, wann ein Erdbeben oder ein Nachbeben auftreten wird. Vielleicht wird es eines Tages möglich sein. Google erkennt ein Erdbeben erst, wenn es bereits begonnen hat.</p>
+<p>Und natürlich muss der Herr unser Bezugspunkt sein. Diese Zeichen sind mehr als bloße Warnungen.</p>
+<div class="verse-image"><img src="salmo-91-de.png" alt="Tausend fallen an deiner Seite und zehntausend zu deiner Rechten, doch dich erreicht es nicht. Psalm 91,7"></div>
+<p>Gott ist ein Gott der Ordnung, des Gleichgewichts und der Ausgewogenheit. Genau danach sollen wir streben. Er sagt:</p>
+<blockquote class="scripture">„Trachtet zuerst nach dem Reich Gottes und nach seiner Gerechtigkeit – nach seinem Gleichgewicht und seiner gerechten Art zu handeln –, so wird euch dies alles hinzugefügt werden.“<sup><span class="footnote-ref" title="Matthäus 6,33">¹¹</span></sup></blockquote>
+<p>Wenn wir sein Angesicht nicht suchen,<sup><span class="footnote-ref" title="Psalm 27,8">¹²</span></sup> geraten wir in schwierige Situationen.</p>
+<p>Es ist gut, zu verstehen und anzunehmen, dass Dinge mit Gottes Zulassung geschehen. Doch Gott freut sich nicht über das Unglück des Menschen, sondern über seinen Frieden.<sup><span class="footnote-ref" title="Psalm 35,27–28">¹³</span></sup></p>
+<p>Aus all diesen Gründen sollten wir dem Herrn mit Respekt und ehrfürchtiger Scheu begegnen.<sup><span class="footnote-ref" title="Hebräer 12,28">¹⁴</span></sup></p>
+<p>Der Patriarch Hiob erlebte viele Schwierigkeiten und Unglücksfälle. Er verlor seine Familie und seinen Besitz durch Diebe und Räuber, durch Feuer und einen gewaltigen Sturm. Außerdem wurde er von Satan mit Krankheiten geschlagen.</p>
+<p>Obwohl er Gott eindringlich um eine Erklärung für diesen gewaltigen Angriff des Bösen bat, machte er den Herrn niemals für sein Leid verantwortlich.</p>
+<blockquote class="scripture">„Bei alledem sündigte Hiob nicht und schrieb Gott nichts Ungehöriges zu.“<sup><span class="footnote-ref" title="Hiob 1,22">¹⁵</span></sup></blockquote>
+<p>Wenn etwas Unangenehmes oder sogar Schreckliches geschieht, gib Gott nicht die Schuld. Er freut sich über deinen Frieden.</p>
+<p>Es stimmt, dass er über seine Feinde lacht,<sup><span class="footnote-ref" title="Psalm 2,4">¹⁶</span></sup> aber du bist nicht sein Feind. Wenn du ihn angenommen hast, bist du sein Kind.<sup><span class="footnote-ref" title="1. Johannes 3,2; Römer 8,16">¹⁷</span></sup></p>
+<p>Und wenn du das noch nicht getan hast, ist jetzt deine Gelegenheit.</p>
+<p>Hiobs Geschichte endete nicht dort. Nachdem er für seine Freunde gebetet hatte, die ihn zu Unrecht für sein Unglück verantwortlich machten, segnete Gott ihn überreich: Er erhielt doppelt so viel wie zuvor, viele Segnungen und weitere Kinder. Er lebte noch 140 Jahre und starb alt und lebenssatt.</p>
+<p>Diejenigen, die das Unglück überlebt haben, sollten beten und anderen Überlebenden helfen sowie den Menschen beistehen, die heute um Angehörige und verlorenen Besitz trauern.</p>
+<p>Nach dem Sturm kehrt Ruhe ein, und der Wiederaufbau muss beginnen.</p>
+<blockquote class="scripture">„Frage nicht, was dein Land für dich tun kann, sondern frage, was du für dein Land tun kannst.“<sup><span class="footnote-ref" title="Berühmtes Zitat von John F. Kennedy">¹⁸</span></sup><cite>Berühmtes Zitat von John F. Kennedy</cite></blockquote>
+<p>Es ist Zeit zu handeln. Es ist Zeit, den Herrn zu suchen, damit er kommt und uns Gerechtigkeit lehrt.<sup><span class="footnote-ref" title="Hosea 10,12">¹⁹</span></sup></p>
+<p>Manche Menschen nimmt Gott in seiner Barmherzigkeit zu sich, und andere lässt er in seiner Barmherzigkeit am Leben.</p>`
+},
+ja:{
+title:"神はすべてをご存じです — 第2部 — カプセルに込められたみことば",
+author:"著者：J.V.",heading:"神はすべてをご存じです",part:"第2部",
+nav:["← 第1部に戻る","記事一覧に戻る"],
+article:`<p>まずベネズエラが、続いてコロンビアが大きな地震に襲われました。アジアや最近のフロリダでも起きたように、ほかの国々も同じような出来事を経験することになるでしょう。</p>
+<p>これらの出来事はすべて神が許される範囲で起こります。まるで大地が反抗し、何かを伝えようとしているかのようです。故チャールズ・スポルジョンは説教の中で、「災害も、一見すると自然の秩序が乱れているように見えることも、神の御手の支配下にある」と語りました。混乱さえも秩序の一部なのです。</p>
+<p>疫病、戦争、戦争のうわさと同じように、地震も預言的なしるしです。<sup><span class="footnote-ref" title="マタイの福音書 24:4–8">¹⁰</span></sup>それは主に次の二つを指しています。</p>
+<ul class="topic-list prophetic"><li>主の来臨</li><li>時代の終わり</li></ul>
+<p>火山の噴火はかなり正確に予測できる場合があります。しかし、今日に至るまで、地震や余震がいつ起こるかを予測できる装置はありません。いつか可能になるかもしれません。Googleが検知できるのは、地震がすでに始まってからです。</p>
+<p>そして、もちろん、私たちの基準となるべきお方は主です。これらのしるしは、単なる注意喚起ではありません。</p>
+<div class="verse-image"><img src="salmo-91-ja.png" alt="千人があなたの傍らに、万人があなたの右に倒れても、災いはあなたに近づかない。詩篇91篇7節"></div>
+<p>神は秩序と均衡と調和の神です。それこそ、神が私たちに求めてほしいものです。神はこう言われます。</p>
+<blockquote class="scripture">「まず神の国と神の義を求めなさい。神の均衡と、正しく行われるその道を求めなさい。そうすれば、これらのものはすべて与えられます。」<sup><span class="footnote-ref" title="マタイの福音書 6:33">¹¹</span></sup></blockquote>
+<p>主の御顔を求めないとき、<sup><span class="footnote-ref" title="詩篇 27:8">¹²</span></sup>私たちは困難な状況に陥ります。</p>
+<p>物事が神の許しのもとで起こることを理解し、受け入れるのは大切です。しかし、神は人の不幸を喜ばれるのではなく、人が平安であることを喜ばれます。<sup><span class="footnote-ref" title="詩篇 35:27–28">¹³</span></sup></p>
+<p>だからこそ、私たちは主に対して敬意と畏敬の念を持つべきです。<sup><span class="footnote-ref" title="ヘブル人への手紙 12:28">¹⁴</span></sup></p>
+<p>族長ヨブは数多くの困難と不幸を経験しました。盗賊や強盗、火災、激しい風によって家族と財産を失いました。さらに、サタンによって病にも苦しめられました。</p>
+<p>ヨブは悪しき者によるこの大きな攻撃について、神に熱心に説明を求めましたが、自分の苦しみについて主を責めることは決してありませんでした。</p>
+<blockquote class="scripture">「このようなことがあっても、ヨブは罪を犯さず、神を非難しなかった。」<sup><span class="footnote-ref" title="ヨブ記 1:22">¹⁵</span></sup></blockquote>
+<p>不快なこと、あるいは恐ろしいことが起きても、神を責めてはいけません。神はあなたの平安を喜ばれます。</p>
+<p>神が敵をあざ笑われるのは確かです。<sup><span class="footnote-ref" title="詩篇 2:4">¹⁶</span></sup>しかし、あなたは神の敵ではありません。神を受け入れたなら、あなたは神の子どもです。<sup><span class="footnote-ref" title="ヨハネの手紙第一 3:2；ローマ人への手紙 8:16">¹⁷</span></sup></p>
+<p>まだ受け入れていないなら、今がその機会です。</p>
+<p>ヨブの物語はそこで終わりませんでした。自分の不幸を誤って責めた友人たちのために祈った後、神はヨブを大いに祝福されました。以前の二倍のものを与え、多くの祝福と新しい子どもたちを授け、さらに140年生きることを許されました。ヨブは年老い、長い生涯を全うして亡くなりました。</p>
+<p>災害を生き延びた人々は、ほかの生存者のために祈り、愛する人や財産を失って悲しんでいる人々を助けるべきです。</p>
+<p>嵐の後には静けさが訪れ、復興を始めなければなりません。</p>
+<blockquote class="scripture">「国があなたのために何をしてくれるかではなく、あなたが国のために何ができるかを問いなさい。」<sup><span class="footnote-ref" title="ジョン・F・ケネディの有名な言葉">¹⁸</span></sup><cite>ジョン・F・ケネディの有名な言葉</cite></blockquote>
+<p>行動する時です。主を求める時です。主が来られ、私たちに義を教えてくださるように。<sup><span class="footnote-ref" title="ホセア書 10:12">¹⁹</span></sup></p>
+<p>神は憐れみによって御許に召される人々もいれば、同じ憐れみによって生かしておかれる人々もいます。</p>`
+}
+};
+</script>
+
 <script>
 (function(){
- const article=document.querySelector('.article');
- const buttons=document.querySelectorAll('[data-lang]');
- const navLinks=document.querySelectorAll('.footer-nav a');
- const data=window.translations;
- const siteNames={
-  es:'LA PALABRA EN CÁPSULAS',
-  en:'THE WORD IN CAPSULES',
-  zh:'胶囊中的话语',
-  fr:'LA PAROLE EN CAPSULES',
-  it:'LA PAROLA IN CAPSULE',
-  pt:'A PALAVRA EM CÁPSULAS',
-  he:'הדבר בכמוסות',
-  ar:'الكلمة في كبسولات'
- };
- function setLanguage(lang){
-  if(!data[lang]) lang='es';
-  document.documentElement.lang=lang;
-  document.documentElement.dir=(lang==='ar'||lang==='he')?'rtl':'ltr';
-  document.title=data[lang].title;
-  const siteName=document.querySelector('.site-name');
-  if(siteName) siteName.textContent=siteNames[lang]||siteNames.es;
-  document.querySelector('.author').textContent=data[lang].author;
-  document.querySelector('h1').textContent=data[lang].heading;
-  document.querySelector('.part-label').textContent=data[lang].part;
-  article.innerHTML=data[lang].article;
-  navLinks.forEach((a,i)=>a.textContent=data[lang].nav[i]);
-  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));
-  try{localStorage.setItem('lpc-language',lang)}catch(e){}
-  bindNotes();
- }
- function bindNotes(){
-  const notes=document.querySelectorAll('.footnote-ref');
-  function close(){notes.forEach(n=>{n.classList.remove('show-note');n.setAttribute('aria-expanded','false')})}
-  notes.forEach(n=>{n.setAttribute('aria-expanded','false');n.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const was=n.classList.contains('show-note');close();if(!was){n.classList.add('show-note');n.setAttribute('aria-expanded','true')}});n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();n.click()}if(e.key==='Escape')close()})});
-  document.addEventListener('click',close,{once:true});
- }
- buttons.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
- let initial='es';try{const saved=localStorage.getItem('lpc-language');if(data[saved])initial=saved}catch(e){}
- setLanguage(initial);
+"use strict";
+
+const article=document.querySelector(".article");
+const buttons=document.querySelectorAll("[data-lang]");
+const navLinks=document.querySelectorAll(".footer-nav a");
+const data=window.translations;
+
+const siteNames={
+es:"LA PALABRA EN CÁPSULAS",
+en:"THE WORD IN CAPSULES",
+zh:"胶囊中的话语",
+fr:"LA PAROLE EN CAPSULES",
+it:"LA PAROLA IN CAPSULE",
+pt:"A PALAVRA EM CÁPSULAS",
+he:"הדבר בכמוסות",
+ar:"الكلمة في كبسولات",
+hi:"कैप्सूल में परमेश्वर का वचन",
+ru:"СЛОВО В КАПСУЛАХ",
+de:"DAS WORT IN KAPSELN",
+ja:"カプセルに込められたみことば"
+};
+
+function bindNotes(){
+const notes=article.querySelectorAll(".footnote-ref");
+
+notes.forEach(n=>{
+const noteText=n.getAttribute("title")||"";
+n.setAttribute("role","button");
+n.setAttribute("tabindex","0");
+n.setAttribute("aria-label",noteText);
+n.setAttribute("aria-expanded","false");
+
+const popup=document.createElement("span");
+popup.className="footnote-popup";
+popup.textContent=noteText;
+n.appendChild(popup);
+
+n.addEventListener("click",function(e){
+e.preventDefault();
+e.stopPropagation();
+const wasOpen=n.classList.contains("show-note");
+closeNotes();
+if(!wasOpen){
+n.classList.add("show-note");
+n.setAttribute("aria-expanded","true");
+}
+});
+
+n.addEventListener("keydown",function(e){
+if(e.key==="Enter"||e.key===" "){
+e.preventDefault();
+n.click();
+}
+if(e.key==="Escape")closeNotes();
+});
+});
+
+function closeNotes(){
+notes.forEach(n=>{
+n.classList.remove("show-note");
+n.setAttribute("aria-expanded","false");
+});
+}
+
+document.addEventListener("click",closeNotes);
+}
+
+function setLanguage(lang){
+if(!data[lang])lang="es";
+
+document.documentElement.lang=lang==="zh"?"zh-CN":lang;
+document.documentElement.dir=(lang==="he"||lang==="ar")?"rtl":"ltr";
+
+document.title=data[lang].title;
+document.querySelector(".site-name").textContent=siteNames[lang]||siteNames.es;
+document.querySelector(".author").textContent=data[lang].author;
+document.querySelector("h1").textContent=data[lang].heading;
+document.querySelector(".part-label").textContent=data[lang].part;
+article.innerHTML=data[lang].article;
+
+navLinks.forEach((a,i)=>{
+a.textContent=data[lang].nav[i]||"";
+});
+
+buttons.forEach(b=>{
+b.setAttribute("aria-pressed",String(b.dataset.lang===lang));
+});
+
+try{
+localStorage.setItem("lpc-language",lang);
+localStorage.setItem("user_language",lang);
+}catch(e){}
+
+bindNotes();
+}
+
+buttons.forEach(b=>{
+b.addEventListener("click",()=>setLanguage(b.dataset.lang));
+});
+
+let initial="es";
+
+try{
+const params=new URLSearchParams(window.location.search);
+let requested=params.get("lang");
+
+if(requested==="zh-CN")requested="zh";
+if(requested&&data[requested]){
+initial=requested;
+}else{
+const saved=localStorage.getItem("lpc-language")||localStorage.getItem("user_language");
+if(data[saved])initial=saved;
+}
+}catch(e){}
+
+setLanguage(initial);
 })();
 </script>
-</body></html>
+</body>
+</html>
