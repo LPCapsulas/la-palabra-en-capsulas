@@ -1,515 +1,70 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Acerca de LPC — La Palabra en Cápsulas</title>
-  <style>
-    :root {
-      --text: #252525;
-      --muted: #666;
-      --accent: #17365D;
-      --paper: #F8F4EC;
-      --bg: #f2f0ec;
-      --line: #d9d9d9;
-      --hover: #f1f2f2;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    .page {
-      width: 900px;
-      max-width: calc(100% - 40px);
-      margin: 45px auto;
-      padding: 35px 65px 45px;
-      background: var(--paper);
-      border-radius: 5px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-      transition: background 0.2s ease;
-    }
-    .page:hover {
-      background: var(--hover);
-    }
-    .language-bar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 28px;
-    }
-    .language-bar button {
-      padding: 6px 12px;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      background: transparent;
-      color: var(--accent);
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .language-bar button:hover, .language-bar button.active {
-      background: var(--accent);
-      color: #fff;
-    }
-    .language-bar button:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .site-name {
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 17px;
-      letter-spacing: 0.08em;
-    }
-    h1 {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
-      line-height: 1.2;
-      font-weight: 700;
-    }
-    .subtitle {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 16px;
-      font-style: italic;
-    }
-    .capsule {
-      margin: 0 0 28px;
-      padding: 24px 27px;
-      border-left: 4px solid var(--accent);
-      background: #fafafa;
-      transition: background 0.2s ease;
-    }
-    .page:hover .capsule {
-      background: var(--hover);
-    }
-    .capsule-title {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
-      line-height: 1.3;
-      font-weight: 700;
-    }
-    .capsule p {
-      margin: 0 0 22px;
-      font-size: 17px;
-      line-height: 1.8;
-      text-align: justify;
-    }
-    .capsule p:last-child {
-      margin-bottom: 0;
-    }
-    .capsule p + p {
-      margin-top: 18px;
-    }
-    .scripture {
-      margin: 28px 0 4px;
-      padding: 16px 20px;
-      border-left: 4px solid var(--accent);
-      background: #fff;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
-      line-height: 1.75;
-      font-style: italic;
-      transition: background 0.2s ease;
-    }
-    .page:hover .scripture {
-      background: var(--hover);
-    }
-    .scripture cite {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 14px;
-      font-style: normal;
-    }
-    .footer-nav {
-      margin-top: 42px;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-    .footer-nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 700;
-    }
-    .footer-nav a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-      .page {
-        width: auto;
-        max-width: none;
-        margin: 0;
-        padding: 22px 22px 35px;
-        border-radius: 0;
-        box-shadow: none;
-      }
-      .language-bar {
-        margin-bottom: 30px;
-        gap: 6px;
-      }
-      .language-bar button {
-        padding: 6px 10px;
-        font-size: 13px;
-      }
-      h1 {
-        font-size: 30px;
-        line-height: 1.25;
-      }
-      .site-name {
-        font-size: 16px;
-      }
-      .subtitle {
-        font-size: 16px;
-      }
-      .capsule {
-        margin-bottom: 23px;
-        padding: 20px;
-      }
-      .capsule-title {
-        font-size: 21px;
-        margin-bottom: 10px;
-      }
-      .capsule p {
-        font-size: 17px;
-        line-height: 1.75;
-        text-align: justify;
-      }
-      .scripture {
-        margin: 23px 0 3px;
-        padding: 13px 17px;
-        font-size: 17px;
-        line-height: 1.75;
-      }
-      .footer-nav {
-        margin-top: 35px;
-        padding-top: 22px;
-      }
-      .footer-nav a {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="page">
-    <nav class="language-bar" aria-label="Language selection">
-      <button type="button" data-lang="es" onclick="changeLanguage('es')">ES</button>
-      <button type="button" data-lang="en" onclick="changeLanguage('en')">EN</button>
-      <button type="button" data-lang="zh" onclick="changeLanguage('zh')">中文</button>
-      <button type="button" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
-      <button type="button" data-lang="it" onclick="changeLanguage('it')">IT</button>
-      <button type="button" data-lang="pt" onclick="changeLanguage('pt')">PT</button>
-      <button type="button" data-lang="he" onclick="changeLanguage('he')">עברית</button>
-      <button type="button" data-lang="ar" onclick="changeLanguage('ar')">العربية</button>
-      <button type="button" data-lang="hi" onclick="changeLanguage('hi')">हिन्दी</button>
-      <button type="button" data-lang="ru" onclick="changeLanguage('ru')">RU</button>
-      <button type="button" data-lang="de" onclick="changeLanguage('de')">DE</button>
-      <button type="button" data-lang="ja" onclick="changeLanguage('ja')">日本語</button>
-    </nav>
-    <header>
-      <div class="site-name" id="site-name">LA PALABRA EN CÁPSULAS</div>
-      <h1 id="page-title">Acerca de LPC</h1>
-      <div class="subtitle" id="subtitle">Una palabra, una cápsula, un mensaje para el camino.</div>
-    </header>
-    <section class="capsule">
-      <h2 class="capsule-title" id="heading-what">¿Qué es LPC?</h2>
-      <p id="text-what">LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>. Cuando me di cuenta, hace unos años, de que había sido salvo por la gracia de Cristo, comenzó no solo a hablar de la misericordia de Dios, sino también a distribuir folletos en las calles con mensajes cortos, a los que llamamos “tratados”, y titulé algunos de ellos con ese nombre.</p>
-    </section>
-    <section class="capsule">
-      <h2 class="capsule-title" id="heading-evolution">De tratados a mensajes cortos</h2>
-      <p id="text-evolution-1">Con el tiempo, los folletos han sido reemplazados por breves y sustanciosos mensajes en redes sociales.</p>
-      <p id="text-evolution-2">Creo que Dios nos da su Palabra diariamente en pequeñas dosis, según lo que necesitamos o somos capaces de recibir, tal como enseñó Jesús, el Maestro.</p>
-    </section>
-    <section class="capsule">
-      <h2 class="capsule-title" id="heading-daily">Una palabra para cada día</h2>
-      <blockquote class="scripture">
-        <span id="verse-one">“Danos hoy nuestro pan de cada día”.</span>
-        <cite id="reference-one">Mateo 6:11</cite>
-      </blockquote>
-      <blockquote class="scripture">
-        <span id="verse-two">“Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después”. (Jesús)</span>
-        <cite id="reference-two">Juan 13:7</cite>
-      </blockquote>
-    </section>
-    <nav class="footer-nav">
-      <a id="back-link" href="https://lpcapsulas.com">← Volver a Explora</a>
-    </nav>
-  </main>
-  <script>
-    const translations = {
-      es: {
-        siteName: "LA PALABRA EN CÁPSULAS",
-        title: "Acerca de LPC — La Palabra en Cápsulas",
-        pageTitle: "Acerca de LPC",
-        subtitle: "Una palabra, una cápsula, un mensaje para el camino.",
-        headingWhat: "¿Qué es LPC?",
-        textWhat: 'LPC es la abreviatura de <strong>“La Palabra en Cápsulas”</strong>. Cuando me di cuenta, hace unos años, de que había sido salvo por la gracia de Cristo, comenzó no solo a hablar de la misericordia de Dios, sino también a distribuir folletos en las calles con mensajes cortos, a los que llamamos “tratados”, y titulé algunos de ellos con ese nombre.',
-        headingEvolution: "De tratados a mensajes cortos",
-        evolution1: "Con el tiempo, los folletos han sido reemplazados por breves y sustanciosos mensajes en redes sociales.",
-        evolution2: "Creo que Dios nos da su Palabra diariamente en pequeñas dosis, según lo que necesitamos o somos capaces de recibir, tal como enseñó Jesús, el Maestro.",
-        headingDaily: "Una palabra para cada día",
-        verseOne: "“Danos hoy nuestro pan de cada día”.",
-        referenceOne: "Mateo 6:11",
-        verseTwo: "“Lo que yo hago, tú no lo comprendes ahora; mas lo entenderás después”. (Jesús)",
-        referenceTwo: "Juan 13:7",
-        back: "← Volver a Explora"
-      },
-      en: {
-        siteName: "THE WORD IN CAPSULES",
-        title: "About LPC — The Word in Capsules",
-        pageTitle: "About LPC",
-        subtitle: "One word, one capsule, one message for the journey.",
-        headingWhat: "What is LPC?",
-textWhat: 'LPC stands for “The Word in Capsules.” A few years ago, when I realized that I had been saved by the grace of Christ, I began not only to speak about God’s mercy, but also to distribute leaflets on the streets containing short messages. We called these leaflets “tracts,” and I gave some of them this name.',
-headingEvolution: "From tracts to short messages",
-evolution1: "Over time, printed leaflets have given way to brief yet meaningful messages on social media.",
-evolution2: "I believe God gives us His Word daily in small portions, according to what we need or are able to receive, just as Jesus, the Teacher, taught.",
-headingDaily: "A word for every day",
-verseOne: "“Give us this day our daily bread.”",
-referenceOne: "Matthew 6:11",
-verseTwo: "“What I am doing you do not understand now, but you will know after this.” (Jesus)",
-referenceTwo: "John 13:7",
-back: "← Back to Explore"
-},
-fr: {
-siteName: "LA PAROLE EN CAPSULES",
-title: "À propos de LPC — La Parole en Capsules",
-pageTitle: "À propos de LPC",
-subtitle: "Une parole, une capsule, un message pour le chemin.",
-headingWhat: "Qu’est-ce que LPC ?",
-textWhat: 'LPC est l’abréviation de « La Parole en Capsules ». Il y a quelques années, lorsque j’ai compris que j’avais été sauvé by la grâce du Christ, j’ai commencé non seulement à parler de la miséricorde de Dieu, mais aussi à distribuer dans les rues des feuillets contenant de courts messages. Nous appelons ces feuillets des « traités », et j’ai donné ce nom à certains d’entre eux.',
-headingEvolution: "Des traités aux messages courts",
-evolution1: "Au fil du temps, les feuillets ont été remplacés par de courts messages riches de sens publiés sur les réseaux sociaux.",
-evolution2: "Je crois que Dieu nous donne chaque jour sa Parole en petites portions, selon nos besoins ou notre capacité à la recevoir, comme Jésus, le Maître, nous l’a enseigné.",
-headingDaily: "Une parole pour chaque jour",
-verseOne: "« Donne-nous aujourd’hui notre pain quotidien. »",
-referenceOne: "Matthieu 6:11",
-verseTwo: "« Ce que je fais, tu ne le comprends pas maintenant, mais tu le comprendras par la suite. » (Jésus)",
-referenceTwo: "Jean 13:7",
-back: "← Retour à Explorer"
-},
-zh: {
-siteName: "胶囊中的圣言",
-title: "关于 LPC — 胶囊中的圣言",
-pageTitle: "关于 LPC",
-subtitle: "一句话，一个胶囊，一则陪伴人生旅程的信息。",
-headingWhat: "什么是 LPC？",
-textWhat: 'LPC 是“胶囊中的圣言”（La Palabra en Cápsulas）的缩写。几年前，当我意识到自己因基督的恩典而得救时，我开始不仅讲述上帝的怜悯，也在街头分发印有简短信息的传单。我们称这些传单为“福音单张”，我也用这个名称为其中一些作品命名。',
-headingEvolution: "从福音单张到简短信息",
-evolution1: "随着时间推移，纸质传单逐渐被社交媒体上简短而有深意的信息所取代。",
-evolution2: "我相信，上帝每天都按着我们的需要或接受能力，将祂的话语一点一点地赐给我们，正如教师耶稣所教导的那样。",
-headingDaily: "每日一句话",
-verseOne: "“我们日用的饮食，今日赐给我们。”",
-referenceOne: "马太福音 6:11",
-verseTwo: "“我所做的，你如今不知道，后来必明白。”（耶稣）",
-referenceTwo: "约翰福音 13:7",
-back: "← 返回探索"
-},
-it: {
-siteName: "LA PAROLA IN CAPSULE",
-title: "Informazioni su LPC — La Parola in Capsule",
-pageTitle: "Informazioni su LPC",
-subtitle: "Una parola, una capsula, un messaggio per il cammino.",
-headingWhat: "Che cos’è LPC?",
-textWhat: 'LPC è l’abbreviazione di “La Parola in Capsule”. Alcuni anni fa, quando mi resi conto di essere stato salvato per grazia di Cristo, cominciai non solo a parlare della misericordia di Dio, ma anche a distribuire per le strade opuscoli con brevi messaggi, que chiamiamo “trattati”; diedi questo nome ad alcuni di essi.',
-headingEvolution: "Dai trattati ai messaggi brevi",
-evolution1: "Col tempo, gli opuscoli sono stati sostituiti da messaggi brevi ma ricchi di contenuto sui social media.",
-evolution2: "Credo che Dio ci doni ogni giorno la Sua Parola in piccole dosi, secondo ciò di cui abbiamo bisogno o che siamo in grado di ricevere, proprio come insegnò Gesù, il Maestro.",
-headingDaily: "Una parola per ogni giorno",
-verseOne: "“Dacci oggi il nostro pane quotidiano.”",
-referenceOne: "Matteo 6:11",
-verseTwo: "“Quello che faccio, tu ora non lo capisci, ma lo comprenderai dopo.” (Gesù)",
-referenceTwo: "Giovanni 13:7",
-back: "← Torna a Esplora"
-},
-pt: {
-siteName: "A PALAVRA EM CÁPSULAS",
-title: "Sobre a LPC — A Palavra em Cápsulas",
-pageTitle: "Sobre a LPC",
-subtitle: "Uma palavra, uma cápsula, uma mensagem para a caminhada.",
-headingWhat: "O que é a LPC?",
-textWhat: 'LPC é a abreviatura de “A Palavra em Cápsulas”. Há alguns anos, quando percebi que havia sido salvo pela graça de Cristo, comecei não apenas a falar sobre a misericórdia de Deus, mais também a distribuir nas ruas folhetos com mensagens curtas, que chamamos de “tratados”; dei esse nome a alguns deles.',
-headingEvolution: "Dos tratados às mensagens curtas",
-evolution1: "Com o tempo, os folhetos foram substituídos por mensagens breves e substanciosas nas redes sociais.",
-evolution2: "Creio que Deus nos dá diariamente a Sua Palavra em pequenas porções, conforme nossas necessidades ou nossa capacidade de recebê-la, assim como ensinou Jesus, o Mestre.",
-headingDaily: "Uma palavra para cada dia",
-verseOne: "“O pão nosso de cada dia dá-nos hoje.”",
-referenceOne: "Mateus 6:11",
-verseTwo: "“O que eu faço não o sabes tu agora, mas tu o saberás depois.” (Jesus)",
-referenceTwo: "João 13:7",
-back: "← Voltar a Explorar"
-},
-he: {
-siteName: "דְּבַר אֱלֹהִים בְּקַפְסוּלוֹת",
-title: "אודות LPC — דבר אלוהים בקפסולות",
-pageTitle: "אודות LPC",
-subtitle: "מילה אחת, קפסולה אחת, מסר לדרך.",
-headingWhat: "מהי LPC?",
-textWhat: 'LPC הוא קיצור של „דבר אלוהים בקפסולות”. לפני כמה שנים, כשהבנתי שנושעתי בחסדו של המשיח, התחלתי לא רק לדבר על רחמי אלוהים, אלא גם לחלק ברחובות עלונים ובהם מסרים קצרים, שאותם אנו מכנים „עלוני בשורה”; את השם הזה נתתי לכמה מהם.',
-headingEvolution: "מעלונים למסרים קצרים",
-evolution1: "עם הזמן הוחלפו העלונים המודפסים במסרים קצרים ובעלי תוכן ברשתות החברतीות.",
-evolution2: "אני מאמין שאלוהים נותן לנו את דברו מדי יום במנות קטנות, בהתאם לצרכינו או ליכולתנו לקבל אותו, כפי שלימד ישוע, המורה.",
-headingDaily: "מילה לכל יום",
-verseOne: "„את לחם חוקנו תן לנו היום.”",
-referenceOne: "מתי ו׳:11",
-verseTwo: "„את אשר אני עושה אינך מבין עתה, אך תבין אחרי כן.” (ישוע)",
-referenceTwo: "יוחנן י״г:7",
-back: "חזרה לעיון ←"
-},
-ar: {
-siteName: "كَلِمَةُ اللهِ فِي كَبْسُولات",
-title: "حول LPC — كلمة الله في كبسولات",
-pageTitle: "حول LPC",
-subtitle: "كلمة واحدة، كبسولة واحدة، ورسالة ترافقك في الطريق.",
-headingWhat: "ما هي LPC؟",
-textWhat: 'LPC هو اختصار لعبارة «كلمة الله في كبسولات». قبل بضع سنوات، عندما أدركت أنني نلت الخلاص بنعمة المسيح، بدأت لا أتحدث عن رحمة الله فحسب، بل أيضًا أوزّع في الشوارع منشورات تحمل رسائل قصيرة، نسمّيها «مطويات إنجيلية»، وقد أطلقت هذا الاسم على بعض منها.',
-headingEvolution: "من المطويات إلى الرسائل القصيرة",
-evolution1: "مع مرور الوقت، حلّت الرسائل القصيرة والغنية بالمعنى على وسائل التواصل الاجتماعي محلّ المنشورات الورقية.",
-evolution2: "أؤمن أن الله يمنحنا كلمته كل يوم بجرعات صغيرة، بحسب احتياجاتنا أو قدرتنا على تقبّلها، كما علّمنا يسوع، المعلّم.",
-headingDaily: "كلمة لكل يوم",
-verseOne: "«خبزنا كفافنا أعطنا اليوم.»",
-referenceOne: "متى 6:11",
-verseTwo: "«لستَ تعلم أنت الآن ما أنا أصنع، ولكنك ستفهم فيما بعد.» (يسوع)",
-referenceTwo: "يوحنا 13:7",
-back: "العودة إلى الاستكشاف ←"
-},
-hi: {
-siteName: "कैप्सूल में वचन",
-title: "LPC के बारे में — कैप्सूल में वचन",
-pageTitle: "LPC के बारे में",
-subtitle: "एक शब्द, एक कैप्सूल, यात्रा के लिए एक संदेश।",
-headingWhat: "LPC क्या है?",
-textWhat: 'LPC “कैप्सूल में वचन” (La Palabra en Cápsulas) का संक्षिप्त रूप है। कुछ साल पहले, जब मुझे एहसास हुआ कि मसीह के अनुग्रह से मेरा उद्धार हुआ है, तो मैंने न केवल ईश्वर की दया के बारे में बात करना शुरू किया, बल्कि सड़कों पर लघु संदेशों वाले पर्चे भी बांटे, जिन्हें हम "ट्रैक्ट" कहते हैं; और मैंने उनमें से कुछ को यह नाम दिया।',
-headingEvolution: "ट्रैक्ट से लघु संदेशों तक",
-evolution1: "समय के साथ, मुद्रित पर्चों का स्थान सोशल मीडिया पर संक्षिप्त और अर्थपूर्ण संदेशों ने ले लिया है।",
-evolution2: "मेरा मानना है कि परमेश्वर हमें रोज़ाना छोटे हिस्सों में अपना वचन देता है, हमारी ज़रूरत या ग्रहण करने की क्षमता के अनुसार, जैसा कि गुरु यीशु ने सिखाया था।",
-headingDaily: "हर दिन के लिए एक वचन",
-verseOne: "“आज हमारी दिन भर की रोटी हमें दे।”",
-referenceOne: "मत्ती 6:11",
-verseTwo: "“जो मैं करता हूँ, उसे तुम अभी नहीं समझते, परन्तु इसके बाद समझोगे।” (यीशु)",
-referenceTwo: "यूहन्ना 13:7",
-back: "← अन्वेषण पर वापस जाएं"
-},
-ru: {
-siteName: "СЛОВО В КАПСУЛАХ",
-title: "О LPC — Слово в Капсулах",
-pageTitle: "О LPC",
-subtitle: "Одно слово, одна капсула, одно послание в путь.",
-headingWhat: "Что такое LPC?",
-textWhat: 'LPC — это аббревиатура от «Слово в Капсулах» (La Palabra en Cápsulas). Несколько лет назад, когда я осознал, что спасен благодатью Христа, я начал не только говорить о милосердии Бога, но и раздавать на улицах буклеты с краткими посланиями, которые мы называем «трактатами»; некоторым из них я дал это название.',
-headingEvolution: "От трактатов к кратким сообщениям",
-evolution1: "Со временем печатные буклеты уступили место кратким, но емким сообщениям в социальных сетях.",
-evolution2: "Я верю, что Бог дает нам Свое Слово ежедневно небольшими порциями, в соответствии с тем, в чем мы нуждаемся или что способны принять, как учил Иисус, Учитель.",
-headingDaily: "Слово на каждый день",
-verseOne: "«Хлеб наш насущный дай нам на сей день».",
-referenceOne: "От Матфея 6:11",
-verseTwo: "«Что Я делаю, теперь ты не знаешь, а уразумеешь после». (Иисус)",
-referenceTwo: "От Иоанна 13:7",
-back: "← Вернуться к Обзору"
-},
-de: {
-siteName: "DAS WORT IN KAPSELN",
-title: "Über LPC — Das Wort in Kapseln",
-pageTitle: "Über LPC",
-subtitle: "Ein Wort, eine Kapsel, eine Botschaft für den Weg.",
-headingWhat: "Was ist LPC?",
-textWhat: 'LPC ist die Abkürzung für „Das Wort in Kapseln“ (La Palabra en Cápsulas). Als mir vor einigen Jahren bewusst wurde, dass ich durch die Gnade Christi gerettet worden war, begann ich nicht nur von Gottes Barmherzigkeit zu sprechen, sondern auch Flugblätter mit kurzen Botschaften auf den Straßen zu verteilen, die wir „Traktate“ nennen; einigen von ihnen gab ich diesen Namen.',
-headingEvolution: "Von Traktaten zu Kurznachrichten",
-evolution1: "Im Laufe der Zeit wurden die gedruckten Flugblätter durch kurze, gehaltvolle Beiträge in den sozialen Medien ersetzt.",
-evolution2: "Ich glaube, dass Gott uns sein Wort täglich in kleinen Portionen gibt, je nachdem, was wir brauchen oder aufnehmen können, ganz so, wie es Jesus, der Meister, lehrte.",
-headingDaily: "Ein Wort für jeden Tag",
-verseOne: "„Unser tägliches Brot gib uns heute.“",
-referenceOne: "Matthäus 6:11",
-verseTwo: "„Was ich tue, verstehst du jetzt nicht; du wirst es aber hernach erfahren.“ (Jesus)",
-referenceTwo: "Johannes 13:7",
-back: "← Zurück zu Entdecken"
-},
-ja: {
-siteName: "カプセルの中の御言葉",
-title: "LPCについて — カプセルの中の御言葉",
-pageTitle: "LPCについて",
-subtitle: "一つの言葉、一つのカプセル、旅路のためのメッセージ。",
-headingWhat: "LPCとは？",
-textWhat: 'LPCは、「カプセルの中の御言葉」（La Palabra en Cápsulas）の略称です。数年前、私が見キリストの恵みによって救われたことに気づいたとき、神の慈しみについて語るだけでなく、短いメッセージを載せた小冊子（私たちはこれを「トラクト」と呼んでいます）を街頭で配り始め、その一部にこの名前を付けました。',
-headingEvolution: "トラクトから短いメッセージへ",
-evolution1: "時代の流れとともに、印刷された小冊子は、SNS上の短く含蓄のあるメッセージへと移り変わっていきました。",
-evolution2: "私たちは、師であるイエスが教えられたように、神が私たちの必要や受け取る能力に応じて、毎日小さな分量で御言葉を与えてくださっていると信じています。",
-headingDaily: "毎日のための一つの言葉",
-verseOne: "「私たちの日々の糧を、今日もお与えください。」",
-referenceOne: "マタイによる福音書 6:11",
-verseTwo: "「わたしのしていることは、今あなたには分からないが、後で分かるようになる。」（イエス）",
-referenceTwo: "ヨハネによる福音書 13:7",
-back: "← メニューに戻る"
+
+<script>
+function setLanguage(language) {
+  const selected = translations[language] ? language : "es";
+  const data = translations[selected];
+
+  document.documentElement.lang =
+    selected === "zh" ? "zh-CN" : selected;
+
+  document.documentElement.dir =
+    ["he", "ar"].includes(selected) ? "rtl" : "ltr";
+
+  document.title = data.title;
+
+  document.getElementById("site-name").textContent = data.siteName;
+  document.getElementById("page-title").textContent = data.pageTitle;
+  document.getElementById("subtitle").textContent = data.subtitle;
+  document.getElementById("heading-what").textContent = data.headingWhat;
+  document.getElementById("text-what").innerHTML = data.textWhat;
+  document.getElementById("heading-evolution").textContent = data.headingEvolution;
+  document.getElementById("text-evolution-1").textContent = data.evolution1;
+  document.getElementById("text-evolution-2").textContent = data.evolution2;
+  document.getElementById("heading-daily").textContent = data.headingDaily;
+  document.getElementById("verse-one").textContent = data.verseOne;
+  document.getElementById("reference-one").textContent = data.referenceOne;
+  document.getElementById("verse-two").textContent = data.verseTwo;
+  document.getElementById("reference-two").textContent = data.referenceTwo;
+  document.getElementById("back-link").textContent = data.back;
+
+  document.querySelectorAll(".language-bar button").forEach(function(button) {
+    const active = button.dataset.lang === selected;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+
+  try {
+    localStorage.setItem("lpc-language", selected);
+    localStorage.setItem("user_language", selected);
+  } catch (error) {}
 }
-};
-function changeLanguage(language) {
-const selected = translations[language];
-if (!selected) return;
-document.documentElement.lang = language;
-document.documentElement.dir = ["he", "ar"].includes(language) ? "rtl" : "ltr";
-document.title = selected.title;
-document.getElementById("site-name").textContent = selected.siteName;
-document.getElementById("page-title").textContent = selected.pageTitle;
-document.getElementById("subtitle").textContent = selected.subtitle;
-document.getElementById("heading-what").textContent = selected.headingWhat;
-document.getElementById("text-what").innerHTML = selected.textWhat;
-document.getElementById("heading-evolution").textContent = selected.headingEvolution;
-document.getElementById("text-evolution-1").textContent = selected.evolution1;
-document.getElementById("text-evolution-2").textContent = selected.evolution2;
-document.getElementById("heading-daily").textContent = selected.headingDaily;
-document.getElementById("verse-one").textContent = selected.verseOne;
-document.getElementById("reference-one").textContent = selected.referenceOne;
-document.getElementById("verse-two").textContent = selected.verseTwo;
-document.getElementById("reference-two").textContent = selected.referenceTwo;
-document.getElementById("back-link").textContent = selected.back;
+
+function getInitialLanguage() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("lang");
+
+  if (requested && translations[requested]) {
+    return requested;
+  }
+
+  try {
+    const saved =
+      localStorage.getItem("lpc-language") ||
+      localStorage.getItem("user_language");
+
+    if (saved && translations[saved]) {
+      return saved;
+    }
+  } catch (error) {}
+
+  return "es";
+}
+
 document.querySelectorAll(".language-bar button").forEach(function(button) {
-const active = button.dataset.lang === language;
-button.classList.toggle("active", active);
-button.setAttribute("aria-pressed", active ? "true" : "false");
+  button.addEventListener("click", function() {
+    setLanguage(button.dataset.lang);
+  });
 });
-try {
-localStorage.setItem("lpc-language", language);
-} catch (error) {
-// Soporte si localStorage está deshabilitado
-}
-}
-(function initializeLanguage() {
-let savedLanguage = "es";
-try {
-const storedLanguage = localStorage.getItem("lpc-language");
-if (Object.keys(translations).includes(storedLanguage)) {
-savedLanguage = storedLanguage;
-}
-} catch (error) {
-// Fallback al idioma base
-}
-changeLanguage(savedLanguage);
-})();
+
+setLanguage(getInitialLanguage());
+</script>
