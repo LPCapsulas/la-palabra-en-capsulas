@@ -1,45 +1,331 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mi Testimonio — La Palabra en Cápsulas</title>
+
 <style>
-:root{--text:#252525;--muted:#666;--accent:#17365D;--paper:#F8F4EC;--bg:#f2f0ec;--line:#d9d9d9}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:17px;line-height:1.8}
-.page{width:900px;max-width:calc(100% - 40px);margin:45px auto;padding:30px 65px 45px;background:var(--paper);border-radius:5px;box-shadow:0 4px 18px rgba(0,0,0,.07)}
-.language-bar{display:flex;justify-content:flex-end;align-items:center;gap:9px;font-size:13px;line-height:1.5;margin-bottom:20px}.lang-link{padding:0;border:0;background:transparent;color:#555;font:inherit;cursor:pointer}.lang-link:hover,.lang-link.active{color:var(--accent)}.lang-link.active{font-weight:700}.lang-divider{color:#999;user-select:none}
-header{text-align:center;margin-bottom:35px}.section-label{margin-bottom:14px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
-h1{margin:0 0 12px;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.2;text-align:center;font-weight:700}.author{margin:0 0 8px;color:var(--muted);font-size:17px;text-align:center;font-style:italic}.subtitle{margin-top:8px;color:var(--muted);font-size:17px;line-height:1.6;text-align:center;font-style:italic}
-.testimony{width:100%;max-width:100%;margin:0 auto}.testimony p{margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify}
-.highlight{margin:35px 0;padding:22px 25px;background:#f2eadb;border-left:4px solid var(--accent);color:var(--text);font-size:17px;line-height:1.8;font-style:italic;text-align:justify}
-.back-testimonios{margin-top:42px;padding-top:25px;border-top:1px solid var(--line);text-align:center}.back-testimonios a{color:var(--accent);text-decoration:none;font-size:16px;font-weight:700}.back-testimonios a:hover{text-decoration:underline}
-@media(max-width:700px){.page{width:auto;max-width:none;margin:0;padding:22px 22px 35px;border-radius:0;box-shadow:none}header{margin-bottom:30px}.section-label{font-size:12px;letter-spacing:1.5px}h1{font-size:30px;line-height:1.25}.author,.subtitle{font-size:16px}.testimony p{font-size:17px;line-height:1.75;margin-bottom:22px}.highlight{margin:30px 0;padding:20px 18px;font-size:17px;line-height:1.75}.back-testimonios{margin-top:35px;padding-top:22px}}
-</style></head><body><main class="page">
+:root {
+  --text:#252525;
+  --muted:#666;
+  --accent:#17365D;
+  --paper:#F8F4EC;
+  --bg:#f2f0ec;
+  --line:#d9d9d9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  font-size:17px;line-height:1.8
+}
+.page{
+  width:900px;max-width:calc(100% - 40px);
+  margin:45px auto;padding:30px 65px 45px;
+  background:var(--paper);border-radius:5px;
+  box-shadow:0 4px 18px rgba(0,0,0,.07)
+}
+.language-bar{
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;gap:8px;font-size:13px;line-height:1.5;
+  margin-bottom:24px
+}
+.lang-link{
+  padding:7px 10px;border:1px solid #d9d3c9;
+  border-radius:5px;background:transparent;color:#17365D;
+  font:inherit;cursor:pointer;text-decoration:none
+}
+.lang-link:hover,.lang-link.active{
+  color:#fff;background:var(--accent);border-color:var(--accent)
+}
+.lang-link.active{font-weight:700}
+header{text-align:center;margin-bottom:35px}
+.section-label{
+  margin-bottom:14px;color:var(--accent);font-size:13px;
+  font-weight:700;letter-spacing:1.8px;text-transform:uppercase
+}
+h1{
+  margin:0 0 12px;color:var(--accent);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:36px;line-height:1.2;text-align:center;font-weight:700
+}
+.author{
+  margin:0 0 8px;color:var(--muted);font-size:17px;
+  text-align:center;font-style:italic
+}
+.subtitle{
+  margin-top:8px;color:var(--muted);font-size:17px;
+  line-height:1.6;text-align:center;font-style:italic
+}
+.testimony{width:100%;max-width:100%;margin:0 auto}
+.testimony p{
+  margin:0 0 22px;font-size:17px;line-height:1.8;text-align:justify
+}
+.highlight{
+  margin:35px 0;padding:22px 25px;background:#f2eadb;
+  border-left:4px solid var(--accent);color:var(--text);
+  font-size:17px;line-height:1.8;font-style:italic;text-align:justify
+}
+.back-testimonios{
+  margin-top:42px;padding-top:25px;border-top:1px solid var(--line);
+  text-align:center
+}
+.back-testimonios a{
+  color:var(--accent);text-decoration:none;font-size:16px;font-weight:700
+}
+.back-testimonios a:hover{text-decoration:underline}
+
+@media(max-width:700px){
+  .page{
+    width:auto;max-width:none;margin:0;padding:22px 22px 35px;
+    border-radius:0;box-shadow:none
+  }
+  .language-bar{gap:7px;margin-bottom:22px}
+  .lang-link{padding:7px 9px}
+  header{margin-bottom:30px}
+  .section-label{font-size:12px;letter-spacing:1.5px}
+  h1{font-size:30px;line-height:1.25}
+  .author,.subtitle{font-size:16px}
+  .testimony p{font-size:17px;line-height:1.75;margin-bottom:22px}
+  .highlight{margin:30px 0;padding:20px 18px;font-size:17px;line-height:1.75}
+  .back-testimonios{margin-top:35px;padding-top:22px}
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
 <nav class="language-bar" aria-label="Language selection">
-<button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')" aria-pressed="true">Español</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')" aria-pressed="false">English</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')" aria-pressed="false">Français</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-hi" onclick="changeLanguage('hi')" aria-pressed="false">हिन्दी</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-ru" onclick="changeLanguage('ru')" aria-pressed="false">Русский</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-de" onclick="changeLanguage('de')" aria-pressed="false">Deutsch</button><span class="lang-divider">|</span><button type="button" class="lang-link" id="link-ja" onclick="changeLanguage('ja')" aria-pressed="false">日本語</button>
+  <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')">Español</button>
+  <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')">English</button>
+  <button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')">简体中文</button>
+  <button type="button" class="lang-link" id="link-fr" onclick="changeLanguage('fr')">Français</button>
+  <button type="button" class="lang-link" id="link-it" onclick="changeLanguage('it')">Italiano</button>
+  <button type="button" class="lang-link" id="link-pt" onclick="changeLanguage('pt')">Português</button>
+  <button type="button" class="lang-link" id="link-he" onclick="changeLanguage('he')">עברית</button>
+  <button type="button" class="lang-link" id="link-ar" onclick="changeLanguage('ar')">العربية</button>
 </nav>
-<header><div class="section-label" data-es="La Palabra en Cápsulas" data-en="The Word in Capsules" data-fr="La Parole en Capsules">La Palabra en Cápsulas</div>
-<h1 data-es="Mi Testimonio" data-en="My Testimony" data-fr="Mon témoignage">Mi Testimonio</h1>
-<div class="author" data-es="Por Jimmy Victoria" data-en="By Jimmy Victoria" data-fr="Par Jimmy Victoria">Por Jimmy Victoria</div>
-<div class="subtitle" data-es="Una historia de fe, salvación y transformación" data-en="A story of faith, salvation, and transformation" data-fr="Une histoire de foi, de salut et de transformation">Una historia de fe, salvación y transformación</div></header>
+
+<header>
+  <div class="section-label"
+    data-es="La Palabra en Cápsulas"
+    data-en="The Word in Capsules"
+    data-zh="胶囊中的话语"
+    data-fr="La Parole en Capsules"
+    data-it="La Parola in Capsule"
+    data-pt="A Palavra em Cápsulas"
+    data-he="הדבר בכמוסות"
+    data-ar="الكلمة في كبسولات">La Palabra en Cápsulas</div>
+
+  <h1
+    data-es="Mi Testimonio"
+    data-en="My Testimony"
+    data-zh="我的见证"
+    data-fr="Mon témoignage"
+    data-it="La mia testimonianza"
+    data-pt="Meu testemunho"
+    data-he="העדות שלי"
+    data-ar="شهادتي">Mi Testimonio</h1>
+
+  <div class="author"
+    data-es="Por Jimmy Victoria"
+    data-en="By Jimmy Victoria"
+    data-zh="作者：Jimmy Victoria"
+    data-fr="Par Jimmy Victoria"
+    data-it="Di Jimmy Victoria"
+    data-pt="Por Jimmy Victoria"
+    data-he="מאת ג׳ימי ויקטוריה"
+    data-ar="بقلم جيمي فيكتوريا">Por Jimmy Victoria</div>
+
+  <div class="subtitle"
+    data-es="Una historia de fe, salvación y transformación"
+    data-en="A story of faith, salvation, and transformation"
+    data-zh="一个关于信心、救恩与生命改变的故事"
+    data-fr="Une histoire de foi, de salut et de transformation"
+    data-it="Una storia di fede, salvezza e trasformazione"
+    data-pt="Uma história de fé, salvação e transformação"
+    data-he="סיפור של אמונה, ישועה ושינוי"
+    data-ar="قصة إيمان وخلاص وتغيير">Una historia de fe, salvación y transformación</div>
+</header>
+
 <article class="testimony">
-<p data-es="Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida." data-en="One night, while walking along Roosevelt Avenue in Jackson Heights, NY, at around 8 p.m., looking ahead toward a newsstand, I suddenly had a terrible thought. I realized that I was not prepared for eternity and that, if I died, I might go to hell and not to heaven. That moment changed my life." data-fr="Un soir, alors que je marchais sur Roosevelt Avenue à Jackson Heights, dans l’État de New York, vers 20 heures, en regardant devant moi vers un kiosque à journaux, une pensée terrible m’est soudain venue. J’ai compris que je n’étais pas prêt pour l’éternité et que, si je mourais, je pouvais aller en enfer et non au ciel. Ce moment a changé ma vie.">Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida.</p>
-<p data-es="Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios." data-en="For the previous three years, I had been searching for the Truth through philosophy. However, reading the Bible carefully helped me greatly. It had been given to me by the person who eventually became my guide toward faith: a man of God, simple yet extraordinary and exceptional, Mr. Guillermo Villa, who continues to persevere in the ways of God." data-fr="Pendant les trois années précédentes, j’avais cherché la Vérité dans la philosophie. Cependant, la lecture attentive de la Bible m’a beaucoup aidé. Elle m’avait été offerte par celui qui est finalement devenu mon guide vers la foi : un homme de Dieu, simple mais extraordinaire, hors du commun, M. Guillermo Villa, qui persévère encore dans les voies de Dieu.">Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios.</p>
-<p data-es="Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Mesías Salvador y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Redentor." data-en="I met him between October and November 1984, and he immediately shared the Gospel with me. By early 1985, I was already declaring to others that Jesus was the Son of God and that I had been born again; yes, I had received Him as my Lord and Savior." data-fr="Je l’ai rencontré entre octobre et novembre 1984, et il m’a aussitôt annoncé l’Évangile. Au début de 1985, je déclarais déjà aux autres que Jésus était le Fils de Dieu et que j’étais né de nouveau ; oui, je l’avais reçu comme mon Seigneur et mon Sauveur.">Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Hijo de Dios y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Salvador.</p>
-<p data-es="Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino." data-en="I experienced great peace, because I had received God's forgiveness, which Jesus made available to us more than twenty centuries ago. From then on, I devoured the Holy Scriptures and began sharing this message with my family and everyone I met along the way." data-fr="Je ressentais une grande paix, car j’avais reçu le pardon de Dieu que Jésus nous a légué il y a plus de vingt siècles. Dès lors, je dévorais les Saintes Écritures et j’ai commencé à faire connaître ce message à ma famille et à toute personne que je rencontrais sur mon chemin.">Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino.</p>
-<p data-es="Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson." data-en="Two years later, I was baptized in water at Community Gospel Church in New York, which was pastored by the late Robert Johansson." data-fr="Deux ans plus tard, j’ai été baptisé d’eau à la Community Gospel Church de New York, dont le pasteur était le regretté Robert Johansson.">Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson.</p>
-<p data-es="Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas." data-en="Later, on April 13, 1990, during a ministry service at Family Worship Center in Baton Rouge, Louisiana—the ministry of Jimmy Swaggart—guest evangelist R. W. Schambach was preaching. Through the laying on of hands, I received the long-awaited baptism in the Holy Spirit and, for the first time in my life, experienced the physical evidence of speaking in other tongues." data-fr="Plus tard, le 13 avril 1990, lors d’un service de ministère au Family Worship Center, à Baton Rouge, en Louisiane — le ministère de Jimmy Swaggart — l’évangéliste invité R. W. Schambach prêchait. Par l’imposition des mains, j’ai reçu le baptême tant attendu du Saint-Esprit et j’ai connu, pour la première fois de ma vie, la manifestation physique du parler en d’autres langues.">Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas.</p>
-<p data-es="Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante." data-en="This baptism, different from water baptism, awakened many abilities in me. The main one was to testify with power and pray for others to receive salvation and healing. We will speak about those cases later as well." data-fr="Ce baptême, différent du baptême d’eau, a ravivé en moi de nombreuses capacités. La principale était de témoigner avec puissance et de prier pour le salut et la guérison des autres. Nous parlerons aussi de ces expériences plus tard.">Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante.</p>
-<p data-es="Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra." data-en="I have always loved evangelism—sharing the good news of the Gospel—and later the Lord also led me into teaching the Word." data-fr="J’ai toujours aimé l’évangélisation — annoncer la bonne nouvelle de l’Évangile — et, plus tard, le Seigneur m’a également conduit vers l’enseignement de la Parole.">Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra.</p>
-<p data-es="Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido." data-en="Among the other experiences I will share in the “Downloads” section of my website, there was one particularly special experience. At the “Christ Is the Answer” church in Woodside, during a ministry service for the congregation's leaders, a woman who was a prophetess told me, on the Lord's behalf, that I would have dreams and interpret dreams. And indeed, over the years, I have had them." data-fr="Parmi les autres expériences que je partagerai dans la section « Téléchargements » de mon site, il y en a une très particulière. À l’église « Christ est la Réponse » de Woodside, lors d’un service destiné aux responsables de la congrégation, une femme prophétesse m’a dit de la part du Seigneur que j’aurais des rêves et que je les interpréterais. Et, en vérité, au fil des années, j’en ai eu.">Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido.</p>
-<p data-es="Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt." data-en="Today I share my life with my wonderful wife and helpmate, Francy, and my fabulous son, Matt." data-fr="Aujourd’hui, je partage ma vie avec ma merveilleuse épouse et précieuse compagne Francy, ainsi qu’avec mon formidable fils Matt.">Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt.</p>
-<div class="highlight" data-es="Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad." data-en="There are many miracles and gifts we can receive from the Lord; however, salvation itself is the greatest of miracles, and every person on the face of the earth must decide right now where they want to spend eternity." data-fr="Nous pouvons recevoir du Seigneur de nombreux miracles et dons ; cependant, le salut en soi est le plus grand des miracles, et chaque personne sur la terre doit décider dès maintenant où elle veut passer l’éternité.">Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad.</div>
-<p data-es="Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra." data-en="I can testify that the Gospel of Jesus is real, that God is good, just, holy, and merciful, and that He can save everyone who seeks Him and believes in Him. Come to the one Holy Father, Creator of heaven and earth." data-fr="Je peux témoigner que l’Évangile de Jésus est réel, que Dieu est bon, juste, saint et miséricordieux, et qu’il peut sauver quiconque le cherche et croit en lui. Venez au seul Père saint, créateur du ciel et de la terre.">Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra.</p>
+
+<p
+data-es="Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida."
+data-en="One night, while walking along Roosevelt Avenue in Jackson Heights, NY, at around 8 p.m., looking toward a newsstand, I suddenly had a terrible thought. I realized that I was not prepared for eternity and that, if I died, I might go to hell and not to heaven. That moment changed my life."
+data-zh="一天晚上，大约晚上八点，我走在纽约州杰克逊高地的罗斯福大道上，望向前方的报刊亭，突然冒出一个可怕的念头。我意识到自己还没有为永恒做好准备；如果死去，我可能去地狱，而不是天堂。那一刻改变了我的人生。"
+data-fr="Un soir, alors que je marchais sur Roosevelt Avenue à Jackson Heights, dans l’État de New York, vers 20 heures, en regardant un kiosque à journaux, une pensée terrible m’est soudain venue. J’ai compris que je n’étais pas prêt pour l’éternité et que, si je mourais, je pouvais aller en enfer et non au ciel. Ce moment a changé ma vie."
+data-it="Una sera, mentre camminavo lungo Roosevelt Avenue a Jackson Heights, New York, verso le otto di sera, guardando un’edicola, ebbi improvvisamente un pensiero terribile. Mi resi conto che non ero preparato per l’eternità e che, se fossi morto, avrei potuto andare all’inferno anziché in cielo. Quel momento cambiò la mia vita."
+data-pt="Certa noite, enquanto caminhava pela Roosevelt Avenue, em Jackson Heights, Nova York, por volta das oito da noite, olhando para uma banca de jornais, tive de repente um pensamento terrível. Percebi que não estava preparado para a eternidade e que, se morresse, poderia ir para o inferno e não para o céu. Aquele momento mudou minha vida."
+data-he="לילה אחד, כשצעדתי בשדרת רוזוולט בג׳קסון הייטס, ניו יורק, בסביבות השעה שמונה בערב, והבטתי לעבר דוכן עיתונים, עלתה בי לפתע מחשבה נוראה. הבנתי שאינני מוכן לנצח ושאם אמות, אני עלול להגיע לגיהינום ולא לגן עדן. אותו רגע שינה את חיי."
+data-ar="في إحدى الليالي، بينما كنت أسير في شارع روزفلت في جاكسون هايتس، نيويورك، نحو الساعة الثامنة مساءً، وأنظر إلى كشك للصحف، خطرت ببالي فجأة فكرة مرعبة. أدركت أنني لم أكن مستعدًا للأبدية، وأنني إذا مت فقد أذهب إلى الجحيم لا إلى السماء. لقد غيّرت تلك اللحظة حياتي.">Una noche, mientras caminaba por la Avenida Roosevelt en Jackson Heights, NY, cerca de las 8 p. m., mirando hacia el frente, a un puesto de periódicos, tuve de repente un pensamiento terrible. Me di cuenta de que no estaba preparado para la eternidad y que, si moría, podía ir al infierno y no precisamente al cielo. Ese momento cambió mi vida.</p>
+
+<p
+data-es="Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios."
+data-en="For the previous three years, I had been searching for the Truth through philosophy. However, reading the Bible carefully helped me greatly. It had been given to me by the person who eventually became my guide toward faith: a man of God, simple yet extraordinary, Mr. Guillermo Villa, who continues to persevere in the ways of God."
+data-zh="在此前的三年里，我一直试图从哲学中寻找真理。然而，认真阅读圣经对我帮助很大。这本圣经是后来成为我信仰引路人的那个人送给我的。他是一位属神的人，朴实却非凡、与众不同，他就是 Guillermo Villa 先生；直到今天，他仍持守在上帝的道路上。"
+data-fr="Pendant les trois années précédentes, j’avais cherché la Vérité dans la philosophie. Cependant, la lecture attentive de la Bible m’a beaucoup aidé. Elle m’avait été offerte par celui qui est finalement devenu mon guide vers la foi : un homme de Dieu, simple mais extraordinaire, M. Guillermo Villa, qui persévère encore dans les voies de Dieu."
+data-it="Nei tre anni precedenti avevo cercato la Verità attraverso la filosofia. Tuttavia, mi fu di grande aiuto leggere attentamente la Bibbia che mi aveva regalato colui che sarebbe diventato la mia guida nella fede: un uomo di Dio, semplice ma straordinario, fuori dal comune, il signor Guillermo Villa, che ancora oggi persevera nelle vie di Dio."
+data-pt="Durante os três anos anteriores, eu vinha buscando a Verdade por meio da filosofia. No entanto, foi de grande ajuda ler atentamente a Bíblia que me foi presenteada por aquele que acabou se tornando meu guia na fé: um homem de Deus, simples, mas extraordinário e incomum, o Sr. Guillermo Villa, que continua perseverando nos caminhos de Deus."
+data-he="במשך שלוש השנים שקדמו לכך חיפשתי את האמת באמצעות הפילוסופיה. אולם קריאת התנ״ך בעיון עזרה לי מאוד. את התנ״ך העניק לי האיש שלימים נעשה למדריך שלי באמונה: איש אלוהים פשוט אך יוצא דופן, מר גיירמו וייה, שעדיין מתמיד בדרכי אלוהים."
+data-ar="كنت أبحث عن الحق من خلال الفلسفة طوال السنوات الثلاث السابقة. ومع ذلك، ساعدتني كثيرًا قراءة الكتاب المقدس بتأنٍ، وهو الكتاب الذي أهداني إياه الرجل الذي أصبح لاحقًا مرشدي إلى الإيمان: رجل الله البسيط والاستثنائي، السيد غييرمو فيّا، الذي ما زال ثابتًا في طرق الله.">Había estado buscando la Verdad en la filosofía durante los tres años anteriores. Sin embargo, me ayudó mucho haber estado leyendo detenidamente la Biblia que me regaló quien finalmente se convirtió en mi guía hacia la fe: un hombre de Dios, sencillo pero extraordinario, fuera de lo común, el Sr. Guillermo Villa, quien aún persevera en los caminos de Dios.</p>
+
+<p
+data-es="Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Mesías Salvador y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Redentor."
+data-en="I met him between October and November 1984, and he immediately shared the Gospel with me. By early 1985, I was already declaring to others that Jesus was the Messiah and Savior and that I had been born again; yes, I had received Him as my Lord and Redeemer."
+data-zh="我在 1984 年 10 月至 11 月间认识了他，他随即向我传讲福音。到了 1985 年初，我已经向别人宣告耶稣是救主弥赛亚，我也已经重生；是的，我接受了祂作我的主和救赎主。"
+data-fr="Je l’ai rencontré entre octobre et novembre 1984, et il m’a aussitôt annoncé l’Évangile. Au début de 1985, je déclarais déjà aux autres que Jésus était le Messie et le Sauveur et que j’étais né de nouveau ; oui, je l’avais reçu comme mon Seigneur et mon Rédempteur."
+data-it="Lo incontrai tra ottobre e novembre del 1984, ed egli mi annunciò subito il Vangelo. All’inizio del 1985 dichiaravo già agli altri che Gesù era il Messia e Salvatore e che ero nato di nuovo; sì, lo avevo ricevuto come mio Signore e Redentore."
+data-pt="Conheci-o entre outubro e novembro de 1984, e ele imediatamente compartilhou o Evangelho comigo. No início de 1985, eu já declarava aos outros que Jesus era o Messias Salvador e que eu havia nascido de novo; sim, eu o havia recebido como meu Senhor e Redentor."
+data-he="פגשתי אותו בין אוקטובר לנובמבר 1984, והוא שיתף אותי מיד בבשורה. בתחילת 1985 כבר הכרזתי בפני אחרים שישוע הוא המשיח והמושיע ושנולדתי מחדש; כן, קיבלתי אותו כאדוני וכגואלי."
+data-ar="التقيت به بين أكتوبر ونوفمبر عام 1984، وشارك معي الإنجيل على الفور. وبحلول أوائل عام 1985، كنت أعلن للآخرين أن يسوع هو المسيح المخلّص وأنني وُلدت من جديد؛ نعم، لقد قبلته ربًا وفاديًا لي.">Lo conocí entre octubre y noviembre de 1984, y de inmediato me compartió el evangelio. Para principios de 1985, ya declaraba ante los demás que Jesús era el Mesías Salvador y que yo había nacido de nuevo; sí, lo había recibido como mi Señor y Redentor.</p>
+
+<p
+data-es="Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino."
+data-en="I experienced great peace because I had received God's forgiveness through Jesus, who made it available to us more than twenty centuries ago. From then on, I devoured the Holy Scriptures and began sharing this message with my family and everyone I met along the way."
+data-zh="我心中充满平安，因为我领受了耶稣在两千多年前赐给我们的上帝的赦免。从那时起，我如饥似渴地阅读圣经，并开始向家人以及路上遇见的每一个人传扬这信息。"
+data-fr="Je ressentais une grande paix, car j’avais reçu le pardon de Dieu par Jésus, qui nous l’a rendu accessible il y a plus de vingt siècles. Dès lors, je dévorais les Saintes Écritures et j’ai commencé à faire connaître ce message à ma famille et à toute personne que je rencontrais sur mon chemin."
+data-it="Provavo una grande pace, perché avevo ricevuto il perdono di Dio reso possibile da Gesù più di venti secoli fa. Da allora divoravo le Sacre Scritture e cominciai a far conoscere questo messaggio ai miei familiari e a chiunque incontrassi lungo il cammino."
+data-pt="Eu desfrutava de grande paz, pois havia recebido o perdão de Deus que Jesus nos concedeu há mais de vinte séculos. Desde então, devorava as Sagradas Escrituras e comecei a compartilhar essa mensagem com meus familiares e com todos que encontrava pelo caminho."
+data-he="חשתי שלווה רבה, משום שקיבלתי את סליחתו של אלוהים שישוע העניק לנו לפני יותר מאלפיים שנה. מאז קראתי בשקיקה את כתבי הקודש והתחלתי לשתף את משפחתי ואת כל מי שפגשתי בדרך במסר הזה."
+data-ar="كنت أشعر بسلام عظيم، لأنني نلت غفران الله الذي أتاحه لنا يسوع منذ أكثر من عشرين قرنًا. ومنذ ذلك الحين، كنت أقرأ الكتب المقدسة بشغف وبدأت أشارك هذه الرسالة مع عائلتي وكل من ألتقي به في الطريق.">Disfrutaba de mucha paz, pues había recibido el perdón de Dios que Jesús nos legó hace más de veinte siglos. Desde entonces devoraba las Sagradas Escrituras y empecé a darlo a conocer a mis familiares y a toda persona que encontraba en el camino.</p>
+
+<p
+data-es="Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson."
+data-en="Two years later, I was baptized in water at Community Gospel Church in New York, pastored by the late Robert Johansson."
+data-zh="两年后，我在纽约的 Community Gospel Church 接受了水礼。那时教会的牧者是已故的 Robert Johansson。"
+data-fr="Deux ans plus tard, j’ai été baptisé d’eau à la Community Gospel Church de New York, dont le pasteur était le regretté Robert Johansson."
+data-it="Due anni dopo fui battezzato in acqua presso la Community Gospel Church di New York, guidata dal defunto pastore Robert Johansson."
+data-pt="Dois anos depois, fui batizado nas águas na Community Gospel Church, em Nova York, pastoreada pelo falecido Robert Johansson."
+data-he="שנתיים לאחר מכן הוטבלתי במים בכנסיית Community Gospel Church בניו יורק, שבה כיהן כרועה המנוח רוברט יוהנסון."
+data-ar="بعد عامين، اعتمدت بالماء في كنيسة Community Gospel Church في نيويورك، التي كان يرعاها القس الراحل روبرت يوهانسون.">Dos años más tarde, fui bautizado en las aguas en la iglesia Community Gospel Church de Nueva York, pastoreada por el difunto Robert Johansson.</p>
+
+<p
+data-es="Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas."
+data-en="Later, on April 13, 1990, during a ministry service at Family Worship Center in Baton Rouge, Louisiana—the ministry of Jimmy Swaggart—guest evangelist R. W. Schambach was preaching. Through the laying on of hands, I received the long-awaited baptism in the Holy Spirit and, for the first time in my life, experienced the physical evidence of speaking in other tongues."
+data-zh="后来，在 1990 年 4 月 13 日，路易斯安那州巴吞鲁日的 Family Worship Center（Jimmy Swaggart 的事工）举行的一场服事聚会中，特邀布道家 R. W. Schambach 正在讲道。借着按手祷告，我领受了期盼已久的圣灵洗，并在一生中第一次经历了说方言这一外在表现。"
+data-fr="Plus tard, le 13 avril 1990, lors d’un service au Family Worship Center, à Baton Rouge, en Louisiane — le ministère de Jimmy Swaggart — l’évangéliste invité R. W. Schambach prêchait. Par l’imposition des mains, j’ai reçu le baptême tant attendu du Saint-Esprit et j’ai connu, pour la première fois de ma vie, la manifestation physique du parler en d’autres langues."
+data-it="Successivamente, il 13 aprile 1990, durante un servizio al Family Worship Center di Baton Rouge, in Louisiana, ministero di Jimmy Swaggart, predicava l’evangelista ospite R. W. Schambach. Mediante l’imposizione delle mani ricevetti l’atteso battesimo nello Spirito Santo e, per la prima volta nella mia vita, sperimentai la manifestazione fisica del parlare in altre lingue."
+data-pt="Mais tarde, em 13 de abril de 1990, durante um culto no Family Worship Center, em Baton Rouge, Louisiana — ministério de Jimmy Swaggart —, o evangelista convidado R. W. Schambach estava pregando. Pela imposição de mãos, recebi o tão aguardado batismo no Espírito Santo e, pela primeira vez na vida, experimentei a evidência física de falar em outras línguas."
+data-he="מאוחר יותר, ב־13 באפריל 1990, במהלך תפילה ושירות ב־Family Worship Center בבאטון רוז׳, לואיזיאנה — המשרד של ג׳ימי סוואגרט — הטיף האוונגליסט האורח ר׳ ו׳ שאמבך. באמצעות סמיכת ידיים קיבלתי את הטבילה המיוחלת ברוח הקודש, ולראשונה בחיי חוויתי את הביטוי הגופני של דיבור בלשונות אחרות."
+data-ar="لاحقًا، في 13 أبريل 1990، أثناء اجتماع خدمة في Family Worship Center في باتون روج، لويزيانا، التابعة لخدمة جيمي سواغارت، كان المبشر الضيف R. W. Schambach يعظ. ومن خلال وضع الأيدي، نلت معمودية الروح القدس التي طالما تمنيتها، واختبرت لأول مرة في حياتي العلامة الظاهرة للتكلم بألسنة أخرى.">Posteriormente, el 13 de abril de 1990, durante un servicio de impartición en el que predicaba el evangelista invitado R. W. Schambach en Family Worship Center, en Baton Rouge, Luisiana, ministerio de Jimmy Swaggart, y mediante la imposición de manos, recibí el tan anhelado bautismo en el Espíritu Santo y tuve por primera vez en mi vida la evidencia física de hablar en otras lenguas.</p>
+
+<p
+data-es="Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante."
+data-en="This baptism, different from water baptism, awakened many abilities in me. The main one was to testify with power and pray for others to receive salvation and healing. We will speak about those cases later as well."
+data-zh="这次与水洗不同的洗礼，激发了我许多恩赐；其中最主要的是有能力地作见证，并为他人的得救和医治祷告。以后我们也会谈到这些经历。"
+data-fr="Ce baptême, différent du baptême d’eau, a ravivé en moi de nombreuses capacités. La principale était de témoigner avec puissance et de prier pour le salut et la guérison des autres. Nous parlerons aussi de ces expériences plus tard."
+data-it="Questo battesimo, diverso da quello in acqua, risvegliò in me molte capacità. La principale fu testimoniare con potenza e pregare per la salvezza e la guarigione degli altri. Parleremo di questi casi anche più avanti."
+data-pt="Esse batismo, diferente do batismo nas águas, despertou em mim muitas capacidades. A principal foi testemunhar com poder e orar pela salvação e cura de outras pessoas. Também falaremos desses casos mais adiante."
+data-he="טבילה זו, השונה מטבילת המים, עוררה בי יכולות רבות. העיקרית שבהן הייתה להעיד בעוצמה ולהתפלל למען ישועתם ורפואתם של אחרים. נדבר על המקרים האלה גם בהמשך."
+data-ar="أيقظت هذه المعمودية، المختلفة عن معمودية الماء، قدرات كثيرة في داخلي. وكان أهمها الشهادة بقوة والصلاة من أجل خلاص الآخرين وشفائهم. وسنتحدث عن تلك الحالات لاحقًا أيضًا.">Este bautismo, diferente al del agua, avivó en mí muchas capacidades; la principal fue testificar con poder y orar por otros para salvación y sanidad. De esos casos también hablaremos más adelante.</p>
+
+<p
+data-es="Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra."
+data-en="I have always loved evangelism—sharing the good news of the Gospel—and later the Lord also led me into teaching the Word."
+data-zh="我一直热爱传福音——分享福音的好消息。后来，主也带领我走上教导圣言的道路。"
+data-fr="J’ai toujours aimé l’évangélisation — annoncer la bonne nouvelle de l’Évangile — et, plus tard, le Seigneur m’a également conduit vers l’enseignement de la Parole."
+data-it="Ho sempre amato l’evangelizzazione — condividere la buona notizia del Vangelo — e, in seguito, il Signore mi ha guidato anche verso l’insegnamento della Parola."
+data-pt="Sempre gostei da evangelização — compartilhar as boas-novas do Evangelho — e, mais tarde, o Senhor também me conduziu ao ensino da Palavra."
+data-he="תמיד אהבתי לבשר את הבשורה — לשתף את החדשות הטובות של הבשורה — ובהמשך הוביל אותי האדון גם ללמד את דברו."
+data-ar="لطالما أحببت التبشير — أي مشاركة الأخبار السارة للإنجيل — وبعد ذلك قادني الرب أيضًا إلى تعليم الكلمة.">Siempre me gustó la evangelización —compartir las buenas noticias del evangelio— y, tiempo después, el Señor también me encaminó hacia la enseñanza de la Palabra.</p>
+
+<p
+data-es="Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido."
+data-en="Among the other experiences I will share in the “Downloads” section of my website, there was one particularly special experience. At the “Christ Is the Answer” church in Woodside, during a ministry service for the congregation's leaders, a woman prophetess told me on the Lord's behalf that I would have dreams and interpret dreams. And indeed, over the years, I have had them."
+data-zh="在我将于网站“下载”栏目分享的其他经历中，有一件特别难忘。在伍德赛德的“基督是答案”教会，一次为教会领袖举行的服事聚会中，一位女先知奉主的名告诉我，我将会做梦并解释梦境。事实上，多年来我确实有过这样的经历。"
+data-fr="Parmi les autres expériences que je partagerai dans la section « Téléchargements » de mon site, il y en a une très particulière. À l’église « Christ est la Réponse » de Woodside, lors d’un service destiné aux responsables de la congrégation, une femme prophétesse m’a dit de la part du Seigneur que j’aurais des rêves et que je les interpréterais. Et, en vérité, au fil des années, j’en ai eu."
+data-it="Tra le altre esperienze che condividerò nella sezione «Download» del mio sito, ce n’è una particolarmente speciale. Nella chiesa «Cristo è la Risposta» a Woodside, durante un incontro di ministero dedicato ai responsabili della congregazione, una donna profetessa mi disse da parte del Signore che avrei fatto sogni e li avrei interpretati. E, in effetti, nel corso degli anni ne ho avuti."
+data-pt="Entre as outras experiências que compartilharei na seção «Downloads» do meu site, houve uma muito especial. Na igreja «Cristo é a Resposta», em Woodside, durante um culto dedicado aos líderes da congregação, uma mulher profetisa me disse, em nome do Senhor, que eu teria sonhos e os interpretaria. E, de fato, ao longo dos anos, tive esses sonhos."
+data-he="בין החוויות הנוספות שאשתף במדור «הורדות» באתר שלי, הייתה חוויה מיוחדת במיוחד. בכנסיית «המשיח הוא התשובה» בוודסייד, במהלך מפגש שירות למנהיגי הקהילה, אישה נביאה אמרה לי בשם האדון שיהיו לי חלומות ושאפרש אותם. ואכן, לאורך השנים היו לי חלומות כאלה."
+data-ar="من بين التجارب الأخرى التي سأشاركها في قسم «التنزيلات» على موقعي، كانت هناك تجربة مميزة جدًا. ففي كنيسة «المسيح هو الجواب» في وودسايد، أثناء اجتماع خدمة لقادة الجماعة، أخبرتني امرأة نبيّة باسم الرب أنني سأرى أحلامًا وسأفسرها. وبالفعل، حدث ذلك معي على مر السنين.">Entre otras experiencias que compartiré en la sección «Descargas» de mi página, viví una muy particular. En la iglesia «Cristo es la Respuesta» de Woodside, durante un servicio de ministración a los líderes de la congregación, una mujer profetisa me dijo de parte del Señor que tendría sueños e interpretación de sueños. Y, a decir verdad, a lo largo de los años los he tenido.</p>
+
+<p
+data-es="Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt."
+data-en="Today I share my life with my wonderful wife and helpmate, Francy, and my fabulous son, Matt."
+data-zh="如今，我与美丽的妻子、得力的伴侣 Francy，以及优秀的儿子 Matt 一同生活。"
+data-fr="Aujourd’hui, je partage ma vie avec ma merveilleuse épouse et précieuse compagne Francy, ainsi qu’avec mon formidable fils Matt."
+data-it="Oggi condivido la mia vita con la mia meravigliosa moglie e compagna Francy e con il mio fantastico figlio Matt."
+data-pt="Hoje compartilho minha vida com minha maravilhosa esposa e companheira Francy e meu fabuloso filho Matt."
+data-he="כיום אני חולק את חיי עם אשתי הנפלאה ושותפתי לחיים פרנסי, ועם בני הנהדר מאט."
+data-ar="أشارك حياتي اليوم مع زوجتي الرائعة ورفيقة دربي فرانسي، وابني الرائع مات.">Hoy día comparto mi vida con mi hermosa esposa y ayuda idónea Francy, y mi fabuloso hijo Matt.</p>
+
+<div class="highlight"
+data-es="Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad."
+data-en="There are many miracles and gifts we can receive from the Lord; however, salvation itself is the greatest of miracles, and every person on the face of the earth must decide right now where they want to spend eternity."
+data-zh="我们可以从主领受许多神迹和恩赐；然而，得着救恩本身就是最大的神迹。世上每一个人都必须现在就决定自己要在哪里度过永恒。"
+data-fr="Nous pouvons recevoir du Seigneur de nombreux miracles et dons ; cependant, le salut en soi est le plus grand des miracles, et chaque personne sur la terre doit décider dès maintenant où elle veut passer l’éternité."
+data-it="Possiamo ricevere dal Signore molti miracoli e doni; tuttavia, la salvezza in sé è il più grande dei miracoli, e ogni persona sulla terra deve decidere proprio ora dove desidera trascorrere l’eternità."
+data-pt="Podemos receber muitos milagres e dádivas do Senhor; contudo, a salvação em si é o maior dos milagres, e cada pessoa sobre a face da terra precisa decidir agora mesmo onde deseja passar a eternidade."
+data-he="יש ניסים ומתנות רבים שאפשר לקבל מהאדון; אולם הישועה עצמה היא הנס הגדול מכולם, וכל אדם על פני האדמה חייב להחליט כבר עכשיו היכן הוא רוצה לבלות את הנצח."
+data-ar="هناك معجزات وعطايا كثيرة يمكن أن ننالها من الرب؛ ومع ذلك، فإن الخلاص بحد ذاته هو أعظم المعجزات، ويجب على كل إنسان على وجه الأرض أن يقرر الآن أين يريد أن يقضي الأبدية.">Hay muchos milagros y dádivas que podemos recibir del Señor; sin embargo, ser salvo, en sí, es el mayor de los milagros y toda persona sobre la faz de la tierra debe decidir ya mismo dónde quiere pasar la eternidad.</div>
+
+<p
+data-es="Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra."
+data-en="I can testify that the Gospel of Jesus is real, that God is good, just, holy, and merciful, and that He can save everyone who seeks Him and believes in Him. Come to the one Holy Father, Creator of heaven and earth."
+data-zh="我可以见证，耶稣的福音是真实的；上帝良善、公义、圣洁且满有怜悯，凡寻求祂并信靠祂的人，祂都能拯救。来归向那位独一的圣父，祂是天地的创造者。"
+data-fr="Je peux témoigner que l’Évangile de Jésus est réel, que Dieu est bon, juste, saint et miséricordieux, et qu’il peut sauver quiconque le cherche et croit en lui. Venez au seul Père saint, créateur du ciel et de la terre."
+data-it="Posso testimoniare che il Vangelo di Gesù è reale, che Dio è buono, giusto, santo e misericordioso e che può salvare chiunque lo cerchi e creda in lui. Vieni all’unico Santo Padre, creatore del cielo e della terra."
+data-pt="Posso testemunhar que o Evangelho de Jesus é real, que Deus é bom, justo, santo e misericordioso, e que pode salvar todos os que o buscam e nele creem. Venha ao único Santo Pai, criador do céu e da terra."
+data-he="אני יכול להעיד שהבשורה של ישוע אמיתית, שאלוהים טוב, צודק, קדוש ורחום, ושהוא יכול להושיע כל מי שמבקש אותו ומאמין בו. בואו אל האב הקדוש היחיד, בורא השמים והארץ."
+data-ar="أستطيع أن أشهد أن إنجيل يسوع حق، وأن الله صالح وعادل وقدوس ورحيم، وأنه قادر على خلاص كل من يطلبه ويؤمن به. تعالوا إلى الآب القدوس الواحد، خالق السماء والأرض.">Puedo dar fe de que el evangelio de Jesús es real, que Dios es bueno, justo, santo y misericordioso, y que puede salvar a todo aquel que lo busca y le cree. Ven al único Santo Padre, creador del cielo y de la tierra.</p>
+
 </article>
-<div class="back-testimonios"><a href="./index.html" data-es="← Volver a Testimonios" data-en="← Back to Testimonials" data-fr="← Retour aux témoignages">← Volver a Testimonios</a></div>
+
+<div class="back-testimonios">
+<a href="./index.html"
+data-es="← Volver a Testimonios"
+data-en="← Back to Testimonials"
+data-zh="← 返回见证页面"
+data-fr="← Retour aux témoignages"
+data-it="← Torna alle testimonianze"
+data-pt="← Voltar aos testemunhos"
+data-he="← חזרה לעדויות"
+data-ar="← العودة إلى الشهادات">← Volver a Testimonios</a>
+</div>
+
 </main>
+
 <script>
-(function(){const extraTranslations={};Object.assign(extraTranslations,{ja:["カプセルに詰めた御言葉","私の証し","ジミー・ビクトリア","信仰、救い、そして変えられた人生の物語","ある夜、午後8時ごろ、ニューヨーク州ジャクソンハイツのルーズベルト・アベニューを歩き、新聞スタンドの方を見ていたとき、突然恐ろしい考えが浮かびました。私は永遠に備えができておらず、死んだら天国ではなく地獄へ行くかもしれないと気づいたのです。その瞬間が私の人生を変えました。","その前の3年間、私は哲学の中に真理を探していました。しかし、聖書を注意深く読むことが大きな助けとなりました。その聖書を贈ってくれたのは、後に信仰への道を導いてくれる人となった、質素でありながら並外れて素晴らしい神の人、ギジェルモ・ビジャ氏でした。彼は今も神の道を歩み続けています。","1984年10月から11月ごろに彼と出会い、すぐに福音を伝えてもらいました。1985年初めには、イエスは神の御子であり、自分は新しく生まれたのだと人々に語るようになっていました。私はイエスを主、そして救い主として受け入れたのです。","私は大きな平安を味わいました。二千年以上前にイエスが私たちに与えてくださった神の赦しを受けたからです。それ以来、私は聖書を熱心に読み、家族や道で出会うすべての人にこの知らせを伝え始めました。","その2年後、ニューヨークのCommunity Gospel Churchで水のバプテスマを受けました。当時の牧師は、故ロバート・ヨハンソンでした。","その後、1990年4月13日、ルイジアナ州バトンルージュのFamily Worship Centerで、ジミー・スワガートの働きに属する集会が開かれ、招かれた伝道者R・W・シャンバッハが説教していました。按手を通して、私は待ち望んでいた聖霊のバプテスマを受け、生まれて初めて異言を語るという目に見えるしるしを体験しました。","水のバプテスマとは異なるこのバプテスマによって、私の中の多くの能力が目覚めました。最も大きなものは、力強く証しをし、人々の救いと癒やしのために祈ることでした。これらの出来事については後ほどお話しします。","私はいつも伝道、つまり福音の良い知らせを分かち合うことが好きでした。その後、主は御言葉を教える働きへも私を導いてくださいました。","ウェブサイトの「ダウンロード」欄で紹介するほかの体験の中に、特に印象深いものがあります。ウッドサイドの「キリストこそ答え」教会で、教会の指導者たちのための奉仕の際、ある女性預言者が主からの言葉として、私には夢が与えられ、その夢を解き明かすようになると告げました。実際、長年にわたって私はそのような夢を見てきました。","今、私は素晴らしい妻であり人生の伴侶であるフランシーと、素晴らしい息子マットと共に暮らしています。","主から受け取れる奇跡や賜物は数多くあります。しかし、救われること自体が最大の奇跡です。地上のすべての人は、永遠をどこで過ごしたいのか、今こそ決めなければなりません。","イエスの福音が真実であること、神が善であり、公正で、聖く、憐れみ深い方であること、そして神を求め信じるすべての人を救うことがおできになると、私は証しできます。天と地の創造主である唯一の聖なる父のもとへ来てください。","← 証しの一覧に戻る"]});Object.assign(extraTranslations,{de:["Das Wort in Kapseln","Mein Zeugnis","Von Jimmy Victoria","Eine Geschichte von Glauben, Erlösung und Veränderung","Eines Abends gegen 20 Uhr ging ich die Roosevelt Avenue in Jackson Heights, New York, entlang und blickte zu einem Zeitungsstand. Plötzlich kam mir ein schrecklicher Gedanke: Ich war nicht auf die Ewigkeit vorbereitet und könnte nach meinem Tod in die Hölle statt in den Himmel kommen. Dieser Augenblick veränderte mein Leben.","Drei Jahre lang hatte ich in der Philosophie nach der Wahrheit gesucht. Sehr geholfen hat mir jedoch das aufmerksame Lesen der Bibel, die mir der Mann schenkte, der schließlich mein Wegweiser zum Glauben wurde: ein schlichter, aber außergewöhnlicher Mann Gottes, Herr Guillermo Villa, der bis heute auf Gottes Wegen bleibt.","Ich lernte ihn zwischen Oktober und November 1984 kennen, und er erzählte mir sofort das Evangelium. Anfang 1985 erklärte ich anderen bereits, dass Jesus der Sohn Gottes sei und ich von Neuem geboren worden war; ich hatte Ihn als meinen Herrn und Retter angenommen.","Ich empfand großen Frieden, denn ich hatte Gottes Vergebung empfangen, die Jesus uns vor mehr als zwanzig Jahrhunderten zugänglich gemacht hat. Von da an las ich die Heilige Schrift mit großem Eifer und begann, diese Botschaft meiner Familie und jedem Menschen mitzuteilen, dem ich begegnete.","Zwei Jahre später wurde ich in der Community Gospel Church in New York im Wasser getauft. Ihr Pastor war der inzwischen verstorbene Robert Johansson.","Am 13. April 1990 predigte der Gast-Evangelist R. W. Schambach bei einem Dienst im Family Worship Center in Baton Rouge, Louisiana, das zum Dienst von Jimmy Swaggart gehörte. Durch Handauflegung empfing ich die lang ersehnte Taufe im Heiligen Geist und erlebte zum ersten Mal in meinem Leben das sichtbare Zeichen, in anderen Sprachen zu sprechen.","Diese Taufe, die sich von der Wassertaufe unterscheidet, weckte viele Fähigkeiten in mir. Die wichtigste war, kraftvoll Zeugnis abzulegen und für die Erlösung und Heilung anderer zu beten. Über diese Erlebnisse sprechen wir später ebenfalls.","Evangelisation – die gute Nachricht des Evangeliums weiterzugeben – hat mir immer Freude gemacht. Später führte mich der Herr auch zur Lehre des Wortes Gottes.","Unter den weiteren Erlebnissen, die ich im Bereich „Downloads“ meiner Website teilen werde, war eines ganz besonders. In der Gemeinde „Christus ist die Antwort“ in Woodside sagte mir während eines Dienstes für Gemeindeleiter eine Prophetin im Namen des Herrn, dass ich Träume haben und sie auslegen würde. Tatsächlich habe ich im Laufe der Jahre solche Träume gehabt.","Heute teile ich mein Leben mit meiner wunderbaren Frau und Lebensgefährtin Francy und meinem großartigen Sohn Matt.","Wir können viele Wunder und Gaben vom Herrn empfangen. Doch die Erlösung selbst ist das größte aller Wunder, und jeder Mensch auf der Erde muss sich jetzt entscheiden, wo er die Ewigkeit verbringen möchte.","Ich kann bezeugen, dass das Evangelium Jesu wahr ist, dass Gott gut, gerecht, heilig und barmherzig ist und jeden retten kann, der Ihn sucht und an Ihn glaubt. Komm zum einzigen heiligen Vater, dem Schöpfer des Himmels und der Erde.","← Zurück zu den Zeugnissen"]});Object.assign(extraTranslations,{ru:["Слово в капсулах","Моё свидетельство","Джимми Виктория","История веры, спасения и преображения","Однажды вечером около восьми часов я шёл по Рузвельт-авеню в Джексон-Хайтс, штат Нью-Йорк, глядя на газетный киоск. Внезапно меня посетила страшная мысль: я не готов к вечности и, если умру, могу попасть в ад, а не на небо. Этот момент изменил мою жизнь.","В течение трёх предыдущих лет я искал Истину в философии. Мне очень помогло внимательное чтение Библии, подаренной человеком, который впоследствии стал моим наставником на пути к вере: простым, но необыкновенным человеком Божьим, господином Гильермо Вильей, который и сегодня продолжает идти путями Божьими.","Я познакомился с ним между октябрём и ноябрём 1984 года, и он сразу поделился со мной Евангелием. К началу 1985 года я уже говорил другим, что Иисус — Сын Божий и что я родился свыше; я принял Его как своего Господа и Спасителя.","Я испытывал глубокий мир, потому что получил прощение Бога, которое Иисус даровал нам более двадцати веков назад. С тех пор я усердно читал Священное Писание и начал рассказывать об этой вести своей семье и каждому встречному.","Два года спустя я принял водное крещение в Community Gospel Church в Нью-Йорке, пастором которой был покойный Роберт Йоханссон.","Позже, 13 апреля 1990 года, во время служения в Family Worship Center в Батон-Руж, штат Луизиана, где приглашённый евангелист Р. У. Шамбах проповедовал в рамках служения Джимми Сваггарта, через возложение рук я получил долгожданное крещение Святым Духом. Впервые в жизни я пережил физическое свидетельство говорения на иных языках.","Это крещение, отличающееся от водного, пробудило во мне многие способности. Главной стало свидетельствовать с силой и молиться о спасении и исцелении других. Об этих случаях мы поговорим позднее.","Мне всегда нравилось благовествовать — делиться доброй вестью Евангелия, — а позднее Господь также направил меня к преподаванию Слова.","Среди других историй, которыми я поделюсь в разделе «Загрузки» на своём сайте, была одна особенная. В церкви «Христос — ответ» в Вудсайде, во время служения для руководителей общины, женщина-пророчица сказала мне от Господа, что мне будут сниться сны и я буду истолковывать их. И действительно, на протяжении многих лет такие сны мне снились.","Сегодня я делю жизнь со своей замечательной женой и спутницей жизни Френси, а также с прекрасным сыном Мэттом.","Господь может даровать нам множество чудес и даров; однако само спасение — величайшее из чудес. Каждый человек на земле должен уже сейчас решить, где он хочет провести вечность.","Я свидетельствую, что Евангелие Иисуса истинно, что Бог благ, справедлив, свят и милосерден и может спасти каждого, кто ищет Его и верит Ему. Придите к единому Святому Отцу, Творцу неба и земли.","← Вернуться к свидетельствам"]});Object.assign(extraTranslations,{hi:["कैप्सूल में परमेश्वर का वचन","मेरी गवाही","जिमी विक्टोरिया द्वारा","विश्वास, उद्धार और परिवर्तन की एक कहानी","एक रात, लगभग 8 बजे, न्यूयॉर्क के जैक्सन हाइट्स में रूज़वेल्ट एवेन्यू पर अख़बारों के स्टॉल की ओर देखते हुए चलते समय मेरे मन में अचानक एक भयानक विचार आया। मुझे एहसास हुआ कि मैं अनंतकाल के लिए तैयार नहीं था और मरने पर स्वर्ग के बजाय नरक जा सकता था। उस पल ने मेरी ज़िंदगी बदल दी।","पिछले तीन वर्षों से मैं दर्शनशास्त्र में सत्य खोज रहा था। बाइबल को ध्यान से पढ़ना मेरे लिए बहुत मददगार रहा। यह मुझे उस व्यक्ति ने दी थी जो विश्वास की राह में मेरा मार्गदर्शक बना: परमेश्वर का सरल लेकिन असाधारण सेवक श्री गुइलेर्मो विला, जो आज भी परमेश्वर के मार्ग पर चलता है।","मैं उनसे अक्टूबर और नवंबर 1984 के बीच मिला और उन्होंने तुरंत मुझे सुसमाचार सुनाया। 1985 की शुरुआत तक मैं दूसरों से कहने लगा था कि यीशु परमेश्वर के पुत्र हैं और मेरा नया जन्म हुआ है; मैंने उन्हें अपना प्रभु और उद्धारकर्ता स्वीकार किया था।","मुझे गहरी शांति मिली, क्योंकि मैंने परमेश्वर की वह क्षमा प्राप्त की जो यीशु ने दो हज़ार वर्ष से भी पहले हमें दी। तब से मैं पवित्रशास्त्र पढ़ने में डूब गया और अपने परिवार तथा रास्ते में मिलने वाले हर व्यक्ति को यह संदेश बताने लगा।","दो वर्ष बाद, न्यूयॉर्क की Community Gospel Church में मुझे पानी का बपतिस्मा दिया गया। वहाँ के पास्टर दिवंगत रॉबर्ट जोहानसन थे।","बाद में, 13 अप्रैल 1990 को लुइज़ियाना के बैटन रूज स्थित Family Worship Center में अतिथि प्रचारक R. W. Schambach प्रचार कर रहे थे। जिमी स्वैगर्ट की सेवकाई से जुड़े इस कार्यक्रम में हाथ रखे जाने के द्वारा मैंने लंबे समय से प्रतीक्षित पवित्र आत्मा का बपतिस्मा प्राप्त किया और पहली बार अन्य भाषाओं में बोलने का प्रत्यक्ष प्रमाण अनुभव किया।","पानी के बपतिस्मा से अलग इस बपतिस्मे ने मेरे भीतर कई क्षमताएँ जगाईं। सबसे प्रमुख थी सामर्थ्य से गवाही देना और दूसरों के उद्धार तथा चंगाई के लिए प्रार्थना करना। इन अनुभवों पर हम आगे भी बात करेंगे।","मुझे हमेशा सुसमाचार प्रचार—उसकी अच्छी खबर साझा करना—पसंद रहा है। बाद में प्रभु ने मुझे अपने वचन की शिक्षा देने के लिए भी मार्गदर्शन दिया।","अपनी वेबसाइट के “डाउनलोड” अनुभाग में साझा किए जाने वाले अनुभवों में एक विशेष अनुभव भी है। वुडसाइड के “Cristo es la Respuesta” चर्च में अगुवों के लिए सेवा के दौरान एक महिला भविष्यवक्त्री ने प्रभु की ओर से कहा कि मुझे सपने आएँगे और मैं उनकी व्याख्या करूँगा। सचमुच, वर्षों से मुझे ऐसे सपने आए हैं।","आज मैं अपनी अद्भुत पत्नी और जीवन-संगिनी फ्रैंसी तथा अपने शानदार बेटे मैट के साथ जीवन साझा करता हूँ।","प्रभु से हमें अनेक चमत्कार और वरदान मिल सकते हैं; फिर भी उद्धार स्वयं सबसे बड़ा चमत्कार है। पृथ्वी पर हर व्यक्ति को अभी निर्णय करना चाहिए कि वह अनंतकाल कहाँ बिताना चाहता है।","मैं गवाही दे सकता हूँ कि यीशु का सुसमाचार वास्तविक है, परमेश्वर भले, न्यायी, पवित्र और दयालु हैं, और जो उन्हें खोजता तथा उन पर विश्वास करता है, वे उसे बचा सकते हैं। स्वर्ग और पृथ्वी के सृष्टिकर्ता, एकमात्र पवित्र पिता के पास आओ।","← गवाहियों पर वापस जाएँ"]});const titles={es:'Mi Testimonio — La Palabra en Cápsulas',en:'My Testimony — The Word in Capsules',fr:'Mon témoignage — La Parole en Capsules',hi:'मेरी गवाही — कैप्सूल में परमेश्वर का वचन',ru:'Моё свидетельство — Слово в капсулах',de:'Mein Zeugnis — Das Wort in Kapseln',ja:'私の証し — カプセルに詰めた御言葉'};
-window.changeLanguage=function(lang){if(!titles[lang])lang='es';document.documentElement.lang=lang;document.title=titles[lang];document.querySelectorAll('[data-es]').forEach((el,i)=>{const value=el.getAttribute('data-'+lang);if(value!==null)el.textContent=value;else if(extraTranslations[lang]&&extraTranslations[lang][i]!==undefined)el.textContent=extraTranslations[lang][i];else el.textContent=el.getAttribute('data-es')});document.querySelectorAll('.lang-link').forEach(b=>{const active=b.id==='link-'+lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});try{localStorage.setItem('lpc-language',lang)}catch(e){}};
-let lang='es';try{lang=localStorage.getItem('lpc-language')||'es'}catch(e){}changeLanguage(lang)})();
-</script></body></html>
+(function(){
+  const titles={
+    es:'Mi Testimonio — La Palabra en Cápsulas',
+    en:'My Testimony — The Word in Capsules',
+    zh:'我的见证 — 胶囊中的话语',
+    fr:'Mon témoignage — La Parole en Capsules',
+    it:'La mia testimonianza — La Parola in Capsule',
+    pt:'Meu testemunho — A Palavra em Cápsulas',
+    he:'העדות שלי — הדבר בכמוסות',
+    ar:'شهادتي — الكلمة في كبسولات'
+  };
+
+  window.changeLanguage=function(lang){
+    if(!titles[lang])lang='es';
+    document.documentElement.lang=lang;
+    document.documentElement.dir=(lang==='he'||lang==='ar')?'rtl':'ltr';
+    document.title=titles[lang];
+
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      const value=el.getAttribute('data-'+lang);
+      if(value!==null)el.textContent=value;
+    });
+
+    document.querySelectorAll('.lang-link').forEach(function(button){
+      const active=button.id==='link-'+lang;
+      button.classList.toggle('active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+
+    try{localStorage.setItem('lpc-language',lang)}catch(e){}
+  };
+
+  let lang='es';
+  try{lang=localStorage.getItem('lpc-language')||'es'}catch(e){}
+  changeLanguage(lang);
+})();
+</script>
+</body>
+</html>
