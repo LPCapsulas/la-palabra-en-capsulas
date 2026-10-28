@@ -98,7 +98,7 @@ h1{
 <body>
 <main class="page">
 
-<nav class="language-bar" aria-label="Language selection">
+<nav class="language-bar" aria-label="Language selection / Selector de idioma">
   <button type="button" class="lang-link active" id="link-es" onclick="changeLanguage('es')">Español</button>
   <button type="button" class="lang-link" id="link-en" onclick="changeLanguage('en')">English</button>
   <button type="button" class="lang-link" id="link-zh" onclick="changeLanguage('zh')">简体中文</button>
@@ -107,6 +107,10 @@ h1{
   <button type="button" class="lang-link" id="link-pt" onclick="changeLanguage('pt')">Português</button>
   <button type="button" class="lang-link" id="link-he" onclick="changeLanguage('he')">עברית</button>
   <button type="button" class="lang-link" id="link-ar" onclick="changeLanguage('ar')">العربية</button>
+  <button type="button" class="lang-link" id="link-hi" onclick="changeLanguage('hi')">हिन्दी</button>
+  <button type="button" class="lang-link" id="link-ru" onclick="changeLanguage('ru')">Русский</button>
+  <button type="button" class="lang-link" id="link-de" onclick="changeLanguage('de')">Deutsch</button>
+  <button type="button" class="lang-link" id="link-ja" onclick="changeLanguage('ja')">日本語</button>
 </nav>
 
 <header>
@@ -299,7 +303,11 @@ data-ar="← العودة إلى الشهادات">← Volver a Testimonios</a>
     it:'La mia testimonianza — La Parola in Capsule',
     pt:'Meu testemunho — A Palavra em Cápsulas',
     he:'העדות שלי — הדבר בכמוסות',
-    ar:'شهادتي — الكلمة في كبسولات'
+    ar:'شهادتي — الكلمة في كبسولات',
+    hi:'मेरी गवाही — कैप्सूल में वचन',
+    ru:'Моё свидетельство — Слово в капсулах',
+    de:'Mein Zeugnis — Das Wort in Kapseln',
+    ja:'私の証し — カプセルの中の御言葉'
   };
 
   window.changeLanguage=function(lang){
