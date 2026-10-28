@@ -793,8 +793,12 @@ const imageFiles = {
     const image = document.querySelector(".author-image");
     if (image) {
       image.onerror = function () {
-        console.error("No se pudo cargar la imagen:", image.src);
+        if (image.dataset.fallbackApplied !== "true" && image.src !== new URL(imageFiles.es, window.location.origin).href) {
+          image.dataset.fallbackApplied = "true";
+          image.src = imageFiles.es;
+        }
       };
+      image.dataset.fallbackApplied = "false";
       image.src = imageFiles[lang] || imageFiles.es;
       const alts = {es:"Salmo 32:8",en:"Psalm 32:8",zh:"诗篇 32:8",fr:"Psaume 32:8",it:"Salmo 32:8",pt:"Salmo 32:8",he:"תהילים 32:8",ar:"مزمور 32:8",hi:"भजन संहिता 32:8",ru:"Псалом 32:8",de:"Psalm 32,8",ja:"詩篇 32:8"};
       image.alt = alts[lang];
