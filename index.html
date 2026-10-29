@@ -1,91 +1,614 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
+<!doctype html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0F4C81">
-<title>Apoya — La Palabra en Cápsulas</title>
-<style>
-:root{--blue:#0F4C81;--cream:#F8F4EC;--gold:#B99A59;--ink:#17365D}
-*{box-sizing:border-box}
-body{margin:0;background:var(--blue);font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);font-size:17px;line-height:1.75}
-.language-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;padding:14px 12px 4px;max-width:1000px;margin:0 auto}
-.language-bar button{border:1px solid var(--gold);background:var(--cream);color:var(--blue);border-radius:5px;padding:7px 11px;font:600 14px "Segoe UI",Arial,sans-serif;cursor:pointer}
-.language-bar button[aria-pressed="true"]{background:var(--gold);color:#fff}
-main{width:min(900px,calc(100% - 28px));margin:14px auto 30px;padding:26px 24px 30px;background:var(--cream);border-radius:8px;text-align:center;box-shadow:0 4px 16px #0002}
-.hero-image{display:block;width:min(100%,680px);height:auto;max-height:390px;object-fit:contain;margin:0 auto 18px}
-.message{max-width:760px;margin:0 auto 22px;text-align:justify}
-.square-button{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;border-radius:5px;padding:11px 22px;border:1px solid var(--gold);line-height:1.45;margin:2px auto 20px}
-.square-button:hover{background:#17365D}
-.square-button[aria-disabled="true"]{opacity:.55;pointer-events:none;cursor:not-allowed}
-.back-link{display:inline-block;color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
-.back-link:hover{color:#8A6D32}
-@media(max-width:600px){body{font-size:16px}.language-bar{gap:5px;padding-top:10px}.language-bar button{padding:6px 8px;font-size:13px}main{padding:18px 16px 24px;margin-top:10px}.hero-image{max-height:none}.square-button{max-width:100%;padding:10px 16px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Palabra en Cápsulas — Portada Oficial</title>
+  <style>
+    :root {
+      --azul: #17365D;
+      --azul-boton: #0F4C81;
+      --fondo: #F8F4EC;
+      --dorado: #B99A59;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--fondo);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--fondo);
+      color: var(--azul);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1400px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 8px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* BARRA DE IDIOMAS */
+    .language-bar {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px 19px;
+      padding: 5px 0 10px;
+    }
+
+    .language-button {
+      border: 0;
+      padding: 4px 2px;
+      background: transparent;
+      color: var(--azul);
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .language-button:hover, .language-button:focus-visible {
+      color: var(--dorado);
+      text-decoration: underline;
+    }
+
+    .language-button.active {
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: var(--dorado);
+      text-underline-offset: 4px;
+    }
+
+    .separator {
+      width: 100%;
+      max-width: 1000px;
+      height: 1px;
+      flex-shrink: 0;
+      background: var(--dorado);
+      margin: 0 auto 8px;
+    }
+
+    .cover-area {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cover-image {
+      display: block;
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      max-height: 48svh;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto;
+    }
+
+    .welcome {
+      width: 100%;
+      max-width: 1000px;
+      margin: 13px auto 20px;
+      padding: 0 10px;
+      color: var(--azul);
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(17px, 1.35vw, 20px);
+      line-height: 1.25;
+    }
+
+    .welcome-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: cascade-in 0.7s ease forwards;
+    }
+
+    .welcome-line:first-child {
+      margin-bottom: 22px;
+      font-size: 1.2em;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .welcome-line:last-child {
+      font-weight: 700;
+      color: var(--azul-boton);
+    }
+
+    @keyframes cascade-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .explore-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 200px;
+      min-height: 52px;
+      margin: 0 auto 8px;
+      padding: 12px 34px;
+      border: 1px solid var(--azul-boton);
+      border-radius: 7px;
+      background: var(--azul-boton);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 19px;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgba(23, 54, 93, 0.15);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .explore-button:hover, .explore-button:focus-visible {
+      background: var(--azul);
+      transform: translateY(-1px);
+    }
+
+    /* El navegador invierte las alineaciones de texto automáticamente si detecta dir="rtl" */
+    html[dir="rtl"] .welcome {
+      direction: rtl;
+    }
+
+    /* PC y pantallas grandes */
+    @media (min-width: 761px) {
+      .page {
+        padding-top: 6px;
+      }
+      .cover-image {
+        max-height: 48svh;
+      }
+      .welcome {
+        margin-top: 9px;
+        margin-bottom: 22px;
+        font-size: clamp(18px, 1.55vw, 22px);
+        line-height: 1.22;
+      }
+      .welcome-line:first-child {
+        margin-bottom: 18px;
+      }
+      .explore-button {
+        margin-top: -10px;
+        margin-bottom: 12px;
+      }
+    }
+
+    /* Celular */
+    @media (max-width: 760px) {
+      .page {
+        min-height: 100svh;
+        padding: 5px 0 12px;
+      }
+      .language-bar {
+        gap: 4px 13px;
+        padding: 5px 8px 9px;
+      }
+      .language-button {
+        font-size: 13px;
+        padding: 4px 1px;
+      }
+      .separator {
+        width: calc(100% - 24px);
+        margin-bottom: 5px;
+      }
+      .cover-image {
+        width: 100%;
+        max-width: 100%;
+        height: 40svh;
+        max-height: 40svh;
+        object-fit: contain;
+        object-position: center;
+      }
+      .welcome {
+        margin: 10px auto 18px;
+        padding: 0 12px;
+        font-size: clamp(20px, 5.3vw, 25px);
+        line-height: 1.3;
+      }
+      .welcome-line:first-child {
+        margin-bottom: 17px;
+        font-size: 1.2em;
+      }
+      .explore-button {
+        min-width: 180px;
+        min-height: 46px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding: 10px 28px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .language-bar {
+        column-gap: 10px;
+        row-gap: 3px;
+      }
+      .language-button {
+        font-size: 12px;
+      }
+      .cover-image {
+        height: 38svh;
+        max-height: 38svh;
+      }
+      .welcome {
+        margin-top: 8px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+        font-size: 19px;
+        line-height: 1.27;
+      }
+      .welcome-line:first-child {
+        margin-bottom: 15px;
+      }
+      .explore-button {
+        min-height: 45px;
+      }
+    }
+
+    /* Celulares con poca altura disponible */
+    @media (max-height: 700px) and (max-width: 760px) {
+      .cover-image {
+        height: 34svh;
+        max-height: 34svh;
+      }
+      .welcome {
+        margin-top: 5px;
+        margin-bottom: 11px;
+        font-size: 18px;
+        line-height: 1.22;
+      }
+      .welcome-line:first-child {
+        margin-bottom: 12px;
+      }
+      .explore-button {
+        min-height: 42px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .welcome-line {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
-<nav class="language-bar" aria-label="Seleccionar idioma">
-<button type="button" data-language="es" lang="es" aria-pressed="true">Español</button>
-<button type="button" data-language="en" lang="en" aria-pressed="false">English</button>
-<button type="button" data-language="zh" lang="zh" aria-pressed="false">中文</button>
-<button type="button" data-language="fr" lang="fr" aria-pressed="false">Français</button>
-<button type="button" data-language="it" lang="it" aria-pressed="false">Italiano</button>
-<button type="button" data-language="pt" lang="pt" aria-pressed="false">Português</button>
-<button type="button" data-language="he" lang="he" aria-pressed="false">עברית</button>
-<button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
-<button type="button" data-language="hi" lang="hi" aria-pressed="false">हिन्दी</button>
-<button type="button" data-language="ru" lang="ru" aria-pressed="false">Русский</button>
-<button type="button" data-language="de" lang="de" aria-pressed="false">Deutsch</button>
-<button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
-</nav>
-<main>
-<img id="support-image" class="hero-image" src="apoya.png" alt="Apoya a La Palabra en Cápsulas">
-<p id="support-message" class="message">Cualquier aportación que hagas a LPC nos permite dedicar más tiempo a preparar contenido, para seguir ofreciendo material que contribuya positivamente a la forma de pensar, las convicciones y la fe de nuestros lectores.</p>
-<a id="support-button" class="square-button" href="https://square.link/u/Et13J8m1" target="_blank" rel="noopener noreferrer">Sí, quiero apoyar a LPC</a>
-<br>
-<a id="back-link" class="back-link" href="../menu.html?lang=es">← Volver al menú</a>
-</main>
-<script>
-(function(){
-'use strict';
-const languages=['es','en','zh','fr','it','pt','he','ar','hi','ru','de','ja'];
-const translations={
-es:{title:'Apoya — La Palabra en Cápsulas',alt:'Apoya a La Palabra en Cápsulas',message:'Cualquier aportación que hagas a LPC nos permite dedicar más tiempo a preparar contenido, para seguir ofreciendo material que contribuya positivamente a la forma de pensar, las convicciones y la fe de nuestros lectores.',button:'Sí, quiero apoyar a LPC',back:'← Volver al menú'},
-en:{title:'Support — The Word in Capsules',alt:'Support The Word in Capsules',message:'Any contribution you make to LPC allows us to devote more time to preparing content, so we can continue offering material that positively contributes to our readers’ thinking, convictions, and faith.',button:'Yes, I want to support LPC',back:'← Back to menu'},
-zh:{title:'支持 — 胶囊中的话语',alt:'支持 La Palabra en Cápsulas',message:'无论您向 LPC 捐助多少，都能帮助我们投入更多时间制作内容，让我们继续提供能够积极影响读者思维、信念和信仰的材料。',button:'是的，我愿意支持 LPC',back:'← 返回菜单'},
-fr:{title:'Soutenez — La Parole en Capsules',alt:'Soutenez La Parole en Capsules',message:'Toute contribution à LPC nous permet de consacrer davantage de temps à la préparation de contenus, afin de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à la foi de nos lecteurs.',button:'Oui, je veux soutenir LPC',back:'← Retour au menu'},
-it:{title:'Sostieni — La Parola in Capsule',alt:'Sostieni La Parola in Capsule',message:'Qualsiasi contributo a LPC ci permette di dedicare più tempo alla preparazione dei contenuti, così da continuare a offrire materiale che contribuisca positivamente al modo di pensare, alle convinzioni e alla fede dei nostri lettori.',button:'Sì, voglio sostenere LPC',back:'← Torna al menu'},
-pt:{title:'Apoie — A Palavra em Cápsulas',alt:'Apoie A Palavra em Cápsulas',message:'Qualquer contribuição para a LPC nos permite dedicar mais tempo à preparação de conteúdo, para continuarmos oferecendo material que contribua positivamente para o modo de pensar, as convicções e a fé dos nossos leitores.',button:'Sim, quero apoiar a LPC',back:'← Voltar ao menu'},
-he:{title:'תמכו — דבר אלוהים בכמוסות',alt:'תמכו בדבר אלוהים בכמוסות',message:'כל תרומה ל־LPC מאפשרת לנו להקדיש יותר זמן להכנת תוכן, כדי להמשיך להציע חומר שתורם באופן חיובי לחשיבה, לאמונות ולאמונה של קוראינו.',button:'כן, אני רוצה לתמוך ב־LPC',back:'חזרה לתפריט ←'},
-ar:{title:'ادعموا — كلمة الله في كبسولات',alt:'ادعموا كلمة الله في كبسولات',message:'تساعدنا أي مساهمة تقدمها إلى LPC على تخصيص مزيد من الوقت لإعداد المحتوى، حتى نواصل تقديم مواد تؤثر إيجابًا في تفكير قرائنا وقناعاتهم وإيمانهم.',button:'نعم، أريد دعم LPC',back:'العودة إلى القائمة ←'},
-hi:{title:'सहयोग करें — कैप्सूल में परमेश्वर का वचन',alt:'La Palabra en Cápsulas का समर्थन करें',message:'LPC को दी जाने वाली किसी भी राशि की सहायता हमें सामग्री तैयार करने के लिए अधिक समय देने में सक्षम बनाती है, ताकि हम ऐसी सामग्री उपलब्ध कराते रहें जो हमारे पाठकों की सोच, विश्वासों और आस्था को मजबूत करने में सकारात्मक योगदान दे।',button:'हाँ, मैं LPC का समर्थन करना चाहता/चाहती हूँ',back:'← मेनू पर वापस जाएँ'},
-ru:{title:'Поддержите — Слово в капсулах',alt:'Поддержите «Слово в капсулах»',message:'Пожертвования в пользу LPC любого размера позволяют нам уделять больше времени созданию материалов и продолжать предлагать контент, который положительно влияет на мышление, убеждения и укрепление веры наших читателей.',button:'Да, я хочу поддержать LPC',back:'← Вернуться в меню'},
-de:{title:'Unterstützen — Das Wort in Kapseln',alt:'Das Wort in Kapseln unterstützen',message:'Beiträge für LPC in jeder Höhe ermöglichen es uns, mehr Zeit in die Erstellung von Inhalten zu investieren und weiterhin Materialien anzubieten, die das Denken, die Überzeugungen und den Glauben unserer Leser positiv stärken.',button:'Ja, ich möchte LPC unterstützen',back:'← Zurück zum Menü'},
-ja:{title:'支援する — カプセルに込められた御言葉',alt:'カプセルに込められた御言葉を支援する',message:'LPCへのご寄付は、金額を問わず、コンテンツ制作により多くの時間を充てる助けとなります。そして、読者の考え方や信念、信仰の成長に良い影響を与える資料を引き続き提供できるようになります。',button:'はい、LPCを支援したいです',back:'← メニューに戻る'}
-};
-const imageByLanguage={es:'apoya.png',en:'support.png',zh:'apoya-zh.png',fr:'soutenez.png',it:'sostieni.png',pt:'apoie.png',he:'support-he.png',ar:'support-ar.png',hi:'apoya-hi.png',ru:'apoya-ru.png',de:'apoya-de.png',ja:'apoya-ja.png'};
-const paymentLinkByLanguage={es:'https://square.link/u/Et13J8m1',en:'https://square.link/u/F8rZyhRi',fr:'https://square.link/u/96UuC9kW'};
-const image=document.getElementById('support-image');
-const message=document.getElementById('support-message');
-const button=document.getElementById('support-button');
-const back=document.getElementById('back-link');
-function setLanguage(lang){
- if(!languages.includes(lang))lang='es';
- const t=translations[lang];
- document.documentElement.lang=lang==='zh'?'zh-CN':lang;
- document.documentElement.dir=(lang==='he'||lang==='ar')?'rtl':'ltr';
- document.title=t.title; image.src=imageByLanguage[lang]||'apoya.png'; image.alt=t.alt;
- message.textContent=t.message; button.textContent=t.button; back.textContent=t.back; back.href='../menu.html?lang='+lang;
- const payment=paymentLinkByLanguage[lang];
- if(payment){button.href=payment;button.removeAttribute('aria-disabled');button.removeAttribute('tabindex');button.style.pointerEvents='';button.style.opacity='';button.target='_blank';button.rel='noopener noreferrer';}
- else{button.removeAttribute('href');button.setAttribute('aria-disabled','true');button.setAttribute('tabindex','-1');button.style.pointerEvents='none';button.style.opacity='.55';}
- document.querySelectorAll('[data-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.language===lang)));
- try{localStorage.setItem('lpc-language',lang);}catch(e){}
+  <main class="page">
+    <!-- SELECTOR DE IDIOMAS (Hebreo al inicio izquierdo de la lista en el HTML) -->
+    <nav class="language-bar" aria-label="Seleccionar idioma">
+      <button class="language-button" type="button" data-lang="he" aria-pressed="false">עברית</button>
+      <button class="language-button" type="button" data-lang="ar" aria-pressed="false">العربية</button>
+      <button class="language-button active" type="button" data-lang="es" aria-pressed="true">Español</button>
+      <button class="language-button" type="button" data-lang="en" aria-pressed="false">English</button>
+      <button class="language-button" type="button" data-lang="zh" aria-pressed="false">中文</button>
+      <button class="language-button" type="button" data-lang="fr" aria-pressed="false">Français</button>
+      <button class="language-button" type="button" data-lang="it" aria-pressed="false">Italiano</button>
+      <button class="language-button" type="button" data-lang="pt" aria-pressed="false">Português</button>
+      <button class="language-button" type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+      <button class="language-button" type="button" data-lang="ru" aria-pressed="false">Русский</button>
+      <button class="language-button" type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+      <button class="language-button" type="button" data-lang="ja" aria-pressed="false">日本語</button>
+    </nav>
+
+    <div class="separator" aria-hidden="true"></div>
+
+    <section class="cover-area">
+      <img id="coverImage" class="cover-image" src="/Explora/portada.png" alt="Portada de La Palabra en Cápsulas" fetchpriority="high">
+      
+      <div id="welcomeText" class="welcome" aria-live="polite">
+        <span class="welcome-line">Bienvenido a este espacio</span>
+        <span class="welcome-line">Un lugar dedicado a</span>
+        <span class="welcome-line">compartir ideas prácticas,</span>
+        <span class="welcome-line">profundas y accesibles</span>
+        <span class="welcome-line">para un caminar</span>
+        <span class="welcome-line">seguro con</span>
+        <span class="welcome-line">Dios</span>
+      </div>
+
+      <a id="exploreButton" class="explore-button" href="/Explora/menu.html?lang=es"> Explora </a>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const spanishImage = "/Explora/portada.png";
+
+      const translations = {
+        he: {
+          lang: "he",
+          dir: "rtl",
+          image: spanishImage,
+          title: "La Palabra en Cápsulas — דף הבית הרשמי",
+          welcome: [
+            "ברוכים הבאים למרחב הזה",
+            "מקום המוקדש ל",
+            "שיתוף רעיונות מעשיים,",
+            "עמוקים ונגישים",
+            "למען הליכה",
+            "בטוחה עם",
+            "אלוהים"
+          ],
+          button: "גלו",
+          menu: "/Explora/menu.html?lang=he"
+        },
+        ar: {
+          lang: "ar",
+          dir: "rtl",
+          image: spanishImage,
+          title: "La Palabra en Cápsulas — الصفحة الرئيسية الرسمية",
+          welcome: [
+            "مرحبًا بكم في هذا المكان",
+            "مكان مخصص لـ",
+            "مشاركة أفكار عملية،",
+            "عميقة وسهلة الفهم",
+            "من أجل مسيرة",
+            "آمنة مع",
+            "الله"
+          ],
+          button: "استكشف",
+          menu: "/Explora/menu.html?lang=ar"
+        },
+        es: {
+          lang: "es",
+          dir: "ltr",
+          image: spanishImage,
+Use code with caution.
+title: "La Palabra en Cápsulas — Portada Oficial",
+welcome: [
+"Bienvenido a este espacio",
+"Un lugar dedicado a",
+"compartir ideas prácticas,",
+"profundas y accesibles",
+"para un caminar",
+"seguro con",
+"Dios"
+],
+button: "Explora",
+menu: "/Explora/menu.html?lang=es"
+},
+en: {
+lang: "en",
+dir: "ltr",
+image: "/Explora/portada-en.png",
+title: "The Word in Capsules — Official Home",
+welcome: [
+"Welcome to this space",
+"A place dedicated to",
+"sharing practical ideas,",
+"profound and accessible",
+"for a walk",
+"that is secure with",
+"God"
+],
+button: "Explore",
+menu: "/Explora/menu.html?lang=en"
+},
+zh: {
+lang: "zh-CN",
+dir: "ltr",
+image: "/Explora/portada-zh.png",
+title: "胶囊中的话语 — 官方主页",
+welcome: [
+"欢迎来到这个空间",
+"这是一个致力于",
+"分享实用的思想、",
+"深刻而易于理解的内容",
+"帮助你踏上",
+"与上帝同行的",
+"稳妥道路"
+],
+button: "开始探索",
+menu: "/Explora/menu.html?lang=zh"
+},
+fr: {
+lang: "fr",
+dir: "ltr",
+image: "/Explora/portada-fr.png",
+title: "La Parole en Capsules — Page d’accueil officielle",
+welcome: [
+"Bienvenue dans cet espace",
+"Un lieu consacré au partage",
+"d’idées pratiques,",
+"profondes et accessibles",
+"pour avancer",
+"en toute confiance avec",
+"Dieu"
+],
+button: "Explorer",
+menu: "/Explora/menu.html?lang=fr"
+},
+it: {
+lang: "it",
+dir: "ltr",
+image: spanishImage,
+title: "La Parola in Capsule — Pagina ufficiale",
+welcome: [
+"Benvenuto in questo spazio",
+"Un luogo dedicado a",
+"condividere idee pratiche,",
+"profonde e accessibili",
+"per un cammino",
+"sicuro con",
+"Dio"
+],
+button: "Esplora",
+menu: "/Explora/menu.html?lang=it"
+},
+pt: {
+lang: "pt",
+dir: "ltr",
+image: spanishImage,
+title: "La Palabra en Cápsulas — Página oficial",
+welcome: [
+"Bem-vindo a este espaço",
+"Um lugar dedicado a",
+"compartilhar ideias práticas,",
+"profundas e acessíveis",
+"para uma caminhada",
+"segura com",
+"Deus"
+],
+button: "Explorar",
+menu: "/Explora/menu.html?lang=pt"
+},
+hi: {
+lang: "hi",
+dir: "ltr",
+image: spanishImage,
+title: "La Palabra en Cápsulas — आधिकारिक मुखपृष्ठ",
+welcome: [
+"इस स्थान में आपका स्वागत है",
+"यह एक ऐसा स्थान है जो समर्पित है",
+"व्यावहारिक विचार साझा करने के लिए,",
+"गहन और सरल विचार",
+"ताकि आपकी यात्रा",
+"सुरक्षित हो",
+"परमेश्वर के साथ"
+],
+button: "खोजें",
+menu: "/Explora/menu.html?lang=hi"
+},
+ru: {
+lang: "ru",
+dir: "ltr",
+image: spanishImage,
+title: "La Palabra en Cápsulas — Официальная главная страница",
+welcome: [
+"Добро пожаловать в это пространство",
+"Место, посвящённое",
+"обмену prácticamente практическими идеями,",
+"глубокими и доступными",
+"для безопасного пути",
+"вместе с",
+"Богом"
+],
+button: "Исследовать",
+menu: "/Explora/menu.html?lang=ru"
+},
+de: {
+lang: "de",
+dir: "ltr",
+image: spanishImage,
+title: "La Palabra en Cápsulas — Offizielle Startseite",
+welcome: [
+"Willkommen in diesem Raum",
+"Ein Ort, der sich dem Teilen",
+"praktischer Ideen widmet,",
+"die tiefgründig und verständlich sind",
+"für einen Weg",
+"in Sicherheit mit",
+"Gott"
+],
+button: "Entdecken",
+menu: "/Explora/menu.html?lang=de"
+},
+ja: {
+lang: "ja",
+dir: "ltr",
+image: spanishImage,
+title: "La Palabra en Cápsulas — 公式ホームページ",
+welcome: [
+"この場所へようこそ",
+"ここは、実践的で",
+"深く、分かりやすい考えを",
+"分かち合うための場所です", "神と共に歩む",
+"確かな道を",
+"歩むために"
+],
+button: "探検する",
+menu: "/Explora/menu.html?lang=ja"
 }
-document.querySelectorAll('[data-language]').forEach(el=>el.addEventListener('click',()=>setLanguage(el.dataset.language)));
-let initial='es';try{const params=new URLSearchParams(location.search);const fromUrl=params.get('lang');const saved=localStorage.getItem('lpc-language');if(languages.includes(fromUrl))initial=fromUrl;else if(languages.includes(saved))initial=saved;}catch(e){}
-setLanguage(initial);
+};
+const image = document.getElementById("coverImage");
+const welcome = document.getElementById("welcomeText");
+const explore = document.getElementById("exploreButton");
+const languageButtons = document.querySelectorAll(".language-button");
+function getInitialLanguage() {
+const params = new URLSearchParams(window.location.search);
+const requested = params.get("lang");
+if (requested && translations[requested]) {
+return requested;
+}
+try {
+const saved = localStorage.getItem("lpc-language") || localStorage.getItem("user_language");
+if (saved && translations[saved]) {
+return saved;
+}
+} catch (error) {}
+return "es";
+}
+function renderWelcome(lines) {
+welcome.replaceChildren();
+lines.forEach(function (line, index) {
+const span = document.createElement("span");
+span.className = "welcome-line";
+span.textContent = line;
+span.style.animationDelay = (0.12 + index * 0.22) + "s";
+welcome.appendChild(span);
+});
+}
+function setLanguage(language) {
+const key = translations[language] ? language : "es";
+const data = translations[key];
+document.documentElement.lang = data.lang;
+document.documentElement.dir = data.dir; // Aquí se activa LTR o RTL dinámicamente
+document.title = data.title;
+image.onerror = function () {
+if (image.getAttribute("src") !== spanishImage) {
+image.onerror = null;
+image.src = spanishImage;
+}
+};
+image.src = data.image;
+renderWelcome(data.welcome);
+explore.textContent = data.button;
+explore.href = data.menu;
+languageButtons.forEach(function (button) {
+const active = button.dataset.lang === key;
+button.classList.toggle("active", active);
+button.setAttribute("aria-pressed", active ? "true" : "false");
+});
+try {
+localStorage.setItem("lpc-language", key);
+localStorage.setItem("user_language", key);
+} catch (error) {}
+}
+languageButtons.forEach(function (button) {
+button.addEventListener("click", function () {
+setLanguage(button.dataset.lang);
+});
+});
+setLanguage(getInitialLanguage());
 })();
 </script>
 </body>
-</html>
+</html> 
