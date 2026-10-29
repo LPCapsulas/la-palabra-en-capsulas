@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,28 +50,41 @@ main{width:min(900px,calc(100% - 28px));margin:14px auto 30px;padding:26px 24px 
 'use strict';
 const languages=['es','en','zh','fr','it','pt','he','ar','hi','ru','de','ja'];
 const translations={
- es:{title:'Apoya — La Palabra en Cápsulas',alt:'Apoya a La Palabra en Cápsulas',message:'Cualquier aportación que hagas a LPC nos permite dedicar más tiempo a preparar contenido, para seguir ofreciendo material que contribuya positivamente a la forma de pensar, las convicciones y la fe de nuestros lectores.',button:'Sí, quiero apoyar a LPC',back:'← Volver al menú'},
- en:{title:'Support — The Word in Capsules',alt:'Support The Word in Capsules',message:'Any contribution you make to LPC allows us to devote more time to preparing content, so we can continue offering material that positively contributes to our readers’ thinking, convictions, and faith.',button:'Yes, I want to support LPC',back:'← Back to menu'},
- zh:{title:'支持 — 胶囊中的话语',alt:'支持 La Palabra en Cápsulas',message:'无论您向 LPC 捐助多少，都能帮助我们投入更多时间制作内容，让我们继续提供能够积极影响读者思维、信念和信仰的材料。',button:'是的，我愿意支持 LPC',back:'← 返回菜单'},
- fr:{title:'Soutenez — La Parole en Capsules',alt:'Soutenez La Parole en Capsules',message:'Toute contribution à LPC nous permet de consacrer davantage de temps à la préparation de contenus, afin de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à la foi de nos lecteurs.',button:'Oui, je veux soutenir LPC',back:'← Retour au menu'},
- it:{title:'Sostieni — La Parola in Capsule',alt:'Sostieni La Parola in Capsule',message:'Qualsiasi contributo a LPC ci permette di dedicare più tempo alla preparazione dei contenuti, così da continuare a offrire materiale che contribuisca positivamente al modo di pensare, alle convinzioni e alla fede dei nostri lettori.',button:'Sì, voglio sostenere LPC',back:'← Torna al menu'},
- pt:{title:'Apoie — A Palavra em Cápsulas',alt:'Apoie A Palavra em Cápsulas',message:'Qualquer contribuição para a LPC nos permite dedicar mais tempo à preparação de conteúdo, para continuarmos oferecendo material que contribua positivamente para o modo de pensar, as convicções e a fé dos nossos leitores.',button:'Sim, quero apoiar a LPC',back:'← Voltar ao menu'},
- he:{title:'תמכו — דבר אלוהים בכמוסות',alt:'תמכו בדבר אלוהים בכמוסות',message:'כל תרומה ל־LPC מאפשרת לנו להקדיש יותר זמן להכנת תוכן, כדי להמשיך להציע חומר שתורם באופן חיובי לחשיבה, לאמונות ולאמונה של קוראינו.',button:'כן, אני רוצה לתמוך ב־LPC',back:'חזרה לתפריט ←'},
- ar:{title:'ادعموا — كلمة الله في كبسولات',alt:'ادعموا كلمة الله في كبسولات',message:'تساعدنا أي مساهمة تقدمها إلى LPC على تخصيص مزيد من الوقت لإعداد المحتوى، حتى نواصل تقديم مواد تؤثر إيجابًا في تفكير قرائنا وقناعاتهم وإيمانهم.',button:'نعم، أريد دعم LPC',back:'العودة إلى القائمة ←'},
- hi:{title:'सहयोग करें — कैप्सूल में परमेश्वर का वचन',alt:'La Palabra en Cápsulas का समर्थन करें',message:'LPC को दी जाने वाली किसी भी राशि की सहायता हमें सामग्री तैयार करने के लिए अधिक समय देने में सक्षम बनाती है, ताकि हम ऐसी सामग्री उपलब्ध कराते रहें जो हमारे पाठकों की सोच, विश्वासों और आस्था को मजबूत करने में सकारात्मक योगदान दे।',button:'हाँ, मैं LPC का समर्थन करना चाहता/चाहती हूँ',back:'← मेनू पर वापस जाएँ'},
- ru:{title:'Поддержите — Слово в капсулах',alt:'Поддержите «Слово в капсулах»',message:'Пожертвования в пользу LPC любого размера позволяют нам уделять больше времени созданию материалов и продолжать предлагать контент, который положительно влияет на мышление, убеждения и укрепление веры наших читателей.',button:'Да, я хочу поддержать LPC',back:'← Вернуться в меню'},
- de:{title:'Unterstützen — Das Wort in Kapseln',alt:'Das Wort in Kapseln unterstützen',message:'Beiträge für LPC in jeder Höhe ermöglichen es uns, mehr Zeit in die Erstellung von Inhalten zu investieren und weiterhin Materialien anzubieten, die das Denken, die Überzeugungen und den Glauben unserer Leser positiv stärken.',button:'Ja, ich möchte LPC unterstützen',back:'← Zurück zum Menü'},
- ja:{title:'支援する — カプセルに込められた御言葉',alt:'カプセルに込められた御言葉を支援する',message:'LPCへのご寄付は、金額を問わず、コンテンツ制作により多くの時間を充てる助けとなります。そして、読者の考え方や信念、信仰の成長に良い影響を与える資料を引き続き提供できるようになります。',button:'はい、LPCを支援したいです',back:'← メニューに戻る'}
+es:{title:'Apoya — La Palabra en Cápsulas',alt:'Apoya a La Palabra en Cápsulas',message:'Cualquier aportación que hagas a LPC nos permite dedicar más tiempo a preparar contenido, para seguir ofreciendo material que contribuya positivamente a la forma de pensar, las convicciones y la fe de nuestros lectores.',button:'Sí, quiero apoyar a LPC',back:'← Volver al menú'},
+en:{title:'Support — The Word in Capsules',alt:'Support The Word in Capsules',message:'Any contribution you make to LPC allows us to devote more time to preparing content, so we can continue offering material that positively contributes to our readers’ thinking, convictions, and faith.',button:'Yes, I want to support LPC',back:'← Back to menu'},
+zh:{title:'支持 — 胶囊中的话语',alt:'支持 La Palabra en Cápsulas',message:'无论您向 LPC 捐助多少，都能帮助我们投入更多时间制作内容，让我们继续提供能够积极影响读者思维、信念和信仰的材料。',button:'是的，我愿意支持 LPC',back:'← 返回菜单'},
+fr:{title:'Soutenez — La Parole en Capsules',alt:'Soutenez La Parole en Capsules',message:'Toute contribution à LPC nous permet de consacrer davantage de temps à la préparation de contenus, afin de continuer à proposer des ressources qui contribuent positivement à la réflexion, aux convictions et à la foi de nos lecteurs.',button:'Oui, je veux soutenir LPC',back:'← Retour au menu'},
+it:{title:'Sostieni — La Parola in Capsule',alt:'Sostieni La Parola in Capsule',message:'Qualsiasi contributo a LPC ci permette di dedicare più tempo alla preparazione dei contenuti, così da continuare a offrire materiale che contribuisca positivamente al modo di pensare, alle convinzioni e alla fede dei nostri lettori.',button:'Sì, voglio sostenere LPC',back:'← Torna al menu'},
+pt:{title:'Apoie — A Palavra em Cápsulas',alt:'Apoie A Palavra em Cápsulas',message:'Qualquer contribuição para a LPC nos permite dedicar mais tempo à preparação de conteúdo, para continuarmos oferecendo material que contribua positivamente para o modo de pensar, as convicções e a fé dos nossos leitores.',button:'Sim, quero apoiar a LPC',back:'← Voltar ao menu'},
+he:{title:'תמכו — דבר אלוהים בכמוסות',alt:'תמכו בדבר אלוהים בכמוסות',message:'כל תרומה ל־LPC מאפשרת לנו להקדיש יותר זמן להכנת תוכן, כדי להמשיך להציע חומר שתורם באופן חיובי לחשיבה, לאמונות ולאמונה של קוראינו.',button:'כן, אני רוצה לתמוך ב־LPC',back:'חזרה לתפריט ←'},
+ar:{title:'ادعموا — كلمة الله في كبسولات',alt:'ادعموا كلمة الله في كبسولات',message:'تساعدنا أي مساهمة تقدمها إلى LPC على تخصيص مزيد من الوقت لإعداد المحتوى، حتى نواصل تقديم مواد تؤثر إيجابًا في تفكير قرائنا وقناعاتهم وإيمانهم.',button:'نعم، أريد دعم LPC',back:'العودة إلى القائمة ←'},
+hi:{title:'सहयोग करें — कैप्सूल में परमेश्वर का वचन',alt:'La Palabra en Cápsulas का समर्थन करें',message:'LPC को दी जाने वाली किसी भी राशि की सहायता हमें सामग्री तैयार करने के लिए अधिक समय देने में सक्षम बनाती है, ताकि हम ऐसी सामग्री उपलब्ध कराते रहें जो हमारे पाठकों की सोच, विश्वासों और आस्था को मजबूत करने में सकारात्मक योगदान दे।',button:'हाँ, मैं LPC का समर्थन करना चाहता/चाहती हूँ',back:'← मेनू पर वापस जाएँ'},
+ru:{title:'Поддержите — Слово в капсулах',alt:'Поддержите «Слово в капсулах»',message:'Пожертвования в пользу LPC любого размера позволяют нам уделять больше времени созданию материалов и продолжать предлагать контент, который положительно влияет на мышление, убеждения и укрепление веры наших читателей.',button:'Да, я хочу поддержать LPC',back:'← Вернуться в меню'},
+de:{title:'Unterstützen — Das Wort in Kapseln',alt:'Das Wort in Kapseln unterstützen',message:'Beiträge für LPC in jeder Höhe ermöglichen es uns, mehr Zeit in die Erstellung von Inhalten zu investieren und weiterhin Materialien anzubieten, die das Denken, die Überzeugungen und den Glauben unserer Leser positiv stärken.',button:'Ja, ich möchte LPC unterstützen',back:'← Zurück zum Menü'},
+ja:{title:'支援する — カプセルに込められた御言葉',alt:'カプセルに込められた御言葉を支援する',message:'LPCへのご寄付は、金額を問わず、コンテンツ制作により多くの時間を充てる助けとなります。そして、読者の考え方や信念、信仰の成長に良い影響を与える資料を引き続き提供できるようになります。',button:'はい、LPCを支援したいです',back:'← メニューに戻る'}
 };
-const imageByLanguage={es:'apoya.png',en:'support.png',zh:'apoya-zh.png',fr:'soutenez.png',it:'sostieni.png',pt:'apoie.png',he:'support-he.png',ar:'support-ar.png',hi:'apoya.png',ru:'apoya.png',de:'apoya.png',ja:'apoya.png'};
+const imageByLanguage={es:'apoya.png',en:'support.png',zh:'apoya-zh.png',fr:'soutenez.png',it:'sostieni.png',pt:'apoie.png',he:'support-he.png',ar:'support-ar.png',hi:'apoya.png',ru:'apoya-ru.png',de:'apoya-de.png',ja:'apoya-ja.png'};
 const paymentLinkByLanguage={es:'https://square.link/u/Et13J8m1',en:'https://square.link/u/F8rZyhRi',fr:'https://square.link/u/96UuC9kW'};
 const image=document.getElementById('support-image');
 const message=document.getElementById('support-message');
 const button=document.getElementById('support-button');
 const back=document.getElementById('back-link');
-function setLanguage(lang){if(!languages.includes(lang))lang='es';const t=translations[lang];document.documentElement.lang=lang==='zh'?'zh-CN':lang;document.documentElement.dir=(lang==='he'||lang==='ar')?'rtl':'ltr';document.title=t.title;image.src=imageByLanguage[lang]||'apoya.png';image.alt=t.alt;message.textContent=t.message;button.textContent=t.button;back.textContent=t.back;back.href='../menu.html?lang='+lang;const payment=paymentLinkByLanguage[lang];if(payment){button.href=payment;button.removeAttribute('aria-disabled');button.removeAttribute('tabindex');button.style.pointerEvents='';button.style.opacity='';button.target='_blank';button.rel='noopener noreferrer';}else{button.removeAttribute('href');button.setAttribute('aria-disabled','true');button.setAttribute('tabindex','-1');button.style.pointerEvents='none';button.style.opacity='.55';}document.querySelectorAll('[data-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.language===lang)));try{localStorage.setItem('lpc-language',lang);}catch(e){}}
+function setLanguage(lang){
+ if(!languages.includes(lang))lang='es';
+ const t=translations[lang];
+ document.documentElement.lang=lang==='zh'?'zh-CN':lang;
+ document.documentElement.dir=(lang==='he'||lang==='ar')?'rtl':'ltr';
+ document.title=t.title; image.src=imageByLanguage[lang]||'apoya.png'; image.alt=t.alt;
+ message.textContent=t.message; button.textContent=t.button; back.textContent=t.back; back.href='../menu.html?lang='+lang;
+ const payment=paymentLinkByLanguage[lang];
+ if(payment){button.href=payment;button.removeAttribute('aria-disabled');button.removeAttribute('tabindex');button.style.pointerEvents='';button.style.opacity='';button.target='_blank';button.rel='noopener noreferrer';}
+ else{button.removeAttribute('href');button.setAttribute('aria-disabled','true');button.setAttribute('tabindex','-1');button.style.pointerEvents='none';button.style.opacity='.55';}
+ document.querySelectorAll('[data-language]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.language===lang)));
+ try{localStorage.setItem('lpc-language',lang);}catch(e){}
+}
 document.querySelectorAll('[data-language]').forEach(el=>el.addEventListener('click',()=>setLanguage(el.dataset.language)));
-let initial='es';try{const params=new URLSearchParams(location.search);const fromUrl=params.get('lang');const saved=localStorage.getItem('lpc-language');if(languages.includes(fromUrl))initial=fromUrl;else if(languages.includes(saved))initial=saved;}catch(e){}setLanguage(initial);
+let initial='es';try{const params=new URLSearchParams(location.search);const fromUrl=params.get('lang');const saved=localStorage.getItem('lpc-language');if(languages.includes(fromUrl))initial=fromUrl;else if(languages.includes(saved))initial=saved;}catch(e){}
+setLanguage(initial);
 })();
 </script>
 </body>
