@@ -1,327 +1,123 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="notranslate">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Estudia las Escrituras — LPC">
-  <title>Escudriñad las Escrituras — LPC</title>
-
-  <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-
-    body{
-      background:#fff;
-      color:#111;
-      font-family:"Trebuchet MS",Arial,sans-serif;
-      font-size:16px;
-      line-height:1.34;
-    }
-
-    .page{
-      width:min(900px,94%);
-      margin:0 auto;
-      padding:18px 20px 30px;
-    }
-
-    .hero{
-      display:block;
-      width:min(450px,100%);
-      height:auto;
-      margin:0 auto 5px;
-    }
-
-    .brand{
-      margin:0 0 3px;
-      text-align:center;
-      color:#4285f4;
-      font-size:28px;
-      line-height:1.15;
-    }
-
-    .verse{
-      display:table;
-      margin:0 auto 20px;
-      padding:1px 5px 2px;
-      background:#fff;
-      color:#000;
-      font-style:italic;
-      font-size:22px;
-      line-height:1.3;
-      text-align:center;
-    }
-
-    .verse a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    /* EFECTO DEL COMENTARIO */
-
-    .tooltip-anchor{
-      position:relative;
-      display:inline-block;
-      cursor:help;
-    }
-
-    .tooltip-anchor::after{
-      content:attr(data-tooltip);
-      position:absolute;
-      bottom:130%;
-      left:50%;
-      transform:translateX(-50%);
-      background-color:#333;
-      color:#fff;
-      padding:6px 12px;
-      border-radius:4px;
-      font-size:14px;
-      font-family:Arial,sans-serif;
-      font-style:normal;
-      white-space:nowrap;
-      box-shadow:0 4px 8px rgba(0,0,0,0.2);
-      opacity:0;
-      pointer-events:none;
-      transition:opacity 0.18s ease-in-out,bottom 0.18s ease-in-out;
-      z-index:999;
-    }
-
-    .tooltip-anchor::before{
-      content:"";
-      position:absolute;
-      bottom:110%;
-      left:50%;
-      transform:translateX(-50%);
-      border-width:6px;
-      border-style:solid;
-      border-color:#333 transparent transparent transparent;
-      opacity:0;
-      pointer-events:none;
-      transition:opacity 0.18s ease-in-out,bottom 0.18s ease-in-out;
-      z-index:999;
-    }
-
-    .tooltip-anchor:hover::after,
-    .tooltip-anchor:focus::after{
-      opacity:1;
-      bottom:140%;
-    }
-
-    .tooltip-anchor:hover::before,
-    .tooltip-anchor:focus::before{
-      opacity:1;
-      bottom:120%;
-    }
-
-    /* JESÚS */
-
-    .jesus-highlight{
-      display:block;
-      color:#800020;
-      font-weight:bold;
-      font-style:normal;
-      margin-top:6px;
-    }
-
-    /* TEXTO PRINCIPAL */
-
-    .main-text{
-      text-align:justify;
-      margin:0 auto 12px;
-      max-width:820px;
-    }
-
-    .main-text em{
-      font-style:italic;
-    }
-
-    .cascade{
-      text-align:center;
-      margin:12px auto 10px;
-      max-width:780px;
-      font-size:19px;
-      line-height:1.32;
-    }
-
-    .cascade .line{
-      display:block;
-    }
-
-    .cascade .l1{margin-left:0}
-    .cascade .l2{margin-left:28px}
-    .cascade .l3{margin-left:56px}
-    .cascade .l4{margin-left:84px}
-    .cascade .l5{margin-left:112px}
-
-    /* FLECHA */
-
-    .pointing{
-      display:block;
-      width:80px;
-      height:auto;
-      margin:3px auto 0;
-    }
-
-    /* BOTÓN ÚNETE */
-
-    .join{
-      display:block;
-      width:min(380px,94%);
-      height:auto;
-      margin:0 auto 20px;
-      border:0;
-    }
-
-    .notes{
-      width:min(300px,100%);
-      margin:0;
-      padding-top:8px;
-      border-top:1px solid #222;
-      font-size:16px;
-      line-height:1.35;
-    }
-
-    .notes div{
-      margin:0;
-    }
-
-    /* AJUSTES EXCLUSIVOS PARA PC */
-
-    @media (min-width:601px){
-
-      .page{
-        padding-top:14px;
-      }
-
-      .main-text{
-        margin-top:-12px;
-        margin-bottom:4px;
-      }
-
-      .pointing{
-        margin-top:0;
-        margin-bottom:0;
-      }
-
-      .join{
-        margin-top:-8px;
-      }
-    }
-
-    /* AJUSTES PARA CELULARES */
-
-    @media (max-width:600px){
-
-      body{
-        font-size:16px;
-      }
-
-      .page{
-        padding:10px 12px 20px;
-      }
-
-      .hero{
-        width:94%;
-        margin-bottom:3px;
-      }
-
-      .brand{
-        font-size:23px;
-      }
-
-      .verse{
-        font-size:18px;
-        margin-bottom:14px;
-      }
-
-      .main-text{
-        line-height:1.32;
-        margin-bottom:8px;
-      }
-
-      .cascade{
-        font-size:17px;
-        line-height:1.32;
-        margin:8px auto 6px;
-      }
-
-      .cascade .l1,
-      .cascade .l2,
-      .cascade .l3,
-      .cascade .l4,
-      .cascade .l5{
-        margin-left:0;
-      }
-
-      .pointing{
-        width:65px;
-        margin:2px auto 0;
-      }
-
-      .join{
-        width:88%;
-        margin:0 auto 16px;
-      }
-
-      .notes{
-        font-size:15px;
-      }
-
-      .tooltip-anchor::after{
-        white-space:normal;
-        width:120px;
-        font-size:13px;
-        padding:4px 8px;
-      }
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="La historia y el propósito de La Palabra en Cápsulas — LPC">
+<meta name="theme-color" content="#F8F4EC">
+<title>Escudriñad las Escrituras — LPC</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#fff;color:#111;font-family:"Trebuchet MS",Arial,sans-serif;font-size:16px;line-height:1.4}
+.page{width:min(900px,94%);margin:0 auto;padding:10px 20px 30px}
+.language-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 15px;padding:5px 0 10px;border-bottom:1px solid #B99A59;margin-bottom:14px}
+.language-button{border:0;padding:4px 2px;background:transparent;color:#17365D;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.language-button:hover,.language-button:focus-visible{color:#B99A59;text-decoration:underline}
+.language-button.active{font-weight:700;text-decoration:underline;text-decoration-color:#B99A59;text-underline-offset:4px}
+.hero{display:block;width:min(450px,100%);height:auto;margin:0 auto 5px}
+.verse{display:table;margin:0 auto 20px;padding:1px 5px 2px;background:#fff;color:#000;font-style:italic;font-size:22px;line-height:1.3;text-align:center}
+.verse a{color:inherit;text-decoration:none}
+.tooltip-anchor{position:relative;display:inline-block;cursor:help}
+.tooltip-anchor::after{content:attr(data-tooltip);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:6px 12px;border-radius:4px;font-size:14px;font-family:Arial,sans-serif;font-style:normal;white-space:nowrap;box-shadow:0 4px 8px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .18s,bottom .18s;z-index:999}
+.tooltip-anchor::before{content:"";position:absolute;bottom:110%;left:50%;transform:translateX(-50%);border:6px solid;border-color:#333 transparent transparent;opacity:0;pointer-events:none;transition:opacity .18s,bottom .18s;z-index:999}
+.tooltip-anchor:hover::after,.tooltip-anchor:focus::after{opacity:1;bottom:140%}
+.tooltip-anchor:hover::before,.tooltip-anchor:focus::before{opacity:1;bottom:120%}
+.jesus-highlight{display:block;color:#800020;font-weight:bold;font-style:normal;margin-top:6px}
+.main-text{text-align:justify;margin:0 auto 12px;max-width:820px}
+.main-text em{font-style:italic}
+.pointing{display:block;width:80px;height:auto;margin:3px auto 0}
+.join-link{display:block;width:min(380px,94%);margin:0 auto 20px;text-decoration:none}
+.join-art{position:relative;width:100%;line-height:0}
+.join{display:block;width:100%;height:auto;border:0}
+.join-main-label{position:absolute;left:33%;top:19%;width:40%;height:45%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#063d76,#001d43 55%,#052c59);color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,5.2vw,46px);font-weight:bold;line-height:1.05;text-align:center;text-shadow:0 2px 3px #000}
+.join-sub-label{position:absolute;left:30%;top:69%;width:58%;height:13%;display:flex;align-items:center;justify-content:center;background:linear-gradient(#fff9e9,#f4e6bd);color:#17365D;font-family:Arial,sans-serif;font-size:clamp(9px,2.3vw,17px);font-weight:800;letter-spacing:.12em;line-height:1;text-align:center}
+.notes{width:min(300px,100%);margin:0;padding-top:8px;border-top:1px solid #222;font-size:16px;line-height:1.35}
+.notes div{margin:0}
+html[dir="rtl"] .main-text{text-align:right}
+html[dir="rtl"] .language-bar{direction:rtl}
+@media(min-width:601px){.page{padding-top:8px}.main-text{margin-top:-12px;margin-bottom:4px}.pointing{margin-top:0;margin-bottom:0}.join-link{margin-top:-8px}}
+@media(max-width:600px){
+.page{padding:6px 12px 20px}.language-bar{gap:4px 11px;padding:5px 2px 9px;margin-bottom:10px}
+.language-button{font-size:13px;padding:4px 1px}.hero{width:94%;margin-bottom:3px}
+.verse{font-size:18px;margin-bottom:14px}.main-text{line-height:1.36;margin-bottom:8px}
+.pointing{width:65px;margin:2px auto 0}.join-link{width:88%;margin:0 auto 16px}
+.notes{font-size:15px}.tooltip-anchor::after{white-space:normal;width:120px;font-size:13px;padding:4px 8px}
+.join-main-label{font-size:clamp(20px,6vw,34px)}.join-sub-label{font-size:clamp(8px,2.2vw,13px);letter-spacing:.08em}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
-
 <body>
+<main class="page">
+<nav class="language-bar" aria-label="Seleccionar idioma">
+<button class="language-button" data-lang="he" type="button" aria-pressed="false">עברית</button>
+<button class="language-button" data-lang="en" type="button" aria-pressed="false">English</button>
+<button class="language-button" data-lang="zh" type="button" aria-pressed="false">中文</button>
+<button class="language-button" data-lang="hi" type="button" aria-pressed="false">हिन्दी</button>
+<button class="language-button active" data-lang="es" type="button" aria-pressed="true">Español</button>
+<button class="language-button" data-lang="ar" type="button" aria-pressed="false">العربية</button>
+<button class="language-button" data-lang="fr" type="button" aria-pressed="false">Français</button>
+<button class="language-button" data-lang="pt" type="button" aria-pressed="false">Português</button>
+<button class="language-button" data-lang="ru" type="button" aria-pressed="false">Русский</button>
+<button class="language-button" data-lang="de" type="button" aria-pressed="false">Deutsch</button>
+<button class="language-button" data-lang="ja" type="button" aria-pressed="false">日本語</button>
+<button class="language-button" data-lang="it" type="button" aria-pressed="false">Italiano</button>
+</nav>
 
-  <main class="page">
+<img class="hero" src="leyendo.jpg" alt="Pareja leyendo la Biblia" id="heroImage">
 
-    <img class="hero"
-         src="leyendo.jpg"
-         alt="Pareja leyendo la Biblia">
+<div class="verse">
+<a href="https://forms.gle" target="_blank" rel="noopener">
+<span class="tooltip-anchor" id="verseText" data-tooltip="Juan 5:39" tabindex="0">«Escudriñad las Escrituras»</span>
+<span class="jesus-highlight" id="jesusText">(Jesús)</span>
+</a>
+</div>
 
-    <div class="verse">
+<p class="main-text" id="mainText">En el 2015 me registré con YouTube y aunque publiqué algunos videos, ahora he decidido hacer textos y mensajes breves de la Palabra, invitando a los creyentes a la Obra: <em>yendo</em>, <em>orando</em> y <em>colaborando</em>. Es una labor de muchos. LPC es una página multilingüe que he desarrollado con amor y pasión y sé que muchos serán bendecidos. Cada semana con la venia de Dios, me oirán hablando del Mesías, y compartiré tips para una vida con cimiento firme y guiada por el Espíritu Santo. Gracias mil.</p>
 
-      <a href="https://forms.gle"
-         target="_blank"
-         rel="noopener">
+<img class="pointing" src="senalando.jpg" alt="Señalando hacia abajo" id="pointingImage">
 
-        <span class="tooltip-anchor"
-              data-tooltip="Juan 5.39"
-              tabindex="0">“Estudia las Escrituras”</span>
+<a class="join-link" href="https://forms.gle/xyUwnybYqfmm2Xfr6" target="_blank" rel="noopener noreferrer" id="joinLink" aria-label="Únete a La Palabra en Cápsulas">
+<div class="join-art">
+<img class="join" src="unete.png" alt="Únete a La Palabra en Cápsulas — Enseñanzas" id="joinImage">
+<span class="join-main-label" id="joinMainLabel" aria-hidden="true">Únete</span>
+<span class="join-sub-label" id="joinSubLabel" aria-hidden="true">ENSEÑANZAS</span>
+</div>
+</a>
+</main>
 
-        <span class="jesus-highlight">(Jesús)</span>
-
-      </a>
-
-    </div>
-
-    <p class="main-text">
-      En el 2015 me registré con YouTube y aunque publiqué algunos videos, ahora he decidido hacer textos y mensajes breves de la Palabra, invitando a los creyentes a la Obra: <em>yendo</em>, <em>orando</em> y <em>colaborando</em>. Es una labor de muchos. LPC es una página multilingüe que he desarrollado con amor y pasión y sé que muchos serán bendecidos. Cada semana con la venia de Dios, me oirán hablando del Mesías, y compartiré tips para una vida con cimiento firme y guiada por el Espíritu Santo. Gracias mil.
-    </p>
-
-    <img class="pointing"
-         src="senalando.jpg"
-         alt="Señalando hacia abajo">
-
-    <a href="https://forms.gle/xyUwnybYqfmm2Xfr6"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Únete a La Palabra en Cápsulas">
-
-      <img class="join"
-           src="unete.png"
-           alt="Únete a La Palabra en Cápsulas — Enseñanzas">
-
-    </a>
-
-  </main>
-
+<script>
+(function(){
+"use strict";
+const translations={
+es:{dir:"ltr",title:"Escudriñad las Escrituras — LPC",verse:"«Escudriñad las Escrituras»",jesus:"(Jesús)",tooltip:"Juan 5:39",main:"En el 2015 me registré con YouTube y aunque publiqué algunos videos, ahora he decidido hacer textos y mensajes breves de la Palabra, invitando a los creyentes a la Obra: <em>yendo</em>, <em>orando</em> y <em>colaborando</em>. Es una labor de muchos. LPC es una página multilingüe que he desarrollado con amor y pasión y sé que muchos serán bendecidos. Cada semana con la venia de Dios, me oirán hablando del Mesías, y compartiré tips para una vida con cimiento firme y guiada por el Espíritu Santo. Gracias mil.",heroAlt:"Pareja leyendo la Biblia",pointAlt:"Señalando hacia abajo",join:"Únete",lessons:"ENSEÑANZAS",joinAlt:"Únete a La Palabra en Cápsulas — Enseñanzas",aria:"Únete a La Palabra en Cápsulas"},
+en:{dir:"ltr",title:"Search the Scriptures — LPC",verse:"“Search the Scriptures”",jesus:"(Jesus)",tooltip:"John 5:39",main:"In 2015, I registered with YouTube and, although I published a few videos, I have now decided to create short texts and messages from the Word, inviting believers to take part in the Work: <em>going</em>, <em>praying</em>, and <em>supporting</em>. This is a collective effort. LPC is a multilingual website that I have developed with love and passion, and I know many will be blessed. Every week, God willing, you will hear me speak about the Messiah, and I will share practical tips for a life built on a firm foundation and guided by the Holy Spirit. Many thanks.",heroAlt:"Couple reading the Bible",pointAlt:"Pointing downward",join:"Join us",lessons:"TEACHINGS",joinAlt:"Join The Word in Capsules — Teachings",aria:"Join The Word in Capsules"},
+zh:{dir:"ltr",title:"查考圣经 — LPC",verse:"“查考圣经”",jesus:"（耶稣）",tooltip:"约翰福音 5:39",main:"2015年，我注册了YouTube账号，也发布过一些视频。如今，我决定制作简短的圣经文字与信息，邀请信徒参与这项事工：<em>出去传扬</em>、<em>祷告</em>并<em>支持</em>。这是众人共同承担的工作。LPC是一个多语言网站，我怀着爱与热忱建立了它，相信许多人会因此蒙福。若上帝许可，每周你们都能听我分享弥赛亚的信息，并获得实用建议，使生命建立在稳固根基上，受圣灵引导。衷心感谢。",heroAlt:"一对夫妇正在阅读圣经",pointAlt:"向下指示",join:"加入我们",lessons:"教导",joinAlt:"加入胶囊中的圣言 — 教导",aria:"加入胶囊中的圣言"},
+hi:{dir:"ltr",title:"पवित्रशास्त्र की खोज करें — LPC",verse:"“पवित्रशास्त्र की खोज करो”",jesus:"(यीशु)",tooltip:"यूहन्ना 5:39",main:"2015 में मैंने YouTube पर पंजीकरण किया और कुछ वीडियो प्रकाशित किए। अब मैंने परमेश्वर के वचन पर छोटे लेख और संदेश तैयार करने का निर्णय लिया है, और विश्वासियों को इस कार्य में भाग लेने के लिए आमंत्रित करता हूँ: <em>जाना</em>, <em>प्रार्थना करना</em> और <em>सहयोग देना</em>। यह हम सबका साझा कार्य है। LPC एक बहुभाषी वेबसाइट है, जिसे मैंने प्रेम और उत्साह से विकसित किया है; मुझे विश्वास है कि इससे बहुतों को आशीष मिलेगी। परमेश्वर की इच्छा से, हर सप्ताह आप मसीहा के बारे में मेरी बातें सुनेंगे और पवित्र आत्मा के मार्गदर्शन में दृढ़ नींव पर जीवन बनाने के व्यावहारिक सुझाव पाएँगे। आपका बहुत धन्यवाद।",heroAlt:"बाइबल पढ़ते हुए एक दंपति",pointAlt:"नीचे की ओर इशारा",join:"हमसे जुड़ें",lessons:"शिक्षाएँ",joinAlt:"वचन की कैप्सूल्स से जुड़ें — शिक्षाएँ",aria:"वचन की कैप्सूल्स से जुड़ें"},
+ar:{dir:"rtl",title:"فتشوا الكتب — LPC",verse:"«فتشوا الكتب»",jesus:"(يسوع)",tooltip:"يوحنا 5:39",main:"في عام 2015 سجلت في YouTube، وعلى الرغم من أنني نشرت بعض مقاطع الفيديو، فقد قررت الآن إعداد نصوص ورسائل قصيرة من كلمة الله، ودعوة المؤمنين للمشاركة في العمل: <em>الذهاب</em> و<em>الصلاة</em> و<em>المساهمة</em>. إنها مسؤولية يشترك فيها كثيرون. LPC موقع متعدد اللغات طوّرته بمحبة وشغف، وأؤمن أن كثيرين سينالون البركة من خلاله. وبمشيئة الله، ستسمعونني كل أسبوع أتحدث عن المسيح، وأشارككم إرشادات عملية لحياة تقوم على أساس راسخ ويقودها الروح القدس. جزيل الشكر.",heroAlt:"زوجان يقرآن الكتاب المقدس",pointAlt:"إشارة إلى الأسفل",join:"انضم إلينا",lessons:"تعاليم",joinAlt:"انضم إلى الكلمة في كبسولات — تعاليم",aria:"انضم إلى الكلمة في كبسولات"},
+fr:{dir:"ltr",title:"Sondez les Écritures — LPC",verse:"«Sondez les Écritures»",jesus:"(Jésus)",tooltip:"Jean 5:39",main:"En 2015, je me suis inscrit sur YouTube et, bien que j'aie publié quelques vidéos, j'ai maintenant décidé de créer de courts textes et messages tirés de la Parole, en invitant les croyants à prendre part à l'Œuvre : <em>aller</em>, <em>prier</em> et <em>contribuer</em>. C'est une œuvre collective. LPC est un site multilingue que j'ai développé avec amour et passion, et je sais que beaucoup en seront bénis. Chaque semaine, si Dieu le permet, vous m'entendrez parler du Messie et je partagerai des conseils pratiques pour une vie fondée sur des bases solides et guidée par le Saint-Esprit. Un grand merci.",heroAlt:"Un couple lisant la Bible",pointAlt:"Indiquant vers le bas",join:"Rejoignez-nous",lessons:"ENSEIGNEMENTS",joinAlt:"Rejoignez La Parole en Capsules — Enseignements",aria:"Rejoignez La Parole en Capsules"},
+pt:{dir:"ltr",title:"Examinai as Escrituras — LPC",verse:"“Examinai as Escrituras”",jesus:"(Jesus)",tooltip:"João 5:39",main:"Em 2015, cadastrei-me no YouTube e, embora tenha publicado alguns vídeos, agora decidi criar textos e mensagens breves da Palavra, convidando os cristãos a participar da Obra: <em>indo</em>, <em>orando</em> e <em>colaborando</em>. É um trabalho de muitos. LPC é um site multilíngue que desenvolvi com amor e paixão, e sei que muitos serão abençoados. Toda semana, se Deus permitir, vocês me ouvirão falar sobre o Messias e compartilharei dicas práticas para uma vida firmada em alicerces sólidos e guiada pelo Espírito Santo. Muito obrigado.",heroAlt:"Casal lendo a Bíblia",pointAlt:"Apontando para baixo",join:"Junte-se a nós",lessons:"ENSINAMENTOS",joinAlt:"Junte-se à Palavra em Cápsulas — Ensinamentos",aria:"Junte-se à Palavra em Cápsulas"},
+ru:{dir:"ltr",title:"Исследуйте Писания — LPC",verse:"«Исследуйте Писания»",jesus:"(Иисус)",tooltip:"Иоанна 5:39",main:"В 2015 году я зарегистрировался на YouTube и опубликовал несколько видео. Теперь я решил создавать короткие тексты и послания из Слова Божьего, приглашая верующих участвовать в этом служении: <em>идти</em>, <em>молиться</em> и <em>содействовать</em>. Это общее дело многих людей. LPC — многоязычный сайт, который я создал с любовью и увлечением, и я верю, что он станет благословением для многих. Если будет на то воля Божья, каждую неделю вы будете слышать мои размышления о Мессии и получать практические советы о жизни на прочном основании под водительством Святого Духа. Большое спасибо.",heroAlt:"Супружеская пара читает Библию",pointAlt:"Указывает вниз",join:"Присоединяйтесь",lessons:"УЧЕНИЯ",joinAlt:"Присоединяйтесь к «Слову в капсулах» — Учения",aria:"Присоединяйтесь к «Слову в капсулах»"},
+de:{dir:"ltr",title:"Erforscht die Schriften — LPC",verse:"„Erforscht die Schriften“",jesus:"(Jesus)",tooltip:"Johannes 5,39",main:"2015 meldete ich mich bei YouTube an und veröffentlichte einige Videos. Nun habe ich mich entschlossen, kurze Texte und Botschaften aus dem Wort Gottes zu verfassen und Gläubige zur Mitarbeit am Werk einzuladen: <em>hingehen</em>, <em>beten</em> und <em>unterstützen</em>. Es ist eine gemeinsame Aufgabe vieler Menschen. LPC ist eine mehrsprachige Website, die ich mit Liebe und Leidenschaft entwickelt habe, und ich weiß, dass viele dadurch gesegnet werden. So Gott will, werden Sie mich jede Woche über den Messias sprechen hören. Außerdem teile ich praktische Tipps für ein Leben auf festem Fundament, das vom Heiligen Geist geleitet wird. Vielen herzlichen Dank.",heroAlt:"Ein Paar liest in der Bibel",pointAlt:"Zeigt nach unten",join:"Mach mit",lessons:"LEHREN",joinAlt:"Mach mit bei Das Wort in Kapseln — Lehren",aria:"Mach mit bei Das Wort in Kapseln"},
+ja:{dir:"ltr",title:"聖書を調べなさい — LPC",verse:"「聖書を調べなさい」",jesus:"（イエス）",tooltip:"ヨハネによる福音書 5章39節",main:"2015年にYouTubeに登録し、いくつかの動画を公開しましたが、今は御言葉についての短い文章やメッセージを作ることにしました。そして信者の皆さんに、<em>出て行くこと</em>、<em>祈ること</em>、<em>協力すること</em>を通して、この働きに参加していただきたいと願っています。これは多くの人々による共同の働きです。LPCは愛と情熱を込めて作った多言語ウェブサイトであり、多くの方々の祝福になると信じています。神の御心なら、毎週メシアについてお話しし、聖霊に導かれ、確かな土台の上に歩む人生のための実践的なヒントをお届けします。心より感謝します。",heroAlt:"聖書を読む二人",pointAlt:"下を指し示す矢印",join:"参加する",lessons:"教え",joinAlt:"「カプセルに込めた御言葉」に参加 — 教え",aria:"「カプセルに込めた御言葉」に参加"},
+it:{dir:"ltr",title:"Scrutate le Scritture — LPC",verse:"«Scrutate le Scritture»",jesus:"(Gesù)",tooltip:"Giovanni 5:39",main:"Nel 2015 mi sono registrato su YouTube e, anche se ho pubblicato alcuni video, ora ho deciso di realizzare brevi testi e messaggi della Parola, invitando i credenti a partecipare all'Opera: <em>andando</em>, <em>pregando</em> e <em>collaborando</em>. È un lavoro di molti. LPC è un sito multilingue che ho sviluppato con amore e passione e so che molti ne saranno benedetti. Ogni settimana, con il permesso di Dio, mi sentirete parlare del Messia e condividerò consigli pratici per una vita fondata su basi solide e guidata dallo Spirito Santo. Grazie di cuore.",heroAlt:"Una coppia legge la Bibbia",pointAlt:"Indica verso il basso",join:"Unisciti a noi",lessons:"INSEGNAMENTI",joinAlt:"Unisciti a La Parola in Capsule — Insegnamenti",aria:"Unisciti a La Parola in Capsule"}
+};
+const buttons=[...document.querySelectorAll(".language-button")];
+const els={verse:document.getElementById("verseText"),jesus:document.getElementById("jesusText"),main:document.getElementById("mainText"),hero:document.getElementById("heroImage"),point:document.getElementById("pointingImage"),join:document.getElementById("joinLink"),joinImage:document.getElementById("joinImage"),joinMain:document.getElementById("joinMainLabel"),joinSub:document.getElementById("joinSubLabel")};
+function setLanguage(code){
+const t=translations[code]||translations.es;
+document.documentElement.lang=code;document.documentElement.dir=t.dir;document.title=t.title;
+els.verse.textContent=t.verse;els.verse.dataset.tooltip=t.tooltip;els.jesus.textContent=t.jesus;els.main.innerHTML=t.main;
+els.hero.alt=t.heroAlt;els.point.alt=t.pointAlt;els.joinMain.textContent=t.join;els.joinSub.textContent=t.lessons;
+els.joinImage.alt=t.joinAlt;els.join.setAttribute("aria-label",t.aria);
+buttons.forEach(b=>{const active=b.dataset.lang===code;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
+}
+buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.lang)));
+const requested=new URLSearchParams(location.search).get("lang");
+setLanguage(translations[requested]?requested:"es");
+})();
+</script>
 </body>
 </html>
-
