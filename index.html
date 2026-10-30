@@ -45,6 +45,8 @@
     <button aria-pressed="false" class="language-button" data-lang="pt" type="button">Português</button>
     <button aria-pressed="false" class="language-button" data-lang="hi" type="button">हिन्दी</button>
     <button aria-pressed="false" class="language-button" data-lang="ru" type="button">Русский</button>
+    <button aria-pressed="false" class="language-button" data-lang="de" type="button">Deutsch</button>
+    <button aria-pressed="false" class="language-button" data-lang="ja" type="button">日本語</button>
    </nav>
    
    <!-- MOTOR DE ORDENAMIENTO EN VIVO -->
@@ -53,7 +55,7 @@
       "use strict";
       const estadisticasHablantes = {
         "en": 1493, "zh": 1183, "hi": 611, "es": 561, "ar": 335,
-        "fr": 334, "pt": 269, "ru": 210, "it": 68
+        "fr": 334, "pt": 269, "ru": 210, "de": 133, "ja": 126, "it": 68
       };
       const contenedorNav = document.querySelector(".language-bar");
       if (contenedorNav) {
@@ -117,11 +119,11 @@
          lang: "he",
          dir: "rtl",
          image: "/Explora/portada-he.png",
-         title: "La Palabra en Cápsulas — דף הבית הרשמי",
+         title: "La Palabra en Cápsulas — דף הבית הרשਮੀ",
          welcome: [
            "ברוכים הבאים למרחב הזה",
            "מקום המוקדש לשידור",
-           "רעיונות מעשיים, עמוקים ונגישים",
+           "רעיונות מעשיים, עמוקים ונגиשים",
            "להליכה בטוחה",
            "עם אלוהים"
          ],
@@ -146,11 +148,11 @@
          lang: "es",
          dir: "ltr",
          image: spanishImage,
-         title: "La Palabra en C&aacute;psulas &mdash; Portada Oficial",
-         welcome: [
-           "Bienvenido a este espacio",
-           "Un lugar dedicado a",
-           "compartir ideas pr&aacute;cticas,",
+title: "La Palabra en Cápsulas — Portada Oficial",
+welcome: [
+"Bienvenido a este espacio",
+"Un lugar dedicado a",
+"compartir ideas prácticas,",
 "profundas y accesibles",
 "para un caminar",
 "seguro con",
@@ -223,7 +225,7 @@ image: "/Explora/portada-pt.png",
 title: "La Palabra en Cápsulas — Capa Oficial",
 welcome: [
 "Bem-vindo a este espaço",
-"Um lugar dedicado a compartilhar",
+"Un lugar dedicado a compartilhar",
 "ideias práticas, profundas e acessíveis",
 "para um caminhar",
 "seguro com",
@@ -258,6 +260,34 @@ welcome: [
 "с Богом"
 ],
 explore: "Исследовать"
+},
+de: {
+lang: "de",
+dir: "ltr",
+image: "/Explora/portada-de.png",
+title: "La Palabra en Cápsulas — Offizielles Cover",
+welcome: [
+"Willkommen in diesem Bereich",
+"Ein Ort, der dem Teilen von",
+"praktischen, tiefen und zugänglichen Ideen",
+"für einen sicheren Spaziergang",
+"mit Gott gewidmet ist"
+],
+explore: "Erkunden"
+},
+ja: {
+lang: "ja",
+dir: "ltr",
+image: "/Explora/portada-ja.png",
+title: "La Palabra en Cápsulas — 公式カバー",
+welcome: [
+"このスペースへようこそ",
+"共有することに特化した場所",
+"実用的で、深く、親しみやすいアイデア",
+"確実な歩みのために",
+"神と共に"
+],
+explore: "探索する"
 }
 };
 const htmlEl = document.documentElement;
@@ -302,8 +332,7 @@ if (!translations[initialLang]) {
 initialLang = "es";
 }
 updateContent(initialLang);
-})();
-})();
+   })();
   </script>
  </body>
 </html>
