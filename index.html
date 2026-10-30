@@ -49,6 +49,39 @@
     <button aria-pressed="false" class="language-button" data-lang="de" type="button">Deutsch</button>
     <button aria-pressed="false" class="language-button" data-lang="ja" type="button">日本語</button>
    </nav>
+       <button aria-pressed="false" class="language-button" data-lang="de" type="button">Deutsch</button>
+    <button aria-pressed="false" class="language-button" data-lang="ja" type="button">日本語</button>
+   </nav> <!-- BUSCA ESTA LÍNEA -->
+
+   <!-- PEGA EL SIGUIENTE BLOQUE JUSTO AQUÍ: -->
+   <script>
+    (function () {
+      "use strict";
+      const estadisticasHablantes = {
+        "en": 1493, "zh": 1183, "hi": 611, "es": 561, "ar": 335,
+        "fr": 334, "pt": 269, "ru": 210, "de": 133, "ja": 126, "it": 68
+      };
+      const contenedorNav = document.querySelector(".language-bar");
+      if (contenedorNav) {
+        const botones = Array.from(contenedorNav.querySelectorAll(".language-button"));
+        const botonHebreo = botones.find(btn => btn.getAttribute("data-lang") === "he");
+        const otrosBotones = botones.filter(btn => btn.getAttribute("data-lang") !== "he");
+
+        otrosBotones.sort((a, b) => {
+          const hablantesA = estadisticasHablantes[a.getAttribute("data-lang")] || 0;
+          const hablantesB = estadisticasHablantes[b.getAttribute("data-lang")] || 0;
+          return hablantesB - hablantesA;
+        });
+
+        contenedorNav.textContent = "";
+        if (botonHebreo) contenedorNav.appendChild(botonHebreo);
+        otrosBotones.forEach(btn => contenedorNav.appendChild(btn));
+      }
+    })();
+   </script>
+
+   <div aria-hidden="true" class="separator"> <!-- ESTA LÍNEA YA EXISTE EN TU WEB -->
+
    <div aria-hidden="true" class="separator">
    </div>
    <section class="cover-area">
