@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es" class="notranslate">
 <head>
@@ -37,16 +38,43 @@ body{background:#fff;color:#111;font-family:"Trebuchet MS",Arial,sans-serif;font
 .notes div{margin:0}
 html[dir="rtl"] .main-text{text-align:right}
 html[dir="rtl"] .language-bar{direction:rtl}
-@media(min-width:601px){.page{padding-top:8px}.main-text{margin-top:-12px;margin-bottom:4px}.pointing{margin-top:0;margin-bottom:0}.join-link{margin-top:-8px}}
-@media(max-width:600px){
-.page{padding:6px 12px 20px}.language-bar{gap:4px 11px;padding:5px 2px 9px;margin-bottom:10px}
-.language-button{font-size:13px;padding:4px 1px}.hero{width:94%;margin-bottom:3px}
-.verse{font-size:18px;margin-bottom:14px}.main-text{line-height:1.36;margin-bottom:8px}
-.pointing{width:65px;margin:2px auto 0}.join-link{width:78%;margin:0 auto 16px}
-.notes{font-size:15px}.tooltip-anchor::after{white-space:normal;width:120px;font-size:13px;padding:4px 8px}
-.join-main-label{font-size:clamp(20px,6vw,34px)}.join-sub-label{font-size:clamp(8px,2.2vw,13px);letter-spacing:.08em}
+
+@media(min-width:601px){
+.page{padding-top:8px}
+.main-text{margin-top:-12px;margin-bottom:4px}
+.pointing{margin-top:0;margin-bottom:0}
+.join-link{margin-top:-8px}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media(max-width:600px){
+.page{padding:5px 12px 18px}
+.language-bar{gap:4px 11px;padding:5px 2px 8px;margin-bottom:8px}
+.language-button{font-size:13px;padding:4px 1px}
+
+/* Imagen superior más pequeña */
+.hero{width:82%;margin-bottom:1px}
+
+/* Menos espacio debajo del versículo */
+.verse{font-size:18px;margin-bottom:10px}
+
+/* Texto más compacto */
+.main-text{line-height:1.30;margin-bottom:5px}
+
+/* Flecha más pequeña */
+.pointing{width:56px;margin:0 auto 0}
+
+/* Botón Únete más pequeño */
+.join-link{width:68%;margin:0 auto 12px}
+
+.notes{font-size:15px}
+.tooltip-anchor::after{white-space:normal;width:120px;font-size:13px;padding:4px 8px}
+.join-main-label{font-size:clamp(20px,6vw,34px)}
+.join-sub-label{font-size:clamp(8px,2.2vw,13px);letter-spacing:.08em}
+}
+
+@media(prefers-reduced-motion:reduce){
+*{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -104,16 +132,42 @@ de:{dir:"ltr",title:"Erforscht die Schriften — LPC",verse:"„Erforscht die Sc
 ja:{dir:"ltr",title:"聖書を調べなさい — LPC",verse:"「聖書を調べなさい」",jesus:"（イエス）",tooltip:"ヨハネによる福音書 5章39節",main:"2015年にYouTubeに登録し、いくつかの動画を公開しましたが、今は御言葉についての短い文章やメッセージを作ることにしました。そして信者の皆さんに、<em>出て行くこと</em>、<em>祈ること</em>、<em>協力すること</em>を通して、この働きに参加していただきたいと願っています。これは多くの人々による共同の働きです。LPCは愛と情熱を込めて作った多言語ウェブサイトであり、多くの方々の祝福になると信じています。神の御心なら、毎週メシアについてお話しし、聖霊に導かれ、確かな土台の上に歩む人生のための実践的なヒントをお届けします。心より感謝します。",heroAlt:"聖書を読む二人",pointAlt:"下を指し示す矢印",join:"参加する",lessons:"教え",joinAlt:"「カプセルに込めた御言葉」に参加 — 教え",aria:"「カプセルに込めた御言葉」に参加"},
 it:{dir:"ltr",title:"Scrutate le Scritture — LPC",verse:"«Scrutate le Scritture»",jesus:"(Gesù)",tooltip:"Giovanni 5:39",main:"Nel 2015 mi sono registrato su YouTube e, anche se ho pubblicato alcuni video, ora ho deciso di realizzare brevi testi e messaggi della Parola, invitando i credenti a partecipare all'Opera: <em>andando</em>, <em>pregando</em> e <em>collaborando</em>. È un lavoro di molti. LPC è un sito multilingue che ho sviluppato con amore e passione e so che molti ne saranno benedetti. Ogni settimana, con il permesso di Dio, mi sentirete parlare del Messia e condividerò consigli pratici per una vita fondata su basi solide e guidata dallo Spirito Santo. Grazie di cuore.",heroAlt:"Una coppia legge la Bibbia",pointAlt:"Indica verso il basso",join:"Unisciti a noi",lessons:"INSEGNAMENTI",joinAlt:"Unisciti a La Parola in Capsule — Insegnamenti",aria:"Unisciti a La Parola in Capsule"}
 };
+
 const buttons=[...document.querySelectorAll(".language-button")];
-const els={verse:document.getElementById("verseText"),jesus:document.getElementById("jesusText"),main:document.getElementById("mainText"),hero:document.getElementById("heroImage"),point:document.getElementById("pointingImage"),join:document.getElementById("joinLink"),joinImage:document.getElementById("joinImage"),joinMain:document.getElementById("joinMainLabel"),joinSub:document.getElementById("joinSubLabel")};
+const els={
+verse:document.getElementById("verseText"),
+jesus:document.getElementById("jesusText"),
+main:document.getElementById("mainText"),
+hero:document.getElementById("heroImage"),
+point:document.getElementById("pointingImage"),
+join:document.getElementById("joinLink"),
+joinImage:document.getElementById("joinImage"),
+joinMain:document.getElementById("joinMainLabel"),
+joinSub:document.getElementById("joinSubLabel")
+};
+
 function setLanguage(code){
 const t=translations[code]||translations.es;
-document.documentElement.lang=code;document.documentElement.dir=t.dir;document.title=t.title;
-els.verse.textContent=t.verse;els.verse.dataset.tooltip=t.tooltip;els.jesus.textContent=t.jesus;els.main.innerHTML=t.main;
-els.hero.alt=t.heroAlt;els.point.alt=t.pointAlt;els.joinMain.textContent=t.join;els.joinSub.textContent=t.lessons;
-els.joinImage.alt=t.joinAlt;els.join.setAttribute("aria-label",t.aria);
-buttons.forEach(b=>{const active=b.dataset.lang===code;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
+document.documentElement.lang=code;
+document.documentElement.dir=t.dir;
+document.title=t.title;
+els.verse.textContent=t.verse;
+els.verse.dataset.tooltip=t.tooltip;
+els.jesus.textContent=t.jesus;
+els.main.innerHTML=t.main;
+els.hero.alt=t.heroAlt;
+els.point.alt=t.pointAlt;
+els.joinMain.textContent=t.join;
+els.joinSub.textContent=t.lessons;
+els.joinImage.alt=t.joinAlt;
+els.join.setAttribute("aria-label",t.aria);
+buttons.forEach(b=>{
+const active=b.dataset.lang===code;
+b.classList.toggle("active",active);
+b.setAttribute("aria-pressed",String(active));
+});
 }
+
 buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.lang)));
 const requested=new URLSearchParams(location.search).get("lang");
 setLanguage(translations[requested]?requested:"es");
